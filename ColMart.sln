@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ColMart", "ColMart\ColMart.vbproj", "{D39FBDDD-C8E9-42D8-9C4F-3753422DF157}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instala ColMart", "Instala ColMart\Instala ColMart.vdproj", "{13CFD5F8-33C2-4227-95A2-986EAD91347F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D39FBDDD-C8E9-42D8-9C4F-3753422DF157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D39FBDDD-C8E9-42D8-9C4F-3753422DF157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D39FBDDD-C8E9-42D8-9C4F-3753422DF157}.Debug|x64.ActiveCfg = Debug|x64
+		{D39FBDDD-C8E9-42D8-9C4F-3753422DF157}.Debug|x64.Build.0 = Debug|x64
+		{D39FBDDD-C8E9-42D8-9C4F-3753422DF157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D39FBDDD-C8E9-42D8-9C4F-3753422DF157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D39FBDDD-C8E9-42D8-9C4F-3753422DF157}.Release|x64.ActiveCfg = Release|x64
+		{D39FBDDD-C8E9-42D8-9C4F-3753422DF157}.Release|x64.Build.0 = Release|x64
+		{13CFD5F8-33C2-4227-95A2-986EAD91347F}.Debug|Any CPU.ActiveCfg = Debug
+		{13CFD5F8-33C2-4227-95A2-986EAD91347F}.Debug|x64.ActiveCfg = Debug
+		{13CFD5F8-33C2-4227-95A2-986EAD91347F}.Release|Any CPU.ActiveCfg = Release
+		{13CFD5F8-33C2-4227-95A2-986EAD91347F}.Release|x64.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A98AB85E-7D41-494D-8F85-60FABD8D63CA}
+	EndGlobalSection
+EndGlobal
