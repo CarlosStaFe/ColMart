@@ -83,7 +83,7 @@
         If txtAFecha.Text = txtFecha.Text Then
             comando.CommandText = comando.CommandText
         Else
-            detalle = detalle & "Fecha: " & txtFecha.Text & " * "
+            detalle = detalle & "Fecha: " & txtAFecha.Text & " * "
             fechajob = txtFecha.Text
             ProcesarFecha()
             If senial = 0 Then
@@ -130,7 +130,11 @@
             End If
         End If
 
-        comando.CommandText = comando.CommandText & " AND NroMatri < 50000 "
+        If senial = 0 Then
+            comando.CommandText = comando.CommandText & "WHERE NroMatri < '50000' "
+        Else
+            comando.CommandText = comando.CommandText & " AND NroMatri < '50000' "
+        End If
 
         '********** ORDENADOS POR **********
         If cmbOrden.Text = "APELLIDO" Then

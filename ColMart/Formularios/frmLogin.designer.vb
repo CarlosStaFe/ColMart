@@ -134,7 +134,6 @@ Partial Class frmLogin
         Me.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnIngresar.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnIngresar.ForeColor = System.Drawing.Color.White
-        Me.btnIngresar.Image = Global.ColMart.My.Resources.Resources.comprobado
         Me.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnIngresar.Location = New System.Drawing.Point(208, 171)
         Me.btnIngresar.Name = "btnIngresar"
@@ -164,7 +163,6 @@ Partial Class frmLogin
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSalir.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalir.ForeColor = System.Drawing.Color.White
-        Me.btnSalir.Image = Global.ColMart.My.Resources.Resources.salir
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnSalir.Location = New System.Drawing.Point(334, 171)
         Me.btnSalir.Name = "btnSalir"

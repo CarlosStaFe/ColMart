@@ -502,7 +502,6 @@ Partial Class frmMovimCaja
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCerrar.ForeColor = System.Drawing.Color.White
-        Me.btnCerrar.Image = Global.ColMart.My.Resources.Resources.cerrar_con_llave1
         Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnCerrar.Location = New System.Drawing.Point(1009, 372)
         Me.btnCerrar.Name = "btnCerrar"

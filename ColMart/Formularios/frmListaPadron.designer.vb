@@ -390,7 +390,7 @@ Partial Class frmListaPadron
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1130, 607)
+        Me.ClientSize = New System.Drawing.Size(1130, 417)
         Me.Controls.Add(Me.cmbProv)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label7)

@@ -700,7 +700,6 @@ Partial Class frmListaOficio
         Me.BtnGrabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGrabar.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnGrabar.ForeColor = System.Drawing.Color.White
-        Me.BtnGrabar.Image = Global.ColMart.My.Resources.Resources.grabar
         Me.BtnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.BtnGrabar.Location = New System.Drawing.Point(939, 147)
         Me.BtnGrabar.Name = "BtnGrabar"
