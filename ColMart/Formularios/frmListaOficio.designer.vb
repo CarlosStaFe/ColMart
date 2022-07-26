@@ -608,7 +608,6 @@ Partial Class frmListaOficio
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
         Me.TableAdapterManager.ctactematTableAdapter = Nothing
-        Me.TableAdapterManager.ctacteprovTableAdapter = Nothing
         Me.TableAdapterManager.ctactesocTableAdapter = Nothing
         Me.TableAdapterManager.ctasctesTableAdapter = Nothing
         Me.TableAdapterManager.debehaberTableAdapter = Nothing

@@ -121,7 +121,7 @@ Public Class frmReciboGral
         'Busco códigos a debitar por consulta al presionar F1
         If e.KeyCode = Keys.F1 Then
             senial = 3
-            Dim frmRecGral As New frmConsCodDebRec
+            Dim frmRecGral As New frmConsCodDebito
             AddOwnedForm(frmRecGral)
             frmRecGral.ShowDialog()
             senial = 0

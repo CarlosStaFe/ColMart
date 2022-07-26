@@ -234,6 +234,12 @@
     <Compile Include="Formularios\frmCodPostal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\frmCompras.Designer.vb">
+      <DependentUpon>frmCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\frmConsCodDebito.designer.vb">
       <DependentUpon>frmConsCodDebito.vb</DependentUpon>
     </Compile>
@@ -250,6 +256,12 @@
       <DependentUpon>frmConsCodPos.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmConsCodPos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmConsCptosGastos.Designer.vb">
+      <DependentUpon>frmConsCptosGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmConsCptosGastos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmConsMatri.designer.vb">
@@ -270,10 +282,28 @@
     <Compile Include="Formularios\frmConsNiveles.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\frmConsProveedores.Designer.vb">
+      <DependentUpon>frmConsProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmConsProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\frmConsSociedad.designer.vb">
       <DependentUpon>frmConsSociedad.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmConsSociedad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCptosGastos.Designer.vb">
+      <DependentUpon>frmCptosGastos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmCptosGastos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCtasCtesPro.Designer.vb">
+      <DependentUpon>frmCtasCtesPro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmCtasCtesPro.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmCtasCtesMat.designer.vb">
@@ -414,6 +444,12 @@
     <Compile Include="Formularios\frmPrintLista.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\frmProveedores.Designer.vb">
+      <DependentUpon>frmProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\frmReciboGeneral.Designer.vb">
       <DependentUpon>frmReciboGeneral.vb</DependentUpon>
     </Compile>
@@ -503,6 +539,9 @@
     <EmbeddedResource Include="Formularios\frmCodPostal.resx">
       <DependentUpon>frmCodPostal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCompras.resx">
+      <DependentUpon>frmCompras.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConsCodDebito.resx">
       <DependentUpon>frmConsCodDebito.vb</DependentUpon>
     </EmbeddedResource>
@@ -511,6 +550,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConsCodPos.resx">
       <DependentUpon>frmConsCodPos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmConsCptosGastos.resx">
+      <DependentUpon>frmConsCptosGastos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConsMatri.resx">
       <DependentUpon>frmConsMatri.vb</DependentUpon>
@@ -521,11 +563,20 @@
     <EmbeddedResource Include="Formularios\frmConsNiveles.resx">
       <DependentUpon>frmConsNiveles.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmConsProveedores.resx">
+      <DependentUpon>frmConsProveedores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConsSociedad.resx">
       <DependentUpon>frmConsSociedad.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCptosGastos.resx">
+      <DependentUpon>frmCptosGastos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCtasCtesMat.resx">
       <DependentUpon>frmCtasCtesMat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCtasCtesPro.resx">
+      <DependentUpon>frmCtasCtesPro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCtasCtesSoc.resx">
       <DependentUpon>frmCtasCtesSoc.vb</DependentUpon>
@@ -592,6 +643,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmPrintLista.resx">
       <DependentUpon>frmPrintLista.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProveedores.resx">
+      <DependentUpon>frmProveedores.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmReciboGeneral.resx">
       <DependentUpon>frmReciboGeneral.vb</DependentUpon>

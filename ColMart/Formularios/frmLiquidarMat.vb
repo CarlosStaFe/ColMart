@@ -405,35 +405,6 @@ Finalizar:
 
             ReportViewer1.RefreshReport()
 
-            'GRABAMOS LAS CTAS CTES VIEJAS
-            Try
-                comando = New MySqlCommand("INSERT INTO ctactemat VALUES(@id, @matricula, @fecvto, @detalle, @debe ,@haber, @saldo, @periodo, @estado, @pagado, @obs)", conexion)
-                comando.Parameters.AddWithValue("@id", comprobante)
-                comando.Parameters.AddWithValue("@matricula", matricula)
-                comando.Parameters.AddWithValue("@fecvto", yyyy & mm & dd)
-                If cbxDU.Checked = True And cbxDM.Checked = False And cbxOS.Checked = False Then
-                    comando.Parameters.AddWithValue("@detalle", detalle)
-                Else
-                    comando.Parameters.AddWithValue("@detalle", "LIQUIDACION MENSUAL " & mm & "-" & yyyy & "")
-                End If
-                comando.Parameters.AddWithValue("@debe", total)
-                comando.Parameters.AddWithValue("@haber", 0)
-                comando.Parameters.AddWithValue("@saldo", 0)
-                comando.Parameters.AddWithValue("@periodo", periodo)
-
-                If rdbNo.Checked = True And rdbSi.Checked = False Then
-                    comando.Parameters.AddWithValue("@estado", "LIQUIDADA")
-                ElseIf rdbNo.Checked = False And rdbSi.Checked = True Then
-                    comando.Parameters.AddWithValue("@estado", "PENDIENTE")
-                End If
-
-                comando.Parameters.AddWithValue("@pagado", "")
-                comando.Parameters.AddWithValue("@obs", "")
-                comando.ExecuteNonQuery()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-
             'GRABAMOS LAS CTAS CTES NUEVAS
             If concepto1 <> "" Then
                 Try

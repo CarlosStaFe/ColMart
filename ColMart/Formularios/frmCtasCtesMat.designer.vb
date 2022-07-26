@@ -241,7 +241,6 @@ Partial Class frmCtasCtesMat
         Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
         Me.TableAdapterManager.ctactematTableAdapter = Me.CtactematTableAdapter
-        Me.TableAdapterManager.ctacteprovTableAdapter = Nothing
         Me.TableAdapterManager.ctactesocTableAdapter = Nothing
         Me.TableAdapterManager.ctasctesTableAdapter = Me.CtasctesTableAdapter
         Me.TableAdapterManager.debehaberTableAdapter = Nothing

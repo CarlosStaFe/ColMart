@@ -69,6 +69,14 @@
             frmSoc0.txtProvSociedad.Text = dgvCodpostal.CurrentRow.Cells(3).Value.ToString
         End If
 
+        If senial = 4 Then
+            Dim frmProv4 As frmProveedores = CType(Owner, frmProveedores)
+            frmProv4.txtCodPos.Text = dgvCodpostal.CurrentRow.Cells(0).Value.ToString
+            frmProv4.txtLocalidad.Text = dgvCodpostal.CurrentRow.Cells(1).Value.ToString
+            frmProv4.txtProvincia.Text = dgvCodpostal.CurrentRow.Cells(3).Value.ToString
+            frmProv4.txtIdCodPosProv.Text = dgvCodpostal.CurrentRow.Cells(4).Value.ToString
+        End If
+
         Close()
 
     End Sub

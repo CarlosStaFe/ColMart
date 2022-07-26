@@ -396,6 +396,35 @@ Public Class MenuPpal
 
     End Sub
 
+    Private Sub btnActualizarProv_Click(sender As Object, e As EventArgs) Handles btnActualizarProv.Click
+
+        MostrarHijo(frmProveedores)
+        OcultarSubmenu()
+
+    End Sub
+
+    Private Sub btnCompras_Click(sender As Object, e As EventArgs) Handles btnCompras.Click
+
+        MostrarHijo(frmCompras)
+        OcultarSubmenu()
+
+    End Sub
+
+    Private Sub btnCtaCteProv_Click(sender As Object, e As EventArgs) Handles btnCtaCteProv.Click
+
+        MostrarHijo(frmCtasCtesPro)
+        OcultarSubmenu()
+
+    End Sub
+
+    Private Sub btnCptosGastos_Click(sender As Object, e As EventArgs) Handles btnCptosGastos.Click
+
+        MostrarHijo(frmCptosGastos)
+        OcultarSubmenu()
+
+    End Sub
+
+
 #End Region
 
 #Region "Menu Parámetros"
@@ -453,13 +482,6 @@ Public Class MenuPpal
 
         MostrarHijo(frmBackupRestore)
         OcultarSubmenu()
-
-    End Sub
-
-    Private Sub btnPasaje_Click(sender As Object, e As EventArgs) Handles btnPasaje.Click
-
-        'MostrarHijo(frmPasaje)
-        'OcultarSubmenu()
 
     End Sub
 

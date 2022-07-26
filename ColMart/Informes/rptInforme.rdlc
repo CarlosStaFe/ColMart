@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>01e66f6e-ebb7-46a3-9baf-e5e1b01e8cbc</rd:DataSourceID>
+      <rd:DataSourceID>22a1b2b4-cec8-4abf-b1c2-d8e9d5fd99f0</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -23,6 +23,10 @@
         </Field>
         <Field Name="NombreDH">
           <DataField>NombreDH</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TelefonoDH">
+          <DataField>TelefonoDH</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="EstadoDH">
@@ -289,7 +293,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>5.88667cm</Size>
+                        <Size>4.23875cm</Size>
                         <CellContents>
                           <Textbox Name="Textbox87">
                             <CanGrow>true</CanGrow>
@@ -348,16 +352,16 @@
                       <TablixMembers>
                         <TablixMember>
                           <TablixHeader>
-                            <Size>2.44252cm</Size>
+                            <Size>2.12958cm</Size>
                             <CellContents>
-                              <Textbox Name="Textbox89">
+                              <Textbox Name="Textbox1">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>ESTADO</Value>
+                                        <Value>TELÉFONO</Value>
                                         <Style>
                                           <FontSize>9pt</FontSize>
                                           <FontWeight>Bold</FontWeight>
@@ -369,7 +373,7 @@
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>Textbox89</rd:DefaultName>
+                                <rd:DefaultName>Textbox1</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Style>Solid</Style>
@@ -407,16 +411,16 @@
                           <TablixMembers>
                             <TablixMember>
                               <TablixHeader>
-                                <Size>5.79872cm</Size>
+                                <Size>1.96627cm</Size>
                                 <CellContents>
-                                  <Textbox Name="Textbox91">
+                                  <Textbox Name="Textbox89">
                                     <CanGrow>true</CanGrow>
                                     <KeepTogether>true</KeepTogether>
                                     <Paragraphs>
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>CONCEPTO</Value>
+                                            <Value>ESTADO</Value>
                                             <Style>
                                               <FontSize>9pt</FontSize>
                                               <FontWeight>Bold</FontWeight>
@@ -428,7 +432,7 @@
                                         </Style>
                                       </Paragraph>
                                     </Paragraphs>
-                                    <rd:DefaultName>Textbox91</rd:DefaultName>
+                                    <rd:DefaultName>Textbox89</rd:DefaultName>
                                     <Style>
                                       <Border>
                                         <Style>Solid</Style>
@@ -466,16 +470,16 @@
                               <TablixMembers>
                                 <TablixMember>
                                   <TablixHeader>
-                                    <Size>1.5475cm</Size>
+                                    <Size>5.79872cm</Size>
                                     <CellContents>
-                                      <Textbox Name="Textbox93">
+                                      <Textbox Name="Textbox91">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>PER.</Value>
+                                                <Value>CONCEPTO</Value>
                                                 <Style>
                                                   <FontSize>9pt</FontSize>
                                                   <FontWeight>Bold</FontWeight>
@@ -487,7 +491,7 @@
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>Textbox93</rd:DefaultName>
+                                        <rd:DefaultName>Textbox91</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>Solid</Style>
@@ -523,7 +527,68 @@
                                     </CellContents>
                                   </TablixHeader>
                                   <TablixMembers>
-                                    <TablixMember />
+                                    <TablixMember>
+                                      <TablixHeader>
+                                        <Size>1.5475cm</Size>
+                                        <CellContents>
+                                          <Textbox Name="Textbox93">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>PER.</Value>
+                                                    <Style>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox93</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                                <Width>1.5pt</Width>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1.5pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1.5pt</Width>
+                                              </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1.5pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1.5pt</Width>
+                                              </RightBorder>
+                                              <BackgroundColor>LightGrey</BackgroundColor>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixHeader>
+                                      <TablixMembers>
+                                        <TablixMember />
+                                      </TablixMembers>
+                                    </TablixMember>
                                   </TablixMembers>
                                 </TablixMember>
                               </TablixMembers>
@@ -613,7 +678,7 @@
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>5.88667cm</Size>
+                        <Size>4.23875cm</Size>
                         <CellContents>
                           <Textbox Name="NombreDH1">
                             <CanGrow>true</CanGrow>
@@ -668,27 +733,27 @@
                       </TablixHeader>
                       <TablixMembers>
                         <TablixMember>
-                          <Group Name="EstadoDH">
+                          <Group Name="TelefonoDH">
                             <GroupExpressions>
-                              <GroupExpression>=Fields!EstadoDH.Value</GroupExpression>
+                              <GroupExpression>=Fields!TelefonoDH.Value</GroupExpression>
                             </GroupExpressions>
                           </Group>
                           <SortExpressions>
                             <SortExpression>
-                              <Value>=Fields!EstadoDH.Value</Value>
+                              <Value>=Fields!TelefonoDH.Value</Value>
                             </SortExpression>
                           </SortExpressions>
                           <TablixHeader>
-                            <Size>2.44252cm</Size>
+                            <Size>2.12958cm</Size>
                             <CellContents>
-                              <Textbox Name="EstadoDH1">
+                              <Textbox Name="TelefonoDH">
                                 <CanGrow>true</CanGrow>
                                 <KeepTogether>true</KeepTogether>
                                 <Paragraphs>
                                   <Paragraph>
                                     <TextRuns>
                                       <TextRun>
-                                        <Value>=Fields!EstadoDH.Value</Value>
+                                        <Value>=Fields!TelefonoDH.Value</Value>
                                         <Style>
                                           <FontSize>8pt</FontSize>
                                         </Style>
@@ -699,7 +764,7 @@
                                     </Style>
                                   </Paragraph>
                                 </Paragraphs>
-                                <rd:DefaultName>EstadoDH1</rd:DefaultName>
+                                <rd:DefaultName>TelefonoDH</rd:DefaultName>
                                 <Style>
                                   <Border>
                                     <Style>Solid</Style>
@@ -734,38 +799,38 @@
                           </TablixHeader>
                           <TablixMembers>
                             <TablixMember>
-                              <Group Name="DetalleDH">
+                              <Group Name="EstadoDH">
                                 <GroupExpressions>
-                                  <GroupExpression>=Fields!DetalleDH.Value</GroupExpression>
+                                  <GroupExpression>=Fields!EstadoDH.Value</GroupExpression>
                                 </GroupExpressions>
                               </Group>
                               <SortExpressions>
                                 <SortExpression>
-                                  <Value>=Fields!DetalleDH.Value</Value>
+                                  <Value>=Fields!EstadoDH.Value</Value>
                                 </SortExpression>
                               </SortExpressions>
                               <TablixHeader>
-                                <Size>5.79872cm</Size>
+                                <Size>1.96627cm</Size>
                                 <CellContents>
-                                  <Textbox Name="DetalleDH1">
+                                  <Textbox Name="EstadoDH1">
                                     <CanGrow>true</CanGrow>
                                     <KeepTogether>true</KeepTogether>
                                     <Paragraphs>
                                       <Paragraph>
                                         <TextRuns>
                                           <TextRun>
-                                            <Value>=Fields!DetalleDH.Value</Value>
+                                            <Value>=Fields!EstadoDH.Value</Value>
                                             <Style>
                                               <FontSize>8pt</FontSize>
                                             </Style>
                                           </TextRun>
                                         </TextRuns>
                                         <Style>
-                                          <TextAlign>Left</TextAlign>
+                                          <TextAlign>Center</TextAlign>
                                         </Style>
                                       </Paragraph>
                                     </Paragraphs>
-                                    <rd:DefaultName>DetalleDH1</rd:DefaultName>
+                                    <rd:DefaultName>EstadoDH1</rd:DefaultName>
                                     <Style>
                                       <Border>
                                         <Style>Solid</Style>
@@ -800,38 +865,38 @@
                               </TablixHeader>
                               <TablixMembers>
                                 <TablixMember>
-                                  <Group Name="PeriodoDH">
+                                  <Group Name="DetalleDH">
                                     <GroupExpressions>
-                                      <GroupExpression>=Fields!PeriodoDH.Value</GroupExpression>
+                                      <GroupExpression>=Fields!DetalleDH.Value</GroupExpression>
                                     </GroupExpressions>
                                   </Group>
                                   <SortExpressions>
                                     <SortExpression>
-                                      <Value>=Fields!PeriodoDH.Value</Value>
+                                      <Value>=Fields!DetalleDH.Value</Value>
                                     </SortExpression>
                                   </SortExpressions>
                                   <TablixHeader>
-                                    <Size>1.5475cm</Size>
+                                    <Size>5.79872cm</Size>
                                     <CellContents>
-                                      <Textbox Name="PeriodoDH">
+                                      <Textbox Name="DetalleDH1">
                                         <CanGrow>true</CanGrow>
                                         <KeepTogether>true</KeepTogether>
                                         <Paragraphs>
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>=Fields!PeriodoDH.Value</Value>
+                                                <Value>=Fields!DetalleDH.Value</Value>
                                                 <Style>
                                                   <FontSize>8pt</FontSize>
                                                 </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
-                                              <TextAlign>Center</TextAlign>
+                                              <TextAlign>Left</TextAlign>
                                             </Style>
                                           </Paragraph>
                                         </Paragraphs>
-                                        <rd:DefaultName>PeriodoDH</rd:DefaultName>
+                                        <rd:DefaultName>DetalleDH1</rd:DefaultName>
                                         <Style>
                                           <Border>
                                             <Style>Solid</Style>
@@ -866,68 +931,136 @@
                                   </TablixHeader>
                                   <TablixMembers>
                                     <TablixMember>
-                                      <Group Name="Detalles" />
+                                      <Group Name="PeriodoDH">
+                                        <GroupExpressions>
+                                          <GroupExpression>=Fields!PeriodoDH.Value</GroupExpression>
+                                        </GroupExpressions>
+                                      </Group>
+                                      <SortExpressions>
+                                        <SortExpression>
+                                          <Value>=Fields!PeriodoDH.Value</Value>
+                                        </SortExpression>
+                                      </SortExpressions>
+                                      <TablixHeader>
+                                        <Size>1.5475cm</Size>
+                                        <CellContents>
+                                          <Textbox Name="PeriodoDH">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!PeriodoDH.Value</Value>
+                                                    <Style>
+                                                      <FontSize>8pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>PeriodoDH</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <LeftBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </LeftBorder>
+                                              <RightBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </RightBorder>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixHeader>
+                                      <TablixMembers>
+                                        <TablixMember>
+                                          <Group Name="Detalles" />
+                                        </TablixMember>
+                                      </TablixMembers>
                                     </TablixMember>
                                   </TablixMembers>
                                 </TablixMember>
-                              </TablixMembers>
-                            </TablixMember>
-                            <TablixMember>
-                              <TablixHeader>
-                                <Size>7.34622cm</Size>
-                                <CellContents>
-                                  <Textbox Name="Textbox112">
-                                    <CanGrow>true</CanGrow>
-                                    <KeepTogether>true</KeepTogether>
-                                    <Paragraphs>
-                                      <Paragraph>
-                                        <TextRuns>
-                                          <TextRun>
-                                            <Value>Total Matriculado</Value>
+                                <TablixMember>
+                                  <TablixHeader>
+                                    <Size>7.34622cm</Size>
+                                    <CellContents>
+                                      <Textbox Name="Textbox112">
+                                        <CanGrow>true</CanGrow>
+                                        <KeepTogether>true</KeepTogether>
+                                        <Paragraphs>
+                                          <Paragraph>
+                                            <TextRuns>
+                                              <TextRun>
+                                                <Value>Total Matriculado</Value>
+                                                <Style>
+                                                  <FontWeight>Bold</FontWeight>
+                                                </Style>
+                                              </TextRun>
+                                            </TextRuns>
                                             <Style>
-                                              <FontWeight>Bold</FontWeight>
+                                              <TextAlign>Right</TextAlign>
                                             </Style>
-                                          </TextRun>
-                                        </TextRuns>
+                                          </Paragraph>
+                                        </Paragraphs>
+                                        <rd:DefaultName>Textbox112</rd:DefaultName>
                                         <Style>
-                                          <TextAlign>Right</TextAlign>
+                                          <Border>
+                                            <Style>Solid</Style>
+                                          </Border>
+                                          <TopBorder>
+                                            <Color>Black</Color>
+                                            <Style>Solid</Style>
+                                            <Width>1pt</Width>
+                                          </TopBorder>
+                                          <BottomBorder>
+                                            <Color>Black</Color>
+                                            <Style>Solid</Style>
+                                            <Width>1pt</Width>
+                                          </BottomBorder>
+                                          <LeftBorder>
+                                            <Color>Black</Color>
+                                            <Style>Solid</Style>
+                                            <Width>1pt</Width>
+                                          </LeftBorder>
+                                          <RightBorder>
+                                            <Color>Black</Color>
+                                            <Style>Solid</Style>
+                                            <Width>1pt</Width>
+                                          </RightBorder>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
-                                      </Paragraph>
-                                    </Paragraphs>
-                                    <rd:DefaultName>Textbox112</rd:DefaultName>
-                                    <Style>
-                                      <Border>
-                                        <Style>Solid</Style>
-                                      </Border>
-                                      <TopBorder>
-                                        <Color>Black</Color>
-                                        <Style>Solid</Style>
-                                        <Width>1pt</Width>
-                                      </TopBorder>
-                                      <BottomBorder>
-                                        <Color>Black</Color>
-                                        <Style>Solid</Style>
-                                        <Width>1pt</Width>
-                                      </BottomBorder>
-                                      <LeftBorder>
-                                        <Color>Black</Color>
-                                        <Style>Solid</Style>
-                                        <Width>1pt</Width>
-                                      </LeftBorder>
-                                      <RightBorder>
-                                        <Color>Black</Color>
-                                        <Style>Solid</Style>
-                                        <Width>1pt</Width>
-                                      </RightBorder>
-                                      <PaddingLeft>2pt</PaddingLeft>
-                                      <PaddingRight>2pt</PaddingRight>
-                                      <PaddingTop>2pt</PaddingTop>
-                                      <PaddingBottom>2pt</PaddingBottom>
-                                    </Style>
-                                  </Textbox>
-                                </CellContents>
-                              </TablixHeader>
-                              <KeepWithGroup>Before</KeepWithGroup>
+                                      </Textbox>
+                                    </CellContents>
+                                  </TablixHeader>
+                                  <KeepWithGroup>Before</KeepWithGroup>
+                                </TablixMember>
+                              </TablixMembers>
                             </TablixMember>
                           </TablixMembers>
                         </TablixMember>
@@ -937,11 +1070,13 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <RepeatColumnHeaders>true</RepeatColumnHeaders>
+            <RepeatRowHeaders>true</RepeatRowHeaders>
             <DataSetName>dsDebeHaber</DataSetName>
             <Top>0.07972cm</Top>
             <Left>0.20492cm</Left>
             <Height>1.8cm</Height>
-            <Width>19.19374cm</Width>
+            <Width>19.19915cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1045,7 +1180,7 @@
         <Height>1.03125in</Height>
         <Style />
       </Body>
-      <Width>7.74177in</Width>
+      <Width>7.80902in</Width>
       <Page>
         <PageHeader>
           <Height>2.27542cm</Height>

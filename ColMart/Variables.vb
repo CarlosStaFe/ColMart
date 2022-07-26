@@ -31,6 +31,10 @@
     Public largo As Integer
     '***Variables para procesar de Backup
     Public archivoBackup As String
+    '***Variables para procesar los códigos postales
+    Public CodPostal, Localidad, Departamento, Provincia As String
+    Public idCodigo As Integer
+
     'Public Apunt As Integer = FreeFile()
 
     Public Sub ConectarMySql()
@@ -559,5 +563,62 @@
         End Try
 
     End Sub
+
+    Public Sub LeerCodigoPostal()
+
+        Try
+            comando.CommandText = "SELECT * FROM codpostal WHERE id_CodPos = '" & idCodigo & "' OR NroCodPos = '" & CodPostal & "'"
+            dt = New DataTable
+            da = New MySqlDataAdapter(comando)
+            da.Fill(dt)
+
+            If dt.Rows.Count > 0 Then
+                Dim row As DataRow = dt.Rows(0)
+                Localidad = CStr(row("LocalCodPos"))
+                Provincia = CStr(row("ProvCodPos"))
+                CodPostal = CStr(row("NroCodPos"))
+                idCodigo = Val(CStr(row("id_CodPos")))
+            Else
+                Localidad = ""
+                Provincia = ""
+            End If
+
+        Catch ex As Exception
+            detmsg = "Conexión errónea"
+            tipomsg = "info"
+            btnmsg = 1
+            frmMsgBox.ShowDialog()
+        End Try
+
+    End Sub
+
+    Public Function ValorPesos(ByVal numero As String) As String
+
+        Dim entero, dec, flag As String
+        flag = "N"
+
+        For y = 1 To Len(numero)
+            If Mid(numero, y, 1) <> "$" Then
+                If Mid(numero, y, 1) = "," Or Mid(numero, y, 1) = "." Then
+                    flag = "S"
+                Else
+                    If flag = "N" Then
+                        entero = entero + Mid(numero, y, 1)
+                    Else
+                        dec = dec + Mid(numero, y, 1)
+                    End If
+                End If
+            End If
+        Next y
+
+        If Len(dec) = 1 Then
+            dec = dec & "0"
+        End If
+
+        numero = entero + "." + dec
+
+        Return numero
+
+    End Function
 
 End Module

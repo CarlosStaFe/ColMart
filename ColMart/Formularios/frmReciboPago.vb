@@ -7,7 +7,7 @@ Public Class frmReciboPago
     Dim fecha, id, periodo, pagado As String
     Dim saldobol, pagadobol, importe, saldoant, efectivo, tarjeta, transferencia As Double
     Dim observacion, cuit As String
-    Dim parametros As ReportParameter() = New ReportParameter(51) {}
+    Dim parametros As ReportParameter() = New ReportParameter(52) {}
 
     Private Sub frmReciboPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -235,6 +235,7 @@ Public Class frmReciboPago
         btnSalir.Visible = True
         btnLimpiar.Visible = False
         btnImprimir.Visible = False
+        rdbNotaCredito.Checked = False
 
         txtMatSoc.Focus()
 
@@ -275,8 +276,12 @@ Public Class frmReciboPago
 
     Private Sub CalcularSaldoBoleta()
 
-        auxiliar = Val(txtEfectivo.Text) + Val(txtTarjeta.Text) + Val(txtTransferencia.Text)
-        pagado = Val(txtEfectivo.Text) + Val(txtTarjeta.Text) + Val(txtTransferencia.Text)
+        If rdbNotaCredito.Checked Then
+            auxiliar = pagado
+        Else
+            auxiliar = Val(txtEfectivo.Text) + Val(txtTarjeta.Text) + Val(txtTransferencia.Text)
+            pagado = Val(txtEfectivo.Text) + Val(txtTarjeta.Text) + Val(txtTransferencia.Text)
+        End If
         saldoant = 0
         If dgvCtasCtes.Rows.Count > 0 Then
             For Each Fila As DataGridViewRow In dgvCtasCtes.Rows
@@ -299,212 +304,216 @@ Public Class frmReciboPago
 
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
 
-        If txtDiferencia.Text = txtApagar.Text Then
-            detmsg = "DEBE INGRESAR UN IMPORTE DE PAGO...!!!"
-            tipomsg = "info"
-            btnmsg = 1
-            frmMsgBox.ShowDialog()
-            txtEfectivo.Focus()
+        If rdbNotaCredito.Checked Then
+            NotaCredito()
         Else
 
-            ImpLetras = Letras(pagado)
-            CalcularSaldoBoleta()
+            If txtDiferencia.Text = txtApagar.Text Then
+                detmsg = "DEBE INGRESAR UN IMPORTE DE PAGO...!!!"
+                tipomsg = "info"
+                btnmsg = 1
+                frmMsgBox.ShowDialog()
+                txtEfectivo.Focus()
+            Else
 
-            'Limpiemos el DataSource del informe
-            ReportViewer1.LocalReport.DataSources.Clear()
+                ImpLetras = Letras(pagado)
+                CalcularSaldoBoleta()
 
-            longitud = Len(txtMatSoc.Text)
-            If longitud < 5 Then
-                cantidad = 5 - longitud
-                ceros = ""
-                For j = 1 To cantidad
-                    ceros = ceros & "0"
-                Next j
-                txtMatSoc.Text = ceros & txtMatSoc.Text
-            End If
+                '*** LIMPIAMOS EL DataSource DEL INFORME ********
+                ReportViewer1.LocalReport.DataSources.Clear()
 
-            comando.CommandText = "SELECT * FROM comprobte WHERE TipoCpbte = 'CIP'"
-            dt = New DataTable
-            da = New MySqlDataAdapter(comando)
-            da.Fill(dt)
-            If dt.Rows.Count > 0 Then
-                Dim row As DataRow = dt.Rows(0)
-                comprobante = CStr(row("NroCpbte"))
-                comprobante = comprobante + 1
-            End If
+                longitud = Len(txtMatSoc.Text)
+                If longitud < 5 Then
+                    cantidad = 5 - longitud
+                    ceros = ""
+                    For j = 1 To cantidad
+                        ceros = ceros & "0"
+                    Next j
+                    txtMatSoc.Text = ceros & txtMatSoc.Text
+                End If
 
-            '---Actualizo Comprobante---
-            comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIP'", conexion)
-            comando.ExecuteNonQuery()
+                comando.CommandText = "SELECT * FROM comprobte WHERE TipoCpbte = 'CIP'"
+                dt = New DataTable
+                da = New MySqlDataAdapter(comando)
+                da.Fill(dt)
+                If dt.Rows.Count > 0 Then
+                    Dim row As DataRow = dt.Rows(0)
+                    comprobante = CStr(row("NroCpbte"))
+                    comprobante = comprobante + 1
+                End If
 
-            longitud = Len(comprobante)
-            If longitud < 8 Then
-                cantidad = 8 - longitud
-                ceros = ""
-                For j = 1 To cantidad
-                    ceros = ceros & "0"
-                Next j
-                comprobante = ceros & comprobante
-            End If
+                '---Actualizo Comprobante---
+                comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIP'", conexion)
+                comando.ExecuteNonQuery()
 
-            fecha = CDate(Date.Now)
-            parametros(0) = New ReportParameter("prmComprobante", comprobante)
-            parametros(1) = New ReportParameter("prmTipoNro", tiponro)
-            parametros(2) = New ReportParameter("prmMatSoc", txtMatSoc.Text)
-            parametros(3) = New ReportParameter("prmNombre", txtNombre.Text)
-            parametros(4) = New ReportParameter("prmImpLetras", ImpLetras)
-            parametros(45) = New ReportParameter("prmTotal", pagado)
-            parametros(46) = New ReportParameter("prmObs", txtObs.Text)
-            parametros(47) = New ReportParameter("prmFecha", txtFecha.Text)
-            parametros(48) = New ReportParameter("prmCuit", cuit)
-            parametros(49) = New ReportParameter("prmEfectivo", txtEfectivo.Text)
-            parametros(50) = New ReportParameter("prmTransferencia", txtTransferencia.Text)
-            parametros(51) = New ReportParameter("prmTarjeta", txtTarjeta.Text)
+                longitud = Len(comprobante)
+                If longitud < 8 Then
+                    cantidad = 8 - longitud
+                    ceros = ""
+                    For j = 1 To cantidad
+                        ceros = ceros & "0"
+                    Next j
+                    comprobante = ceros & comprobante
+                End If
 
-            contador = 1
-            If dgvCtasCtes.Rows.Count > 0 Then
-                For Each Fila As DataGridViewRow In dgvCtasCtes.Rows
-                    If Not Fila Is Nothing Then
-                        If Fila.Cells(15).Value = "X" Then
-                            If contador = 1 Then
-                                parametros(5) = New ReportParameter("prmFecVto1", CStr(Fila.Cells(2).Value))
-                                parametros(6) = New ReportParameter("prmDetalle1", CStr(Fila.Cells(6).Value))
-                                parametros(7) = New ReportParameter("prmPeriodo1", CStr(Fila.Cells(7).Value))
-                                parametros(8) = New ReportParameter("prmSaldo1", CStr(Fila.Cells(13).Value))
-                                parametros(9) = New ReportParameter("prmImporte1", CStr(Fila.Cells(12).Value))
+                fecha = CDate(Date.Now)
+                parametros(0) = New ReportParameter("prmComprobante", comprobante)
+                parametros(1) = New ReportParameter("prmTipoNro", tiponro)
+                parametros(2) = New ReportParameter("prmMatSoc", txtMatSoc.Text)
+                parametros(3) = New ReportParameter("prmNombre", txtNombre.Text)
+                parametros(4) = New ReportParameter("prmImpLetras", ImpLetras)
+                parametros(45) = New ReportParameter("prmTotal", pagado)
+                parametros(46) = New ReportParameter("prmObs", txtObs.Text)
+                parametros(47) = New ReportParameter("prmFecha", txtFecha.Text)
+                parametros(48) = New ReportParameter("prmCuit", cuit)
+                parametros(49) = New ReportParameter("prmEfectivo", txtEfectivo.Text)
+                parametros(50) = New ReportParameter("prmTransferencia", txtTransferencia.Text)
+                parametros(51) = New ReportParameter("prmTarjeta", txtTarjeta.Text)
+                parametros(52) = New ReportParameter("prmTipoComprobante", "COMPROBANTE INTERNO DE PAGO")
+
+                contador = 1
+                If dgvCtasCtes.Rows.Count > 0 Then
+                    For Each Fila As DataGridViewRow In dgvCtasCtes.Rows
+                        If Not Fila Is Nothing Then
+                            If Fila.Cells(15).Value = "X" Then
+                                If contador = 1 Then
+                                    parametros(5) = New ReportParameter("prmFecVto1", CStr(Fila.Cells(2).Value))
+                                    parametros(6) = New ReportParameter("prmDetalle1", CStr(Fila.Cells(6).Value))
+                                    parametros(7) = New ReportParameter("prmPeriodo1", CStr(Fila.Cells(7).Value))
+                                    parametros(8) = New ReportParameter("prmSaldo1", CStr(Fila.Cells(13).Value))
+                                    parametros(9) = New ReportParameter("prmImporte1", CStr(Fila.Cells(12).Value))
+                                End If
+                                If contador = 2 Then
+                                    parametros(10) = New ReportParameter("prmFecVto2", CStr(Fila.Cells(2).Value))
+                                    parametros(11) = New ReportParameter("prmDetalle2", CStr(Fila.Cells(6).Value))
+                                    parametros(12) = New ReportParameter("prmPeriodo2", CStr(Fila.Cells(7).Value))
+                                    parametros(13) = New ReportParameter("prmSaldo2", CStr(Fila.Cells(13).Value))
+                                    parametros(14) = New ReportParameter("prmImporte2", CStr(Fila.Cells(12).Value))
+                                End If
+                                If contador = 3 Then
+                                    parametros(15) = New ReportParameter("prmFecVto3", CStr(Fila.Cells(2).Value))
+                                    parametros(16) = New ReportParameter("prmDetalle3", CStr(Fila.Cells(6).Value))
+                                    parametros(17) = New ReportParameter("prmPeriodo3", CStr(Fila.Cells(7).Value))
+                                    parametros(18) = New ReportParameter("prmSaldo3", CStr(Fila.Cells(13).Value))
+                                    parametros(19) = New ReportParameter("prmImporte3", CStr(Fila.Cells(12).Value))
+                                End If
+                                If contador = 4 Then
+                                    parametros(20) = New ReportParameter("prmFecVto4", CStr(Fila.Cells(2).Value))
+                                    parametros(21) = New ReportParameter("prmDetalle4", CStr(Fila.Cells(6).Value))
+                                    parametros(22) = New ReportParameter("prmPeriodo4", CStr(Fila.Cells(7).Value))
+                                    parametros(23) = New ReportParameter("prmSaldo4", CStr(Fila.Cells(13).Value))
+                                    parametros(24) = New ReportParameter("prmImporte4", CStr(Fila.Cells(12).Value))
+                                End If
+                                If contador = 5 Then
+                                    parametros(25) = New ReportParameter("prmFecVto5", CStr(Fila.Cells(2).Value))
+                                    parametros(26) = New ReportParameter("prmDetalle5", CStr(Fila.Cells(6).Value))
+                                    parametros(27) = New ReportParameter("prmPeriodo5", CStr(Fila.Cells(7).Value))
+                                    parametros(28) = New ReportParameter("prmSaldo5", CStr(Fila.Cells(13).Value))
+                                    parametros(29) = New ReportParameter("prmImporte5", CStr(Fila.Cells(12).Value))
+                                End If
+                                If contador = 6 Then
+                                    parametros(30) = New ReportParameter("prmFecVto6", CStr(Fila.Cells(2).Value))
+                                    parametros(31) = New ReportParameter("prmDetalle6", CStr(Fila.Cells(6).Value))
+                                    parametros(32) = New ReportParameter("prmPeriodo6", CStr(Fila.Cells(7).Value))
+                                    parametros(33) = New ReportParameter("prmSaldo6", CStr(Fila.Cells(13).Value))
+                                    parametros(34) = New ReportParameter("prmImporte6", CStr(Fila.Cells(12).Value))
+                                End If
+                                If contador = 7 Then
+                                    parametros(35) = New ReportParameter("prmFecVto7", CStr(Fila.Cells(2).Value))
+                                    parametros(36) = New ReportParameter("prmDetalle7", CStr(Fila.Cells(6).Value))
+                                    parametros(37) = New ReportParameter("prmPeriodo7", CStr(Fila.Cells(7).Value))
+                                    parametros(38) = New ReportParameter("prmSaldo7", CStr(Fila.Cells(13).Value))
+                                    parametros(39) = New ReportParameter("prmImporte7", CStr(Fila.Cells(12).Value))
+                                End If
+                                If contador = 8 Then
+                                    parametros(40) = New ReportParameter("prmFecVto8", CStr(Fila.Cells(2).Value))
+                                    parametros(41) = New ReportParameter("prmDetalle8", CStr(Fila.Cells(6).Value))
+                                    parametros(42) = New ReportParameter("prmPeriodo8", CStr(Fila.Cells(7).Value))
+                                    parametros(43) = New ReportParameter("prmSaldo8", CStr(Fila.Cells(13).Value))
+                                    parametros(44) = New ReportParameter("prmImporte8", CStr(Fila.Cells(12).Value))
+                                End If
+                                contador = contador + 1
+                                If contador > 8 Then
+                                    GoTo Finalizar
+                                End If
                             End If
-                            If contador = 2 Then
-                                parametros(10) = New ReportParameter("prmFecVto2", CStr(Fila.Cells(2).Value))
-                                parametros(11) = New ReportParameter("prmDetalle2", CStr(Fila.Cells(6).Value))
-                                parametros(12) = New ReportParameter("prmPeriodo2", CStr(Fila.Cells(7).Value))
-                                parametros(13) = New ReportParameter("prmSaldo2", CStr(Fila.Cells(13).Value))
-                                parametros(14) = New ReportParameter("prmImporte2", CStr(Fila.Cells(12).Value))
-                            End If
-                            If contador = 3 Then
-                                parametros(15) = New ReportParameter("prmFecVto3", CStr(Fila.Cells(2).Value))
-                                parametros(16) = New ReportParameter("prmDetalle3", CStr(Fila.Cells(6).Value))
-                                parametros(17) = New ReportParameter("prmPeriodo3", CStr(Fila.Cells(7).Value))
-                                parametros(18) = New ReportParameter("prmSaldo3", CStr(Fila.Cells(13).Value))
-                                parametros(19) = New ReportParameter("prmImporte3", CStr(Fila.Cells(12).Value))
-                            End If
-                            If contador = 4 Then
-                                parametros(20) = New ReportParameter("prmFecVto4", CStr(Fila.Cells(2).Value))
-                                parametros(21) = New ReportParameter("prmDetalle4", CStr(Fila.Cells(6).Value))
-                                parametros(22) = New ReportParameter("prmPeriodo4", CStr(Fila.Cells(7).Value))
-                                parametros(23) = New ReportParameter("prmSaldo4", CStr(Fila.Cells(13).Value))
-                                parametros(24) = New ReportParameter("prmImporte4", CStr(Fila.Cells(12).Value))
-                            End If
-                            If contador = 5 Then
-                                parametros(25) = New ReportParameter("prmFecVto5", CStr(Fila.Cells(2).Value))
-                                parametros(26) = New ReportParameter("prmDetalle5", CStr(Fila.Cells(6).Value))
-                                parametros(27) = New ReportParameter("prmPeriodo5", CStr(Fila.Cells(7).Value))
-                                parametros(28) = New ReportParameter("prmSaldo5", CStr(Fila.Cells(13).Value))
-                                parametros(29) = New ReportParameter("prmImporte5", CStr(Fila.Cells(12).Value))
-                            End If
-                            If contador = 6 Then
-                                parametros(30) = New ReportParameter("prmFecVto6", CStr(Fila.Cells(2).Value))
-                                parametros(31) = New ReportParameter("prmDetalle6", CStr(Fila.Cells(6).Value))
-                                parametros(32) = New ReportParameter("prmPeriodo6", CStr(Fila.Cells(7).Value))
-                                parametros(33) = New ReportParameter("prmSaldo6", CStr(Fila.Cells(13).Value))
-                                parametros(34) = New ReportParameter("prmImporte6", CStr(Fila.Cells(12).Value))
-                            End If
-                            If contador = 7 Then
-                                parametros(35) = New ReportParameter("prmFecVto7", CStr(Fila.Cells(2).Value))
-                                parametros(36) = New ReportParameter("prmDetalle7", CStr(Fila.Cells(6).Value))
-                                parametros(37) = New ReportParameter("prmPeriodo7", CStr(Fila.Cells(7).Value))
-                                parametros(38) = New ReportParameter("prmSaldo7", CStr(Fila.Cells(13).Value))
-                                parametros(39) = New ReportParameter("prmImporte7", CStr(Fila.Cells(12).Value))
-                            End If
-                            If contador = 8 Then
-                                parametros(40) = New ReportParameter("prmFecVto8", CStr(Fila.Cells(2).Value))
-                                parametros(41) = New ReportParameter("prmDetalle8", CStr(Fila.Cells(6).Value))
-                                parametros(42) = New ReportParameter("prmPeriodo8", CStr(Fila.Cells(7).Value))
-                                parametros(43) = New ReportParameter("prmSaldo8", CStr(Fila.Cells(13).Value))
-                                parametros(44) = New ReportParameter("prmImporte8", CStr(Fila.Cells(12).Value))
-                            End If
-                            contador = contador + 1
-                            If contador > 8 Then
-                                GoTo Finalizar
-                            End If
-                        End If
-                    End If
-                Next
-                If contador <= 8 Then
-                    For i = contador To 8
-                        If i = 1 Then
-                            parametros(5) = New ReportParameter("prmFecVto1", "")
-                            parametros(6) = New ReportParameter("prmDetalle1", "")
-                            parametros(7) = New ReportParameter("prmPeriodo1", "")
-                            parametros(8) = New ReportParameter("prmSaldo1", "0")
-                            parametros(9) = New ReportParameter("prmImporte1", "0")
-                        End If
-                        If i = 2 Then
-                            parametros(10) = New ReportParameter("prmFecVto2", "")
-                            parametros(11) = New ReportParameter("prmDetalle2", "")
-                            parametros(12) = New ReportParameter("prmPeriodo2", "")
-                            parametros(13) = New ReportParameter("prmSaldo2", "0")
-                            parametros(14) = New ReportParameter("prmImporte2", "0")
-                        End If
-                        If i = 3 Then
-                            parametros(15) = New ReportParameter("prmFecVto3", "")
-                            parametros(16) = New ReportParameter("prmDetalle3", "")
-                            parametros(17) = New ReportParameter("prmPeriodo3", "")
-                            parametros(18) = New ReportParameter("prmSaldo3", "0")
-                            parametros(19) = New ReportParameter("prmImporte3", "0")
-                        End If
-                        If i = 4 Then
-                            parametros(20) = New ReportParameter("prmFecVto4", "")
-                            parametros(21) = New ReportParameter("prmDetalle4", "")
-                            parametros(22) = New ReportParameter("prmPeriodo4", "")
-                            parametros(23) = New ReportParameter("prmSaldo4", "0")
-                            parametros(24) = New ReportParameter("prmImporte4", "0")
-                        End If
-                        If i = 5 Then
-                            parametros(25) = New ReportParameter("prmFecVto5", "")
-                            parametros(26) = New ReportParameter("prmDetalle5", "")
-                            parametros(27) = New ReportParameter("prmPeriodo5", "")
-                            parametros(28) = New ReportParameter("prmSaldo5", "0")
-                            parametros(29) = New ReportParameter("prmImporte5", "0")
-                        End If
-                        If i = 6 Then
-                            parametros(30) = New ReportParameter("prmFecVto6", "")
-                            parametros(31) = New ReportParameter("prmDetalle6", "")
-                            parametros(32) = New ReportParameter("prmPeriodo6", "")
-                            parametros(33) = New ReportParameter("prmSaldo6", "0")
-                            parametros(34) = New ReportParameter("prmImporte6", "0")
-                        End If
-                        If i = 7 Then
-                            parametros(35) = New ReportParameter("prmFecVto7", "")
-                            parametros(36) = New ReportParameter("prmDetalle7", "")
-                            parametros(37) = New ReportParameter("prmPeriodo7", "")
-                            parametros(38) = New ReportParameter("prmSaldo7", "0")
-                            parametros(39) = New ReportParameter("prmImporte7", "0")
-                        End If
-                        If i = 8 Then
-                            parametros(40) = New ReportParameter("prmFecVto8", "")
-                            parametros(41) = New ReportParameter("prmDetalle8", "")
-                            parametros(42) = New ReportParameter("prmPeriodo8", "")
-                            parametros(43) = New ReportParameter("prmSaldo8", "0")
-                            parametros(44) = New ReportParameter("prmImporte8", "0")
                         End If
                     Next
+                    If contador <= 8 Then
+                        For i = contador To 8
+                            If i = 1 Then
+                                parametros(5) = New ReportParameter("prmFecVto1", "")
+                                parametros(6) = New ReportParameter("prmDetalle1", "")
+                                parametros(7) = New ReportParameter("prmPeriodo1", "")
+                                parametros(8) = New ReportParameter("prmSaldo1", "0")
+                                parametros(9) = New ReportParameter("prmImporte1", "0")
+                            End If
+                            If i = 2 Then
+                                parametros(10) = New ReportParameter("prmFecVto2", "")
+                                parametros(11) = New ReportParameter("prmDetalle2", "")
+                                parametros(12) = New ReportParameter("prmPeriodo2", "")
+                                parametros(13) = New ReportParameter("prmSaldo2", "0")
+                                parametros(14) = New ReportParameter("prmImporte2", "0")
+                            End If
+                            If i = 3 Then
+                                parametros(15) = New ReportParameter("prmFecVto3", "")
+                                parametros(16) = New ReportParameter("prmDetalle3", "")
+                                parametros(17) = New ReportParameter("prmPeriodo3", "")
+                                parametros(18) = New ReportParameter("prmSaldo3", "0")
+                                parametros(19) = New ReportParameter("prmImporte3", "0")
+                            End If
+                            If i = 4 Then
+                                parametros(20) = New ReportParameter("prmFecVto4", "")
+                                parametros(21) = New ReportParameter("prmDetalle4", "")
+                                parametros(22) = New ReportParameter("prmPeriodo4", "")
+                                parametros(23) = New ReportParameter("prmSaldo4", "0")
+                                parametros(24) = New ReportParameter("prmImporte4", "0")
+                            End If
+                            If i = 5 Then
+                                parametros(25) = New ReportParameter("prmFecVto5", "")
+                                parametros(26) = New ReportParameter("prmDetalle5", "")
+                                parametros(27) = New ReportParameter("prmPeriodo5", "")
+                                parametros(28) = New ReportParameter("prmSaldo5", "0")
+                                parametros(29) = New ReportParameter("prmImporte5", "0")
+                            End If
+                            If i = 6 Then
+                                parametros(30) = New ReportParameter("prmFecVto6", "")
+                                parametros(31) = New ReportParameter("prmDetalle6", "")
+                                parametros(32) = New ReportParameter("prmPeriodo6", "")
+                                parametros(33) = New ReportParameter("prmSaldo6", "0")
+                                parametros(34) = New ReportParameter("prmImporte6", "0")
+                            End If
+                            If i = 7 Then
+                                parametros(35) = New ReportParameter("prmFecVto7", "")
+                                parametros(36) = New ReportParameter("prmDetalle7", "")
+                                parametros(37) = New ReportParameter("prmPeriodo7", "")
+                                parametros(38) = New ReportParameter("prmSaldo7", "0")
+                                parametros(39) = New ReportParameter("prmImporte7", "0")
+                            End If
+                            If i = 8 Then
+                                parametros(40) = New ReportParameter("prmFecVto8", "")
+                                parametros(41) = New ReportParameter("prmDetalle8", "")
+                                parametros(42) = New ReportParameter("prmPeriodo8", "")
+                                parametros(43) = New ReportParameter("prmSaldo8", "0")
+                                parametros(44) = New ReportParameter("prmImporte8", "0")
+                            End If
+                        Next
+                    End If
                 End If
-            End If
 Finalizar:
 
-            ReportViewer1.LocalReport.SetParameters(parametros)
-            ReportViewer1.RefreshReport()
+                ReportViewer1.LocalReport.SetParameters(parametros)
+                ReportViewer1.RefreshReport()
 
-            'btnImprimir.Visible = True
-            'btnImprimir.Focus()
+            End If
+
+            'Clase del Proyecto
+            Dim printer As ReportPrinter = New ReportPrinter()
+            printer.Print(ReportViewer1.LocalReport)
+
+            ActualizarTablas()
 
         End If
-
-        'Clase del Proyecto
-        Dim printer As ReportPrinter = New ReportPrinter()
-        printer.Print(ReportViewer1.LocalReport)
-
-        ActualizarTablas()
 
         Limpiar()
 
@@ -518,7 +527,7 @@ Finalizar:
         fecha = yyyy + mm + dd
         observacion = "PERÍODO: "
 
-        '---Actualizo las ctasctes---
+        '***ACTUALIZAR CTASCTES***
         If dgvCtasCtes.Rows.Count > 0 Then
             For Each Fila As DataGridViewRow In dgvCtasCtes.Rows
                 If Fila.Cells(15).Value = "X" Then
@@ -528,35 +537,38 @@ Finalizar:
                     pagadobol = Fila.Cells(12).Value
                     id = Fila.Cells(0).Value
 
-                    If Fila.Cells(13).Value = 0 Then
-                        comando = New MySqlCommand("UPDATE ctasctes SET PagadoCC = '" & pagadobol & "', ObsCC = '" & "* CIP Nro.: " & comprobante & "'," _
+                    If rdbNotaCredito.Checked Then
+                        If Fila.Cells(13).Value = 0 Then
+                            comando = New MySqlCommand("UPDATE ctasctes SET PagadoCC = '" & pagadobol & "', ObsCC = '" & "* NCR Nro.: " & comprobante & "'," _
                                             & " FecPagoCC = '" & fecha & "', PagadoCC = '" & importe & "', EstadoCC = 'PAGADA', RestoCC = 0 " _
                                             & " WHERE NroCC = '" & txtMatSoc.Text & "' AND id_CC = '" & id & "' ", conexion)
-                        comando.ExecuteNonQuery()
-
-                    Else
-                        comando = New MySqlCommand("UPDATE ctasctes SET RestoCC = '" & saldobol & "', ObsCC = '" & "* CIP Nro.: " & comprobante & "'," _
+                            comando.ExecuteNonQuery()
+                        Else
+                            comando = New MySqlCommand("UPDATE ctasctes SET RestoCC = '" & saldobol & "', ObsCC = '" & "* NCR Nro.: " & comprobante & "'," _
                                             & " FecPagoCC = '" & fecha & "', PagadoCC = '" & pagadobol & "', EstadoCC = 'PENDIENTE'" _
                                             & " WHERE NroCC = '" & txtMatSoc.Text & "' AND id_CC = '" & id & "' ", conexion)
-                        comando.ExecuteNonQuery()
+                            comando.ExecuteNonQuery()
+                        End If
+                    Else
+                        If Fila.Cells(13).Value = 0 Then
+                            comando = New MySqlCommand("UPDATE ctasctes SET PagadoCC = '" & pagadobol & "', ObsCC = '" & "* CIP Nro.: " & comprobante & "'," _
+                                            & " FecPagoCC = '" & fecha & "', PagadoCC = '" & importe & "', EstadoCC = 'PAGADA', RestoCC = 0 " _
+                                            & " WHERE NroCC = '" & txtMatSoc.Text & "' AND id_CC = '" & id & "' ", conexion)
+                            comando.ExecuteNonQuery()
 
+                        Else
+                            comando = New MySqlCommand("UPDATE ctasctes SET RestoCC = '" & saldobol & "', ObsCC = '" & "* CIP Nro.: " & comprobante & "'," _
+                                            & " FecPagoCC = '" & fecha & "', PagadoCC = '" & pagadobol & "', EstadoCC = 'PENDIENTE'" _
+                                            & " WHERE NroCC = '" & txtMatSoc.Text & "' AND id_CC = '" & id & "' ", conexion)
+                            comando.ExecuteNonQuery()
+                        End If
                     End If
+
                 End If
             Next
         End If
 
-        '        ********SE SACA PARA NO DUPLICAR NÚMEROS
-        '        comando.CommandText = "SELECT * FROM comprobte WHERE TipoCpbte = 'CIP'"
-        '        dt = New DataTable
-        '        da = New MySqlDataAdapter(comando)
-        '        da.Fill(dt)
-        '        If dt.Rows.Count > 0 Then
-        '        Dim row As DataRow = dt.Rows(0)
-        '        comprobante = CStr(row("NroCpbte"))
-        '        comprobante = comprobante + 1
-        '        End If
-
-        '---Actualizo la Cta Cte---
+        '***ACTUALIZO CTACTE***
         importe = Val(pagado)
         comando = New MySqlCommand("INSERT INTO ctasctes VALUES(@id, @nrocta, @fechacta, @tipo, @comprobante, @item, @detalle, @periodo, @debe, @haber, @saldo, @estado, @pagado, @fecpago, @resto, @obs)", conexion)
 
@@ -578,8 +590,12 @@ Finalizar:
         comando.Parameters.AddWithValue("@obs", observacion)
         comando.ExecuteNonQuery()
 
-        '---Grabar Caja---
-        GrabarCaja()
+        '***GRABAR CAJA***
+        If rdbNotaCredito.Checked Then
+            rdbNotaCredito.Checked = False
+        Else
+            GrabarCaja()
+        End If
 
     End Sub
 
@@ -644,6 +660,214 @@ Finalizar:
 
         DesconectarMySql()
         Close()
+
+    End Sub
+
+    Private Sub NotaCredito()
+
+        pagado = txtApagar.Text
+
+        ImpLetras = Letras(pagado)
+        CalcularSaldoBoleta()
+
+        '*** LIMPIAMOS EL DataSource DEL INFORME ********
+        ReportViewer1.LocalReport.DataSources.Clear()
+
+        longitud = Len(txtMatSoc.Text)
+        If longitud < 5 Then
+            cantidad = 5 - longitud
+            ceros = ""
+            For j = 1 To cantidad
+                ceros = ceros & "0"
+            Next j
+            txtMatSoc.Text = ceros & txtMatSoc.Text
+        End If
+
+        comando.CommandText = "SELECT * FROM comprobte WHERE TipoCpbte = 'NCR'"
+        dt = New DataTable
+        da = New MySqlDataAdapter(comando)
+        da.Fill(dt)
+        If dt.Rows.Count > 0 Then
+            Dim row As DataRow = dt.Rows(0)
+            comprobante = CStr(row("NroCpbte"))
+            comprobante = comprobante + 1
+        End If
+
+        '***ACTUALIZO EL COMPROBANTE***
+        comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'NCR'", conexion)
+        comando.ExecuteNonQuery()
+
+        longitud = Len(comprobante)
+        If longitud < 8 Then
+            cantidad = 8 - longitud
+            ceros = ""
+            For j = 1 To cantidad
+                ceros = ceros & "0"
+            Next j
+            comprobante = ceros & comprobante
+        End If
+
+        fecha = CDate(Date.Now)
+        parametros(0) = New ReportParameter("prmComprobante", comprobante)
+        parametros(1) = New ReportParameter("prmTipoNro", tiponro)
+        parametros(2) = New ReportParameter("prmMatSoc", txtMatSoc.Text)
+        parametros(3) = New ReportParameter("prmNombre", txtNombre.Text)
+        parametros(4) = New ReportParameter("prmImpLetras", ImpLetras)
+        parametros(45) = New ReportParameter("prmTotal", pagado)
+        parametros(46) = New ReportParameter("prmObs", txtObs.Text)
+        parametros(47) = New ReportParameter("prmFecha", txtFecha.Text)
+        parametros(48) = New ReportParameter("prmCuit", cuit)
+        parametros(49) = New ReportParameter("prmEfectivo", 0)
+        parametros(50) = New ReportParameter("prmTransferencia", 0)
+        parametros(51) = New ReportParameter("prmTarjeta", 0)
+        parametros(52) = New ReportParameter("prmTipoComprobante", "***** NOTA DE CRÉDITO *****")
+
+        contador = 1
+        If dgvCtasCtes.Rows.Count > 0 Then
+            For Each Fila As DataGridViewRow In dgvCtasCtes.Rows
+                If Not Fila Is Nothing Then
+                    If Fila.Cells(15).Value = "X" Then
+                        If contador = 1 Then
+                            parametros(5) = New ReportParameter("prmFecVto1", CStr(Fila.Cells(2).Value))
+                            parametros(6) = New ReportParameter("prmDetalle1", CStr(Fila.Cells(6).Value))
+                            parametros(7) = New ReportParameter("prmPeriodo1", CStr(Fila.Cells(7).Value))
+                            parametros(8) = New ReportParameter("prmSaldo1", CStr(Fila.Cells(13).Value))
+                            parametros(9) = New ReportParameter("prmImporte1", CStr(Fila.Cells(12).Value))
+                        End If
+                        If contador = 2 Then
+                            parametros(10) = New ReportParameter("prmFecVto2", CStr(Fila.Cells(2).Value))
+                            parametros(11) = New ReportParameter("prmDetalle2", CStr(Fila.Cells(6).Value))
+                            parametros(12) = New ReportParameter("prmPeriodo2", CStr(Fila.Cells(7).Value))
+                            parametros(13) = New ReportParameter("prmSaldo2", CStr(Fila.Cells(13).Value))
+                            parametros(14) = New ReportParameter("prmImporte2", CStr(Fila.Cells(12).Value))
+                        End If
+                        If contador = 3 Then
+                            parametros(15) = New ReportParameter("prmFecVto3", CStr(Fila.Cells(2).Value))
+                            parametros(16) = New ReportParameter("prmDetalle3", CStr(Fila.Cells(6).Value))
+                            parametros(17) = New ReportParameter("prmPeriodo3", CStr(Fila.Cells(7).Value))
+                            parametros(18) = New ReportParameter("prmSaldo3", CStr(Fila.Cells(13).Value))
+                            parametros(19) = New ReportParameter("prmImporte3", CStr(Fila.Cells(12).Value))
+                        End If
+                        If contador = 4 Then
+                            parametros(20) = New ReportParameter("prmFecVto4", CStr(Fila.Cells(2).Value))
+                            parametros(21) = New ReportParameter("prmDetalle4", CStr(Fila.Cells(6).Value))
+                            parametros(22) = New ReportParameter("prmPeriodo4", CStr(Fila.Cells(7).Value))
+                            parametros(23) = New ReportParameter("prmSaldo4", CStr(Fila.Cells(13).Value))
+                            parametros(24) = New ReportParameter("prmImporte4", CStr(Fila.Cells(12).Value))
+                        End If
+                        If contador = 5 Then
+                            parametros(25) = New ReportParameter("prmFecVto5", CStr(Fila.Cells(2).Value))
+                            parametros(26) = New ReportParameter("prmDetalle5", CStr(Fila.Cells(6).Value))
+                            parametros(27) = New ReportParameter("prmPeriodo5", CStr(Fila.Cells(7).Value))
+                            parametros(28) = New ReportParameter("prmSaldo5", CStr(Fila.Cells(13).Value))
+                            parametros(29) = New ReportParameter("prmImporte5", CStr(Fila.Cells(12).Value))
+                        End If
+                        If contador = 6 Then
+                            parametros(30) = New ReportParameter("prmFecVto6", CStr(Fila.Cells(2).Value))
+                            parametros(31) = New ReportParameter("prmDetalle6", CStr(Fila.Cells(6).Value))
+                            parametros(32) = New ReportParameter("prmPeriodo6", CStr(Fila.Cells(7).Value))
+                            parametros(33) = New ReportParameter("prmSaldo6", CStr(Fila.Cells(13).Value))
+                            parametros(34) = New ReportParameter("prmImporte6", CStr(Fila.Cells(12).Value))
+                        End If
+                        If contador = 7 Then
+                            parametros(35) = New ReportParameter("prmFecVto7", CStr(Fila.Cells(2).Value))
+                            parametros(36) = New ReportParameter("prmDetalle7", CStr(Fila.Cells(6).Value))
+                            parametros(37) = New ReportParameter("prmPeriodo7", CStr(Fila.Cells(7).Value))
+                            parametros(38) = New ReportParameter("prmSaldo7", CStr(Fila.Cells(13).Value))
+                            parametros(39) = New ReportParameter("prmImporte7", CStr(Fila.Cells(12).Value))
+                        End If
+                        If contador = 8 Then
+                            parametros(40) = New ReportParameter("prmFecVto8", CStr(Fila.Cells(2).Value))
+                            parametros(41) = New ReportParameter("prmDetalle8", CStr(Fila.Cells(6).Value))
+                            parametros(42) = New ReportParameter("prmPeriodo8", CStr(Fila.Cells(7).Value))
+                            parametros(43) = New ReportParameter("prmSaldo8", CStr(Fila.Cells(13).Value))
+                            parametros(44) = New ReportParameter("prmImporte8", CStr(Fila.Cells(12).Value))
+                        End If
+                        contador = contador + 1
+                        If contador > 8 Then
+                            GoTo Terminar
+                        End If
+                    End If
+                End If
+            Next
+            If contador <= 8 Then
+                For i = contador To 8
+                    If i = 1 Then
+                        parametros(5) = New ReportParameter("prmFecVto1", "")
+                        parametros(6) = New ReportParameter("prmDetalle1", "")
+                        parametros(7) = New ReportParameter("prmPeriodo1", "")
+                        parametros(8) = New ReportParameter("prmSaldo1", "0")
+                        parametros(9) = New ReportParameter("prmImporte1", "0")
+                    End If
+                    If i = 2 Then
+                        parametros(10) = New ReportParameter("prmFecVto2", "")
+                        parametros(11) = New ReportParameter("prmDetalle2", "")
+                        parametros(12) = New ReportParameter("prmPeriodo2", "")
+                        parametros(13) = New ReportParameter("prmSaldo2", "0")
+                        parametros(14) = New ReportParameter("prmImporte2", "0")
+                    End If
+                    If i = 3 Then
+                        parametros(15) = New ReportParameter("prmFecVto3", "")
+                        parametros(16) = New ReportParameter("prmDetalle3", "")
+                        parametros(17) = New ReportParameter("prmPeriodo3", "")
+                        parametros(18) = New ReportParameter("prmSaldo3", "0")
+                        parametros(19) = New ReportParameter("prmImporte3", "0")
+                    End If
+                    If i = 4 Then
+                        parametros(20) = New ReportParameter("prmFecVto4", "")
+                        parametros(21) = New ReportParameter("prmDetalle4", "")
+                        parametros(22) = New ReportParameter("prmPeriodo4", "")
+                        parametros(23) = New ReportParameter("prmSaldo4", "0")
+                        parametros(24) = New ReportParameter("prmImporte4", "0")
+                    End If
+                    If i = 5 Then
+                        parametros(25) = New ReportParameter("prmFecVto5", "")
+                        parametros(26) = New ReportParameter("prmDetalle5", "")
+                        parametros(27) = New ReportParameter("prmPeriodo5", "")
+                        parametros(28) = New ReportParameter("prmSaldo5", "0")
+                        parametros(29) = New ReportParameter("prmImporte5", "0")
+                    End If
+                    If i = 6 Then
+                        parametros(30) = New ReportParameter("prmFecVto6", "")
+                        parametros(31) = New ReportParameter("prmDetalle6", "")
+                        parametros(32) = New ReportParameter("prmPeriodo6", "")
+                        parametros(33) = New ReportParameter("prmSaldo6", "0")
+                        parametros(34) = New ReportParameter("prmImporte6", "0")
+                    End If
+                    If i = 7 Then
+                        parametros(35) = New ReportParameter("prmFecVto7", "")
+                        parametros(36) = New ReportParameter("prmDetalle7", "")
+                        parametros(37) = New ReportParameter("prmPeriodo7", "")
+                        parametros(38) = New ReportParameter("prmSaldo7", "0")
+                        parametros(39) = New ReportParameter("prmImporte7", "0")
+                    End If
+                    If i = 8 Then
+                        parametros(40) = New ReportParameter("prmFecVto8", "")
+                        parametros(41) = New ReportParameter("prmDetalle8", "")
+                        parametros(42) = New ReportParameter("prmPeriodo8", "")
+                        parametros(43) = New ReportParameter("prmSaldo8", "0")
+                        parametros(44) = New ReportParameter("prmImporte8", "0")
+                    End If
+                Next
+            End If
+        End If
+Terminar:
+
+        ReportViewer1.LocalReport.SetParameters(parametros)
+        ReportViewer1.RefreshReport()
+
+        Dim printer As ReportPrinter = New ReportPrinter()
+        printer.Print(ReportViewer1.LocalReport)
+
+        ActualizarTablas()
+
+        Limpiar()
+
+    End Sub
+
+    Private Sub rdbNotaCredito_Click(sender As Object, e As EventArgs) Handles rdbNotaCredito.Click
+
+        btnImprimir.Visible = True
 
     End Sub
 

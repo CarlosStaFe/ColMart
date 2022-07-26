@@ -1,15 +1,15 @@
-﻿Public Class frmCtasCtesSoc
+﻿Public Class frmCtasCtesPro
     Dim debe, haber, saldo, saldoant, pagado, resto As Decimal
     Dim detalle, comprobante, estado, id, obs, fecpago, fechaaux As String
     Dim pos1, pos2, longitud, cantidad As Integer
     Dim yyyy, mm, dd, ceros As String
 
-    Private Sub frmCtasCtesMat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmCtasCtesPro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ConectarMySql()
-        CtasctesTableAdapter.Fill(DbcolmartDataSet.ctasctes)
+        CtacteproTableAdapter.Fill(DbcolmartDataSet.ctactepro)
         dgvCtasCtes.DataSource = Nothing
-        txtSociedad.Focus()
+        txtProveedor.Focus()
 
         If nivel < "4" Then
             btnActualizar.Enabled = True
@@ -19,7 +19,7 @@
 
     Private Sub CalcularCtaCte()
 
-        comando.CommandText = "SELECT * FROM ctasctes WHERE NroCC = " & txtSociedad.Text & " ORDER BY FechaCC, ItemCC"
+        comando.CommandText = "SELECT * FROM ctactepro WHERE NroCCPro = " & txtProveedor.Text & " ORDER BY FechaCCPro"
         dt = New DataTable
         da = New MySqlDataAdapter(comando)
         da.Fill(dt)
@@ -41,10 +41,10 @@
                     saldo = saldoant + debe - haber
                     Fila.Cells(10).Value = saldo
                     saldoant = saldo
-                    detalle = Fila.Cells(6).Value
-                    comando.CommandText = "UPDATE ctasctes SET SaldoCC = '" & saldo & "' WHERE DetalleCC = '" & detalle & "' AND NroCC = '" & txtSociedad.Text & "' "
+                    id = Fila.Cells(0).Value
+                    comando.CommandText = "UPDATE ctactepro SET SaldoCCPro = '" & saldo & "' WHERE Id_CCPro = '" & id & "' AND NroCCPro = '" & txtProveedor.Text & "' "
                     comando.ExecuteNonQuery()
-                    If Fila.Cells(11).Value = "PENDIENTE" Or Fila.Cells(11).Value = "LIQUIDADA" Then
+                    If Fila.Cells(11).Value = "PENDIENTE" Then
                         Fila.DefaultCellStyle.ForeColor = Color.Orange
                     End If
                     If Fila.Cells(5).Value > 1 Then
@@ -52,9 +52,6 @@
                         Fila.Cells(3).Value = ""
                         Fila.Cells(4).Value = DBNull.Value
                         Fila.Cells(7).Value = DBNull.Value
-                    End If
-                    If Fila.Cells(13).Value = "1900-01-01" Then
-                        Fila.Cells(13).Value = DBNull.Value
                     End If
                 End If
             Next
@@ -73,42 +70,42 @@
 
     End Sub
 
-    Private Sub txtSociedad_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSociedad.KeyDown
+    Private Sub txtProveedor_KeyDown(sender As Object, e As KeyEventArgs) Handles txtProveedor.KeyDown
 
         If e.KeyCode = Keys.F1 Then
-            senial = 4
-            Dim frmSoc4 As New frmConsSociedad
-            AddOwnedForm(frmSoc4)
-            frmSoc4.ShowDialog()
+            senial = 2
+            Dim frmProv2 As New frmConsSociedad
+            AddOwnedForm(frmProv2)
+            frmProv2.ShowDialog()
             senial = 0
         End If
 
         If e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Tab Then
-            LeerSociedades()
+            LeerProveedores()
         End If
 
     End Sub
 
-    Private Sub txtSociedad_MouseHover(sender As Object, e As EventArgs) Handles txtSociedad.MouseHover
+    Private Sub txtProveedor_MouseHover(sender As Object, e As EventArgs) Handles txtProveedor.MouseHover
 
-        ToolTipMsg.ToolTipTitle = "Buscar Sociedad."
-        ToolTipMsg.SetToolTip(txtSociedad, "Presione F1 para buscar la sociedad deseada.")
+        ToolTipMsg.ToolTipTitle = "Buscar Proveedor."
+        ToolTipMsg.SetToolTip(txtProveedor, "Presione F1 para buscar el proveedor.")
         ToolTipMsg.ToolTipIcon = ToolTipIcon.Info
 
     End Sub
 
-    Private Sub LeerSociedades()
+    Private Sub LeerProveedores()
 
-        comando.CommandText = "SELECT * FROM sociedades WHERE NroSociedad = " & txtSociedad.Text & ""
+        comando.CommandText = "SELECT * FROM proveedores WHERE NroProv = " & txtProveedor.Text & ""
         dt = New DataTable
         da = New MySqlDataAdapter(comando)
         da.Fill(dt)
 
         If dt.Rows.Count > 0 Then
             Dim row As DataRow = dt.Rows(0)
-            txtNombSociedad.Text = CStr(row("NombSociedad"))
+            txtNombProveedor.Text = CStr(row("RazonSocialProv"))
         Else
-            txtNombSociedad.Text = ""
+            txtNombProveedor.Text = ""
         End If
 
         CalcularCtaCte()
@@ -132,12 +129,12 @@
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
 
-        txtSociedad.Text = ""
-        txtNombSociedad.Text = ""
+        txtProveedor.Text = ""
+        txtNombProveedor.Text = ""
         txtSaldo.Text = ""
         dgvCtasCtes.DataSource = Nothing
 
-        txtSociedad.Focus()
+        txtProveedor.Focus()
 
     End Sub
 
@@ -172,16 +169,16 @@
 
             comando.CommandText = "UPDATE ctasctes SET DebeCC = '" & debe & "', HaberCC = '" & haber & "', SaldoCC = '" & saldo & "', EstadoCC = '" & estado & "'," _
                                   & " PagadoCC = '" & pagado & "', FecPagoCC = '" & fecpago & "', RestoCC = '" & resto & "', ObsCC = '" & obs & "'" _
-                                  & " WHERE id_CC = '" & id & "' AND NroCC = '" & txtSociedad.Text & "' "
+                                  & " WHERE id_CC = '" & id & "' AND NroCC = '" & txtProveedor.Text & "' "
             comando.ExecuteNonQuery()
 
         Next
 
-        txtSociedad.Text = ""
-        txtNombSociedad.Text = ""
+        txtProveedor.Text = ""
+        txtNombProveedor.Text = ""
         txtSaldo.Text = ""
         dgvCtasCtes.DataSource = Nothing
-        txtSociedad.Focus()
+        txtProveedor.Focus()
 
     End Sub
 

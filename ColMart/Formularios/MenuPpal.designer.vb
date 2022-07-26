@@ -29,7 +29,6 @@ Partial Class MenuPpal
         Me.PanelMenu = New System.Windows.Forms.Panel()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.SubMenuSistema = New System.Windows.Forms.Panel()
-        Me.btnPasaje = New System.Windows.Forms.Button()
         Me.btnBackupRestore = New System.Windows.Forms.Button()
         Me.btnUsuarios = New System.Windows.Forms.Button()
         Me.btnNiveles = New System.Windows.Forms.Button()
@@ -41,6 +40,7 @@ Partial Class MenuPpal
         Me.btnParametros = New System.Windows.Forms.Button()
         Me.SubMenuProveedores = New System.Windows.Forms.Panel()
         Me.btnCajaMayor = New System.Windows.Forms.Button()
+        Me.btnCptosGastos = New System.Windows.Forms.Button()
         Me.btnSaldoDeudor = New System.Windows.Forms.Button()
         Me.btnCtaCteProv = New System.Windows.Forms.Button()
         Me.btnRecibo = New System.Windows.Forms.Button()
@@ -180,7 +180,7 @@ Partial Class MenuPpal
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSalir.Location = New System.Drawing.Point(0, 1297)
+        Me.btnSalir.Location = New System.Drawing.Point(0, 1298)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.btnSalir.Size = New System.Drawing.Size(233, 50)
@@ -192,33 +192,14 @@ Partial Class MenuPpal
         'SubMenuSistema
         '
         Me.SubMenuSistema.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.SubMenuSistema.Controls.Add(Me.btnPasaje)
         Me.SubMenuSistema.Controls.Add(Me.btnBackupRestore)
         Me.SubMenuSistema.Controls.Add(Me.btnUsuarios)
         Me.SubMenuSistema.Controls.Add(Me.btnNiveles)
         Me.SubMenuSistema.Dock = System.Windows.Forms.DockStyle.Top
-        Me.SubMenuSistema.Location = New System.Drawing.Point(0, 1187)
+        Me.SubMenuSistema.Location = New System.Drawing.Point(0, 1215)
         Me.SubMenuSistema.Name = "SubMenuSistema"
-        Me.SubMenuSistema.Size = New System.Drawing.Size(233, 110)
+        Me.SubMenuSistema.Size = New System.Drawing.Size(233, 83)
         Me.SubMenuSistema.TabIndex = 24
-        '
-        'btnPasaje
-        '
-        Me.btnPasaje.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnPasaje.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnPasaje.FlatAppearance.BorderSize = 0
-        Me.btnPasaje.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPasaje.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPasaje.ForeColor = System.Drawing.Color.Red
-        Me.btnPasaje.Location = New System.Drawing.Point(0, 75)
-        Me.btnPasaje.Name = "btnPasaje"
-        Me.btnPasaje.Padding = New System.Windows.Forms.Padding(50, 0, 0, 0)
-        Me.btnPasaje.Size = New System.Drawing.Size(233, 25)
-        Me.btnPasaje.TabIndex = 10
-        Me.btnPasaje.Text = "PASAJE"
-        Me.btnPasaje.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPasaje.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnPasaje.UseVisualStyleBackColor = True
         '
         'btnBackupRestore
         '
@@ -284,7 +265,7 @@ Partial Class MenuPpal
         Me.btnSistema.ForeColor = System.Drawing.Color.White
         Me.btnSistema.Image = CType(resources.GetObject("btnSistema.Image"), System.Drawing.Image)
         Me.btnSistema.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSistema.Location = New System.Drawing.Point(0, 1137)
+        Me.btnSistema.Location = New System.Drawing.Point(0, 1165)
         Me.btnSistema.Name = "btnSistema"
         Me.btnSistema.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.btnSistema.Size = New System.Drawing.Size(233, 50)
@@ -300,7 +281,7 @@ Partial Class MenuPpal
         Me.SubMenuParametros.Controls.Add(Me.btnCodDebitar)
         Me.SubMenuParametros.Controls.Add(Me.btnCodPostales)
         Me.SubMenuParametros.Dock = System.Windows.Forms.DockStyle.Top
-        Me.SubMenuParametros.Location = New System.Drawing.Point(0, 1054)
+        Me.SubMenuParametros.Location = New System.Drawing.Point(0, 1082)
         Me.SubMenuParametros.Name = "SubMenuParametros"
         Me.SubMenuParametros.Size = New System.Drawing.Size(233, 83)
         Me.SubMenuParametros.TabIndex = 22
@@ -369,7 +350,7 @@ Partial Class MenuPpal
         Me.btnParametros.ForeColor = System.Drawing.Color.White
         Me.btnParametros.Image = CType(resources.GetObject("btnParametros.Image"), System.Drawing.Image)
         Me.btnParametros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnParametros.Location = New System.Drawing.Point(0, 1004)
+        Me.btnParametros.Location = New System.Drawing.Point(0, 1032)
         Me.btnParametros.Name = "btnParametros"
         Me.btnParametros.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.btnParametros.Size = New System.Drawing.Size(233, 50)
@@ -382,6 +363,7 @@ Partial Class MenuPpal
         '
         Me.SubMenuProveedores.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.SubMenuProveedores.Controls.Add(Me.btnCajaMayor)
+        Me.SubMenuProveedores.Controls.Add(Me.btnCptosGastos)
         Me.SubMenuProveedores.Controls.Add(Me.btnSaldoDeudor)
         Me.SubMenuProveedores.Controls.Add(Me.btnCtaCteProv)
         Me.SubMenuProveedores.Controls.Add(Me.btnRecibo)
@@ -390,7 +372,7 @@ Partial Class MenuPpal
         Me.SubMenuProveedores.Dock = System.Windows.Forms.DockStyle.Top
         Me.SubMenuProveedores.Location = New System.Drawing.Point(0, 843)
         Me.SubMenuProveedores.Name = "SubMenuProveedores"
-        Me.SubMenuProveedores.Size = New System.Drawing.Size(233, 161)
+        Me.SubMenuProveedores.Size = New System.Drawing.Size(233, 189)
         Me.SubMenuProveedores.TabIndex = 20
         '
         'btnCajaMayor
@@ -401,15 +383,33 @@ Partial Class MenuPpal
         Me.btnCajaMayor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCajaMayor.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCajaMayor.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnCajaMayor.Location = New System.Drawing.Point(0, 125)
+        Me.btnCajaMayor.Location = New System.Drawing.Point(0, 150)
         Me.btnCajaMayor.Name = "btnCajaMayor"
         Me.btnCajaMayor.Padding = New System.Windows.Forms.Padding(50, 0, 0, 0)
         Me.btnCajaMayor.Size = New System.Drawing.Size(233, 25)
-        Me.btnCajaMayor.TabIndex = 14
+        Me.btnCajaMayor.TabIndex = 16
         Me.btnCajaMayor.Text = "Caja Mayor"
         Me.btnCajaMayor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnCajaMayor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCajaMayor.UseVisualStyleBackColor = True
+        '
+        'btnCptosGastos
+        '
+        Me.btnCptosGastos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCptosGastos.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnCptosGastos.FlatAppearance.BorderSize = 0
+        Me.btnCptosGastos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCptosGastos.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCptosGastos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(196, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnCptosGastos.Location = New System.Drawing.Point(0, 125)
+        Me.btnCptosGastos.Name = "btnCptosGastos"
+        Me.btnCptosGastos.Padding = New System.Windows.Forms.Padding(50, 0, 0, 0)
+        Me.btnCptosGastos.Size = New System.Drawing.Size(233, 25)
+        Me.btnCptosGastos.TabIndex = 15
+        Me.btnCptosGastos.Text = "Conceptos Gastos"
+        Me.btnCptosGastos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnCptosGastos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnCptosGastos.UseVisualStyleBackColor = True
         '
         'btnSaldoDeudor
         '
@@ -1269,11 +1269,11 @@ Partial Class MenuPpal
     Friend WithEvents btnRecibo As Button
     Friend WithEvents btnSaldoDeudor As Button
     Friend WithEvents btnCtaCteProv As Button
-    Friend WithEvents btnCajaMayor As Button
-    Friend WithEvents btnPasaje As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents txtUsuario As TextBox
+    Friend WithEvents btnCajaMayor As Button
+    Friend WithEvents btnCptosGastos As Button
 End Class

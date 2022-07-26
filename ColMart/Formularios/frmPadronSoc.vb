@@ -16,7 +16,7 @@ Public Class frmPadronSoc
         cmbClase.SelectedIndex = 0
         cmbOrden.SelectedIndex = 0
 
-        Me.ReportViewer1.RefreshReport()
+        ReportViewer1.RefreshReport()
 
     End Sub
 

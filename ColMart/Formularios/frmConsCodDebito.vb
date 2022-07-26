@@ -58,11 +58,11 @@
 
         If senial = 3 Then
             Dim frmRecGral As frmReciboGral = CType(Owner, frmReciboGral)
-            frmReciboGral.txtCodigo.Text = dgvCodDebito.CurrentRow.Cells(1).Value.ToString
-            frmReciboGral.txtDetalle.Text = dgvCodDebito.CurrentRow.Cells(2).Value.ToString
-            frmReciboGral.txtImporte.Text = dgvCodDebito.CurrentRow.Cells(3).Value.ToString
-            frmReciboGral.txtCategoria.Text = dgvCodDebito.CurrentRow.Cells(5).Value.ToString
-            frmReciboGral.txtTipoRec.Text = dgvCodDebito.CurrentRow.Cells(6).Value.ToString
+            frmRecGral.txtCodigo.Text = dgvCodDebito.CurrentRow.Cells(1).Value.ToString
+            frmRecGral.txtDetalle.Text = dgvCodDebito.CurrentRow.Cells(2).Value.ToString
+            frmRecGral.txtImporte.Text = dgvCodDebito.CurrentRow.Cells(3).Value.ToString
+            frmRecGral.txtCategoria.Text = dgvCodDebito.CurrentRow.Cells(5).Value.ToString
+            frmRecGral.txtTipoRec.Text = dgvCodDebito.CurrentRow.Cells(6).Value.ToString
         End If
 
         Close()
@@ -72,7 +72,6 @@
     Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles BtnSalir.Click
 
         Close()
-
 
     End Sub
 

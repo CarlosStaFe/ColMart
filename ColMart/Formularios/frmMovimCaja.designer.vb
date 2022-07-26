@@ -27,24 +27,14 @@ Partial Class frmMovimCaja
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMovimCaja))
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMovimCaja))
         Me.dgvMovim = New System.Windows.Forms.DataGridView()
-        Me.X = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DetalleCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DebeCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HaberCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SaldoCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EfectivoCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TarjetaCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TransfeCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ObsCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CajaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DbcolmartDataSet = New ColMart.dbcolmartDataSet()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -74,6 +64,16 @@ Partial Class frmMovimCaja
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.txtNroDeposito = New System.Windows.Forms.TextBox()
         Me.lblNroDeposito = New System.Windows.Forms.Label()
+        Me.X = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DetalleCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DebeCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HaberCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SaldoCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EfectivoCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TarjetaCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TransfeCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ObsCajaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvMovim, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CajaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,103 +130,6 @@ Partial Class frmMovimCaja
         Me.dgvMovim.RowHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvMovim.Size = New System.Drawing.Size(984, 371)
         Me.dgvMovim.TabIndex = 9
-        '
-        'X
-        '
-        Me.X.HeaderText = "X"
-        Me.X.Name = "X"
-        Me.X.ReadOnly = True
-        Me.X.Width = 20
-        '
-        'FechaCajaDataGridViewTextBoxColumn
-        '
-        Me.FechaCajaDataGridViewTextBoxColumn.DataPropertyName = "FechaCaja"
-        Me.FechaCajaDataGridViewTextBoxColumn.HeaderText = "FechaCaja"
-        Me.FechaCajaDataGridViewTextBoxColumn.Name = "FechaCajaDataGridViewTextBoxColumn"
-        Me.FechaCajaDataGridViewTextBoxColumn.ReadOnly = True
-        Me.FechaCajaDataGridViewTextBoxColumn.Visible = False
-        '
-        'DetalleCajaDataGridViewTextBoxColumn
-        '
-        Me.DetalleCajaDataGridViewTextBoxColumn.DataPropertyName = "DetalleCaja"
-        Me.DetalleCajaDataGridViewTextBoxColumn.HeaderText = "DETALLE MOVIMIENTO"
-        Me.DetalleCajaDataGridViewTextBoxColumn.Name = "DetalleCajaDataGridViewTextBoxColumn"
-        Me.DetalleCajaDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DetalleCajaDataGridViewTextBoxColumn.Width = 300
-        '
-        'DebeCajaDataGridViewTextBoxColumn
-        '
-        Me.DebeCajaDataGridViewTextBoxColumn.DataPropertyName = "DebeCaja"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle3.Format = "C2"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.DebeCajaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DebeCajaDataGridViewTextBoxColumn.HeaderText = "DEBE"
-        Me.DebeCajaDataGridViewTextBoxColumn.Name = "DebeCajaDataGridViewTextBoxColumn"
-        Me.DebeCajaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'HaberCajaDataGridViewTextBoxColumn
-        '
-        Me.HaberCajaDataGridViewTextBoxColumn.DataPropertyName = "HaberCaja"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "C2"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.HaberCajaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle4
-        Me.HaberCajaDataGridViewTextBoxColumn.HeaderText = "HABER"
-        Me.HaberCajaDataGridViewTextBoxColumn.Name = "HaberCajaDataGridViewTextBoxColumn"
-        Me.HaberCajaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'SaldoCajaDataGridViewTextBoxColumn
-        '
-        Me.SaldoCajaDataGridViewTextBoxColumn.DataPropertyName = "SaldoCaja"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "C2"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.SaldoCajaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle5
-        Me.SaldoCajaDataGridViewTextBoxColumn.HeaderText = "SALDO"
-        Me.SaldoCajaDataGridViewTextBoxColumn.Name = "SaldoCajaDataGridViewTextBoxColumn"
-        Me.SaldoCajaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'EfectivoCajaDataGridViewTextBoxColumn
-        '
-        Me.EfectivoCajaDataGridViewTextBoxColumn.DataPropertyName = "EfectivoCaja"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Format = "C2"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.EfectivoCajaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle6
-        Me.EfectivoCajaDataGridViewTextBoxColumn.HeaderText = "EFECTIVO"
-        Me.EfectivoCajaDataGridViewTextBoxColumn.Name = "EfectivoCajaDataGridViewTextBoxColumn"
-        Me.EfectivoCajaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'TarjetaCajaDataGridViewTextBoxColumn
-        '
-        Me.TarjetaCajaDataGridViewTextBoxColumn.DataPropertyName = "TarjetaCaja"
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle7.Format = "C2"
-        DataGridViewCellStyle7.NullValue = Nothing
-        Me.TarjetaCajaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle7
-        Me.TarjetaCajaDataGridViewTextBoxColumn.HeaderText = "TARJETA"
-        Me.TarjetaCajaDataGridViewTextBoxColumn.Name = "TarjetaCajaDataGridViewTextBoxColumn"
-        Me.TarjetaCajaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'TransfeCajaDataGridViewTextBoxColumn
-        '
-        Me.TransfeCajaDataGridViewTextBoxColumn.DataPropertyName = "TransfeCaja"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle8.Format = "C2"
-        DataGridViewCellStyle8.NullValue = Nothing
-        Me.TransfeCajaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle8
-        Me.TransfeCajaDataGridViewTextBoxColumn.HeaderText = "TRANSFER."
-        Me.TransfeCajaDataGridViewTextBoxColumn.Name = "TransfeCajaDataGridViewTextBoxColumn"
-        Me.TransfeCajaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ObsCajaDataGridViewTextBoxColumn
-        '
-        Me.ObsCajaDataGridViewTextBoxColumn.DataPropertyName = "ObsCaja"
-        Me.ObsCajaDataGridViewTextBoxColumn.HeaderText = "OBSERVACIÓN"
-        Me.ObsCajaDataGridViewTextBoxColumn.Name = "ObsCajaDataGridViewTextBoxColumn"
-        Me.ObsCajaDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ObsCajaDataGridViewTextBoxColumn.Width = 150
         '
         'CajaBindingSource
         '
@@ -502,6 +405,7 @@ Partial Class frmMovimCaja
         Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCerrar.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCerrar.ForeColor = System.Drawing.Color.White
+        Me.btnCerrar.Image = CType(resources.GetObject("btnCerrar.Image"), System.Drawing.Image)
         Me.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.btnCerrar.Location = New System.Drawing.Point(1009, 372)
         Me.btnCerrar.Name = "btnCerrar"
@@ -563,6 +467,104 @@ Partial Class frmMovimCaja
         Me.lblNroDeposito.TabIndex = 172
         Me.lblNroDeposito.Text = "NÚMERO DEPÓSITO"
         Me.lblNroDeposito.Visible = False
+        '
+        'X
+        '
+        Me.X.HeaderText = "X"
+        Me.X.Name = "X"
+        Me.X.ReadOnly = True
+        Me.X.Visible = False
+        Me.X.Width = 20
+        '
+        'FechaCajaDataGridViewTextBoxColumn
+        '
+        Me.FechaCajaDataGridViewTextBoxColumn.DataPropertyName = "FechaCaja"
+        Me.FechaCajaDataGridViewTextBoxColumn.HeaderText = "FechaCaja"
+        Me.FechaCajaDataGridViewTextBoxColumn.Name = "FechaCajaDataGridViewTextBoxColumn"
+        Me.FechaCajaDataGridViewTextBoxColumn.ReadOnly = True
+        Me.FechaCajaDataGridViewTextBoxColumn.Visible = False
+        '
+        'DetalleCajaDataGridViewTextBoxColumn
+        '
+        Me.DetalleCajaDataGridViewTextBoxColumn.DataPropertyName = "DetalleCaja"
+        Me.DetalleCajaDataGridViewTextBoxColumn.HeaderText = "DETALLE MOVIMIENTO"
+        Me.DetalleCajaDataGridViewTextBoxColumn.Name = "DetalleCajaDataGridViewTextBoxColumn"
+        Me.DetalleCajaDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DetalleCajaDataGridViewTextBoxColumn.Width = 300
+        '
+        'DebeCajaDataGridViewTextBoxColumn
+        '
+        Me.DebeCajaDataGridViewTextBoxColumn.DataPropertyName = "DebeCaja"
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Format = "C2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.DebeCajaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DebeCajaDataGridViewTextBoxColumn.HeaderText = "DEBE"
+        Me.DebeCajaDataGridViewTextBoxColumn.Name = "DebeCajaDataGridViewTextBoxColumn"
+        Me.DebeCajaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'HaberCajaDataGridViewTextBoxColumn
+        '
+        Me.HaberCajaDataGridViewTextBoxColumn.DataPropertyName = "HaberCaja"
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Format = "C2"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.HaberCajaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle4
+        Me.HaberCajaDataGridViewTextBoxColumn.HeaderText = "HABER"
+        Me.HaberCajaDataGridViewTextBoxColumn.Name = "HaberCajaDataGridViewTextBoxColumn"
+        Me.HaberCajaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SaldoCajaDataGridViewTextBoxColumn
+        '
+        Me.SaldoCajaDataGridViewTextBoxColumn.DataPropertyName = "SaldoCaja"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "C2"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.SaldoCajaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle5
+        Me.SaldoCajaDataGridViewTextBoxColumn.HeaderText = "SALDO"
+        Me.SaldoCajaDataGridViewTextBoxColumn.Name = "SaldoCajaDataGridViewTextBoxColumn"
+        Me.SaldoCajaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EfectivoCajaDataGridViewTextBoxColumn
+        '
+        Me.EfectivoCajaDataGridViewTextBoxColumn.DataPropertyName = "EfectivoCaja"
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle6.Format = "C2"
+        DataGridViewCellStyle6.NullValue = Nothing
+        Me.EfectivoCajaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle6
+        Me.EfectivoCajaDataGridViewTextBoxColumn.HeaderText = "EFECTIVO"
+        Me.EfectivoCajaDataGridViewTextBoxColumn.Name = "EfectivoCajaDataGridViewTextBoxColumn"
+        Me.EfectivoCajaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TarjetaCajaDataGridViewTextBoxColumn
+        '
+        Me.TarjetaCajaDataGridViewTextBoxColumn.DataPropertyName = "TarjetaCaja"
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle7.Format = "C2"
+        DataGridViewCellStyle7.NullValue = Nothing
+        Me.TarjetaCajaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle7
+        Me.TarjetaCajaDataGridViewTextBoxColumn.HeaderText = "TARJETA"
+        Me.TarjetaCajaDataGridViewTextBoxColumn.Name = "TarjetaCajaDataGridViewTextBoxColumn"
+        Me.TarjetaCajaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TransfeCajaDataGridViewTextBoxColumn
+        '
+        Me.TransfeCajaDataGridViewTextBoxColumn.DataPropertyName = "TransfeCaja"
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle8.Format = "C2"
+        DataGridViewCellStyle8.NullValue = Nothing
+        Me.TransfeCajaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle8
+        Me.TransfeCajaDataGridViewTextBoxColumn.HeaderText = "TRANSFER."
+        Me.TransfeCajaDataGridViewTextBoxColumn.Name = "TransfeCajaDataGridViewTextBoxColumn"
+        Me.TransfeCajaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ObsCajaDataGridViewTextBoxColumn
+        '
+        Me.ObsCajaDataGridViewTextBoxColumn.DataPropertyName = "ObsCaja"
+        Me.ObsCajaDataGridViewTextBoxColumn.HeaderText = "OBSERVACIÓN"
+        Me.ObsCajaDataGridViewTextBoxColumn.Name = "ObsCajaDataGridViewTextBoxColumn"
+        Me.ObsCajaDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ObsCajaDataGridViewTextBoxColumn.Width = 150
         '
         'frmMovimCaja
         '
@@ -632,6 +634,15 @@ Partial Class frmMovimCaja
     Friend WithEvents btnLimpiar As Button
     Friend WithEvents btnSalir As Button
     Friend WithEvents btnAgregar As Button
+    Friend WithEvents txtEfectivo As TextBox
+    Friend WithEvents txtTarjeta As TextBox
+    Friend WithEvents txtTransfer As TextBox
+    Friend WithEvents btnCerrar As Button
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents txtNroDeposito As TextBox
+    Friend WithEvents lblNroDeposito As Label
     Friend WithEvents X As DataGridViewTextBoxColumn
     Friend WithEvents FechaCajaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents DetalleCajaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -642,13 +653,4 @@ Partial Class frmMovimCaja
     Friend WithEvents TarjetaCajaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TransfeCajaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ObsCajaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents txtEfectivo As TextBox
-    Friend WithEvents txtTarjeta As TextBox
-    Friend WithEvents txtTransfer As TextBox
-    Friend WithEvents btnCerrar As Button
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents txtNroDeposito As TextBox
-    Friend WithEvents lblNroDeposito As Label
 End Class

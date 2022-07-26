@@ -7,6 +7,7 @@ Public Class frmEnviarMail
     Private envios As New SmtpClient
     Dim archivo, ceros, matricula, mail, periodo, yyyy, mm, perdesde, perhasta As String
     Dim longitud, cantidad, contreg, pos, i As Integer
+    Dim quien As String
 
     Private Sub frmEnviarMail_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -58,7 +59,13 @@ Public Class frmEnviarMail
         dr.Close()
         dr.Dispose()
 
-        comando.CommandText = "SELECT NroMatri, EmailMatri FROM matriculados WHERE Nromatri >= '" & txtDesdeMat.Text & "' AND Nromatri <= '" & txtHastaMat.Text & "' ORDER BY NroMatri "
+        If txtDesdeMat.Text < "60000" Then
+            quien = "M"
+            comando.CommandText = "SELECT NroMatri, EmailMatri FROM matriculados WHERE Nromatri >= '" & txtDesdeMat.Text & "' AND Nromatri <= '" & txtHastaMat.Text & "' ORDER BY NroMatri "
+        Else
+            quien = "S"
+            comando.CommandText = "SELECT NroSociedad, EmailSociedad FROM sociedades WHERE NroSociedad >= '" & txtDesdeMat.Text & "' AND NroSociedad <= '" & txtHastaMat.Text & "' ORDER BY NroSociedad "
+        End If
         dt = New DataTable
         da = New MySqlDataAdapter(comando)
         da.Fill(dt)
@@ -68,8 +75,13 @@ Public Class frmEnviarMail
 
             For Each row In dt.Rows
 
-                matricula = CStr(row("NroMatri"))
-                mail = Trim(CStr(row("EmailMatri")))
+                If quien = "M" Then
+                    matricula = CStr(row("NroMatri"))
+                    mail = Trim(CStr(row("EmailMatri")))
+                Else
+                    matricula = CStr(row("NroSociedad"))
+                    mail = Trim(CStr(row("EmailSociedad")))
+                End If
                 contreg = contreg + 1
                 txtMsg.Text = "Procesando Registro: " & Str(contreg) & " * Matrícula: " & matricula
                 txtMsg.Refresh()
@@ -240,6 +252,7 @@ Terminar:
             btnmsg = 1
             frmMsgBox.ShowDialog()
         End If
+        quien = ""
 
     End Sub
 
