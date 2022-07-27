@@ -45,11 +45,7 @@ Partial Public Class dbcolmartDataSet
     
     Private tablecptosgastos As cptosgastosDataTable
     
-    Private tablectactemat As ctactematDataTable
-    
     Private tablectactepro As ctacteproDataTable
-    
-    Private tablectactesoc As ctactesocDataTable
     
     Private tablectasctes As ctasctesDataTable
     
@@ -158,14 +154,8 @@ Partial Public Class dbcolmartDataSet
             If (Not (ds.Tables("cptosgastos")) Is Nothing) Then
                 MyBase.Tables.Add(New cptosgastosDataTable(ds.Tables("cptosgastos")))
             End If
-            If (Not (ds.Tables("ctactemat")) Is Nothing) Then
-                MyBase.Tables.Add(New ctactematDataTable(ds.Tables("ctactemat")))
-            End If
             If (Not (ds.Tables("ctactepro")) Is Nothing) Then
                 MyBase.Tables.Add(New ctacteproDataTable(ds.Tables("ctactepro")))
-            End If
-            If (Not (ds.Tables("ctactesoc")) Is Nothing) Then
-                MyBase.Tables.Add(New ctactesocDataTable(ds.Tables("ctactesoc")))
             End If
             If (Not (ds.Tables("ctasctes")) Is Nothing) Then
                 MyBase.Tables.Add(New ctasctesDataTable(ds.Tables("ctasctes")))
@@ -360,29 +350,9 @@ Partial Public Class dbcolmartDataSet
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property ctactemat() As ctactematDataTable
-        Get
-            Return Me.tablectactemat
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
     Public ReadOnly Property ctactepro() As ctacteproDataTable
         Get
             Return Me.tablectactepro
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property ctactesoc() As ctactesocDataTable
-        Get
-            Return Me.tablectactesoc
         End Get
     End Property
     
@@ -723,14 +693,8 @@ Partial Public Class dbcolmartDataSet
             If (Not (ds.Tables("cptosgastos")) Is Nothing) Then
                 MyBase.Tables.Add(New cptosgastosDataTable(ds.Tables("cptosgastos")))
             End If
-            If (Not (ds.Tables("ctactemat")) Is Nothing) Then
-                MyBase.Tables.Add(New ctactematDataTable(ds.Tables("ctactemat")))
-            End If
             If (Not (ds.Tables("ctactepro")) Is Nothing) Then
                 MyBase.Tables.Add(New ctacteproDataTable(ds.Tables("ctactepro")))
-            End If
-            If (Not (ds.Tables("ctactesoc")) Is Nothing) Then
-                MyBase.Tables.Add(New ctactesocDataTable(ds.Tables("ctactesoc")))
             End If
             If (Not (ds.Tables("ctasctes")) Is Nothing) Then
                 MyBase.Tables.Add(New ctasctesDataTable(ds.Tables("ctasctes")))
@@ -896,22 +860,10 @@ Partial Public Class dbcolmartDataSet
                 Me.tablecptosgastos.InitVars
             End If
         End If
-        Me.tablectactemat = CType(MyBase.Tables("ctactemat"),ctactematDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tablectactemat) Is Nothing) Then
-                Me.tablectactemat.InitVars
-            End If
-        End If
         Me.tablectactepro = CType(MyBase.Tables("ctactepro"),ctacteproDataTable)
         If (initTable = true) Then
             If (Not (Me.tablectactepro) Is Nothing) Then
                 Me.tablectactepro.InitVars
-            End If
-        End If
-        Me.tablectactesoc = CType(MyBase.Tables("ctactesoc"),ctactesocDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tablectactesoc) Is Nothing) Then
-                Me.tablectactesoc.InitVars
             End If
         End If
         Me.tablectasctes = CType(MyBase.Tables("ctasctes"),ctasctesDataTable)
@@ -1088,12 +1040,8 @@ Partial Public Class dbcolmartDataSet
         MyBase.Tables.Add(Me.tablecomprobte)
         Me.tablecptosgastos = New cptosgastosDataTable()
         MyBase.Tables.Add(Me.tablecptosgastos)
-        Me.tablectactemat = New ctactematDataTable()
-        MyBase.Tables.Add(Me.tablectactemat)
         Me.tablectactepro = New ctacteproDataTable()
         MyBase.Tables.Add(Me.tablectactepro)
-        Me.tablectactesoc = New ctactesocDataTable()
-        MyBase.Tables.Add(Me.tablectactesoc)
         Me.tablectasctes = New ctasctesDataTable()
         MyBase.Tables.Add(Me.tablectasctes)
         Me.tabledebehaber = New debehaberDataTable()
@@ -1206,19 +1154,7 @@ Partial Public Class dbcolmartDataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Private Function ShouldSerializectactemat() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Private Function ShouldSerializectactepro() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Private Function ShouldSerializectactesoc() As Boolean
         Return false
     End Function
     
@@ -1455,13 +1391,7 @@ Partial Public Class dbcolmartDataSet
     Public Delegate Sub cptosgastosRowChangeEventHandler(ByVal sender As Object, ByVal e As cptosgastosRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Delegate Sub ctactematRowChangeEventHandler(ByVal sender As Object, ByVal e As ctactematRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Delegate Sub ctacteproRowChangeEventHandler(ByVal sender As Object, ByVal e As ctacteproRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Delegate Sub ctactesocRowChangeEventHandler(ByVal sender As Object, ByVal e As ctactesocRowChangeEvent)
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Delegate Sub ctasctesRowChangeEventHandler(ByVal sender As Object, ByVal e As ctasctesRowChangeEvent)
@@ -5366,405 +5296,6 @@ Partial Public Class dbcolmartDataSet
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class ctactematDataTable
-        Inherits Global.System.Data.TypedTableBase(Of ctactematRow)
-        
-        Private columnid_CCMat As Global.System.Data.DataColumn
-        
-        Private columnNroCCMat As Global.System.Data.DataColumn
-        
-        Private columnFechaCCMat As Global.System.Data.DataColumn
-        
-        Private columnDetCCMat As Global.System.Data.DataColumn
-        
-        Private columnDebeCCMat As Global.System.Data.DataColumn
-        
-        Private columnHaberCCMat As Global.System.Data.DataColumn
-        
-        Private columnSaldoCCMat As Global.System.Data.DataColumn
-        
-        Private columnPeriodoCCMat As Global.System.Data.DataColumn
-        
-        Private columnEstadoCCMat As Global.System.Data.DataColumn
-        
-        Private columnPagadoCCMat As Global.System.Data.DataColumn
-        
-        Private columnObsCCMat As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "ctactemat"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property id_CCMatColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnid_CCMat
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property NroCCMatColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnNroCCMat
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property FechaCCMatColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnFechaCCMat
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property DetCCMatColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnDetCCMat
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property DebeCCMatColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnDebeCCMat
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property HaberCCMatColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnHaberCCMat
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property SaldoCCMatColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnSaldoCCMat
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property PeriodoCCMatColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnPeriodoCCMat
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property EstadoCCMatColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnEstadoCCMat
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property PagadoCCMatColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnPagadoCCMat
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property ObsCCMatColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnObsCCMat
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As ctactematRow
-            Get
-                Return CType(Me.Rows(index),ctactematRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event ctactematRowChanging As ctactematRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event ctactematRowChanged As ctactematRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event ctactematRowDeleting As ctactematRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event ctactematRowDeleted As ctactematRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Sub AddctactematRow(ByVal row As ctactematRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddctactematRow(ByVal id_CCMat As Integer, ByVal NroCCMat As Integer, ByVal FechaCCMat As Date, ByVal DetCCMat As String, ByVal DebeCCMat As Double, ByVal HaberCCMat As Double, ByVal SaldoCCMat As Double, ByVal PeriodoCCMat As String, ByVal EstadoCCMat As String, ByVal PagadoCCMat As String, ByVal ObsCCMat As String) As ctactematRow
-            Dim rowctactematRow As ctactematRow = CType(Me.NewRow,ctactematRow)
-            Dim columnValuesArray() As Object = New Object() {id_CCMat, NroCCMat, FechaCCMat, DetCCMat, DebeCCMat, HaberCCMat, SaldoCCMat, PeriodoCCMat, EstadoCCMat, PagadoCCMat, ObsCCMat}
-            rowctactematRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowctactematRow)
-            Return rowctactematRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function FindByid_CCMat(ByVal id_CCMat As Integer) As ctactematRow
-            Return CType(Me.Rows.Find(New Object() {id_CCMat}),ctactematRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As ctactematDataTable = CType(MyBase.Clone,ctactematDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New ctactematDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnid_CCMat = MyBase.Columns("id_CCMat")
-            Me.columnNroCCMat = MyBase.Columns("NroCCMat")
-            Me.columnFechaCCMat = MyBase.Columns("FechaCCMat")
-            Me.columnDetCCMat = MyBase.Columns("DetCCMat")
-            Me.columnDebeCCMat = MyBase.Columns("DebeCCMat")
-            Me.columnHaberCCMat = MyBase.Columns("HaberCCMat")
-            Me.columnSaldoCCMat = MyBase.Columns("SaldoCCMat")
-            Me.columnPeriodoCCMat = MyBase.Columns("PeriodoCCMat")
-            Me.columnEstadoCCMat = MyBase.Columns("EstadoCCMat")
-            Me.columnPagadoCCMat = MyBase.Columns("PagadoCCMat")
-            Me.columnObsCCMat = MyBase.Columns("ObsCCMat")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnid_CCMat = New Global.System.Data.DataColumn("id_CCMat", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnid_CCMat)
-            Me.columnNroCCMat = New Global.System.Data.DataColumn("NroCCMat", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNroCCMat)
-            Me.columnFechaCCMat = New Global.System.Data.DataColumn("FechaCCMat", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnFechaCCMat)
-            Me.columnDetCCMat = New Global.System.Data.DataColumn("DetCCMat", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDetCCMat)
-            Me.columnDebeCCMat = New Global.System.Data.DataColumn("DebeCCMat", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDebeCCMat)
-            Me.columnHaberCCMat = New Global.System.Data.DataColumn("HaberCCMat", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnHaberCCMat)
-            Me.columnSaldoCCMat = New Global.System.Data.DataColumn("SaldoCCMat", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnSaldoCCMat)
-            Me.columnPeriodoCCMat = New Global.System.Data.DataColumn("PeriodoCCMat", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPeriodoCCMat)
-            Me.columnEstadoCCMat = New Global.System.Data.DataColumn("EstadoCCMat", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnEstadoCCMat)
-            Me.columnPagadoCCMat = New Global.System.Data.DataColumn("PagadoCCMat", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPagadoCCMat)
-            Me.columnObsCCMat = New Global.System.Data.DataColumn("ObsCCMat", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnObsCCMat)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_CCMat}, true))
-            Me.columnid_CCMat.AllowDBNull = false
-            Me.columnid_CCMat.Unique = true
-            Me.columnNroCCMat.AllowDBNull = false
-            Me.columnFechaCCMat.AllowDBNull = false
-            Me.columnDetCCMat.AllowDBNull = false
-            Me.columnDetCCMat.MaxLength = 40
-            Me.columnPeriodoCCMat.MaxLength = 8
-            Me.columnEstadoCCMat.MaxLength = 10
-            Me.columnPagadoCCMat.MaxLength = 10
-            Me.columnObsCCMat.MaxLength = 100
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function NewctactematRow() As ctactematRow
-            Return CType(Me.NewRow,ctactematRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New ctactematRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(ctactematRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.ctactematRowChangedEvent) Is Nothing) Then
-                RaiseEvent ctactematRowChanged(Me, New ctactematRowChangeEvent(CType(e.Row,ctactematRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.ctactematRowChangingEvent) Is Nothing) Then
-                RaiseEvent ctactematRowChanging(Me, New ctactematRowChangeEvent(CType(e.Row,ctactematRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.ctactematRowDeletedEvent) Is Nothing) Then
-                RaiseEvent ctactematRowDeleted(Me, New ctactematRowChangeEvent(CType(e.Row,ctactematRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.ctactematRowDeletingEvent) Is Nothing) Then
-                RaiseEvent ctactematRowDeleting(Me, New ctactematRowChangeEvent(CType(e.Row,ctactematRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub RemovectactematRow(ByVal row As ctactematRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As dbcolmartDataSet = New dbcolmartDataSet()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "ctactematDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class ctacteproDataTable
         Inherits Global.System.Data.TypedTableBase(Of ctacteproRow)
         
@@ -6143,405 +5674,6 @@ Partial Public Class dbcolmartDataSet
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "ctacteproDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class ctactesocDataTable
-        Inherits Global.System.Data.TypedTableBase(Of ctactesocRow)
-        
-        Private columnid_CCSoc As Global.System.Data.DataColumn
-        
-        Private columnNroCCSoc As Global.System.Data.DataColumn
-        
-        Private columnFechaCCSoc As Global.System.Data.DataColumn
-        
-        Private columnDetCCSoc As Global.System.Data.DataColumn
-        
-        Private columnDebeCCSoc As Global.System.Data.DataColumn
-        
-        Private columnHaberCCSoc As Global.System.Data.DataColumn
-        
-        Private columnSaldoCCSoc As Global.System.Data.DataColumn
-        
-        Private columnPeriodoCCSoc As Global.System.Data.DataColumn
-        
-        Private columnEstadoCCSoc As Global.System.Data.DataColumn
-        
-        Private columnPagadoCCSoc As Global.System.Data.DataColumn
-        
-        Private columnObsCCSoc As Global.System.Data.DataColumn
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "ctactesoc"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property id_CCSocColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnid_CCSoc
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property NroCCSocColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnNroCCSoc
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property FechaCCSocColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnFechaCCSoc
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property DetCCSocColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnDetCCSoc
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property DebeCCSocColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnDebeCCSoc
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property HaberCCSocColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnHaberCCSoc
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property SaldoCCSocColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnSaldoCCSoc
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property PeriodoCCSocColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnPeriodoCCSoc
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property EstadoCCSocColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnEstadoCCSoc
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property PagadoCCSocColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnPagadoCCSoc
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property ObsCCSocColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnObsCCSoc
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As ctactesocRow
-            Get
-                Return CType(Me.Rows(index),ctactesocRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event ctactesocRowChanging As ctactesocRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event ctactesocRowChanged As ctactesocRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event ctactesocRowDeleting As ctactesocRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Event ctactesocRowDeleted As ctactesocRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Sub AddctactesocRow(ByVal row As ctactesocRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddctactesocRow(ByVal id_CCSoc As Integer, ByVal NroCCSoc As Integer, ByVal FechaCCSoc As Date, ByVal DetCCSoc As String, ByVal DebeCCSoc As Double, ByVal HaberCCSoc As Double, ByVal SaldoCCSoc As Double, ByVal PeriodoCCSoc As String, ByVal EstadoCCSoc As String, ByVal PagadoCCSoc As String, ByVal ObsCCSoc As String) As ctactesocRow
-            Dim rowctactesocRow As ctactesocRow = CType(Me.NewRow,ctactesocRow)
-            Dim columnValuesArray() As Object = New Object() {id_CCSoc, NroCCSoc, FechaCCSoc, DetCCSoc, DebeCCSoc, HaberCCSoc, SaldoCCSoc, PeriodoCCSoc, EstadoCCSoc, PagadoCCSoc, ObsCCSoc}
-            rowctactesocRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowctactesocRow)
-            Return rowctactesocRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function FindByid_CCSoc(ByVal id_CCSoc As Integer) As ctactesocRow
-            Return CType(Me.Rows.Find(New Object() {id_CCSoc}),ctactesocRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As ctactesocDataTable = CType(MyBase.Clone,ctactesocDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New ctactesocDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Sub InitVars()
-            Me.columnid_CCSoc = MyBase.Columns("id_CCSoc")
-            Me.columnNroCCSoc = MyBase.Columns("NroCCSoc")
-            Me.columnFechaCCSoc = MyBase.Columns("FechaCCSoc")
-            Me.columnDetCCSoc = MyBase.Columns("DetCCSoc")
-            Me.columnDebeCCSoc = MyBase.Columns("DebeCCSoc")
-            Me.columnHaberCCSoc = MyBase.Columns("HaberCCSoc")
-            Me.columnSaldoCCSoc = MyBase.Columns("SaldoCCSoc")
-            Me.columnPeriodoCCSoc = MyBase.Columns("PeriodoCCSoc")
-            Me.columnEstadoCCSoc = MyBase.Columns("EstadoCCSoc")
-            Me.columnPagadoCCSoc = MyBase.Columns("PagadoCCSoc")
-            Me.columnObsCCSoc = MyBase.Columns("ObsCCSoc")
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Sub InitClass()
-            Me.columnid_CCSoc = New Global.System.Data.DataColumn("id_CCSoc", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnid_CCSoc)
-            Me.columnNroCCSoc = New Global.System.Data.DataColumn("NroCCSoc", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNroCCSoc)
-            Me.columnFechaCCSoc = New Global.System.Data.DataColumn("FechaCCSoc", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnFechaCCSoc)
-            Me.columnDetCCSoc = New Global.System.Data.DataColumn("DetCCSoc", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDetCCSoc)
-            Me.columnDebeCCSoc = New Global.System.Data.DataColumn("DebeCCSoc", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDebeCCSoc)
-            Me.columnHaberCCSoc = New Global.System.Data.DataColumn("HaberCCSoc", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnHaberCCSoc)
-            Me.columnSaldoCCSoc = New Global.System.Data.DataColumn("SaldoCCSoc", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnSaldoCCSoc)
-            Me.columnPeriodoCCSoc = New Global.System.Data.DataColumn("PeriodoCCSoc", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPeriodoCCSoc)
-            Me.columnEstadoCCSoc = New Global.System.Data.DataColumn("EstadoCCSoc", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnEstadoCCSoc)
-            Me.columnPagadoCCSoc = New Global.System.Data.DataColumn("PagadoCCSoc", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnPagadoCCSoc)
-            Me.columnObsCCSoc = New Global.System.Data.DataColumn("ObsCCSoc", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnObsCCSoc)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_CCSoc}, true))
-            Me.columnid_CCSoc.AllowDBNull = false
-            Me.columnid_CCSoc.Unique = true
-            Me.columnNroCCSoc.AllowDBNull = false
-            Me.columnFechaCCSoc.AllowDBNull = false
-            Me.columnDetCCSoc.AllowDBNull = false
-            Me.columnDetCCSoc.MaxLength = 40
-            Me.columnPeriodoCCSoc.MaxLength = 8
-            Me.columnEstadoCCSoc.MaxLength = 10
-            Me.columnPagadoCCSoc.MaxLength = 10
-            Me.columnObsCCSoc.MaxLength = 40
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function NewctactesocRow() As ctactesocRow
-            Return CType(Me.NewRow,ctactesocRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New ctactesocRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(ctactesocRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.ctactesocRowChangedEvent) Is Nothing) Then
-                RaiseEvent ctactesocRowChanged(Me, New ctactesocRowChangeEvent(CType(e.Row,ctactesocRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.ctactesocRowChangingEvent) Is Nothing) Then
-                RaiseEvent ctactesocRowChanging(Me, New ctactesocRowChangeEvent(CType(e.Row,ctactesocRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.ctactesocRowDeletedEvent) Is Nothing) Then
-                RaiseEvent ctactesocRowDeleted(Me, New ctactesocRowChangeEvent(CType(e.Row,ctactesocRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.ctactesocRowDeletingEvent) Is Nothing) Then
-                RaiseEvent ctactesocRowDeleting(Me, New ctactesocRowChangeEvent(CType(e.Row,ctactesocRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub RemovectactesocRow(ByVal row As ctactesocRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As dbcolmartDataSet = New dbcolmartDataSet()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "ctactesocDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -10364,9 +9496,13 @@ Partial Public Class dbcolmartDataSet
     Partial Public Class lotebancoDataTable
         Inherits Global.System.Data.TypedTableBase(Of lotebancoRow)
         
+        Private columnid_Lote As Global.System.Data.DataColumn
+        
         Private columnNroLote As Global.System.Data.DataColumn
         
         Private columnFechaLote As Global.System.Data.DataColumn
+        
+        Private columnCantRegLote As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -10405,6 +9541,14 @@ Partial Public Class dbcolmartDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property id_LoteColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid_Lote
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property NroLoteColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnNroLote
@@ -10416,6 +9560,14 @@ Partial Public Class dbcolmartDataSet
         Public ReadOnly Property FechaLoteColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnFechaLote
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property CantRegLoteColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCantRegLote
             End Get
         End Property
         
@@ -10456,12 +9608,18 @@ Partial Public Class dbcolmartDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddlotebancoRow(ByVal NroLote As Integer, ByVal FechaLote As Date) As lotebancoRow
+        Public Overloads Function AddlotebancoRow(ByVal NroLote As Integer, ByVal FechaLote As Date, ByVal CantRegLote As Integer) As lotebancoRow
             Dim rowlotebancoRow As lotebancoRow = CType(Me.NewRow,lotebancoRow)
-            Dim columnValuesArray() As Object = New Object() {NroLote, FechaLote}
+            Dim columnValuesArray() As Object = New Object() {Nothing, NroLote, FechaLote, CantRegLote}
             rowlotebancoRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowlotebancoRow)
             Return rowlotebancoRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function FindByid_Lote(ByVal id_Lote As Integer) As lotebancoRow
+            Return CType(Me.Rows.Find(New Object() {id_Lote}),lotebancoRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10481,17 +9639,29 @@ Partial Public Class dbcolmartDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub InitVars()
+            Me.columnid_Lote = MyBase.Columns("id_Lote")
             Me.columnNroLote = MyBase.Columns("NroLote")
             Me.columnFechaLote = MyBase.Columns("FechaLote")
+            Me.columnCantRegLote = MyBase.Columns("CantRegLote")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitClass()
+            Me.columnid_Lote = New Global.System.Data.DataColumn("id_Lote", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_Lote)
             Me.columnNroLote = New Global.System.Data.DataColumn("NroLote", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNroLote)
             Me.columnFechaLote = New Global.System.Data.DataColumn("FechaLote", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFechaLote)
+            Me.columnCantRegLote = New Global.System.Data.DataColumn("CantRegLote", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCantRegLote)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_Lote}, true))
+            Me.columnid_Lote.AutoIncrement = true
+            Me.columnid_Lote.AutoIncrementSeed = -1
+            Me.columnid_Lote.AutoIncrementStep = -1
+            Me.columnid_Lote.AllowDBNull = false
+            Me.columnid_Lote.Unique = true
             Me.columnNroLote.AllowDBNull = false
             Me.columnFechaLote.AllowDBNull = false
         End Sub
@@ -17814,255 +16984,6 @@ Partial Public Class dbcolmartDataSet
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class ctactematRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tablectactemat As ctactematDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tablectactemat = CType(Me.Table,ctactematDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property id_CCMat() As Integer
-            Get
-                Return CType(Me(Me.tablectactemat.id_CCMatColumn),Integer)
-            End Get
-            Set
-                Me(Me.tablectactemat.id_CCMatColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property NroCCMat() As Integer
-            Get
-                Return CType(Me(Me.tablectactemat.NroCCMatColumn),Integer)
-            End Get
-            Set
-                Me(Me.tablectactemat.NroCCMatColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property FechaCCMat() As Date
-            Get
-                Return CType(Me(Me.tablectactemat.FechaCCMatColumn),Date)
-            End Get
-            Set
-                Me(Me.tablectactemat.FechaCCMatColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property DetCCMat() As String
-            Get
-                Return CType(Me(Me.tablectactemat.DetCCMatColumn),String)
-            End Get
-            Set
-                Me(Me.tablectactemat.DetCCMatColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property DebeCCMat() As Double
-            Get
-                Try 
-                    Return CType(Me(Me.tablectactemat.DebeCCMatColumn),Double)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'DebeCCMat' de la tabla 'ctactemat' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablectactemat.DebeCCMatColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property HaberCCMat() As Double
-            Get
-                Try 
-                    Return CType(Me(Me.tablectactemat.HaberCCMatColumn),Double)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'HaberCCMat' de la tabla 'ctactemat' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablectactemat.HaberCCMatColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property SaldoCCMat() As Double
-            Get
-                Try 
-                    Return CType(Me(Me.tablectactemat.SaldoCCMatColumn),Double)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'SaldoCCMat' de la tabla 'ctactemat' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablectactemat.SaldoCCMatColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property PeriodoCCMat() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablectactemat.PeriodoCCMatColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'PeriodoCCMat' de la tabla 'ctactemat' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablectactemat.PeriodoCCMatColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property EstadoCCMat() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablectactemat.EstadoCCMatColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'EstadoCCMat' de la tabla 'ctactemat' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablectactemat.EstadoCCMatColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property PagadoCCMat() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablectactemat.PagadoCCMatColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'PagadoCCMat' de la tabla 'ctactemat' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablectactemat.PagadoCCMatColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property ObsCCMat() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablectactemat.ObsCCMatColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'ObsCCMat' de la tabla 'ctactemat' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablectactemat.ObsCCMatColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsDebeCCMatNull() As Boolean
-            Return Me.IsNull(Me.tablectactemat.DebeCCMatColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetDebeCCMatNull()
-            Me(Me.tablectactemat.DebeCCMatColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsHaberCCMatNull() As Boolean
-            Return Me.IsNull(Me.tablectactemat.HaberCCMatColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetHaberCCMatNull()
-            Me(Me.tablectactemat.HaberCCMatColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsSaldoCCMatNull() As Boolean
-            Return Me.IsNull(Me.tablectactemat.SaldoCCMatColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetSaldoCCMatNull()
-            Me(Me.tablectactemat.SaldoCCMatColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsPeriodoCCMatNull() As Boolean
-            Return Me.IsNull(Me.tablectactemat.PeriodoCCMatColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetPeriodoCCMatNull()
-            Me(Me.tablectactemat.PeriodoCCMatColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsEstadoCCMatNull() As Boolean
-            Return Me.IsNull(Me.tablectactemat.EstadoCCMatColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetEstadoCCMatNull()
-            Me(Me.tablectactemat.EstadoCCMatColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsPagadoCCMatNull() As Boolean
-            Return Me.IsNull(Me.tablectactemat.PagadoCCMatColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetPagadoCCMatNull()
-            Me(Me.tablectactemat.PagadoCCMatColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsObsCCMatNull() As Boolean
-            Return Me.IsNull(Me.tablectactemat.ObsCCMatColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetObsCCMatNull()
-            Me(Me.tablectactemat.ObsCCMatColumn) = Global.System.Convert.DBNull
-        End Sub
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
     Partial Public Class ctacteproRow
         Inherits Global.System.Data.DataRow
         
@@ -18408,255 +17329,6 @@ Partial Public Class dbcolmartDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetObsCCProNull()
             Me(Me.tablectactepro.ObsCCProColumn) = Global.System.Convert.DBNull
-        End Sub
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class ctactesocRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tablectactesoc As ctactesocDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tablectactesoc = CType(Me.Table,ctactesocDataTable)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property id_CCSoc() As Integer
-            Get
-                Return CType(Me(Me.tablectactesoc.id_CCSocColumn),Integer)
-            End Get
-            Set
-                Me(Me.tablectactesoc.id_CCSocColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property NroCCSoc() As Integer
-            Get
-                Return CType(Me(Me.tablectactesoc.NroCCSocColumn),Integer)
-            End Get
-            Set
-                Me(Me.tablectactesoc.NroCCSocColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property FechaCCSoc() As Date
-            Get
-                Return CType(Me(Me.tablectactesoc.FechaCCSocColumn),Date)
-            End Get
-            Set
-                Me(Me.tablectactesoc.FechaCCSocColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property DetCCSoc() As String
-            Get
-                Return CType(Me(Me.tablectactesoc.DetCCSocColumn),String)
-            End Get
-            Set
-                Me(Me.tablectactesoc.DetCCSocColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property DebeCCSoc() As Double
-            Get
-                Try 
-                    Return CType(Me(Me.tablectactesoc.DebeCCSocColumn),Double)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'DebeCCSoc' de la tabla 'ctactesoc' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablectactesoc.DebeCCSocColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property HaberCCSoc() As Double
-            Get
-                Try 
-                    Return CType(Me(Me.tablectactesoc.HaberCCSocColumn),Double)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'HaberCCSoc' de la tabla 'ctactesoc' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablectactesoc.HaberCCSocColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property SaldoCCSoc() As Double
-            Get
-                Try 
-                    Return CType(Me(Me.tablectactesoc.SaldoCCSocColumn),Double)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'SaldoCCSoc' de la tabla 'ctactesoc' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablectactesoc.SaldoCCSocColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property PeriodoCCSoc() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablectactesoc.PeriodoCCSocColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'PeriodoCCSoc' de la tabla 'ctactesoc' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablectactesoc.PeriodoCCSocColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property EstadoCCSoc() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablectactesoc.EstadoCCSocColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'EstadoCCSoc' de la tabla 'ctactesoc' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablectactesoc.EstadoCCSocColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property PagadoCCSoc() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablectactesoc.PagadoCCSocColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'PagadoCCSoc' de la tabla 'ctactesoc' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablectactesoc.PagadoCCSocColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property ObsCCSoc() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablectactesoc.ObsCCSocColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'ObsCCSoc' de la tabla 'ctactesoc' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablectactesoc.ObsCCSocColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsDebeCCSocNull() As Boolean
-            Return Me.IsNull(Me.tablectactesoc.DebeCCSocColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetDebeCCSocNull()
-            Me(Me.tablectactesoc.DebeCCSocColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsHaberCCSocNull() As Boolean
-            Return Me.IsNull(Me.tablectactesoc.HaberCCSocColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetHaberCCSocNull()
-            Me(Me.tablectactesoc.HaberCCSocColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsSaldoCCSocNull() As Boolean
-            Return Me.IsNull(Me.tablectactesoc.SaldoCCSocColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetSaldoCCSocNull()
-            Me(Me.tablectactesoc.SaldoCCSocColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsPeriodoCCSocNull() As Boolean
-            Return Me.IsNull(Me.tablectactesoc.PeriodoCCSocColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetPeriodoCCSocNull()
-            Me(Me.tablectactesoc.PeriodoCCSocColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsEstadoCCSocNull() As Boolean
-            Return Me.IsNull(Me.tablectactesoc.EstadoCCSocColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetEstadoCCSocNull()
-            Me(Me.tablectactesoc.EstadoCCSocColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsPagadoCCSocNull() As Boolean
-            Return Me.IsNull(Me.tablectactesoc.PagadoCCSocColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetPagadoCCSocNull()
-            Me(Me.tablectactesoc.PagadoCCSocColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Function IsObsCCSocNull() As Boolean
-            Return Me.IsNull(Me.tablectactesoc.ObsCCSocColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub SetObsCCSocNull()
-            Me(Me.tablectactesoc.ObsCCSocColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -20105,6 +18777,17 @@ Partial Public Class dbcolmartDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property id_Lote() As Integer
+            Get
+                Return CType(Me(Me.tablelotebanco.id_LoteColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablelotebanco.id_LoteColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property NroLote() As Integer
             Get
                 Return CType(Me(Me.tablelotebanco.NroLoteColumn),Integer)
@@ -20124,6 +18807,33 @@ Partial Public Class dbcolmartDataSet
                 Me(Me.tablelotebanco.FechaLoteColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property CantRegLote() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tablelotebanco.CantRegLoteColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'CantRegLote' de la tabla 'lotebanco' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablelotebanco.CantRegLoteColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsCantRegLoteNull() As Boolean
+            Return Me.IsNull(Me.tablelotebanco.CantRegLoteColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetCantRegLoteNull()
+            Me(Me.tablelotebanco.CantRegLoteColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -23955,42 +22665,6 @@ Partial Public Class dbcolmartDataSet
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Class ctactematRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As ctactematRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New(ByVal row As ctactematRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Row() As ctactematRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
     Public Class ctacteproRowChangeEvent
         Inherits Global.System.EventArgs
         
@@ -24009,42 +22683,6 @@ Partial Public Class dbcolmartDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property Row() As ctacteproRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-    Public Class ctactesocRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As ctactesocRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New(ByVal row As ctactesocRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property Row() As ctactesocRow
             Get
                 Return Me.eventRow
             End Get
@@ -33303,1039 +31941,6 @@ Namespace dbcolmartDataSetTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class ctactematTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.MySql.Data.MySqlClient.MySqlDataAdapter
-        
-        Private _connection As Global.MySql.Data.MySqlClient.MySqlConnection
-        
-        Private _transaction As Global.MySql.Data.MySqlClient.MySqlTransaction
-        
-        Private _commandCollection() As Global.MySql.Data.MySqlClient.MySqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.MySql.Data.MySqlClient.MySqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Property Connection() As Global.MySql.Data.MySqlClient.MySqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.MySql.Data.MySqlClient.MySqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Property Transaction() As Global.MySql.Data.MySqlClient.MySqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.MySql.Data.MySqlClient.MySqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.MySql.Data.MySqlClient.MySqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "ctactemat"
-            tableMapping.ColumnMappings.Add("id_CCMat", "id_CCMat")
-            tableMapping.ColumnMappings.Add("NroCCMat", "NroCCMat")
-            tableMapping.ColumnMappings.Add("FechaCCMat", "FechaCCMat")
-            tableMapping.ColumnMappings.Add("DetCCMat", "DetCCMat")
-            tableMapping.ColumnMappings.Add("DebeCCMat", "DebeCCMat")
-            tableMapping.ColumnMappings.Add("HaberCCMat", "HaberCCMat")
-            tableMapping.ColumnMappings.Add("SaldoCCMat", "SaldoCCMat")
-            tableMapping.ColumnMappings.Add("PeriodoCCMat", "PeriodoCCMat")
-            tableMapping.ColumnMappings.Add("EstadoCCMat", "EstadoCCMat")
-            tableMapping.ColumnMappings.Add("PagadoCCMat", "PagadoCCMat")
-            tableMapping.ColumnMappings.Add("ObsCCMat", "ObsCCMat")
-            Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `ctactemat` WHERE ((`id_CCMat` = @p1) AND (`NroCCMat` = @p2) AND (`Fe"& _ 
-                "chaCCMat` = @p3) AND (`DetCCMat` = @p4) AND ((@p5 = 1 AND `DebeCCMat` IS NULL) O"& _ 
-                "R (`DebeCCMat` = @p6)) AND ((@p7 = 1 AND `HaberCCMat` IS NULL) OR (`HaberCCMat` "& _ 
-                "= @p8)) AND ((@p9 = 1 AND `SaldoCCMat` IS NULL) OR (`SaldoCCMat` = @p10)) AND (("& _ 
-                "@p11 = 1 AND `PeriodoCCMat` IS NULL) OR (`PeriodoCCMat` = @p12)) AND ((@p13 = 1 "& _ 
-                "AND `EstadoCCMat` IS NULL) OR (`EstadoCCMat` = @p14)) AND ((@p15 = 1 AND `Pagado"& _ 
-                "CCMat` IS NULL) OR (`PagadoCCMat` = @p16)) AND ((@p17 = 1 AND `ObsCCMat` IS NULL"& _ 
-                ") OR (`ObsCCMat` = @p18)))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p1"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "id_CCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p2"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "NroCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p3"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "FechaCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "DetCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "DebeCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "DebeCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "HaberCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p8"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "HaberCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p9"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "SaldoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p10"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "SaldoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p11"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "PeriodoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p12"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "PeriodoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p13"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "EstadoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p14"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "EstadoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p15"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "PagadoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p16"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "PagadoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p17"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "ObsCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p18"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "ObsCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            Me._adapter.InsertCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `ctactemat` (`id_CCMat`, `NroCCMat`, `FechaCCMat`, `DetCCMat`, `DebeC"& _ 
-                "CMat`, `HaberCCMat`, `SaldoCCMat`, `PeriodoCCMat`, `EstadoCCMat`, `PagadoCCMat`,"& _ 
-                " `ObsCCMat`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11)"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p1"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "id_CCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p2"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "NroCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p3"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "FechaCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "DetCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "DebeCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "HaberCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "SaldoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p8"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "PeriodoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p9"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "EstadoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p10"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "PagadoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p11"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "ObsCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            Me._adapter.UpdateCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `ctactemat` SET `id_CCMat` = @p1, `NroCCMat` = @p2, `FechaCCMat` = @p3, `D"& _ 
-                "etCCMat` = @p4, `DebeCCMat` = @p5, `HaberCCMat` = @p6, `SaldoCCMat` = @p7, `Peri"& _ 
-                "odoCCMat` = @p8, `EstadoCCMat` = @p9, `PagadoCCMat` = @p10, `ObsCCMat` = @p11 WH"& _ 
-                "ERE ((`id_CCMat` = @p12) AND (`NroCCMat` = @p13) AND (`FechaCCMat` = @p14) AND ("& _ 
-                "`DetCCMat` = @p15) AND ((@p16 = 1 AND `DebeCCMat` IS NULL) OR (`DebeCCMat` = @p1"& _ 
-                "7)) AND ((@p18 = 1 AND `HaberCCMat` IS NULL) OR (`HaberCCMat` = @p19)) AND ((@p2"& _ 
-                "0 = 1 AND `SaldoCCMat` IS NULL) OR (`SaldoCCMat` = @p21)) AND ((@p22 = 1 AND `Pe"& _ 
-                "riodoCCMat` IS NULL) OR (`PeriodoCCMat` = @p23)) AND ((@p24 = 1 AND `EstadoCCMat"& _ 
-                "` IS NULL) OR (`EstadoCCMat` = @p25)) AND ((@p26 = 1 AND `PagadoCCMat` IS NULL) "& _ 
-                "OR (`PagadoCCMat` = @p27)) AND ((@p28 = 1 AND `ObsCCMat` IS NULL) OR (`ObsCCMat`"& _ 
-                " = @p29)))"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p1"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "id_CCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p2"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "NroCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p3"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "FechaCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "DetCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "DebeCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "HaberCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "SaldoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p8"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "PeriodoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p9"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "EstadoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p10"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "PagadoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p11"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "ObsCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p12"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "id_CCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p13"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "NroCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p14"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "FechaCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p15"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "DetCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p16"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "DebeCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p17"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "DebeCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p18"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "HaberCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p19"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "HaberCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p20"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "SaldoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p21"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "SaldoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p22"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "PeriodoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p23"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "PeriodoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p24"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "EstadoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p25"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "EstadoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p26"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "PagadoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p27"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "PagadoCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p28"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "ObsCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p29"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "ObsCCMat"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.MySql.Data.MySqlClient.MySqlConnection()
-            Me._connection.ConnectionString = Global.ColMart.My.MySettings.Default.dbcolmartConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(0) {}
-            Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT `id_CCMat`, `NroCCMat`, `FechaCCMat`, `DetCCMat`, `DebeCCMat`, `HaberCCMat"& _ 
-                "`, `SaldoCCMat`, `PeriodoCCMat`, `EstadoCCMat`, `PagadoCCMat`, `ObsCCMat` FROM `"& _ 
-                "ctactemat`"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As dbcolmartDataSet.ctactematDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As dbcolmartDataSet.ctactematDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As dbcolmartDataSet.ctactematDataTable = New dbcolmartDataSet.ctactematDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As dbcolmartDataSet.ctactematDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As dbcolmartDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "ctactemat")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal p1 As Integer, ByVal p2 As Integer, ByVal p3 As Date, ByVal p4 As String, ByVal p6 As Global.System.Nullable(Of Double), ByVal p8 As Global.System.Nullable(Of Double), ByVal p10 As Global.System.Nullable(Of Double), ByVal p12 As String, ByVal p14 As String, ByVal p16 As String, ByVal p18 As String) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(p1,Integer)
-            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(p2,Integer)
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(p3,Date)
-            If (p4 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p4")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(p4,String)
-            End If
-            If (p6.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(p6.Value,Double)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(5).Value = Global.System.DBNull.Value
-            End If
-            If (p8.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(p8.Value,Double)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
-            End If
-            If (p10.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(p10.Value,Double)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
-            End If
-            If (p12 Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(11).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(p12,String)
-            End If
-            If (p14 Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(13).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(p14,String)
-            End If
-            If (p16 Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(15).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(p16,String)
-            End If
-            If (p18 Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(17).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(p18,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal p1 As Integer, ByVal p2 As Integer, ByVal p3 As Date, ByVal p4 As String, ByVal p5 As Global.System.Nullable(Of Double), ByVal p6 As Global.System.Nullable(Of Double), ByVal p7 As Global.System.Nullable(Of Double), ByVal p8 As String, ByVal p9 As String, ByVal p10 As String, ByVal p11 As String) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(p1,Integer)
-            Me.Adapter.InsertCommand.Parameters(1).Value = CType(p2,Integer)
-            Me.Adapter.InsertCommand.Parameters(2).Value = CType(p3,Date)
-            If (p4 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p4")
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(p4,String)
-            End If
-            If (p5.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(p5.Value,Double)
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (p6.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(p6.Value,Double)
-            Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
-            End If
-            If (p7.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(p7.Value,Double)
-            Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (p8 Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(p8,String)
-            End If
-            If (p9 Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(8).Value = CType(p9,String)
-            End If
-            If (p10 Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(9).Value = CType(p10,String)
-            End If
-            If (p11 Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(10).Value = CType(p11,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal p1 As Integer,  _
-                    ByVal p2 As Integer,  _
-                    ByVal p3 As Date,  _
-                    ByVal p4 As String,  _
-                    ByVal p5 As Global.System.Nullable(Of Double),  _
-                    ByVal p6 As Global.System.Nullable(Of Double),  _
-                    ByVal p7 As Global.System.Nullable(Of Double),  _
-                    ByVal p8 As String,  _
-                    ByVal p9 As String,  _
-                    ByVal p10 As String,  _
-                    ByVal p11 As String,  _
-                    ByVal p12 As Integer,  _
-                    ByVal p13 As Integer,  _
-                    ByVal p14 As Date,  _
-                    ByVal p15 As String,  _
-                    ByVal p17 As Global.System.Nullable(Of Double),  _
-                    ByVal p19 As Global.System.Nullable(Of Double),  _
-                    ByVal p21 As Global.System.Nullable(Of Double),  _
-                    ByVal p23 As String,  _
-                    ByVal p25 As String,  _
-                    ByVal p27 As String,  _
-                    ByVal p29 As String) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(p1,Integer)
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(p2,Integer)
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(p3,Date)
-            If (p4 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p4")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(p4,String)
-            End If
-            If (p5.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(p5.Value,Double)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (p6.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(p6.Value,Double)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
-            End If
-            If (p7.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(p7.Value,Double)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (p8 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(p8,String)
-            End If
-            If (p9 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(p9,String)
-            End If
-            If (p10 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(p10,String)
-            End If
-            If (p11 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(p11,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(p12,Integer)
-            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(p13,Integer)
-            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(p14,Date)
-            If (p15 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p15")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(p15,String)
-            End If
-            If (p17.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(p17.Value,Double)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
-            End If
-            If (p19.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(p19.Value,Double)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
-            End If
-            If (p21.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(p21.Value,Double)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
-            End If
-            If (p23 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(p23,String)
-            End If
-            If (p25 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(p25,String)
-            End If
-            If (p27 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(p27,String)
-            End If
-            If (p29 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(p29,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal p2 As Integer,  _
-                    ByVal p3 As Date,  _
-                    ByVal p4 As String,  _
-                    ByVal p5 As Global.System.Nullable(Of Double),  _
-                    ByVal p6 As Global.System.Nullable(Of Double),  _
-                    ByVal p7 As Global.System.Nullable(Of Double),  _
-                    ByVal p8 As String,  _
-                    ByVal p9 As String,  _
-                    ByVal p10 As String,  _
-                    ByVal p11 As String,  _
-                    ByVal p12 As Integer,  _
-                    ByVal p13 As Integer,  _
-                    ByVal p14 As Date,  _
-                    ByVal p15 As String,  _
-                    ByVal p17 As Global.System.Nullable(Of Double),  _
-                    ByVal p19 As Global.System.Nullable(Of Double),  _
-                    ByVal p21 As Global.System.Nullable(Of Double),  _
-                    ByVal p23 As String,  _
-                    ByVal p25 As String,  _
-                    ByVal p27 As String,  _
-                    ByVal p29 As String) As Integer
-            Return Me.Update(p12, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p17, p19, p21, p23, p25, p27, p29)
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
     Partial Public Class ctacteproTableAdapter
         Inherits Global.System.ComponentModel.Component
         
@@ -35568,1039 +33173,6 @@ Namespace dbcolmartDataSetTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the connection and commands used to retrieve and save data.
-    '''</summary>
-    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     Global.System.ComponentModel.ToolboxItem(true),  _
-     Global.System.ComponentModel.DataObjectAttribute(true),  _
-     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
-     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-    Partial Public Class ctactesocTableAdapter
-        Inherits Global.System.ComponentModel.Component
-        
-        Private WithEvents _adapter As Global.MySql.Data.MySqlClient.MySqlDataAdapter
-        
-        Private _connection As Global.MySql.Data.MySqlClient.MySqlConnection
-        
-        Private _transaction As Global.MySql.Data.MySqlClient.MySqlTransaction
-        
-        Private _commandCollection() As Global.MySql.Data.MySqlClient.MySqlCommand
-        
-        Private _clearBeforeFill As Boolean
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.ClearBeforeFill = true
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected Friend ReadOnly Property Adapter() As Global.MySql.Data.MySqlClient.MySqlDataAdapter
-            Get
-                If (Me._adapter Is Nothing) Then
-                    Me.InitAdapter
-                End If
-                Return Me._adapter
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Property Connection() As Global.MySql.Data.MySqlClient.MySqlConnection
-            Get
-                If (Me._connection Is Nothing) Then
-                    Me.InitConnection
-                End If
-                Return Me._connection
-            End Get
-            Set
-                Me._connection = value
-                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
-                    Me.Adapter.InsertCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
-                    Me.Adapter.DeleteCommand.Connection = value
-                End If
-                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
-                    Me.Adapter.UpdateCommand.Connection = value
-                End If
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
-                        CType(Me.CommandCollection(i),Global.MySql.Data.MySqlClient.MySqlCommand).Connection = value
-                    End If
-                    i = (i + 1)
-                Loop
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Friend Property Transaction() As Global.MySql.Data.MySqlClient.MySqlTransaction
-            Get
-                Return Me._transaction
-            End Get
-            Set
-                Me._transaction = value
-                Dim i As Integer = 0
-                Do While (i < Me.CommandCollection.Length)
-                    Me.CommandCollection(i).Transaction = Me._transaction
-                    i = (i + 1)
-                Loop
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
-                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
-                    Me.Adapter.InsertCommand.Transaction = Me._transaction
-                End If
-                If ((Not (Me.Adapter) Is Nothing)  _
-                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
-                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
-                End If
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Protected ReadOnly Property CommandCollection() As Global.MySql.Data.MySqlClient.MySqlCommand()
-            Get
-                If (Me._commandCollection Is Nothing) Then
-                    Me.InitCommandCollection
-                End If
-                Return Me._commandCollection
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property ClearBeforeFill() As Boolean
-            Get
-                Return Me._clearBeforeFill
-            End Get
-            Set
-                Me._clearBeforeFill = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Sub InitAdapter()
-            Me._adapter = New Global.MySql.Data.MySqlClient.MySqlDataAdapter()
-            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
-            tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "ctactesoc"
-            tableMapping.ColumnMappings.Add("id_CCSoc", "id_CCSoc")
-            tableMapping.ColumnMappings.Add("NroCCSoc", "NroCCSoc")
-            tableMapping.ColumnMappings.Add("FechaCCSoc", "FechaCCSoc")
-            tableMapping.ColumnMappings.Add("DetCCSoc", "DetCCSoc")
-            tableMapping.ColumnMappings.Add("DebeCCSoc", "DebeCCSoc")
-            tableMapping.ColumnMappings.Add("HaberCCSoc", "HaberCCSoc")
-            tableMapping.ColumnMappings.Add("SaldoCCSoc", "SaldoCCSoc")
-            tableMapping.ColumnMappings.Add("PeriodoCCSoc", "PeriodoCCSoc")
-            tableMapping.ColumnMappings.Add("EstadoCCSoc", "EstadoCCSoc")
-            tableMapping.ColumnMappings.Add("PagadoCCSoc", "PagadoCCSoc")
-            tableMapping.ColumnMappings.Add("ObsCCSoc", "ObsCCSoc")
-            Me._adapter.TableMappings.Add(tableMapping)
-            Me._adapter.DeleteCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `ctactesoc` WHERE ((`id_CCSoc` = @p1) AND (`NroCCSoc` = @p2) AND (`Fe"& _ 
-                "chaCCSoc` = @p3) AND (`DetCCSoc` = @p4) AND ((@p5 = 1 AND `DebeCCSoc` IS NULL) O"& _ 
-                "R (`DebeCCSoc` = @p6)) AND ((@p7 = 1 AND `HaberCCSoc` IS NULL) OR (`HaberCCSoc` "& _ 
-                "= @p8)) AND ((@p9 = 1 AND `SaldoCCSoc` IS NULL) OR (`SaldoCCSoc` = @p10)) AND (("& _ 
-                "@p11 = 1 AND `PeriodoCCSoc` IS NULL) OR (`PeriodoCCSoc` = @p12)) AND ((@p13 = 1 "& _ 
-                "AND `EstadoCCSoc` IS NULL) OR (`EstadoCCSoc` = @p14)) AND ((@p15 = 1 AND `Pagado"& _ 
-                "CCSoc` IS NULL) OR (`PagadoCCSoc` = @p16)) AND ((@p17 = 1 AND `ObsCCSoc` IS NULL"& _ 
-                ") OR (`ObsCCSoc` = @p18)))"
-            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
-            Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p1"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "id_CCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p2"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "NroCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p3"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "FechaCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "DetCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "DebeCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "DebeCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "HaberCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p8"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "HaberCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p9"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "SaldoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p10"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "SaldoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p11"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "PeriodoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p12"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "PeriodoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p13"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "EstadoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p14"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "EstadoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p15"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "PagadoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p16"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "PagadoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p17"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "ObsCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p18"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "ObsCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.DeleteCommand.Parameters.Add(param)
-            Me._adapter.InsertCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `ctactesoc` (`id_CCSoc`, `NroCCSoc`, `FechaCCSoc`, `DetCCSoc`, `DebeC"& _ 
-                "CSoc`, `HaberCCSoc`, `SaldoCCSoc`, `PeriodoCCSoc`, `EstadoCCSoc`, `PagadoCCSoc`,"& _ 
-                " `ObsCCSoc`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11)"
-            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p1"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "id_CCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p2"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "NroCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p3"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "FechaCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "DetCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "DebeCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "HaberCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "SaldoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p8"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "PeriodoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p9"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "EstadoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p10"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "PagadoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p11"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "ObsCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.InsertCommand.Parameters.Add(param)
-            Me._adapter.UpdateCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `ctactesoc` SET `id_CCSoc` = @p1, `NroCCSoc` = @p2, `FechaCCSoc` = @p3, `D"& _ 
-                "etCCSoc` = @p4, `DebeCCSoc` = @p5, `HaberCCSoc` = @p6, `SaldoCCSoc` = @p7, `Peri"& _ 
-                "odoCCSoc` = @p8, `EstadoCCSoc` = @p9, `PagadoCCSoc` = @p10, `ObsCCSoc` = @p11 WH"& _ 
-                "ERE ((`id_CCSoc` = @p12) AND (`NroCCSoc` = @p13) AND (`FechaCCSoc` = @p14) AND ("& _ 
-                "`DetCCSoc` = @p15) AND ((@p16 = 1 AND `DebeCCSoc` IS NULL) OR (`DebeCCSoc` = @p1"& _ 
-                "7)) AND ((@p18 = 1 AND `HaberCCSoc` IS NULL) OR (`HaberCCSoc` = @p19)) AND ((@p2"& _ 
-                "0 = 1 AND `SaldoCCSoc` IS NULL) OR (`SaldoCCSoc` = @p21)) AND ((@p22 = 1 AND `Pe"& _ 
-                "riodoCCSoc` IS NULL) OR (`PeriodoCCSoc` = @p23)) AND ((@p24 = 1 AND `EstadoCCSoc"& _ 
-                "` IS NULL) OR (`EstadoCCSoc` = @p25)) AND ((@p26 = 1 AND `PagadoCCSoc` IS NULL) "& _ 
-                "OR (`PagadoCCSoc` = @p27)) AND ((@p28 = 1 AND `ObsCCSoc` IS NULL) OR (`ObsCCSoc`"& _ 
-                " = @p29)))"
-            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p1"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "id_CCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p2"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "NroCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p3"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "FechaCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p4"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "DetCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p5"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "DebeCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p6"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "HaberCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p7"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "SaldoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p8"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "PeriodoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p9"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "EstadoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p10"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "PagadoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p11"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "ObsCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Current
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p12"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "id_CCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p13"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "NroCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p14"
-            param.DbType = Global.System.Data.DbType.[Date]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
-            param.IsNullable = true
-            param.SourceColumn = "FechaCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p15"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "DetCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p16"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "DebeCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p17"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "DebeCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p18"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "HaberCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p19"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "HaberCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p20"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "SaldoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p21"
-            param.DbType = Global.System.Data.DbType.[Double]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Double]
-            param.IsNullable = true
-            param.SourceColumn = "SaldoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p22"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "PeriodoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p23"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "PeriodoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p24"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "EstadoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p25"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "EstadoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p26"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "PagadoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p27"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "PagadoCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p28"
-            param.DbType = Global.System.Data.DbType.Int32
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
-            param.IsNullable = true
-            param.SourceColumn = "ObsCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            param.SourceColumnNullMapping = true
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
-            param.ParameterName = "@p29"
-            param.DbType = Global.System.Data.DbType.[String]
-            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.VarChar
-            param.IsNullable = true
-            param.SourceColumn = "ObsCCSoc"
-            param.SourceVersion = Global.System.Data.DataRowVersion.Original
-            Me._adapter.UpdateCommand.Parameters.Add(param)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Sub InitConnection()
-            Me._connection = New Global.MySql.Data.MySqlClient.MySqlConnection()
-            Me._connection.ConnectionString = Global.ColMart.My.MySettings.Default.dbcolmartConnectionString
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(0) {}
-            Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
-            Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT `id_CCSoc`, `NroCCSoc`, `FechaCCSoc`, `DetCCSoc`, `DebeCCSoc`, `HaberCCSoc"& _ 
-                "`, `SaldoCCSoc`, `PeriodoCCSoc`, `EstadoCCSoc`, `PagadoCCSoc`, `ObsCCSoc` FROM `"& _ 
-                "ctactesoc`"
-            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As dbcolmartDataSet.ctactesocDataTable) As Integer
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            If (Me.ClearBeforeFill = true) Then
-                dataTable.Clear
-            End If
-            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
-            Return returnValue
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As dbcolmartDataSet.ctactesocDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As dbcolmartDataSet.ctactesocDataTable = New dbcolmartDataSet.ctactesocDataTable()
-            Me.Adapter.Fill(dataTable)
-            Return dataTable
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataTable As dbcolmartDataSet.ctactesocDataTable) As Integer
-            Return Me.Adapter.Update(dataTable)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataSet As dbcolmartDataSet) As Integer
-            Return Me.Adapter.Update(dataSet, "ctactesoc")
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
-        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
-            Return Me.Adapter.Update(dataRows)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal p1 As Integer, ByVal p2 As Integer, ByVal p3 As Date, ByVal p4 As String, ByVal p6 As Global.System.Nullable(Of Double), ByVal p8 As Global.System.Nullable(Of Double), ByVal p10 As Global.System.Nullable(Of Double), ByVal p12 As String, ByVal p14 As String, ByVal p16 As String, ByVal p18 As String) As Integer
-            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(p1,Integer)
-            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(p2,Integer)
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(p3,Date)
-            If (p4 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p4")
-            Else
-                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(p4,String)
-            End If
-            If (p6.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(p6.Value,Double)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(5).Value = Global.System.DBNull.Value
-            End If
-            If (p8.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(p8.Value,Double)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
-            End If
-            If (p10.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(p10.Value,Double)
-            Else
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
-            End If
-            If (p12 Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(11).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(p12,String)
-            End If
-            If (p14 Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(13).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(p14,String)
-            End If
-            If (p16 Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(15).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(15).Value = CType(p16,String)
-            End If
-            If (p18 Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(17).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(17).Value = CType(p18,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
-            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.DeleteCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.DeleteCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal p1 As Integer, ByVal p2 As Integer, ByVal p3 As Date, ByVal p4 As String, ByVal p5 As Global.System.Nullable(Of Double), ByVal p6 As Global.System.Nullable(Of Double), ByVal p7 As Global.System.Nullable(Of Double), ByVal p8 As String, ByVal p9 As String, ByVal p10 As String, ByVal p11 As String) As Integer
-            Me.Adapter.InsertCommand.Parameters(0).Value = CType(p1,Integer)
-            Me.Adapter.InsertCommand.Parameters(1).Value = CType(p2,Integer)
-            Me.Adapter.InsertCommand.Parameters(2).Value = CType(p3,Date)
-            If (p4 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p4")
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(p4,String)
-            End If
-            If (p5.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(p5.Value,Double)
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (p6.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(p6.Value,Double)
-            Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
-            End If
-            If (p7.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(p7.Value,Double)
-            Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (p8 Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(p8,String)
-            End If
-            If (p9 Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(8).Value = CType(p9,String)
-            End If
-            If (p10 Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(9).Value = CType(p10,String)
-            End If
-            If (p11 Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(10).Value = CType(p11,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
-            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.InsertCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.InsertCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal p1 As Integer,  _
-                    ByVal p2 As Integer,  _
-                    ByVal p3 As Date,  _
-                    ByVal p4 As String,  _
-                    ByVal p5 As Global.System.Nullable(Of Double),  _
-                    ByVal p6 As Global.System.Nullable(Of Double),  _
-                    ByVal p7 As Global.System.Nullable(Of Double),  _
-                    ByVal p8 As String,  _
-                    ByVal p9 As String,  _
-                    ByVal p10 As String,  _
-                    ByVal p11 As String,  _
-                    ByVal p12 As Integer,  _
-                    ByVal p13 As Integer,  _
-                    ByVal p14 As Date,  _
-                    ByVal p15 As String,  _
-                    ByVal p17 As Global.System.Nullable(Of Double),  _
-                    ByVal p19 As Global.System.Nullable(Of Double),  _
-                    ByVal p21 As Global.System.Nullable(Of Double),  _
-                    ByVal p23 As String,  _
-                    ByVal p25 As String,  _
-                    ByVal p27 As String,  _
-                    ByVal p29 As String) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(p1,Integer)
-            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(p2,Integer)
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(p3,Date)
-            If (p4 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p4")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(p4,String)
-            End If
-            If (p5.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(p5.Value,Double)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            End If
-            If (p6.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(p6.Value,Double)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
-            End If
-            If (p7.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(p7.Value,Double)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (p8 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(p8,String)
-            End If
-            If (p9 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(p9,String)
-            End If
-            If (p10 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(p10,String)
-            End If
-            If (p11 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(p11,String)
-            End If
-            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(p12,Integer)
-            Me.Adapter.UpdateCommand.Parameters(12).Value = CType(p13,Integer)
-            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(p14,Date)
-            If (p15 Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("p15")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(p15,String)
-            End If
-            If (p17.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(p17.Value,Double)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
-            End If
-            If (p19.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(p19.Value,Double)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
-            End If
-            If (p21.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(p21.Value,Double)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
-            End If
-            If (p23 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(p23,String)
-            End If
-            If (p25 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(p25,String)
-            End If
-            If (p27 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(p27,String)
-            End If
-            If (p29 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(p29,String)
-            End If
-            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
-            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
-                        <> Global.System.Data.ConnectionState.Open) Then
-                Me.Adapter.UpdateCommand.Connection.Open
-            End If
-            Try 
-                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
-                Return returnValue
-            Finally
-                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
-                    Me.Adapter.UpdateCommand.Connection.Close
-                End If
-            End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update( _
-                    ByVal p2 As Integer,  _
-                    ByVal p3 As Date,  _
-                    ByVal p4 As String,  _
-                    ByVal p5 As Global.System.Nullable(Of Double),  _
-                    ByVal p6 As Global.System.Nullable(Of Double),  _
-                    ByVal p7 As Global.System.Nullable(Of Double),  _
-                    ByVal p8 As String,  _
-                    ByVal p9 As String,  _
-                    ByVal p10 As String,  _
-                    ByVal p11 As String,  _
-                    ByVal p12 As Integer,  _
-                    ByVal p13 As Integer,  _
-                    ByVal p14 As Date,  _
-                    ByVal p15 As String,  _
-                    ByVal p17 As Global.System.Nullable(Of Double),  _
-                    ByVal p19 As Global.System.Nullable(Of Double),  _
-                    ByVal p21 As Global.System.Nullable(Of Double),  _
-                    ByVal p23 As String,  _
-                    ByVal p25 As String,  _
-                    ByVal p27 As String,  _
-                    ByVal p29 As String) As Integer
-            Return Me.Update(p12, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p17, p19, p21, p23, p25, p27, p29)
         End Function
     End Class
     
@@ -42737,14 +39309,64 @@ Namespace dbcolmartDataSetTableAdapters
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "lotebanco"
+            tableMapping.ColumnMappings.Add("id_Lote", "id_Lote")
             tableMapping.ColumnMappings.Add("NroLote", "NroLote")
             tableMapping.ColumnMappings.Add("FechaLote", "FechaLote")
+            tableMapping.ColumnMappings.Add("CantRegLote", "CantRegLote")
             Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `lotebanco` WHERE ((`id_Lote` = @p1) AND (`NroLote` = @p2) AND (`Fech"& _ 
+                "aLote` = @p3) AND ((@p4 = 1 AND `CantRegLote` IS NULL) OR (`CantRegLote` = @p5))"& _ 
+                ")"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p1"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "id_Lote"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p2"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "NroLote"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p3"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "FechaLote"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p4"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "CantRegLote"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
+            Me._adapter.DeleteCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p5"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "CantRegLote"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.DeleteCommand.Parameters.Add(param)
             Me._adapter.InsertCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `lotebanco` (`NroLote`, `FechaLote`) VALUES (@p1, @p2)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `lotebanco` (`NroLote`, `FechaLote`, `CantRegLote`) VALUES (@p1, @p2,"& _ 
+                " @p3)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Dim param As Global.MySql.Data.MySqlClient.MySqlParameter = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
             param.ParameterName = "@p1"
             param.DbType = Global.System.Data.DbType.Int32
             param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
@@ -42760,6 +39382,85 @@ Namespace dbcolmartDataSetTableAdapters
             param.SourceColumn = "FechaLote"
             param.SourceVersion = Global.System.Data.DataRowVersion.Current
             Me._adapter.InsertCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p3"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "CantRegLote"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.InsertCommand.Parameters.Add(param)
+            Me._adapter.UpdateCommand = New Global.MySql.Data.MySqlClient.MySqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `lotebanco` SET `NroLote` = @p1, `FechaLote` = @p2, `CantRegLote` = @p3 WH"& _ 
+                "ERE ((`id_Lote` = @p4) AND (`NroLote` = @p5) AND (`FechaLote` = @p6) AND ((@p7 ="& _ 
+                " 1 AND `CantRegLote` IS NULL) OR (`CantRegLote` = @p8)))"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p1"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "NroLote"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p2"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "FechaLote"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p3"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "CantRegLote"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Current
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p4"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "id_Lote"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p5"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "NroLote"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p6"
+            param.DbType = Global.System.Data.DbType.[Date]
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.[Date]
+            param.IsNullable = true
+            param.SourceColumn = "FechaLote"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p7"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "CantRegLote"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            param.SourceColumnNullMapping = true
+            Me._adapter.UpdateCommand.Parameters.Add(param)
+            param = New Global.MySql.Data.MySqlClient.MySqlParameter()
+            param.ParameterName = "@p8"
+            param.DbType = Global.System.Data.DbType.Int32
+            param.MySqlDbType = Global.MySql.Data.MySqlClient.MySqlDbType.Int32
+            param.IsNullable = true
+            param.SourceColumn = "CantRegLote"
+            param.SourceVersion = Global.System.Data.DataRowVersion.Original
+            Me._adapter.UpdateCommand.Parameters.Add(param)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -42775,7 +39476,7 @@ Namespace dbcolmartDataSetTableAdapters
             Me._commandCollection = New Global.MySql.Data.MySqlClient.MySqlCommand(0) {}
             Me._commandCollection(0) = New Global.MySql.Data.MySqlClient.MySqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT `NroLote`, `FechaLote` FROM `lotebanco`"
+            Me._commandCollection(0).CommandText = "SELECT `id_Lote`, `NroLote`, `FechaLote`, `CantRegLote` FROM `lotebanco`"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -42834,10 +39535,45 @@ Namespace dbcolmartDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal p1 As Integer, ByVal p2 As Integer, ByVal p3 As Date, ByVal p5 As Global.System.Nullable(Of Integer)) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(p1,Integer)
+            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(p2,Integer)
+            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(p3,Date)
+            If (p5.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(p5.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal p1 As Integer, ByVal p2 As Date) As Integer
+        Public Overloads Overridable Function Insert(ByVal p1 As Integer, ByVal p2 As Date, ByVal p3 As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(p1,Integer)
             Me.Adapter.InsertCommand.Parameters(1).Value = CType(p2,Date)
+            If (p3.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(p3.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -42849,6 +39585,43 @@ Namespace dbcolmartDataSetTableAdapters
             Finally
                 If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
                     Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal p1 As Integer, ByVal p2 As Date, ByVal p3 As Global.System.Nullable(Of Integer), ByVal p4 As Integer, ByVal p5 As Integer, ByVal p6 As Date, ByVal p8 As Global.System.Nullable(Of Integer)) As Integer
+            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(p1,Integer)
+            Me.Adapter.UpdateCommand.Parameters(1).Value = CType(p2,Date)
+            If (p3.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(p3.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(p4,Integer)
+            Me.Adapter.UpdateCommand.Parameters(4).Value = CType(p5,Integer)
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(p6,Date)
+            If (p8.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(p8.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
         End Function
@@ -55222,11 +51995,7 @@ Namespace dbcolmartDataSetTableAdapters
         
         Private _cptosgastosTableAdapter As cptosgastosTableAdapter
         
-        Private _ctactematTableAdapter As ctactematTableAdapter
-        
         Private _ctacteproTableAdapter As ctacteproTableAdapter
-        
-        Private _ctactesocTableAdapter As ctactesocTableAdapter
         
         Private _ctasctesTableAdapter As ctasctesTableAdapter
         
@@ -55436,40 +52205,12 @@ Namespace dbcolmartDataSetTableAdapters
          Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
             "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property ctactematTableAdapter() As ctactematTableAdapter
-            Get
-                Return Me._ctactematTableAdapter
-            End Get
-            Set
-                Me._ctactematTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
         Public Property ctacteproTableAdapter() As ctacteproTableAdapter
             Get
                 Return Me._ctacteproTableAdapter
             End Get
             Set
                 Me._ctacteproTableAdapter = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
-         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
-            "a", "System.Drawing.Design.UITypeEditor")>  _
-        Public Property ctactesocTableAdapter() As ctactesocTableAdapter
-            Get
-                Return Me._ctactesocTableAdapter
-            End Get
-            Set
-                Me._ctactesocTableAdapter = value
             End Set
         End Property
         
@@ -55868,17 +52609,9 @@ Namespace dbcolmartDataSetTableAdapters
                             AndAlso (Not (Me._cptosgastosTableAdapter.Connection) Is Nothing)) Then
                     Return Me._cptosgastosTableAdapter.Connection
                 End If
-                If ((Not (Me._ctactematTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._ctactematTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._ctactematTableAdapter.Connection
-                End If
                 If ((Not (Me._ctacteproTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._ctacteproTableAdapter.Connection) Is Nothing)) Then
                     Return Me._ctacteproTableAdapter.Connection
-                End If
-                If ((Not (Me._ctactesocTableAdapter) Is Nothing)  _
-                            AndAlso (Not (Me._ctactesocTableAdapter.Connection) Is Nothing)) Then
-                    Return Me._ctactesocTableAdapter.Connection
                 End If
                 If ((Not (Me._ctasctesTableAdapter) Is Nothing)  _
                             AndAlso (Not (Me._ctasctesTableAdapter.Connection) Is Nothing)) Then
@@ -56019,13 +52752,7 @@ Namespace dbcolmartDataSetTableAdapters
                 If (Not (Me._cptosgastosTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
-                If (Not (Me._ctactematTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
                 If (Not (Me._ctacteproTableAdapter) Is Nothing) Then
-                    count = (count + 1)
-                End If
-                If (Not (Me._ctactesocTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 If (Not (Me._ctasctesTableAdapter) Is Nothing) Then
@@ -56120,15 +52847,6 @@ Namespace dbcolmartDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._juzgadosTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.juzgados.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._juzgadosTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._listaoficioTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.listaoficio.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
@@ -56183,21 +52901,21 @@ Namespace dbcolmartDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._juzgadosTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.juzgados.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._juzgadosTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             If (Not (Me._nivelesTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.niveles.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._nivelesTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._padronTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.padron.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._padronTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -56255,12 +52973,12 @@ Namespace dbcolmartDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._detallecpraTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.detallecpra.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._padronTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.padron.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._detallecpraTableAdapter.Update(updatedRows))
+                    result = (result + Me._padronTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -56273,21 +52991,21 @@ Namespace dbcolmartDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._depositosTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.depositos.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._detallecpraTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.detallecpra.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._depositosTableAdapter.Update(updatedRows))
+                    result = (result + Me._detallecpraTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._debitosocTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.debitosoc.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._departamentoTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.departamento.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._debitosocTableAdapter.Update(updatedRows))
+                    result = (result + Me._departamentoTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -56345,21 +53063,21 @@ Namespace dbcolmartDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._depositosTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.depositos.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._depositosTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             If (Not (Me._comprasTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.compras.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._comprasTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._comprobteTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.comprobte.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._comprobteTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -56372,30 +53090,12 @@ Namespace dbcolmartDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._ctactematTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.ctactemat.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._ctactematTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._ctacteproTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.ctactepro.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._ctacteproTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
-            If (Not (Me._ctactesocTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.ctactesoc.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._ctactesocTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -56426,12 +53126,21 @@ Namespace dbcolmartDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._departamentoTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.departamento.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+            If (Not (Me._debitosocTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.debitosoc.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._departamentoTableAdapter.Update(updatedRows))
+                    result = (result + Me._debitosocTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._comprobteTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.comprobte.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._comprobteTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -56459,14 +53168,6 @@ Namespace dbcolmartDataSetTableAdapters
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._bibliotecaTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._juzgadosTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.juzgados.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._juzgadosTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -56518,19 +53219,19 @@ Namespace dbcolmartDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._juzgadosTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.juzgados.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._juzgadosTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             If (Not (Me._nivelesTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.niveles.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._nivelesTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._padronTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.padron.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._padronTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -56582,11 +53283,11 @@ Namespace dbcolmartDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._detallecpraTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.detallecpra.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._padronTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.padron.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._detallecpraTableAdapter.Update(addedRows))
+                    result = (result + Me._padronTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -56598,19 +53299,19 @@ Namespace dbcolmartDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._depositosTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.depositos.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._detallecpraTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.detallecpra.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._depositosTableAdapter.Update(addedRows))
+                    result = (result + Me._detallecpraTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._debitosocTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.debitosoc.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._departamentoTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.departamento.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._debitosocTableAdapter.Update(addedRows))
+                    result = (result + Me._departamentoTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -56662,19 +53363,19 @@ Namespace dbcolmartDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._depositosTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.depositos.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._depositosTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             If (Not (Me._comprasTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.compras.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._comprasTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._comprobteTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.comprobte.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._comprobteTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -56686,27 +53387,11 @@ Namespace dbcolmartDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._ctactematTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.ctactemat.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._ctactematTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._ctacteproTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.ctactepro.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._ctacteproTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
-            If (Not (Me._ctactesocTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.ctactesoc.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._ctactesocTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -56734,11 +53419,19 @@ Namespace dbcolmartDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._departamentoTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.departamento.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+            If (Not (Me._debitosocTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.debitosoc.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._departamentoTableAdapter.Update(addedRows))
+                    result = (result + Me._debitosocTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._comprobteTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.comprobte.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._comprobteTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -56768,11 +53461,19 @@ Namespace dbcolmartDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._departamentoTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.departamento.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._comprobteTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.comprobte.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._departamentoTableAdapter.Update(deletedRows))
+                    result = (result + Me._comprobteTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._debitosocTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.debitosoc.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._debitosocTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -56800,27 +53501,11 @@ Namespace dbcolmartDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._ctactesocTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ctactesoc.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._ctactesocTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._ctacteproTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.ctactepro.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._ctacteproTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._ctactematTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.ctactemat.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._ctactematTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -56832,19 +53517,19 @@ Namespace dbcolmartDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._comprobteTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.comprobte.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._comprobteTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._comprasTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.compras.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._comprasTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._depositosTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.depositos.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._depositosTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -56896,19 +53581,19 @@ Namespace dbcolmartDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._debitosocTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.debitosoc.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._departamentoTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.departamento.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._debitosocTableAdapter.Update(deletedRows))
+                    result = (result + Me._departamentoTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._depositosTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.depositos.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._detallecpraTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.detallecpra.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._depositosTableAdapter.Update(deletedRows))
+                    result = (result + Me._detallecpraTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -56920,11 +53605,11 @@ Namespace dbcolmartDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._detallecpraTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.detallecpra.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+            If (Not (Me._padronTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.padron.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._detallecpraTableAdapter.Update(deletedRows))
+                    result = (result + Me._padronTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -56976,19 +53661,19 @@ Namespace dbcolmartDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._padronTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.padron.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._padronTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._nivelesTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.niveles.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._nivelesTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._juzgadosTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.juzgados.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._juzgadosTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -57037,14 +53722,6 @@ Namespace dbcolmartDataSetTableAdapters
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._listaoficioTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
-            If (Not (Me._juzgadosTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.juzgados.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._juzgadosTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
@@ -57147,18 +53824,8 @@ Namespace dbcolmartDataSetTableAdapters
                 Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
                         "sma cadena de conexión.")
             End If
-            If ((Not (Me._ctactematTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._ctactematTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
-                        "sma cadena de conexión.")
-            End If
             If ((Not (Me._ctacteproTableAdapter) Is Nothing)  _
                         AndAlso (Me.MatchTableAdapterConnection(Me._ctacteproTableAdapter.Connection) = false)) Then
-                Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
-                        "sma cadena de conexión.")
-            End If
-            If ((Not (Me._ctactesocTableAdapter) Is Nothing)  _
-                        AndAlso (Me.MatchTableAdapterConnection(Me._ctactesocTableAdapter.Connection) = false)) Then
                 Throw New Global.System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi"& _ 
                         "sma cadena de conexión.")
             End If
@@ -57404,15 +54071,6 @@ Namespace dbcolmartDataSetTableAdapters
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._cptosgastosTableAdapter.Adapter)
                     End If
                 End If
-                If (Not (Me._ctactematTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._ctactematTableAdapter, Me._ctactematTableAdapter.Connection)
-                    Me._ctactematTableAdapter.Connection = CType(workConnection,Global.MySql.Data.MySqlClient.MySqlConnection)
-                    Me._ctactematTableAdapter.Transaction = CType(workTransaction,Global.MySql.Data.MySqlClient.MySqlTransaction)
-                    If Me._ctactematTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._ctactematTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._ctactematTableAdapter.Adapter)
-                    End If
-                End If
                 If (Not (Me._ctacteproTableAdapter) Is Nothing) Then
                     revertConnections.Add(Me._ctacteproTableAdapter, Me._ctacteproTableAdapter.Connection)
                     Me._ctacteproTableAdapter.Connection = CType(workConnection,Global.MySql.Data.MySqlClient.MySqlConnection)
@@ -57420,15 +54078,6 @@ Namespace dbcolmartDataSetTableAdapters
                     If Me._ctacteproTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._ctacteproTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._ctacteproTableAdapter.Adapter)
-                    End If
-                End If
-                If (Not (Me._ctactesocTableAdapter) Is Nothing) Then
-                    revertConnections.Add(Me._ctactesocTableAdapter, Me._ctactesocTableAdapter.Connection)
-                    Me._ctactesocTableAdapter.Connection = CType(workConnection,Global.MySql.Data.MySqlClient.MySqlConnection)
-                    Me._ctactesocTableAdapter.Transaction = CType(workTransaction,Global.MySql.Data.MySqlClient.MySqlTransaction)
-                    If Me._ctactesocTableAdapter.Adapter.AcceptChangesDuringUpdate Then
-                        Me._ctactesocTableAdapter.Adapter.AcceptChangesDuringUpdate = false
-                        adaptersWithAcceptChangesDuringUpdate.Add(Me._ctactesocTableAdapter.Adapter)
                     End If
                 End If
                 If (Not (Me._ctasctesTableAdapter) Is Nothing) Then
@@ -57747,17 +54396,9 @@ Namespace dbcolmartDataSetTableAdapters
                     Me._cptosgastosTableAdapter.Connection = CType(revertConnections(Me._cptosgastosTableAdapter),Global.MySql.Data.MySqlClient.MySqlConnection)
                     Me._cptosgastosTableAdapter.Transaction = Nothing
                 End If
-                If (Not (Me._ctactematTableAdapter) Is Nothing) Then
-                    Me._ctactematTableAdapter.Connection = CType(revertConnections(Me._ctactematTableAdapter),Global.MySql.Data.MySqlClient.MySqlConnection)
-                    Me._ctactematTableAdapter.Transaction = Nothing
-                End If
                 If (Not (Me._ctacteproTableAdapter) Is Nothing) Then
                     Me._ctacteproTableAdapter.Connection = CType(revertConnections(Me._ctacteproTableAdapter),Global.MySql.Data.MySqlClient.MySqlConnection)
                     Me._ctacteproTableAdapter.Transaction = Nothing
-                End If
-                If (Not (Me._ctactesocTableAdapter) Is Nothing) Then
-                    Me._ctactesocTableAdapter.Connection = CType(revertConnections(Me._ctactesocTableAdapter),Global.MySql.Data.MySqlClient.MySqlConnection)
-                    Me._ctactesocTableAdapter.Transaction = Nothing
                 End If
                 If (Not (Me._ctasctesTableAdapter) Is Nothing) Then
                     Me._ctasctesTableAdapter.Connection = CType(revertConnections(Me._ctasctesTableAdapter),Global.MySql.Data.MySqlClient.MySqlConnection)

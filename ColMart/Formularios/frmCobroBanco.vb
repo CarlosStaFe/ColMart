@@ -133,6 +133,12 @@
                 End If
                 If contreg > 0 Then
                     GrabarLote()
+                Else
+                    GrabarLote()
+                    detmsg = "LOTE SIN REGISTROS...!!!"
+                    tipomsg = "info"
+                    btnmsg = 1
+                    frmMsgBox.ShowDialog()
                 End If
             End If
 
@@ -345,9 +351,11 @@ finalizar:
     Private Sub GrabarLote()
 
         Try
-            comando = New MySqlCommand("INSERT INTO lotebanco VALUES(@nrolote, @fechalote)", conexion)
+            comando = New MySqlCommand("INSERT INTO lotebanco VALUES(@id, @nrolote, @fechalote, @cantidad)", conexion)
+            comando.Parameters.AddWithValue("@id", 0)
             comando.Parameters.AddWithValue("@nrolote", nrolote)
             comando.Parameters.AddWithValue("@fechalote", fechalote)
+            comando.Parameters.AddWithValue("@cantidad", contreg)
             comando.ExecuteNonQuery()
         Catch ex As Exception
             MsgBox(ex.Message)

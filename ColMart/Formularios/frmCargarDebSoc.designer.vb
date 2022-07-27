@@ -276,8 +276,6 @@ Partial Class frmCargarDebSoc
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
         Me.TableAdapterManager.Connection = Nothing
-        Me.TableAdapterManager.ctactematTableAdapter = Nothing
-        Me.TableAdapterManager.ctactesocTableAdapter = Nothing
         Me.TableAdapterManager.ctasctesTableAdapter = Nothing
         Me.TableAdapterManager.debehaberTableAdapter = Nothing
         Me.TableAdapterManager.debitomatriTableAdapter = Nothing

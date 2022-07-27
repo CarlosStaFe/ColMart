@@ -1,7 +1,7 @@
 ﻿Public Class frmMatriculados
 
     Dim fechajob, fechadb, dd, mm, yyyy, fechaaux As String
-    Dim pos1, pos2, codigoreal, codigolegal As Integer
+    Dim pos1, pos2, codigoreal, codigolegal, senial As Integer
 
     Private Sub frmMatriculados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -486,7 +486,6 @@
         comando.Connection = conexion
 
         Try
-            'comando.CommandText = "SELECT * FROM codpostal WHERE id_CodPos = '" & txtCPRealMatri.Text & "'"
             comando.CommandText = "SELECT * FROM codpostal WHERE id_CodPos = '" & txtCPRealMatri.Text & "'"
             dt = New DataTable
             da = New MySqlDataAdapter(comando)
@@ -503,7 +502,6 @@
                 txtProvReal.Text = ""
             End If
 
-            'comando.CommandText = "SELECT * FROM codpostal WHERE id_CodPos = '" & txtCPLegalMatri.Text & "'"
             comando.CommandText = "SELECT * FROM codpostal WHERE id_CodPos = '" & txtCPLegalMatri.Text & "'"
             dt = New DataTable
             da = New MySqlDataAdapter(comando)
@@ -700,7 +698,11 @@
 
         If dr.HasRows Then
             While dr.Read
-                txtNroMatri.Text = dr(0).ToString + 1
+                If senial = 0 Then
+                    txtNroMatri.Text = dr(0).ToString + 1
+                Else
+                    txtNuevaMatricula.Text = dr(0).ToString + 1
+                End If
             End While
         End If
         dr.Close()
@@ -729,6 +731,89 @@
     Private Sub CorregirBoletas()
 
         comando = New MySqlCommand("UPDATE boletas SET MailBoleta = '" & txtEmailMatri.Text & "' WHERE MatBoleta = " & txtNroMatri.Text & "", conexion)
+        comando.ExecuteNonQuery()
+
+    End Sub
+
+    Private Sub btnSinMatricula_Click(sender As Object, e As EventArgs) Handles btnSinMatricula.Click
+
+        MatriculadosBindingSource.AddNew()
+        SinMatricula()
+        txtNroMatri.Show()
+        txtApelNombMatri.Focus()
+        BtnAgregar.Visible = False
+        BtnGrabar.Visible = True
+        BtnModificar.Visible = False
+        BtnEliminar.Visible = False
+        BtnBuscar.Visible = False
+        BtnActualizar.Visible = True
+        BtnPrimer.Visible = False
+        BtnAnterior.Visible = False
+        BtnSiguiente.Visible = False
+        BtnUltimo.Visible = False
+        cmbTipoDocMatri.SelectedIndex = 0
+        cmbEstadoMatri.SelectedIndex = 0
+        cmbSexoMatri.SelectedIndex = 0
+        cmbCatAporteMatri.SelectedIndex = 0
+
+    End Sub
+    Private Sub SinMatricula()
+
+        comando = New MySqlCommand("SELECT MAX(NroMatri) NroMatri FROM matriculados WHERE NroMatri < 90000 AND NroMatri > 79000 ", conexion)
+        dr = comando.ExecuteReader()
+
+        If dr.HasRows Then
+            While dr.Read
+                txtNroMatri.Text = dr(0).ToString
+                If txtNroMatri.Text = "" Then
+                    txtNroMatri.Text = "80000"
+                Else
+                    txtNroMatri.Text = dr(0).ToString + 1
+                End If
+            End While
+        End If
+        dr.Close()
+
+    End Sub
+
+    Private Sub btnCambiar_Click(sender As Object, e As EventArgs) Handles btnCambiar.Click
+
+        If txtNroMatri.Text > "79000" And txtNroMatri.Text < "90000" Then
+            lblMatricula.Visible = True
+            txtNuevaMatricula.Visible = True
+            senial = 1
+            MatriculaNueva()
+            senial = 0
+
+            detmsg = "DESEA MODIFICAR ESTE NÚMERO DE MATRICULADO...?"
+            tipomsg = "question"
+            btnmsg = 2
+            frmMsgBox.ShowDialog()
+
+            If frmMsgBox.Tag = "SI" Then
+                ModificarMatricula()
+            End If
+
+        Else
+            detmsg = "NO SE PERMITE CAMBIAR EL NÚMERO A ESTE MATRICULADO...!!!"
+            tipomsg = "info"
+            btnmsg = 1
+            frmMsgBox.ShowDialog()
+        End If
+
+        lblMatricula.Visible = False
+        txtNuevaMatricula.Visible = False
+
+        Actualizar()
+
+    End Sub
+
+    Private Sub ModificarMatricula()
+
+        comando = New MySqlCommand("UPDATE matriculados SET NroMatri = '" & txtNuevaMatricula.Text & "' WHERE id_Matri = " & txtId_Matri.Text & " AND  NroMatri = " & txtNroMatri.Text & "", conexion)
+        comando.ExecuteNonQuery()
+
+        comando = New MySqlCommand("UPDATE ctasctes SET NroCC = '" & txtNuevaMatricula.Text & "' WHERE NroCC = " & txtNroMatri.Text & " ", conexion)
         comando.ExecuteNonQuery()
 
     End Sub

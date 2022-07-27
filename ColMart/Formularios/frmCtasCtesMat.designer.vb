@@ -36,16 +36,13 @@ Partial Class frmCtasCtesMat
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.CtactematBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DbcolmartDataSet = New ColMart.dbcolmartDataSet()
-        Me.CtactematTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.ctactematTableAdapter()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtMatricula = New System.Windows.Forms.TextBox()
         Me.txtApelyNomb = New System.Windows.Forms.TextBox()
         Me.txtSaldo = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.CtactematBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -72,28 +69,17 @@ Partial Class frmCtasCtesMat
         Me.ObsCCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.ToolTipMsg = New System.Windows.Forms.ToolTip(Me.components)
-        CType(Me.CtactematBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CtactematBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CtasctesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvCtasctes2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'CtactematBindingSource
-        '
-        Me.CtactematBindingSource.DataMember = "ctactemat"
-        Me.CtactematBindingSource.DataSource = Me.DbcolmartDataSet
-        '
         'DbcolmartDataSet
         '
         Me.DbcolmartDataSet.DataSetName = "dbcolmartDataSet"
         Me.DbcolmartDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CtactematTableAdapter
-        '
-        Me.CtactematTableAdapter.ClearBeforeFill = True
         '
         'Label1
         '
@@ -158,11 +144,6 @@ Partial Class frmCtasCtesMat
         Me.PictureBox1.Size = New System.Drawing.Size(975, 47)
         Me.PictureBox1.TabIndex = 14
         Me.PictureBox1.TabStop = False
-        '
-        'CtactematBindingSource1
-        '
-        Me.CtactematBindingSource1.DataMember = "ctactemat"
-        Me.CtactematBindingSource1.DataSource = Me.DbcolmartDataSet
         '
         'btnSalir
         '
@@ -236,18 +217,20 @@ Partial Class frmCtasCtesMat
         Me.TableAdapterManager.boletasTableAdapter = Nothing
         Me.TableAdapterManager.cajamayorTableAdapter = Nothing
         Me.TableAdapterManager.cajaTableAdapter = Nothing
+        Me.TableAdapterManager.categivaTableAdapter = Nothing
         Me.TableAdapterManager.coddebitoTableAdapter = Nothing
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
         Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
-        Me.TableAdapterManager.ctactematTableAdapter = Me.CtactematTableAdapter
-        Me.TableAdapterManager.ctactesocTableAdapter = Nothing
+        Me.TableAdapterManager.cptosgastosTableAdapter = Nothing
+        Me.TableAdapterManager.ctacteproTableAdapter = Nothing
         Me.TableAdapterManager.ctasctesTableAdapter = Me.CtasctesTableAdapter
         Me.TableAdapterManager.debehaberTableAdapter = Nothing
         Me.TableAdapterManager.debitomatriTableAdapter = Nothing
         Me.TableAdapterManager.debitosocTableAdapter = Nothing
         Me.TableAdapterManager.departamentoTableAdapter = Nothing
         Me.TableAdapterManager.depositosTableAdapter = Nothing
+        Me.TableAdapterManager.detallecpraTableAdapter = Nothing
         Me.TableAdapterManager.juzgadosTableAdapter = Nothing
         Me.TableAdapterManager.listaoficioTableAdapter = Nothing
         Me.TableAdapterManager.localidadesTableAdapter = Nothing
@@ -497,10 +480,8 @@ Partial Class frmCtasCtesMat
         Me.Name = "frmCtasCtesMat"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CUENTAS CORRIENTES MATRICULADOS"
-        CType(Me.CtactematBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CtactematBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CtasctesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvCtasctes2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -509,8 +490,6 @@ Partial Class frmCtasCtesMat
 
     End Sub
     Friend WithEvents DbcolmartDataSet As dbcolmartDataSet
-    Friend WithEvents CtactematBindingSource As BindingSource
-    Friend WithEvents CtactematTableAdapter As dbcolmartDataSetTableAdapters.ctactematTableAdapter
     Friend WithEvents Label1 As Label
     Friend WithEvents txtMatricula As TextBox
     Friend WithEvents txtApelyNomb As TextBox
@@ -521,7 +500,6 @@ Partial Class frmCtasCtesMat
     Friend WithEvents btnLimpiar As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents CtactematBindingSource1 As BindingSource
     Friend WithEvents CtasctesBindingSource As BindingSource
     Friend WithEvents CtasctesTableAdapter As dbcolmartDataSetTableAdapters.ctasctesTableAdapter
     Friend WithEvents TableAdapterManager As dbcolmartDataSetTableAdapters.TableAdapterManager

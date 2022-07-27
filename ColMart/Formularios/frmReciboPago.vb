@@ -1,4 +1,5 @@
 ﻿Imports Microsoft.Reporting.WinForms
+Imports System.IO
 
 Public Class frmReciboPago
     Dim ImpLetras, auxiliar, flag As String
@@ -8,6 +9,7 @@ Public Class frmReciboPago
     Dim saldobol, pagadobol, importe, saldoant, efectivo, tarjeta, transferencia As Double
     Dim observacion, cuit As String
     Dim parametros As ReportParameter() = New ReportParameter(52) {}
+    Dim archivo As String
 
     Private Sub frmReciboPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -503,6 +505,8 @@ Public Class frmReciboPago
 Finalizar:
 
                 ReportViewer1.LocalReport.SetParameters(parametros)
+                ReciboAPDF()
+
                 ReportViewer1.RefreshReport()
 
             End If
@@ -868,6 +872,18 @@ Terminar:
     Private Sub rdbNotaCredito_Click(sender As Object, e As EventArgs) Handles rdbNotaCredito.Click
 
         btnImprimir.Visible = True
+
+    End Sub
+
+    Private Sub ReciboAPDF()
+
+        Dim nombrePDF As String
+        nombrePDF = "CIP" & "-" & comprobante & "-" & Today.Date.ToString("dd-MM-yyyy") & "-" & TimeOfDay.ToString("h.mm") & ""
+        Dim byteViewer As Byte() = ReportViewer1.LocalReport.Render("PDF")
+        Dim newFile As New FileStream("E:\dbcolmart\CIP\" & nombrePDF & ".pdf", FileMode.Create)
+        archivo = nombrePDF & ".pdf"
+        newFile.Write(byteViewer, 0, byteViewer.Length)
+        newFile.Close()
 
     End Sub
 

@@ -423,8 +423,6 @@ Partial Class frmLiquidarSoc
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
         Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
-        Me.TableAdapterManager.ctactematTableAdapter = Nothing
-        Me.TableAdapterManager.ctactesocTableAdapter = Nothing
         Me.TableAdapterManager.ctasctesTableAdapter = Nothing
         Me.TableAdapterManager.debehaberTableAdapter = Nothing
         Me.TableAdapterManager.debitomatriTableAdapter = Me.DebitomatriTableAdapter

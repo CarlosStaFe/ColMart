@@ -129,6 +129,11 @@ Partial Class frmMatriculados
         Me.ToolTipMsg = New System.Windows.Forms.ToolTip(Me.components)
         Me.txtCPRealMatri = New System.Windows.Forms.TextBox()
         Me.txtCPLegalMatri = New System.Windows.Forms.TextBox()
+        Me.btnCambiar = New System.Windows.Forms.Button()
+        Me.btnSinMatricula = New System.Windows.Forms.Button()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.txtNuevaMatricula = New System.Windows.Forms.TextBox()
+        Me.lblMatricula = New System.Windows.Forms.Label()
         Id_MatriLabel = New System.Windows.Forms.Label()
         ApelMatriLabel = New System.Windows.Forms.Label()
         ApelMatMatriLabel = New System.Windows.Forms.Label()
@@ -169,6 +174,7 @@ Partial Class frmMatriculados
         CType(Me.MatriculadosBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MatriculadosBindingNavigator.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Id_MatriLabel
@@ -352,7 +358,7 @@ Partial Class frmMatriculados
         CPRealMatriLabel.AutoSize = True
         CPRealMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         CPRealMatriLabel.ForeColor = System.Drawing.Color.White
-        CPRealMatriLabel.Location = New System.Drawing.Point(451, 228)
+        CPRealMatriLabel.Location = New System.Drawing.Point(458, 228)
         CPRealMatriLabel.Name = "CPRealMatriLabel"
         CPRealMatriLabel.Size = New System.Drawing.Size(107, 17)
         CPRealMatriLabel.TabIndex = 36
@@ -910,7 +916,7 @@ Partial Class frmMatriculados
         Me.BtnUltimo.ForeColor = System.Drawing.Color.White
         Me.BtnUltimo.Image = CType(resources.GetObject("BtnUltimo.Image"), System.Drawing.Image)
         Me.BtnUltimo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnUltimo.Location = New System.Drawing.Point(871, 487)
+        Me.BtnUltimo.Location = New System.Drawing.Point(925, 486)
         Me.BtnUltimo.Name = "BtnUltimo"
         Me.BtnUltimo.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnUltimo.Size = New System.Drawing.Size(38, 38)
@@ -929,7 +935,7 @@ Partial Class frmMatriculados
         Me.BtnPrimer.ForeColor = System.Drawing.Color.White
         Me.BtnPrimer.Image = CType(resources.GetObject("BtnPrimer.Image"), System.Drawing.Image)
         Me.BtnPrimer.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnPrimer.Location = New System.Drawing.Point(736, 487)
+        Me.BtnPrimer.Location = New System.Drawing.Point(790, 486)
         Me.BtnPrimer.Name = "BtnPrimer"
         Me.BtnPrimer.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnPrimer.Size = New System.Drawing.Size(38, 38)
@@ -948,7 +954,7 @@ Partial Class frmMatriculados
         Me.BtnSiguiente.ForeColor = System.Drawing.Color.White
         Me.BtnSiguiente.Image = CType(resources.GetObject("BtnSiguiente.Image"), System.Drawing.Image)
         Me.BtnSiguiente.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnSiguiente.Location = New System.Drawing.Point(826, 487)
+        Me.BtnSiguiente.Location = New System.Drawing.Point(880, 486)
         Me.BtnSiguiente.Name = "BtnSiguiente"
         Me.BtnSiguiente.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnSiguiente.Size = New System.Drawing.Size(38, 38)
@@ -967,7 +973,7 @@ Partial Class frmMatriculados
         Me.BtnAnterior.ForeColor = System.Drawing.Color.White
         Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
         Me.BtnAnterior.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnAnterior.Location = New System.Drawing.Point(781, 487)
+        Me.BtnAnterior.Location = New System.Drawing.Point(835, 486)
         Me.BtnAnterior.Name = "BtnAnterior"
         Me.BtnAnterior.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnAnterior.Size = New System.Drawing.Size(38, 38)
@@ -986,7 +992,7 @@ Partial Class frmMatriculados
         Me.BtnActualizar.ForeColor = System.Drawing.Color.White
         Me.BtnActualizar.Image = CType(resources.GetObject("BtnActualizar.Image"), System.Drawing.Image)
         Me.BtnActualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnActualizar.Location = New System.Drawing.Point(596, 479)
+        Me.BtnActualizar.Location = New System.Drawing.Point(650, 478)
         Me.BtnActualizar.Name = "BtnActualizar"
         Me.BtnActualizar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnActualizar.Size = New System.Drawing.Size(87, 56)
@@ -1006,7 +1012,7 @@ Partial Class frmMatriculados
         Me.BtnGrabar.ForeColor = System.Drawing.Color.White
         Me.BtnGrabar.Image = CType(resources.GetObject("BtnGrabar.Image"), System.Drawing.Image)
         Me.BtnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnGrabar.Location = New System.Drawing.Point(245, 479)
+        Me.BtnGrabar.Location = New System.Drawing.Point(299, 478)
         Me.BtnGrabar.Name = "BtnGrabar"
         Me.BtnGrabar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnGrabar.Size = New System.Drawing.Size(59, 56)
@@ -1026,7 +1032,7 @@ Partial Class frmMatriculados
         Me.BtnSalir.ForeColor = System.Drawing.Color.White
         Me.BtnSalir.Image = CType(resources.GetObject("BtnSalir.Image"), System.Drawing.Image)
         Me.BtnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnSalir.Location = New System.Drawing.Point(947, 479)
+        Me.BtnSalir.Location = New System.Drawing.Point(1001, 478)
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnSalir.Size = New System.Drawing.Size(87, 56)
@@ -1046,7 +1052,7 @@ Partial Class frmMatriculados
         Me.BtnModificar.ForeColor = System.Drawing.Color.White
         Me.BtnModificar.Image = CType(resources.GetObject("BtnModificar.Image"), System.Drawing.Image)
         Me.BtnModificar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnModificar.Location = New System.Drawing.Point(328, 479)
+        Me.BtnModificar.Location = New System.Drawing.Point(382, 478)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnModificar.Size = New System.Drawing.Size(80, 56)
@@ -1066,7 +1072,7 @@ Partial Class frmMatriculados
         Me.BtnEliminar.ForeColor = System.Drawing.Color.White
         Me.BtnEliminar.Image = CType(resources.GetObject("BtnEliminar.Image"), System.Drawing.Image)
         Me.BtnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnEliminar.Location = New System.Drawing.Point(424, 479)
+        Me.BtnEliminar.Location = New System.Drawing.Point(478, 478)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnEliminar.Size = New System.Drawing.Size(73, 56)
@@ -1086,7 +1092,7 @@ Partial Class frmMatriculados
         Me.BtnBuscar.ForeColor = System.Drawing.Color.White
         Me.BtnBuscar.Image = CType(resources.GetObject("BtnBuscar.Image"), System.Drawing.Image)
         Me.BtnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnBuscar.Location = New System.Drawing.Point(516, 479)
+        Me.BtnBuscar.Location = New System.Drawing.Point(570, 478)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnBuscar.Size = New System.Drawing.Size(59, 56)
@@ -1106,7 +1112,7 @@ Partial Class frmMatriculados
         Me.BtnAgregar.ForeColor = System.Drawing.Color.White
         Me.BtnAgregar.Image = CType(resources.GetObject("BtnAgregar.Image"), System.Drawing.Image)
         Me.BtnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnAgregar.Location = New System.Drawing.Point(162, 479)
+        Me.BtnAgregar.Location = New System.Drawing.Point(216, 478)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnAgregar.Size = New System.Drawing.Size(66, 56)
@@ -1155,7 +1161,7 @@ Partial Class frmMatriculados
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(144, 471)
+        Me.PictureBox1.Location = New System.Drawing.Point(198, 470)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(563, 73)
         Me.PictureBox1.TabIndex = 85
@@ -1164,7 +1170,7 @@ Partial Class frmMatriculados
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox2.Location = New System.Drawing.Point(713, 471)
+        Me.PictureBox2.Location = New System.Drawing.Point(767, 470)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(222, 73)
         Me.PictureBox2.TabIndex = 86
@@ -1173,7 +1179,7 @@ Partial Class frmMatriculados
         'PictureBox3
         '
         Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox3.Location = New System.Drawing.Point(941, 471)
+        Me.PictureBox3.Location = New System.Drawing.Point(995, 470)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(99, 73)
         Me.PictureBox3.TabIndex = 87
@@ -1209,25 +1215,31 @@ Partial Class frmMatriculados
         Me.TableAdapterManager.boletasTableAdapter = Nothing
         Me.TableAdapterManager.cajamayorTableAdapter = Nothing
         Me.TableAdapterManager.cajaTableAdapter = Nothing
+        Me.TableAdapterManager.categivaTableAdapter = Nothing
         Me.TableAdapterManager.coddebitoTableAdapter = Nothing
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
         Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
-        Me.TableAdapterManager.ctactematTableAdapter = Nothing
-        Me.TableAdapterManager.ctactesocTableAdapter = Nothing
+        Me.TableAdapterManager.cptosgastosTableAdapter = Nothing
+        Me.TableAdapterManager.ctacteproTableAdapter = Nothing
         Me.TableAdapterManager.ctasctesTableAdapter = Nothing
         Me.TableAdapterManager.debehaberTableAdapter = Nothing
         Me.TableAdapterManager.debitomatriTableAdapter = Nothing
         Me.TableAdapterManager.debitosocTableAdapter = Nothing
+        Me.TableAdapterManager.departamentoTableAdapter = Nothing
         Me.TableAdapterManager.depositosTableAdapter = Nothing
+        Me.TableAdapterManager.detallecpraTableAdapter = Nothing
         Me.TableAdapterManager.juzgadosTableAdapter = Nothing
         Me.TableAdapterManager.listaoficioTableAdapter = Nothing
         Me.TableAdapterManager.localidadesTableAdapter = Nothing
+        Me.TableAdapterManager.localidadTableAdapter = Nothing
         Me.TableAdapterManager.lotebancoTableAdapter = Nothing
         Me.TableAdapterManager.matriculadosTableAdapter = Me.MatriculadosTableAdapter
         Me.TableAdapterManager.mesaentradaTableAdapter = Nothing
         Me.TableAdapterManager.nivelesTableAdapter = Nothing
+        Me.TableAdapterManager.padronTableAdapter = Nothing
         Me.TableAdapterManager.proveedoresTableAdapter = Nothing
+        Me.TableAdapterManager.provinciaTableAdapter = Nothing
         Me.TableAdapterManager.renglonesTableAdapter = Nothing
         Me.TableAdapterManager.saldomatTableAdapter = Nothing
         Me.TableAdapterManager.saldosocTableAdapter = Nothing
@@ -1470,6 +1482,85 @@ Partial Class frmMatriculados
         Me.txtCPLegalMatri.Size = New System.Drawing.Size(67, 16)
         Me.txtCPLegalMatri.TabIndex = 147
         '
+        'btnCambiar
+        '
+        Me.btnCambiar.AutoSize = True
+        Me.btnCambiar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnCambiar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCambiar.FlatAppearance.BorderSize = 0
+        Me.btnCambiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btnCambiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCambiar.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCambiar.ForeColor = System.Drawing.Color.White
+        Me.btnCambiar.Image = CType(resources.GetObject("btnCambiar.Image"), System.Drawing.Image)
+        Me.btnCambiar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnCambiar.Location = New System.Drawing.Point(115, 478)
+        Me.btnCambiar.Name = "btnCambiar"
+        Me.btnCambiar.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnCambiar.Size = New System.Drawing.Size(66, 56)
+        Me.btnCambiar.TabIndex = 149
+        Me.btnCambiar.Text = "Cambiar"
+        Me.btnCambiar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnCambiar.UseVisualStyleBackColor = False
+        '
+        'btnSinMatricula
+        '
+        Me.btnSinMatricula.AutoSize = True
+        Me.btnSinMatricula.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnSinMatricula.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSinMatricula.FlatAppearance.BorderSize = 0
+        Me.btnSinMatricula.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btnSinMatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSinMatricula.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSinMatricula.ForeColor = System.Drawing.Color.White
+        Me.btnSinMatricula.Image = CType(resources.GetObject("btnSinMatricula.Image"), System.Drawing.Image)
+        Me.btnSinMatricula.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnSinMatricula.Location = New System.Drawing.Point(13, 478)
+        Me.btnSinMatricula.Name = "btnSinMatricula"
+        Me.btnSinMatricula.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnSinMatricula.Size = New System.Drawing.Size(94, 56)
+        Me.btnSinMatricula.TabIndex = 148
+        Me.btnSinMatricula.Text = "S/Matricula"
+        Me.btnSinMatricula.TextAlign = System.Drawing.ContentAlignment.BottomRight
+        Me.btnSinMatricula.UseVisualStyleBackColor = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.PictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox7.Location = New System.Drawing.Point(5, 470)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(187, 73)
+        Me.PictureBox7.TabIndex = 150
+        Me.PictureBox7.TabStop = False
+        '
+        'txtNuevaMatricula
+        '
+        Me.txtNuevaMatricula.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtNuevaMatricula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNuevaMatricula.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "NroMatri", True))
+        Me.txtNuevaMatricula.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNuevaMatricula.ForeColor = System.Drawing.Color.Yellow
+        Me.txtNuevaMatricula.Location = New System.Drawing.Point(149, 22)
+        Me.txtNuevaMatricula.MaxLength = 5
+        Me.txtNuevaMatricula.Name = "txtNuevaMatricula"
+        Me.txtNuevaMatricula.Size = New System.Drawing.Size(73, 23)
+        Me.txtNuevaMatricula.TabIndex = 151
+        Me.txtNuevaMatricula.Visible = False
+        '
+        'lblMatricula
+        '
+        Me.lblMatricula.AutoSize = True
+        Me.lblMatricula.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.lblMatricula.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMatricula.ForeColor = System.Drawing.Color.Yellow
+        Me.lblMatricula.Location = New System.Drawing.Point(9, 24)
+        Me.lblMatricula.Name = "lblMatricula"
+        Me.lblMatricula.Size = New System.Drawing.Size(134, 16)
+        Me.lblMatricula.TabIndex = 152
+        Me.lblMatricula.Text = "NUEVA MATRÍCULA:"
+        Me.lblMatricula.Visible = False
+        '
         'frmMatriculados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1477,6 +1568,10 @@ Partial Class frmMatriculados
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1104, 574)
+        Me.Controls.Add(Me.lblMatricula)
+        Me.Controls.Add(Me.txtNuevaMatricula)
+        Me.Controls.Add(Me.btnCambiar)
+        Me.Controls.Add(Me.btnSinMatricula)
         Me.Controls.Add(Me.txtCPLegalMatri)
         Me.Controls.Add(Me.txtCPRealMatri)
         Me.Controls.Add(Label2)
@@ -1565,6 +1660,7 @@ Partial Class frmMatriculados
         Me.Controls.Add(Me.PictureBox5)
         Me.Controls.Add(Me.PictureBox6)
         Me.Controls.Add(Me.PictureBox4)
+        Me.Controls.Add(Me.PictureBox7)
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -1582,6 +1678,7 @@ Partial Class frmMatriculados
         Me.MatriculadosBindingNavigator.ResumeLayout(False)
         Me.MatriculadosBindingNavigator.PerformLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1661,4 +1758,9 @@ Partial Class frmMatriculados
     Friend WithEvents ToolTipMsg As ToolTip
     Friend WithEvents txtCPRealMatri As TextBox
     Friend WithEvents txtCPLegalMatri As TextBox
+    Friend WithEvents btnCambiar As Button
+    Friend WithEvents btnSinMatricula As Button
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents txtNuevaMatricula As TextBox
+    Friend WithEvents lblMatricula As Label
 End Class
