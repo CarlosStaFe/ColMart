@@ -142,13 +142,13 @@ Terminar:
                         Dim e_mail As New MailMessage
                         e_mail.To.Clear()
                         Smtp_Server.UseDefaultCredentials = False
-                        Smtp_Server.Credentials = New Net.NetworkCredential("martillerosfe@martilleros.org.ar", "Fx7kdIkA!=sf")
+                        Smtp_Server.Credentials = New Net.NetworkCredential("tesoreria@martilleros.org.ar", "colegiodemartilleros")
                         'Smtp_Server.Port = 465
                         Smtp_Server.Port = 587
                         Smtp_Server.Host = "mail.martilleros.org.ar"
 
                         e_mail = New MailMessage
-                        e_mail.From = New MailAddress("martillerosfe@martilleros.org.ar")
+                        e_mail.From = New MailAddress("tesoreria@martilleros.org.ar")
 
                         '********** Direcciones de mail para proceso ---------------
                         e_mail.To.Add(Trim(mail))

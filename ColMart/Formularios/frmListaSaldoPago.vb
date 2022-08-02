@@ -73,7 +73,7 @@
                     titulo = titulo & "Estado: TODOS * "
                 End If
 
-                comando.CommandText = comando.CommandText & " AND ctasctes.FecPagoCC <= '" & fechahas & "' "
+                comando.CommandText = comando.CommandText & " AND ctasctes.FechaCC <= '" & fechahas & "' AND ctasctes.RestoCC > 0 "
                 titulo = titulo & "Hasta: " & dtpHasta.Text & " * "
 
                 If cmbOrden.Text = "MATRICULA" Then

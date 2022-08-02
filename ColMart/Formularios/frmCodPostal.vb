@@ -10,7 +10,7 @@
 
     End Sub
 
-    Private Sub CodpostalBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles CodpostalBindingNavigatorSaveItem.Click
+    Private Sub CodpostalBindingNavigatorSaveItem_Click_1(sender As Object, e As EventArgs) Handles CodpostalBindingNavigatorSaveItem.Click
 
         Validate()
         BuscarProv()
@@ -18,6 +18,7 @@
         BuscarLocal()
         CodpostalBindingSource.EndEdit()
         TableAdapterManager.UpdateAll(DbcolmartDataSet)
+        CodpostalTableAdapter.Fill(DbcolmartDataSet.codpostal)
 
     End Sub
 
@@ -43,18 +44,10 @@
 
     End Sub
 
-    Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles BtnSalir.Click
+    Private Sub ToolStripButton4_Click(sender As Object, e As EventArgs) Handles ToolStripButton4.Click
 
         DesconectarMySql()
         Close()
-
-    End Sub
-
-    Private Sub BtnSalir_MouseHover(sender As Object, e As EventArgs) Handles BtnSalir.MouseHover
-
-        ToolTipMsg.ToolTipTitle = "Botón Salir."
-        ToolTipMsg.SetToolTip(BtnSalir, "Presione para salir de la pantalla.")
-        ToolTipMsg.ToolTipIcon = ToolTipIcon.Info
 
     End Sub
 
@@ -129,6 +122,5 @@
         comando.ExecuteNonQuery()
 
     End Sub
-
 
 End Class

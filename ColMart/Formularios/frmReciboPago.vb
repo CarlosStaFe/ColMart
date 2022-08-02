@@ -344,9 +344,9 @@ Public Class frmReciboPago
                     comprobante = comprobante + 1
                 End If
 
-                '---Actualizo Comprobante---
-                comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIP'", conexion)
-                comando.ExecuteNonQuery()
+                ''---Actualizo Comprobante---SE MOVIÓ A ACTUALIZAR TABLAS
+                'comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIP'", conexion)
+                'comando.ExecuteNonQuery()
 
                 longitud = Len(comprobante)
                 If longitud < 8 Then
@@ -600,6 +600,10 @@ Finalizar:
         Else
             GrabarCaja()
         End If
+
+        '***GRABO COMPROBANTE***
+        comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIP'", conexion)
+        comando.ExecuteNonQuery()
 
     End Sub
 
@@ -880,7 +884,7 @@ Terminar:
         Dim nombrePDF As String
         nombrePDF = "CIP" & "-" & comprobante & "-" & Today.Date.ToString("dd-MM-yyyy") & "-" & TimeOfDay.ToString("h.mm") & ""
         Dim byteViewer As Byte() = ReportViewer1.LocalReport.Render("PDF")
-        Dim newFile As New FileStream("E:\dbcolmart\CIP\" & nombrePDF & ".pdf", FileMode.Create)
+        Dim newFile As New FileStream("\\DESKTOP\dbcolmart\CIP\" & nombrePDF & ".pdf", FileMode.Create)
         archivo = nombrePDF & ".pdf"
         newFile.Write(byteViewer, 0, byteViewer.Length)
         newFile.Close()

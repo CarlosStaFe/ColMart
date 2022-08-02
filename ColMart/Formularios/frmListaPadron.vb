@@ -1,6 +1,6 @@
 ﻿Public Class frmListaPadron
     Dim localidad, departamento, provincia As String
-    Dim meses, leer, codigo As Integer
+    Dim meses, leer, flag As Integer
     Dim senial, idlocal, iddpto, idprov, contador As Integer
     Dim detalle, fechafianza, matricula As String
 
@@ -36,7 +36,7 @@
 
         contador = 0
         leer = 0
-        senial = 0
+        flag = 0
         detalle = "Listado de Matriculados - "
 
         comando.CommandText = "SELECT * FROM matriculados "
@@ -48,7 +48,7 @@
         Else
             comando.CommandText = comando.CommandText & " WHERE EstadoMatri = '" & cmbEstado.Text & "' "
             detalle = detalle & "Estado: " & cmbEstado.Text & " * "
-            senial = 1
+            flag = 1
         End If
 
         '********** SEXOS **********
@@ -57,9 +57,9 @@
             detalle = detalle & "Sexo: TODOS * "
         Else
             detalle = detalle & "Sexo: " & cmbSexo.Text & " * "
-            If senial = 0 Then
+            If flag = 0 Then
                 comando.CommandText = comando.CommandText & "WHERE SexoMatri = '" & cmbSexo.Text & "' "
-                senial = 1
+                flag = 1
             Else
                 comando.CommandText = comando.CommandText & "AND SexoMatri = '" & cmbSexo.Text & "' "
             End If
@@ -71,69 +71,83 @@
             detalle = detalle & "Categoría: TODOS * "
         Else
             detalle = detalle & "Categoría: " & cmbCategoria.Text & " * "
-            If senial = 0 Then
+            If flag = 0 Then
                 comando.CommandText = comando.CommandText & "WHERE CatAporteMatri = '" & cmbCategoria.Text & "' "
-                senial = 1
+                flag = 1
             Else
                 comando.CommandText = comando.CommandText & "AND CatAporteMatri = '" & cmbCategoria.Text & "' "
             End If
         End If
 
-        '********** ANTIGUEDAD **********
-        If txtAFecha.Text = txtFecha.Text Then
-            comando.CommandText = comando.CommandText
-        Else
-            detalle = detalle & "Fecha: " & txtAFecha.Text & " * "
-            fechajob = txtFecha.Text
-            ProcesarFecha()
-            If senial = 0 Then
-                comando.CommandText = comando.CommandText & "WHERE FecJurMatri <= '" & fechadb & "' "
-                senial = 1
+        '********** CHEQUEO SI QUIERE FIANZA VENCIDA **********
+        If chbFianza.Checked Then
+            detalle = detalle & "FIANZA VENCIDA AL: " & DateAdd("m", 24, txtAFechaFianza.Text) & " * "
+
+            If flag = 0 Then
+                comando.CommandText = comando.CommandText & "WHERE FianzaMatri <= '" & fechadb & "' "
+                flag = 1
             Else
-                comando.CommandText = comando.CommandText & "AND FecJurMatri <= '" & fechadb & "' "
+                comando.CommandText = comando.CommandText & "AND FianzaMatri <= '" & fechadb & "' "
             End If
-        End If
-
-        '********** LOCALIDAD-DPTO-PROVINCIA **********
-        If cmbLocal.Text = "TODOS" And cmbDpto.Text = "TODOS" And cmbProv.Text = "TODOS" Then
-            comando.CommandText = comando.CommandText
         Else
-            If cmbLocal.Text <> "TODOS" Then
 
-                If senial = 0 Then
-                    comando.CommandText = comando.CommandText & "WHERE idLocalRMatri = '" & idlocal & "' "
-                    senial = 1
+            '********** ANTIGUEDAD **********
+            If txtAFecha.Text = txtFecha.Text Then
+                comando.CommandText = comando.CommandText
+            Else
+                detalle = detalle & "Fecha: " & txtAFecha.Text & " * "
+                fechajob = txtFecha.Text
+                ProcesarFecha()
+                If flag = 0 Then
+                    comando.CommandText = comando.CommandText & "WHERE FecJurMatri <= '" & fechadb & "' "
+                    flag = 1
                 Else
-                    comando.CommandText = comando.CommandText & "AND idLocalRMatri = '" & idlocal & "' "
+                    comando.CommandText = comando.CommandText & "AND FecJurMatri <= '" & fechadb & "' "
                 End If
-
             End If
-            If cmbDpto.Text <> "TODOS" Then
 
-                If senial = 0 Then
-                    comando.CommandText = comando.CommandText & "WHERE idDptoRMatri = '" & iddpto & "' "
-                    senial = 1
-                Else
-                    comando.CommandText = comando.CommandText & "AND idDptoRMatri = '" & iddpto & "' "
+            '********** LOCALIDAD-DPTO-PROVINCIA **********
+            If cmbLocal.Text = "TODOS" And cmbDpto.Text = "TODOS" And cmbProv.Text = "TODOS" Then
+                comando.CommandText = comando.CommandText
+            Else
+                If cmbLocal.Text <> "TODOS" Then
+
+                    If flag = 0 Then
+                        comando.CommandText = comando.CommandText & "WHERE idLocalRMatri = '" & idlocal & "' "
+                        flag = 1
+                    Else
+                        comando.CommandText = comando.CommandText & "AND idLocalRMatri = '" & idlocal & "' "
+                    End If
+
                 End If
+                If cmbDpto.Text <> "TODOS" Then
 
-            End If
-            If cmbProv.Text <> "TODOS" Then
+                    If flag = 0 Then
+                        comando.CommandText = comando.CommandText & "WHERE idDptoRMatri = '" & iddpto & "' "
+                        flag = 1
+                    Else
+                        comando.CommandText = comando.CommandText & "AND idDptoRMatri = '" & iddpto & "' "
+                    End If
 
-                If senial = 0 Then
-                    comando.CommandText = comando.CommandText & "WHERE idProvRMatri = '" & idprov & "' "
-                    senial = 1
-                Else
-                    comando.CommandText = comando.CommandText & "AND idProvRMatri = '" & idprov & "' "
                 End If
+                If cmbProv.Text <> "TODOS" Then
 
+                    If flag = 0 Then
+                        comando.CommandText = comando.CommandText & "WHERE idProvRMatri = '" & idprov & "' "
+                        flag = 1
+                    Else
+                        comando.CommandText = comando.CommandText & "AND idProvRMatri = '" & idprov & "' "
+                    End If
+
+                End If
             End If
-        End If
 
-        If senial = 0 Then
-            comando.CommandText = comando.CommandText & "WHERE NroMatri < '50000' "
-        Else
-            comando.CommandText = comando.CommandText & " AND NroMatri < '50000' "
+            If flag = 0 Then
+                comando.CommandText = comando.CommandText & "WHERE NroMatri < '50000' "
+            Else
+                comando.CommandText = comando.CommandText & " AND NroMatri < '50000' "
+            End If
+
         End If
 
         '********** ORDENADOS POR **********
@@ -411,11 +425,19 @@
 
             meses = 24
             fechafianza = DateAdd("m", meses, fechajob)
+            fechajob = fechafianza
 
-            If (DateTime.Compare(fechafianza, txtAFecha.Text) < 0) Then
-                comando.Parameters.AddWithValue("@fianza", CStr(row("FianzaMatri")))
+            ProcesarFecha()
+
+            If chbFianza.Checked Then
+                comando.Parameters.AddWithValue("@fianza", fechadb)
             Else
-                comando.Parameters.AddWithValue("@fianza", Nothing)
+                If (DateTime.Compare(fechafianza, txtAFecha.Text) < 0) Then
+                    'comando.Parameters.AddWithValue("@fianza", CStr(row("FianzaMatri")))
+                    comando.Parameters.AddWithValue("@fianza", fechadb)
+                Else
+                    comando.Parameters.AddWithValue("@fianza", Nothing)
+                End If
             End If
             comando.ExecuteNonQuery()
         Next
@@ -466,7 +488,7 @@
 
                 matricula = CStr(row("NroMatri"))
 
-                senial = 0
+                flag = 0
                 idlocal = CStr(row("CPRealMatri"))
                 '****** BUSCO LOCALIDAD ************
                 BuscarLocal()
@@ -475,7 +497,7 @@
                 '****** BUSCO PROVINCIA ************
                 BuscarProv()
 
-                senial = 1
+                flag = 1
                 idlocal = CStr(row("CPLegalMatri"))
                 '****** BUSCO LOCALIDAD ************
                 BuscarLocal()
@@ -547,5 +569,49 @@
 
     End Sub
 
+    Private Sub cbxFianza_CheckedChanged(sender As Object, e As EventArgs) Handles chbFianza.CheckedChanged
+
+        If chbFianza.Checked Then
+            txtAFecha.Enabled = False
+            NUDmm.Enabled = False
+            NUDyyyy.Enabled = False
+            txtFecha.Enabled = False
+            cmbLocal.Enabled = False
+            cmbDpto.Enabled = False
+            cmbProv.Enabled = False
+            txtAFechaFianza.Focus()
+        Else
+            txtAFecha.Enabled = True
+            NUDmm.Enabled = True
+            NUDyyyy.Enabled = True
+            txtFecha.Enabled = True
+            cmbLocal.Enabled = True
+            cmbDpto.Enabled = True
+            cmbProv.Enabled = True
+        End If
+
+    End Sub
+
+    Private Sub txtAFechaFianza_Leave(sender As Object, e As EventArgs) Handles txtAFechaFianza.Leave
+
+        fechajob = txtAFechaFianza.Text
+        If txtAFechaFianza.Text <> "" Then
+            meses = 24 * (-1)
+            txtAFechaFianza.Text = DateAdd("m", meses, txtAFechaFianza.Text)
+            txtAFechaFianza.Refresh()
+            ControlFecha(fechajob)
+            If senial = 1 Then
+                txtAFechaFianza.Text = ""
+                txtAFechaFianza.Focus()
+                senial = 0
+            Else
+                fechajob = txtAFechaFianza.Text
+                ProcesarFecha()
+                txtAFechaFianza.Text = fechajob
+                txtAFechaFianza.Refresh()
+            End If
+        End If
+
+    End Sub
 
 End Class

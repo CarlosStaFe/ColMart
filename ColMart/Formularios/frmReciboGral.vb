@@ -413,6 +413,10 @@ Public Class frmReciboGral
 
         GrabarCaja()
 
+        '***ACTUALIZO COMPROBANTE***
+        comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIP'", conexion)
+        comando.ExecuteNonQuery()
+
         Dim frm As New frmReciboGeneral
         frm.fecha = txtFecha.Text
         frm.comprobante = comprobante
@@ -469,9 +473,9 @@ Public Class frmReciboGral
                 comprobante = comprobante + 1
             End If
 
-            '---Actualizo Comprobante---
-            comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIP'", conexion)
-            comando.ExecuteNonQuery()
+            ''---Actualizo Comprobante---LO TRASLADO CUANDO SE TERMINE DE IMPRIMIR TODO
+            'comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIP'", conexion)
+            'comando.ExecuteNonQuery()
 
             longitud = Len(comprobante)
             If longitud < 8 Then

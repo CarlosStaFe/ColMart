@@ -648,6 +648,7 @@ Partial Class frmReciboPago
         'rdbNotaCredito
         '
         Me.rdbNotaCredito.AutoSize = True
+        Me.rdbNotaCredito.Enabled = False
         Me.rdbNotaCredito.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rdbNotaCredito.ForeColor = System.Drawing.Color.Red
         Me.rdbNotaCredito.Location = New System.Drawing.Point(809, 67)

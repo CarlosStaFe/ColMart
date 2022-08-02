@@ -51,6 +51,8 @@ Partial Class frmCtasCtesMat
         Me.CtasctesTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.ctasctesTableAdapter()
         Me.TableAdapterManager = New ColMart.dbcolmartDataSetTableAdapters.TableAdapterManager()
         Me.dgvCtasctes2 = New System.Windows.Forms.DataGridView()
+        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.ToolTipMsg = New System.Windows.Forms.ToolTip(Me.components)
         Me.IdCCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NroCCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaCCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -67,8 +69,6 @@ Partial Class frmCtasCtesMat
         Me.FecPagoCCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RestoCCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ObsCCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnActualizar = New System.Windows.Forms.Button()
-        Me.ToolTipMsg = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -298,6 +298,30 @@ Partial Class frmCtasCtesMat
         Me.dgvCtasctes2.Size = New System.Drawing.Size(974, 452)
         Me.dgvCtasctes2.TabIndex = 90
         '
+        'btnActualizar
+        '
+        Me.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnActualizar.Enabled = False
+        Me.btnActualizar.FlatAppearance.BorderSize = 0
+        Me.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnActualizar.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnActualizar.ForeColor = System.Drawing.Color.White
+        Me.btnActualizar.Image = CType(resources.GetObject("btnActualizar.Image"), System.Drawing.Image)
+        Me.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnActualizar.Location = New System.Drawing.Point(447, 580)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(119, 44)
+        Me.btnActualizar.TabIndex = 91
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnActualizar.UseVisualStyleBackColor = True
+        Me.btnActualizar.Visible = False
+        '
+        'ToolTipMsg
+        '
+        Me.ToolTipMsg.IsBalloon = True
+        '
         'IdCCDataGridViewTextBoxColumn
         '
         Me.IdCCDataGridViewTextBoxColumn.DataPropertyName = "id_CC"
@@ -432,30 +456,6 @@ Partial Class frmCtasCtesMat
         Me.ObsCCDataGridViewTextBoxColumn.Name = "ObsCCDataGridViewTextBoxColumn"
         Me.ObsCCDataGridViewTextBoxColumn.Width = 200
         '
-        'btnActualizar
-        '
-        Me.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnActualizar.Enabled = False
-        Me.btnActualizar.FlatAppearance.BorderSize = 0
-        Me.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnActualizar.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnActualizar.ForeColor = System.Drawing.Color.White
-        Me.btnActualizar.Image = CType(resources.GetObject("btnActualizar.Image"), System.Drawing.Image)
-        Me.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnActualizar.Location = New System.Drawing.Point(447, 580)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(119, 44)
-        Me.btnActualizar.TabIndex = 91
-        Me.btnActualizar.Text = "Actualizar"
-        Me.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnActualizar.UseVisualStyleBackColor = True
-        Me.btnActualizar.Visible = False
-        '
-        'ToolTipMsg
-        '
-        Me.ToolTipMsg.IsBalloon = True
-        '
         'frmCtasCtesMat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -505,6 +505,7 @@ Partial Class frmCtasCtesMat
     Friend WithEvents TableAdapterManager As dbcolmartDataSetTableAdapters.TableAdapterManager
     Friend WithEvents dgvCtasctes2 As DataGridView
     Friend WithEvents btnActualizar As Button
+    Friend WithEvents ToolTipMsg As ToolTip
     Friend WithEvents IdCCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NroCCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FechaCCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -521,5 +522,4 @@ Partial Class frmCtasCtesMat
     Friend WithEvents FecPagoCCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents RestoCCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ObsCCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ToolTipMsg As ToolTip
 End Class

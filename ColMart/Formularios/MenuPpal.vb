@@ -410,6 +410,13 @@ Public Class MenuPpal
 
     End Sub
 
+    Private Sub btnRecibo_Click(sender As Object, e As EventArgs) Handles btnRecibo.Click
+
+        MostrarHijo(frmPagoCpras)
+        OcultarSubmenu()
+
+    End Sub
+
     Private Sub btnCtaCteProv_Click(sender As Object, e As EventArgs) Handles btnCtaCteProv.Click
 
         MostrarHijo(frmCtasCtesPro)
@@ -424,6 +431,12 @@ Public Class MenuPpal
 
     End Sub
 
+    Private Sub btnLibroCpras_Click(sender As Object, e As EventArgs) Handles btnLibroCpras.Click
+
+        MostrarHijo(frmLibroCpras)
+        OcultarSubmenu()
+
+    End Sub
 
 #End Region
 

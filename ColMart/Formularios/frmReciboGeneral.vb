@@ -42,7 +42,7 @@ Public Class frmReciboGeneral
         Dim nombrePDF As String
         nombrePDF = "CIP" & "-" & comprobante & "-" & Today.Date.ToString("dd-MM-yyyy") & "-" & TimeOfDay.ToString("h.mm") & ""
         Dim byteViewer As Byte() = ReportViewer1.LocalReport.Render("PDF")
-        Dim newFile As New FileStream("E:\dbcolmart\CIP\" & nombrePDF & ".pdf", FileMode.Create)
+        Dim newFile As New FileStream("\\DESKTOP\dbcolmart\CIP\" & nombrePDF & ".pdf", FileMode.Create)
         archivo = nombrePDF & ".pdf"
         newFile.Write(byteViewer, 0, byteViewer.Length)
         newFile.Close()

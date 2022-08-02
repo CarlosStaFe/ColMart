@@ -342,6 +342,12 @@
     <Compile Include="Formularios\frmInicio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\frmLibroCpras.Designer.vb">
+      <DependentUpon>frmLibroCpras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmLibroCpras.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\frmLiquidarMat.designer.vb">
       <DependentUpon>frmLiquidarMat.vb</DependentUpon>
     </Compile>
@@ -424,6 +430,12 @@
       <DependentUpon>frmPadronSoc.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmPadronSoc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmPagoCpras.Designer.vb">
+      <DependentUpon>frmPagoCpras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmPagoCpras.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmPasaje.designer.vb">
@@ -593,6 +605,9 @@
     <EmbeddedResource Include="Formularios\frmInicio.resx">
       <DependentUpon>frmInicio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmLibroCpras.resx">
+      <DependentUpon>frmLibroCpras.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmLiquidarMat.resx">
       <DependentUpon>frmLiquidarMat.vb</DependentUpon>
     </EmbeddedResource>
@@ -635,6 +650,9 @@
     <EmbeddedResource Include="Formularios\frmPadronSoc.resx">
       <DependentUpon>frmPadronSoc.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmPagoCpras.resx">
+      <DependentUpon>frmPagoCpras.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmPasaje.resx">
       <DependentUpon>frmPasaje.vb</DependentUpon>
     </EmbeddedResource>
@@ -672,6 +690,7 @@
       <DependentUpon>MenuPpal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Informes\rptInforme.rdlc" />
+    <EmbeddedResource Include="Informes\rptLibroCpras.rdlc" />
     <EmbeddedResource Include="Informes\rptPadronMatri.rdlc" />
     <EmbeddedResource Include="Informes\rptPadronSoc.rdlc" />
     <EmbeddedResource Include="Informes\rptReciboGeneral.rdlc" />

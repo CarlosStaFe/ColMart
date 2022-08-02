@@ -39,7 +39,7 @@ Partial Class MenuPpal
         Me.btnCodPostales = New System.Windows.Forms.Button()
         Me.btnParametros = New System.Windows.Forms.Button()
         Me.SubMenuProveedores = New System.Windows.Forms.Panel()
-        Me.btnCajaMayor = New System.Windows.Forms.Button()
+        Me.btnLibroCpras = New System.Windows.Forms.Button()
         Me.btnCptosGastos = New System.Windows.Forms.Button()
         Me.btnSaldoDeudor = New System.Windows.Forms.Button()
         Me.btnCtaCteProv = New System.Windows.Forms.Button()
@@ -362,7 +362,7 @@ Partial Class MenuPpal
         'SubMenuProveedores
         '
         Me.SubMenuProveedores.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.SubMenuProveedores.Controls.Add(Me.btnCajaMayor)
+        Me.SubMenuProveedores.Controls.Add(Me.btnLibroCpras)
         Me.SubMenuProveedores.Controls.Add(Me.btnCptosGastos)
         Me.SubMenuProveedores.Controls.Add(Me.btnSaldoDeudor)
         Me.SubMenuProveedores.Controls.Add(Me.btnCtaCteProv)
@@ -375,23 +375,23 @@ Partial Class MenuPpal
         Me.SubMenuProveedores.Size = New System.Drawing.Size(233, 189)
         Me.SubMenuProveedores.TabIndex = 20
         '
-        'btnCajaMayor
+        'btnLibroCpras
         '
-        Me.btnCajaMayor.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCajaMayor.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnCajaMayor.FlatAppearance.BorderSize = 0
-        Me.btnCajaMayor.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCajaMayor.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCajaMayor.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnCajaMayor.Location = New System.Drawing.Point(0, 150)
-        Me.btnCajaMayor.Name = "btnCajaMayor"
-        Me.btnCajaMayor.Padding = New System.Windows.Forms.Padding(50, 0, 0, 0)
-        Me.btnCajaMayor.Size = New System.Drawing.Size(233, 25)
-        Me.btnCajaMayor.TabIndex = 16
-        Me.btnCajaMayor.Text = "Caja Mayor"
-        Me.btnCajaMayor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCajaMayor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnCajaMayor.UseVisualStyleBackColor = True
+        Me.btnLibroCpras.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLibroCpras.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnLibroCpras.FlatAppearance.BorderSize = 0
+        Me.btnLibroCpras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLibroCpras.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLibroCpras.ForeColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(196, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnLibroCpras.Location = New System.Drawing.Point(0, 150)
+        Me.btnLibroCpras.Name = "btnLibroCpras"
+        Me.btnLibroCpras.Padding = New System.Windows.Forms.Padding(50, 0, 0, 0)
+        Me.btnLibroCpras.Size = New System.Drawing.Size(233, 25)
+        Me.btnLibroCpras.TabIndex = 16
+        Me.btnLibroCpras.Text = "Libro Compras"
+        Me.btnLibroCpras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLibroCpras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLibroCpras.UseVisualStyleBackColor = True
         '
         'btnCptosGastos
         '
@@ -1274,6 +1274,6 @@ Partial Class MenuPpal
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents txtUsuario As TextBox
-    Friend WithEvents btnCajaMayor As Button
+    Friend WithEvents btnLibroCpras As Button
     Friend WithEvents btnCptosGastos As Button
 End Class
