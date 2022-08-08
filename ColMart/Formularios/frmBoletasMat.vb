@@ -1,5 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
-Imports System.IO
+﻿Imports System.IO
 Imports Microsoft.Reporting.WinForms
 Imports System.ComponentModel
 

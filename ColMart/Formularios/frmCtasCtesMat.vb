@@ -8,11 +8,12 @@
 
         ConectarMySql()
         CtasctesTableAdapter.Fill(DbcolmartDataSet.ctasctes)
-        dgvCtasctes2.DataSource = Nothing
+        dgvCtasctes.DataSource = Nothing
         txtMatricula.Focus()
+        lblEstado.Text = ""
 
-        If nivel < "4" Then
-            btnActualizar.Enabled = True
+        If nivel > "3" Then
+            btnActualizar.Enabled = False
         End If
 
     End Sub
@@ -50,6 +51,7 @@
         If dt.Rows.Count > 0 Then
             Dim row As DataRow = dt.Rows(0)
             txtApelyNomb.Text = CStr(row("ApelNombMatri"))
+            lblEstado.Text = CStr(row("EstadoMatri"))
         Else
             txtApelyNomb.Text = ""
         End If
@@ -60,14 +62,14 @@
 
     Private Sub SaldoCtaCte()
 
-        comando.CommandText = "SELECT * FROM ctasctes WHERE NroCC = " & txtMatricula.Text & " ORDER BY FechaCC, ItemCC"
+        comando.CommandText = "SELECT * FROM ctasctes WHERE NroCC = " & txtMatricula.Text & " ORDER BY FechaCC, NrocbteCC, ItemCC"
         dt = New DataTable
         da = New MySqlDataAdapter(comando)
         da.Fill(dt)
 
-        dgvCtasctes2.DataSource = dt
+        dgvCtasctes.DataSource = dt
 
-        dgvCtasctes2.Sort(dgvCtasctes2.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
+        dgvCtasctes.Sort(dgvCtasctes.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
 
         debe = 0
         haber = 0
@@ -75,8 +77,8 @@
         saldoant = 0
         comprobante = ""
 
-        If dgvCtasctes2.Rows.Count > 0 Then
-            For Each Fila As DataGridViewRow In dgvCtasctes2.Rows
+        If dgvCtasctes.Rows.Count > 0 Then
+            For Each Fila As DataGridViewRow In dgvCtasctes.Rows
                 If Not Fila Is Nothing Then
                     debe = Fila.Cells(8).Value
                     haber = Fila.Cells(9).Value
@@ -102,8 +104,8 @@
                     End If
                 End If
             Next
-            dgvCtasctes2.FirstDisplayedScrollingRowIndex = dgvCtasctes2.RowCount - 1
-            dgvCtasctes2.Rows(dgvCtasctes2.RowCount - 1).Selected = True
+            dgvCtasctes.FirstDisplayedScrollingRowIndex = dgvCtasctes.RowCount - 1
+            dgvCtasctes.Rows(dgvCtasctes.RowCount - 1).Selected = True
         Else
             detmsg = "No posee movimientos en la Cuenta Corriente...!!!"
             tipomsg = "info"
@@ -113,30 +115,30 @@
 
         txtSaldo.Text = saldo
         FormatoMoneda(txtSaldo)
-        dgvCtasctes2.Refresh()
+        dgvCtasctes.Refresh()
 
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
 
-        For i As Integer = 0 To dgvCtasctes2.Rows.Count - 1
+        For i As Integer = 0 To dgvCtasctes.Rows.Count - 1
 
-            id = dgvCtasctes2.Rows(i).Cells(0).Value()
-            debe = dgvCtasctes2.Rows(i).Cells(8).Value()
-            haber = dgvCtasctes2.Rows(i).Cells(9).Value()
-            saldo = dgvCtasctes2.Rows(i).Cells(10).Value()
-            estado = dgvCtasctes2.Rows(i).Cells(11).Value()
-            pagado = dgvCtasctes2.Rows(i).Cells(12).Value()
+            id = dgvCtasctes.Rows(i).Cells(0).Value()
+            debe = dgvCtasctes.Rows(i).Cells(8).Value()
+            haber = dgvCtasctes.Rows(i).Cells(9).Value()
+            saldo = dgvCtasctes.Rows(i).Cells(10).Value()
+            estado = dgvCtasctes.Rows(i).Cells(11).Value()
+            pagado = dgvCtasctes.Rows(i).Cells(12).Value()
             If estado = "PENDIENTE" Then
                 fecpago = "1900-01-01"
             Else
-                fecpago = dgvCtasctes2.Rows(i).Cells(13).Value()
+                fecpago = dgvCtasctes.Rows(i).Cells(13).Value()
                 fechaaux = fecpago
                 MoverFecha()
                 fecpago = yyyy + "-" + mm + "-" + dd
             End If
-            resto = dgvCtasctes2.Rows(i).Cells(14).Value()
-            obs = dgvCtasctes2.Rows(i).Cells(15).Value()
+            resto = dgvCtasctes.Rows(i).Cells(14).Value()
+            obs = dgvCtasctes.Rows(i).Cells(15).Value()
 
             comando.CommandText = "UPDATE ctasctes SET DebeCC = '" & debe & "', HaberCC = '" & haber & "', SaldoCC = '" & saldo & "', EstadoCC = '" & estado & "'," _
                                   & " PagadoCC = '" & pagado & "', FecPagoCC = '" & fecpago & "', RestoCC = '" & resto & "', ObsCC = '" & obs & "'" _
@@ -148,7 +150,7 @@
         txtMatricula.Text = ""
         txtApelyNomb.Text = ""
         txtSaldo.Text = ""
-        dgvCtasctes2.DataSource = Nothing
+        dgvCtasctes.DataSource = Nothing
         txtMatricula.Focus()
 
     End Sub
@@ -173,7 +175,7 @@
         txtMatricula.Text = ""
         txtApelyNomb.Text = ""
         txtSaldo.Text = ""
-        dgvCtasctes2.DataSource = Nothing
+        dgvCtasctes.DataSource = Nothing
         txtMatricula.Focus()
 
     End Sub
@@ -217,6 +219,61 @@
             Next j
             mm = ceros & mm
         End If
+
+    End Sub
+
+
+    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
+
+        comando = New MySqlCommand("DELETE FROM impctacte", conexion)
+        dr = comando.ExecuteReader
+        dr.Close()
+
+        Procesar()
+
+        Dim frm As New frmImpCtaCte
+        frm.txtUser.Text = user
+        frm.txtDetalle.Text = "LISTADO DE CUENTA CORRIENTE DEL MATRICULADO " + txtMatricula.Text + " * " + txtApelyNomb.Text + " * "
+        frm.ShowDialog()
+
+    End Sub
+
+    Private Sub Procesar()
+
+        comando.CommandText = "SELECT * FROM ctasctes WHERE NroCC = " & txtMatricula.Text & " ORDER BY FechaCC, NroCbteCC, ItemCC"
+        dt = New DataTable
+        da = New MySqlDataAdapter(comando)
+        da.Fill(dt)
+        Dim row As DataRow = dt.Rows(0)
+
+        For Each row In dt.Rows
+
+            comando = New MySqlCommand("INSERT INTO impctacte VALUES(@id, @matri, @fecha, @tipo, @numero, @item, @detalle, @periodo, @debe, @haber,@saldo, @estado, @pagado, " _
+                                       & "@fecpago, @resto, @obs)", conexion)
+            comando.Parameters.AddWithValue("@id", CStr(row("id_CC")))
+            comando.Parameters.AddWithValue("@matri", CStr(row("NroCC")))
+
+            fechajob = CStr(row("FechaCC"))
+            ProcesarFecha()
+            comando.Parameters.AddWithValue("@fecha", fechadb)
+            comando.Parameters.AddWithValue("@tipo", CStr(row("TipoCbteCC")))
+            comando.Parameters.AddWithValue("@numero", CStr(row("NroCbteCC")))
+            comando.Parameters.AddWithValue("@item", CStr(row("ItemCC")))
+            comando.Parameters.AddWithValue("@detalle", CStr(row("DetalleCC")))
+            comando.Parameters.AddWithValue("@periodo", CStr(row("PeriodoCC")))
+            comando.Parameters.AddWithValue("@debe", CStr(row("DebeCC")))
+            comando.Parameters.AddWithValue("@haber", CStr(row("HaberCC")))
+            comando.Parameters.AddWithValue("@saldo", CStr(row("SaldoCC")))
+            comando.Parameters.AddWithValue("@estado", CStr(row("EstadoCC")))
+            comando.Parameters.AddWithValue("@pagado", CStr(row("EstadoCC")))
+
+            fechajob = CStr(row("FecPagoCC"))
+            ProcesarFecha()
+            comando.Parameters.AddWithValue("@fecpago", fechadb)
+            comando.Parameters.AddWithValue("@resto", CStr(row("RestoCC")))
+            comando.Parameters.AddWithValue("@obs", CStr(row("ObsCC")))
+            comando.ExecuteNonQuery()
+        Next
 
     End Sub
 

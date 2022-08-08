@@ -1,4 +1,7 @@
-﻿Module Variables
+﻿Imports System.Text
+Imports System.Security.Cryptography
+
+Module Variables
     'Variables para usar en el sistema
     Public conexion As New MySqlConnection
     Public comando As New MySqlCommand
@@ -18,7 +21,7 @@
     Public fecha As String
     '***Variables para controlar niveles y usuarios
     Public nivel As Integer
-    Public usuario As String
+    Public user As String
     Public sector As String
     '***Variables para mostrar importes
     Public importe As Double
@@ -39,18 +42,8 @@
 
     Public Sub ConectarMySql()
 
-        ' Abrimos el archivo y lo recorremos hasta el final, línea por línea
-        'FileOpen(Apunt, "E:/Proyectos/ColMart/colmart.txt", OpenMode.Input, OpenAccess.Read)
-        'Do While Not EOF(1)
-        'TextoConn = LineInput(1)
-        'conexion.ConnectionString = TextoConn
-        'Loop
-        'FileClose(Apunt)
-
         TextoConn = My.Computer.FileSystem.ReadAllText("colmart.txt")
         conexion.ConnectionString = TextoConn
-
-        'conexion.ConnectionString = "server=DESKTOP; database=dbcolmart; user id=martillero1; password=soporte; Convert Zero Datetime=True"
 
         Try
             If conexion.State = ConnectionState.Closed Then
@@ -179,7 +172,7 @@
             StrImporte = ceros & StrImporte
         End If
 
-        'Calculo digito verificador
+        '***** Calculo digito verificador
         CodigoBarra = "00004241" & "0000000" & matricula & cto & periodo & "0" & vencimiento & StrImporte
         factor = 1
         suma = 0
@@ -197,21 +190,21 @@
         DigitoVerifica = CStr(suma)
         CodigoBarra = "00004241" & "0000000" & matricula & cto & periodo & "0" & vencimiento & StrImporte & DigitoVerifica
 
-        'Assign start and stop codes
+        '***** Assign start and stop codes
         StartCode = ChrW(40)
         StopCode = ChrW(41)
         StringLength = Len(CodigoBarra)
         For j = 1 To StringLength Step 2
-            'Get the value of each number pair
+            '***** Get the value of each number pair
             CurrentCharNum = Val((Mid(CodigoBarra, j, 2)))
-            'Get the ASCII value of CurrentChar
+            '***** Get the ASCII value of CurrentChar
             If CurrentCharNum <= 49 Then DataToPrint = DataToPrint & ChrW(CurrentCharNum + 48)
             If CurrentCharNum >= 50 Then DataToPrint = DataToPrint & ChrW(CurrentCharNum + 142)
         Next j
 
         CodigoAux = CodigoBarra
         CodigoBarra = StartCode + CodigoBarra + StopCode
-        'Get Printable String
+        '***** Get Printable String
         '        CodigoArmado = StartCode + DataToPrint + StopCode
         CodigoArmado = StartCode + DataToPrint + StopCode + "*" + CodigoAux
 
@@ -618,6 +611,31 @@
         numero = entero + "." + dec
 
         Return numero
+
+    End Function
+
+    Public Function Encriptar(ByVal Input As String) As String
+
+        Dim IV() As Byte = ASCIIEncoding.ASCII.GetBytes("qualityi") 'La clave debe ser de 8 caracteres
+        Dim EncryptionKey() As Byte = Convert.FromBase64String("rpaSPvIvVLlrcmtzPU9/c67Gkj7yL1S5") 'No se puede alterar la cantidad de caracteres pero si la clave
+        Dim buffer() As Byte = Encoding.UTF8.GetBytes(Input)
+        Dim des As TripleDESCryptoServiceProvider = New TripleDESCryptoServiceProvider
+        des.Key = EncryptionKey
+        des.IV = IV
+
+        Return Convert.ToBase64String(des.CreateEncryptor().TransformFinalBlock(buffer, 0, buffer.Length()))
+
+    End Function
+
+    Public Function Desencriptar(ByVal Input As String) As String
+
+        Dim IV() As Byte = ASCIIEncoding.ASCII.GetBytes("qualityi") 'La clave debe ser de 8 caracteres
+        Dim EncryptionKey() As Byte = Convert.FromBase64String("rpaSPvIvVLlrcmtzPU9/c67Gkj7yL1S5") 'No se puede alterar la cantidad de caracteres pero si la clave
+        Dim buffer() As Byte = Convert.FromBase64String(Input)
+        Dim des As TripleDESCryptoServiceProvider = New TripleDESCryptoServiceProvider
+        des.Key = EncryptionKey
+        des.IV = IV
+        Return Encoding.UTF8.GetString(des.CreateDecryptor().TransformFinalBlock(buffer, 0, buffer.Length()))
 
     End Function
 

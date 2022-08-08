@@ -279,7 +279,8 @@
     Private Sub GrabarCompra()
 
         Try
-            comando = New MySqlCommand("INSERT INTO compras VALUES(@id, @prov, @titular, @fecha, @tipo, @prefijo, @subfijo, @neto, @ivares, @ivanores, @impint, @total)", conexion)
+            comando = New MySqlCommand("INSERT INTO compras VALUES(@id, @prov, @titular, @fecha, @tipo, @prefijo, @subfijo, @neto, @ivares, @ivanores, " _
+                                        & "@impint, @total, @debe, @saldo, @estado)", conexion)
             comando.Parameters.AddWithValue("@id", 0)
             comando.Parameters.AddWithValue("@prov", txtNroProvCpra.Text)
             comando.Parameters.AddWithValue("@titular", txtTitularCpra.Text)
@@ -294,16 +295,20 @@
             comando.Parameters.AddWithValue("@ivanores", 0)
             comando.Parameters.AddWithValue("@impint", txtImpIntCpra.Text)
             comando.Parameters.AddWithValue("@total", txtTotalCpra.Text)
+            comando.Parameters.AddWithValue("@debe", 0)
+            comando.Parameters.AddWithValue("@saldo", 0)
+            comando.Parameters.AddWithValue("@estado", "PENDIENTE")
             comando.ExecuteNonQuery()
         Catch ex As Exception
             detmsg = "Grabación de compra cancelada...!!!"
             tipomsg = "info"
             btnmsg = 1
             frmMsgBox.ShowDialog()
+            GoTo terminar
         End Try
 
         '*** BUSCO EL ÚLTIMO INDICE GRABADO EN LA TABLA COMPRA ***
-        comando.CommandText = "SELECT @@identity AS id"
+        comando.CommandText = "Select @@identity As id"
         dt = New DataTable
         da = New MySqlDataAdapter(comando)
         da.Fill(dt)
@@ -314,7 +319,8 @@
 
         For j = 0 To renglon - 1
             Try
-                comando = New MySqlCommand("INSERT INTO detallecpra VALUES(@id, @idcpra, @item, @cantidad, @detalle, @unitario, @neto, @ivares, @ivanores, @impint, @total, @idsubrubro, @subrubro, @obra)", conexion)
+                comando = New MySqlCommand("INSERT INTO detallecpra VALUES(@id, @idcpra, @item, @cantidad, @detalle, @unitario, @neto, @ivares, " _
+                                           & "@ivanores, @impint, @total, @idsubrubro, @subrubro, @obra)", conexion)
                 comando.Parameters.AddWithValue("@id", 0)
                 comando.Parameters.AddWithValue("@idcpra", id)
                 comando.Parameters.AddWithValue("@item", dgvDetCompras.Rows(j).Cells(2).Value)
@@ -341,6 +347,8 @@
 
         GrabarCtaCte()
         ActivarBotones1()
+
+terminar:
 
     End Sub
     Private Sub LimpiarCabecera()
@@ -424,7 +432,7 @@
     End Sub
     Private Sub LeerCompra()
 
-        comando.CommandText = "SELECT * FROM compras WHERE NroProvCpra = '" & txtNroProvCpra.Text & "' AND PrefijoCpra = '" & txtPrefijoCpra.Text & "' " _
+        comando.CommandText = "Select * FROM compras WHERE NroProvCpra = '" & txtNroProvCpra.Text & "' AND PrefijoCpra = '" & txtPrefijoCpra.Text & "' " _
                                 & " AND SubfijoCpra = '" & txtSubfijoCpra.Text & "' AND TipoCbteCpra = '" & cbxTipoCbteCpra.Text & "' "
         dt = New DataTable
         da = New MySqlDataAdapter(comando)

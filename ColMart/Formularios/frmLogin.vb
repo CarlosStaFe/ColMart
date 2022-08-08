@@ -1,4 +1,7 @@
 Public Class frmLogin
+    Dim Usuario As String
+    Dim Clave As String
+
     Private Sub frmLogin_Load(ByVal sender As System.Object, ByVal e As EventArgs) Handles MyBase.Load
 
         ConectarMySql()
@@ -7,18 +10,17 @@ Public Class frmLogin
     End Sub
     Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
 
+        txtClave.Text = Encriptar(txtClave.Text)
+
         consulta = "SELECT * FROM Usuarios WHERE UserUsuario = '" & txtUsuario.Text & "' AND ClaveUsuario = '" & txtClave.Text & "'"
-        'consulta = "SELECT UserUsuario, ClaveUsuario, NivelUsuario FROM Usuarios WHERE UserUsuario = '" & txtUsuario.Text & "' AND ClaveUsuario = '" & txtClave.Text & "'"
         comando = New MySqlCommand(consulta, conexion)
         dr = comando.ExecuteReader
 
         If dr.HasRows = True Then
             While dr.Read
-                usuario = dr("UserUsuario")
+                user = dr("UserUsuario")
                 nivel = dr("NivelUsuario")
                 sector = dr("TipoUsuario")
-                'usuario = dr(5).ToString
-                'nivel = dr(3).ToString
             End While
             ProgressBar1.Visible = True
             lblPorcen.Visible = True
@@ -45,7 +47,8 @@ Public Class frmLogin
 
     Private Sub btnSalir_Click_1(sender As Object, e As EventArgs) Handles btnSalir.Click
 
-        Salir()
+        DesconectarMySql()
+        Close()
         'End
 
     End Sub
@@ -84,4 +87,5 @@ Public Class frmLogin
         DesconectarMySql()
 
     End Sub
+
 End Class

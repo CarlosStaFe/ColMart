@@ -25,14 +25,24 @@ Partial Class frmInforme
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInforme))
+        Me.debehaberBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.dbcolmartDataSet = New ColMart.dbcolmartDataSet()
         Me.txtDetalle = New System.Windows.Forms.TextBox()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.dbcolmartDataSet = New ColMart.dbcolmartDataSet()
-        Me.debehaberBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.debehaberTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.debehaberTableAdapter()
-        CType(Me.dbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.debehaberBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'debehaberBindingSource
+        '
+        Me.debehaberBindingSource.DataMember = "debehaber"
+        Me.debehaberBindingSource.DataSource = Me.dbcolmartDataSet
+        '
+        'dbcolmartDataSet
+        '
+        Me.dbcolmartDataSet.DataSetName = "dbcolmartDataSet"
+        Me.dbcolmartDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'txtDetalle
         '
@@ -51,18 +61,8 @@ Partial Class frmInforme
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(800, 450)
+        Me.ReportViewer1.Size = New System.Drawing.Size(800, 469)
         Me.ReportViewer1.TabIndex = 1
-        '
-        'dbcolmartDataSet
-        '
-        Me.dbcolmartDataSet.DataSetName = "dbcolmartDataSet"
-        Me.dbcolmartDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'debehaberBindingSource
-        '
-        Me.debehaberBindingSource.DataMember = "debehaber"
-        Me.debehaberBindingSource.DataSource = Me.dbcolmartDataSet
         '
         'debehaberTableAdapter
         '
@@ -72,15 +72,15 @@ Partial Class frmInforme
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 469)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.txtDetalle)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmInforme"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LISTADO DE SALDO Y PAGOS"
-        CType(Me.dbcolmartDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.debehaberBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dbcolmartDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

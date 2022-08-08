@@ -204,6 +204,18 @@
     <Compile Include="Formularios\frmBoletasMat.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\frmBotonUser.Designer.vb">
+      <DependentUpon>frmBotonUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmBotonUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCargarMenues.Designer.vb">
+      <DependentUpon>frmCargarMenues.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmCargarMenues.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\frmCargarDebMat.designer.vb">
       <DependentUpon>frmCargarDebMat.vb</DependentUpon>
     </Compile>
@@ -328,6 +340,12 @@
       <DependentUpon>frmEnviarMail.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmEnviarMail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmImpCtaCte.Designer.vb">
+      <DependentUpon>frmImpCtaCte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmImpCtaCte.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\frmInforme.Designer.vb">
@@ -536,6 +554,12 @@
     <EmbeddedResource Include="Formularios\frmBoletasMat.resx">
       <DependentUpon>frmBoletasMat.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmBotonUser.resx">
+      <DependentUpon>frmBotonUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCargarMenues.resx">
+      <DependentUpon>frmCargarMenues.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCargarDebMat.resx">
       <DependentUpon>frmCargarDebMat.vb</DependentUpon>
     </EmbeddedResource>
@@ -598,6 +622,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmEnviarMail.resx">
       <DependentUpon>frmEnviarMail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmImpCtaCte.resx">
+      <DependentUpon>frmImpCtaCte.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmInforme.resx">
       <DependentUpon>frmInforme.vb</DependentUpon>
@@ -689,6 +716,7 @@
     <EmbeddedResource Include="Formularios\MenuPpal.resx">
       <DependentUpon>MenuPpal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Informes\rptImpCtaCte.rdlc" />
     <EmbeddedResource Include="Informes\rptInforme.rdlc" />
     <EmbeddedResource Include="Informes\rptLibroCpras.rdlc" />
     <EmbeddedResource Include="Informes\rptPadronMatri.rdlc" />

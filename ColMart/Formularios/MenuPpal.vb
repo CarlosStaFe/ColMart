@@ -158,8 +158,10 @@ Public Class MenuPpal
 
     Private Sub MenuPpal_Load(sender As Object, e As EventArgs) Handles Me.Load
 
-        Label3.Text = usuario
+        Label3.Text = user
         Label6.Text = sector
+
+        ControlPermisos()
 
         OcultarMenues()
 
@@ -220,9 +222,6 @@ Public Class MenuPpal
     Private Sub btnMatriculados_Click(sender As Object, e As EventArgs) Handles btnMatriculados.Click
 
         MostrarSubmenu(SubMenuMatriculados)
-        'If nivel > "3" Then
-        '    btnActualizarMat.Enabled = False
-        'End If
 
     End Sub
 
@@ -477,6 +476,13 @@ Public Class MenuPpal
 
     End Sub
 
+    Private Sub btnBackupRestore_Click(sender As Object, e As EventArgs) Handles btnBackupRestore.Click
+
+        MostrarHijo(frmBackupRestore)
+        OcultarSubmenu()
+
+    End Sub
+
     Private Sub btnNiveles_Click(sender As Object, e As EventArgs) Handles btnNiveles.Click
 
         MostrarHijo(frmNiveles)
@@ -491,10 +497,21 @@ Public Class MenuPpal
 
     End Sub
 
-    Private Sub btnBackupRestore_Click(sender As Object, e As EventArgs) Handles btnBackupRestore.Click
+    Private Sub btnMenues_Click(sender As Object, e As EventArgs) Handles btnMenues.Click
 
-        MostrarHijo(frmBackupRestore)
+        MostrarHijo(frmCargarMenues)
         OcultarSubmenu()
+
+    End Sub
+
+    Private Sub btnAccesoMenues_Click(sender As Object, e As EventArgs) Handles btnAccesoMenues.Click
+
+        MostrarHijo(frmBotonUser)
+        OcultarSubmenu()
+
+    End Sub
+
+    Private Sub btnSaldoDeudor_Click(sender As Object, e As EventArgs) Handles btnSaldoDeudor.Click
 
     End Sub
 
@@ -508,5 +525,34 @@ Public Class MenuPpal
     End Sub
 
 #End Region
+
+    Private Sub ControlPermisos()
+
+        Dim accede As Boolean
+        Dim myButton As String
+        Dim c As Control
+
+        comando = New MySqlCommand("SELECT * FROM botonuser WHERE UsuarioBU = '" & user & "' ", conexion)
+        dr = comando.ExecuteReader
+
+        If dr.HasRows Then
+            While dr.Read
+                myButton = dr(2).ToString
+                c = Controls.Find(myButton, True).FirstOrDefault()
+                accede = dr(4).ToString
+                If accede = False Then
+                    c.Enabled = False
+                    c.BackColor = Color.FromArgb(45, 45, 45)
+                    c.ForeColor = Color.FromArgb(50, 50, 50)
+                Else
+                    c.Enabled = True
+                End If
+            End While
+        End If
+
+        dr.Close()
+        dr.Dispose()
+
+    End Sub
 
 End Class

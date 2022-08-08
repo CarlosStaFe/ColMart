@@ -89,7 +89,7 @@ Partial Class frmNiveles
         TipoNivelLabel.AutoSize = True
         TipoNivelLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         TipoNivelLabel.ForeColor = System.Drawing.Color.White
-        TipoNivelLabel.Location = New System.Drawing.Point(95, 62)
+        TipoNivelLabel.Location = New System.Drawing.Point(129, 62)
         TipoNivelLabel.Name = "TipoNivelLabel"
         TipoNivelLabel.Size = New System.Drawing.Size(44, 17)
         TipoNivelLabel.TabIndex = 0
@@ -100,7 +100,7 @@ Partial Class frmNiveles
         NombNivelLabel.AutoSize = True
         NombNivelLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         NombNivelLabel.ForeColor = System.Drawing.Color.White
-        NombNivelLabel.Location = New System.Drawing.Point(52, 91)
+        NombNivelLabel.Location = New System.Drawing.Point(86, 91)
         NombNivelLabel.Name = "NombNivelLabel"
         NombNivelLabel.Size = New System.Drawing.Size(87, 17)
         NombNivelLabel.TabIndex = 2
@@ -127,16 +127,20 @@ Partial Class frmNiveles
         Me.TableAdapterManager.boletasTableAdapter = Nothing
         Me.TableAdapterManager.cajamayorTableAdapter = Nothing
         Me.TableAdapterManager.cajaTableAdapter = Nothing
+        Me.TableAdapterManager.categivaTableAdapter = Nothing
         Me.TableAdapterManager.coddebitoTableAdapter = Nothing
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
         Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
+        Me.TableAdapterManager.cptosgastosTableAdapter = Nothing
+        Me.TableAdapterManager.ctacteproTableAdapter = Nothing
         Me.TableAdapterManager.ctasctesTableAdapter = Nothing
         Me.TableAdapterManager.debehaberTableAdapter = Nothing
         Me.TableAdapterManager.debitomatriTableAdapter = Nothing
         Me.TableAdapterManager.debitosocTableAdapter = Nothing
         Me.TableAdapterManager.departamentoTableAdapter = Nothing
         Me.TableAdapterManager.depositosTableAdapter = Nothing
+        Me.TableAdapterManager.detallecpraTableAdapter = Nothing
         Me.TableAdapterManager.juzgadosTableAdapter = Nothing
         Me.TableAdapterManager.listaoficioTableAdapter = Nothing
         Me.TableAdapterManager.localidadesTableAdapter = Nothing
@@ -277,7 +281,7 @@ Partial Class frmNiveles
         Me.txtId_Nivel.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NivelesBindingSource, "id_Nivel", True))
         Me.txtId_Nivel.Enabled = False
         Me.txtId_Nivel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtId_Nivel.Location = New System.Drawing.Point(190, 62)
+        Me.txtId_Nivel.Location = New System.Drawing.Point(224, 62)
         Me.txtId_Nivel.Name = "txtId_Nivel"
         Me.txtId_Nivel.Size = New System.Drawing.Size(39, 16)
         Me.txtId_Nivel.TabIndex = 6
@@ -289,7 +293,7 @@ Partial Class frmNiveles
         Me.txtTipoNivel.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NivelesBindingSource, "TipoNivel", True))
         Me.txtTipoNivel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTipoNivel.ForeColor = System.Drawing.Color.White
-        Me.txtTipoNivel.Location = New System.Drawing.Point(145, 59)
+        Me.txtTipoNivel.Location = New System.Drawing.Point(179, 59)
         Me.txtTipoNivel.Name = "txtTipoNivel"
         Me.txtTipoNivel.Size = New System.Drawing.Size(39, 23)
         Me.txtTipoNivel.TabIndex = 1
@@ -302,7 +306,7 @@ Partial Class frmNiveles
         Me.txtNombNivel.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.NivelesBindingSource, "NombNivel", True))
         Me.txtNombNivel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombNivel.ForeColor = System.Drawing.Color.White
-        Me.txtNombNivel.Location = New System.Drawing.Point(145, 88)
+        Me.txtNombNivel.Location = New System.Drawing.Point(179, 88)
         Me.txtNombNivel.Name = "txtNombNivel"
         Me.txtNombNivel.Size = New System.Drawing.Size(180, 23)
         Me.txtNombNivel.TabIndex = 3
@@ -342,7 +346,7 @@ Partial Class frmNiveles
         Me.NivelesDataGridView.DefaultCellStyle = DataGridViewCellStyle3
         Me.NivelesDataGridView.EnableHeadersVisualStyles = False
         Me.NivelesDataGridView.GridColor = System.Drawing.Color.White
-        Me.NivelesDataGridView.Location = New System.Drawing.Point(14, 133)
+        Me.NivelesDataGridView.Location = New System.Drawing.Point(48, 133)
         Me.NivelesDataGridView.Name = "NivelesDataGridView"
         Me.NivelesDataGridView.ReadOnly = True
         Me.NivelesDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -380,7 +384,7 @@ Partial Class frmNiveles
         Me.BtnUltimo.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnUltimo.ForeColor = System.Drawing.Color.White
         Me.BtnUltimo.Image = CType(resources.GetObject("BtnUltimo.Image"), System.Drawing.Image)
-        Me.BtnUltimo.Location = New System.Drawing.Point(152, 338)
+        Me.BtnUltimo.Location = New System.Drawing.Point(186, 338)
         Me.BtnUltimo.Name = "BtnUltimo"
         Me.BtnUltimo.Size = New System.Drawing.Size(34, 51)
         Me.BtnUltimo.TabIndex = 28
@@ -395,7 +399,7 @@ Partial Class frmNiveles
         Me.BtnPrimer.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnPrimer.ForeColor = System.Drawing.Color.White
         Me.BtnPrimer.Image = CType(resources.GetObject("BtnPrimer.Image"), System.Drawing.Image)
-        Me.BtnPrimer.Location = New System.Drawing.Point(28, 338)
+        Me.BtnPrimer.Location = New System.Drawing.Point(62, 338)
         Me.BtnPrimer.Name = "BtnPrimer"
         Me.BtnPrimer.Size = New System.Drawing.Size(34, 51)
         Me.BtnPrimer.TabIndex = 25
@@ -410,7 +414,7 @@ Partial Class frmNiveles
         Me.BtnSiguiente.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSiguiente.ForeColor = System.Drawing.Color.White
         Me.BtnSiguiente.Image = CType(resources.GetObject("BtnSiguiente.Image"), System.Drawing.Image)
-        Me.BtnSiguiente.Location = New System.Drawing.Point(111, 338)
+        Me.BtnSiguiente.Location = New System.Drawing.Point(145, 338)
         Me.BtnSiguiente.Name = "BtnSiguiente"
         Me.BtnSiguiente.Size = New System.Drawing.Size(34, 51)
         Me.BtnSiguiente.TabIndex = 27
@@ -425,7 +429,7 @@ Partial Class frmNiveles
         Me.BtnAnterior.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAnterior.ForeColor = System.Drawing.Color.White
         Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
-        Me.BtnAnterior.Location = New System.Drawing.Point(69, 338)
+        Me.BtnAnterior.Location = New System.Drawing.Point(103, 338)
         Me.BtnAnterior.Name = "BtnAnterior"
         Me.BtnAnterior.Size = New System.Drawing.Size(34, 51)
         Me.BtnAnterior.TabIndex = 26
@@ -441,7 +445,7 @@ Partial Class frmNiveles
         Me.BtnActualizar.ForeColor = System.Drawing.Color.White
         Me.BtnActualizar.Image = CType(resources.GetObject("BtnActualizar.Image"), System.Drawing.Image)
         Me.BtnActualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnActualizar.Location = New System.Drawing.Point(213, 338)
+        Me.BtnActualizar.Location = New System.Drawing.Point(247, 338)
         Me.BtnActualizar.Name = "BtnActualizar"
         Me.BtnActualizar.Size = New System.Drawing.Size(85, 51)
         Me.BtnActualizar.TabIndex = 24
@@ -458,7 +462,7 @@ Partial Class frmNiveles
         Me.BtnGrabar.ForeColor = System.Drawing.Color.White
         Me.BtnGrabar.Image = CType(resources.GetObject("BtnGrabar.Image"), System.Drawing.Image)
         Me.BtnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnGrabar.Location = New System.Drawing.Point(397, 132)
+        Me.BtnGrabar.Location = New System.Drawing.Point(431, 132)
         Me.BtnGrabar.Name = "BtnGrabar"
         Me.BtnGrabar.Size = New System.Drawing.Size(83, 51)
         Me.BtnGrabar.TabIndex = 23
@@ -475,7 +479,7 @@ Partial Class frmNiveles
         Me.BtnSalir.ForeColor = System.Drawing.Color.White
         Me.BtnSalir.Image = CType(resources.GetObject("BtnSalir.Image"), System.Drawing.Image)
         Me.BtnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnSalir.Location = New System.Drawing.Point(317, 338)
+        Me.BtnSalir.Location = New System.Drawing.Point(351, 338)
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.Size = New System.Drawing.Size(59, 51)
         Me.BtnSalir.TabIndex = 29
@@ -492,7 +496,7 @@ Partial Class frmNiveles
         Me.BtnModificar.ForeColor = System.Drawing.Color.White
         Me.BtnModificar.Image = CType(resources.GetObject("BtnModificar.Image"), System.Drawing.Image)
         Me.BtnModificar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnModificar.Location = New System.Drawing.Point(397, 200)
+        Me.BtnModificar.Location = New System.Drawing.Point(431, 200)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(83, 51)
         Me.BtnModificar.TabIndex = 22
@@ -509,7 +513,7 @@ Partial Class frmNiveles
         Me.BtnEliminar.ForeColor = System.Drawing.Color.White
         Me.BtnEliminar.Image = CType(resources.GetObject("BtnEliminar.Image"), System.Drawing.Image)
         Me.BtnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnEliminar.Location = New System.Drawing.Point(397, 268)
+        Me.BtnEliminar.Location = New System.Drawing.Point(431, 268)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(83, 51)
         Me.BtnEliminar.TabIndex = 21
@@ -527,7 +531,7 @@ Partial Class frmNiveles
         Me.BtnBuscar.ForeColor = System.Drawing.Color.White
         Me.BtnBuscar.Image = CType(resources.GetObject("BtnBuscar.Image"), System.Drawing.Image)
         Me.BtnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnBuscar.Location = New System.Drawing.Point(397, 336)
+        Me.BtnBuscar.Location = New System.Drawing.Point(431, 336)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.Size = New System.Drawing.Size(83, 51)
         Me.BtnBuscar.TabIndex = 20
@@ -545,7 +549,7 @@ Partial Class frmNiveles
         Me.BtnAgregar.ForeColor = System.Drawing.Color.White
         Me.BtnAgregar.Image = CType(resources.GetObject("BtnAgregar.Image"), System.Drawing.Image)
         Me.BtnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnAgregar.Location = New System.Drawing.Point(397, 64)
+        Me.BtnAgregar.Location = New System.Drawing.Point(431, 64)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.Size = New System.Drawing.Size(83, 51)
         Me.BtnAgregar.TabIndex = 19
@@ -556,7 +560,7 @@ Partial Class frmNiveles
         'PictureBox3
         '
         Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox3.Location = New System.Drawing.Point(389, 52)
+        Me.PictureBox3.Location = New System.Drawing.Point(423, 52)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(104, 346)
         Me.PictureBox3.TabIndex = 30
@@ -576,7 +580,7 @@ Partial Class frmNiveles
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(14, 332)
+        Me.PictureBox1.Location = New System.Drawing.Point(48, 332)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(188, 66)
         Me.PictureBox1.TabIndex = 86
@@ -585,7 +589,7 @@ Partial Class frmNiveles
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox2.Location = New System.Drawing.Point(208, 332)
+        Me.PictureBox2.Location = New System.Drawing.Point(242, 332)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(96, 66)
         Me.PictureBox2.TabIndex = 87
@@ -594,7 +598,7 @@ Partial Class frmNiveles
         'PictureBox4
         '
         Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox4.Location = New System.Drawing.Point(310, 332)
+        Me.PictureBox4.Location = New System.Drawing.Point(344, 332)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(73, 66)
         Me.PictureBox4.TabIndex = 88
@@ -603,7 +607,7 @@ Partial Class frmNiveles
         'PictureBox5
         '
         Me.PictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox5.Location = New System.Drawing.Point(14, 52)
+        Me.PictureBox5.Location = New System.Drawing.Point(48, 52)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(368, 67)
         Me.PictureBox5.TabIndex = 89

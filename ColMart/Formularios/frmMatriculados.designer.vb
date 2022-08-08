@@ -53,6 +53,7 @@ Partial Class frmMatriculados
         Dim CalleFiadorMatriLabel As System.Windows.Forms.Label
         Dim ObsMatriLabel As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
+        Dim Label3 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMatriculados))
         Me.txtId_Matri = New System.Windows.Forms.TextBox()
         Me.MatriculadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -134,6 +135,8 @@ Partial Class frmMatriculados
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.txtNuevaMatricula = New System.Windows.Forms.TextBox()
         Me.lblMatricula = New System.Windows.Forms.Label()
+        Me.txtVenceFianza = New System.Windows.Forms.TextBox()
+        Me.lblVenceFianza = New System.Windows.Forms.Label()
         Id_MatriLabel = New System.Windows.Forms.Label()
         ApelMatriLabel = New System.Windows.Forms.Label()
         ApelMatMatriLabel = New System.Windows.Forms.Label()
@@ -164,6 +167,7 @@ Partial Class frmMatriculados
         CalleFiadorMatriLabel = New System.Windows.Forms.Label()
         ObsMatriLabel = New System.Windows.Forms.Label()
         Label2 = New System.Windows.Forms.Label()
+        Label3 = New System.Windows.Forms.Label()
         CType(Me.MatriculadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -457,7 +461,7 @@ Partial Class frmMatriculados
         FiadorMatriLabel.AutoSize = True
         FiadorMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         FiadorMatriLabel.ForeColor = System.Drawing.Color.White
-        FiadorMatriLabel.Location = New System.Drawing.Point(276, 372)
+        FiadorMatriLabel.Location = New System.Drawing.Point(422, 372)
         FiadorMatriLabel.Name = "FiadorMatriLabel"
         FiadorMatriLabel.Size = New System.Drawing.Size(109, 17)
         FiadorMatriLabel.TabIndex = 56
@@ -468,7 +472,7 @@ Partial Class frmMatriculados
         DocFiadorMatriLabel.AutoSize = True
         DocFiadorMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DocFiadorMatriLabel.ForeColor = System.Drawing.Color.White
-        DocFiadorMatriLabel.Location = New System.Drawing.Point(804, 371)
+        DocFiadorMatriLabel.Location = New System.Drawing.Point(866, 371)
         DocFiadorMatriLabel.Name = "DocFiadorMatriLabel"
         DocFiadorMatriLabel.Size = New System.Drawing.Size(87, 17)
         DocFiadorMatriLabel.TabIndex = 58
@@ -506,6 +510,17 @@ Partial Class frmMatriculados
         Label2.Size = New System.Drawing.Size(110, 17)
         Label2.TabIndex = 145
         Label2.Text = "Teléfono Fiador:"
+        '
+        'Label3
+        '
+        Label3.AutoSize = True
+        Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label3.ForeColor = System.Drawing.Color.Yellow
+        Label3.Location = New System.Drawing.Point(255, 372)
+        Label3.Name = "Label3"
+        Label3.Size = New System.Drawing.Size(52, 16)
+        Label3.TabIndex = 154
+        Label3.Text = "VENC.:"
         '
         'txtId_Matri
         '
@@ -737,10 +752,10 @@ Partial Class frmMatriculados
         Me.txtDocFiadorMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "DocFiadorMatri", True))
         Me.txtDocFiadorMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDocFiadorMatri.ForeColor = System.Drawing.Color.White
-        Me.txtDocFiadorMatri.Location = New System.Drawing.Point(897, 369)
+        Me.txtDocFiadorMatri.Location = New System.Drawing.Point(959, 369)
         Me.txtDocFiadorMatri.MaxLength = 8
         Me.txtDocFiadorMatri.Name = "txtDocFiadorMatri"
-        Me.txtDocFiadorMatri.Size = New System.Drawing.Size(185, 23)
+        Me.txtDocFiadorMatri.Size = New System.Drawing.Size(123, 23)
         Me.txtDocFiadorMatri.TabIndex = 30
         '
         'txtCalleFiadorMatri
@@ -1431,10 +1446,10 @@ Partial Class frmMatriculados
         Me.txtFiadorMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "FiadorMatri", True))
         Me.txtFiadorMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFiadorMatri.ForeColor = System.Drawing.Color.White
-        Me.txtFiadorMatri.Location = New System.Drawing.Point(391, 369)
+        Me.txtFiadorMatri.Location = New System.Drawing.Point(537, 369)
         Me.txtFiadorMatri.MaxLength = 30
         Me.txtFiadorMatri.Name = "txtFiadorMatri"
-        Me.txtFiadorMatri.Size = New System.Drawing.Size(393, 23)
+        Me.txtFiadorMatri.Size = New System.Drawing.Size(314, 23)
         Me.txtFiadorMatri.TabIndex = 29
         '
         'txtTelFiadorMatri
@@ -1561,6 +1576,31 @@ Partial Class frmMatriculados
         Me.lblMatricula.Text = "NUEVA MATRÍCULA:"
         Me.lblMatricula.Visible = False
         '
+        'txtVenceFianza
+        '
+        Me.txtVenceFianza.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtVenceFianza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtVenceFianza.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "FianzaMatri", True))
+        Me.txtVenceFianza.Enabled = False
+        Me.txtVenceFianza.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtVenceFianza.ForeColor = System.Drawing.Color.Yellow
+        Me.txtVenceFianza.Location = New System.Drawing.Point(925, 312)
+        Me.txtVenceFianza.MaxLength = 10
+        Me.txtVenceFianza.Name = "txtVenceFianza"
+        Me.txtVenceFianza.Size = New System.Drawing.Size(100, 23)
+        Me.txtVenceFianza.TabIndex = 153
+        '
+        'lblVenceFianza
+        '
+        Me.lblVenceFianza.AutoSize = True
+        Me.lblVenceFianza.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVenceFianza.ForeColor = System.Drawing.Color.Lime
+        Me.lblVenceFianza.Location = New System.Drawing.Point(313, 369)
+        Me.lblVenceFianza.Name = "lblVenceFianza"
+        Me.lblVenceFianza.Size = New System.Drawing.Size(61, 19)
+        Me.lblVenceFianza.TabIndex = 155
+        Me.lblVenceFianza.Text = "Label4"
+        '
         'frmMatriculados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1568,6 +1608,9 @@ Partial Class frmMatriculados
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1104, 574)
+        Me.Controls.Add(Me.lblVenceFianza)
+        Me.Controls.Add(Label3)
+        Me.Controls.Add(Me.txtVenceFianza)
         Me.Controls.Add(Me.lblMatricula)
         Me.Controls.Add(Me.txtNuevaMatricula)
         Me.Controls.Add(Me.btnCambiar)
@@ -1763,4 +1806,6 @@ Partial Class frmMatriculados
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents txtNuevaMatricula As TextBox
     Friend WithEvents lblMatricula As Label
+    Friend WithEvents txtVenceFianza As TextBox
+    Friend WithEvents lblVenceFianza As Label
 End Class

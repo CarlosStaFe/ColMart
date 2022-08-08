@@ -50,9 +50,7 @@ Partial Class frmCtasCtesMat
         Me.CtasctesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CtasctesTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.ctasctesTableAdapter()
         Me.TableAdapterManager = New ColMart.dbcolmartDataSetTableAdapters.TableAdapterManager()
-        Me.dgvCtasctes2 = New System.Windows.Forms.DataGridView()
-        Me.btnActualizar = New System.Windows.Forms.Button()
-        Me.ToolTipMsg = New System.Windows.Forms.ToolTip(Me.components)
+        Me.dgvCtasctes = New System.Windows.Forms.DataGridView()
         Me.IdCCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NroCCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaCCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -69,11 +67,15 @@ Partial Class frmCtasCtesMat
         Me.FecPagoCCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RestoCCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ObsCCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.ToolTipMsg = New System.Windows.Forms.ToolTip(Me.components)
+        Me.lblEstado = New System.Windows.Forms.Label()
+        Me.btnImprimir = New System.Windows.Forms.Button()
         CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CtasctesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvCtasctes2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvCtasctes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DbcolmartDataSet
@@ -119,7 +121,7 @@ Partial Class frmCtasCtesMat
         Me.txtSaldo.BackColor = System.Drawing.Color.Black
         Me.txtSaldo.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSaldo.ForeColor = System.Drawing.Color.GreenYellow
-        Me.txtSaldo.Location = New System.Drawing.Point(753, 70)
+        Me.txtSaldo.Location = New System.Drawing.Point(767, 70)
         Me.txtSaldo.Name = "txtSaldo"
         Me.txtSaldo.Size = New System.Drawing.Size(117, 27)
         Me.txtSaldo.TabIndex = 4
@@ -130,7 +132,7 @@ Partial Class frmCtasCtesMat
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label2.Location = New System.Drawing.Point(682, 76)
+        Me.Label2.Location = New System.Drawing.Point(696, 76)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(55, 16)
         Me.Label2.TabIndex = 3
@@ -155,7 +157,7 @@ Partial Class frmCtasCtesMat
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSalir.Location = New System.Drawing.Point(660, 580)
+        Me.btnSalir.Location = New System.Drawing.Point(838, 580)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(99, 44)
         Me.btnSalir.TabIndex = 87
@@ -173,7 +175,7 @@ Partial Class frmCtasCtesMat
         Me.btnLimpiar.ForeColor = System.Drawing.Color.White
         Me.btnLimpiar.Image = CType(resources.GetObject("btnLimpiar.Image"), System.Drawing.Image)
         Me.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLimpiar.Location = New System.Drawing.Point(215, 580)
+        Me.btnLimpiar.Location = New System.Drawing.Point(76, 580)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(99, 44)
         Me.btnLimpiar.TabIndex = 88
@@ -215,6 +217,8 @@ Partial Class frmCtasCtesMat
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.bibliotecaTableAdapter = Nothing
         Me.TableAdapterManager.boletasTableAdapter = Nothing
+        Me.TableAdapterManager.botonesTableAdapter = Nothing
+        Me.TableAdapterManager.botonuserTableAdapter = Nothing
         Me.TableAdapterManager.cajamayorTableAdapter = Nothing
         Me.TableAdapterManager.cajaTableAdapter = Nothing
         Me.TableAdapterManager.categivaTableAdapter = Nothing
@@ -249,19 +253,20 @@ Partial Class frmCtasCtesMat
         Me.TableAdapterManager.tribunalesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = ColMart.dbcolmartDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usuariosTableAdapter = Nothing
+        Me.TableAdapterManager.ventasTableAdapter = Nothing
         '
-        'dgvCtasctes2
+        'dgvCtasctes
         '
-        Me.dgvCtasctes2.AllowUserToAddRows = False
-        Me.dgvCtasctes2.AllowUserToDeleteRows = False
+        Me.dgvCtasctes.AllowUserToAddRows = False
+        Me.dgvCtasctes.AllowUserToDeleteRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvCtasctes2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvCtasctes2.AutoGenerateColumns = False
-        Me.dgvCtasctes2.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.dgvCtasctes2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvCtasctes.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvCtasctes.AutoGenerateColumns = False
+        Me.dgvCtasctes.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.dgvCtasctes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -269,11 +274,11 @@ Partial Class frmCtasCtesMat
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCtasctes2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvCtasctes2.ColumnHeadersHeight = 30
-        Me.dgvCtasctes2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvCtasctes2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdCCDataGridViewTextBoxColumn, Me.NroCCDataGridViewTextBoxColumn, Me.FechaCCDataGridViewTextBoxColumn, Me.TipoCbteCCDataGridViewTextBoxColumn, Me.NroCbteCCDataGridViewTextBoxColumn, Me.ItemCCDataGridViewTextBoxColumn, Me.DetalleCCDataGridViewTextBoxColumn, Me.PeriodoCCDataGridViewTextBoxColumn, Me.DebeCCDataGridViewTextBoxColumn, Me.HaberCCDataGridViewTextBoxColumn, Me.SaldoCCDataGridViewTextBoxColumn, Me.EstadoCCDataGridViewTextBoxColumn, Me.PagadoCCDataGridViewTextBoxColumn, Me.FecPagoCCDataGridViewTextBoxColumn, Me.RestoCCDataGridViewTextBoxColumn, Me.ObsCCDataGridViewTextBoxColumn})
-        Me.dgvCtasctes2.DataSource = Me.CtasctesBindingSource
+        Me.dgvCtasctes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvCtasctes.ColumnHeadersHeight = 30
+        Me.dgvCtasctes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvCtasctes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdCCDataGridViewTextBoxColumn, Me.NroCCDataGridViewTextBoxColumn, Me.FechaCCDataGridViewTextBoxColumn, Me.TipoCbteCCDataGridViewTextBoxColumn, Me.NroCbteCCDataGridViewTextBoxColumn, Me.ItemCCDataGridViewTextBoxColumn, Me.DetalleCCDataGridViewTextBoxColumn, Me.PeriodoCCDataGridViewTextBoxColumn, Me.DebeCCDataGridViewTextBoxColumn, Me.HaberCCDataGridViewTextBoxColumn, Me.SaldoCCDataGridViewTextBoxColumn, Me.EstadoCCDataGridViewTextBoxColumn, Me.PagadoCCDataGridViewTextBoxColumn, Me.FecPagoCCDataGridViewTextBoxColumn, Me.RestoCCDataGridViewTextBoxColumn, Me.ObsCCDataGridViewTextBoxColumn})
+        Me.dgvCtasctes.DataSource = Me.CtasctesBindingSource
         DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         DataGridViewCellStyle11.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -281,12 +286,12 @@ Partial Class frmCtasCtesMat
         DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
         DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvCtasctes2.DefaultCellStyle = DataGridViewCellStyle11
-        Me.dgvCtasctes2.EnableHeadersVisualStyles = False
-        Me.dgvCtasctes2.GridColor = System.Drawing.Color.White
-        Me.dgvCtasctes2.Location = New System.Drawing.Point(15, 114)
-        Me.dgvCtasctes2.Name = "dgvCtasctes2"
-        Me.dgvCtasctes2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgvCtasctes.DefaultCellStyle = DataGridViewCellStyle11
+        Me.dgvCtasctes.EnableHeadersVisualStyles = False
+        Me.dgvCtasctes.GridColor = System.Drawing.Color.White
+        Me.dgvCtasctes.Location = New System.Drawing.Point(15, 114)
+        Me.dgvCtasctes.Name = "dgvCtasctes"
+        Me.dgvCtasctes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
         DataGridViewCellStyle12.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -294,33 +299,9 @@ Partial Class frmCtasCtesMat
         DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCtasctes2.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
-        Me.dgvCtasctes2.Size = New System.Drawing.Size(974, 452)
-        Me.dgvCtasctes2.TabIndex = 90
-        '
-        'btnActualizar
-        '
-        Me.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnActualizar.Enabled = False
-        Me.btnActualizar.FlatAppearance.BorderSize = 0
-        Me.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnActualizar.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnActualizar.ForeColor = System.Drawing.Color.White
-        Me.btnActualizar.Image = CType(resources.GetObject("btnActualizar.Image"), System.Drawing.Image)
-        Me.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnActualizar.Location = New System.Drawing.Point(447, 580)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(119, 44)
-        Me.btnActualizar.TabIndex = 91
-        Me.btnActualizar.Text = "Actualizar"
-        Me.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnActualizar.UseVisualStyleBackColor = True
-        Me.btnActualizar.Visible = False
-        '
-        'ToolTipMsg
-        '
-        Me.ToolTipMsg.IsBalloon = True
+        Me.dgvCtasctes.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        Me.dgvCtasctes.Size = New System.Drawing.Size(974, 452)
+        Me.dgvCtasctes.TabIndex = 90
         '
         'IdCCDataGridViewTextBoxColumn
         '
@@ -456,14 +437,67 @@ Partial Class frmCtasCtesMat
         Me.ObsCCDataGridViewTextBoxColumn.Name = "ObsCCDataGridViewTextBoxColumn"
         Me.ObsCCDataGridViewTextBoxColumn.Width = 200
         '
+        'btnActualizar
+        '
+        Me.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnActualizar.FlatAppearance.BorderSize = 0
+        Me.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnActualizar.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnActualizar.ForeColor = System.Drawing.Color.White
+        Me.btnActualizar.Image = CType(resources.GetObject("btnActualizar.Image"), System.Drawing.Image)
+        Me.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnActualizar.Location = New System.Drawing.Point(322, 580)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(119, 44)
+        Me.btnActualizar.TabIndex = 91
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnActualizar.UseVisualStyleBackColor = True
+        '
+        'ToolTipMsg
+        '
+        Me.ToolTipMsg.IsBalloon = True
+        '
+        'lblEstado
+        '
+        Me.lblEstado.AutoSize = True
+        Me.lblEstado.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEstado.ForeColor = System.Drawing.Color.Yellow
+        Me.lblEstado.Location = New System.Drawing.Point(505, 73)
+        Me.lblEstado.Name = "lblEstado"
+        Me.lblEstado.Size = New System.Drawing.Size(61, 19)
+        Me.lblEstado.TabIndex = 156
+        Me.lblEstado.Text = "Label4"
+        '
+        'btnImprimir
+        '
+        Me.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnImprimir.FlatAppearance.BorderSize = 0
+        Me.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImprimir.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnImprimir.ForeColor = System.Drawing.Color.White
+        Me.btnImprimir.Image = CType(resources.GetObject("btnImprimir.Image"), System.Drawing.Image)
+        Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnImprimir.Location = New System.Drawing.Point(588, 580)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(103, 44)
+        Me.btnImprimir.TabIndex = 157
+        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnImprimir.UseVisualStyleBackColor = True
+        '
         'frmCtasCtesMat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1031, 642)
+        Me.ClientSize = New System.Drawing.Size(1019, 642)
+        Me.Controls.Add(Me.btnImprimir)
+        Me.Controls.Add(Me.lblEstado)
         Me.Controls.Add(Me.btnActualizar)
-        Me.Controls.Add(Me.dgvCtasctes2)
+        Me.Controls.Add(Me.dgvCtasctes)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnSalir)
@@ -484,7 +518,7 @@ Partial Class frmCtasCtesMat
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CtasctesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvCtasctes2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvCtasctes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -503,7 +537,7 @@ Partial Class frmCtasCtesMat
     Friend WithEvents CtasctesBindingSource As BindingSource
     Friend WithEvents CtasctesTableAdapter As dbcolmartDataSetTableAdapters.ctasctesTableAdapter
     Friend WithEvents TableAdapterManager As dbcolmartDataSetTableAdapters.TableAdapterManager
-    Friend WithEvents dgvCtasctes2 As DataGridView
+    Friend WithEvents dgvCtasctes As DataGridView
     Friend WithEvents btnActualizar As Button
     Friend WithEvents ToolTipMsg As ToolTip
     Friend WithEvents IdCCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -522,4 +556,6 @@ Partial Class frmCtasCtesMat
     Friend WithEvents FecPagoCCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents RestoCCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ObsCCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents lblEstado As Label
+    Friend WithEvents btnImprimir As Button
 End Class

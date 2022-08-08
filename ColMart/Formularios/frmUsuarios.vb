@@ -1,11 +1,13 @@
 ﻿Public Class frmUsuarios
+    Dim usuario As String
+
     Private Sub frmUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ConectarMySql()
         UsuariosTableAdapter.Fill(DbcolmartDataSet.usuarios)
         BtnGrabar.Visible = False
 
-        txtApelUsuario.Focus()
+        'txtApelUsuario.Focus()
 
     End Sub
 
@@ -29,7 +31,6 @@
         If e.KeyCode = Keys.Enter Then
             LeerNiveles()
         End If
-
 
     End Sub
 
@@ -73,8 +74,7 @@
             frmMsgBox.ShowDialog()
         End Try
 
-        txtApelUsuario.Focus()
-        'NivelesBindingSource.AddNew()
+        'txtApelUsuario.Focus()
         BtnAgregar.Visible = True
         BtnGrabar.Visible = False
         BtnModificar.Visible = True
@@ -103,6 +103,7 @@
             tipomsg = "ok"
             btnmsg = 1
             frmMsgBox.ShowDialog()
+            ModificarMenues()
         Else
             detmsg = "Edición cancelada...!!!"
             tipomsg = "info"
@@ -127,6 +128,7 @@
             tipomsg = "ok"
             btnmsg = 1
             frmMsgBox.ShowDialog()
+            BorrarMenues()
         Else
             detmsg = "Eliminación cancelada...!!!"
             tipomsg = "info"
@@ -210,4 +212,41 @@
 
     End Sub
 
+    Private Sub txtClaveUsuario_LostFocus(sender As Object, e As EventArgs) Handles txtClaveUsuario.LostFocus
+
+        txtClaveUsuario.Text = Encriptar(txtClaveUsuario.Text)
+
+    End Sub
+
+    Private Sub txtActivoUsuario_MouseHover(sender As Object, e As EventArgs) Handles txtActivoUsuario.MouseHover
+
+        ToolTipMsg.ToolTipTitle = "Activo Usuario."
+        ToolTipMsg.SetToolTip(txtActivoUsuario, "S = Activo <----> N = No Activo.")
+        ToolTipMsg.ToolTipIcon = ToolTipIcon.Info
+
+    End Sub
+
+    Private Sub BorrarMenues()
+
+        comando = New MySqlCommand(("DELETE FROM botonuser WHERE UsuarioBU = '" & txtUserUsuario.Text & "' "), conexion)
+        comando.ExecuteNonQuery()
+
+    End Sub
+
+    Private Sub ModificarMenues()
+
+        comando = New MySqlCommand("UPDATE botonuser SET UsuarioBU = '" & txtUserUsuario.Text & "' WHERE UsuarioBU = '" & usuario & "' ", conexion)
+        comando.ExecuteNonQuery()
+
+    End Sub
+
+    Private Sub txtApelUsuario_LostFocus(sender As Object, e As EventArgs) Handles txtApelUsuario.LostFocus
+
+        usuario = txtUserUsuario.Text
+
+        If usuario <> "" Then
+            txtClaveUsuario.Text = Desencriptar(txtClaveUsuario.Text)
+        End If
+
+    End Sub
 End Class

@@ -21,8 +21,6 @@ Public Class frmPrintLista
         ReportViewer1.LocalReport.DataSources.Clear()
         ReportViewer1.RefreshReport()
 
-        Me.ReportViewer1.RefreshReport()
-        Me.ReportViewer1.RefreshReport()
     End Sub
 
     Private Sub CargarAaaa()

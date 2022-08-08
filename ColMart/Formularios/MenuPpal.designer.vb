@@ -29,9 +29,11 @@ Partial Class MenuPpal
         Me.PanelMenu = New System.Windows.Forms.Panel()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.SubMenuSistema = New System.Windows.Forms.Panel()
-        Me.btnBackupRestore = New System.Windows.Forms.Button()
+        Me.btnAccesoMenues = New System.Windows.Forms.Button()
+        Me.btnMenues = New System.Windows.Forms.Button()
         Me.btnUsuarios = New System.Windows.Forms.Button()
         Me.btnNiveles = New System.Windows.Forms.Button()
+        Me.btnBackupRestore = New System.Windows.Forms.Button()
         Me.btnSistema = New System.Windows.Forms.Button()
         Me.SubMenuParametros = New System.Windows.Forms.Panel()
         Me.btnTribunal = New System.Windows.Forms.Button()
@@ -79,15 +81,14 @@ Partial Class MenuPpal
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PanelBarraTitulo = New System.Windows.Forms.Panel()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtUsuario = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.btnRestaurar = New System.Windows.Forms.PictureBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.btnMaximizar = New System.Windows.Forms.PictureBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnMinimizar = New System.Windows.Forms.PictureBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
         Me.PanelBotonesMenu.SuspendLayout()
         Me.PanelFormularios.SuspendLayout()
@@ -180,7 +181,7 @@ Partial Class MenuPpal
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSalir.Location = New System.Drawing.Point(0, 1298)
+        Me.btnSalir.Location = New System.Drawing.Point(0, 1341)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.btnSalir.Size = New System.Drawing.Size(233, 50)
@@ -192,32 +193,52 @@ Partial Class MenuPpal
         'SubMenuSistema
         '
         Me.SubMenuSistema.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.SubMenuSistema.Controls.Add(Me.btnBackupRestore)
+        Me.SubMenuSistema.Controls.Add(Me.btnAccesoMenues)
+        Me.SubMenuSistema.Controls.Add(Me.btnMenues)
         Me.SubMenuSistema.Controls.Add(Me.btnUsuarios)
         Me.SubMenuSistema.Controls.Add(Me.btnNiveles)
+        Me.SubMenuSistema.Controls.Add(Me.btnBackupRestore)
         Me.SubMenuSistema.Dock = System.Windows.Forms.DockStyle.Top
-        Me.SubMenuSistema.Location = New System.Drawing.Point(0, 1215)
+        Me.SubMenuSistema.Location = New System.Drawing.Point(0, 1208)
         Me.SubMenuSistema.Name = "SubMenuSistema"
-        Me.SubMenuSistema.Size = New System.Drawing.Size(233, 83)
+        Me.SubMenuSistema.Size = New System.Drawing.Size(233, 133)
         Me.SubMenuSistema.TabIndex = 24
         '
-        'btnBackupRestore
+        'btnAccesoMenues
         '
-        Me.btnBackupRestore.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBackupRestore.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnBackupRestore.FlatAppearance.BorderSize = 0
-        Me.btnBackupRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBackupRestore.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBackupRestore.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.btnBackupRestore.Location = New System.Drawing.Point(0, 50)
-        Me.btnBackupRestore.Name = "btnBackupRestore"
-        Me.btnBackupRestore.Padding = New System.Windows.Forms.Padding(50, 0, 0, 0)
-        Me.btnBackupRestore.Size = New System.Drawing.Size(233, 25)
-        Me.btnBackupRestore.TabIndex = 9
-        Me.btnBackupRestore.Text = "Backup y Restore"
-        Me.btnBackupRestore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBackupRestore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnBackupRestore.UseVisualStyleBackColor = True
+        Me.btnAccesoMenues.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnAccesoMenues.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnAccesoMenues.FlatAppearance.BorderSize = 0
+        Me.btnAccesoMenues.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAccesoMenues.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAccesoMenues.ForeColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(196, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnAccesoMenues.Location = New System.Drawing.Point(0, 100)
+        Me.btnAccesoMenues.Name = "btnAccesoMenues"
+        Me.btnAccesoMenues.Padding = New System.Windows.Forms.Padding(50, 0, 0, 0)
+        Me.btnAccesoMenues.Size = New System.Drawing.Size(233, 25)
+        Me.btnAccesoMenues.TabIndex = 13
+        Me.btnAccesoMenues.Text = "Acceso Menúes"
+        Me.btnAccesoMenues.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAccesoMenues.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAccesoMenues.UseVisualStyleBackColor = True
+        '
+        'btnMenues
+        '
+        Me.btnMenues.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnMenues.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnMenues.FlatAppearance.BorderSize = 0
+        Me.btnMenues.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnMenues.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMenues.ForeColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(196, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnMenues.Location = New System.Drawing.Point(0, 75)
+        Me.btnMenues.Name = "btnMenues"
+        Me.btnMenues.Padding = New System.Windows.Forms.Padding(50, 0, 0, 0)
+        Me.btnMenues.Size = New System.Drawing.Size(233, 25)
+        Me.btnMenues.TabIndex = 12
+        Me.btnMenues.Text = "Menúes"
+        Me.btnMenues.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnMenues.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnMenues.UseVisualStyleBackColor = True
         '
         'btnUsuarios
         '
@@ -227,11 +248,11 @@ Partial Class MenuPpal
         Me.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUsuarios.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUsuarios.ForeColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(196, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnUsuarios.Location = New System.Drawing.Point(0, 25)
+        Me.btnUsuarios.Location = New System.Drawing.Point(0, 50)
         Me.btnUsuarios.Name = "btnUsuarios"
         Me.btnUsuarios.Padding = New System.Windows.Forms.Padding(50, 0, 0, 0)
         Me.btnUsuarios.Size = New System.Drawing.Size(233, 25)
-        Me.btnUsuarios.TabIndex = 8
+        Me.btnUsuarios.TabIndex = 11
         Me.btnUsuarios.Text = "Usuarios"
         Me.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -245,15 +266,33 @@ Partial Class MenuPpal
         Me.btnNiveles.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnNiveles.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNiveles.ForeColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(196, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnNiveles.Location = New System.Drawing.Point(0, 0)
+        Me.btnNiveles.Location = New System.Drawing.Point(0, 25)
         Me.btnNiveles.Name = "btnNiveles"
         Me.btnNiveles.Padding = New System.Windows.Forms.Padding(50, 0, 0, 0)
         Me.btnNiveles.Size = New System.Drawing.Size(233, 25)
-        Me.btnNiveles.TabIndex = 2
+        Me.btnNiveles.TabIndex = 10
         Me.btnNiveles.Text = "Niveles"
         Me.btnNiveles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnNiveles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnNiveles.UseVisualStyleBackColor = True
+        '
+        'btnBackupRestore
+        '
+        Me.btnBackupRestore.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBackupRestore.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnBackupRestore.FlatAppearance.BorderSize = 0
+        Me.btnBackupRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBackupRestore.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBackupRestore.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnBackupRestore.Location = New System.Drawing.Point(0, 0)
+        Me.btnBackupRestore.Name = "btnBackupRestore"
+        Me.btnBackupRestore.Padding = New System.Windows.Forms.Padding(50, 0, 0, 0)
+        Me.btnBackupRestore.Size = New System.Drawing.Size(233, 25)
+        Me.btnBackupRestore.TabIndex = 9
+        Me.btnBackupRestore.Text = "Backup y Restore"
+        Me.btnBackupRestore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBackupRestore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBackupRestore.UseVisualStyleBackColor = True
         '
         'btnSistema
         '
@@ -265,7 +304,7 @@ Partial Class MenuPpal
         Me.btnSistema.ForeColor = System.Drawing.Color.White
         Me.btnSistema.Image = CType(resources.GetObject("btnSistema.Image"), System.Drawing.Image)
         Me.btnSistema.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSistema.Location = New System.Drawing.Point(0, 1165)
+        Me.btnSistema.Location = New System.Drawing.Point(0, 1158)
         Me.btnSistema.Name = "btnSistema"
         Me.btnSistema.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.btnSistema.Size = New System.Drawing.Size(233, 50)
@@ -281,7 +320,7 @@ Partial Class MenuPpal
         Me.SubMenuParametros.Controls.Add(Me.btnCodDebitar)
         Me.SubMenuParametros.Controls.Add(Me.btnCodPostales)
         Me.SubMenuParametros.Dock = System.Windows.Forms.DockStyle.Top
-        Me.SubMenuParametros.Location = New System.Drawing.Point(0, 1082)
+        Me.SubMenuParametros.Location = New System.Drawing.Point(0, 1075)
         Me.SubMenuParametros.Name = "SubMenuParametros"
         Me.SubMenuParametros.Size = New System.Drawing.Size(233, 83)
         Me.SubMenuParametros.TabIndex = 22
@@ -350,7 +389,7 @@ Partial Class MenuPpal
         Me.btnParametros.ForeColor = System.Drawing.Color.White
         Me.btnParametros.Image = CType(resources.GetObject("btnParametros.Image"), System.Drawing.Image)
         Me.btnParametros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnParametros.Location = New System.Drawing.Point(0, 1032)
+        Me.btnParametros.Location = New System.Drawing.Point(0, 1025)
         Me.btnParametros.Name = "btnParametros"
         Me.btnParametros.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.btnParametros.Size = New System.Drawing.Size(233, 50)
@@ -372,7 +411,7 @@ Partial Class MenuPpal
         Me.SubMenuProveedores.Dock = System.Windows.Forms.DockStyle.Top
         Me.SubMenuProveedores.Location = New System.Drawing.Point(0, 843)
         Me.SubMenuProveedores.Name = "SubMenuProveedores"
-        Me.SubMenuProveedores.Size = New System.Drawing.Size(233, 189)
+        Me.SubMenuProveedores.Size = New System.Drawing.Size(233, 182)
         Me.SubMenuProveedores.TabIndex = 20
         '
         'btnLibroCpras
@@ -562,7 +601,7 @@ Partial Class MenuPpal
         Me.btnActualizarMesa.Padding = New System.Windows.Forms.Padding(50, 0, 0, 0)
         Me.btnActualizarMesa.Size = New System.Drawing.Size(233, 25)
         Me.btnActualizarMesa.TabIndex = 2
-        Me.btnActualizarMesa.Text = "Actualizar"
+        Me.btnActualizarMesa.Text = "Actualizar Mesa"
         Me.btnActualizarMesa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnActualizarMesa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnActualizarMesa.UseVisualStyleBackColor = True
@@ -1048,42 +1087,20 @@ Partial Class MenuPpal
         'PanelBarraTitulo
         '
         Me.PanelBarraTitulo.BackColor = System.Drawing.Color.Black
-        Me.PanelBarraTitulo.Controls.Add(Me.Label6)
-        Me.PanelBarraTitulo.Controls.Add(Me.txtUsuario)
         Me.PanelBarraTitulo.Controls.Add(Me.Label2)
-        Me.PanelBarraTitulo.Controls.Add(Me.Label5)
+        Me.PanelBarraTitulo.Controls.Add(Me.Label6)
         Me.PanelBarraTitulo.Controls.Add(Me.btnRestaurar)
-        Me.PanelBarraTitulo.Controls.Add(Me.Label4)
         Me.PanelBarraTitulo.Controls.Add(Me.btnMaximizar)
+        Me.PanelBarraTitulo.Controls.Add(Me.Label5)
         Me.PanelBarraTitulo.Controls.Add(Me.Label3)
         Me.PanelBarraTitulo.Controls.Add(Me.btnMinimizar)
+        Me.PanelBarraTitulo.Controls.Add(Me.Label4)
         Me.PanelBarraTitulo.Controls.Add(Me.btnCerrar)
         Me.PanelBarraTitulo.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelBarraTitulo.Location = New System.Drawing.Point(0, 0)
         Me.PanelBarraTitulo.Name = "PanelBarraTitulo"
         Me.PanelBarraTitulo.Size = New System.Drawing.Size(1430, 40)
         Me.PanelBarraTitulo.TabIndex = 0
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Silver
-        Me.Label6.Location = New System.Drawing.Point(1170, 13)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(49, 15)
-        Me.Label6.TabIndex = 8
-        Me.Label6.Text = "sector"
-        '
-        'txtUsuario
-        '
-        Me.txtUsuario.BackColor = System.Drawing.Color.Black
-        Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtUsuario.Font = New System.Drawing.Font("Consolas", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsuario.Location = New System.Drawing.Point(1168, 11)
-        Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(138, 18)
-        Me.txtUsuario.TabIndex = 2
         '
         'Label2
         '
@@ -1096,16 +1113,16 @@ Partial Class MenuPpal
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Menú General Sistema Administrativo Colegio de Martilleros de Santa Fe"
         '
-        'Label5
+        'Label6
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.Teal
-        Me.Label5.Location = New System.Drawing.Point(1092, 10)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(72, 19)
-        Me.Label5.TabIndex = 7
-        Me.Label5.Text = "SECTOR:"
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Silver
+        Me.Label6.Location = New System.Drawing.Point(1020, 13)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(49, 15)
+        Me.Label6.TabIndex = 8
+        Me.Label6.Text = "sector"
         '
         'btnRestaurar
         '
@@ -1119,17 +1136,6 @@ Partial Class MenuPpal
         Me.btnRestaurar.TabStop = False
         Me.btnRestaurar.Visible = False
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Teal
-        Me.Label4.Location = New System.Drawing.Point(899, 10)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(81, 19)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "USUARIO:"
-        '
         'btnMaximizar
         '
         Me.btnMaximizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -1141,12 +1147,23 @@ Partial Class MenuPpal
         Me.btnMaximizar.TabIndex = 2
         Me.btnMaximizar.TabStop = False
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Consolas", 10.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Teal
+        Me.Label5.Location = New System.Drawing.Point(950, 13)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(64, 17)
+        Me.Label5.TabIndex = 7
+        Me.Label5.Text = "SECTOR:"
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Silver
-        Me.Label3.Location = New System.Drawing.Point(986, 13)
+        Me.Label3.Location = New System.Drawing.Point(831, 13)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(56, 15)
         Me.Label3.TabIndex = 5
@@ -1162,6 +1179,17 @@ Partial Class MenuPpal
         Me.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btnMinimizar.TabIndex = 1
         Me.btnMinimizar.TabStop = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Consolas", 10.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Teal
+        Me.Label4.Location = New System.Drawing.Point(753, 13)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(72, 17)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "USUARIO:"
         '
         'btnCerrar
         '
@@ -1258,8 +1286,6 @@ Partial Class MenuPpal
     Friend WithEvents btnSalir As Button
     Friend WithEvents SubMenuSistema As Panel
     Friend WithEvents btnBackupRestore As Button
-    Friend WithEvents btnUsuarios As Button
-    Friend WithEvents btnNiveles As Button
     Friend WithEvents btnSistema As Button
     Friend WithEvents SubMenuParametros As Panel
     Friend WithEvents btnTribunal As Button
@@ -1273,7 +1299,10 @@ Partial Class MenuPpal
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtUsuario As TextBox
     Friend WithEvents btnLibroCpras As Button
     Friend WithEvents btnCptosGastos As Button
+    Friend WithEvents btnUsuarios As Button
+    Friend WithEvents btnNiveles As Button
+    Friend WithEvents btnMenues As Button
+    Friend WithEvents btnAccesoMenues As Button
 End Class

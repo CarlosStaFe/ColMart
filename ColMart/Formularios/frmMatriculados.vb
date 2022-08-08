@@ -1,7 +1,9 @@
 ﻿Public Class frmMatriculados
 
-    Dim fechajob, fechadb, dd, mm, yyyy, fechaaux As String
-    Dim pos1, pos2, codigoreal, codigolegal, senial As Integer
+    'Dim fechajob, fechadb, dd, mm, yyyy, fechaaux, fechavenc As String
+    Dim dd, mm, yyyy, fechaaux, fechavenc As String
+    Dim pos1, pos2, codigoreal, codigolegal, senial, meses As Integer
+    Dim fecha1, fecha2 As Date
 
     Private Sub frmMatriculados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -225,7 +227,7 @@
         AddOwnedForm(frmMat1)
         frmMat1.ShowDialog()
         'txtApelNombMatri.Focus()
-        'MostrarFecha()
+        MostrarFecha()
         LeerCodPos()
         senial = 0
 
@@ -432,9 +434,11 @@
         txtApelNombMatri.Text = CStr(row("ApelNombMatri"))
         txtApelMatMatri.Text = CStr(row("ApelMatMatri"))
 
-        fechajob = CStr(row("FecNacMatri"))
-        ProcesarFecha()
-        txtFecNacMatri.Text = fechajob
+        'fechajob = CStr(row("FecNacMatri"))
+        'ProcesarFecha()
+        'txtFecNacMatri.Text = fechajob
+
+        txtFecNacMatri.Text = CStr(row("FecNacMatri"))
 
         txtLugarNacMatri.Text = CStr(row("LugarNacMatri"))
         txtNacionNacMatri.Text = CStr(row("NacionNacMatri"))
@@ -444,16 +448,20 @@
         cmbEstCivilMatri.Text = CStr(row("EstCivilMatri"))
         txtCuitMatri.Text = CStr(row("CuitMatri"))
 
-        fechajob = CStr(row("FecJurMatri"))
-        ProcesarFecha()
-        txtFecJurMatri.Text = fechajob
+        'fechajob = CStr(row("FecJurMatri"))
+        'ProcesarFecha()
+        'txtFecJurMatri.Text = fechajob
+
+        txtFecJurMatri.Text = CStr(row("FecJurMatri"))
 
         cmbCatAporteMatri.Text = CStr(row("CatAporteMatri"))
         cmbEstadoMatri.Text = CStr(row("EstadoMatri"))
 
-        fechajob = CStr(row("FecEstadoMatri"))
-        ProcesarFecha()
-        txtFecEstadoMatri.Text = fechajob
+        'fechajob = CStr(row("FecEstadoMatri"))
+        'ProcesarFecha()
+        'txtFecEstadoMatri.Text = fechajob
+
+        txtFecEstadoMatri.Text = CStr(row("FecEstadoMatri"))
 
         txtCalleRealMatri.Text = CStr(row("CalleRealMatri"))
         txtCodPostal1.Text = CStr(row("CPRealMatri"))
@@ -467,9 +475,11 @@
         txtCeluLegalMatri.Text = CStr(row("CeluLegalMatri"))
         txtFijoLegalMatri.Text = CStr(row("FijoLegalMatri"))
 
-        fechajob = CStr(row("FianzaMatri"))
-        ProcesarFecha()
-        txtFianzaMatri.Text = fechajob
+        'fechajob = CStr(row("FianzaMatri"))
+        'ProcesarFecha()
+        'txtFianzaMatri.Text = fechajob
+
+        txtFianzaMatri.Text = CStr(row("FianzaMatri"))
 
         txtDocFiadorMatri.Text = CStr(row("DocFiadorMatri"))
         txtFiadorMatri.Text = CStr(row("FiadorMatri"))
@@ -576,28 +586,43 @@
         ProcesarFecha()
         txtFianzaMatri.Text = fechajob
         txtFianzaMatri.Show()
+        '-----Fecha Vence Fianza
+        meses = 24
+        fechajob = DateAdd("m", meses, txtFianzaMatri.Text)
+        ProcesarFecha()
+        lblVenceFianza.Text = fechajob
+        fechaaux = Format(Now, "dd/MM/yyyy")
 
-    End Sub
-
-    Private Sub ProcesarFecha()
-
-        pos1 = InStr(1, fechajob, "/")
-        pos2 = InStr(pos1 + 1, fechajob, "/")
-
-        If pos1 = 5 Then
-            yyyy = Mid(fechajob, 1, pos1 - 1)
-            mm = Mid(fechajob, pos1 + 1, ((pos2 - 1) - pos1))
-            dd = Mid(fechajob, pos2 + 1, 2)
-        ElseIf pos1 = 3 Then
-            dd = Mid(fechajob, 1, pos1 - 1)
-            mm = Mid(fechajob, pos1 + 1, ((pos2 - 1) - pos1))
-            yyyy = Mid(fechajob, pos2 + 1, 4)
+        fecha1 = CDate(fechajob)
+        fecha2 = CDate(fechaaux)
+        If fecha1 < fecha2 Then
+            lblVenceFianza.ForeColor = Color.Red
+        Else
+            lblVenceFianza.ForeColor = Color.Lime
         End If
-
-        fechajob = dd & "/" & mm & "/" & yyyy
-        fechadb = yyyy & "/" & mm & "/" & dd
+        txtVenceFianza.Show()
 
     End Sub
+
+    'Private Sub ProcesarFecha()
+
+    '    pos1 = InStr(1, fechajob, "/")
+    '    pos2 = InStr(pos1 + 1, fechajob, "/")
+
+    '    If pos1 = 5 Then
+    '        yyyy = Mid(fechajob, 1, pos1 - 1)
+    '        mm = Mid(fechajob, pos1 + 1, ((pos2 - 1) - pos1))
+    '        dd = Mid(fechajob, pos2 + 1, 2)
+    '    ElseIf pos1 = 3 Then
+    '        dd = Mid(fechajob, 1, pos1 - 1)
+    '        mm = Mid(fechajob, pos1 + 1, ((pos2 - 1) - pos1))
+    '        yyyy = Mid(fechajob, pos2 + 1, 4)
+    '    End If
+
+    '    fechajob = dd & "/" & mm & "/" & yyyy
+    '    fechadb = yyyy & "/" & mm & "/" & dd
+
+    'End Sub
 
     Private Sub txtNroMatri_MouseHover(sender As Object, e As EventArgs) Handles txtNroMatri.MouseHover
 

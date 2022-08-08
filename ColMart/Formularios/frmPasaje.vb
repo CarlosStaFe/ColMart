@@ -12,10 +12,6 @@
 
         contreg = 0
 
-        ProcesarCodPos()
-
-        ProcesarMatri()
-
         DesconectarMySql()
 
         detmsg = "PROCESO TERMINADO...!!!"
@@ -25,22 +21,32 @@
 
     End Sub
 
-    Private Sub ProcesarCodPos()
+    Private Sub ProcesarCtasCtes()
 
         Try
-            comando.CommandText = "SELECT * FROM codpostal ORDER BY NroCodPos"
+            comando.CommandText = "SELECT * FROM ctasctes ORDER BY NroCC, FechaCC"
             dt = New DataTable
             da = New MySqlDataAdapter(comando)
             da.Fill(dt)
             Dim row As DataRow = dt.Rows(0)
-            id = 0
-            iddpto = 0
-            idlocal = 0
-            idprov = 0
-            contprov = 0
-            contdpto = 0
 
             For Each row In dt.Rows
+
+
+                comando = New MySqlCommand("INSERT INTO ventas VALUES(@id, @fecha, @tipo, @cpbte, @item, @detalle, @periodo, @debe, @haber, @saldo, @estado)", conexion)
+                comando.Parameters.AddWithValue("@id", 0)
+                comando.Parameters.AddWithValue("@fecha", CStr(row("id_Prov")))
+                comando.Parameters.AddWithValue("@tipo", CStr(row("id_Prov")))
+                comando.Parameters.AddWithValue("@cpbte", CStr(row("id_Prov")))
+                comando.Parameters.AddWithValue("@item", CStr(row("id_Prov")))
+                comando.Parameters.AddWithValue("@detalle", CStr(row("id_Prov")))
+                comando.Parameters.AddWithValue("@periodo", CStr(row("id_Prov")))
+                comando.Parameters.AddWithValue("@debe", CStr(row("id_Prov")))
+                comando.Parameters.AddWithValue("@haber", CStr(row("id_Prov")))
+                comando.Parameters.AddWithValue("@saldo", CStr(row("id_Prov")))
+                comando.Parameters.AddWithValue("@estado", CStr(row("id_Prov")))
+                comando.Parameters.AddWithValue("@nombre", provincia)
+                comando.ExecuteNonQuery()
 
                 codigo = 0
                 senial = 0
