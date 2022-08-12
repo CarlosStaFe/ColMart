@@ -5,10 +5,10 @@ Public Class frmReciboPago
     Dim ImpLetras, auxiliar, flag As String
     Dim longitud, cantidad, contador As Integer
     Dim ceros, tiponro, comprobante, dd, mm, yyyy As String
-    Dim fecha, id, periodo, pagado As String
-    Dim saldobol, pagadobol, importe, saldoant, efectivo, tarjeta, transferencia As Double
+    Dim fecha, id, periodo, pagado, letratotal As String
+    Dim saldobol, pagadobol, importe, saldoant, efectivo, tarjeta, transferencia, nrototal As Double
     Dim observacion, cuit As String
-    Dim parametros As ReportParameter() = New ReportParameter(52) {}
+    Dim parametros As ReportParameter() = New ReportParameter(53) {}
     Dim archivo As String
 
     Private Sub frmReciboPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -146,7 +146,7 @@ Public Class frmReciboPago
             FormatoMoneda(txtDiferencia)
         End If
 
-        If txtSaldo.Text < 0 Then
+        If txtDiferencia.Text < 0 Then
             txtEfectivo.Focus()
         End If
 
@@ -162,7 +162,7 @@ Public Class frmReciboPago
             FormatoMoneda(txtDiferencia)
         End If
 
-        If txtSaldo.Text < 0 Then
+        If txtDiferencia.Text < 0 Then
             txtEfectivo.Focus()
         End If
 
@@ -178,7 +178,7 @@ Public Class frmReciboPago
             FormatoMoneda(txtDiferencia)
         End If
 
-        If txtSaldo.Text < 0 Then
+        If txtDiferencia.Text < 0 Then
             txtEfectivo.Focus()
         End If
 
@@ -194,6 +194,8 @@ Public Class frmReciboPago
                 frmMsgBox.ShowDialog()
                 txtEfectivo.Focus()
             Else
+                nrototal = Val(txtEfectivo.Text) + Val(txtTransferencia.Text) + Val(txtTarjeta.Text)
+                letratotal = Convert.ToDouble(nrototal)
                 btnImprimir.Visible = True
                 btnImprimir.Focus()
             End If
@@ -202,6 +204,15 @@ Public Class frmReciboPago
             tipomsg = "info"
             btnmsg = 1
             frmMsgBox.ShowDialog()
+        End If
+        If txtDiferencia.Text < "0" Then
+            detmsg = "DEBE MARCAR OTRA BOLETA O MODIFICAR EL IMPORTE DE PAGO...!!!"
+            tipomsg = "info"
+            btnmsg = 1
+            frmMsgBox.ShowDialog()
+
+            btnImprimir.Visible = False
+            txtEfectivo.Focus()
         End If
 
     End Sub
@@ -318,7 +329,7 @@ Public Class frmReciboPago
                 txtEfectivo.Focus()
             Else
 
-                ImpLetras = Letras(pagado)
+                ImpLetras = Letras(letratotal)
                 CalcularSaldoBoleta()
 
                 '*** LIMPIAMOS EL DataSource DEL INFORME ********
@@ -344,10 +355,6 @@ Public Class frmReciboPago
                     comprobante = comprobante + 1
                 End If
 
-                ''---Actualizo Comprobante---SE MOVIÓ A ACTUALIZAR TABLAS
-                'comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIP'", conexion)
-                'comando.ExecuteNonQuery()
-
                 longitud = Len(comprobante)
                 If longitud < 8 Then
                     cantidad = 8 - longitud
@@ -372,6 +379,7 @@ Public Class frmReciboPago
                 parametros(50) = New ReportParameter("prmTransferencia", txtTransferencia.Text)
                 parametros(51) = New ReportParameter("prmTarjeta", txtTarjeta.Text)
                 parametros(52) = New ReportParameter("prmTipoComprobante", "COMPROBANTE INTERNO DE PAGO")
+                parametros(53) = New ReportParameter("prmUser", user)
 
                 contador = 1
                 If dgvCtasCtes.Rows.Count > 0 Then

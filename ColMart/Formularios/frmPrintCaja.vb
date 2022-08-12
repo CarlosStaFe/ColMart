@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Net.Mail
+Imports Microsoft.Reporting.WinForms
 
 Public Class frmPrintCaja
     Dim archivo As String
@@ -7,6 +8,10 @@ Public Class frmPrintCaja
     Private Sub frmPrintCaja_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         cajaTableAdapter.Fill(dbcolmartDataSet.caja)
+
+        Dim parametros As ReportParameter() = New ReportParameter(0) {}
+        parametros(0) = New ReportParameter("prmUser", user)
+        ReportViewer1.LocalReport.SetParameters(parametros)
 
         Dim nombrePDF As String
         nombrePDF = "Caja" & "-" & Today.Date.ToString("dd-MM-yyyy") & "-" & TimeOfDay.ToString("h.mm") & ""

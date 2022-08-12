@@ -2,7 +2,7 @@
     Dim debe, haber, saldo, saldoant, pagado, resto As Decimal
     Dim detalle, comprobante, estado, id, obs, fecpago, fechaaux As String
     Dim pos1, pos2, longitud, cantidad As Integer
-    Dim yyyy, mm, dd, ceros As String
+    Dim yyyy, mm, dd, ceros, estadomatri As String
 
     Private Sub frmCtasCtesMat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -52,6 +52,7 @@
             Dim row As DataRow = dt.Rows(0)
             txtApelyNomb.Text = CStr(row("ApelNombMatri"))
             lblEstado.Text = CStr(row("EstadoMatri"))
+            estadomatri = CStr(row("EstadoMatri"))
         Else
             txtApelyNomb.Text = ""
         End If
@@ -233,7 +234,7 @@
 
         Dim frm As New frmImpCtaCte
         frm.txtUser.Text = user
-        frm.txtDetalle.Text = "LISTADO DE CUENTA CORRIENTE DEL MATRICULADO " + txtMatricula.Text + " * " + txtApelyNomb.Text + " * "
+        frm.txtDetalle.Text = "Listado de Cuenta Corriente del Matriculado * " + txtMatricula.Text + " * " + txtApelyNomb.Text + " * ESTADO: " + estadomatri + " *"
         frm.ShowDialog()
 
     End Sub
@@ -277,4 +278,11 @@
 
     End Sub
 
+    Private Sub btnImprimir_MouseHover(sender As Object, e As EventArgs) Handles btnImprimir.MouseHover
+
+        ToolTipMsg.ToolTipTitle = "Botón Imprimir."
+        ToolTipMsg.SetToolTip(btnImprimir, "Presione para imprimir la cuenta corriente.")
+        ToolTipMsg.ToolTipIcon = ToolTipIcon.Info
+
+    End Sub
 End Class

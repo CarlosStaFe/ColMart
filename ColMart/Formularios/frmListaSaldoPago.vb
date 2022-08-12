@@ -166,6 +166,7 @@
 
             Dim frm As New frmInforme
             frm.txtDetalle.Text = titulo
+            frm.txtUser.Text = user
             frm.ShowDialog()
 
         Else

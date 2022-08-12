@@ -25,13 +25,23 @@ Partial Class frmPadronMatri
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPadronMatri))
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.dbcolmartDataSet = New ColMart.dbcolmartDataSet()
         Me.padronBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.dbcolmartDataSet = New ColMart.dbcolmartDataSet()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.padronTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.padronTableAdapter()
-        CType(Me.dbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.padronBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'padronBindingSource
+        '
+        Me.padronBindingSource.DataMember = "padron"
+        Me.padronBindingSource.DataSource = Me.dbcolmartDataSet
+        '
+        'dbcolmartDataSet
+        '
+        Me.dbcolmartDataSet.DataSetName = "dbcolmartDataSet"
+        Me.dbcolmartDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -45,16 +55,6 @@ Partial Class frmPadronMatri
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
         Me.ReportViewer1.Size = New System.Drawing.Size(1088, 537)
         Me.ReportViewer1.TabIndex = 0
-        '
-        'dbcolmartDataSet
-        '
-        Me.dbcolmartDataSet.DataSetName = "dbcolmartDataSet"
-        Me.dbcolmartDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'padronBindingSource
-        '
-        Me.padronBindingSource.DataMember = "padron"
-        Me.padronBindingSource.DataSource = Me.dbcolmartDataSet
         '
         'padronTableAdapter
         '
@@ -70,8 +70,8 @@ Partial Class frmPadronMatri
         Me.Name = "frmPadronMatri"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LISTAR PADRÓN DE MATRICULADOS"
-        CType(Me.dbcolmartDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.padronBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dbcolmartDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

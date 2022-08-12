@@ -1,5 +1,4 @@
 ﻿Imports Microsoft.Reporting.WinForms
-Imports MySql.Data.MySqlClient
 
 Public Class frmPadronSoc
     Dim senial As Integer
@@ -58,8 +57,9 @@ Public Class frmPadronSoc
         ds = Filtrar()
         Dim rds As New ReportDataSource("dsSociedades", ds.Tables(0))
         ReportViewer1.LocalReport.DataSources.Clear()
-        Dim parametros As ReportParameter() = New ReportParameter(0) {}
+        Dim parametros As ReportParameter() = New ReportParameter(1) {}
         parametros(0) = New ReportParameter("prmDetalle", detalle)
+        parametros(1) = New ReportParameter("prmUser", user)
         ReportViewer1.LocalReport.SetParameters(parametros)
         ReportViewer1.LocalReport.DataSources.Add(rds)
         ReportViewer1.RefreshReport()

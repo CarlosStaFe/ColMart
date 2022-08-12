@@ -8,10 +8,11 @@ Public Class frmPrintLista
 
         'ConectarMySql()
 
-        Dim parametros As ReportParameter() = New ReportParameter(2) {}
+        Dim parametros As ReportParameter() = New ReportParameter(3) {}
         parametros(0) = New ReportParameter("prmAaaa", "")
         parametros(1) = New ReportParameter("prmJuzgado", "")
         parametros(2) = New ReportParameter("prmTribunal", "")
+        parametros(3) = New ReportParameter("prmUser", "")
 
         'ReportViewer1.LocalReport.SetParameters(parametros)
 
@@ -104,12 +105,13 @@ Public Class frmPrintLista
         ControlarRDB()
 
         If senial = 1 Then
-            Dim parametros As ReportParameter() = New ReportParameter(2) {}
+            Dim parametros As ReportParameter() = New ReportParameter(3) {}
 
             If rdbDistrito.Checked = True Then
                 parametros(0) = New ReportParameter("prmAaaa", cmbAaaa.Text)
                 parametros(1) = New ReportParameter("prmJuzgado", cmbTribunal.Text)
                 parametros(2) = New ReportParameter("prmTribunal", "Art. 67 - Inc. B Distrito")
+                parametros(3) = New ReportParameter("prmUser", user)
 
                 comando.CommandText = "SELECT * FROM listaoficio WHERE YyyyLis = '" & cmbAaaa.Text & "' AND TribunalLis = '" & cmbTribunal.Text & "' AND DistritoLis = 1 ORDER BY ApelNombLis ASC"
 
@@ -118,6 +120,7 @@ Public Class frmPrintLista
                 parametros(0) = New ReportParameter("prmAaaa", cmbAaaa.Text)
                 parametros(1) = New ReportParameter("prmJuzgado", cmbTribunal.Text)
                 parametros(2) = New ReportParameter("prmTribunal", "Art. 67 - Inc. CH Circuito")
+                parametros(3) = New ReportParameter("prmUser", user)
 
                 comando.CommandText = "SELECT * FROM listaoficio WHERE YyyyLis = '" & cmbAaaa.Text & "' AND TribunalLis = '" & cmbTribunal.Text & "' AND CircuitoLis = 1 ORDER BY ApelNombLis ASC"
 
@@ -126,6 +129,7 @@ Public Class frmPrintLista
                 parametros(0) = New ReportParameter("prmAaaa", cmbAaaa.Text)
                 parametros(1) = New ReportParameter("prmJuzgado", cmbTribunal.Text)
                 parametros(2) = New ReportParameter("prmTribunal", "Art. 67 - Inc. D Tasaciones")
+                parametros(3) = New ReportParameter("prmUser", user)
 
                 comando.CommandText = "SELECT * FROM listaoficio WHERE YyyyLis = '" & cmbAaaa.Text & "' AND TribunalLis = '" & cmbTribunal.Text & "' AND TasacionesLis = 1 ORDER BY ApelNombLis ASC"
 
@@ -134,6 +138,7 @@ Public Class frmPrintLista
                 parametros(0) = New ReportParameter("prmAaaa", cmbAaaa.Text)
                 parametros(1) = New ReportParameter("prmJuzgado", cmbTribunal.Text)
                 parametros(2) = New ReportParameter("prmTribunal", "Art. 67 - Inc. A Concursales")
+                parametros(3) = New ReportParameter("prmUser", user)
 
                 comando.CommandText = "SELECT * FROM listaoficio WHERE YyyyLis = '" & cmbAaaa.Text & "' AND TribunalLis = '" & cmbTribunal.Text & "' AND ConcursalesLis = 1 ORDER BY ApelNombLis ASC"
 

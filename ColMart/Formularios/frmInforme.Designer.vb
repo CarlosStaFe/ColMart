@@ -30,6 +30,7 @@ Partial Class frmInforme
         Me.txtDetalle = New System.Windows.Forms.TextBox()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.debehaberTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.debehaberTableAdapter()
+        Me.txtUser = New System.Windows.Forms.TextBox()
         CType(Me.debehaberBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -46,7 +47,7 @@ Partial Class frmInforme
         '
         'txtDetalle
         '
-        Me.txtDetalle.Location = New System.Drawing.Point(268, 27)
+        Me.txtDetalle.Location = New System.Drawing.Point(267, 12)
         Me.txtDetalle.Name = "txtDetalle"
         Me.txtDetalle.Size = New System.Drawing.Size(100, 20)
         Me.txtDetalle.TabIndex = 0
@@ -68,12 +69,20 @@ Partial Class frmInforme
         '
         Me.debehaberTableAdapter.ClearBeforeFill = True
         '
+        'txtUser
+        '
+        Me.txtUser.Location = New System.Drawing.Point(373, 12)
+        Me.txtUser.Name = "txtUser"
+        Me.txtUser.Size = New System.Drawing.Size(100, 20)
+        Me.txtUser.TabIndex = 2
+        '
         'frmInforme
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 469)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.Controls.Add(Me.txtUser)
         Me.Controls.Add(Me.txtDetalle)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmInforme"
@@ -91,4 +100,5 @@ Partial Class frmInforme
     Friend WithEvents debehaberBindingSource As BindingSource
     Friend WithEvents dbcolmartDataSet As dbcolmartDataSet
     Friend WithEvents debehaberTableAdapter As dbcolmartDataSetTableAdapters.debehaberTableAdapter
+    Friend WithEvents txtUser As TextBox
 End Class

@@ -7,7 +7,7 @@ Public Class frmReciboGeneral
 
     Private Sub frmReciboGeneral_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Dim parametros As ReportParameter() = New ReportParameter(12) {}
+        Dim parametros As ReportParameter() = New ReportParameter(13) {}
         parametros(0) = New ReportParameter("prmFecha", fecha)
         parametros(1) = New ReportParameter("prmComprobante", comprobante)
         parametros(2) = New ReportParameter("prmLetras", Letras)
@@ -21,6 +21,7 @@ Public Class frmReciboGeneral
         parametros(10) = New ReportParameter("prmEfectivo", efectivo)
         parametros(11) = New ReportParameter("prmTransferencia", transferencia)
         parametros(12) = New ReportParameter("prmTarjeta", tarjeta)
+        parametros(13) = New ReportParameter("prmUser", user)
 
         renglonesTableAdapter.Fill(dbcolmartDataSet.renglones)
 

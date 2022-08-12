@@ -28,14 +28,14 @@ Partial Class frmReciboGral
         Dim ImpDebMatLabel As System.Windows.Forms.Label
         Dim CategDebMatLabel As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle65 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle66 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle71 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle72 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle67 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle68 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle69 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle70 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmReciboGral))
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtFecha = New System.Windows.Forms.TextBox()
@@ -80,14 +80,19 @@ Partial Class frmReciboGral
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtSaldo = New System.Windows.Forms.TextBox()
-        Me.txtAntiguedad = New System.Windows.Forms.TextBox()
         Me.txtSaldoMat = New System.Windows.Forms.TextBox()
-        Me.txtFianza = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.txtTipoRec = New System.Windows.Forms.TextBox()
+        Me.lblVenceFianza = New System.Windows.Forms.Label()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.lblAntiguedad = New System.Windows.Forms.Label()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CodDebMatLabel = New System.Windows.Forms.Label()
         DetDebMatLabel = New System.Windows.Forms.Label()
         ImpDebMatLabel = New System.Windows.Forms.Label()
@@ -101,7 +106,11 @@ Partial Class frmReciboGral
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CodDebMatLabel
@@ -278,48 +287,48 @@ Partial Class frmReciboGral
         Me.dgvRenglones.AllowUserToAddRows = False
         Me.dgvRenglones.AllowUserToDeleteRows = False
         Me.dgvRenglones.AllowUserToOrderColumns = True
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvRenglones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle65.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle65.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle65.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle65.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvRenglones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle65
         Me.dgvRenglones.AutoGenerateColumns = False
         Me.dgvRenglones.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.dgvRenglones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkOrange
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRenglones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle66.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
+        DataGridViewCellStyle66.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle66.ForeColor = System.Drawing.Color.DarkOrange
+        DataGridViewCellStyle66.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle66.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle66.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRenglones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle66
         Me.dgvRenglones.ColumnHeadersHeight = 30
         Me.dgvRenglones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvRenglones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdRenDataGridViewTextBoxColumn, Me.CodigoRenDataGridViewTextBoxColumn, Me.DetalleRenDataGridViewTextBoxColumn, Me.ImporteRenDataGridViewTextBoxColumn, Me.CantidadRenDataGridViewTextBoxColumn, Me.SubtotalRenDataGridViewTextBoxColumn, Me.CategoriaRenDataGridViewTextBoxColumn})
         Me.dgvRenglones.DataSource = Me.RenglonesBindingSource
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRenglones.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle71.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle71.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle71.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle71.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle71.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvRenglones.DefaultCellStyle = DataGridViewCellStyle71
         Me.dgvRenglones.EnableHeadersVisualStyles = False
         Me.dgvRenglones.GridColor = System.Drawing.Color.White
         Me.dgvRenglones.Location = New System.Drawing.Point(12, 191)
         Me.dgvRenglones.Name = "dgvRenglones"
         Me.dgvRenglones.ReadOnly = True
         Me.dgvRenglones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRenglones.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle72.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle72.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle72.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle72.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle72.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRenglones.RowHeadersDefaultCellStyle = DataGridViewCellStyle72
         Me.dgvRenglones.Size = New System.Drawing.Size(694, 222)
         Me.dgvRenglones.TabIndex = 163
         '
@@ -334,8 +343,8 @@ Partial Class frmReciboGral
         'CodigoRenDataGridViewTextBoxColumn
         '
         Me.CodigoRenDataGridViewTextBoxColumn.DataPropertyName = "CodigoRen"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.CodigoRenDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.CodigoRenDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle67
         Me.CodigoRenDataGridViewTextBoxColumn.HeaderText = "CÓD."
         Me.CodigoRenDataGridViewTextBoxColumn.Name = "CodigoRenDataGridViewTextBoxColumn"
         Me.CodigoRenDataGridViewTextBoxColumn.ReadOnly = True
@@ -352,10 +361,10 @@ Partial Class frmReciboGral
         'ImporteRenDataGridViewTextBoxColumn
         '
         Me.ImporteRenDataGridViewTextBoxColumn.DataPropertyName = "ImporteRen"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "C2"
-        DataGridViewCellStyle4.NullValue = "-"
-        Me.ImporteRenDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle68.Format = "C2"
+        DataGridViewCellStyle68.NullValue = "-"
+        Me.ImporteRenDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle68
         Me.ImporteRenDataGridViewTextBoxColumn.HeaderText = "IMPORTE"
         Me.ImporteRenDataGridViewTextBoxColumn.Name = "ImporteRenDataGridViewTextBoxColumn"
         Me.ImporteRenDataGridViewTextBoxColumn.ReadOnly = True
@@ -364,8 +373,8 @@ Partial Class frmReciboGral
         'CantidadRenDataGridViewTextBoxColumn
         '
         Me.CantidadRenDataGridViewTextBoxColumn.DataPropertyName = "CantidadRen"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.CantidadRenDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.CantidadRenDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle69
         Me.CantidadRenDataGridViewTextBoxColumn.HeaderText = "CANT."
         Me.CantidadRenDataGridViewTextBoxColumn.Name = "CantidadRenDataGridViewTextBoxColumn"
         Me.CantidadRenDataGridViewTextBoxColumn.ReadOnly = True
@@ -374,10 +383,10 @@ Partial Class frmReciboGral
         'SubtotalRenDataGridViewTextBoxColumn
         '
         Me.SubtotalRenDataGridViewTextBoxColumn.DataPropertyName = "SubtotalRen"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Format = "C2"
-        DataGridViewCellStyle6.NullValue = "-"
-        Me.SubtotalRenDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle70.Format = "C2"
+        DataGridViewCellStyle70.NullValue = "-"
+        Me.SubtotalRenDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle70
         Me.SubtotalRenDataGridViewTextBoxColumn.HeaderText = "SUBTOTAL"
         Me.SubtotalRenDataGridViewTextBoxColumn.Name = "SubtotalRenDataGridViewTextBoxColumn"
         Me.SubtotalRenDataGridViewTextBoxColumn.ReadOnly = True
@@ -553,7 +562,7 @@ Partial Class frmReciboGral
         Me.txtObs.Location = New System.Drawing.Point(218, 488)
         Me.txtObs.Multiline = True
         Me.txtObs.Name = "txtObs"
-        Me.txtObs.Size = New System.Drawing.Size(469, 47)
+        Me.txtObs.Size = New System.Drawing.Size(475, 47)
         Me.txtObs.TabIndex = 14
         '
         'Label5
@@ -673,81 +682,27 @@ Partial Class frmReciboGral
         Me.txtSaldo.TabIndex = 188
         Me.txtSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'txtAntiguedad
-        '
-        Me.txtAntiguedad.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.txtAntiguedad.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtAntiguedad.Font = New System.Drawing.Font("Consolas", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAntiguedad.ForeColor = System.Drawing.Color.Red
-        Me.txtAntiguedad.Location = New System.Drawing.Point(836, 103)
-        Me.txtAntiguedad.Name = "txtAntiguedad"
-        Me.txtAntiguedad.Size = New System.Drawing.Size(146, 29)
-        Me.txtAntiguedad.TabIndex = 190
-        Me.txtAntiguedad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'txtSaldoMat
         '
         Me.txtSaldoMat.BackColor = System.Drawing.Color.Black
-        Me.txtSaldoMat.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSaldoMat.Font = New System.Drawing.Font("Century Gothic", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSaldoMat.ForeColor = System.Drawing.Color.Aqua
-        Me.txtSaldoMat.Location = New System.Drawing.Point(850, 178)
+        Me.txtSaldoMat.Location = New System.Drawing.Point(812, 503)
         Me.txtSaldoMat.Name = "txtSaldoMat"
-        Me.txtSaldoMat.Size = New System.Drawing.Size(124, 27)
+        Me.txtSaldoMat.Size = New System.Drawing.Size(275, 40)
         Me.txtSaldoMat.TabIndex = 191
         Me.txtSaldoMat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'txtFianza
-        '
-        Me.txtFianza.BackColor = System.Drawing.Color.Black
-        Me.txtFianza.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFianza.ForeColor = System.Drawing.Color.Aqua
-        Me.txtFianza.Location = New System.Drawing.Point(850, 251)
-        Me.txtFianza.Name = "txtFianza"
-        Me.txtFianza.Size = New System.Drawing.Size(124, 27)
-        Me.txtFianza.TabIndex = 192
-        Me.txtFianza.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Lime
-        Me.Label10.Location = New System.Drawing.Point(840, 69)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(134, 22)
-        Me.Label10.TabIndex = 193
-        Me.Label10.Text = "ANTIGUEDAD"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Lime
-        Me.Label11.Location = New System.Drawing.Point(872, 144)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(74, 22)
-        Me.Label11.TabIndex = 194
-        Me.Label11.Text = "SALDO"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.Lime
-        Me.Label12.Location = New System.Drawing.Point(872, 217)
+        Me.Label12.Font = New System.Drawing.Font("Century Gothic", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.DarkOrange
+        Me.Label12.Location = New System.Drawing.Point(867, 253)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(77, 22)
+        Me.Label12.Size = New System.Drawing.Size(160, 47)
         Me.Label12.TabIndex = 195
         Me.Label12.Text = "FIANZA"
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox6.Location = New System.Drawing.Point(812, 51)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(199, 247)
-        Me.PictureBox6.TabIndex = 196
-        Me.PictureBox6.TabStop = False
         '
         'txtTipoRec
         '
@@ -760,20 +715,121 @@ Partial Class frmReciboGral
         Me.txtTipoRec.Name = "txtTipoRec"
         Me.txtTipoRec.Size = New System.Drawing.Size(42, 23)
         Me.txtTipoRec.TabIndex = 197
+        Me.txtTipoRec.Visible = False
+        '
+        'lblVenceFianza
+        '
+        Me.lblVenceFianza.AutoSize = True
+        Me.lblVenceFianza.BackColor = System.Drawing.Color.Black
+        Me.lblVenceFianza.Font = New System.Drawing.Font("Century Gothic", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVenceFianza.ForeColor = System.Drawing.Color.Lime
+        Me.lblVenceFianza.Location = New System.Drawing.Point(841, 312)
+        Me.lblVenceFianza.Name = "lblVenceFianza"
+        Me.lblVenceFianza.Size = New System.Drawing.Size(148, 47)
+        Me.lblVenceFianza.TabIndex = 198
+        Me.lblVenceFianza.Text = "Label4"
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.BackColor = System.Drawing.Color.Black
+        Me.PictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox7.Location = New System.Drawing.Point(812, 304)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(275, 62)
+        Me.PictureBox7.TabIndex = 199
+        Me.PictureBox7.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.BackColor = System.Drawing.Color.Black
+        Me.PictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox8.Location = New System.Drawing.Point(812, 124)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(275, 61)
+        Me.PictureBox8.TabIndex = 200
+        Me.PictureBox8.TabStop = False
+        '
+        'lblAntiguedad
+        '
+        Me.lblAntiguedad.AutoSize = True
+        Me.lblAntiguedad.BackColor = System.Drawing.Color.Black
+        Me.lblAntiguedad.Font = New System.Drawing.Font("Century Gothic", 28.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAntiguedad.ForeColor = System.Drawing.Color.Red
+        Me.lblAntiguedad.Location = New System.Drawing.Point(856, 132)
+        Me.lblAntiguedad.Name = "lblAntiguedad"
+        Me.lblAntiguedad.Size = New System.Drawing.Size(140, 44)
+        Me.lblAntiguedad.TabIndex = 201
+        Me.lblAntiguedad.Text = "Label4"
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox9.Location = New System.Drawing.Point(812, 246)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(275, 120)
+        Me.PictureBox9.TabIndex = 202
+        Me.PictureBox9.TabStop = False
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Century Gothic", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.DarkOrange
+        Me.Label11.Location = New System.Drawing.Point(869, 451)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(151, 47)
+        Me.Label11.TabIndex = 203
+        Me.Label11.Text = "SALDO"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 28.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.DarkOrange
+        Me.Label10.Location = New System.Drawing.Point(819, 70)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(261, 44)
+        Me.Label10.TabIndex = 204
+        Me.Label10.Text = "ANTIGUEDAD"
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox6.Location = New System.Drawing.Point(812, 440)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(275, 103)
+        Me.PictureBox6.TabIndex = 205
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox10.Location = New System.Drawing.Point(812, 51)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(275, 134)
+        Me.PictureBox10.TabIndex = 206
+        Me.PictureBox10.TabStop = False
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 250
         '
         'frmReciboGral
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1055, 604)
+        Me.ClientSize = New System.Drawing.Size(1127, 604)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.lblAntiguedad)
+        Me.Controls.Add(Me.PictureBox8)
+        Me.Controls.Add(Me.lblVenceFianza)
+        Me.Controls.Add(Me.PictureBox7)
         Me.Controls.Add(Me.txtTipoRec)
         Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.txtFianza)
         Me.Controls.Add(Me.txtSaldoMat)
-        Me.Controls.Add(Me.txtAntiguedad)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtSaldo)
         Me.Controls.Add(Me.Label6)
@@ -812,7 +868,9 @@ Partial Class frmReciboGral
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox5)
+        Me.Controls.Add(Me.PictureBox9)
         Me.Controls.Add(Me.PictureBox6)
+        Me.Controls.Add(Me.PictureBox10)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmReciboGral"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -825,7 +883,11 @@ Partial Class frmReciboGral
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -874,12 +936,17 @@ Partial Class frmReciboGral
     Friend WithEvents CantidadRenDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SubtotalRenDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CategoriaRenDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents txtAntiguedad As TextBox
     Friend WithEvents txtSaldoMat As TextBox
-    Friend WithEvents txtFianza As TextBox
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents txtTipoRec As TextBox
+    Friend WithEvents lblVenceFianza As Label
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents lblAntiguedad As Label
+    Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents PictureBox10 As PictureBox
+    Friend WithEvents Timer1 As Timer
 End Class

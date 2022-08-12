@@ -2,18 +2,21 @@
 
 Public Class frmReciboGral
     Dim fecha, comprobante, tipo, impletras, cuit As String
-    Dim flag, fechaaux, fechajur As String
-    Dim longitud, cantidad, item, pos1, pos2 As Integer
+    Dim flag, fechaaux, fechajur, tipoA, tipoF As String
+    Dim longitud, cantidad, item, pos1, pos2, meses As Integer
     Dim ceros, newcompro, dd, mm, yyyy As String
     Dim periodo, id As String
     Dim pagado, total, resto, saldo, importe As Double
     Dim observacion, obsparcial As String
     Dim parametros As ReportParameter() = New ReportParameter(6) {}
+    Dim fecha1, fecha2 As Date
 
     Private Sub frmReciboGral_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ConectarMySql()
         senial = ""
+        lblVenceFianza.Text = ""
+        lblAntiguedad.Text = ""
         ControlarCaja()
 
         If flag = "NO" Then
@@ -91,18 +94,49 @@ Public Class frmReciboGral
                 fechajur = dr(12).ToString
                 tipo = "MATRÍCULA: "
                 flag = "M"
-                If txtMatSoc.Text < 1148 Then
-                    txtAntiguedad.Text = "6 AÑOS"
+
+                '-----Fecha de Antiguedad
+                fechajob = Format(Now, "dd/MM/yyyy")
+                ProcesarFecha()
+                fechajur = dr(12).ToString
+                yyyy = DateDiff("yyyy", fechajur, fechadb)
+                lblAntiguedad.Text = yyyy + " años"
+
+                If yyyy < 2 Then
+                    lblAntiguedad.ForeColor = Color.Red
+                    tipoA = "A"
+                    Timer1.Start()
                 End If
-                If txtMatSoc.Text > 1147 And txtMatSoc.Text < 1220 Then
-                    txtAntiguedad.Text = "2 AÑOS"
+                If yyyy >= 2 And yyyy < 6 Then
+                    lblAntiguedad.ForeColor = Color.Yellow
+                    tipoA = "A"
+                    Timer1.Start()
                 End If
-                If txtMatSoc.Text > 1219 Then
-                    txtAntiguedad.Text = "MENOS DE 2"
+                If yyyy >= 6 Then
+                    lblAntiguedad.Visible = True
+                    lblAntiguedad.ForeColor = Color.Lime
+                    Timer1.Stop()
                 End If
-                fechaaux = dr(25).ToString
-                MoverFecha()
-                txtFianza.Text = yyyy + "-" + mm + "-" + dd
+
+                '-----Fecha Vence Fianza
+                fechaaux = dr(31).ToString
+                meses = 24
+                fechajob = DateAdd("m", meses, fechaaux)
+                ProcesarFecha()
+                lblVenceFianza.Text = fechajob
+                fechaaux = Format(Now, "dd/MM/yyyy")
+
+                fecha1 = CDate(fechajob)
+                fecha2 = CDate(fechaaux)
+                If fecha1 < fecha2 Then
+                    lblVenceFianza.ForeColor = Color.Red
+                    tipoF = "F"
+                    Timer1.Start()
+                Else
+                    lblVenceFianza.Visible = True
+                    lblVenceFianza.ForeColor = Color.Lime
+                    Timer1.Stop()
+                End If
 
             End While
         End If
@@ -113,6 +147,33 @@ Public Class frmReciboGral
         dr.Dispose()
 
         txtCodigo.Focus()
+
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
+        Static c As Integer
+        c = c + 1
+
+        If tipoA = "A" Then
+            If c = 1 Then
+                lblAntiguedad.Visible = True
+            ElseIf c = 2 Then
+                lblAntiguedad.Visible = False
+            Else : c = 3
+                c = 0
+            End If
+        End If
+
+        If tipoF = "F" Then
+            If c = 1 Then
+                lblVenceFianza.Visible = True
+            ElseIf c = 2 Then
+                lblVenceFianza.Visible = False
+            Else : c = 3
+                c = 0
+            End If
+        End If
 
     End Sub
 
@@ -301,10 +362,10 @@ Public Class frmReciboGral
         txtImporte.Text = ""
         txtCantidad.Text = ""
         txtSubtotal.Text = ""
-        txtAntiguedad.Text = ""
+        lblAntiguedad.Text = ""
         txtObs.Text = ""
         txtTotal.Text = 0
-        txtFianza.Text = ""
+        lblVenceFianza.Text = ""
         FormatoMoneda(txtTotal)
         txtEfectivo.Text = 0
         FormatoMoneda(txtEfectivo)
@@ -314,6 +375,8 @@ Public Class frmReciboGral
         FormatoMoneda(txtTarjeta)
         txtSaldo.Text = 0
         FormatoMoneda(txtSaldo)
+        txtSaldoMat.Text = 0
+        FormatoMoneda(txtSaldoMat)
 
         dgvRenglones.DataSource = Nothing
 
@@ -402,6 +465,15 @@ Public Class frmReciboGral
             frmMsgBox.ShowDialog()
             txtCodigo.Focus()
         End If
+        If txtSaldo.Text < "0" Then
+            detmsg = "DEBE MARCAR OTRA BOLETA O MODIFICAR EL IMPORTE DE PAGO...!!!"
+            tipomsg = "info"
+            btnmsg = 1
+            frmMsgBox.ShowDialog()
+
+            btnImprimir.Visible = False
+            txtEfectivo.Focus()
+        End If
 
     End Sub
 
@@ -473,10 +545,6 @@ Public Class frmReciboGral
                 comprobante = comprobante + 1
             End If
 
-            ''---Actualizo Comprobante---LO TRASLADO CUANDO SE TERMINE DE IMPRIMIR TODO
-            'comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIP'", conexion)
-            'comando.ExecuteNonQuery()
-
             longitud = Len(comprobante)
             If longitud < 8 Then
                 cantidad = 8 - longitud
@@ -487,9 +555,10 @@ Public Class frmReciboGral
                 comprobante = ceros & comprobante
             End If
 
-            fechaaux = txtFecha.Text
-            MoverFecha()
-            fecha = yyyy + "-" + mm + "-" + dd
+            fechajob = txtFecha.Text
+            ProcesarFecha()
+            fecha = fechadb
+
 
         End If
 
@@ -500,8 +569,8 @@ Public Class frmReciboGral
         item = 0
         total = Val(txtTotal.Text)
         pagado = Val(txtEfectivo.Text) + Val(txtTarjeta.Text) + Val(txtTransferencia.Text)
-        saldo = pagado
-        resto = 0
+        saldo = Val(txtSaldo.Text)
+        resto = pagado
 
         Try
             If dgvRenglones.Rows.Count > 0 Then
@@ -516,16 +585,16 @@ Public Class frmReciboGral
                     comando.Parameters.AddWithValue("@item", item)
                     comando.Parameters.AddWithValue("@detalle", Fila.Cells(2).Value)
                     comando.Parameters.AddWithValue("@periodo", "")
-                    If saldo >= Fila.Cells(5).Value Then
+                    If resto >= Fila.Cells(5).Value Then
                         comando.Parameters.AddWithValue("@debe", Fila.Cells(5).Value)
                         comando.Parameters.AddWithValue("@estado", "PAGADA")
                         comando.Parameters.AddWithValue("@pagado", Fila.Cells(5).Value)
                         comando.Parameters.AddWithValue("@resto", 0)
-                        saldo = saldo - Fila.Cells(5).Value
+                        resto = resto - Fila.Cells(5).Value
                     Else
                         comando.Parameters.AddWithValue("@debe", Fila.Cells(5).Value)
                         comando.Parameters.AddWithValue("@estado", "PENDIENTE")
-                        comando.Parameters.AddWithValue("@pagado", Fila.Cells(5).Value - saldo)
+                        comando.Parameters.AddWithValue("@pagado", Fila.Cells(5).Value - resto)
                         comando.Parameters.AddWithValue("@resto", saldo)
                     End If
                     comando.Parameters.AddWithValue("@haber", 0)
@@ -550,7 +619,7 @@ Public Class frmReciboGral
             comando.Parameters.AddWithValue("@haber", pagado)
             comando.Parameters.AddWithValue("@saldo", 0)
             comando.Parameters.AddWithValue("@estado", "PAGO")
-            comando.Parameters.AddWithValue("@pagado", pagado)
+            comando.Parameters.AddWithValue("@pagado", 0)
             comando.Parameters.AddWithValue("@fecpago", fecha)
             comando.Parameters.AddWithValue("@resto", 0)
             comando.Parameters.AddWithValue("@obs", "")
@@ -585,39 +654,39 @@ Public Class frmReciboGral
 
     End Sub
 
-    Private Sub MoverFecha()
+    'Private Sub MoverFecha()
 
-        pos1 = InStr(1, fechaaux, "/")
-        pos2 = InStr(pos1 + 1, fechaaux, "/")
-        If pos1 > 0 Then
-            dd = Mid(fechaaux, 1, pos1 - 1)
-            mm = Mid(fechaaux, pos1 + 1, ((pos2 - 1) - pos1))
-            yyyy = Mid(fechaaux, pos2 + 1, 4)
-        End If
+    '    pos1 = InStr(1, fechaaux, "/")
+    '    pos2 = InStr(pos1 + 1, fechaaux, "/")
+    '    If pos1 > 0 Then
+    '        dd = Mid(fechaaux, 1, pos1 - 1)
+    '        mm = Mid(fechaaux, pos1 + 1, ((pos2 - 1) - pos1))
+    '        yyyy = Mid(fechaaux, pos2 + 1, 4)
+    '    End If
 
-        ceros = ""
+    '    ceros = ""
 
-        longitud = Len(dd)
-        If longitud < 2 Then
-            cantidad = 2 - longitud
-            For j = 1 To cantidad
-                ceros = ceros & "0"
-            Next j
-            dd = ceros & dd
-        End If
+    '    longitud = Len(dd)
+    '    If longitud < 2 Then
+    '        cantidad = 2 - longitud
+    '        For j = 1 To cantidad
+    '            ceros = ceros & "0"
+    '        Next j
+    '        dd = ceros & dd
+    '    End If
 
-        ceros = ""
+    '    ceros = ""
 
-        longitud = Len(mm)
-        If longitud < 2 Then
-            cantidad = 2 - longitud
-            For j = 1 To cantidad
-                ceros = ceros & "0"
-            Next j
-            mm = ceros & mm
-        End If
+    '    longitud = Len(mm)
+    '    If longitud < 2 Then
+    '        cantidad = 2 - longitud
+    '        For j = 1 To cantidad
+    '            ceros = ceros & "0"
+    '        Next j
+    '        mm = ceros & mm
+    '    End If
 
-    End Sub
+    'End Sub
 
     Private Sub CalcularSaldo()
 

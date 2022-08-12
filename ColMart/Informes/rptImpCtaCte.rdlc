@@ -1893,7 +1893,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
               <Top>0.14111cm</Top>
-              <Left>0.05292cm</Left>
+              <Left>0.37042cm</Left>
               <Height>0.6cm</Height>
               <Width>3.37312cm</Width>
               <ZIndex>1</ZIndex>
@@ -1919,14 +1919,14 @@
                 </Border>
               </Style>
             </Line>
-            <Textbox Name="Textbox23">
+            <Textbox Name="Textbox26">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!prmUser.Value</Value>
+                      <Value>=User!UserID + " * " + Parameters!prmUser.Value</Value>
                       <Style>
                         <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1940,9 +1940,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
               <Top>0.14111cm</Top>
-              <Left>10.70081cm</Left>
+              <Left>10.12282cm</Left>
               <Height>0.6cm</Height>
-              <Width>3.37312cm</Width>
+              <Width>7.73874cm</Width>
               <ZIndex>3</ZIndex>
               <Style>
                 <Border>

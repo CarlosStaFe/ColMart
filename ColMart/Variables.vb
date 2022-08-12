@@ -314,7 +314,7 @@ Module Variables
 
         '*********Dividir parte entera y decimal************
         For y = 1 To Len(numero)
-            If Mid(numero, y, 1) = "," Then
+            If Mid(numero, y, 1) = "." Then
                 flag = "S"
             Else
                 If flag = "N" Then

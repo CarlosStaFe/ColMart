@@ -638,7 +638,7 @@ Partial Class frmReciboPago
         '
         Me.txtDiferencia.BackColor = System.Drawing.Color.Black
         Me.txtDiferencia.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDiferencia.ForeColor = System.Drawing.Color.GreenYellow
+        Me.txtDiferencia.ForeColor = System.Drawing.Color.Red
         Me.txtDiferencia.Location = New System.Drawing.Point(674, 432)
         Me.txtDiferencia.Name = "txtDiferencia"
         Me.txtDiferencia.Size = New System.Drawing.Size(107, 27)

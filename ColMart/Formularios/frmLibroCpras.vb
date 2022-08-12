@@ -109,8 +109,9 @@ Public Class frmLibroCpras
         da.Fill(dt)
 
         ReportViewer1.LocalReport.DataSources.Add(New ReportDataSource("dsCompras", dt))
-        Dim parametros As ReportParameter() = New ReportParameter(0) {}
+        Dim parametros As ReportParameter() = New ReportParameter(1) {}
         parametros(0) = New ReportParameter("prmTitulo", titulo)
+        parametros(1) = New ReportParameter("prmUser", user)
         ReportViewer1.LocalReport.SetParameters(parametros)
 
         ReportViewer1.RefreshReport()

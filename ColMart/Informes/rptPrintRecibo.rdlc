@@ -2245,7 +2245,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>="OBSERVACIONES: " &amp; Parameters!prmObs.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -2254,7 +2256,7 @@
             <rd:DefaultName>Textbox7</rd:DefaultName>
             <Top>11.89157cm</Top>
             <Left>0.21116cm</Left>
-            <Height>1.31864cm</Height>
+            <Height>0.86003cm</Height>
             <Width>18.43186cm</Width>
             <ZIndex>63</ZIndex>
             <Style>
@@ -5036,7 +5038,9 @@
                 <TextRuns>
                   <TextRun>
                     <Value>="OBSERVACIONES: " &amp; Parameters!prmObs.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                    </Style>
                   </TextRun>
                 </TextRuns>
                 <Style />
@@ -5044,8 +5048,8 @@
             </Paragraphs>
             <rd:DefaultName>Textbox7</rd:DefaultName>
             <Top>25.44103cm</Top>
-            <Left>0.21117cm</Left>
-            <Height>1.26146cm</Height>
+            <Left>0.21116cm</Left>
+            <Height>0.76757cm</Height>
             <Width>18.43186cm</Width>
             <ZIndex>137</ZIndex>
             <Style>
@@ -5562,6 +5566,76 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Textbox Name="Textbox124">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=User!UserID + " * " + Parameters!prmUser.Value + " * " + Globals!ExecutionTime</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox21</rd:DefaultName>
+            <Top>12.82215cm</Top>
+            <Left>0.37387cm</Left>
+            <Height>0.5364cm</Height>
+            <Width>18.26915cm</Width>
+            <ZIndex>149</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox125">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=User!UserID + " * " + Parameters!prmUser.Value + " * " + Globals!ExecutionTime</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox21</rd:DefaultName>
+            <Top>26.27916cm</Top>
+            <Left>0.21116cm</Left>
+            <Height>0.5364cm</Height>
+            <Width>18.26915cm</Width>
+            <ZIndex>150</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>10.625in</Height>
         <Style />
@@ -5877,6 +5951,11 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="prmUser">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -6147,6 +6226,11 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>13</RowIndex>
           <ParameterName>prmTipoComprobante</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>13</RowIndex>
+          <ParameterName>prmUser</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

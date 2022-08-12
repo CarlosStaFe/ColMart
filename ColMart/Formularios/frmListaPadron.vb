@@ -27,7 +27,6 @@
 
     End Sub
 
-
     Private Sub btnFiltrar_Click(sender As Object, e As EventArgs) Handles btnFiltrar.Click
 
         comando = New MySqlCommand("DELETE FROM padron", conexion)
@@ -164,6 +163,7 @@
 
         Dim frm As New frmPadronMatri
         frm.detalle = detalle
+        frm.useraux = user
         frm.ShowDialog()
 
         Limpiar()

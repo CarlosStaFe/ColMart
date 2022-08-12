@@ -14,6 +14,14 @@
         MostrarFecha()
         txtNroMatri.Focus()
 
+        If nivel > 5 Then
+            btnSinMatricula.Enabled = False
+            btnCambiar.Enabled = False
+            BtnAgregar.Enabled = False
+            BtnEliminar.Enabled = False
+            BtnGrabar.Enabled = False
+        End If
+
     End Sub
 
 #Region "INGRESO DE DATOS"
@@ -28,6 +36,7 @@
             frmMat0.ShowDialog()
             LeerCodPos()
             senial = 0
+            MostrarFecha()
             txtApelNombMatri.Focus()
         End If
 
