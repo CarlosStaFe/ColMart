@@ -351,7 +351,7 @@ Public Class MenuPpal
 
     Private Sub btnReciboPago_Click_1(sender As Object, e As EventArgs) Handles btnReciboPago.Click
 
-        MostrarHijo(frmReciboPago)
+        MostrarHijo(frmReciboB1)
         OcultarSubmenu()
 
     End Sub
@@ -511,9 +511,6 @@ Public Class MenuPpal
 
     End Sub
 
-    Private Sub btnSaldoDeudor_Click(sender As Object, e As EventArgs) Handles btnSaldoDeudor.Click
-
-    End Sub
 
 #End Region
 

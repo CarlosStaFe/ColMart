@@ -1,5 +1,4 @@
 ﻿Public Class frmProveedores
-
     Private Sub frmProveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ConectarMySql()
@@ -20,7 +19,7 @@
             Dim frmProv0 As New frmConsProveedores
             AddOwnedForm(frmProv0)
             frmProv0.ShowDialog()
-            idCodigo = txtIdCodPosProv.Text
+            idCodigo = Val(txtIdCodPosProv.Text)
             CodPostal = txtCodPos.Text
             LeerCodigoPostal()
             CargoLocalidad()
@@ -136,7 +135,7 @@
             frmMsgBox.ShowDialog()
         End If
         ProveedoresTableAdapter.Fill(DbcolmartDataSet.proveedores)
-        idCodigo = txtIdCodPosProv.Text
+        idCodigo = Val(txtIdCodPosProv.Text)
         CodPostal = txtCodPos.Text
         LeerCodigoPostal()
         CargoLocalidad()
@@ -226,7 +225,7 @@
     Private Sub BtnPrimer_Click(sender As Object, e As EventArgs) Handles BtnPrimer.Click
 
         ProveedoresBindingSource.MoveFirst()
-        idCodigo = txtIdCodPosProv.Text
+        idCodigo = Val(txtIdCodPosProv.Text)
         CodPostal = ""
         LeerCodigoPostal()
         CargoLocalidad()
@@ -244,7 +243,7 @@
     Private Sub BtnAnterior_Click(sender As Object, e As EventArgs) Handles BtnAnterior.Click
 
         ProveedoresBindingSource.MovePrevious()
-        idCodigo = txtIdCodPosProv.Text
+        idCodigo = Val(txtIdCodPosProv.Text)
         CodPostal = ""
         LeerCodigoPostal()
         CargoLocalidad()
@@ -262,7 +261,7 @@
     Private Sub BtnSiguiente_Click(sender As Object, e As EventArgs) Handles BtnSiguiente.Click
 
         ProveedoresBindingSource.MoveNext()
-        idCodigo = txtIdCodPosProv.Text
+        idCodigo = Val(txtIdCodPosProv.Text)
         CodPostal = ""
         LeerCodigoPostal()
         CargoLocalidad()
@@ -280,7 +279,7 @@
     Private Sub BtnUltimo_Click(sender As Object, e As EventArgs) Handles BtnUltimo.Click
 
         ProveedoresBindingSource.MoveLast()
-        idCodigo = txtIdCodPosProv.Text
+        idCodigo = Val(txtIdCodPosProv.Text)
         CodPostal = ""
         LeerCodigoPostal()
         CargoLocalidad()
@@ -317,7 +316,7 @@
             Dim frmProv4 As New frmConsCodPos
             AddOwnedForm(frmProv4)
             frmProv4.ShowDialog()
-            idCodigo = txtIdCodPosProv.Text
+            idCodigo = Val(txtIdCodPosProv.Text)
             CodPostal = ""
             LeerCodigoPostal()
             CargoLocalidad()
@@ -468,19 +467,4 @@
 
     End Sub
 
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
-
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
-    End Sub
-
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-
-    End Sub
-
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-
-    End Sub
 End Class

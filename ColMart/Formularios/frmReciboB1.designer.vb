@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frmReciboPago
+Partial Class frmReciboB1
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -23,7 +23,7 @@ Partial Class frmReciboPago
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmReciboPago))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmReciboB1))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -35,6 +35,8 @@ Partial Class frmReciboPago
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.reciboBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DbcolmartDataSet = New ColMart.dbcolmartDataSet()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtMatSoc = New System.Windows.Forms.TextBox()
@@ -52,6 +54,15 @@ Partial Class frmReciboPago
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.txtFecha = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtTarjeta = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtTransferencia = New System.Windows.Forms.TextBox()
+        Me.txtEfectivo = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtDiferencia = New System.Windows.Forms.TextBox()
+        Me.rdbNotaCredito = New System.Windows.Forms.RadioButton()
         Me.dgvCtasCtes = New System.Windows.Forms.DataGridView()
         Me.IdCCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NroCCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -73,28 +84,27 @@ Partial Class frmReciboPago
         Me.pago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.forma = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CtasctesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DbcolmartDataSet = New ColMart.dbcolmartDataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.BoletasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BoletasTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.boletasTableAdapter()
         Me.CtasctesTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.ctasctesTableAdapter()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtTarjeta = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtTransferencia = New System.Windows.Forms.TextBox()
-        Me.txtEfectivo = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtDiferencia = New System.Windows.Forms.TextBox()
-        Me.rdbNotaCredito = New System.Windows.Forms.RadioButton()
+        Me.reciboTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.reciboTableAdapter()
+        CType(Me.reciboBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvCtasCtes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CtasctesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BoletasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'reciboBindingSource
+        '
+        Me.reciboBindingSource.DataMember = "recibo"
+        Me.reciboBindingSource.DataSource = Me.DbcolmartDataSet
+        '
+        'DbcolmartDataSet
+        '
+        Me.DbcolmartDataSet.DataSetName = "dbcolmartDataSet"
+        Me.DbcolmartDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label3
         '
@@ -147,10 +157,10 @@ Partial Class frmReciboPago
         Me.txtObs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtObs.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtObs.ForeColor = System.Drawing.Color.White
-        Me.txtObs.Location = New System.Drawing.Point(26, 444)
+        Me.txtObs.Location = New System.Drawing.Point(26, 518)
         Me.txtObs.Multiline = True
         Me.txtObs.Name = "txtObs"
-        Me.txtObs.Size = New System.Drawing.Size(526, 50)
+        Me.txtObs.Size = New System.Drawing.Size(578, 50)
         Me.txtObs.TabIndex = 6
         '
         'btnSalir
@@ -163,7 +173,7 @@ Partial Class frmReciboPago
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(837, 423)
+        Me.btnSalir.Location = New System.Drawing.Point(838, 502)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(71, 57)
         Me.btnSalir.TabIndex = 9
@@ -176,7 +186,7 @@ Partial Class frmReciboPago
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label5.Location = New System.Drawing.Point(580, 382)
+        Me.Label5.Location = New System.Drawing.Point(590, 456)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(106, 17)
         Me.Label5.TabIndex = 101
@@ -188,7 +198,7 @@ Partial Class frmReciboPago
         Me.txtSaldo.Enabled = False
         Me.txtSaldo.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSaldo.ForeColor = System.Drawing.Color.GreenYellow
-        Me.txtSaldo.Location = New System.Drawing.Point(692, 376)
+        Me.txtSaldo.Location = New System.Drawing.Point(702, 450)
         Me.txtSaldo.Name = "txtSaldo"
         Me.txtSaldo.Size = New System.Drawing.Size(107, 27)
         Me.txtSaldo.TabIndex = 10
@@ -199,7 +209,7 @@ Partial Class frmReciboPago
         Me.txtApagar.BackColor = System.Drawing.Color.Black
         Me.txtApagar.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtApagar.ForeColor = System.Drawing.Color.GreenYellow
-        Me.txtApagar.Location = New System.Drawing.Point(692, 404)
+        Me.txtApagar.Location = New System.Drawing.Point(702, 478)
         Me.txtApagar.Name = "txtApagar"
         Me.txtApagar.Size = New System.Drawing.Size(107, 27)
         Me.txtApagar.TabIndex = 11
@@ -210,7 +220,7 @@ Partial Class frmReciboPago
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label6.Location = New System.Drawing.Point(559, 410)
+        Me.Label6.Location = New System.Drawing.Point(569, 484)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(127, 17)
         Me.Label6.TabIndex = 104
@@ -221,7 +231,7 @@ Partial Class frmReciboPago
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label4.Location = New System.Drawing.Point(26, 424)
+        Me.Label4.Location = New System.Drawing.Point(26, 498)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(191, 17)
         Me.Label4.TabIndex = 107
@@ -237,7 +247,7 @@ Partial Class frmReciboPago
         Me.btnLimpiar.ForeColor = System.Drawing.Color.White
         Me.btnLimpiar.Image = CType(resources.GetObject("btnLimpiar.Image"), System.Drawing.Image)
         Me.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnLimpiar.Location = New System.Drawing.Point(837, 278)
+        Me.btnLimpiar.Location = New System.Drawing.Point(838, 320)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(71, 57)
         Me.btnLimpiar.TabIndex = 8
@@ -248,9 +258,9 @@ Partial Class frmReciboPago
         'PictureBox4
         '
         Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox4.Location = New System.Drawing.Point(818, 109)
+        Me.PictureBox4.Location = New System.Drawing.Point(827, 109)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(103, 397)
+        Me.PictureBox4.Size = New System.Drawing.Size(91, 471)
         Me.PictureBox4.TabIndex = 145
         Me.PictureBox4.TabStop = False
         '
@@ -259,16 +269,16 @@ Partial Class frmReciboPago
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox1.Location = New System.Drawing.Point(9, 55)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(800, 51)
+        Me.PictureBox1.Size = New System.Drawing.Size(812, 51)
         Me.PictureBox1.TabIndex = 146
         Me.PictureBox1.TabStop = False
         '
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox2.Location = New System.Drawing.Point(9, 371)
+        Me.PictureBox2.Location = New System.Drawing.Point(9, 445)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(800, 135)
+        Me.PictureBox2.Size = New System.Drawing.Size(812, 135)
         Me.PictureBox2.TabIndex = 147
         Me.PictureBox2.TabStop = False
         '
@@ -282,7 +292,7 @@ Partial Class frmReciboPago
         Me.btnImprimir.ForeColor = System.Drawing.Color.White
         Me.btnImprimir.Image = CType(resources.GetObject("btnImprimir.Image"), System.Drawing.Image)
         Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnImprimir.Location = New System.Drawing.Point(837, 133)
+        Me.btnImprimir.Location = New System.Drawing.Point(838, 133)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(71, 57)
         Me.btnImprimir.TabIndex = 7
@@ -302,6 +312,108 @@ Partial Class frmReciboPago
         Me.txtFecha.Size = New System.Drawing.Size(100, 23)
         Me.txtFecha.TabIndex = 149
         Me.txtFecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Lime
+        Me.Label2.Location = New System.Drawing.Point(351, 461)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(61, 17)
+        Me.Label2.TabIndex = 191
+        Me.Label2.Text = "TARJETA:"
+        '
+        'txtTarjeta
+        '
+        Me.txtTarjeta.BackColor = System.Drawing.Color.Black
+        Me.txtTarjeta.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTarjeta.ForeColor = System.Drawing.Color.Lime
+        Me.txtTarjeta.Location = New System.Drawing.Point(418, 458)
+        Me.txtTarjeta.Name = "txtTarjeta"
+        Me.txtTarjeta.Size = New System.Drawing.Size(83, 23)
+        Me.txtTarjeta.TabIndex = 5
+        Me.txtTarjeta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Lime
+        Me.Label8.Location = New System.Drawing.Point(203, 461)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(60, 17)
+        Me.Label8.TabIndex = 190
+        Me.Label8.Text = "TRANSF.:"
+        '
+        'txtTransferencia
+        '
+        Me.txtTransferencia.BackColor = System.Drawing.Color.Black
+        Me.txtTransferencia.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTransferencia.ForeColor = System.Drawing.Color.Lime
+        Me.txtTransferencia.Location = New System.Drawing.Point(262, 458)
+        Me.txtTransferencia.Name = "txtTransferencia"
+        Me.txtTransferencia.Size = New System.Drawing.Size(83, 23)
+        Me.txtTransferencia.TabIndex = 4
+        Me.txtTransferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtEfectivo
+        '
+        Me.txtEfectivo.BackColor = System.Drawing.Color.Black
+        Me.txtEfectivo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEfectivo.ForeColor = System.Drawing.Color.Lime
+        Me.txtEfectivo.Location = New System.Drawing.Point(105, 458)
+        Me.txtEfectivo.Name = "txtEfectivo"
+        Me.txtEfectivo.Size = New System.Drawing.Size(83, 23)
+        Me.txtEfectivo.TabIndex = 3
+        Me.txtEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.Lime
+        Me.Label9.Location = New System.Drawing.Point(28, 461)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(71, 17)
+        Me.Label9.TabIndex = 189
+        Me.Label9.Text = "EFECTIVO:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.DarkOrange
+        Me.Label7.Location = New System.Drawing.Point(610, 512)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(86, 17)
+        Me.Label7.TabIndex = 193
+        Me.Label7.Text = "DIFERENCIA:"
+        '
+        'txtDiferencia
+        '
+        Me.txtDiferencia.BackColor = System.Drawing.Color.Black
+        Me.txtDiferencia.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDiferencia.ForeColor = System.Drawing.Color.Red
+        Me.txtDiferencia.Location = New System.Drawing.Point(702, 506)
+        Me.txtDiferencia.Name = "txtDiferencia"
+        Me.txtDiferencia.Size = New System.Drawing.Size(107, 27)
+        Me.txtDiferencia.TabIndex = 12
+        Me.txtDiferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'rdbNotaCredito
+        '
+        Me.rdbNotaCredito.AutoSize = True
+        Me.rdbNotaCredito.Enabled = False
+        Me.rdbNotaCredito.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdbNotaCredito.ForeColor = System.Drawing.Color.Red
+        Me.rdbNotaCredito.Location = New System.Drawing.Point(831, 67)
+        Me.rdbNotaCredito.Name = "rdbNotaCredito"
+        Me.rdbNotaCredito.Size = New System.Drawing.Size(178, 26)
+        Me.rdbNotaCredito.TabIndex = 194
+        Me.rdbNotaCredito.TabStop = True
+        Me.rdbNotaCredito.Text = "NOTA DE CRÉDITO"
+        Me.rdbNotaCredito.UseVisualStyleBackColor = True
         '
         'dgvCtasCtes
         '
@@ -337,7 +449,7 @@ Partial Class frmReciboPago
         Me.dgvCtasCtes.DefaultCellStyle = DataGridViewCellStyle10
         Me.dgvCtasCtes.EnableHeadersVisualStyles = False
         Me.dgvCtasCtes.GridColor = System.Drawing.Color.White
-        Me.dgvCtasCtes.Location = New System.Drawing.Point(9, 110)
+        Me.dgvCtasCtes.Location = New System.Drawing.Point(9, 111)
         Me.dgvCtasCtes.Name = "dgvCtasCtes"
         Me.dgvCtasCtes.ReadOnly = True
         Me.dgvCtasCtes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -349,8 +461,8 @@ Partial Class frmReciboPago
         DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvCtasCtes.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
-        Me.dgvCtasCtes.Size = New System.Drawing.Size(803, 259)
-        Me.dgvCtasCtes.TabIndex = 2
+        Me.dgvCtasCtes.Size = New System.Drawing.Size(812, 328)
+        Me.dgvCtasCtes.TabIndex = 196
         '
         'IdCCDataGridViewTextBoxColumn
         '
@@ -529,142 +641,33 @@ Partial Class frmReciboPago
         Me.CtasctesBindingSource.DataMember = "ctasctes"
         Me.CtasctesBindingSource.DataSource = Me.DbcolmartDataSet
         '
-        'DbcolmartDataSet
-        '
-        Me.DbcolmartDataSet.DataSetName = "dbcolmartDataSet"
-        Me.DbcolmartDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'ReportViewer1
         '
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "ColMart.rptPrintRecibo.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(9, 514)
+        Me.ReportViewer1.DocumentMapWidth = 83
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "ColMart.rptRecCobroDeudas.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(924, 109)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(787, 65)
-        Me.ReportViewer1.TabIndex = 154
+        Me.ReportViewer1.Size = New System.Drawing.Size(85, 397)
+        Me.ReportViewer1.TabIndex = 197
         Me.ReportViewer1.Visible = False
-        '
-        'BoletasBindingSource
-        '
-        Me.BoletasBindingSource.DataMember = "boletas"
-        Me.BoletasBindingSource.DataSource = Me.DbcolmartDataSet
-        '
-        'BoletasTableAdapter
-        '
-        Me.BoletasTableAdapter.ClearBeforeFill = True
         '
         'CtasctesTableAdapter
         '
         Me.CtasctesTableAdapter.ClearBeforeFill = True
         '
-        'Label2
+        'reciboTableAdapter
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Lime
-        Me.Label2.Location = New System.Drawing.Point(351, 387)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 17)
-        Me.Label2.TabIndex = 191
-        Me.Label2.Text = "TARJETA:"
+        Me.reciboTableAdapter.ClearBeforeFill = True
         '
-        'txtTarjeta
-        '
-        Me.txtTarjeta.BackColor = System.Drawing.Color.Black
-        Me.txtTarjeta.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTarjeta.ForeColor = System.Drawing.Color.Lime
-        Me.txtTarjeta.Location = New System.Drawing.Point(418, 384)
-        Me.txtTarjeta.Name = "txtTarjeta"
-        Me.txtTarjeta.Size = New System.Drawing.Size(83, 23)
-        Me.txtTarjeta.TabIndex = 5
-        Me.txtTarjeta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Lime
-        Me.Label8.Location = New System.Drawing.Point(203, 387)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(60, 17)
-        Me.Label8.TabIndex = 190
-        Me.Label8.Text = "TRANSF.:"
-        '
-        'txtTransferencia
-        '
-        Me.txtTransferencia.BackColor = System.Drawing.Color.Black
-        Me.txtTransferencia.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTransferencia.ForeColor = System.Drawing.Color.Lime
-        Me.txtTransferencia.Location = New System.Drawing.Point(262, 384)
-        Me.txtTransferencia.Name = "txtTransferencia"
-        Me.txtTransferencia.Size = New System.Drawing.Size(83, 23)
-        Me.txtTransferencia.TabIndex = 4
-        Me.txtTransferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'txtEfectivo
-        '
-        Me.txtEfectivo.BackColor = System.Drawing.Color.Black
-        Me.txtEfectivo.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEfectivo.ForeColor = System.Drawing.Color.Lime
-        Me.txtEfectivo.Location = New System.Drawing.Point(105, 384)
-        Me.txtEfectivo.Name = "txtEfectivo"
-        Me.txtEfectivo.Size = New System.Drawing.Size(83, 23)
-        Me.txtEfectivo.TabIndex = 3
-        Me.txtEfectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.Lime
-        Me.Label9.Location = New System.Drawing.Point(28, 387)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(71, 17)
-        Me.Label9.TabIndex = 189
-        Me.Label9.Text = "EFECTIVO:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label7.Location = New System.Drawing.Point(600, 438)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(86, 17)
-        Me.Label7.TabIndex = 193
-        Me.Label7.Text = "DIFERENCIA:"
-        '
-        'txtDiferencia
-        '
-        Me.txtDiferencia.BackColor = System.Drawing.Color.Black
-        Me.txtDiferencia.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDiferencia.ForeColor = System.Drawing.Color.Red
-        Me.txtDiferencia.Location = New System.Drawing.Point(692, 432)
-        Me.txtDiferencia.Name = "txtDiferencia"
-        Me.txtDiferencia.Size = New System.Drawing.Size(107, 27)
-        Me.txtDiferencia.TabIndex = 12
-        Me.txtDiferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'rdbNotaCredito
-        '
-        Me.rdbNotaCredito.AutoSize = True
-        Me.rdbNotaCredito.Enabled = False
-        Me.rdbNotaCredito.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdbNotaCredito.ForeColor = System.Drawing.Color.Red
-        Me.rdbNotaCredito.Location = New System.Drawing.Point(817, 67)
-        Me.rdbNotaCredito.Name = "rdbNotaCredito"
-        Me.rdbNotaCredito.Size = New System.Drawing.Size(178, 26)
-        Me.rdbNotaCredito.TabIndex = 194
-        Me.rdbNotaCredito.TabStop = True
-        Me.rdbNotaCredito.Text = "NOTA DE CRÉDITO"
-        Me.rdbNotaCredito.UseVisualStyleBackColor = True
-        '
-        'frmReciboPago
+        'frmReciboB1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(999, 595)
+        Me.ClientSize = New System.Drawing.Size(1430, 595)
+        Me.Controls.Add(Me.ReportViewer1)
+        Me.Controls.Add(Me.dgvCtasCtes)
         Me.Controls.Add(Me.rdbNotaCredito)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtDiferencia)
@@ -674,8 +677,6 @@ Partial Class frmReciboPago
         Me.Controls.Add(Me.txtTransferencia)
         Me.Controls.Add(Me.txtEfectivo)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.ReportViewer1)
-        Me.Controls.Add(Me.dgvCtasCtes)
         Me.Controls.Add(Me.txtFecha)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnLimpiar)
@@ -695,15 +696,15 @@ Partial Class frmReciboPago
         Me.Controls.Add(Me.PictureBox4)
         Me.ForeColor = System.Drawing.Color.White
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "frmReciboPago"
+        Me.Name = "frmReciboB1"
         Me.Text = "COMPROBANTE INTERNO DE PAGOS"
+        CType(Me.reciboBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvCtasCtes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CtasctesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BoletasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -716,8 +717,6 @@ Partial Class frmReciboPago
     Friend WithEvents txtObs As TextBox
     Friend WithEvents btnSalir As Button
     Friend WithEvents DbcolmartDataSet As dbcolmartDataSet
-    Friend WithEvents BoletasBindingSource As BindingSource
-    Friend WithEvents BoletasTableAdapter As dbcolmartDataSetTableAdapters.boletasTableAdapter
     Friend WithEvents Label5 As Label
     Friend WithEvents txtSaldo As TextBox
     Friend WithEvents txtApagar As TextBox
@@ -729,9 +728,18 @@ Partial Class frmReciboPago
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents btnImprimir As Button
     Friend WithEvents txtFecha As TextBox
-    Friend WithEvents dgvCtasCtes As DataGridView
-    Friend WithEvents CtasctesBindingSource As BindingSource
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtTarjeta As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtTransferencia As TextBox
+    Friend WithEvents txtEfectivo As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtDiferencia As TextBox
+    Friend WithEvents rdbNotaCredito As RadioButton
     Friend WithEvents CtasctesTableAdapter As dbcolmartDataSetTableAdapters.ctasctesTableAdapter
+    Friend WithEvents CtasctesBindingSource As BindingSource
+    Friend WithEvents dgvCtasCtes As DataGridView
     Friend WithEvents IdCCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NroCCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FechaCCDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -752,13 +760,6 @@ Partial Class frmReciboPago
     Friend WithEvents pago As DataGridViewTextBoxColumn
     Friend WithEvents forma As DataGridViewTextBoxColumn
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents Label2 As Label
-    Friend WithEvents txtTarjeta As TextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents txtTransferencia As TextBox
-    Friend WithEvents txtEfectivo As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents txtDiferencia As TextBox
-    Friend WithEvents rdbNotaCredito As RadioButton
+    Friend WithEvents reciboBindingSource As BindingSource
+    Friend WithEvents reciboTableAdapter As dbcolmartDataSetTableAdapters.reciboTableAdapter
 End Class

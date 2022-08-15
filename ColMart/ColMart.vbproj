@@ -492,6 +492,12 @@
     <Compile Include="Formularios\frmReciboGral.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\frmReciboB1.designer.vb">
+      <DependentUpon>frmReciboB1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmReciboB1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\frmReciboPago.designer.vb">
       <DependentUpon>frmReciboPago.vb</DependentUpon>
     </Compile>
@@ -698,6 +704,9 @@
     <EmbeddedResource Include="Formularios\frmReciboGral.resx">
       <DependentUpon>frmReciboGral.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmReciboB1.resx">
+      <DependentUpon>frmReciboB1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmReciboPago.resx">
       <DependentUpon>frmReciboPago.vb</DependentUpon>
     </EmbeddedResource>
@@ -716,6 +725,7 @@
     <EmbeddedResource Include="Formularios\MenuPpal.resx">
       <DependentUpon>MenuPpal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Informes\rptRecCobroDeudas.rdlc" />
     <EmbeddedResource Include="Informes\rptImpCtaCte.rdlc" />
     <EmbeddedResource Include="Informes\rptInforme.rdlc" />
     <EmbeddedResource Include="Informes\rptLibroCpras.rdlc" />

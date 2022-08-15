@@ -108,7 +108,7 @@
         End If
 
         If senial = 8 Then
-            Dim frmMat8 As frmReciboPago = CType(Owner, frmReciboPago)
+            Dim frmMat8 As frmReciboB1 = CType(Owner, frmReciboB1)
             frmMat8.txtMatSoc.Text = dgvMatriculados.CurrentRow.Cells(1).Value.ToString
             frmMat8.txtNombre.Text = dgvMatriculados.CurrentRow.Cells(2).Value.ToString
         End If

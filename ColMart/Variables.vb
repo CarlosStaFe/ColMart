@@ -230,29 +230,6 @@ Module Variables
 
     End Function
 
-    Public Function ProcesoFecha(ByVal fechainput As String)
-
-        Dim dd, mm, yyyy, fechaaux As String
-        Dim pos1, pos2 As Integer
-        fechaaux = ""
-        fechaaux = fechainput
-        pos1 = InStr(1, fechaaux, "/")
-        pos2 = InStr(pos1 + 1, fechaaux, "/")
-        If pos1 > 0 Then
-            dd = Mid(fechaaux, 1, pos1 - 1)
-            mm = Mid(fechaaux, pos1 + 1, ((pos2 - 1) - pos1))
-            yyyy = Mid(fechaaux, pos2 + 1, 4)
-        Else
-            dd = Mid(fechaaux, 7, 2)
-            mm = Mid(fechaaux, 5, 2)
-            yyyy = Mid(fechaaux, 1, 4)
-        End If
-        fechaaux = dd & "/" & mm & "/" + yyyy
-
-        Return fechaaux
-
-    End Function
-
     Public Function ProcesarFecha()
 
         pos1 = InStr(1, fechajob, "/")

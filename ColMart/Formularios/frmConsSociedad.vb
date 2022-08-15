@@ -68,7 +68,7 @@
         End If
 
         If senial = 6 Then
-            Dim frmSoc6 As frmReciboPago = CType(Owner, frmReciboPago)
+            Dim frmSoc6 As frmReciboB1 = CType(Owner, frmReciboB1)
             frmSoc6.txtMatSoc.Text = dgvSociedades.CurrentRow.Cells(0).Value.ToString
             frmSoc6.txtNombre.Text = dgvSociedades.CurrentRow.Cells(1).Value.ToString
         End If

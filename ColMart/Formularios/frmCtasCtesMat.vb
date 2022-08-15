@@ -133,10 +133,13 @@
             If estado = "PENDIENTE" Then
                 fecpago = "1900-01-01"
             Else
-                fecpago = dgvCtasctes.Rows(i).Cells(13).Value()
-                fechaaux = fecpago
-                MoverFecha()
-                fecpago = yyyy + "-" + mm + "-" + dd
+                If IsDBNull(dgvCtasctes.Rows(i).Cells(13).Value()) Then
+                    fecpago = "1900-01-01"
+                Else
+                    fechajob = dgvCtasctes.Rows(i).Cells(13).Value()
+                    ProcesarFecha()
+                    fecpago = fechadb
+                End If
             End If
             resto = dgvCtasctes.Rows(i).Cells(14).Value()
             obs = dgvCtasctes.Rows(i).Cells(15).Value()
@@ -189,41 +192,6 @@
 
     End Sub
 
-    Private Sub MoverFecha()
-
-        pos1 = InStr(1, fechaaux, "/")
-        pos2 = InStr(pos1 + 1, fechaaux, "/")
-        If pos1 > 0 Then
-            dd = Mid(fechaaux, 1, pos1 - 1)
-            mm = Mid(fechaaux, pos1 + 1, ((pos2 - 1) - pos1))
-            yyyy = Mid(fechaaux, pos2 + 1, 4)
-        End If
-
-        ceros = ""
-
-        longitud = Len(dd)
-        If longitud < 2 Then
-            cantidad = 2 - longitud
-            For j = 1 To cantidad
-                ceros = ceros & "0"
-            Next j
-            dd = ceros & dd
-        End If
-
-        ceros = ""
-
-        longitud = Len(mm)
-        If longitud < 2 Then
-            cantidad = 2 - longitud
-            For j = 1 To cantidad
-                ceros = ceros & "0"
-            Next j
-            mm = ceros & mm
-        End If
-
-    End Sub
-
-
     Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
 
         comando = New MySqlCommand("DELETE FROM impctacte", conexion)
@@ -266,7 +234,7 @@
             comando.Parameters.AddWithValue("@haber", CStr(row("HaberCC")))
             comando.Parameters.AddWithValue("@saldo", CStr(row("SaldoCC")))
             comando.Parameters.AddWithValue("@estado", CStr(row("EstadoCC")))
-            comando.Parameters.AddWithValue("@pagado", CStr(row("EstadoCC")))
+            comando.Parameters.AddWithValue("@pagado", CStr(row("PagadoCC")))
 
             fechajob = CStr(row("FecPagoCC"))
             ProcesarFecha()
@@ -275,6 +243,11 @@
             comando.Parameters.AddWithValue("@obs", CStr(row("ObsCC")))
             comando.ExecuteNonQuery()
         Next
+
+        comando.CommandText = "SELECT * FROM impctacte WHERE NroCC = " & txtMatricula.Text & " ORDER BY FechaCC "
+        dt = New DataTable
+        da = New MySqlDataAdapter(comando)
+        da.Fill(dt)
 
     End Sub
 
