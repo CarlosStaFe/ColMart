@@ -25,9 +25,10 @@
         Dim row As DataRow = dt.Rows(0)
 
         For Each row In dt.Rows
-            comando = New MySqlCommand("INSERT INTO debehaber VALUES(@matricula, @apelnomb, @estado, @detalle, @periodo, @debe, @haber, @saldo, @total)", conexion)
+            comando = New MySqlCommand("INSERT INTO debehaber VALUES(@matricula, @apelnomb, @telefono, @estado, @detalle, @periodo, @debe, @haber, @saldo, @total)", conexion)
             comando.Parameters.AddWithValue("@matricula", CStr(row("NroSociedad")))
             comando.Parameters.AddWithValue("@apelnomb", CStr(row("NombSociedad")))
+            comando.Parameters.AddWithValue("@telefono", CStr(row("TelSociedad")))
             comando.Parameters.AddWithValue("@estado", CStr(row("EstadoSociedad")))
             comando.Parameters.AddWithValue("@detalle", CStr(row("DetalleCC")))
             comando.Parameters.AddWithValue("@periodo", CStr(row("PeriodoCC")))

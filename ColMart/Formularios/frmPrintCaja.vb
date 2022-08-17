@@ -16,7 +16,7 @@ Public Class frmPrintCaja
         Dim nombrePDF As String
         nombrePDF = "Caja" & "-" & Today.Date.ToString("dd-MM-yyyy") & "-" & TimeOfDay.ToString("h.mm") & ""
         Dim byteViewer As Byte() = ReportViewer1.LocalReport.Render("PDF")
-        Dim newFile As New FileStream("E:\dbcolmart\cajas\" & nombrePDF & ".pdf", FileMode.Create)
+        Dim newFile As New FileStream("\\DESKTOP\dbcolmart\cajas\" & nombrePDF & ".pdf", FileMode.Create)
         archivo = nombrePDF & ".pdf"
         newFile.Write(byteViewer, 0, byteViewer.Length)
         newFile.Close()
@@ -47,7 +47,7 @@ Public Class frmPrintCaja
         e_mail.IsBodyHtml = False
         e_mail.Body = "PDF de cierre de caja de la fecha de hoy"
 
-        Dim adjunto As Net.Mail.Attachment = New Net.Mail.Attachment("E:\dbcolmart\cajas\" & archivo)
+        Dim adjunto As Net.Mail.Attachment = New Net.Mail.Attachment("\\DESKTOP\dbcolmart\cajas\" & archivo)
         e_mail.Attachments.Add(adjunto)
 
         Smtp_Server.Send(e_mail)

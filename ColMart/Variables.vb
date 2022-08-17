@@ -518,10 +518,9 @@ Module Variables
             cmd.Connection = conn
             conn.Open()
             Dim mb As MySqlBackup = New MySqlBackup(cmd)
+            archivoBackup = "\\DESKTOP\" & Mid(archivoBackup, 4)
             mb.ExportToFile(archivoBackup)
             conn.Close()
-
-            'EnviarMail()
 
             detmsg = "BACKUP Exitoso...!!!"
             tipomsg = "info"
