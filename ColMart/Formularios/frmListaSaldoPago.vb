@@ -155,7 +155,7 @@
                     comando.Parameters.AddWithValue("@haber", 0)
                 End If
                 If rbtnPagos.Checked Then
-                    comando.Parameters.AddWithValue("@debe", row("PagadoCC"))
+                    comando.Parameters.AddWithValue("@debe", row("HaberCC"))
                 Else
                     comando.Parameters.AddWithValue("@haber", 0)
                 End If

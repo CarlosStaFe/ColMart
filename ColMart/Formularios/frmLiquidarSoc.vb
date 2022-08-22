@@ -149,7 +149,7 @@ Public Class frmLiquidarSoc
         LeerComprobante()
         contreg = 0
 
-        comando.CommandText = "SELECT * FROM sociedades WHERE NroSociedad >= '" & txtDesdeSoc.Text & "' AND NroSociedad <= '" & txtHastaSoc.Text & "' AND  EstadoSociedad = 'ACTIVO' "
+        comando.CommandText = "SELECT * FROM sociedades WHERE NroSociedad >= '" & txtDesdeSoc.Text & "' AND NroSociedad <= '" & txtHastaSoc.Text & "' AND  EstadoSociedad = 'ACTIVA' "
         dt = New DataTable
         da = New MySqlDataAdapter(comando)
         da.Fill(dt)
