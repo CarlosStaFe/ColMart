@@ -69,7 +69,7 @@ Partial Class frmReciboGeneral
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmReciboGeneral"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "RECIBO GENERAL DE PAGOS"
+        Me.Text = "RECIBO GENERAL DE COBROS"
         CType(Me.renglonesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dbcolmartDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -910,7 +910,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>COMPROBANTE INTERNO DE PAGO</Value>
+                    <Value>COMPROBANTE INTERNO DE COBRO</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -924,9 +924,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>2.14877cm</Top>
-            <Left>1.3636cm</Left>
+            <Left>1.0461cm</Left>
             <Height>0.6cm</Height>
-            <Width>8.24146cm</Width>
+            <Width>8.55896cm</Width>
             <ZIndex>13</ZIndex>
             <Style>
               <Border>

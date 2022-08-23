@@ -656,7 +656,7 @@ terminar:
     Private Sub GrabarCtaCte()
 
         Try
-            comando = New MySqlCommand("INSERT INTO ctactepro VALUES(@id, @idcpra, @prov, @fecha, @tipo, @prefijo, @subfijo, @detalle, @debe, @haber, @saldo, @estado, @obs)", conexion)
+            comando = New MySqlCommand("INSERT INTO ctactepro VALUES(@id, @idcpra, @prov, @fecha, @tipo, @prefijo, @subfijo, @detalle, @debe, @haber, @saldo, @estado, @obs, @pagado, @resto)", conexion)
             comando.Parameters.AddWithValue("@id", 0)
             comando.Parameters.AddWithValue("@idcpra", id)
             comando.Parameters.AddWithValue("@prov", txtNroProvCpra.Text)
@@ -672,6 +672,8 @@ terminar:
             comando.Parameters.AddWithValue("@saldo", 0)
             comando.Parameters.AddWithValue("@estado", "PENDIENTE")
             comando.Parameters.AddWithValue("@obs", "")
+            comando.Parameters.AddWithValue("@pagado", 0)
+            comando.Parameters.AddWithValue("@resto", txtTotalCpra.Text)
             comando.ExecuteNonQuery()
         Catch ex As Exception
             detmsg = "Grabación de cuenta corriente cancelada...!!!"

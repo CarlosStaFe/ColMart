@@ -486,7 +486,7 @@ Public Class frmReciboGral
         GrabarCaja()
 
         '***ACTUALIZO COMPROBANTE***
-        comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIP'", conexion)
+        comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIC'", conexion)
         comando.ExecuteNonQuery()
 
         Dim frm As New frmReciboGeneral
@@ -535,7 +535,7 @@ Public Class frmReciboGral
                 txtMatSoc.Text = ceros & txtMatSoc.Text
             End If
 
-            comando.CommandText = "SELECT * FROM comprobte WHERE TipoCpbte = 'CIP'"
+            comando.CommandText = "SELECT * FROM comprobte WHERE TipoCpbte = 'CIC'"
             dt = New DataTable
             da = New MySqlDataAdapter(comando)
             da.Fill(dt)
@@ -580,7 +580,7 @@ Public Class frmReciboGral
                     comando.Parameters.AddWithValue("@id_ctacte", id)
                     comando.Parameters.AddWithValue("@matricula", txtMatSoc.Text)
                     comando.Parameters.AddWithValue("@fecha", fecha)
-                    comando.Parameters.AddWithValue("@tipo", "CIP")
+                    comando.Parameters.AddWithValue("@tipo", "CIC")
                     comando.Parameters.AddWithValue("@comprobante", comprobante)
                     comando.Parameters.AddWithValue("@item", item)
                     comando.Parameters.AddWithValue("@detalle", Fila.Cells(2).Value)
@@ -600,7 +600,7 @@ Public Class frmReciboGral
                     comando.Parameters.AddWithValue("@haber", 0)
                     comando.Parameters.AddWithValue("@saldo", 0)
                     comando.Parameters.AddWithValue("@fecpago", fecha)
-                    comando.Parameters.AddWithValue("@obs", "CIP Nro.: " + comprobante)
+                    comando.Parameters.AddWithValue("@obs", "CIC Nro.: " + comprobante)
                     comando.ExecuteNonQuery()
                 Next
             End If
@@ -610,10 +610,10 @@ Public Class frmReciboGral
             comando.Parameters.AddWithValue("@id_ctacte", id)
             comando.Parameters.AddWithValue("@matricula", txtMatSoc.Text)
             comando.Parameters.AddWithValue("@fecha", fecha)
-            comando.Parameters.AddWithValue("@tipo", "CIP")
+            comando.Parameters.AddWithValue("@tipo", "CIC")
             comando.Parameters.AddWithValue("@comprobante", comprobante)
             comando.Parameters.AddWithValue("@item", item)
-            comando.Parameters.AddWithValue("@detalle", "CIP Nro.: " + comprobante)
+            comando.Parameters.AddWithValue("@detalle", "CIC Nro.: " + comprobante)
             comando.Parameters.AddWithValue("@periodo", "")
             comando.Parameters.AddWithValue("@debe", 0)
             comando.Parameters.AddWithValue("@haber", pagado)
@@ -640,7 +640,7 @@ Public Class frmReciboGral
 
         comando = New MySqlCommand("INSERT INTO caja VALUES(@fecha, @detalle, @debe, @haber, @saldo, @efectivo, @tarjeta, @transfe, @obs, @estado)", conexion)
         comando.Parameters.AddWithValue("@fecha", fecha)
-        comando.Parameters.AddWithValue("@detalle", "CIP Nro.: " & comprobante & " - " & txtNombre.Text)
+        comando.Parameters.AddWithValue("@detalle", "CIC Nro.: " & comprobante & " - " & txtNombre.Text)
         comando.Parameters.AddWithValue("@debe", 0)
         importe = Val(txtTotal.Text)
         comando.Parameters.AddWithValue("@haber", importe)
@@ -653,40 +653,6 @@ Public Class frmReciboGral
         comando.ExecuteNonQuery()
 
     End Sub
-
-    'Private Sub MoverFecha()
-
-    '    pos1 = InStr(1, fechaaux, "/")
-    '    pos2 = InStr(pos1 + 1, fechaaux, "/")
-    '    If pos1 > 0 Then
-    '        dd = Mid(fechaaux, 1, pos1 - 1)
-    '        mm = Mid(fechaaux, pos1 + 1, ((pos2 - 1) - pos1))
-    '        yyyy = Mid(fechaaux, pos2 + 1, 4)
-    '    End If
-
-    '    ceros = ""
-
-    '    longitud = Len(dd)
-    '    If longitud < 2 Then
-    '        cantidad = 2 - longitud
-    '        For j = 1 To cantidad
-    '            ceros = ceros & "0"
-    '        Next j
-    '        dd = ceros & dd
-    '    End If
-
-    '    ceros = ""
-
-    '    longitud = Len(mm)
-    '    If longitud < 2 Then
-    '        cantidad = 2 - longitud
-    '        For j = 1 To cantidad
-    '            ceros = ceros & "0"
-    '        Next j
-    '        mm = ceros & mm
-    '    End If
-
-    'End Sub
 
     Private Sub CalcularSaldo()
 

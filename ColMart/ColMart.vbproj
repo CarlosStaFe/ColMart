@@ -732,6 +732,7 @@
     <EmbeddedResource Include="Informes\rptPadronMatri.rdlc" />
     <EmbeddedResource Include="Informes\rptPadronSoc.rdlc" />
     <EmbeddedResource Include="Informes\rptReciboGeneral.rdlc" />
+    <EmbeddedResource Include="Informes\rptReciboPago.rdlc" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>

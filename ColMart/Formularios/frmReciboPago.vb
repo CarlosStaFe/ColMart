@@ -345,7 +345,7 @@ Public Class frmReciboPago
                     txtMatSoc.Text = ceros & txtMatSoc.Text
                 End If
 
-                comando.CommandText = "SELECT * FROM comprobte WHERE TipoCpbte = 'CIP'"
+                comando.CommandText = "SELECT * FROM comprobte WHERE TipoCpbte = 'CIC'"
                 dt = New DataTable
                 da = New MySqlDataAdapter(comando)
                 da.Fill(dt)
@@ -378,7 +378,7 @@ Public Class frmReciboPago
                 parametros(49) = New ReportParameter("prmEfectivo", txtEfectivo.Text)
                 parametros(50) = New ReportParameter("prmTransferencia", txtTransferencia.Text)
                 parametros(51) = New ReportParameter("prmTarjeta", txtTarjeta.Text)
-                parametros(52) = New ReportParameter("prmTipoComprobante", "COMPROBANTE INTERNO DE PAGO")
+                parametros(52) = New ReportParameter("prmTipoComprobante", "COMPROBANTE INTERNO DE COBRO")
                 parametros(53) = New ReportParameter("prmUser", user)
 
                 contador = 1
@@ -563,13 +563,13 @@ Finalizar:
                         End If
                     Else
                         If Fila.Cells(13).Value = 0 Then
-                            comando = New MySqlCommand("UPDATE ctasctes SET PagadoCC = '" & pagadobol & "', ObsCC = '" & "* CIP Nro.: " & comprobante & "'," _
+                            comando = New MySqlCommand("UPDATE ctasctes SET PagadoCC = '" & pagadobol & "', ObsCC = '" & "* CIC Nro.: " & comprobante & "'," _
                                             & " FecPagoCC = '" & fecha & "', PagadoCC = '" & importe & "', EstadoCC = 'PAGADA', RestoCC = 0 " _
                                             & " WHERE NroCC = '" & txtMatSoc.Text & "' AND id_CC = '" & id & "' ", conexion)
                             comando.ExecuteNonQuery()
 
                         Else
-                            comando = New MySqlCommand("UPDATE ctasctes SET RestoCC = '" & saldobol & "', ObsCC = '" & "* CIP Nro.: " & comprobante & "'," _
+                            comando = New MySqlCommand("UPDATE ctasctes SET RestoCC = '" & saldobol & "', ObsCC = '" & "* CIC Nro.: " & comprobante & "'," _
                                             & " FecPagoCC = '" & fecha & "', PagadoCC = '" & pagadobol & "', EstadoCC = 'PENDIENTE'" _
                                             & " WHERE NroCC = '" & txtMatSoc.Text & "' AND id_CC = '" & id & "' ", conexion)
                             comando.ExecuteNonQuery()
@@ -587,10 +587,10 @@ Finalizar:
         comando.Parameters.AddWithValue("@id", 0)
         comando.Parameters.AddWithValue("@nrocta", txtMatSoc.Text)
         comando.Parameters.AddWithValue("@fechacta", fecha)
-        comando.Parameters.AddWithValue("@tipo", "CIP")
+        comando.Parameters.AddWithValue("@tipo", "CIC")
         comando.Parameters.AddWithValue("@comprobante", comprobante)
         comando.Parameters.AddWithValue("@item", 1)
-        comando.Parameters.AddWithValue("@detalle", "CIP Nro.: " & comprobante)
+        comando.Parameters.AddWithValue("@detalle", "CIC Nro.: " & comprobante)
         comando.Parameters.AddWithValue("@periodo", "")
         comando.Parameters.AddWithValue("@debe", 0)
         comando.Parameters.AddWithValue("@haber", importe)
@@ -610,7 +610,7 @@ Finalizar:
         End If
 
         '***GRABO COMPROBANTE***
-        comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIP'", conexion)
+        comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIC'", conexion)
         comando.ExecuteNonQuery()
 
     End Sub
@@ -634,7 +634,7 @@ Finalizar:
 
         comando = New MySqlCommand("INSERT INTO caja VALUES(@fecha, @detalle, @debe, @haber, @saldo, @efectivo, @tarjeta, @transfe, @obs, @estado)", conexion)
         comando.Parameters.AddWithValue("@fecha", fecha)
-        comando.Parameters.AddWithValue("@detalle", "CIP Nro.: " & comprobante & " - " & txtNombre.Text)
+        comando.Parameters.AddWithValue("@detalle", "CIC Nro.: " & comprobante & " - " & txtNombre.Text)
         comando.Parameters.AddWithValue("@debe", 0)
         comando.Parameters.AddWithValue("@haber", importe)
         comando.Parameters.AddWithValue("@saldo", 0)
@@ -890,9 +890,9 @@ Terminar:
     Private Sub ReciboAPDF()
 
         Dim nombrePDF As String
-        nombrePDF = "CIP" & "-" & comprobante & "-" & Today.Date.ToString("dd-MM-yyyy") & "-" & TimeOfDay.ToString("h.mm") & ""
+        nombrePDF = "CIC" & "-" & comprobante & "-" & Today.Date.ToString("dd-MM-yyyy") & "-" & TimeOfDay.ToString("h.mm") & ""
         Dim byteViewer As Byte() = ReportViewer1.LocalReport.Render("PDF")
-        Dim newFile As New FileStream("\\DESKTOP\dbcolmart\CIP\" & nombrePDF & ".pdf", FileMode.Create)
+        Dim newFile As New FileStream("\\DESKTOP\dbcolmart\CIC\" & nombrePDF & ".pdf", FileMode.Create)
         archivo = nombrePDF & ".pdf"
         newFile.Write(byteViewer, 0, byteViewer.Length)
         newFile.Close()

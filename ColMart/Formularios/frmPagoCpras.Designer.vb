@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmPagoCpras
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,18 +20,24 @@ Partial Class frmPagoCpras
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPagoCpras))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPagoCpras))
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.reciboBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DbcolmartDataSet = New ColMart.dbcolmartDataSet()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtDiferencia = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -40,9 +46,7 @@ Partial Class frmPagoCpras
         Me.txtTransferencia = New System.Windows.Forms.TextBox()
         Me.txtEfectivo = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.dgvCtasCtes = New System.Windows.Forms.DataGridView()
         Me.CtacteproBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DbcolmartDataSet = New ColMart.dbcolmartDataSet()
         Me.txtFecha = New System.Windows.Forms.TextBox()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
@@ -61,6 +65,7 @@ Partial Class frmPagoCpras
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.CtacteproTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.ctacteproTableAdapter()
+        Me.dgvCtasCtes = New System.Windows.Forms.DataGridView()
         Me.IdCCProDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdCpraDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NroCCProDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -72,16 +77,31 @@ Partial Class frmPagoCpras
         Me.DebeCCProDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HaberCCProDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SaldoCCProDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstadoCCProDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstadoCCPro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ObsCCProDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.marcapago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        CType(Me.dgvCtasCtes, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CtacteproBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PagadoCCPro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RestoCCPro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.X = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.reciboTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.reciboTableAdapter()
+        CType(Me.reciboBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CtacteproBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvCtasCtes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'reciboBindingSource
+        '
+        Me.reciboBindingSource.DataMember = "recibo"
+        Me.reciboBindingSource.DataSource = Me.DbcolmartDataSet
+        '
+        'DbcolmartDataSet
+        '
+        Me.DbcolmartDataSet.DataSetName = "dbcolmartDataSet"
+        Me.DbcolmartDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label7
         '
@@ -171,64 +191,10 @@ Partial Class frmPagoCpras
         Me.Label9.TabIndex = 243
         Me.Label9.Text = "EFECTIVO:"
         '
-        'dgvCtasCtes
-        '
-        Me.dgvCtasCtes.AllowUserToAddRows = False
-        Me.dgvCtasCtes.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvCtasCtes.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvCtasCtes.AutoGenerateColumns = False
-        Me.dgvCtasCtes.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.dgvCtasCtes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkOrange
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCtasCtes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvCtasCtes.ColumnHeadersHeight = 30
-        Me.dgvCtasCtes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvCtasCtes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdCCProDataGridViewTextBoxColumn, Me.IdCpraDataGridViewTextBoxColumn, Me.NroCCProDataGridViewTextBoxColumn, Me.FechaCCProDataGridViewTextBoxColumn, Me.TipoCbteCCProDataGridViewTextBoxColumn, Me.PrefijoCCProDataGridViewTextBoxColumn, Me.SubfijoCCProDataGridViewTextBoxColumn, Me.DetalleCCProDataGridViewTextBoxColumn, Me.DebeCCProDataGridViewTextBoxColumn, Me.HaberCCProDataGridViewTextBoxColumn, Me.SaldoCCProDataGridViewTextBoxColumn, Me.EstadoCCProDataGridViewTextBoxColumn, Me.ObsCCProDataGridViewTextBoxColumn, Me.marcapago})
-        Me.dgvCtasCtes.DataSource = Me.CtacteproBindingSource
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvCtasCtes.DefaultCellStyle = DataGridViewCellStyle7
-        Me.dgvCtasCtes.EnableHeadersVisualStyles = False
-        Me.dgvCtasCtes.GridColor = System.Drawing.Color.White
-        Me.dgvCtasCtes.Location = New System.Drawing.Point(32, 107)
-        Me.dgvCtasCtes.Name = "dgvCtasCtes"
-        Me.dgvCtasCtes.ReadOnly = True
-        Me.dgvCtasCtes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvCtasCtes.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
-        Me.dgvCtasCtes.Size = New System.Drawing.Size(797, 259)
-        Me.dgvCtasCtes.TabIndex = 223
-        '
         'CtacteproBindingSource
         '
         Me.CtacteproBindingSource.DataMember = "ctactepro"
         Me.CtacteproBindingSource.DataSource = Me.DbcolmartDataSet
-        '
-        'DbcolmartDataSet
-        '
-        Me.DbcolmartDataSet.DataSetName = "dbcolmartDataSet"
-        Me.DbcolmartDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'txtFecha
         '
@@ -253,7 +219,7 @@ Partial Class frmPagoCpras
         Me.btnImprimir.ForeColor = System.Drawing.Color.White
         Me.btnImprimir.Image = CType(resources.GetObject("btnImprimir.Image"), System.Drawing.Image)
         Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnImprimir.Location = New System.Drawing.Point(848, 129)
+        Me.btnImprimir.Location = New System.Drawing.Point(422, 515)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(71, 57)
         Me.btnImprimir.TabIndex = 228
@@ -271,7 +237,7 @@ Partial Class frmPagoCpras
         Me.btnLimpiar.ForeColor = System.Drawing.Color.White
         Me.btnLimpiar.Image = CType(resources.GetObject("btnLimpiar.Image"), System.Drawing.Image)
         Me.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnLimpiar.Location = New System.Drawing.Point(848, 274)
+        Me.btnLimpiar.Location = New System.Drawing.Point(103, 515)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(71, 57)
         Me.btnLimpiar.TabIndex = 229
@@ -345,7 +311,7 @@ Partial Class frmPagoCpras
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(848, 419)
+        Me.btnSalir.Location = New System.Drawing.Point(793, 515)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(71, 57)
         Me.btnSalir.TabIndex = 230
@@ -415,7 +381,7 @@ Partial Class frmPagoCpras
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox1.Location = New System.Drawing.Point(32, 52)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(797, 51)
+        Me.PictureBox1.Size = New System.Drawing.Size(879, 51)
         Me.PictureBox1.TabIndex = 240
         Me.PictureBox1.TabStop = False
         '
@@ -424,22 +390,71 @@ Partial Class frmPagoCpras
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox2.Location = New System.Drawing.Point(32, 368)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(797, 135)
+        Me.PictureBox2.Size = New System.Drawing.Size(879, 135)
         Me.PictureBox2.TabIndex = 241
         Me.PictureBox2.TabStop = False
         '
         'PictureBox4
         '
         Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox4.Location = New System.Drawing.Point(839, 105)
+        Me.PictureBox4.Location = New System.Drawing.Point(32, 509)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(91, 397)
+        Me.PictureBox4.Size = New System.Drawing.Size(879, 69)
         Me.PictureBox4.TabIndex = 239
         Me.PictureBox4.TabStop = False
         '
         'CtacteproTableAdapter
         '
         Me.CtacteproTableAdapter.ClearBeforeFill = True
+        '
+        'dgvCtasCtes
+        '
+        Me.dgvCtasCtes.AllowUserToAddRows = False
+        Me.dgvCtasCtes.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvCtasCtes.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvCtasCtes.AutoGenerateColumns = False
+        Me.dgvCtasCtes.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.dgvCtasCtes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkOrange
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCtasCtes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvCtasCtes.ColumnHeadersHeight = 30
+        Me.dgvCtasCtes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgvCtasCtes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdCCProDataGridViewTextBoxColumn, Me.IdCpraDataGridViewTextBoxColumn, Me.NroCCProDataGridViewTextBoxColumn, Me.FechaCCProDataGridViewTextBoxColumn, Me.TipoCbteCCProDataGridViewTextBoxColumn, Me.PrefijoCCProDataGridViewTextBoxColumn, Me.SubfijoCCProDataGridViewTextBoxColumn, Me.DetalleCCProDataGridViewTextBoxColumn, Me.DebeCCProDataGridViewTextBoxColumn, Me.HaberCCProDataGridViewTextBoxColumn, Me.SaldoCCProDataGridViewTextBoxColumn, Me.EstadoCCPro, Me.ObsCCProDataGridViewTextBoxColumn, Me.PagadoCCPro, Me.RestoCCPro, Me.X})
+        Me.dgvCtasCtes.DataSource = Me.CtacteproBindingSource
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvCtasCtes.DefaultCellStyle = DataGridViewCellStyle10
+        Me.dgvCtasCtes.EnableHeadersVisualStyles = False
+        Me.dgvCtasCtes.GridColor = System.Drawing.Color.White
+        Me.dgvCtasCtes.Location = New System.Drawing.Point(32, 109)
+        Me.dgvCtasCtes.Name = "dgvCtasCtes"
+        Me.dgvCtasCtes.ReadOnly = True
+        Me.dgvCtasCtes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvCtasCtes.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        Me.dgvCtasCtes.Size = New System.Drawing.Size(879, 256)
+        Me.dgvCtasCtes.TabIndex = 247
         '
         'IdCCProDataGridViewTextBoxColumn
         '
@@ -475,7 +490,7 @@ Partial Class frmPagoCpras
         Me.FechaCCProDataGridViewTextBoxColumn.HeaderText = "FECHA"
         Me.FechaCCProDataGridViewTextBoxColumn.Name = "FechaCCProDataGridViewTextBoxColumn"
         Me.FechaCCProDataGridViewTextBoxColumn.ReadOnly = True
-        Me.FechaCCProDataGridViewTextBoxColumn.Width = 70
+        Me.FechaCCProDataGridViewTextBoxColumn.Width = 80
         '
         'TipoCbteCCProDataGridViewTextBoxColumn
         '
@@ -488,10 +503,10 @@ Partial Class frmPagoCpras
         'PrefijoCCProDataGridViewTextBoxColumn
         '
         Me.PrefijoCCProDataGridViewTextBoxColumn.DataPropertyName = "PrefijoCCPro"
-        Me.PrefijoCCProDataGridViewTextBoxColumn.HeaderText = "PREFIJO"
+        Me.PrefijoCCProDataGridViewTextBoxColumn.HeaderText = "PREF."
         Me.PrefijoCCProDataGridViewTextBoxColumn.Name = "PrefijoCCProDataGridViewTextBoxColumn"
         Me.PrefijoCCProDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PrefijoCCProDataGridViewTextBoxColumn.Width = 60
+        Me.PrefijoCCProDataGridViewTextBoxColumn.Width = 50
         '
         'SubfijoCCProDataGridViewTextBoxColumn
         '
@@ -499,7 +514,7 @@ Partial Class frmPagoCpras
         Me.SubfijoCCProDataGridViewTextBoxColumn.HeaderText = "SUBFIJO"
         Me.SubfijoCCProDataGridViewTextBoxColumn.Name = "SubfijoCCProDataGridViewTextBoxColumn"
         Me.SubfijoCCProDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SubfijoCCProDataGridViewTextBoxColumn.Width = 60
+        Me.SubfijoCCProDataGridViewTextBoxColumn.Width = 80
         '
         'DetalleCCProDataGridViewTextBoxColumn
         '
@@ -519,6 +534,7 @@ Partial Class frmPagoCpras
         Me.DebeCCProDataGridViewTextBoxColumn.HeaderText = "DEBE"
         Me.DebeCCProDataGridViewTextBoxColumn.Name = "DebeCCProDataGridViewTextBoxColumn"
         Me.DebeCCProDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DebeCCProDataGridViewTextBoxColumn.Width = 110
         '
         'HaberCCProDataGridViewTextBoxColumn
         '
@@ -530,6 +546,7 @@ Partial Class frmPagoCpras
         Me.HaberCCProDataGridViewTextBoxColumn.HeaderText = "HABER"
         Me.HaberCCProDataGridViewTextBoxColumn.Name = "HaberCCProDataGridViewTextBoxColumn"
         Me.HaberCCProDataGridViewTextBoxColumn.ReadOnly = True
+        Me.HaberCCProDataGridViewTextBoxColumn.Width = 110
         '
         'SaldoCCProDataGridViewTextBoxColumn
         '
@@ -541,13 +558,15 @@ Partial Class frmPagoCpras
         Me.SaldoCCProDataGridViewTextBoxColumn.HeaderText = "SALDO"
         Me.SaldoCCProDataGridViewTextBoxColumn.Name = "SaldoCCProDataGridViewTextBoxColumn"
         Me.SaldoCCProDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SaldoCCProDataGridViewTextBoxColumn.Visible = False
+        Me.SaldoCCProDataGridViewTextBoxColumn.Width = 110
         '
-        'EstadoCCProDataGridViewTextBoxColumn
+        'EstadoCCPro
         '
-        Me.EstadoCCProDataGridViewTextBoxColumn.DataPropertyName = "EstadoCCPro"
-        Me.EstadoCCProDataGridViewTextBoxColumn.HeaderText = "ESTADO"
-        Me.EstadoCCProDataGridViewTextBoxColumn.Name = "EstadoCCProDataGridViewTextBoxColumn"
-        Me.EstadoCCProDataGridViewTextBoxColumn.ReadOnly = True
+        Me.EstadoCCPro.DataPropertyName = "EstadoCCPro"
+        Me.EstadoCCPro.HeaderText = "ESTADO"
+        Me.EstadoCCPro.Name = "EstadoCCPro"
+        Me.EstadoCCPro.ReadOnly = True
         '
         'ObsCCProDataGridViewTextBoxColumn
         '
@@ -555,20 +574,67 @@ Partial Class frmPagoCpras
         Me.ObsCCProDataGridViewTextBoxColumn.HeaderText = "OBS."
         Me.ObsCCProDataGridViewTextBoxColumn.Name = "ObsCCProDataGridViewTextBoxColumn"
         Me.ObsCCProDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ObsCCProDataGridViewTextBoxColumn.Visible = False
         '
-        'marcapago
+        'PagadoCCPro
         '
-        Me.marcapago.HeaderText = "X"
-        Me.marcapago.Name = "marcapago"
-        Me.marcapago.ReadOnly = True
-        Me.marcapago.Width = 20
+        Me.PagadoCCPro.DataPropertyName = "PagadoCCPro"
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle7.Format = "C2"
+        DataGridViewCellStyle7.NullValue = Nothing
+        Me.PagadoCCPro.DefaultCellStyle = DataGridViewCellStyle7
+        Me.PagadoCCPro.HeaderText = "PAGADO"
+        Me.PagadoCCPro.Name = "PagadoCCPro"
+        Me.PagadoCCPro.ReadOnly = True
+        Me.PagadoCCPro.Width = 110
+        '
+        'RestoCCPro
+        '
+        Me.RestoCCPro.DataPropertyName = "RestoCCPro"
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle8.Format = "C2"
+        DataGridViewCellStyle8.NullValue = Nothing
+        Me.RestoCCPro.DefaultCellStyle = DataGridViewCellStyle8
+        Me.RestoCCPro.HeaderText = "RESTO"
+        Me.RestoCCPro.Name = "RestoCCPro"
+        Me.RestoCCPro.ReadOnly = True
+        Me.RestoCCPro.Width = 110
+        '
+        'X
+        '
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.X.DefaultCellStyle = DataGridViewCellStyle9
+        Me.X.HeaderText = "X"
+        Me.X.Name = "X"
+        Me.X.ReadOnly = True
+        Me.X.Width = 30
+        '
+        'ReportViewer1
+        '
+        Me.ReportViewer1.DocumentMapWidth = 75
+        ReportDataSource1.Name = "deReciboPago"
+        ReportDataSource1.Value = Me.reciboBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "ColMart.rptReciboPago.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(918, 52)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.ServerReport.BearerToken = Nothing
+        Me.ReportViewer1.Size = New System.Drawing.Size(77, 493)
+        Me.ReportViewer1.TabIndex = 248
+        Me.ReportViewer1.Visible = False
+        '
+        'reciboTableAdapter
+        '
+        Me.reciboTableAdapter.ClearBeforeFill = True
         '
         'frmPagoCpras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1212, 571)
+        Me.ClientSize = New System.Drawing.Size(1046, 583)
+        Me.Controls.Add(Me.ReportViewer1)
+        Me.Controls.Add(Me.dgvCtasCtes)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtDiferencia)
         Me.Controls.Add(Me.Label2)
@@ -577,7 +643,6 @@ Partial Class frmPagoCpras
         Me.Controls.Add(Me.txtTransferencia)
         Me.Controls.Add(Me.txtEfectivo)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.dgvCtasCtes)
         Me.Controls.Add(Me.txtFecha)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.btnLimpiar)
@@ -601,12 +666,13 @@ Partial Class frmPagoCpras
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmPagoCpras"
         Me.Text = "PAGOS A PROVEEDORES"
-        CType(Me.dgvCtasCtes, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CtacteproBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.reciboBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CtacteproBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvCtasCtes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -620,7 +686,6 @@ Partial Class frmPagoCpras
     Friend WithEvents txtTransferencia As TextBox
     Friend WithEvents txtEfectivo As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents dgvCtasCtes As DataGridView
     Friend WithEvents txtFecha As TextBox
     Friend WithEvents btnImprimir As Button
     Friend WithEvents btnLimpiar As Button
@@ -641,6 +706,7 @@ Partial Class frmPagoCpras
     Friend WithEvents DbcolmartDataSet As dbcolmartDataSet
     Friend WithEvents CtacteproBindingSource As BindingSource
     Friend WithEvents CtacteproTableAdapter As dbcolmartDataSetTableAdapters.ctacteproTableAdapter
+    Friend WithEvents dgvCtasCtes As DataGridView
     Friend WithEvents IdCCProDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdCpraDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NroCCProDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -652,7 +718,12 @@ Partial Class frmPagoCpras
     Friend WithEvents DebeCCProDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents HaberCCProDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SaldoCCProDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EstadoCCProDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EstadoCCPro As DataGridViewTextBoxColumn
     Friend WithEvents ObsCCProDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents marcapago As DataGridViewTextBoxColumn
+    Friend WithEvents PagadoCCPro As DataGridViewTextBoxColumn
+    Friend WithEvents RestoCCPro As DataGridViewTextBoxColumn
+    Friend WithEvents X As DataGridViewTextBoxColumn
+    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents reciboBindingSource As BindingSource
+    Friend WithEvents reciboTableAdapter As dbcolmartDataSetTableAdapters.reciboTableAdapter
 End Class

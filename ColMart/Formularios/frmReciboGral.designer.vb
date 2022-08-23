@@ -175,9 +175,9 @@ Partial Class frmReciboGral
         Me.Label3.ForeColor = System.Drawing.Color.Green
         Me.Label3.Location = New System.Drawing.Point(245, 9)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(372, 36)
+        Me.Label3.Size = New System.Drawing.Size(387, 36)
         Me.Label3.TabIndex = 91
-        Me.Label3.Text = "Recibo de Pago General"
+        Me.Label3.Text = "Recibo de Cobro General"
         '
         'txtFecha
         '

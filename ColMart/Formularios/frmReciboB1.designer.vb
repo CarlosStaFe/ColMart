@@ -111,11 +111,11 @@ Partial Class frmReciboB1
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Green
-        Me.Label3.Location = New System.Drawing.Point(192, 9)
+        Me.Label3.Location = New System.Drawing.Point(178, 9)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(462, 36)
+        Me.Label3.Size = New System.Drawing.Size(524, 36)
         Me.Label3.TabIndex = 90
-        Me.Label3.Text = "Comprobante de Pago Boletas"
+        Me.Label3.Text = "Comprobante de Cobro de Boletas"
         '
         'Label1
         '
