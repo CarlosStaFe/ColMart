@@ -6,9 +6,9 @@
 
     End Sub
 
-    Private Sub txtRazonSocial_Paint(sender As Object, e As PaintEventArgs) Handles txtRazonSocial.Paint
+    Private Sub txtRazonSocial_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtRazonSocial.KeyPress
 
-        comando.CommandText = "SELECT * FROM proveedores WHERE NombreProv LIKE '%" & txtRazonSocial.Text & "%'"
+        comando.CommandText = "SELECT * FROM proveedores WHERE RazonSocialProv LIKE '%" & txtRazonSocial.Text & "%'"
         dt = New DataTable
         da = New MySqlDataAdapter(comando)
         da.Fill(dt)
@@ -52,6 +52,11 @@
             Dim frmProv2 As frmCtasCtesPro = CType(Owner, frmCtasCtesPro)
             frmProv2.txtProveedor.Text = dgvProveedores.CurrentRow.Cells(1).Value.ToString
             frmProv2.txtNombProveedor.Text = dgvProveedores.CurrentRow.Cells(2).Value.ToString
+        End If
+        If senial = 3 Then
+            Dim frmProv3 As frmPagoCpras = CType(Owner, frmPagoCpras)
+            frmProv3.txtProveedor.Text = dgvProveedores.CurrentRow.Cells(1).Value.ToString
+            frmProv3.txtNombre.Text = dgvProveedores.CurrentRow.Cells(2).Value.ToString
         End If
 
         Close()

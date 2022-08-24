@@ -26,7 +26,7 @@
 
         dgvCtasCtes.DataSource = dt
 
-        dgvCtasCtes.Sort(dgvCtasCtes.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
+        dgvCtasCtes.Sort(dgvCtasCtes.Columns(3), System.ComponentModel.ListSortDirection.Ascending)
 
         debe = 0
         haber = 0
@@ -74,7 +74,7 @@
 
         If e.KeyCode = Keys.F1 Then
             senial = 2
-            Dim frmProv2 As New frmConsSociedad
+            Dim frmProv2 As New frmConsProveedores
             AddOwnedForm(frmProv2)
             frmProv2.ShowDialog()
             senial = 0

@@ -27,15 +27,23 @@ Partial Class frmConsCodDebito
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmConsCodDebito))
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmConsCodDebito))
         Me.txtDetalleDebito = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvCodDebito = New System.Windows.Forms.DataGridView()
+        Me.IdCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NroCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DetalleCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImporteCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KgCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CategCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TipoRecCodDeb = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ObsCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CoddebitoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DbcolmartDataSet = New ColMart.dbcolmartDataSet()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -45,14 +53,6 @@ Partial Class frmConsCodDebito
         Me.BtnSalir = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.ToolTipMsg = New System.Windows.Forms.ToolTip(Me.components)
-        Me.IdCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NroCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DetalleCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ImporteCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.KgCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CategCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TipoRecCodDeb = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ObsCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvCodDebito, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CoddebitoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -134,84 +134,6 @@ Partial Class frmConsCodDebito
         Me.dgvCodDebito.Size = New System.Drawing.Size(898, 313)
         Me.dgvCodDebito.TabIndex = 4
         '
-        'CoddebitoBindingSource
-        '
-        Me.CoddebitoBindingSource.DataMember = "coddebito"
-        Me.CoddebitoBindingSource.DataSource = Me.DbcolmartDataSet
-        '
-        'DbcolmartDataSet
-        '
-        Me.DbcolmartDataSet.DataSetName = "dbcolmartDataSet"
-        Me.DbcolmartDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(14, 416)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(414, 19)
-        Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Haga doble clic en el renglón seleccionado..."
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Green
-        Me.Label3.Location = New System.Drawing.Point(170, 9)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(459, 36)
-        Me.Label3.TabIndex = 86
-        Me.Label3.Text = "Consulta de Códigos a Debitar"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(9, 49)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(898, 39)
-        Me.PictureBox1.TabIndex = 87
-        Me.PictureBox1.TabStop = False
-        '
-        'CoddebitoTableAdapter
-        '
-        Me.CoddebitoTableAdapter.ClearBeforeFill = True
-        '
-        'BtnSalir
-        '
-        Me.BtnSalir.AutoSize = True
-        Me.BtnSalir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSalir.FlatAppearance.BorderSize = 0
-        Me.BtnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        Me.BtnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnSalir.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSalir.ForeColor = System.Drawing.Color.White
-        Me.BtnSalir.Image = CType(resources.GetObject("BtnSalir.Image"), System.Drawing.Image)
-        Me.BtnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnSalir.Location = New System.Drawing.Point(773, 429)
-        Me.BtnSalir.Name = "BtnSalir"
-        Me.BtnSalir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.BtnSalir.Size = New System.Drawing.Size(57, 56)
-        Me.BtnSalir.TabIndex = 92
-        Me.BtnSalir.Text = "Salir"
-        Me.BtnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.BtnSalir.UseVisualStyleBackColor = True
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox2.Location = New System.Drawing.Point(758, 423)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(88, 69)
-        Me.PictureBox2.TabIndex = 93
-        Me.PictureBox2.TabStop = False
-        '
-        'ToolTipMsg
-        '
-        Me.ToolTipMsg.IsBalloon = True
-        '
         'IdCodDebDataGridViewTextBoxColumn
         '
         Me.IdCodDebDataGridViewTextBoxColumn.DataPropertyName = "id_CodDeb"
@@ -287,6 +209,84 @@ Partial Class frmConsCodDebito
         Me.ObsCodDebDataGridViewTextBoxColumn.Name = "ObsCodDebDataGridViewTextBoxColumn"
         Me.ObsCodDebDataGridViewTextBoxColumn.ReadOnly = True
         Me.ObsCodDebDataGridViewTextBoxColumn.Width = 150
+        '
+        'CoddebitoBindingSource
+        '
+        Me.CoddebitoBindingSource.DataMember = "coddebito"
+        Me.CoddebitoBindingSource.DataSource = Me.DbcolmartDataSet
+        '
+        'DbcolmartDataSet
+        '
+        Me.DbcolmartDataSet.DataSetName = "dbcolmartDataSet"
+        Me.DbcolmartDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Red
+        Me.Label2.Location = New System.Drawing.Point(14, 416)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(414, 19)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "Haga doble clic en el renglón seleccionado..."
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Green
+        Me.Label3.Location = New System.Drawing.Point(188, 9)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(459, 36)
+        Me.Label3.TabIndex = 86
+        Me.Label3.Text = "Consulta de Códigos a Debitar"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox1.Location = New System.Drawing.Point(9, 49)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(898, 39)
+        Me.PictureBox1.TabIndex = 87
+        Me.PictureBox1.TabStop = False
+        '
+        'CoddebitoTableAdapter
+        '
+        Me.CoddebitoTableAdapter.ClearBeforeFill = True
+        '
+        'BtnSalir
+        '
+        Me.BtnSalir.AutoSize = True
+        Me.BtnSalir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnSalir.FlatAppearance.BorderSize = 0
+        Me.BtnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.BtnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSalir.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSalir.ForeColor = System.Drawing.Color.White
+        Me.BtnSalir.Image = CType(resources.GetObject("BtnSalir.Image"), System.Drawing.Image)
+        Me.BtnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.BtnSalir.Location = New System.Drawing.Point(773, 429)
+        Me.BtnSalir.Name = "BtnSalir"
+        Me.BtnSalir.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.BtnSalir.Size = New System.Drawing.Size(57, 56)
+        Me.BtnSalir.TabIndex = 92
+        Me.BtnSalir.Text = "Salir"
+        Me.BtnSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.BtnSalir.UseVisualStyleBackColor = True
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox2.Location = New System.Drawing.Point(758, 423)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(88, 69)
+        Me.PictureBox2.TabIndex = 93
+        Me.PictureBox2.TabStop = False
+        '
+        'ToolTipMsg
+        '
+        Me.ToolTipMsg.IsBalloon = True
         '
         'frmConsCodDebito
         '

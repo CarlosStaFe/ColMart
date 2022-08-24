@@ -108,7 +108,7 @@ Partial Class frmPagoCpras
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label7.Location = New System.Drawing.Point(605, 435)
+        Me.Label7.Location = New System.Drawing.Point(685, 440)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(86, 17)
         Me.Label7.TabIndex = 246
@@ -119,7 +119,7 @@ Partial Class frmPagoCpras
         Me.txtDiferencia.BackColor = System.Drawing.Color.Black
         Me.txtDiferencia.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDiferencia.ForeColor = System.Drawing.Color.GreenYellow
-        Me.txtDiferencia.Location = New System.Drawing.Point(697, 429)
+        Me.txtDiferencia.Location = New System.Drawing.Point(777, 434)
         Me.txtDiferencia.Name = "txtDiferencia"
         Me.txtDiferencia.Size = New System.Drawing.Size(107, 27)
         Me.txtDiferencia.TabIndex = 233
@@ -130,11 +130,11 @@ Partial Class frmPagoCpras
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Lime
-        Me.Label2.Location = New System.Drawing.Point(374, 384)
+        Me.Label2.Location = New System.Drawing.Point(383, 384)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 17)
+        Me.Label2.Size = New System.Drawing.Size(52, 17)
         Me.Label2.TabIndex = 245
-        Me.Label2.Text = "TARJETA:"
+        Me.Label2.Text = "F. FIJO:"
         '
         'txtTarjeta
         '
@@ -152,7 +152,7 @@ Partial Class frmPagoCpras
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Lime
-        Me.Label8.Location = New System.Drawing.Point(226, 384)
+        Me.Label8.Location = New System.Drawing.Point(219, 384)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(60, 17)
         Me.Label8.TabIndex = 244
@@ -219,7 +219,7 @@ Partial Class frmPagoCpras
         Me.btnImprimir.ForeColor = System.Drawing.Color.White
         Me.btnImprimir.Image = CType(resources.GetObject("btnImprimir.Image"), System.Drawing.Image)
         Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnImprimir.Location = New System.Drawing.Point(422, 515)
+        Me.btnImprimir.Location = New System.Drawing.Point(422, 517)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(71, 57)
         Me.btnImprimir.TabIndex = 228
@@ -237,7 +237,7 @@ Partial Class frmPagoCpras
         Me.btnLimpiar.ForeColor = System.Drawing.Color.White
         Me.btnLimpiar.Image = CType(resources.GetObject("btnLimpiar.Image"), System.Drawing.Image)
         Me.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnLimpiar.Location = New System.Drawing.Point(103, 515)
+        Me.btnLimpiar.Location = New System.Drawing.Point(103, 517)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(71, 57)
         Me.btnLimpiar.TabIndex = 229
@@ -261,7 +261,7 @@ Partial Class frmPagoCpras
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label6.Location = New System.Drawing.Point(564, 407)
+        Me.Label6.Location = New System.Drawing.Point(644, 412)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(127, 17)
         Me.Label6.TabIndex = 237
@@ -272,7 +272,7 @@ Partial Class frmPagoCpras
         Me.txtApagar.BackColor = System.Drawing.Color.Black
         Me.txtApagar.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtApagar.ForeColor = System.Drawing.Color.GreenYellow
-        Me.txtApagar.Location = New System.Drawing.Point(697, 401)
+        Me.txtApagar.Location = New System.Drawing.Point(777, 406)
         Me.txtApagar.Name = "txtApagar"
         Me.txtApagar.Size = New System.Drawing.Size(107, 27)
         Me.txtApagar.TabIndex = 232
@@ -284,7 +284,7 @@ Partial Class frmPagoCpras
         Me.txtSaldo.Enabled = False
         Me.txtSaldo.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSaldo.ForeColor = System.Drawing.Color.GreenYellow
-        Me.txtSaldo.Location = New System.Drawing.Point(697, 373)
+        Me.txtSaldo.Location = New System.Drawing.Point(777, 378)
         Me.txtSaldo.Name = "txtSaldo"
         Me.txtSaldo.Size = New System.Drawing.Size(107, 27)
         Me.txtSaldo.TabIndex = 231
@@ -295,7 +295,7 @@ Partial Class frmPagoCpras
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label5.Location = New System.Drawing.Point(585, 379)
+        Me.Label5.Location = New System.Drawing.Point(665, 384)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(106, 17)
         Me.Label5.TabIndex = 236
@@ -311,7 +311,7 @@ Partial Class frmPagoCpras
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(793, 515)
+        Me.btnSalir.Location = New System.Drawing.Point(793, 517)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(71, 57)
         Me.btnSalir.TabIndex = 230
@@ -328,7 +328,7 @@ Partial Class frmPagoCpras
         Me.txtObs.Location = New System.Drawing.Point(49, 441)
         Me.txtObs.Multiline = True
         Me.txtObs.Name = "txtObs"
-        Me.txtObs.Size = New System.Drawing.Size(526, 50)
+        Me.txtObs.Size = New System.Drawing.Size(597, 50)
         Me.txtObs.TabIndex = 227
         '
         'txtNombre
@@ -399,7 +399,7 @@ Partial Class frmPagoCpras
         Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox4.Location = New System.Drawing.Point(32, 509)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(879, 69)
+        Me.PictureBox4.Size = New System.Drawing.Size(879, 72)
         Me.PictureBox4.TabIndex = 239
         Me.PictureBox4.TabStop = False
         '
@@ -632,7 +632,7 @@ Partial Class frmPagoCpras
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1046, 583)
+        Me.ClientSize = New System.Drawing.Size(1046, 588)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.dgvCtasCtes)
         Me.Controls.Add(Me.Label7)

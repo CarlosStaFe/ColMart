@@ -83,7 +83,7 @@ Public Class frmPagoCpras
 
         If dgvCtasCtes.Rows.Count > 0 Then
             For Each Fila As DataGridViewRow In dgvCtasCtes.Rows
-                txtSaldo.Text = txtSaldo.Text - Fila.Cells(8).Value + Fila.Cells(9).Value
+                txtSaldo.Text = txtSaldo.Text - Fila.Cells(13).Value + Fila.Cells(9).Value
             Next
             txtSaldo.Text = Format(CDec(txtSaldo.Text), "########0.00")
             txtApagar.Text = Format(CDec(txtApagar.Text), "########0.00")
@@ -284,14 +284,14 @@ Public Class frmPagoCpras
         If dgvCtasCtes.CurrentRow.Cells(15).Value = "" Then
             dgvCtasCtes.CurrentRow.Cells(15).Value = "X"
             dgvCtasCtes.Rows(e.RowIndex).DefaultCellStyle.ForeColor = Color.Orange
-            txtApagar.Text = txtApagar.Text + dgvCtasCtes.CurrentRow.Cells(9).Value
-            txtDiferencia.Text = txtDiferencia.Text + dgvCtasCtes.CurrentRow.Cells(9).Value
+            txtApagar.Text = txtApagar.Text + dgvCtasCtes.CurrentRow.Cells(14).Value
+            txtDiferencia.Text = txtDiferencia.Text + dgvCtasCtes.CurrentRow.Cells(14).Value
             contador = contador + 1
         Else
             dgvCtasCtes.CurrentRow.Cells(15).Value = ""
             dgvCtasCtes.Rows(e.RowIndex).DefaultCellStyle.ForeColor = Color.White
-            txtApagar.Text = txtApagar.Text - dgvCtasCtes.CurrentRow.Cells(9).Value
-            txtDiferencia.Text = txtDiferencia.Text - dgvCtasCtes.CurrentRow.Cells(9).Value
+            txtApagar.Text = txtApagar.Text - dgvCtasCtes.CurrentRow.Cells(14).Value
+            txtDiferencia.Text = txtDiferencia.Text - dgvCtasCtes.CurrentRow.Cells(14).Value
             contador = contador - 1
         End If
         txtApagar.Text = Format(CDec(txtApagar.Text), "########0.00")
@@ -435,6 +435,19 @@ Public Class frmPagoCpras
 
         Next
 
+        '***ACTUALIZAR COMPRAS***
+
+        If dgvCtasCtes.Rows.Count > 0 Then
+            For Each Fila As DataGridViewRow In dgvCtasCtes.Rows
+                If Fila.Cells(15).Value = "X" Then
+                    id = Fila.Cells(1).Value
+                    comando = New MySqlCommand("UPDATE compras SET EstadoCpra = 'PAGADA' " _
+                                            & " WHERE id_Cpra = '" & id & "' ", conexion)
+                    comando.ExecuteNonQuery()
+                End If
+            Next
+        End If
+
         '***ACTUALIZO CTACTE***
         importe = Val(pagado)
         comando = New MySqlCommand("INSERT INTO ctactepro VALUES(@id, @idctacte, @nrocta, @fechacta, @tipo, @prefijo, @subfijo, @detalle, @debe, @haber, @saldo, @estado, @obs, @pagado, @resto)", conexion)
@@ -457,7 +470,7 @@ Public Class frmPagoCpras
         comando.ExecuteNonQuery()
 
         '***GRABAR CAJA***
-        'GrabarCaja()
+        GrabarCaja()
 
         '***GRABO COMPROBANTE***
         comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIP'", conexion)
@@ -485,15 +498,34 @@ Public Class frmPagoCpras
         comando = New MySqlCommand("INSERT INTO caja VALUES(@fecha, @detalle, @debe, @haber, @saldo, @efectivo, @tarjeta, @transfe, @obs, @estado)", conexion)
         comando.Parameters.AddWithValue("@fecha", fecha)
         comando.Parameters.AddWithValue("@detalle", "CIP Nro.: " & comprobante & " - " & txtNombre.Text)
-        comando.Parameters.AddWithValue("@debe", imppagado)
+        comando.Parameters.AddWithValue("@debe", imppagado * -1)
         comando.Parameters.AddWithValue("@haber", 0)
         comando.Parameters.AddWithValue("@saldo", 0)
-        comando.Parameters.AddWithValue("@efectivo", efectivo)
-        comando.Parameters.AddWithValue("@tarjeta", tarjeta)
-        comando.Parameters.AddWithValue("@transfe", transferencia)
+        comando.Parameters.AddWithValue("@efectivo", efectivo * -1)
+        comando.Parameters.AddWithValue("@tarjeta", tarjeta * -1)
+        comando.Parameters.AddWithValue("@transfe", transferencia * -1)
         comando.Parameters.AddWithValue("@obs", txtObs.Text)
         comando.Parameters.AddWithValue("@estado", "ABIERTA")
         comando.ExecuteNonQuery()
+
+    End Sub
+
+    Private Sub ControlarCaja()
+
+        txtFecha.Text = Format(Now, "yyyy-MM-dd")
+        comando = New MySqlCommand("SELECT * FROM caja WHERE EstadoCaja = 'ABIERTA' ", conexion)
+        dr = comando.ExecuteReader
+
+        If dr.HasRows = 0 Then
+            detmsg = "CAJA NO ABIERTA...!!!"
+            tipomsg = "info"
+            btnmsg = 1
+            frmMsgBox.ShowDialog()
+            flag = "NO"
+        End If
+
+        dr.Close()
+        dr.Dispose()
 
     End Sub
 

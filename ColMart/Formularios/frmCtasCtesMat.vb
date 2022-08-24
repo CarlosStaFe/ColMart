@@ -70,7 +70,7 @@
 
         dgvCtasctes.DataSource = dt
 
-        dgvCtasctes.Sort(dgvCtasctes.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
+        dgvCtasctes.Sort(dgvCtasctes.Columns(2), System.ComponentModel.ListSortDirection.Ascending)
 
         debe = 0
         haber = 0

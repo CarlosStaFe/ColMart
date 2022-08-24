@@ -1508,7 +1508,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Tarjeta:</Value>
+                    <Value>F.Fijo:</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>

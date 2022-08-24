@@ -3,12 +3,9 @@
 Public Class frmReciboGral
     Dim fecha, comprobante, tipo, impletras, cuit As String
     Dim flag, fechaaux, fechajur, tipoA, tipoF As String
-    Dim longitud, cantidad, item, pos1, pos2, meses As Integer
-    Dim ceros, newcompro, dd, mm, yyyy As String
-    Dim periodo, id As String
+    Dim longitud, cantidad, item, meses, ctrolf, ctrolv, ctroll As Integer
+    Dim ceros, yyyy, id As String
     Dim pagado, total, resto, saldo, importe As Double
-    Dim observacion, obsparcial As String
-    Dim parametros As ReportParameter() = New ReportParameter(6) {}
     Dim fecha1, fecha2 As Date
 
     Private Sub frmReciboGral_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -130,11 +127,13 @@ Public Class frmReciboGral
                 fecha2 = CDate(fechaaux)
                 If fecha1 < fecha2 Then
                     lblVenceFianza.ForeColor = Color.Red
+                    ctrolv = 1
                     tipoF = "F"
                     Timer1.Start()
                 Else
                     lblVenceFianza.Visible = True
                     lblVenceFianza.ForeColor = Color.Lime
+                    ctrolv = 0
                     Timer1.Stop()
                 End If
 
@@ -195,6 +194,15 @@ Public Class frmReciboGral
 
     End Sub
 
+    Private Sub txtCodigo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCodigo.KeyPress
+
+        If e.KeyChar = Chr(13) And txtCodigo.Text = "" Then
+            btnLimpiar.Visible = True
+            txtEfectivo.Focus()
+        End If
+
+    End Sub
+
     Private Sub LeerCodigos()
 
         comando.CommandText = "SELECT * FROM coddebito WHERE NroCodDeb = '" & txtCodigo.Text & "' "
@@ -203,31 +211,47 @@ Public Class frmReciboGral
         da.Fill(dt)
 
         If dt.Rows.Count > 0 Then
+
             Dim row As DataRow = dt.Rows(0)
-            txtDetalle.Text = CStr(row("DetalleCodDeb"))
-            txtImporte.Text = CStr(row("ImporteCodDeb"))
-            txtCantidad.Text = 1
-            txtSubtotal.Text = CStr(row("ImporteCodDeb")) * 1
-            txtCategoria.Text = CStr(row("CategCodDeb"))
-            FormatoMoneda(txtImporte)
-            FormatoMoneda(txtSubtotal)
+            txtTipoRec.Text = CStr(row("TipoRecCodDeb"))
 
-            txtImporte.Focus()
-            btnAgregar.Visible = True
+            If txtTipoRec.Text = "REC" Then
+                txtDetalle.Text = CStr(row("DetalleCodDeb"))
+                txtImporte.Text = CStr(row("ImporteCodDeb"))
+                txtCantidad.Text = 1
+                txtSubtotal.Text = CStr(row("ImporteCodDeb")) * 1
+                txtCategoria.Text = CStr(row("CategCodDeb"))
 
-        Else
-            If txtTotal.Text = 0 Then
-                detmsg = "Debe ingresar un código...!!!"
+                FormatoMoneda(txtImporte)
+                FormatoMoneda(txtSubtotal)
+
+                txtImporte.Focus()
+                btnAgregar.Visible = True
+
+                'If txtTotal.Text = 0 Then
+                '    detmsg = "Debe ingresar un código...!!!"
+                '    tipomsg = "info"
+                '    btnmsg = 1
+                '    frmMsgBox.ShowDialog()
+                '    txtCodigo.Focus()
+                'Else
+                '    txtDetalle.Text = ""
+                '    txtImporte.Text = ""
+                '    txtCantidad.Text = ""
+                '    txtSubtotal.Text = ""
+                '    txtEfectivo.Focus()
+                'End If
+            Else
+                detmsg = "DEBE INGRESAR UN CÓDIGO TIPO REC ...!!!"
                 tipomsg = "info"
                 btnmsg = 1
                 frmMsgBox.ShowDialog()
-                txtCodigo.Focus()
-            Else
+                txtCodigo.Text = ""
                 txtDetalle.Text = ""
                 txtImporte.Text = ""
                 txtCantidad.Text = ""
                 txtSubtotal.Text = ""
-                txtEfectivo.Focus()
+                txtCodigo.Focus()
             End If
         End If
 
@@ -319,6 +343,8 @@ Public Class frmReciboGral
 
         dgvRenglones.Refresh()
 
+        ControlarFianza()
+
         txtCodigo.Text = ""
         txtDetalle.Text = ""
         txtImporte.Text = ""
@@ -377,6 +403,9 @@ Public Class frmReciboGral
         FormatoMoneda(txtSaldo)
         txtSaldoMat.Text = 0
         FormatoMoneda(txtSaldoMat)
+        ctrolf = 0
+        ctrolv = 0
+        ctroll = 0
 
         dgvRenglones.DataSource = Nothing
 
@@ -466,13 +495,23 @@ Public Class frmReciboGral
             txtCodigo.Focus()
         End If
         If txtSaldo.Text < "0" Then
-            detmsg = "DEBE MARCAR OTRA BOLETA O MODIFICAR EL IMPORTE DE PAGO...!!!"
+            detmsg = "DEBE MODIFICAR EL IMPORTE DE PAGO...!!!"
             tipomsg = "info"
             btnmsg = 1
             frmMsgBox.ShowDialog()
 
             btnImprimir.Visible = False
             txtEfectivo.Focus()
+        End If
+        If ctrolv = 1 And ctrolf = 0 And ctroll = 1 Then
+            detmsg = "DEBE INGRESAR EL CÓDIGO 5 POR FIANZA VENCIDA...!!!"
+            tipomsg = "info"
+            btnmsg = 1
+            frmMsgBox.ShowDialog()
+            btnImprimir.Enabled = False
+            txtCodigo.Focus()
+        Else
+            btnImprimir.Enabled = True
         End If
 
     End Sub
@@ -558,7 +597,6 @@ Public Class frmReciboGral
             fechajob = txtFecha.Text
             ProcesarFecha()
             fecha = fechadb
-
 
         End If
 
@@ -681,6 +719,35 @@ Public Class frmReciboGral
 
         DesconectarMySql()
         Close()
+
+    End Sub
+
+    Private Sub ControlarFianza()
+
+        ctrolf = 0
+        ctroll = 0
+
+        If dgvRenglones.Rows.Count > 0 Then
+            For Each Fila As DataGridViewRow In dgvRenglones.Rows
+                If Not Fila Is Nothing Then
+                    If Fila.Cells(1).Value > 23 Or Fila.Cells(1).Value < 27 Then
+                        ctroll = 1
+                    End If
+                    If Fila.Cells(1).Value = 5 Then
+                        ctrolf = 1
+                    End If
+                End If
+            Next
+        End If
+
+        If ctrolv = 1 And ctrolf = 0 And ctroll = 1 Then
+            detmsg = "DEBE INGRESAR EL CÓDIGO 5 POR FIANZA VENCIDA...!!!"
+            tipomsg = "info"
+            btnmsg = 1
+            frmMsgBox.ShowDialog()
+            btnImprimir.Enabled = True
+            txtCodigo.Focus()
+        End If
 
     End Sub
 
