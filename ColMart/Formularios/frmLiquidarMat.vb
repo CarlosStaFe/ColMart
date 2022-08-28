@@ -5,9 +5,9 @@ Public Class frmLiquidarMat
 
     Dim desdemat, hastamat As Integer
     Dim matricula, apelynombre, domicilio, codigopostal, localidad, provincia, estado, detalle As String
-    Dim fila, idcodpos, cantidad, contreg, comprobante As Integer
+    Dim fila, idcodpos, cantidad, contreg, comprobante, item As Integer
     Dim posicion1, posicion2, longitud, i, j As Integer
-    Dim importe1, importe2, importe3, importe4, total As Double
+    Dim importe1, importe2, importe3, importe4, total, importe As Double
     Dim concepto1, concepto2, concepto3, concepto4, correo As String
     Dim fechavto, fecha, ceros, dd, mm, yy, yyyy, periodo, nombrePDF As String
     Dim codbarra, codigodepago As String
@@ -31,7 +31,7 @@ Public Class frmLiquidarMat
 
         txtDesdeMat.Focus()
 
-        Me.ReportViewer1.RefreshReport()
+        ReportViewer1.RefreshReport()
     End Sub
 
     Private Sub txtDesdeMat_KeyDown(sender As Object, e As KeyEventArgs) Handles txtDesdeMat.KeyDown
@@ -399,13 +399,13 @@ Finalizar:
             nombrePDF = matricula & "-" & periodo
 
             Dim byteViewer As Byte() = ReportViewer1.LocalReport.Render("PDF")
-            Dim newFile As New FileStream("E:\dbcolmart\boletas\" & nombrePDF & ".pdf", FileMode.Create)
+            Dim newFile As New FileStream("\\DESKTOP\dbcolmart\boletas\" & nombrePDF & ".pdf", FileMode.Create)
             newFile.Write(byteViewer, 0, byteViewer.Length)
             newFile.Close()
 
             ReportViewer1.RefreshReport()
 
-            'GRABAMOS LAS CTAS CTES NUEVAS
+            '***GRABAMOS LAS CTAS CTES NUEVAS***
             If concepto1 <> "" Then
                 Try
                     comando = New MySqlCommand("INSERT INTO ctasctes VALUES(@id, @matricula, @fecvto, @tipo, @comprobante, @item, @detalle, @periodo, @debe ,@haber, @saldo, @estado, @pagado, @fecha, @resto, @obs)", conexion)
@@ -432,6 +432,12 @@ Finalizar:
                     comando.Parameters.AddWithValue("@resto", importe1)
                     comando.Parameters.AddWithValue("@obs", "")
                     comando.ExecuteNonQuery()
+
+                    item = 1
+                    detalle = concepto1
+                    importe = importe1
+                    GrabarVentas()
+
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
@@ -462,6 +468,12 @@ Finalizar:
                     comando.Parameters.AddWithValue("@resto", importe2)
                     comando.Parameters.AddWithValue("@obs", "")
                     comando.ExecuteNonQuery()
+
+                    item = 2
+                    detalle = concepto2
+                    importe = importe2
+                    GrabarVentas()
+
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
@@ -492,6 +504,12 @@ Finalizar:
                     comando.Parameters.AddWithValue("@resto", importe3)
                     comando.Parameters.AddWithValue("@obs", "")
                     comando.ExecuteNonQuery()
+
+                    item = 3
+                    detalle = concepto3
+                    importe = importe3
+                    GrabarVentas()
+
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
@@ -522,6 +540,12 @@ Finalizar:
                     comando.Parameters.AddWithValue("@resto", importe4)
                     comando.Parameters.AddWithValue("@obs", "")
                     comando.ExecuteNonQuery()
+
+                    item = 4
+                    detalle = concepto4
+                    importe = importe4
+                    GrabarVentas()
+
                 Catch ex As Exception
                     MsgBox(ex.Message)
                 End Try
@@ -632,6 +656,22 @@ Finalizar:
         ToolTipMsg.ToolTipTitle = "Botón Salir."
         ToolTipMsg.SetToolTip(btnSalir, "Presione para salir de la pantalla.")
         ToolTipMsg.ToolTipIcon = ToolTipIcon.Info
+
+    End Sub
+
+    Private Sub GrabarVentas()
+
+        comando = New MySqlCommand("INSERT INTO ventas VALUES(@id, @fecha, @tipo, @cpbte, @item, @detalle, @periodo, @neto, @total)", conexion)
+        comando.Parameters.AddWithValue("@id", 0)
+        comando.Parameters.AddWithValue("@fecha", yyyy & "-" & mm & "-" & dd)
+        comando.Parameters.AddWithValue("@tipo", "LIQ")
+        comando.Parameters.AddWithValue("@cpbte", comprobante)
+        comando.Parameters.AddWithValue("@item", item)
+        comando.Parameters.AddWithValue("@detalle", detalle)
+        comando.Parameters.AddWithValue("@periodo", periodo)
+        comando.Parameters.AddWithValue("@neto", importe)
+        comando.Parameters.AddWithValue("@total", 0)
+        comando.ExecuteNonQuery()
 
     End Sub
 

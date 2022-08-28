@@ -93,6 +93,7 @@ Partial Class frmReciboGral
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
         CodDebMatLabel = New System.Windows.Forms.Label()
         DetDebMatLabel = New System.Windows.Forms.Label()
         ImpDebMatLabel = New System.Windows.Forms.Label()
@@ -521,7 +522,7 @@ Partial Class frmReciboGral
         Me.txtCategoria.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCategoria.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCategoria.ForeColor = System.Drawing.Color.White
-        Me.txtCategoria.Location = New System.Drawing.Point(667, 145)
+        Me.txtCategoria.Location = New System.Drawing.Point(786, 22)
         Me.txtCategoria.Name = "txtCategoria"
         Me.txtCategoria.Size = New System.Drawing.Size(42, 23)
         Me.txtCategoria.TabIndex = 7
@@ -711,7 +712,7 @@ Partial Class frmReciboGral
         Me.txtTipoRec.Enabled = False
         Me.txtTipoRec.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTipoRec.ForeColor = System.Drawing.Color.White
-        Me.txtTipoRec.Location = New System.Drawing.Point(667, 118)
+        Me.txtTipoRec.Location = New System.Drawing.Point(738, 22)
         Me.txtTipoRec.Name = "txtTipoRec"
         Me.txtTipoRec.Size = New System.Drawing.Size(42, 23)
         Me.txtTipoRec.TabIndex = 197
@@ -815,12 +816,26 @@ Partial Class frmReciboGral
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 250
         '
+        'txtTelefono
+        '
+        Me.txtTelefono.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtTelefono.Enabled = False
+        Me.txtTelefono.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTelefono.ForeColor = System.Drawing.Color.White
+        Me.txtTelefono.Location = New System.Drawing.Point(690, 22)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(42, 23)
+        Me.txtTelefono.TabIndex = 207
+        Me.txtTelefono.Visible = False
+        '
         'frmReciboGral
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1127, 567)
+        Me.Controls.Add(Me.txtTelefono)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.lblAntiguedad)
@@ -949,4 +964,5 @@ Partial Class frmReciboGral
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents txtTelefono As TextBox
 End Class

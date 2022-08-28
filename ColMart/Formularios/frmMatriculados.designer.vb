@@ -1228,6 +1228,8 @@ Partial Class frmMatriculados
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.bibliotecaTableAdapter = Nothing
         Me.TableAdapterManager.boletasTableAdapter = Nothing
+        Me.TableAdapterManager.botonesTableAdapter = Nothing
+        Me.TableAdapterManager.botonuserTableAdapter = Nothing
         Me.TableAdapterManager.cajamayorTableAdapter = Nothing
         Me.TableAdapterManager.cajaTableAdapter = Nothing
         Me.TableAdapterManager.categivaTableAdapter = Nothing
@@ -1244,6 +1246,8 @@ Partial Class frmMatriculados
         Me.TableAdapterManager.departamentoTableAdapter = Nothing
         Me.TableAdapterManager.depositosTableAdapter = Nothing
         Me.TableAdapterManager.detallecpraTableAdapter = Nothing
+        Me.TableAdapterManager.fianzasTableAdapter = Nothing
+        Me.TableAdapterManager.impctacteTableAdapter = Nothing
         Me.TableAdapterManager.juzgadosTableAdapter = Nothing
         Me.TableAdapterManager.listaoficioTableAdapter = Nothing
         Me.TableAdapterManager.localidadesTableAdapter = Nothing
@@ -1255,6 +1259,7 @@ Partial Class frmMatriculados
         Me.TableAdapterManager.padronTableAdapter = Nothing
         Me.TableAdapterManager.proveedoresTableAdapter = Nothing
         Me.TableAdapterManager.provinciaTableAdapter = Nothing
+        Me.TableAdapterManager.reciboTableAdapter = Nothing
         Me.TableAdapterManager.renglonesTableAdapter = Nothing
         Me.TableAdapterManager.saldomatTableAdapter = Nothing
         Me.TableAdapterManager.saldosocTableAdapter = Nothing
@@ -1262,6 +1267,7 @@ Partial Class frmMatriculados
         Me.TableAdapterManager.tribunalesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = ColMart.dbcolmartDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usuariosTableAdapter = Nothing
+        Me.TableAdapterManager.ventasTableAdapter = Nothing
         '
         'MatriculadosBindingNavigator
         '
@@ -1417,6 +1423,7 @@ Partial Class frmMatriculados
         Me.txtFecEstadoMatri.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.txtFecEstadoMatri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtFecEstadoMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "FecEstadoMatri", True))
+        Me.txtFecEstadoMatri.Enabled = False
         Me.txtFecEstadoMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFecEstadoMatri.ForeColor = System.Drawing.Color.White
         Me.txtFecEstadoMatri.Location = New System.Drawing.Point(894, 143)

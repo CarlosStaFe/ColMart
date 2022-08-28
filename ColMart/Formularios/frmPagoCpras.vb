@@ -387,6 +387,7 @@ Public Class frmPagoCpras
         ActualizarTablas()
 
         Limpiar()
+
     End Sub
 
     Private Sub ReciboAPDF()

@@ -302,7 +302,7 @@ Partial Class frmListaSaldoPago
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1181, 486)
+        Me.ClientSize = New System.Drawing.Size(743, 486)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtNombreMatri)
         Me.Controls.Add(Me.txtNroMatri)

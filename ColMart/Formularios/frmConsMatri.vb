@@ -129,12 +129,19 @@
             Dim frmMat10 As frmReciboGral = CType(Owner, frmReciboGral)
             frmMat10.txtMatSoc.Text = dgvMatriculados.CurrentRow.Cells(1).Value.ToString
             frmMat10.txtNombre.Text = dgvMatriculados.CurrentRow.Cells(2).Value.ToString
+            frmMat10.txtTelefono.Text = dgvMatriculados.CurrentRow.Cells(22).Value.ToString + dgvMatriculados.CurrentRow.Cells(23).Value.ToString
         End If
 
         If senial = 11 Then
             Dim frmMat11 As frmListaSaldoPago = CType(Owner, frmListaSaldoPago)
             frmMat11.txtNroMatri.Text = dgvMatriculados.CurrentRow.Cells(1).Value.ToString
             frmMat11.txtNombreMatri.Text = dgvMatriculados.CurrentRow.Cells(2).Value.ToString
+        End If
+
+        If senial = 12 Then
+            Dim frmMat12 As frmFianzas = CType(Owner, frmFianzas)
+            frmMat12.txtMatricula.Text = dgvMatriculados.CurrentRow.Cells(1).Value.ToString
+            frmMat12.txtApelNombre.Text = dgvMatriculados.CurrentRow.Cells(2).Value.ToString
         End If
 
         Close()

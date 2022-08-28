@@ -70,7 +70,7 @@
 
         dgvCtasctes.DataSource = dt
 
-        dgvCtasctes.Sort(dgvCtasctes.Columns(2), System.ComponentModel.ListSortDirection.Ascending)
+        dgvCtasctes.Sort(dgvCtasctes.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
 
         debe = 0
         haber = 0
@@ -92,7 +92,6 @@
                     If Fila.Cells(11).Value = "PENDIENTE" Or Fila.Cells(11).Value = "LIQUIDADA" Then
                         Fila.DefaultCellStyle.ForeColor = Color.Orange
                         'Fila.Cells(11).Style.ForeColor = Color.Red
-                        'Fila.Cells(11).Style.ForeColor = Color.Orange
                     End If
                     If Fila.Cells(5).Value > 1 Then
                         Fila.Cells(2).Value = DBNull.Value
@@ -100,9 +99,9 @@
                         Fila.Cells(4).Value = DBNull.Value
                         Fila.Cells(7).Value = DBNull.Value
                     End If
-                    If Fila.Cells(13).Value = "1900-01-01" Then
-                        Fila.Cells(13).Value = DBNull.Value
-                    End If
+                    'If Fila.Cells(13).Value = "1900-01-01" Then
+                    '    Fila.Cells(13).Value = DBNull.Value
+                    'End If
                 End If
             Next
             dgvCtasctes.FirstDisplayedScrollingRowIndex = dgvCtasctes.RowCount - 1

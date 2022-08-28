@@ -28,6 +28,7 @@ Public Class frmLiquidarSoc
         txtMMperiodo.Text = ""
         txtYYPeriodo.Text = ""
         cbxDM.Checked = False
+        cbxDU.Checked = False
 
         txtDesdeSoc.Focus()
 
@@ -43,10 +44,12 @@ Public Class frmLiquidarSoc
             frmSoc2.ShowDialog()
             senial = 0
             txtHastaSoc.Focus()
+            desdesoc = Val(txtDesdeSoc.Text)
         End If
         'Busco matriculados por número de matrícula
         If e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Tab Then
             nrosociedad = txtDesdeSoc.Text
+            desdesoc = Val(txtDesdeSoc.Text)
             txtHastaSoc.Focus()
         End If
 
@@ -61,18 +64,19 @@ Public Class frmLiquidarSoc
             AddOwnedForm(frmSoc3)
             frmSoc3.ShowDialog()
             senial = 0
-            txtHastaSoc.Focus()
+            dtpVencimiento.Focus()
+            hastasoc = Val(txtDesdeSoc.Text)
         End If
-
         'Busco matriculados por número de matrícula
         If e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Tab Then
             nrosociedad = txtHastaSoc.Text
-            txtHastaSoc.Focus()
+            hastasoc = Val(txtDesdeSoc.Text)
+            dtpVencimiento.Focus()
         End If
 
     End Sub
 
-    Private Sub txtHastaSoc_LostFocus(sender As Object, e As EventArgs) Handles txtHastaSoc.LostFocus
+    Private Sub txtHastaSoc_Leave(sender As Object, e As EventArgs) Handles txtHastaSoc.Leave
 
         If txtDesdeSoc.Text IsNot "" Then
             If desdesoc > hastasoc Then
@@ -104,7 +108,8 @@ Public Class frmLiquidarSoc
 
     Private Sub dtpVencimiento_LostFocus(sender As Object, e As EventArgs) Handles dtpVencimiento.LostFocus
 
-        fechavto = dtpVencimiento.Value
+        fechavto = CDate(dtpVencimiento.Value)
+
         posicion1 = InStr(1, fechavto, "/")
         posicion2 = InStr(posicion1 + 1, fechavto, "/")
         dd = Mid(fechavto, 1, posicion1 - 1)
@@ -199,6 +204,28 @@ seguir:
                 While dr.Read
                     sociedad = dr(0).ToString
                     If Mid(dr(10).ToString, 1, 2) = "DM" And cbxDM.Checked Then
+                        If dr(9).ToString > 0 Then
+                            If fila = 1 Then
+                                concepto1 = dr(2).ToString
+                                importe1 = dr(9).ToString * txtKilos.Text
+                            End If
+                            If fila = 2 Then
+                                concepto2 = dr(2).ToString
+                                importe2 = dr(9).ToString * txtKilos.Text
+                            End If
+                            If fila = 3 Then
+                                concepto3 = dr(2).ToString
+                                importe3 = dr(9).ToString * txtKilos.Text
+                            End If
+                            If fila = 4 Then
+                                concepto4 = dr(2).ToString
+                                importe4 = dr(9).ToString * txtKilos.Text
+                            End If
+                            fila = fila + 1
+                            total = total + (dr(9).ToString * txtKilos.Text)
+                        End If
+                    End If
+                    If Mid(dr(10).ToString, 1, 2) = "DU" And cbxDU.Checked Then
                         If dr(9).ToString > 0 Then
                             If fila = 1 Then
                                 concepto1 = dr(2).ToString
@@ -379,6 +406,9 @@ Finalizar:
                 comando.Parameters.AddWithValue("@resto", importe1)
                 comando.Parameters.AddWithValue("@obs", "")
                 comando.ExecuteNonQuery()
+
+                GrabarVentas()
+
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
@@ -407,7 +437,7 @@ Finalizar:
             senial = 1
             txtYYPeriodo.Focus()
         End If
-        If cbxDM.Checked = False Then
+        If cbxDM.Checked = False And cbxDU.Checked = False Then
             senial = 1
             cbxDM.Focus()
         End If
@@ -424,6 +454,14 @@ Finalizar:
 
         ToolTipMsg.ToolTipTitle = "Opción DM - Débito Mensual."
         ToolTipMsg.SetToolTip(cbxDM, "Marcar para liquidar a las sociedades un débito semestral.")
+        ToolTipMsg.ToolTipIcon = ToolTipIcon.Info
+
+    End Sub
+
+    Private Sub cbxDU_MouseHover(sender As Object, e As EventArgs) Handles cbxDU.MouseHover
+
+        ToolTipMsg.ToolTipTitle = "Opción DU - Débito Único."
+        ToolTipMsg.SetToolTip(cbxDM, "Marcar para liquidar a las sociedades un débito único.")
         ToolTipMsg.ToolTipIcon = ToolTipIcon.Info
 
     End Sub
@@ -463,6 +501,22 @@ Finalizar:
         ToolTipMsg.ToolTipTitle = "Botón Salir."
         ToolTipMsg.SetToolTip(btnSalir, "Presione para salir de la pantalla.")
         ToolTipMsg.ToolTipIcon = ToolTipIcon.Info
+
+    End Sub
+
+    Private Sub GrabarVentas()
+
+        comando = New MySqlCommand("INSERT INTO ventas VALUES(@id, @fecha, @tipo, @cpbte, @item, @detalle, @periodo, @neto, @total)", conexion)
+        comando.Parameters.AddWithValue("@id", 0)
+        comando.Parameters.AddWithValue("@fecha", yyyy & "-" & mm & "-" & dd)
+        comando.Parameters.AddWithValue("@tipo", "LIQ")
+        comando.Parameters.AddWithValue("@cpbte", comprobante)
+        comando.Parameters.AddWithValue("@item", 1)
+        comando.Parameters.AddWithValue("@detalle", concepto1)
+        comando.Parameters.AddWithValue("@periodo", periodo)
+        comando.Parameters.AddWithValue("@neto", importe1)
+        comando.Parameters.AddWithValue("@total", 0)
+        comando.ExecuteNonQuery()
 
     End Sub
 

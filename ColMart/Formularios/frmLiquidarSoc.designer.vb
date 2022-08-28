@@ -60,6 +60,7 @@ Partial Class frmLiquidarSoc
         Me.TableAdapterManager = New ColMart.dbcolmartDataSetTableAdapters.TableAdapterManager()
         Me.BoletasTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.boletasTableAdapter()
         Me.DbcolmartDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.cbxDU = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,7 +100,7 @@ Partial Class frmLiquidarSoc
         Me.cbxDM.AutoSize = True
         Me.cbxDM.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxDM.ForeColor = System.Drawing.Color.White
-        Me.cbxDM.Location = New System.Drawing.Point(153, 318)
+        Me.cbxDM.Location = New System.Drawing.Point(153, 319)
         Me.cbxDM.Name = "cbxDM"
         Me.cbxDM.Size = New System.Drawing.Size(160, 21)
         Me.cbxDM.TabIndex = 5
@@ -417,25 +418,38 @@ Partial Class frmLiquidarSoc
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.bibliotecaTableAdapter = Nothing
         Me.TableAdapterManager.boletasTableAdapter = Nothing
+        Me.TableAdapterManager.botonesTableAdapter = Nothing
+        Me.TableAdapterManager.botonuserTableAdapter = Nothing
         Me.TableAdapterManager.cajamayorTableAdapter = Nothing
         Me.TableAdapterManager.cajaTableAdapter = Nothing
+        Me.TableAdapterManager.categivaTableAdapter = Nothing
         Me.TableAdapterManager.coddebitoTableAdapter = Nothing
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
         Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
+        Me.TableAdapterManager.cptosgastosTableAdapter = Nothing
+        Me.TableAdapterManager.ctacteproTableAdapter = Nothing
         Me.TableAdapterManager.ctasctesTableAdapter = Nothing
         Me.TableAdapterManager.debehaberTableAdapter = Nothing
         Me.TableAdapterManager.debitomatriTableAdapter = Me.DebitomatriTableAdapter
         Me.TableAdapterManager.debitosocTableAdapter = Nothing
+        Me.TableAdapterManager.departamentoTableAdapter = Nothing
         Me.TableAdapterManager.depositosTableAdapter = Nothing
+        Me.TableAdapterManager.detallecpraTableAdapter = Nothing
+        Me.TableAdapterManager.fianzasTableAdapter = Nothing
+        Me.TableAdapterManager.impctacteTableAdapter = Nothing
         Me.TableAdapterManager.juzgadosTableAdapter = Nothing
         Me.TableAdapterManager.listaoficioTableAdapter = Nothing
         Me.TableAdapterManager.localidadesTableAdapter = Nothing
+        Me.TableAdapterManager.localidadTableAdapter = Nothing
         Me.TableAdapterManager.lotebancoTableAdapter = Nothing
         Me.TableAdapterManager.matriculadosTableAdapter = Nothing
         Me.TableAdapterManager.mesaentradaTableAdapter = Nothing
         Me.TableAdapterManager.nivelesTableAdapter = Nothing
+        Me.TableAdapterManager.padronTableAdapter = Nothing
         Me.TableAdapterManager.proveedoresTableAdapter = Nothing
+        Me.TableAdapterManager.provinciaTableAdapter = Nothing
+        Me.TableAdapterManager.reciboTableAdapter = Nothing
         Me.TableAdapterManager.renglonesTableAdapter = Nothing
         Me.TableAdapterManager.saldomatTableAdapter = Nothing
         Me.TableAdapterManager.saldosocTableAdapter = Nothing
@@ -443,6 +457,7 @@ Partial Class frmLiquidarSoc
         Me.TableAdapterManager.tribunalesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = ColMart.dbcolmartDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usuariosTableAdapter = Nothing
+        Me.TableAdapterManager.ventasTableAdapter = Nothing
         '
         'BoletasTableAdapter
         '
@@ -453,12 +468,25 @@ Partial Class frmLiquidarSoc
         Me.DbcolmartDataSetBindingSource.DataSource = Me.DbcolmartDataSet
         Me.DbcolmartDataSetBindingSource.Position = 0
         '
+        'cbxDU
+        '
+        Me.cbxDU.AutoSize = True
+        Me.cbxDU.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxDU.ForeColor = System.Drawing.Color.White
+        Me.cbxDU.Location = New System.Drawing.Point(153, 346)
+        Me.cbxDU.Name = "cbxDU"
+        Me.cbxDU.Size = New System.Drawing.Size(141, 21)
+        Me.cbxDU.TabIndex = 95
+        Me.cbxDU.Text = "DU - Débito Único"
+        Me.cbxDU.UseVisualStyleBackColor = True
+        '
         'frmLiquidarSoc
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(480, 567)
+        Me.Controls.Add(Me.cbxDU)
         Me.Controls.Add(Me.txtMsg)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
@@ -543,4 +571,5 @@ Partial Class frmLiquidarSoc
     Friend WithEvents Label11 As Label
     Friend WithEvents txtMsg As TextBox
     Friend WithEvents ToolTipMsg As ToolTip
+    Friend WithEvents cbxDU As CheckBox
 End Class

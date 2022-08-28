@@ -2,7 +2,7 @@
 
 Public Class frmReciboGral
     Dim fecha, comprobante, tipo, impletras, cuit As String
-    Dim flag, fechaaux, fechajur, tipoA, tipoF As String
+    Dim flag, fechaaux, fechajur, tipoA, tipoF, detalle As String
     Dim longitud, cantidad, item, meses, ctrolf, ctrolv, ctroll As Integer
     Dim ceros, yyyy, id As String
     Dim pagado, total, resto, saldo, importe As Double
@@ -89,10 +89,11 @@ Public Class frmReciboGral
                 txtNombre.Text = dr(2).ToString
                 cuit = dr(11).ToString
                 fechajur = dr(12).ToString
+                txtTelefono.Text = dr(22).ToString + " * " + dr(23).ToString
                 tipo = "MATRÍCULA: "
                 flag = "M"
 
-                '-----Fecha de Antiguedad
+                '*** Fecha de Antiguedad ***
                 fechajob = Format(Now, "dd/MM/yyyy")
                 ProcesarFecha()
                 fechajur = dr(12).ToString
@@ -115,17 +116,19 @@ Public Class frmReciboGral
                     Timer1.Stop()
                 End If
 
-                '-----Fecha Vence Fianza
+                '*** Fecha Vence Fianza ***
                 fechaaux = dr(31).ToString
                 meses = 24
                 fechajob = DateAdd("m", meses, fechaaux)
                 ProcesarFecha()
                 lblVenceFianza.Text = fechajob
-                fechaaux = Format(Now, "dd/MM/yyyy")
+                fecha1 = fechajob
 
-                fecha1 = CDate(fechajob)
-                fecha2 = CDate(fechaaux)
-                If fecha1 < fecha2 Then
+                fechajob = Format(Now, "dd/MM/yyyy")
+                ProcesarFecha()
+                fecha2 = fechadb
+
+                If fecha1 <= fecha2 Then
                     lblVenceFianza.ForeColor = Color.Red
                     ctrolv = 1
                     tipoF = "F"
@@ -524,6 +527,9 @@ Public Class frmReciboGral
 
         GrabarCaja()
 
+        '***SEPUSO DENTRO DE GRABAR CTASCTES***
+        'GrabarFianza()
+
         '***ACTUALIZO COMPROBANTE***
         comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIC'", conexion)
         comando.ExecuteNonQuery()
@@ -618,7 +624,7 @@ Public Class frmReciboGral
                     comando.Parameters.AddWithValue("@id_ctacte", id)
                     comando.Parameters.AddWithValue("@matricula", txtMatSoc.Text)
                     comando.Parameters.AddWithValue("@fecha", fecha)
-                    comando.Parameters.AddWithValue("@tipo", "CIC")
+                    comando.Parameters.AddWithValue("@tipo", "LIQ")
                     comando.Parameters.AddWithValue("@comprobante", comprobante)
                     comando.Parameters.AddWithValue("@item", item)
                     comando.Parameters.AddWithValue("@detalle", Fila.Cells(2).Value)
@@ -640,6 +646,15 @@ Public Class frmReciboGral
                     comando.Parameters.AddWithValue("@fecpago", fecha)
                     comando.Parameters.AddWithValue("@obs", "CIC Nro.: " + comprobante)
                     comando.ExecuteNonQuery()
+
+                    If Fila.Cells(1).Value = 5 Then
+                        GrabarFianza()
+                    End If
+
+                    detalle = Fila.Cells(2).Value
+                    importe = Fila.Cells(5).Value
+                    GrabarVentas()
+
                 Next
             End If
 
@@ -748,6 +763,50 @@ Public Class frmReciboGral
             btnImprimir.Enabled = True
             txtCodigo.Focus()
         End If
+
+    End Sub
+
+    Private Sub GrabarFianza()
+
+        comando = New MySqlCommand("INSERT INTO fianzas VALUES(@id, @matri, @fecpago, @user, @firma1, @user1, @firma2, @user2, @fecvto, @docum, @nombre, " _
+                                                   & "@calle, @tel, @estado, @obs, @apellido, @telefmatri)", conexion)
+        comando.Parameters.AddWithValue("@id", 0)
+        comando.Parameters.AddWithValue("@matri", txtMatSoc.Text)
+        comando.Parameters.AddWithValue("@fecpago", fecha)
+        comando.Parameters.AddWithValue("@user", user)
+        comando.Parameters.AddWithValue("@firma1", DBNull.Value)
+        comando.Parameters.AddWithValue("@user1", "")
+        comando.Parameters.AddWithValue("@Firma2", DBNull.Value)
+        comando.Parameters.AddWithValue("@user2", "")
+        comando.Parameters.AddWithValue("@fecvto", DBNull.Value)
+        comando.Parameters.AddWithValue("@docum", "")
+        comando.Parameters.AddWithValue("@nombre", "")
+        comando.Parameters.AddWithValue("@calle", "")
+        comando.Parameters.AddWithValue("@tel", "")
+        comando.Parameters.AddWithValue("@estado", "INCOMPLETA")
+        comando.Parameters.AddWithValue("@obs", "CIC Nro.: " & comprobante)
+        comando.Parameters.AddWithValue("@apellido", txtNombre.Text)
+        comando.Parameters.AddWithValue("@telefmatri", txtTelefono.Text)
+        comando.ExecuteNonQuery()
+
+    End Sub
+
+    Private Sub GrabarVentas()
+
+        fechajob = fecha
+        ProcesarFecha()
+
+        comando = New MySqlCommand("INSERT INTO ventas VALUES(@id, @fecha, @tipo, @cpbte, @item, @detalle, @periodo, @neto, @total)", conexion)
+        comando.Parameters.AddWithValue("@id", 0)
+        comando.Parameters.AddWithValue("@fecha", fecha)
+        comando.Parameters.AddWithValue("@tipo", "LIQ")
+        comando.Parameters.AddWithValue("@cpbte", comprobante)
+        comando.Parameters.AddWithValue("@item", item)
+        comando.Parameters.AddWithValue("@detalle", detalle)
+        comando.Parameters.AddWithValue("@periodo", yyyy + mm)
+        comando.Parameters.AddWithValue("@neto", importe)
+        comando.Parameters.AddWithValue("@total", 0)
+        comando.ExecuteNonQuery()
 
     End Sub
 

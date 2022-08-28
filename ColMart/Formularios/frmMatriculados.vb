@@ -1,7 +1,7 @@
 ﻿Public Class frmMatriculados
 
     'Dim fechajob, fechadb, dd, mm, yyyy, fechaaux, fechavenc As String
-    Dim dd, mm, yyyy, fechaaux, fechavenc As String
+    Dim dd, mm, yyyy, fechaaux, fechavenc, estadoant As String
     Dim pos1, pos2, codigoreal, codigolegal, senial, meses As Integer
     Dim fecha1, fecha2 As Date
 
@@ -443,10 +443,6 @@
         txtApelNombMatri.Text = CStr(row("ApelNombMatri"))
         txtApelMatMatri.Text = CStr(row("ApelMatMatri"))
 
-        'fechajob = CStr(row("FecNacMatri"))
-        'ProcesarFecha()
-        'txtFecNacMatri.Text = fechajob
-
         txtFecNacMatri.Text = CStr(row("FecNacMatri"))
 
         txtLugarNacMatri.Text = CStr(row("LugarNacMatri"))
@@ -457,18 +453,11 @@
         cmbEstCivilMatri.Text = CStr(row("EstCivilMatri"))
         txtCuitMatri.Text = CStr(row("CuitMatri"))
 
-        'fechajob = CStr(row("FecJurMatri"))
-        'ProcesarFecha()
-        'txtFecJurMatri.Text = fechajob
-
         txtFecJurMatri.Text = CStr(row("FecJurMatri"))
 
         cmbCatAporteMatri.Text = CStr(row("CatAporteMatri"))
         cmbEstadoMatri.Text = CStr(row("EstadoMatri"))
-
-        'fechajob = CStr(row("FecEstadoMatri"))
-        'ProcesarFecha()
-        'txtFecEstadoMatri.Text = fechajob
+        estadoant = CStr(row("EstadoMatri"))
 
         txtFecEstadoMatri.Text = CStr(row("FecEstadoMatri"))
 
@@ -483,10 +472,6 @@
         txtCPLegalMatri.Text = txtCodPostal2.Text
         txtCeluLegalMatri.Text = CStr(row("CeluLegalMatri"))
         txtFijoLegalMatri.Text = CStr(row("FijoLegalMatri"))
-
-        'fechajob = CStr(row("FianzaMatri"))
-        'ProcesarFecha()
-        'txtFianzaMatri.Text = fechajob
 
         txtFianzaMatri.Text = CStr(row("FianzaMatri"))
 
@@ -612,26 +597,6 @@
         txtVenceFianza.Show()
 
     End Sub
-
-    'Private Sub ProcesarFecha()
-
-    '    pos1 = InStr(1, fechajob, "/")
-    '    pos2 = InStr(pos1 + 1, fechajob, "/")
-
-    '    If pos1 = 5 Then
-    '        yyyy = Mid(fechajob, 1, pos1 - 1)
-    '        mm = Mid(fechajob, pos1 + 1, ((pos2 - 1) - pos1))
-    '        dd = Mid(fechajob, pos2 + 1, 2)
-    '    ElseIf pos1 = 3 Then
-    '        dd = Mid(fechajob, 1, pos1 - 1)
-    '        mm = Mid(fechajob, pos1 + 1, ((pos2 - 1) - pos1))
-    '        yyyy = Mid(fechajob, pos2 + 1, 4)
-    '    End If
-
-    '    fechajob = dd & "/" & mm & "/" & yyyy
-    '    fechadb = yyyy & "/" & mm & "/" & dd
-
-    'End Sub
 
     Private Sub txtNroMatri_MouseHover(sender As Object, e As EventArgs) Handles txtNroMatri.MouseHover
 
@@ -850,6 +815,14 @@
         comando = New MySqlCommand("UPDATE ctasctes SET NroCC = '" & txtNuevaMatricula.Text & "' WHERE NroCC = " & txtNroMatri.Text & " ", conexion)
         comando.ExecuteNonQuery()
 
+    End Sub
+
+    Private Sub cmbEstadoMatri_Leave(sender As Object, e As EventArgs) Handles cmbEstadoMatri.Leave
+
+        If estadoant <> cmbEstadoMatri.Text Then
+            txtFecEstadoMatri.Text = Today.Date.ToString("dd/MM/yyyy")
+            'fechacaja = Today.Date.ToString("yyyy-MM-dd")
+        End If
     End Sub
 
 End Class

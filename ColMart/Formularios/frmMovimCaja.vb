@@ -240,7 +240,6 @@
         frmMsgBox.ShowDialog()
 
         If frmMsgBox.Tag = "SI" Then
-            'comando = New MySqlCommand("DELETE FROM caja WHERE FechaCaja = '" & fechacaja & "' AND DetalleCaja = '" & dgvMovim.CurrentRow.Cells(2).Value & "'", conexion)
             comando = New MySqlCommand("DELETE FROM caja WHERE DetalleCaja = '" & dgvMovim.CurrentRow.Cells(2).Value & "'", conexion)
             comando.ExecuteNonQuery()
         Else
@@ -253,7 +252,7 @@
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
 
-        archivoBackup = "E:\DBColMart\Backup\dbcolmart.sql" & "_" & Today.Date.ToString("dd-MM-yyyy") & "_" & TimeOfDay.ToString("hhmm") & ".sql"
+        archivoBackup = "\\DESKTOP\DBColMart\Backup\dbcolmart.sql" & "_" & Today.Date.ToString("dd-MM-yyyy") & "_" & TimeOfDay.ToString("hhmm") & ".sql"
 
         ProcesoBackup()
 

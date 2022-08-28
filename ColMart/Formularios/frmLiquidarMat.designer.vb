@@ -366,7 +366,7 @@ Partial Class frmLiquidarMat
         '
         Me.ReportViewer1.DocumentMapWidth = 51
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "ColMart.rptBoletas.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(12, 62)
+        Me.ReportViewer1.Location = New System.Drawing.Point(385, 63)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
         Me.ReportViewer1.Size = New System.Drawing.Size(53, 30)

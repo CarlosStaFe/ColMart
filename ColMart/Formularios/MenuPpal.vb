@@ -274,6 +274,13 @@ Public Class MenuPpal
 
     End Sub
 
+    Private Sub btnFianzas_Click(sender As Object, e As EventArgs) Handles btnFianzas.Click
+
+        MostrarHijo(frmFianzas)
+        OcultarSubmenu()
+
+    End Sub
+
     Private Sub btnListaOficio_Click(sender As Object, e As EventArgs) Handles btnListaOficio.Click
 
         MostrarHijo(frmListaOficio)
@@ -366,6 +373,13 @@ Public Class MenuPpal
     Private Sub btnImportarBanco_Click(sender As Object, e As EventArgs) Handles btnImportarBanco.Click
 
         MostrarHijo(frmCobroBanco)
+        OcultarSubmenu()
+
+    End Sub
+
+    Private Sub btnLibroVentas_Click_1(sender As Object, e As EventArgs) Handles btnLibroVentas.Click
+
+        MostrarHijo(frmLibroVentas)
         OcultarSubmenu()
 
     End Sub
@@ -511,6 +525,12 @@ Public Class MenuPpal
 
     End Sub
 
+    Private Sub btnPasaje_Click(sender As Object, e As EventArgs)
+
+        MostrarHijo(frmPasaje)
+        OcultarSubmenu()
+
+    End Sub
 
 #End Region
 
