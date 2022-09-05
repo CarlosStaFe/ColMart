@@ -54,7 +54,7 @@ Partial Class frmListaSaldoPago
         Me.rbtnSaldos.AutoSize = True
         Me.rbtnSaldos.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbtnSaldos.ForeColor = System.Drawing.Color.DarkOrange
-        Me.rbtnSaldos.Location = New System.Drawing.Point(163, 75)
+        Me.rbtnSaldos.Location = New System.Drawing.Point(182, 75)
         Me.rbtnSaldos.Name = "rbtnSaldos"
         Me.rbtnSaldos.Size = New System.Drawing.Size(81, 23)
         Me.rbtnSaldos.TabIndex = 0
@@ -67,7 +67,7 @@ Partial Class frmListaSaldoPago
         Me.rbtnPagos.AutoSize = True
         Me.rbtnPagos.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rbtnPagos.ForeColor = System.Drawing.Color.DarkOrange
-        Me.rbtnPagos.Location = New System.Drawing.Point(314, 75)
+        Me.rbtnPagos.Location = New System.Drawing.Point(333, 75)
         Me.rbtnPagos.Name = "rbtnPagos"
         Me.rbtnPagos.Size = New System.Drawing.Size(72, 23)
         Me.rbtnPagos.TabIndex = 1
@@ -81,7 +81,7 @@ Partial Class frmListaSaldoPago
         Me.dtpHasta.CalendarMonthBackground = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.dtpHasta.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpHasta.Location = New System.Drawing.Point(163, 229)
+        Me.dtpHasta.Location = New System.Drawing.Point(182, 229)
         Me.dtpHasta.Name = "dtpHasta"
         Me.dtpHasta.Size = New System.Drawing.Size(105, 23)
         Me.dtpHasta.TabIndex = 7
@@ -92,7 +92,7 @@ Partial Class frmListaSaldoPago
         Me.dtpDesde.CalendarMonthBackground = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.dtpDesde.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpDesde.Location = New System.Drawing.Point(163, 199)
+        Me.dtpDesde.Location = New System.Drawing.Point(182, 199)
         Me.dtpDesde.Name = "dtpDesde"
         Me.dtpDesde.Size = New System.Drawing.Size(105, 23)
         Me.dtpDesde.TabIndex = 6
@@ -102,7 +102,7 @@ Partial Class frmListaSaldoPago
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label6.Location = New System.Drawing.Point(94, 232)
+        Me.Label6.Location = New System.Drawing.Point(113, 232)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(63, 19)
         Me.Label6.TabIndex = 216
@@ -116,7 +116,7 @@ Partial Class frmListaSaldoPago
         Me.cmbOrden.ForeColor = System.Drawing.Color.White
         Me.cmbOrden.FormattingEnabled = True
         Me.cmbOrden.Items.AddRange(New Object() {"MATRICULA", "APELLIDO"})
-        Me.cmbOrden.Location = New System.Drawing.Point(163, 168)
+        Me.cmbOrden.Location = New System.Drawing.Point(182, 168)
         Me.cmbOrden.Name = "cmbOrden"
         Me.cmbOrden.Size = New System.Drawing.Size(166, 25)
         Me.cmbOrden.TabIndex = 5
@@ -126,7 +126,7 @@ Partial Class frmListaSaldoPago
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label5.Location = New System.Drawing.Point(31, 171)
+        Me.Label5.Location = New System.Drawing.Point(50, 171)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(126, 19)
         Me.Label5.TabIndex = 215
@@ -140,7 +140,7 @@ Partial Class frmListaSaldoPago
         Me.cmbEstado.ForeColor = System.Drawing.Color.White
         Me.cmbEstado.FormattingEnabled = True
         Me.cmbEstado.Items.AddRange(New Object() {"TODOS", "ACTIVO", "BAJA", "CANCELADO", "SUSPENDIDO", "SUSP. MOROSO"})
-        Me.cmbEstado.Location = New System.Drawing.Point(163, 138)
+        Me.cmbEstado.Location = New System.Drawing.Point(182, 138)
         Me.cmbEstado.Name = "cmbEstado"
         Me.cmbEstado.Size = New System.Drawing.Size(165, 25)
         Me.cmbEstado.TabIndex = 4
@@ -156,7 +156,7 @@ Partial Class frmListaSaldoPago
         Me.btnFiltrar.ForeColor = System.Drawing.Color.White
         Me.btnFiltrar.Image = CType(resources.GetObject("btnFiltrar.Image"), System.Drawing.Image)
         Me.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnFiltrar.Location = New System.Drawing.Point(70, 317)
+        Me.btnFiltrar.Location = New System.Drawing.Point(89, 317)
         Me.btnFiltrar.Name = "btnFiltrar"
         Me.btnFiltrar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btnFiltrar.Size = New System.Drawing.Size(87, 56)
@@ -176,7 +176,7 @@ Partial Class frmListaSaldoPago
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(454, 317)
+        Me.btnSalir.Location = New System.Drawing.Point(473, 317)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btnSalir.Size = New System.Drawing.Size(87, 56)
@@ -190,7 +190,7 @@ Partial Class frmListaSaldoPago
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label4.Location = New System.Drawing.Point(94, 202)
+        Me.Label4.Location = New System.Drawing.Point(113, 202)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(63, 19)
         Me.Label4.TabIndex = 213
@@ -201,7 +201,7 @@ Partial Class frmListaSaldoPago
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label2.Location = New System.Drawing.Point(76, 141)
+        Me.Label2.Location = New System.Drawing.Point(95, 141)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(81, 19)
         Me.Label2.TabIndex = 212
@@ -212,7 +212,7 @@ Partial Class frmListaSaldoPago
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Green
-        Me.Label1.Location = New System.Drawing.Point(29, 9)
+        Me.Label1.Location = New System.Drawing.Point(48, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(574, 36)
         Me.Label1.TabIndex = 211
@@ -221,7 +221,7 @@ Partial Class frmListaSaldoPago
         'PictureBox4
         '
         Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox4.Location = New System.Drawing.Point(12, 55)
+        Me.PictureBox4.Location = New System.Drawing.Point(31, 55)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(602, 242)
         Me.PictureBox4.TabIndex = 214
@@ -230,7 +230,7 @@ Partial Class frmListaSaldoPago
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 303)
+        Me.PictureBox1.Location = New System.Drawing.Point(31, 303)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(602, 89)
         Me.PictureBox1.TabIndex = 219
@@ -243,7 +243,7 @@ Partial Class frmListaSaldoPago
         Me.cmbConcepto.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbConcepto.ForeColor = System.Drawing.Color.White
         Me.cmbConcepto.FormattingEnabled = True
-        Me.cmbConcepto.Location = New System.Drawing.Point(163, 258)
+        Me.cmbConcepto.Location = New System.Drawing.Point(182, 258)
         Me.cmbConcepto.Name = "cmbConcepto"
         Me.cmbConcepto.Size = New System.Drawing.Size(378, 25)
         Me.cmbConcepto.TabIndex = 8
@@ -253,7 +253,7 @@ Partial Class frmListaSaldoPago
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label3.Location = New System.Drawing.Point(67, 259)
+        Me.Label3.Location = New System.Drawing.Point(86, 259)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(90, 19)
         Me.Label3.TabIndex = 221
@@ -269,7 +269,7 @@ Partial Class frmListaSaldoPago
         Me.txtNroMatri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNroMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNroMatri.ForeColor = System.Drawing.Color.White
-        Me.txtNroMatri.Location = New System.Drawing.Point(163, 109)
+        Me.txtNroMatri.Location = New System.Drawing.Point(182, 109)
         Me.txtNroMatri.Name = "txtNroMatri"
         Me.txtNroMatri.Size = New System.Drawing.Size(56, 23)
         Me.txtNroMatri.TabIndex = 2
@@ -281,7 +281,7 @@ Partial Class frmListaSaldoPago
         Me.txtNombreMatri.Enabled = False
         Me.txtNombreMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombreMatri.ForeColor = System.Drawing.Color.White
-        Me.txtNombreMatri.Location = New System.Drawing.Point(225, 109)
+        Me.txtNombreMatri.Location = New System.Drawing.Point(244, 109)
         Me.txtNombreMatri.Name = "txtNombreMatri"
         Me.txtNombreMatri.Size = New System.Drawing.Size(316, 23)
         Me.txtNombreMatri.TabIndex = 3
@@ -291,7 +291,7 @@ Partial Class frmListaSaldoPago
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label7.Location = New System.Drawing.Point(58, 109)
+        Me.Label7.Location = New System.Drawing.Point(77, 109)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(99, 19)
         Me.Label7.TabIndex = 224

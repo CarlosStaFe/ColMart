@@ -153,7 +153,7 @@ Partial Class frmConsMatri
         DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvMatriculados.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
-        Me.dgvMatriculados.Size = New System.Drawing.Size(771, 367)
+        Me.dgvMatriculados.Size = New System.Drawing.Size(771, 431)
         Me.dgvMatriculados.TabIndex = 2
         '
         'IdMatriDataGridViewTextBoxColumn
@@ -429,7 +429,7 @@ Partial Class frmConsMatri
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(12, 470)
+        Me.Label2.Location = New System.Drawing.Point(12, 534)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(414, 19)
         Me.Label2.TabIndex = 7
@@ -497,7 +497,7 @@ Partial Class frmConsMatri
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(832, 496)
+        Me.ClientSize = New System.Drawing.Size(832, 571)
         Me.Controls.Add(Me.BtnSalir)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)

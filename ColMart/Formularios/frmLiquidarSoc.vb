@@ -1,20 +1,19 @@
-﻿Imports System.IO
+﻿'*******************************************************************************
+'* PROGRAMA PARA LIQUIDAR A LAS SOCIEDADES                                     *
+'*******************************************************************************
+Imports System.IO
 Imports Microsoft.Reporting.WinForms
 
 Public Class frmLiquidarSoc
 
     Dim nrosociedad, desdesoc, hastasoc As Integer
     Dim sociedad, nombre, domicilio, codigopostal, localidad, provincia As String
-    Dim fila As Integer
+    Dim fila, dia, mes, anio, yy As Integer
     Dim importe1, importe2, importe3, importe4 As Double
-    Dim concepto1, concepto2, concepto3, concepto4, correo, detalle As String
+    Dim concepto1, concepto2, concepto3, concepto4, correo As String
     Dim total As Double
-    Dim fechavto, fecha As String
-    Dim cantidad, contreg, comprobante As Integer
-    Dim ceros As String
-    Dim dd, mm, yy, yyyy, periodo As String
-    Dim posicion1, posicion2 As Integer
-    Dim longitud, i, j As Integer
+    Dim contreg, comprobante As Integer
+    Dim periodo, posicion1 As Integer
     Dim codbarra, codigodepago As String
     Dim CodigoArmado, CodigoTotal As Object
     Dim nombrePDF As String
@@ -108,39 +107,15 @@ Public Class frmLiquidarSoc
 
     Private Sub dtpVencimiento_LostFocus(sender As Object, e As EventArgs) Handles dtpVencimiento.LostFocus
 
-        fechavto = CDate(dtpVencimiento.Value)
+        fechajob = CDate(dtpVencimiento.Value)
+        ProcesarFecha()
+        dia = dd
+        mes = mm
+        anio = yyyy
+        yy = Mid(anio, 3, 2)
 
-        posicion1 = InStr(1, fechavto, "/")
-        posicion2 = InStr(posicion1 + 1, fechavto, "/")
-        dd = Mid(fechavto, 1, posicion1 - 1)
-        mm = Mid(fechavto, posicion1 + 1, ((posicion2 - 1) - posicion1))
-        yy = Mid(fechavto, posicion2 + 3, 2)
-        yyyy = Mid(fechavto, posicion2 + 1, 4)
-
-        ceros = ""
-
-        longitud = Len(dd)
-        If longitud < 2 Then
-            cantidad = 2 - longitud
-            For j = 1 To cantidad
-                ceros = ceros & "0"
-            Next j
-            dd = ceros & dd
-        End If
-
-        ceros = ""
-
-        longitud = Len(mm)
-        If longitud < 2 Then
-            cantidad = 2 - longitud
-            For j = 1 To cantidad
-                ceros = ceros & "0"
-            Next j
-            mm = ceros & mm
-        End If
-
-        txtMMperiodo.Text = mm
-        txtYYPeriodo.Text = yyyy
+        txtMMperiodo.Text = mes
+        txtYYPeriodo.Text = anio
 
     End Sub
 
@@ -181,10 +156,6 @@ seguir:
             codigopostal = CStr(row("CodPosSociedad"))
             correo = CStr(row("EmailSociedad"))
 
-            importe1 = 0
-            importe2 = 0
-            importe3 = 0
-            importe4 = 0
             concepto1 = ""
             concepto2 = ""
             concepto3 = ""
@@ -348,8 +319,10 @@ Finalizar:
             'Establezcamos los parametros que enviaremos al reporte
             Dim parametros As ReportParameter() = New ReportParameter(20) {}
 
-            fechavto = yyyy & mm & dd
-            fecha = dd & "/" & mm & "/" & yyyy
+            PonerCeros(sociedad, 5)
+            sociedad = nroconceros
+
+            fecha = dia & "/" & mes & "/" & anio
             codbarra = CodigoArmado
 
             parametros(0) = New ReportParameter("prmMatricula", sociedad)

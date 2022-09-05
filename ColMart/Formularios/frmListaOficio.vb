@@ -1,18 +1,22 @@
-﻿Imports MySql.Data.MySqlClient
-
+﻿'*******************************************************************************
+'* CARGA DE LISTAS DE NOMBRAMIENTO DE OFICIO                                   *
+'*******************************************************************************
 Public Class frmListaOficio
-    Dim aaaa, fechajob, fechadb, dd, mm, yyyy As String
-    Dim pos1, pos2, flag As Integer
+    Dim aaaa, dd, mm, yyyy, fechaaux, fecha1, fecha2 As String
+    Dim pos1, pos2, flag, meses As Integer
 
     Private Sub frmListaOficio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ConectarMySql()
-        Me.ListaoficioTableAdapter.Fill(Me.DbcolmartDataSet.listaoficio)
+        ListaoficioTableAdapter.Fill(DbcolmartDataSet.listaoficio)
         dgvListaOficio.DataSource = Nothing
         CargarCombo()
         txtMatricula.Focus()
         aaaa = Today.Date.ToString("dd-MM-yyyy")
         txtAaaa.Text = Year(aaaa) + 1
+        lblLocalReal.Text = ""
+        lblDptoReal.Text = ""
+        lblProvReal.Text = ""
 
     End Sub
 
@@ -34,8 +38,6 @@ Public Class frmListaOficio
             txtDomicilio.Enabled = False
             txtNroDoc.Enabled = False
             txtCodPostal.Enabled = False
-            txtLocalidad.Enabled = False
-            txtProvincia.Enabled = False
             txtTelFijo.Enabled = False
             txtCelular.Enabled = False
             txtFechaJur.Enabled = False
@@ -55,17 +57,41 @@ Public Class frmListaOficio
             txtApelNomb.Text = CStr(row("ApelNombMatri"))
             txtCuit.Text = CStr(row("CuitMatri"))
             txtDomicilio.Text = CStr(row("CalleRealMatri"))
-            txtCodPostal.Text = CStr(row("CPRealMatri"))
             txtEmail.Text = CStr(row("EmailMatri"))
             txtNroDoc.Text = CStr(row("NroDocMatri"))
             txtTelFijo.Text = CStr(row("FijoRealMatri"))
             txtCelular.Text = CStr(row("CeluRealMatri"))
-            txtFechaJur.Text = CStr(row("FecJurMatri"))
-            InvertirFecha()
+
+            fechajob = CStr(row("FecJurMatri"))
+            ProcesarFecha()
             txtFechaJur.Text = fechajob
+
+            fechajob = CStr(row("FianzaMatri"))
+            ProcesarFecha()
+            lblVenceFianza.Text = fechajob
+            txtFianza.Text = fechajob
+
             LeerCodPos()
             Habilitar()
             CargarListaOficio()
+
+            '-----Fecha Vence Fianza
+            meses = 24
+            fechajob = DateAdd("m", meses, txtFianza.Text)
+            ProcesarFecha()
+            lblVenceFianza.Text = fechajob
+            fechaaux = Format(Now, "dd/MM/yyyy")
+
+            fecha1 = CDate(fechajob)
+            fecha2 = CDate(fechaaux)
+            If fecha1 < fecha2 Then
+                lblVenceFianza.ForeColor = Color.Red
+                Impedir()
+            Else
+                lblVenceFianza.ForeColor = Color.Lime
+                Permitir()
+            End If
+
         Else
             txtApelNomb.Text = ""
         End If
@@ -108,29 +134,73 @@ Public Class frmListaOficio
 
     Private Sub LeerCodPos()
 
-        comando.Connection = conexion
+        '***BUSCAMOS EL CÓDIGO POSTAL REAL***
+        comando.CommandText = "SELECT matriculados.idLocalRMatri, localidad.CodPosLocal, localidad.NombreLocal, departamento.NombreDpto, provincia.NombreProv, " _
+                                & "matriculados.idLocalRMatri, matriculados.idDptoRMatri, matriculados.idProvRMatri FROM matriculados " _
+                                & "INNER JOIN localidad    ON matriculados.idLocalRMatri = localidad.id_Local " _
+                                & "INNER JOIN departamento ON localidad.fk_DptoLocal     = departamento.id_Dpto " _
+                                & "INNER JOIN provincia    ON departamento.fk_ProvDpto   = provincia.id_Prov " _
+                                & "WHERE matriculados.NroMatri = '" & txtMatricula.Text & "' "
+        dt = New DataTable
+        da = New MySqlDataAdapter(comando)
+        da.Fill(dt)
 
-        Try
-            comando.CommandText = "SELECT LocalCodPos, ProvCodPos FROM codpostal WHERE NroCodPos = '" & txtCodPostal.Text & "'"
-            dt = New DataTable
-            da = New MySqlDataAdapter(comando)
-            da.Fill(dt)
+        If dt.Rows.Count > 0 Then
+            Dim row As DataRow = dt.Rows(0)
+            txtCodPostal.Text = Val(CStr(row("CodPosLocal")))
+            lblLocalReal.Text = CStr(row("NombreLocal"))
+            lblDptoReal.Text = CStr(row("NombreDpto"))
+            lblProvReal.Text = CStr(row("NombreProv"))
+            txtLocal.Text = CStr(row("idLocalRMatri"))
+            txtDpto.Text = CStr(row("idDptoRMatri"))
+            txtProv.Text = CStr(row("idProvRMatri"))
+        Else
+            txtCodPostal.Text = 0
+            lblLocalReal.Text = ""
+            lblDptoReal.Text = ""
+            lblProvReal.Text = ""
+            txtLocal.Text = "164"
+            txtDpto.Text = "1"
+            txtProv.Text = "1"
+        End If
+        lblLocalReal.Visible = True
+        lblDptoReal.Visible = True
+        lblProvReal.Visible = True
 
-            If dt.Rows.Count > 0 Then
-                Dim row As DataRow = dt.Rows(0)
-                txtLocalidad.Text = CStr(row("LocalCodPos"))
-                txtProvincia.Text = CStr(row("ProvCodPos"))
-            Else
-                txtLocalidad.Text = ""
-                txtProvincia.Text = ""
-            End If
-        Catch ex As Exception
-            'MsgBox(ex.Message, MsgBoxStyle.Critical, "Atención")
-            detmsg = "Conexión errónea"
-            tipomsg = "info"
-            btnmsg = 1
-            frmMsgBox.ShowDialog()
-        End Try
+    End Sub
+
+    Private Sub BuscarCodPos()
+
+        '***BUSCAMOS EL CÓDIGO POSTAL POR CÓDIGO***
+        comando.CommandText = "SELECT localidad.CodPosLocal, localidad.NombreLocal, departamento.NombreDpto, provincia.NombreProv, localidad.id_Local, departamento.id_Dpto, provincia.id_Prov FROM localidad " _
+                               & "INNER JOIN departamento ON localidad.fk_DptoLocal     = departamento.id_Dpto " _
+                               & "INNER JOIN provincia    ON departamento.fk_ProvDpto   = provincia.id_Prov " _
+                               & "WHERE localidad.CodPosLocal = '" & txtCodPostal.Text & "' "
+        dt = New DataTable
+        da = New MySqlDataAdapter(comando)
+        da.Fill(dt)
+
+        If dt.Rows.Count > 0 Then
+            Dim row As DataRow = dt.Rows(0)
+            txtCodPostal.Text = Val(CStr(row("CodPosLocal")))
+            lblLocalReal.Text = CStr(row("NombreLocal"))
+            lblDptoReal.Text = CStr(row("NombreDpto"))
+            lblProvReal.Text = CStr(row("NombreProv"))
+            txtLocal.Text = CStr(row("id_Local"))
+            txtDpto.Text = CStr(row("id_Dpto"))
+            txtProv.Text = CStr(row("id_Prov"))
+        Else
+            txtCodPostal.Text = 0
+            lblLocalReal.Text = ""
+            lblDptoReal.Text = ""
+            lblProvReal.Text = ""
+            txtLocal.Text = "164"
+            txtDpto.Text = "1"
+            txtProv.Text = "1"
+        End If
+        lblLocalReal.Visible = True
+        lblDptoReal.Visible = True
+        lblProvReal.Visible = True
 
     End Sub
 
@@ -424,16 +494,16 @@ Public Class frmListaOficio
 
     Private Sub BtnGrabar_Click(sender As Object, e As EventArgs) Handles BtnGrabar.Click
 
-        InvertirFecha()
+        fechajob = txtFechaJur.Text
+        ProcesarFecha()
         txtFechaJur.Text = fechadb
 
         comando = New MySqlCommand("UPDATE matriculados SET ApelNombMatri = '" & txtApelNomb.Text & "', NroDocMatri = '" & txtNroDoc.Text & "', CuitMatri = '" & txtCuit.Text & "', " _
-                                    & "FecJurMatri = '" & txtFechaJur.Text & "', CalleRealMatri = '" & txtDomicilio.Text & "', CPRealMatri = '" & txtCodPostal.Text & "', " _
-                                    & "EmailMatri = '" & txtEmail.Text & "', CeluRealMatri = '" & txtCelular.Text & "', FijoRealMatri = '" & txtTelFijo.Text & "' " _
+                                    & "FecJurMatri = '" & txtFechaJur.Text & "', CalleRealMatri = '" & txtDomicilio.Text & "', idLocalRMatri = '" & txtLocal.Text & "', idDptoRMatri = '" & txtDpto.Text & "', " _
+                                    & "idProvRMatri = '" & txtProv.Text & "', EmailMatri = '" & txtEmail.Text & "', CeluRealMatri = '" & txtCelular.Text & "', FijoRealMatri = '" & txtTelFijo.Text & "' " _
                                     & "WHERE NroMatri = " & txtMatricula.Text & "", conexion)
         comando.ExecuteNonQuery()
 
-        InvertirFecha()
         txtFechaJur.Text = fechajob
 
         BtnGrabar.Enabled = False
@@ -466,35 +536,6 @@ Public Class frmListaOficio
 
     End Sub
 
-    Private Sub InvertirFecha()
-
-        fechajob = ""
-        '-----Fecha Juramento
-        fechajob = txtFechaJur.Text
-        ProcesarFecha()
-
-    End Sub
-
-    Private Sub ProcesarFecha()
-
-        pos1 = InStr(1, fechajob, "/")
-        pos2 = InStr(pos1 + 1, fechajob, "/")
-
-        If pos1 = 5 Then
-            yyyy = Mid(fechajob, 1, pos1 - 1)
-            mm = Mid(fechajob, pos1 + 1, ((pos2 - 1) - pos1))
-            dd = Mid(fechajob, pos2 + 1, 2)
-        ElseIf pos1 = 3 Then
-            dd = Mid(fechajob, 1, pos1 - 1)
-            mm = Mid(fechajob, pos1 + 1, ((pos2 - 1) - pos1))
-            yyyy = Mid(fechajob, pos2 + 1, 4)
-        End If
-
-        fechajob = dd & "/" & mm & "/" & yyyy
-        fechadb = yyyy & "/" & mm & "/" & dd
-
-    End Sub
-
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
 
         Limpiar()
@@ -504,8 +545,9 @@ Public Class frmListaOficio
         txtDomicilio.Text = ""
         txtNroDoc.Text = ""
         txtCodPostal.Text = ""
-        txtLocalidad.Text = ""
-        txtProvincia.Text = ""
+        lblLocalReal.Text = ""
+        lblDptoReal.Text = ""
+        lblProvReal.Text = ""
         txtTelFijo.Text = ""
         txtCelular.Text = ""
         txtFechaJur.Text = ""
@@ -530,8 +572,6 @@ Public Class frmListaOficio
         txtDomicilio.Enabled = True
         txtNroDoc.Enabled = True
         txtCodPostal.Enabled = True
-        txtLocalidad.Enabled = True
-        txtProvincia.Enabled = True
         txtTelFijo.Enabled = True
         txtCelular.Enabled = True
         txtFechaJur.Enabled = True
@@ -564,6 +604,45 @@ Public Class frmListaOficio
         ToolTipMsg.ToolTipTitle = "Botón Salir."
         ToolTipMsg.SetToolTip(BtnSalir, "Presione para salir de la pantalla.")
         ToolTipMsg.ToolTipIcon = ToolTipIcon.Info
+
+    End Sub
+
+    Private Sub txtCodPostal_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCodPostal.KeyDown
+
+        If e.KeyCode = Keys.F1 Then
+            senial = 3
+            Dim frmCol1 As New frmConsCodPostal
+            AddOwnedForm(frmCol1)
+            frmCol1.ShowDialog()
+            txtTelFijo.Focus()
+            senial = 0
+        End If
+        If e.KeyCode = Keys.Enter Then
+            BuscarCodPos()
+            txtTelFijo.Focus()
+        End If
+
+    End Sub
+    Private Sub Permitir()
+
+        txtAaaa.Enabled = True
+        cmbTribunal.Enabled = True
+        cbxCircuito.Enabled = True
+        cbxConcursales.Enabled = True
+        cbxDistrito.Enabled = True
+        cbxTasaciones.Enabled = True
+        txtDomLocal.Enabled = True
+
+    End Sub
+    Private Sub Impedir()
+
+        txtAaaa.Enabled = False
+        cmbTribunal.Enabled = False
+        cbxCircuito.Enabled = False
+        cbxConcursales.Enabled = False
+        cbxDistrito.Enabled = False
+        cbxTasaciones.Enabled = False
+        txtDomLocal.Enabled = False
 
     End Sub
 

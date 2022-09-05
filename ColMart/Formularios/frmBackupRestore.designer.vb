@@ -62,7 +62,7 @@ Partial Class frmBackupRestore
         Me.txtArchivoRes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtArchivoRes.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtArchivoRes.ForeColor = System.Drawing.Color.White
-        Me.txtArchivoRes.Location = New System.Drawing.Point(112, 197)
+        Me.txtArchivoRes.Location = New System.Drawing.Point(112, 191)
         Me.txtArchivoRes.Name = "txtArchivoRes"
         Me.txtArchivoRes.Size = New System.Drawing.Size(565, 24)
         Me.txtArchivoRes.TabIndex = 12
@@ -94,7 +94,7 @@ Partial Class frmBackupRestore
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Red
-        Me.Label1.Location = New System.Drawing.Point(281, 171)
+        Me.Label1.Location = New System.Drawing.Point(281, 165)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(231, 21)
         Me.Label1.TabIndex = 150
@@ -110,7 +110,7 @@ Partial Class frmBackupRestore
         Me.btnLimpiar.ForeColor = System.Drawing.Color.White
         Me.btnLimpiar.Image = CType(resources.GetObject("btnLimpiar.Image"), System.Drawing.Image)
         Me.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnLimpiar.Location = New System.Drawing.Point(173, 277)
+        Me.btnLimpiar.Location = New System.Drawing.Point(173, 266)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(71, 57)
         Me.btnLimpiar.TabIndex = 151
@@ -127,7 +127,7 @@ Partial Class frmBackupRestore
         Me.btnBuscarRes.ForeColor = System.Drawing.Color.White
         Me.btnBuscarRes.Image = CType(resources.GetObject("btnBuscarRes.Image"), System.Drawing.Image)
         Me.btnBuscarRes.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnBuscarRes.Location = New System.Drawing.Point(42, 176)
+        Me.btnBuscarRes.Location = New System.Drawing.Point(42, 170)
         Me.btnBuscarRes.Name = "btnBuscarRes"
         Me.btnBuscarRes.Size = New System.Drawing.Size(64, 57)
         Me.btnBuscarRes.TabIndex = 13
@@ -144,7 +144,7 @@ Partial Class frmBackupRestore
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(548, 277)
+        Me.btnSalir.Location = New System.Drawing.Point(548, 266)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(66, 57)
         Me.btnSalir.TabIndex = 11
@@ -168,6 +168,7 @@ Partial Class frmBackupRestore
         Me.btnBackup.Text = "Backup"
         Me.btnBackup.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnBackup.UseVisualStyleBackColor = True
+        Me.btnBackup.Visible = False
         '
         'btnRestore
         '
@@ -178,13 +179,14 @@ Partial Class frmBackupRestore
         Me.btnRestore.ForeColor = System.Drawing.Color.White
         Me.btnRestore.Image = CType(resources.GetObject("btnRestore.Image"), System.Drawing.Image)
         Me.btnRestore.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnRestore.Location = New System.Drawing.Point(683, 176)
+        Me.btnRestore.Location = New System.Drawing.Point(683, 170)
         Me.btnRestore.Name = "btnRestore"
         Me.btnRestore.Size = New System.Drawing.Size(66, 57)
         Me.btnRestore.TabIndex = 9
         Me.btnRestore.Text = "Restore"
         Me.btnRestore.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnRestore.UseVisualStyleBackColor = True
+        Me.btnRestore.Visible = False
         '
         'btnBuscarBac
         '
@@ -215,7 +217,7 @@ Partial Class frmBackupRestore
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox2.Location = New System.Drawing.Point(12, 164)
+        Me.PictureBox2.Location = New System.Drawing.Point(12, 158)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(779, 80)
         Me.PictureBox2.TabIndex = 149
@@ -224,7 +226,7 @@ Partial Class frmBackupRestore
         'PictureBox3
         '
         Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox3.Location = New System.Drawing.Point(12, 265)
+        Me.PictureBox3.Location = New System.Drawing.Point(12, 254)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(779, 80)
         Me.PictureBox3.TabIndex = 152
@@ -242,7 +244,7 @@ Partial Class frmBackupRestore
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(836, 597)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label4)

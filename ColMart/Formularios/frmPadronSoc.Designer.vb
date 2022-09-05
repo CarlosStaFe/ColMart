@@ -42,7 +42,7 @@ Partial Class frmPadronSoc
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Green
-        Me.Label1.Location = New System.Drawing.Point(186, 9)
+        Me.Label1.Location = New System.Drawing.Point(197, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(449, 36)
         Me.Label1.TabIndex = 87
@@ -56,7 +56,7 @@ Partial Class frmPadronSoc
         Me.cmbOrden.ForeColor = System.Drawing.Color.White
         Me.cmbOrden.FormattingEnabled = True
         Me.cmbOrden.Items.AddRange(New Object() {"NUMERO", "NOMBRE"})
-        Me.cmbOrden.Location = New System.Drawing.Point(151, 119)
+        Me.cmbOrden.Location = New System.Drawing.Point(162, 119)
         Me.cmbOrden.Name = "cmbOrden"
         Me.cmbOrden.Size = New System.Drawing.Size(150, 25)
         Me.cmbOrden.TabIndex = 151
@@ -66,7 +66,7 @@ Partial Class frmPadronSoc
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label5.Location = New System.Drawing.Point(19, 122)
+        Me.Label5.Location = New System.Drawing.Point(30, 122)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(126, 19)
         Me.Label5.TabIndex = 158
@@ -80,7 +80,7 @@ Partial Class frmPadronSoc
         Me.cmbEstado.ForeColor = System.Drawing.Color.White
         Me.cmbEstado.FormattingEnabled = True
         Me.cmbEstado.Items.AddRange(New Object() {"TODOS", "ACTIVA", "BAJA", "SUSPENDIDO"})
-        Me.cmbEstado.Location = New System.Drawing.Point(151, 55)
+        Me.cmbEstado.Location = New System.Drawing.Point(162, 55)
         Me.cmbEstado.Name = "cmbEstado"
         Me.cmbEstado.Size = New System.Drawing.Size(135, 25)
         Me.cmbEstado.TabIndex = 148
@@ -96,7 +96,7 @@ Partial Class frmPadronSoc
         Me.btnFiltrar.ForeColor = System.Drawing.Color.White
         Me.btnFiltrar.Image = CType(resources.GetObject("btnFiltrar.Image"), System.Drawing.Image)
         Me.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnFiltrar.Location = New System.Drawing.Point(451, 71)
+        Me.btnFiltrar.Location = New System.Drawing.Point(462, 71)
         Me.btnFiltrar.Name = "btnFiltrar"
         Me.btnFiltrar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btnFiltrar.Size = New System.Drawing.Size(87, 56)
@@ -116,7 +116,7 @@ Partial Class frmPadronSoc
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(685, 71)
+        Me.btnSalir.Location = New System.Drawing.Point(696, 71)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btnSalir.Size = New System.Drawing.Size(87, 56)
@@ -130,7 +130,7 @@ Partial Class frmPadronSoc
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label2.Location = New System.Drawing.Point(64, 58)
+        Me.Label2.Location = New System.Drawing.Point(75, 58)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(81, 19)
         Me.Label2.TabIndex = 154
@@ -139,7 +139,7 @@ Partial Class frmPadronSoc
         'PictureBox4
         '
         Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox4.Location = New System.Drawing.Point(12, 48)
+        Me.PictureBox4.Location = New System.Drawing.Point(23, 48)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(828, 105)
         Me.PictureBox4.TabIndex = 157
@@ -153,7 +153,7 @@ Partial Class frmPadronSoc
         Me.cmbClase.ForeColor = System.Drawing.Color.White
         Me.cmbClase.FormattingEnabled = True
         Me.cmbClase.Items.AddRange(New Object() {"TODOS", "FERIAS", "INDUSTRIALES"})
-        Me.cmbClase.Location = New System.Drawing.Point(151, 87)
+        Me.cmbClase.Location = New System.Drawing.Point(162, 87)
         Me.cmbClase.Name = "cmbClase"
         Me.cmbClase.Size = New System.Drawing.Size(135, 25)
         Me.cmbClase.TabIndex = 159
@@ -163,7 +163,7 @@ Partial Class frmPadronSoc
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label3.Location = New System.Drawing.Point(73, 90)
+        Me.Label3.Location = New System.Drawing.Point(84, 90)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(72, 19)
         Me.Label3.TabIndex = 160
@@ -172,10 +172,10 @@ Partial Class frmPadronSoc
         'ReportViewer1
         '
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "ColMart.rptPadronSoc.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(13, 160)
+        Me.ReportViewer1.Location = New System.Drawing.Point(24, 160)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(827, 424)
+        Me.ReportViewer1.Size = New System.Drawing.Size(827, 441)
         Me.ReportViewer1.TabIndex = 161
         '
         'frmPadronSoc
@@ -183,7 +183,7 @@ Partial Class frmPadronSoc
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(869, 596)
+        Me.ClientSize = New System.Drawing.Size(869, 613)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.cmbClase)
         Me.Controls.Add(Me.Label3)

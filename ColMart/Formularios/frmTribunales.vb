@@ -1,4 +1,7 @@
-﻿Public Class frmTribunales
+﻿'*******************************************************************************
+'* ACTUALIZACIÓN DE STRIBUNALES PARA LISTA DE OFICIO                           *
+'*******************************************************************************
+Public Class frmTribunales
     Private Sub frmTribunales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         TribunalesTableAdapter.Fill(DbcolmartDataSet.tribunales)

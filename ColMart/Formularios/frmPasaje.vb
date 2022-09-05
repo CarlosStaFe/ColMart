@@ -2,6 +2,7 @@
 
     Dim contreg, periodo As Integer
     Dim detalle, apellido, telefono As String
+    Dim fecha1, fecha2, fecha3, fecha4 As String
     Private Sub frmPasaje_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ConectarMySql()
@@ -26,7 +27,7 @@
     Private Sub ProcesarCtasCtes()
 
         Try
-            comando.CommandText = "SELECT * FROM ctasctes WHERE TipoCbteCC = 'LIQ' ORDER BY NroCC, FechaCC"
+            comando.CommandText = "SELECT * FROM colegiados ORDER BY NroMatri"
             dt = New DataTable
             da = New MySqlDataAdapter(comando)
             da.Fill(dt)
@@ -34,63 +35,69 @@
 
             For Each row In dt.Rows
 
-                comando = New MySqlCommand("SELECT * FROM matriculados WHERE NroMatri = '" & CStr(row("NroCC")) & "'", conexion)
-                dr = comando.ExecuteReader
+                comando = New MySqlCommand("INSERT INTO matriculados VALUES(@id, @nromat, @nommatri, @apelmat, @fecnac, @lugar, @nacion, @tipo, @doc, " _
+                                                                         & "@sexo, @civil, @cuit, @fecjur, @categ, @estado, @fecest, " _
+                                                                         & "@caller, @idlocalr, @iddptor, @idprovr, @mail, @celur, @fijor, " _
+                                                                         & "@callel, @idlocall, @iddptol, @idprovl, @celul, @fijol, " _
+                                                                         & "@fianza, @docfza, @nomfza, @callefza, @telfza, @obs, @tomo, @folio)", conexion)
+                comando.Parameters.AddWithValue("@id", CStr(row("id_Matri")))
+                comando.Parameters.AddWithValue("@nromat", CStr(row("NroMatri")))
+                comando.Parameters.AddWithValue("@nommatri", CStr(row("ApelNombMatri")))
+                comando.Parameters.AddWithValue("@apelmat", CStr(row("ApelMatMatri")))
+                'fechajob = CStr(row("FecNacMatri"))
+                'ProcesarFecha()
+                'fecha1 = fechadb
 
-                If dr.HasRows Then
-                    While dr.Read
-                        apellido = dr(2).ToString
-                        telefono = dr(22).ToString + " * " + dr(23).ToString
-                    End While
-                End If
+                comando.Parameters.AddWithValue("@fecnac", CStr(row("FecNacMatri")))
+                comando.Parameters.AddWithValue("@lugar", CStr(row("LugarNacMatri")))
+                comando.Parameters.AddWithValue("@nacion", CStr(row("NacionNacMatri")))
+                comando.Parameters.AddWithValue("@tipo", CStr(row("TipodocMatri")))
+                comando.Parameters.AddWithValue("@doc", CStr(row("NroDocMatri")))
+                comando.Parameters.AddWithValue("@sexo", CStr(row("SexoMatri")))
+                comando.Parameters.AddWithValue("@civil", CStr(row("EstCivilMatri")))
+                comando.Parameters.AddWithValue("@cuit", CStr(row("CuitMatri")))
+                'fechajob = CStr(row("FecJurMatri"))
+                'ProcesarFecha()
+                'fecha2 = fechadb
 
-                dr.Close()
-                dr.Dispose()
+                comando.Parameters.AddWithValue("@fecjur", CStr(row("FecJurMatri")))
+                comando.Parameters.AddWithValue("@categ", CStr(row("CatAporteMatri")))
+                comando.Parameters.AddWithValue("@estado", CStr(row("EstadoMatri")))
+                'fechajob = CStr(row("FecEstadoMatri"))
+                'ProcesarFecha()
+                'fecha3 = fechadb
 
-                detalle = CStr(row("DetalleCC"))
-                fechajob = CStr(row("FechaCC"))
-                ProcesarFecha()
+                comando.Parameters.AddWithValue("@fecest", CStr(row("FecEstadoMatri")))
+                comando.Parameters.AddWithValue("@caller", CStr(row("CalleRealMatri")))
+                comando.Parameters.AddWithValue("@idlocalr", CStr(row("idLocalRMatri")))
+                comando.Parameters.AddWithValue("@iddptor", CStr(row("idDptoRMatri")))
+                comando.Parameters.AddWithValue("@idprovr", CStr(row("idProvRMatri")))
+                comando.Parameters.AddWithValue("@mail", CStr(row("EmailMatri")))
+                comando.Parameters.AddWithValue("@celur", CStr(row("CeluRealMatri")))
+                comando.Parameters.AddWithValue("@fijor", CStr(row("FijoRealMatri")))
+                comando.Parameters.AddWithValue("@callel", CStr(row("CalleLegalMatri")))
+                comando.Parameters.AddWithValue("@idlocall", CStr(row("idLocalLMatri")))
+                comando.Parameters.AddWithValue("@iddptol", CStr(row("idDptoLMatri")))
+                comando.Parameters.AddWithValue("@idprovl", CStr(row("idProvLMatri")))
+                comando.Parameters.AddWithValue("@celul", CStr(row("CeluLegalMatri")))
+                comando.Parameters.AddWithValue("@fijol", CStr(row("FijoLegalMatri")))
+                'fechajob = CStr(row("FianzaMatri"))
+                'ProcesarFecha()
+                'fecha4 = fechadb
 
-                periodo = yyyy + mm
-
-                comando = New MySqlCommand("INSERT INTO ventas VALUES(@id, @fecha, @tipo, @cpbte, @item, @detalle, @periodo, @neto, @total)", conexion)
-                comando.Parameters.AddWithValue("@id", CStr(row("id_CC")))
-                comando.Parameters.AddWithValue("@fecha", fechadb)
-                comando.Parameters.AddWithValue("@tipo", CStr(row("TipoCbteCC")))
-                comando.Parameters.AddWithValue("@cpbte", CStr(row("NroCbteCC")))
-                comando.Parameters.AddWithValue("@item", CStr(row("ItemCC")))
-                comando.Parameters.AddWithValue("@detalle", CStr(row("DetalleCC")))
-                comando.Parameters.AddWithValue("@periodo", periodo)
-                comando.Parameters.AddWithValue("@neto", CStr(row("DebeCC")))
-                comando.Parameters.AddWithValue("@total", 0)
+                comando.Parameters.AddWithValue("@fianza", CStr(row("FianzaMatri")))
+                comando.Parameters.AddWithValue("@docfza", CStr(row("DocFiadorMatri")))
+                comando.Parameters.AddWithValue("@nomfza", CStr(row("FiadorMatri")))
+                comando.Parameters.AddWithValue("@callefza", CStr(row("CalleFiadorMatri")))
+                comando.Parameters.AddWithValue("@telfza", CStr(row("TelFiadorMatri")))
+                comando.Parameters.AddWithValue("@obs", CStr(row("ObsMatri")))
+                comando.Parameters.AddWithValue("@tomo", "")
+                comando.Parameters.AddWithValue("@folio", "")
                 comando.ExecuteNonQuery()
 
-                If detalle = "Fianza" Then
-                    comando = New MySqlCommand("INSERT INTO fianzas VALUES(@id, @matri, @fecpago, @user, @firma1, @user1, @firma2, @user2, @fecvto, @docum, @nombre, " _
-                                                   & "@calle, @tel, @estado, @obs, @apellido, @telefmatri)", conexion)
-                    comando.Parameters.AddWithValue("@id", 0)
-                    comando.Parameters.AddWithValue("@matri", CStr(row("NroCC")))
-                    comando.Parameters.AddWithValue("@fecpago", fechadb)
-                    comando.Parameters.AddWithValue("@user", user)
-                    comando.Parameters.AddWithValue("@firma1", DBNull.Value)
-                    comando.Parameters.AddWithValue("@user1", "")
-                    comando.Parameters.AddWithValue("@Firma2", DBNull.Value)
-                    comando.Parameters.AddWithValue("@user2", "")
-                    comando.Parameters.AddWithValue("@fecvto", DBNull.Value)
-                    comando.Parameters.AddWithValue("@docum", "")
-                    comando.Parameters.AddWithValue("@nombre", "")
-                    comando.Parameters.AddWithValue("@calle", "")
-                    comando.Parameters.AddWithValue("@tel", "")
-                    comando.Parameters.AddWithValue("@estado", "INCOMPLETA")
-                    comando.Parameters.AddWithValue("@obs", "CIC Nro.: " & CStr(row("NroCbteCC")))
-                    comando.Parameters.AddWithValue("@apellido", apellido)
-                    comando.Parameters.AddWithValue("@telefmatri", telefono)
-                    comando.ExecuteNonQuery()
-
-                End If
 
                 contreg = contreg + 1
-                txtMsg.Text = "PROCESANDO REGISTRO: " & CStr(contreg)
+                txtMsg.Text = "PROCESANDO REGISTRO: " & CStr(contreg) & " * " & CStr(row("NroMatri"))
                 txtMsg.Refresh()
             Next
 

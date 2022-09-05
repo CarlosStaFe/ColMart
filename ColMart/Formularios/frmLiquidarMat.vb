@@ -1,15 +1,17 @@
-﻿Imports System.IO
+﻿'*******************************************************************************
+'* PROGRAMA PARA LIQUIDAR A LOS MATRICULADOS                                   *
+'*******************************************************************************
+Imports System.IO
 Imports Microsoft.Reporting.WinForms
 
 Public Class frmLiquidarMat
 
     Dim desdemat, hastamat As Integer
     Dim matricula, apelynombre, domicilio, codigopostal, localidad, provincia, estado, detalle As String
-    Dim fila, idcodpos, cantidad, contreg, comprobante, item As Integer
-    Dim posicion1, posicion2, longitud, i, j As Integer
+    Dim fila, idcodpos, contreg, comprobante, item, posicion1 As Integer
     Dim importe1, importe2, importe3, importe4, total, importe As Double
     Dim concepto1, concepto2, concepto3, concepto4, correo As String
-    Dim fechavto, fecha, ceros, dd, mm, yy, yyyy, periodo, nombrePDF As String
+    Dim fecha, dia, mes, yy, anio, periodo, nombrePDF As String
     Dim codbarra, codigodepago As String
     Dim CodigoArmado, CodigoTotal As Object
 
@@ -89,38 +91,15 @@ Public Class frmLiquidarMat
 
     Private Sub dtpVencimiento_LostFocus(sender As Object, e As EventArgs) Handles dtpVencimiento.LostFocus
 
-        fechavto = dtpVencimiento.Value
-        posicion1 = InStr(1, fechavto, "/")
-        posicion2 = InStr(posicion1 + 1, fechavto, "/")
-        dd = Mid(fechavto, 1, posicion1 - 1)
-        mm = Mid(fechavto, posicion1 + 1, ((posicion2 - 1) - posicion1))
-        yy = Mid(fechavto, posicion2 + 3, 2)
-        yyyy = Mid(fechavto, posicion2 + 1, 4)
+        fechajob = CDate(dtpVencimiento.Value)
+        ProcesarFecha()
+        dia = dd
+        mes = mm
+        anio = yyyy
+        yy = Mid(anio, 3, 2)
 
-        ceros = ""
-
-        longitud = Len(dd)
-        If longitud < 2 Then
-            cantidad = 2 - longitud
-            For j = 1 To cantidad
-                ceros = ceros & "0"
-            Next j
-            dd = ceros & dd
-        End If
-
-        ceros = ""
-
-        longitud = Len(mm)
-        If longitud < 2 Then
-            cantidad = 2 - longitud
-            For j = 1 To cantidad
-                ceros = ceros & "0"
-            Next j
-            mm = ceros & mm
-        End If
-
-        txtMMPeriodo.Text = mm
-        txtYYPeriodo.Text = yyyy
+        txtMMPeriodo.Text = mes
+        txtYYPeriodo.Text = anio
 
     End Sub
 
@@ -165,10 +144,6 @@ seguir:
             txtMsg.Text = "Procesando Registro " & Str(matricula)
             txtMsg.Refresh()
 
-            importe1 = 0
-            importe2 = 0
-            importe3 = 0
-            importe4 = 0
             concepto1 = ""
             concepto2 = ""
             concepto3 = ""
@@ -178,7 +153,6 @@ seguir:
             importe2 = 0
             importe3 = 0
             importe4 = 0
-            cantidad = 0
             total = 0
 
             comando = New MySqlCommand("SELECT * FROM debitomatri INNER JOIN coddebito ON debitomatri.CodDebMat = coddebito.NroCodDeb AND MatDebMat = " & matricula & " ", conexion)
@@ -357,18 +331,10 @@ Finalizar:
             'Establezcamos los parametros que enviaremos al reporte
             Dim parametros As ReportParameter() = New ReportParameter(20) {}
 
-            longitud = Len(matricula)
-            If longitud < 5 Then
-                cantidad = 5 - longitud
-                ceros = ""
-                For j = 1 To cantidad
-                    ceros = ceros & "0"
-                Next j
-                matricula = ceros & matricula
-            End If
+            PonerCeros(matricula, 5)
+            matricula = nroconceros
 
-            fechavto = yyyy & mm & dd
-            fecha = dd & "/" & mm & "/" & yyyy
+            fecha = dia & "/" & mes & "/" & anio
             codbarra = CodigoArmado
 
             parametros(0) = New ReportParameter("prmMatricula", matricula)

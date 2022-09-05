@@ -1,4 +1,7 @@
-﻿Imports Microsoft.Reporting.WinForms
+﻿'*******************************************************************************
+'* LISTADO DE PADRÓN DE SOCIEDADES           O                                 *
+'*******************************************************************************
+Imports Microsoft.Reporting.WinForms
 
 Public Class frmPadronSoc
     Dim senial As Integer

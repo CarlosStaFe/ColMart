@@ -1,4 +1,7 @@
-﻿Public Class frmUsuarios
+﻿'*******************************************************************************
+'* ACTUALIZACIÓN DE USUARIOS DEL SISTEMA                                       *
+'*******************************************************************************
+Public Class frmUsuarios
     Dim usuario As String
 
     Private Sub frmUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load

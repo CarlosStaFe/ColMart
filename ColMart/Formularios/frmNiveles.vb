@@ -1,4 +1,7 @@
-﻿Public Class frmNiveles
+﻿'*******************************************************************************
+'* ACTUALIZACIÓN DE NIVELES DE USUARIO                                         *
+'*******************************************************************************
+Public Class frmNiveles
     Private Sub frmNiveles_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         NivelesTableAdapter.Fill(DbcolmartDataSet.niveles)

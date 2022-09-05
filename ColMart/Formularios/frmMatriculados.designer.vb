@@ -54,6 +54,8 @@ Partial Class frmMatriculados
         Dim ObsMatriLabel As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
+        Dim Label4 As System.Windows.Forms.Label
+        Dim Label5 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMatriculados))
         Me.txtId_Matri = New System.Windows.Forms.TextBox()
         Me.MatriculadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -104,7 +106,6 @@ Partial Class frmMatriculados
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.MatriculadosTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.matriculadosTableAdapter()
         Me.TableAdapterManager = New ColMart.dbcolmartDataSetTableAdapters.TableAdapterManager()
         Me.MatriculadosBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
@@ -135,8 +136,10 @@ Partial Class frmMatriculados
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.txtNuevaMatricula = New System.Windows.Forms.TextBox()
         Me.lblMatricula = New System.Windows.Forms.Label()
-        Me.txtVenceFianza = New System.Windows.Forms.TextBox()
         Me.lblVenceFianza = New System.Windows.Forms.Label()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.txtFolioMatri = New System.Windows.Forms.TextBox()
+        Me.txtTomoMatri = New System.Windows.Forms.TextBox()
         Id_MatriLabel = New System.Windows.Forms.Label()
         ApelMatriLabel = New System.Windows.Forms.Label()
         ApelMatMatriLabel = New System.Windows.Forms.Label()
@@ -168,17 +171,19 @@ Partial Class frmMatriculados
         ObsMatriLabel = New System.Windows.Forms.Label()
         Label2 = New System.Windows.Forms.Label()
         Label3 = New System.Windows.Forms.Label()
+        Label4 = New System.Windows.Forms.Label()
+        Label5 = New System.Windows.Forms.Label()
         CType(Me.MatriculadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MatriculadosBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MatriculadosBindingNavigator.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Id_MatriLabel
@@ -351,7 +356,7 @@ Partial Class frmMatriculados
         CalleRealMatriLabel.AutoSize = True
         CalleRealMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         CalleRealMatriLabel.ForeColor = System.Drawing.Color.White
-        CalleRealMatriLabel.Location = New System.Drawing.Point(33, 228)
+        CalleRealMatriLabel.Location = New System.Drawing.Point(33, 225)
         CalleRealMatriLabel.Name = "CalleRealMatriLabel"
         CalleRealMatriLabel.Size = New System.Drawing.Size(105, 17)
         CalleRealMatriLabel.TabIndex = 34
@@ -362,7 +367,7 @@ Partial Class frmMatriculados
         CPRealMatriLabel.AutoSize = True
         CPRealMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         CPRealMatriLabel.ForeColor = System.Drawing.Color.White
-        CPRealMatriLabel.Location = New System.Drawing.Point(458, 228)
+        CPRealMatriLabel.Location = New System.Drawing.Point(458, 225)
         CPRealMatriLabel.Name = "CPRealMatriLabel"
         CPRealMatriLabel.Size = New System.Drawing.Size(107, 17)
         CPRealMatriLabel.TabIndex = 36
@@ -373,7 +378,7 @@ Partial Class frmMatriculados
         EmailMatriLabel.AutoSize = True
         EmailMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         EmailMatriLabel.ForeColor = System.Drawing.Color.White
-        EmailMatriLabel.Location = New System.Drawing.Point(87, 177)
+        EmailMatriLabel.Location = New System.Drawing.Point(87, 175)
         EmailMatriLabel.Name = "EmailMatriLabel"
         EmailMatriLabel.Size = New System.Drawing.Size(51, 17)
         EmailMatriLabel.TabIndex = 32
@@ -384,7 +389,7 @@ Partial Class frmMatriculados
         CeluRealMatriLabel.AutoSize = True
         CeluRealMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         CeluRealMatriLabel.ForeColor = System.Drawing.Color.White
-        CeluRealMatriLabel.Location = New System.Drawing.Point(48, 257)
+        CeluRealMatriLabel.Location = New System.Drawing.Point(48, 254)
         CeluRealMatriLabel.Name = "CeluRealMatriLabel"
         CeluRealMatriLabel.Size = New System.Drawing.Size(90, 17)
         CeluRealMatriLabel.TabIndex = 40
@@ -395,7 +400,7 @@ Partial Class frmMatriculados
         FijoRealMatriLabel.AutoSize = True
         FijoRealMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         FijoRealMatriLabel.ForeColor = System.Drawing.Color.White
-        FijoRealMatriLabel.Location = New System.Drawing.Point(500, 257)
+        FijoRealMatriLabel.Location = New System.Drawing.Point(500, 254)
         FijoRealMatriLabel.Name = "FijoRealMatriLabel"
         FijoRealMatriLabel.Size = New System.Drawing.Size(65, 17)
         FijoRealMatriLabel.TabIndex = 42
@@ -406,7 +411,7 @@ Partial Class frmMatriculados
         CalleLegalMatriLabel.AutoSize = True
         CalleLegalMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         CalleLegalMatriLabel.ForeColor = System.Drawing.Color.White
-        CalleLegalMatriLabel.Location = New System.Drawing.Point(26, 286)
+        CalleLegalMatriLabel.Location = New System.Drawing.Point(26, 283)
         CalleLegalMatriLabel.Name = "CalleLegalMatriLabel"
         CalleLegalMatriLabel.Size = New System.Drawing.Size(112, 17)
         CalleLegalMatriLabel.TabIndex = 44
@@ -417,7 +422,7 @@ Partial Class frmMatriculados
         CPLegalMatriLabel.AutoSize = True
         CPLegalMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         CPLegalMatriLabel.ForeColor = System.Drawing.Color.White
-        CPLegalMatriLabel.Location = New System.Drawing.Point(451, 286)
+        CPLegalMatriLabel.Location = New System.Drawing.Point(451, 283)
         CPLegalMatriLabel.Name = "CPLegalMatriLabel"
         CPLegalMatriLabel.Size = New System.Drawing.Size(114, 17)
         CPLegalMatriLabel.TabIndex = 46
@@ -428,7 +433,7 @@ Partial Class frmMatriculados
         CeluLegalMatriLabel.AutoSize = True
         CeluLegalMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         CeluLegalMatriLabel.ForeColor = System.Drawing.Color.White
-        CeluLegalMatriLabel.Location = New System.Drawing.Point(41, 315)
+        CeluLegalMatriLabel.Location = New System.Drawing.Point(41, 312)
         CeluLegalMatriLabel.Name = "CeluLegalMatriLabel"
         CeluLegalMatriLabel.Size = New System.Drawing.Size(97, 17)
         CeluLegalMatriLabel.TabIndex = 50
@@ -439,7 +444,7 @@ Partial Class frmMatriculados
         FijoLegalMatriLabel.AutoSize = True
         FijoLegalMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         FijoLegalMatriLabel.ForeColor = System.Drawing.Color.White
-        FijoLegalMatriLabel.Location = New System.Drawing.Point(493, 315)
+        FijoLegalMatriLabel.Location = New System.Drawing.Point(493, 312)
         FijoLegalMatriLabel.Name = "FijoLegalMatriLabel"
         FijoLegalMatriLabel.Size = New System.Drawing.Size(72, 17)
         FijoLegalMatriLabel.TabIndex = 52
@@ -450,7 +455,7 @@ Partial Class frmMatriculados
         FianzaMatriLabel.AutoSize = True
         FianzaMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         FianzaMatriLabel.ForeColor = System.Drawing.Color.White
-        FianzaMatriLabel.Location = New System.Drawing.Point(42, 372)
+        FianzaMatriLabel.Location = New System.Drawing.Point(42, 369)
         FianzaMatriLabel.Name = "FianzaMatriLabel"
         FianzaMatriLabel.Size = New System.Drawing.Size(96, 17)
         FianzaMatriLabel.TabIndex = 54
@@ -461,7 +466,7 @@ Partial Class frmMatriculados
         FiadorMatriLabel.AutoSize = True
         FiadorMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         FiadorMatriLabel.ForeColor = System.Drawing.Color.White
-        FiadorMatriLabel.Location = New System.Drawing.Point(422, 372)
+        FiadorMatriLabel.Location = New System.Drawing.Point(651, 369)
         FiadorMatriLabel.Name = "FiadorMatriLabel"
         FiadorMatriLabel.Size = New System.Drawing.Size(109, 17)
         FiadorMatriLabel.TabIndex = 56
@@ -472,7 +477,7 @@ Partial Class frmMatriculados
         DocFiadorMatriLabel.AutoSize = True
         DocFiadorMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DocFiadorMatriLabel.ForeColor = System.Drawing.Color.White
-        DocFiadorMatriLabel.Location = New System.Drawing.Point(866, 371)
+        DocFiadorMatriLabel.Location = New System.Drawing.Point(429, 368)
         DocFiadorMatriLabel.Name = "DocFiadorMatriLabel"
         DocFiadorMatriLabel.Size = New System.Drawing.Size(87, 17)
         DocFiadorMatriLabel.TabIndex = 58
@@ -483,7 +488,7 @@ Partial Class frmMatriculados
         CalleFiadorMatriLabel.AutoSize = True
         CalleFiadorMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         CalleFiadorMatriLabel.ForeColor = System.Drawing.Color.White
-        CalleFiadorMatriLabel.Location = New System.Drawing.Point(21, 401)
+        CalleFiadorMatriLabel.Location = New System.Drawing.Point(21, 398)
         CalleFiadorMatriLabel.Name = "CalleFiadorMatriLabel"
         CalleFiadorMatriLabel.Size = New System.Drawing.Size(117, 17)
         CalleFiadorMatriLabel.TabIndex = 60
@@ -494,7 +499,7 @@ Partial Class frmMatriculados
         ObsMatriLabel.AutoSize = True
         ObsMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         ObsMatriLabel.ForeColor = System.Drawing.Color.White
-        ObsMatriLabel.Location = New System.Drawing.Point(31, 430)
+        ObsMatriLabel.Location = New System.Drawing.Point(31, 427)
         ObsMatriLabel.Name = "ObsMatriLabel"
         ObsMatriLabel.Size = New System.Drawing.Size(107, 17)
         ObsMatriLabel.TabIndex = 62
@@ -505,7 +510,7 @@ Partial Class frmMatriculados
         Label2.AutoSize = True
         Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label2.ForeColor = System.Drawing.Color.White
-        Label2.Location = New System.Drawing.Point(781, 400)
+        Label2.Location = New System.Drawing.Point(650, 397)
         Label2.Name = "Label2"
         Label2.Size = New System.Drawing.Size(110, 17)
         Label2.TabIndex = 145
@@ -516,11 +521,33 @@ Partial Class frmMatriculados
         Label3.AutoSize = True
         Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label3.ForeColor = System.Drawing.Color.Yellow
-        Label3.Location = New System.Drawing.Point(255, 372)
+        Label3.Location = New System.Drawing.Point(255, 369)
         Label3.Name = "Label3"
         Label3.Size = New System.Drawing.Size(52, 16)
         Label3.TabIndex = 154
         Label3.Text = "VENC.:"
+        '
+        'Label4
+        '
+        Label4.AutoSize = True
+        Label4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label4.ForeColor = System.Drawing.Color.White
+        Label4.Location = New System.Drawing.Point(728, 175)
+        Label4.Name = "Label4"
+        Label4.Size = New System.Drawing.Size(48, 17)
+        Label4.TabIndex = 159
+        Label4.Text = "Tomo:"
+        '
+        'Label5
+        '
+        Label5.AutoSize = True
+        Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label5.ForeColor = System.Drawing.Color.White
+        Label5.Location = New System.Drawing.Point(847, 175)
+        Label5.Name = "Label5"
+        Label5.Size = New System.Drawing.Size(42, 17)
+        Label5.TabIndex = 160
+        Label5.Text = "Folio:"
         '
         'txtId_Matri
         '
@@ -530,7 +557,7 @@ Partial Class frmMatriculados
         Me.txtId_Matri.Enabled = False
         Me.txtId_Matri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtId_Matri.ForeColor = System.Drawing.SystemColors.ScrollBar
-        Me.txtId_Matri.Location = New System.Drawing.Point(712, 177)
+        Me.txtId_Matri.Location = New System.Drawing.Point(1029, 175)
         Me.txtId_Matri.Name = "txtId_Matri"
         Me.txtId_Matri.Size = New System.Drawing.Size(50, 16)
         Me.txtId_Matri.TabIndex = 66
@@ -635,11 +662,11 @@ Partial Class frmMatriculados
         Me.txtCalleRealMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "CalleRealMatri", True))
         Me.txtCalleRealMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCalleRealMatri.ForeColor = System.Drawing.Color.White
-        Me.txtCalleRealMatri.Location = New System.Drawing.Point(144, 225)
+        Me.txtCalleRealMatri.Location = New System.Drawing.Point(144, 222)
         Me.txtCalleRealMatri.MaxLength = 30
         Me.txtCalleRealMatri.Name = "txtCalleRealMatri"
         Me.txtCalleRealMatri.Size = New System.Drawing.Size(303, 23)
-        Me.txtCalleRealMatri.TabIndex = 16
+        Me.txtCalleRealMatri.TabIndex = 18
         '
         'txtCodPostal1
         '
@@ -647,11 +674,11 @@ Partial Class frmMatriculados
         Me.txtCodPostal1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCodPostal1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodPostal1.ForeColor = System.Drawing.Color.White
-        Me.txtCodPostal1.Location = New System.Drawing.Point(571, 225)
+        Me.txtCodPostal1.Location = New System.Drawing.Point(571, 222)
         Me.txtCodPostal1.MaxLength = 5
         Me.txtCodPostal1.Name = "txtCodPostal1"
         Me.txtCodPostal1.Size = New System.Drawing.Size(67, 23)
-        Me.txtCodPostal1.TabIndex = 17
+        Me.txtCodPostal1.TabIndex = 19
         '
         'txtEmailMatri
         '
@@ -661,7 +688,7 @@ Partial Class frmMatriculados
         Me.txtEmailMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "EmailMatri", True))
         Me.txtEmailMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEmailMatri.ForeColor = System.Drawing.Color.White
-        Me.txtEmailMatri.Location = New System.Drawing.Point(144, 174)
+        Me.txtEmailMatri.Location = New System.Drawing.Point(144, 173)
         Me.txtEmailMatri.MaxLength = 80
         Me.txtEmailMatri.Name = "txtEmailMatri"
         Me.txtEmailMatri.Size = New System.Drawing.Size(563, 23)
@@ -674,11 +701,11 @@ Partial Class frmMatriculados
         Me.txtCeluRealMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "CeluRealMatri", True))
         Me.txtCeluRealMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCeluRealMatri.ForeColor = System.Drawing.Color.White
-        Me.txtCeluRealMatri.Location = New System.Drawing.Point(144, 254)
+        Me.txtCeluRealMatri.Location = New System.Drawing.Point(144, 251)
         Me.txtCeluRealMatri.MaxLength = 15
         Me.txtCeluRealMatri.Name = "txtCeluRealMatri"
         Me.txtCeluRealMatri.Size = New System.Drawing.Size(266, 23)
-        Me.txtCeluRealMatri.TabIndex = 20
+        Me.txtCeluRealMatri.TabIndex = 22
         '
         'txtFijoRealMatri
         '
@@ -687,11 +714,11 @@ Partial Class frmMatriculados
         Me.txtFijoRealMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "FijoRealMatri", True))
         Me.txtFijoRealMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFijoRealMatri.ForeColor = System.Drawing.Color.White
-        Me.txtFijoRealMatri.Location = New System.Drawing.Point(571, 254)
+        Me.txtFijoRealMatri.Location = New System.Drawing.Point(571, 251)
         Me.txtFijoRealMatri.MaxLength = 15
         Me.txtFijoRealMatri.Name = "txtFijoRealMatri"
         Me.txtFijoRealMatri.Size = New System.Drawing.Size(200, 23)
-        Me.txtFijoRealMatri.TabIndex = 21
+        Me.txtFijoRealMatri.TabIndex = 23
         '
         'txtCalleLegalMatri
         '
@@ -701,11 +728,11 @@ Partial Class frmMatriculados
         Me.txtCalleLegalMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "CalleLegalMatri", True))
         Me.txtCalleLegalMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCalleLegalMatri.ForeColor = System.Drawing.Color.White
-        Me.txtCalleLegalMatri.Location = New System.Drawing.Point(144, 283)
+        Me.txtCalleLegalMatri.Location = New System.Drawing.Point(144, 280)
         Me.txtCalleLegalMatri.MaxLength = 30
         Me.txtCalleLegalMatri.Name = "txtCalleLegalMatri"
         Me.txtCalleLegalMatri.Size = New System.Drawing.Size(303, 23)
-        Me.txtCalleLegalMatri.TabIndex = 22
+        Me.txtCalleLegalMatri.TabIndex = 24
         '
         'txtCodPostal2
         '
@@ -713,11 +740,11 @@ Partial Class frmMatriculados
         Me.txtCodPostal2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCodPostal2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodPostal2.ForeColor = System.Drawing.Color.White
-        Me.txtCodPostal2.Location = New System.Drawing.Point(571, 283)
+        Me.txtCodPostal2.Location = New System.Drawing.Point(571, 280)
         Me.txtCodPostal2.MaxLength = 5
         Me.txtCodPostal2.Name = "txtCodPostal2"
         Me.txtCodPostal2.Size = New System.Drawing.Size(67, 23)
-        Me.txtCodPostal2.TabIndex = 23
+        Me.txtCodPostal2.TabIndex = 25
         '
         'txtCeluLegalMatri
         '
@@ -726,11 +753,11 @@ Partial Class frmMatriculados
         Me.txtCeluLegalMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "CeluLegalMatri", True))
         Me.txtCeluLegalMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCeluLegalMatri.ForeColor = System.Drawing.Color.White
-        Me.txtCeluLegalMatri.Location = New System.Drawing.Point(144, 312)
+        Me.txtCeluLegalMatri.Location = New System.Drawing.Point(144, 309)
         Me.txtCeluLegalMatri.MaxLength = 15
         Me.txtCeluLegalMatri.Name = "txtCeluLegalMatri"
         Me.txtCeluLegalMatri.Size = New System.Drawing.Size(266, 23)
-        Me.txtCeluLegalMatri.TabIndex = 26
+        Me.txtCeluLegalMatri.TabIndex = 28
         '
         'txtFijoLegalMatri
         '
@@ -739,24 +766,25 @@ Partial Class frmMatriculados
         Me.txtFijoLegalMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "FijoLegalMatri", True))
         Me.txtFijoLegalMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFijoLegalMatri.ForeColor = System.Drawing.Color.White
-        Me.txtFijoLegalMatri.Location = New System.Drawing.Point(571, 312)
+        Me.txtFijoLegalMatri.Location = New System.Drawing.Point(571, 309)
         Me.txtFijoLegalMatri.MaxLength = 15
         Me.txtFijoLegalMatri.Name = "txtFijoLegalMatri"
         Me.txtFijoLegalMatri.Size = New System.Drawing.Size(200, 23)
-        Me.txtFijoLegalMatri.TabIndex = 27
+        Me.txtFijoLegalMatri.TabIndex = 29
         '
         'txtDocFiadorMatri
         '
         Me.txtDocFiadorMatri.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.txtDocFiadorMatri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDocFiadorMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "DocFiadorMatri", True))
+        Me.txtDocFiadorMatri.Enabled = False
         Me.txtDocFiadorMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDocFiadorMatri.ForeColor = System.Drawing.Color.White
-        Me.txtDocFiadorMatri.Location = New System.Drawing.Point(959, 369)
+        Me.txtDocFiadorMatri.Location = New System.Drawing.Point(522, 366)
         Me.txtDocFiadorMatri.MaxLength = 8
         Me.txtDocFiadorMatri.Name = "txtDocFiadorMatri"
         Me.txtDocFiadorMatri.Size = New System.Drawing.Size(123, 23)
-        Me.txtDocFiadorMatri.TabIndex = 30
+        Me.txtDocFiadorMatri.TabIndex = 31
         '
         'txtCalleFiadorMatri
         '
@@ -764,13 +792,14 @@ Partial Class frmMatriculados
         Me.txtCalleFiadorMatri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtCalleFiadorMatri.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCalleFiadorMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "CalleFiadorMatri", True))
+        Me.txtCalleFiadorMatri.Enabled = False
         Me.txtCalleFiadorMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCalleFiadorMatri.ForeColor = System.Drawing.Color.White
-        Me.txtCalleFiadorMatri.Location = New System.Drawing.Point(144, 398)
+        Me.txtCalleFiadorMatri.Location = New System.Drawing.Point(144, 395)
         Me.txtCalleFiadorMatri.MaxLength = 30
         Me.txtCalleFiadorMatri.Name = "txtCalleFiadorMatri"
         Me.txtCalleFiadorMatri.Size = New System.Drawing.Size(407, 23)
-        Me.txtCalleFiadorMatri.TabIndex = 31
+        Me.txtCalleFiadorMatri.TabIndex = 33
         '
         'txtObsMatri
         '
@@ -779,11 +808,11 @@ Partial Class frmMatriculados
         Me.txtObsMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "ObsMatri", True))
         Me.txtObsMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtObsMatri.ForeColor = System.Drawing.Color.White
-        Me.txtObsMatri.Location = New System.Drawing.Point(144, 427)
+        Me.txtObsMatri.Location = New System.Drawing.Point(144, 424)
         Me.txtObsMatri.MaxLength = 100
         Me.txtObsMatri.Name = "txtObsMatri"
         Me.txtObsMatri.Size = New System.Drawing.Size(938, 23)
-        Me.txtObsMatri.TabIndex = 33
+        Me.txtObsMatri.TabIndex = 35
         '
         'txtLocalReal
         '
@@ -793,7 +822,7 @@ Partial Class frmMatriculados
         Me.txtLocalReal.Enabled = False
         Me.txtLocalReal.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLocalReal.ForeColor = System.Drawing.Color.White
-        Me.txtLocalReal.Location = New System.Drawing.Point(644, 225)
+        Me.txtLocalReal.Location = New System.Drawing.Point(644, 222)
         Me.txtLocalReal.Name = "txtLocalReal"
         Me.txtLocalReal.Size = New System.Drawing.Size(207, 23)
         Me.txtLocalReal.TabIndex = 18
@@ -806,10 +835,10 @@ Partial Class frmMatriculados
         Me.txtProvReal.Enabled = False
         Me.txtProvReal.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtProvReal.ForeColor = System.Drawing.Color.White
-        Me.txtProvReal.Location = New System.Drawing.Point(855, 225)
+        Me.txtProvReal.Location = New System.Drawing.Point(855, 222)
         Me.txtProvReal.Name = "txtProvReal"
         Me.txtProvReal.Size = New System.Drawing.Size(227, 23)
-        Me.txtProvReal.TabIndex = 19
+        Me.txtProvReal.TabIndex = 21
         '
         'txtLocalLegal
         '
@@ -819,7 +848,7 @@ Partial Class frmMatriculados
         Me.txtLocalLegal.Enabled = False
         Me.txtLocalLegal.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLocalLegal.ForeColor = System.Drawing.Color.White
-        Me.txtLocalLegal.Location = New System.Drawing.Point(644, 283)
+        Me.txtLocalLegal.Location = New System.Drawing.Point(644, 280)
         Me.txtLocalLegal.Name = "txtLocalLegal"
         Me.txtLocalLegal.Size = New System.Drawing.Size(207, 23)
         Me.txtLocalLegal.TabIndex = 24
@@ -832,10 +861,10 @@ Partial Class frmMatriculados
         Me.txtProvLegal.Enabled = False
         Me.txtProvLegal.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtProvLegal.ForeColor = System.Drawing.Color.White
-        Me.txtProvLegal.Location = New System.Drawing.Point(855, 283)
+        Me.txtProvLegal.Location = New System.Drawing.Point(855, 280)
         Me.txtProvLegal.Name = "txtProvLegal"
         Me.txtProvLegal.Size = New System.Drawing.Size(227, 23)
-        Me.txtProvLegal.TabIndex = 25
+        Me.txtProvLegal.TabIndex = 27
         '
         'cmbTipoDocMatri
         '
@@ -931,7 +960,7 @@ Partial Class frmMatriculados
         Me.BtnUltimo.ForeColor = System.Drawing.Color.White
         Me.BtnUltimo.Image = CType(resources.GetObject("BtnUltimo.Image"), System.Drawing.Image)
         Me.BtnUltimo.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnUltimo.Location = New System.Drawing.Point(925, 486)
+        Me.BtnUltimo.Location = New System.Drawing.Point(925, 483)
         Me.BtnUltimo.Name = "BtnUltimo"
         Me.BtnUltimo.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnUltimo.Size = New System.Drawing.Size(38, 38)
@@ -950,7 +979,7 @@ Partial Class frmMatriculados
         Me.BtnPrimer.ForeColor = System.Drawing.Color.White
         Me.BtnPrimer.Image = CType(resources.GetObject("BtnPrimer.Image"), System.Drawing.Image)
         Me.BtnPrimer.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnPrimer.Location = New System.Drawing.Point(790, 486)
+        Me.BtnPrimer.Location = New System.Drawing.Point(790, 483)
         Me.BtnPrimer.Name = "BtnPrimer"
         Me.BtnPrimer.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnPrimer.Size = New System.Drawing.Size(38, 38)
@@ -969,7 +998,7 @@ Partial Class frmMatriculados
         Me.BtnSiguiente.ForeColor = System.Drawing.Color.White
         Me.BtnSiguiente.Image = CType(resources.GetObject("BtnSiguiente.Image"), System.Drawing.Image)
         Me.BtnSiguiente.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnSiguiente.Location = New System.Drawing.Point(880, 486)
+        Me.BtnSiguiente.Location = New System.Drawing.Point(880, 483)
         Me.BtnSiguiente.Name = "BtnSiguiente"
         Me.BtnSiguiente.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnSiguiente.Size = New System.Drawing.Size(38, 38)
@@ -988,7 +1017,7 @@ Partial Class frmMatriculados
         Me.BtnAnterior.ForeColor = System.Drawing.Color.White
         Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
         Me.BtnAnterior.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnAnterior.Location = New System.Drawing.Point(835, 486)
+        Me.BtnAnterior.Location = New System.Drawing.Point(835, 483)
         Me.BtnAnterior.Name = "BtnAnterior"
         Me.BtnAnterior.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnAnterior.Size = New System.Drawing.Size(38, 38)
@@ -1007,7 +1036,7 @@ Partial Class frmMatriculados
         Me.BtnActualizar.ForeColor = System.Drawing.Color.White
         Me.BtnActualizar.Image = CType(resources.GetObject("BtnActualizar.Image"), System.Drawing.Image)
         Me.BtnActualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnActualizar.Location = New System.Drawing.Point(650, 478)
+        Me.BtnActualizar.Location = New System.Drawing.Point(650, 475)
         Me.BtnActualizar.Name = "BtnActualizar"
         Me.BtnActualizar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnActualizar.Size = New System.Drawing.Size(87, 56)
@@ -1027,7 +1056,7 @@ Partial Class frmMatriculados
         Me.BtnGrabar.ForeColor = System.Drawing.Color.White
         Me.BtnGrabar.Image = CType(resources.GetObject("BtnGrabar.Image"), System.Drawing.Image)
         Me.BtnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnGrabar.Location = New System.Drawing.Point(299, 478)
+        Me.BtnGrabar.Location = New System.Drawing.Point(299, 475)
         Me.BtnGrabar.Name = "BtnGrabar"
         Me.BtnGrabar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnGrabar.Size = New System.Drawing.Size(59, 56)
@@ -1047,7 +1076,7 @@ Partial Class frmMatriculados
         Me.BtnSalir.ForeColor = System.Drawing.Color.White
         Me.BtnSalir.Image = CType(resources.GetObject("BtnSalir.Image"), System.Drawing.Image)
         Me.BtnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnSalir.Location = New System.Drawing.Point(1001, 478)
+        Me.BtnSalir.Location = New System.Drawing.Point(1001, 475)
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnSalir.Size = New System.Drawing.Size(87, 56)
@@ -1067,7 +1096,7 @@ Partial Class frmMatriculados
         Me.BtnModificar.ForeColor = System.Drawing.Color.White
         Me.BtnModificar.Image = CType(resources.GetObject("BtnModificar.Image"), System.Drawing.Image)
         Me.BtnModificar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnModificar.Location = New System.Drawing.Point(382, 478)
+        Me.BtnModificar.Location = New System.Drawing.Point(382, 475)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnModificar.Size = New System.Drawing.Size(80, 56)
@@ -1087,7 +1116,7 @@ Partial Class frmMatriculados
         Me.BtnEliminar.ForeColor = System.Drawing.Color.White
         Me.BtnEliminar.Image = CType(resources.GetObject("BtnEliminar.Image"), System.Drawing.Image)
         Me.BtnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnEliminar.Location = New System.Drawing.Point(478, 478)
+        Me.BtnEliminar.Location = New System.Drawing.Point(478, 475)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnEliminar.Size = New System.Drawing.Size(73, 56)
@@ -1107,7 +1136,7 @@ Partial Class frmMatriculados
         Me.BtnBuscar.ForeColor = System.Drawing.Color.White
         Me.BtnBuscar.Image = CType(resources.GetObject("BtnBuscar.Image"), System.Drawing.Image)
         Me.BtnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnBuscar.Location = New System.Drawing.Point(570, 478)
+        Me.BtnBuscar.Location = New System.Drawing.Point(570, 475)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnBuscar.Size = New System.Drawing.Size(59, 56)
@@ -1127,7 +1156,7 @@ Partial Class frmMatriculados
         Me.BtnAgregar.ForeColor = System.Drawing.Color.White
         Me.BtnAgregar.Image = CType(resources.GetObject("BtnAgregar.Image"), System.Drawing.Image)
         Me.BtnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnAgregar.Location = New System.Drawing.Point(216, 478)
+        Me.BtnAgregar.Location = New System.Drawing.Point(216, 475)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnAgregar.Size = New System.Drawing.Size(66, 56)
@@ -1142,10 +1171,10 @@ Partial Class frmMatriculados
         Me.lblAtencion1.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.lblAtencion1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAtencion1.ForeColor = System.Drawing.Color.Red
-        Me.lblAtencion1.Location = New System.Drawing.Point(653, 228)
+        Me.lblAtencion1.Location = New System.Drawing.Point(653, 225)
         Me.lblAtencion1.Name = "lblAtencion1"
         Me.lblAtencion1.Size = New System.Drawing.Size(234, 17)
-        Me.lblAtencion1.TabIndex = 82
+        Me.lblAtencion1.TabIndex = 20
         Me.lblAtencion1.Text = "F1 para consultar Códigos Postales"
         Me.lblAtencion1.Visible = False
         '
@@ -1155,10 +1184,10 @@ Partial Class frmMatriculados
         Me.lblAtencion2.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.lblAtencion2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAtencion2.ForeColor = System.Drawing.Color.Red
-        Me.lblAtencion2.Location = New System.Drawing.Point(653, 285)
+        Me.lblAtencion2.Location = New System.Drawing.Point(653, 282)
         Me.lblAtencion2.Name = "lblAtencion2"
         Me.lblAtencion2.Size = New System.Drawing.Size(234, 17)
-        Me.lblAtencion2.TabIndex = 83
+        Me.lblAtencion2.TabIndex = 26
         Me.lblAtencion2.Text = "F1 para consultar Códigos Postales"
         Me.lblAtencion2.Visible = False
         '
@@ -1176,7 +1205,7 @@ Partial Class frmMatriculados
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(198, 470)
+        Me.PictureBox1.Location = New System.Drawing.Point(198, 467)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(563, 73)
         Me.PictureBox1.TabIndex = 85
@@ -1185,7 +1214,7 @@ Partial Class frmMatriculados
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox2.Location = New System.Drawing.Point(767, 470)
+        Me.PictureBox2.Location = New System.Drawing.Point(767, 467)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(222, 73)
         Me.PictureBox2.TabIndex = 86
@@ -1194,7 +1223,7 @@ Partial Class frmMatriculados
         'PictureBox3
         '
         Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox3.Location = New System.Drawing.Point(995, 470)
+        Me.PictureBox3.Location = New System.Drawing.Point(995, 467)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(99, 73)
         Me.PictureBox3.TabIndex = 87
@@ -1203,21 +1232,11 @@ Partial Class frmMatriculados
         'PictureBox5
         '
         Me.PictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox5.Location = New System.Drawing.Point(5, 214)
+        Me.PictureBox5.Location = New System.Drawing.Point(5, 211)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(1089, 133)
         Me.PictureBox5.TabIndex = 89
         Me.PictureBox5.TabStop = False
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox6.DataBindings.Add(New System.Windows.Forms.Binding("Image", Me.MatriculadosBindingSource, "TelFiadorMatri", True))
-        Me.PictureBox6.Location = New System.Drawing.Point(5, 356)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(1089, 106)
-        Me.PictureBox6.TabIndex = 90
-        Me.PictureBox6.TabStop = False
         '
         'MatriculadosTableAdapter
         '
@@ -1386,6 +1405,7 @@ Partial Class frmMatriculados
         'PictureBox4
         '
         Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox4.DataBindings.Add(New System.Windows.Forms.Binding("Image", Me.MatriculadosBindingSource, "TomoMatri", True))
         Me.PictureBox4.Location = New System.Drawing.Point(5, 48)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(1089, 157)
@@ -1437,13 +1457,14 @@ Partial Class frmMatriculados
         Me.txtFianzaMatri.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.txtFianzaMatri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtFianzaMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "FianzaMatri", True))
+        Me.txtFianzaMatri.Enabled = False
         Me.txtFianzaMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFianzaMatri.ForeColor = System.Drawing.Color.White
-        Me.txtFianzaMatri.Location = New System.Drawing.Point(144, 369)
+        Me.txtFianzaMatri.Location = New System.Drawing.Point(144, 366)
         Me.txtFianzaMatri.MaxLength = 10
         Me.txtFianzaMatri.Name = "txtFianzaMatri"
         Me.txtFianzaMatri.Size = New System.Drawing.Size(100, 23)
-        Me.txtFianzaMatri.TabIndex = 28
+        Me.txtFianzaMatri.TabIndex = 30
         '
         'txtFiadorMatri
         '
@@ -1451,26 +1472,28 @@ Partial Class frmMatriculados
         Me.txtFiadorMatri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtFiadorMatri.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtFiadorMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "FiadorMatri", True))
+        Me.txtFiadorMatri.Enabled = False
         Me.txtFiadorMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFiadorMatri.ForeColor = System.Drawing.Color.White
-        Me.txtFiadorMatri.Location = New System.Drawing.Point(537, 369)
+        Me.txtFiadorMatri.Location = New System.Drawing.Point(766, 366)
         Me.txtFiadorMatri.MaxLength = 30
         Me.txtFiadorMatri.Name = "txtFiadorMatri"
         Me.txtFiadorMatri.Size = New System.Drawing.Size(314, 23)
-        Me.txtFiadorMatri.TabIndex = 29
+        Me.txtFiadorMatri.TabIndex = 32
         '
         'txtTelFiadorMatri
         '
         Me.txtTelFiadorMatri.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.txtTelFiadorMatri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtTelFiadorMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "TelFiadorMatri", True))
+        Me.txtTelFiadorMatri.Enabled = False
         Me.txtTelFiadorMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTelFiadorMatri.ForeColor = System.Drawing.Color.White
-        Me.txtTelFiadorMatri.Location = New System.Drawing.Point(897, 398)
+        Me.txtTelFiadorMatri.Location = New System.Drawing.Point(766, 395)
         Me.txtTelFiadorMatri.MaxLength = 15
         Me.txtTelFiadorMatri.Name = "txtTelFiadorMatri"
         Me.txtTelFiadorMatri.Size = New System.Drawing.Size(185, 23)
-        Me.txtTelFiadorMatri.TabIndex = 32
+        Me.txtTelFiadorMatri.TabIndex = 34
         '
         'ToolTipMsg
         '
@@ -1484,7 +1507,7 @@ Partial Class frmMatriculados
         Me.txtCPRealMatri.Enabled = False
         Me.txtCPRealMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCPRealMatri.ForeColor = System.Drawing.Color.White
-        Me.txtCPRealMatri.Location = New System.Drawing.Point(777, 254)
+        Me.txtCPRealMatri.Location = New System.Drawing.Point(777, 251)
         Me.txtCPRealMatri.MaxLength = 5
         Me.txtCPRealMatri.Name = "txtCPRealMatri"
         Me.txtCPRealMatri.Size = New System.Drawing.Size(67, 16)
@@ -1498,7 +1521,7 @@ Partial Class frmMatriculados
         Me.txtCPLegalMatri.Enabled = False
         Me.txtCPLegalMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCPLegalMatri.ForeColor = System.Drawing.Color.White
-        Me.txtCPLegalMatri.Location = New System.Drawing.Point(777, 312)
+        Me.txtCPLegalMatri.Location = New System.Drawing.Point(777, 309)
         Me.txtCPLegalMatri.MaxLength = 5
         Me.txtCPLegalMatri.Name = "txtCPLegalMatri"
         Me.txtCPLegalMatri.Size = New System.Drawing.Size(67, 16)
@@ -1516,7 +1539,7 @@ Partial Class frmMatriculados
         Me.btnCambiar.ForeColor = System.Drawing.Color.White
         Me.btnCambiar.Image = CType(resources.GetObject("btnCambiar.Image"), System.Drawing.Image)
         Me.btnCambiar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnCambiar.Location = New System.Drawing.Point(115, 478)
+        Me.btnCambiar.Location = New System.Drawing.Point(115, 475)
         Me.btnCambiar.Name = "btnCambiar"
         Me.btnCambiar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btnCambiar.Size = New System.Drawing.Size(66, 56)
@@ -1537,7 +1560,7 @@ Partial Class frmMatriculados
         Me.btnSinMatricula.ForeColor = System.Drawing.Color.White
         Me.btnSinMatricula.Image = CType(resources.GetObject("btnSinMatricula.Image"), System.Drawing.Image)
         Me.btnSinMatricula.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSinMatricula.Location = New System.Drawing.Point(13, 478)
+        Me.btnSinMatricula.Location = New System.Drawing.Point(13, 475)
         Me.btnSinMatricula.Name = "btnSinMatricula"
         Me.btnSinMatricula.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btnSinMatricula.Size = New System.Drawing.Size(94, 56)
@@ -1550,7 +1573,7 @@ Partial Class frmMatriculados
         '
         Me.PictureBox7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.PictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox7.Location = New System.Drawing.Point(5, 470)
+        Me.PictureBox7.Location = New System.Drawing.Point(5, 467)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(187, 73)
         Me.PictureBox7.TabIndex = 150
@@ -1583,30 +1606,49 @@ Partial Class frmMatriculados
         Me.lblMatricula.Text = "NUEVA MATRÍCULA:"
         Me.lblMatricula.Visible = False
         '
-        'txtVenceFianza
-        '
-        Me.txtVenceFianza.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.txtVenceFianza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtVenceFianza.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "FianzaMatri", True))
-        Me.txtVenceFianza.Enabled = False
-        Me.txtVenceFianza.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtVenceFianza.ForeColor = System.Drawing.Color.Yellow
-        Me.txtVenceFianza.Location = New System.Drawing.Point(925, 312)
-        Me.txtVenceFianza.MaxLength = 10
-        Me.txtVenceFianza.Name = "txtVenceFianza"
-        Me.txtVenceFianza.Size = New System.Drawing.Size(100, 23)
-        Me.txtVenceFianza.TabIndex = 153
-        '
         'lblVenceFianza
         '
         Me.lblVenceFianza.AutoSize = True
         Me.lblVenceFianza.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVenceFianza.ForeColor = System.Drawing.Color.Lime
-        Me.lblVenceFianza.Location = New System.Drawing.Point(313, 369)
+        Me.lblVenceFianza.Location = New System.Drawing.Point(313, 366)
         Me.lblVenceFianza.Name = "lblVenceFianza"
         Me.lblVenceFianza.Size = New System.Drawing.Size(61, 19)
         Me.lblVenceFianza.TabIndex = 155
         Me.lblVenceFianza.Text = "Label4"
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox6.Location = New System.Drawing.Point(5, 350)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(1089, 111)
+        Me.PictureBox6.TabIndex = 156
+        Me.PictureBox6.TabStop = False
+        '
+        'txtFolioMatri
+        '
+        Me.txtFolioMatri.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtFolioMatri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtFolioMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "FolioMatri", True))
+        Me.txtFolioMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFolioMatri.ForeColor = System.Drawing.Color.White
+        Me.txtFolioMatri.Location = New System.Drawing.Point(895, 173)
+        Me.txtFolioMatri.Name = "txtFolioMatri"
+        Me.txtFolioMatri.Size = New System.Drawing.Size(57, 23)
+        Me.txtFolioMatri.TabIndex = 17
+        '
+        'txtTomoMatri
+        '
+        Me.txtTomoMatri.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtTomoMatri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtTomoMatri.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.MatriculadosBindingSource, "TomoMatri", True))
+        Me.txtTomoMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTomoMatri.ForeColor = System.Drawing.Color.White
+        Me.txtTomoMatri.Location = New System.Drawing.Point(782, 173)
+        Me.txtTomoMatri.Name = "txtTomoMatri"
+        Me.txtTomoMatri.Size = New System.Drawing.Size(45, 23)
+        Me.txtTomoMatri.TabIndex = 16
         '
         'frmMatriculados
         '
@@ -1614,10 +1656,13 @@ Partial Class frmMatriculados
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1104, 574)
+        Me.ClientSize = New System.Drawing.Size(1122, 614)
+        Me.Controls.Add(Me.txtTomoMatri)
+        Me.Controls.Add(Label5)
+        Me.Controls.Add(Label4)
+        Me.Controls.Add(Me.txtFolioMatri)
         Me.Controls.Add(Me.lblVenceFianza)
         Me.Controls.Add(Label3)
-        Me.Controls.Add(Me.txtVenceFianza)
         Me.Controls.Add(Me.lblMatricula)
         Me.Controls.Add(Me.txtNuevaMatricula)
         Me.Controls.Add(Me.btnCambiar)
@@ -1708,9 +1753,9 @@ Partial Class frmMatriculados
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.PictureBox5)
-        Me.Controls.Add(Me.PictureBox6)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PictureBox7)
+        Me.Controls.Add(Me.PictureBox6)
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(10, Byte), Integer))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -1723,12 +1768,12 @@ Partial Class frmMatriculados
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MatriculadosBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MatriculadosBindingNavigator.ResumeLayout(False)
         Me.MatriculadosBindingNavigator.PerformLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1780,7 +1825,6 @@ Partial Class frmMatriculados
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents DbcolmartDataSet As dbcolmartDataSet
     Friend WithEvents MatriculadosBindingSource As BindingSource
     Friend WithEvents MatriculadosTableAdapter As dbcolmartDataSetTableAdapters.matriculadosTableAdapter
@@ -1813,6 +1857,8 @@ Partial Class frmMatriculados
     Friend WithEvents PictureBox7 As PictureBox
     Friend WithEvents txtNuevaMatricula As TextBox
     Friend WithEvents lblMatricula As Label
-    Friend WithEvents txtVenceFianza As TextBox
     Friend WithEvents lblVenceFianza As Label
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents txtFolioMatri As TextBox
+    Friend WithEvents txtTomoMatri As TextBox
 End Class

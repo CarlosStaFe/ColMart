@@ -1,9 +1,11 @@
-﻿Public Class frmConsSociedad
+﻿'*******************************************************************************
+'* CONSULTA DE SOCIEDADES DE REMATES                                           *
+'*******************************************************************************
+Public Class frmConsSociedad
 
     Private Sub frmConsSociedad_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         SociedadesTableAdapter.Fill(DbcolmartDataSet.sociedades)
-
         txtNombre.Focus()
 
     End Sub

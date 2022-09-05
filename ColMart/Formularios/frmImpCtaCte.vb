@@ -1,4 +1,7 @@
-﻿Imports Microsoft.Reporting.WinForms
+﻿'*******************************************************************************
+'* PANTALLA PARA LA IMPRESION DE CTASCTES                                      *
+'*******************************************************************************
+Imports Microsoft.Reporting.WinForms
 Public Class frmImpCtaCte
     Private Sub frmImpCtaCte_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -11,6 +14,7 @@ Public Class frmImpCtaCte
         ImpctacteTableAdapter.Fill(DbcolmartDataSet.impctacte)
 
         ReportViewer1.RefreshReport()
+
     End Sub
 
 End Class

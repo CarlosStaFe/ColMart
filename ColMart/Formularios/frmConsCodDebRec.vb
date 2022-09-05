@@ -1,14 +1,18 @@
-﻿Public Class frmConsCodDebRec
+﻿'*******************************************************************************
+'* CONSULTA DE CÓDIGOS A DEBITAR DEL TIPO REC PARA EL RECIBO GENERAL           *
+'*******************************************************************************
+Public Class frmConsCodDebRec
     Private Sub frmConsCodDebRec_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         CoddebitoTableAdapter.Fill(DbcolmartDataSet.coddebito)
 
-        comando.CommandText = "SELECT * FROM coddebito WHERE TipoRecCodDeb = 'REC' ORDER BY DetalleCodDeb "
+        comando.CommandText = "SELECT * FROM coddebito WHERE TipoRecCodDeb = 'REC' ORDER BY NroCodDeb "
         dt = New DataTable
         da = New MySqlDataAdapter(comando)
         da.Fill(dt)
 
         dgvCodDebito.DataSource = dt
+        txtDetalleDebito.Focus()
 
     End Sub
 
@@ -24,6 +28,17 @@
         End If
 
         Close()
+
+    End Sub
+
+    Private Sub txtDetalleDebito_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDetalleDebito.KeyPress
+
+        comando.CommandText = "SELECT * FROM coddebito WHERE TipoRecCodDeb = 'REC' AND DetalleCodDeb LIKE '%" & txtDetalleDebito.Text & "%' ORDER BY NroCodDeb"
+        dt = New DataTable
+        da = New MySqlDataAdapter(comando)
+        da.Fill(dt)
+
+        dgvCodDebito.DataSource = dt
 
     End Sub
 

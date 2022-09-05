@@ -67,7 +67,7 @@ Partial Class frmConsCodDebito
         Me.txtDetalleDebito.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDetalleDebito.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDetalleDebito.ForeColor = System.Drawing.Color.White
-        Me.txtDetalleDebito.Location = New System.Drawing.Point(215, 57)
+        Me.txtDetalleDebito.Location = New System.Drawing.Point(237, 57)
         Me.txtDetalleDebito.Name = "txtDetalleDebito"
         Me.txtDetalleDebito.Size = New System.Drawing.Size(323, 23)
         Me.txtDetalleDebito.TabIndex = 3
@@ -78,7 +78,7 @@ Partial Class frmConsCodDebito
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(103, 60)
+        Me.Label1.Location = New System.Drawing.Point(125, 60)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(106, 17)
         Me.Label1.TabIndex = 2
@@ -119,7 +119,7 @@ Partial Class frmConsCodDebito
         Me.dgvCodDebito.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgvCodDebito.EnableHeadersVisualStyles = False
         Me.dgvCodDebito.GridColor = System.Drawing.Color.White
-        Me.dgvCodDebito.Location = New System.Drawing.Point(9, 98)
+        Me.dgvCodDebito.Location = New System.Drawing.Point(31, 98)
         Me.dgvCodDebito.Name = "dgvCodDebito"
         Me.dgvCodDebito.ReadOnly = True
         Me.dgvCodDebito.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -131,7 +131,7 @@ Partial Class frmConsCodDebito
         DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvCodDebito.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
-        Me.dgvCodDebito.Size = New System.Drawing.Size(898, 313)
+        Me.dgvCodDebito.Size = New System.Drawing.Size(898, 366)
         Me.dgvCodDebito.TabIndex = 4
         '
         'IdCodDebDataGridViewTextBoxColumn
@@ -225,7 +225,7 @@ Partial Class frmConsCodDebito
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(14, 416)
+        Me.Label2.Location = New System.Drawing.Point(36, 472)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(414, 19)
         Me.Label2.TabIndex = 8
@@ -236,7 +236,7 @@ Partial Class frmConsCodDebito
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Green
-        Me.Label3.Location = New System.Drawing.Point(188, 9)
+        Me.Label3.Location = New System.Drawing.Point(228, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(459, 36)
         Me.Label3.TabIndex = 86
@@ -245,7 +245,7 @@ Partial Class frmConsCodDebito
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(9, 49)
+        Me.PictureBox1.Location = New System.Drawing.Point(31, 49)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(898, 39)
         Me.PictureBox1.TabIndex = 87
@@ -266,7 +266,7 @@ Partial Class frmConsCodDebito
         Me.BtnSalir.ForeColor = System.Drawing.Color.White
         Me.BtnSalir.Image = CType(resources.GetObject("BtnSalir.Image"), System.Drawing.Image)
         Me.BtnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnSalir.Location = New System.Drawing.Point(773, 429)
+        Me.BtnSalir.Location = New System.Drawing.Point(795, 485)
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnSalir.Size = New System.Drawing.Size(57, 56)
@@ -278,7 +278,7 @@ Partial Class frmConsCodDebito
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox2.Location = New System.Drawing.Point(758, 423)
+        Me.PictureBox2.Location = New System.Drawing.Point(780, 479)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(88, 69)
         Me.PictureBox2.TabIndex = 93
@@ -293,7 +293,7 @@ Partial Class frmConsCodDebito
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(955, 511)
+        Me.ClientSize = New System.Drawing.Size(955, 564)
         Me.Controls.Add(Me.BtnSalir)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label3)

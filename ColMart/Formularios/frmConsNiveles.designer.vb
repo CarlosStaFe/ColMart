@@ -64,25 +64,39 @@ Partial Class frmConsNiveles
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.bibliotecaTableAdapter = Nothing
         Me.TableAdapterManager.boletasTableAdapter = Nothing
+        Me.TableAdapterManager.botonesTableAdapter = Nothing
+        Me.TableAdapterManager.botonuserTableAdapter = Nothing
         Me.TableAdapterManager.cajamayorTableAdapter = Nothing
         Me.TableAdapterManager.cajaTableAdapter = Nothing
+        Me.TableAdapterManager.categivaTableAdapter = Nothing
         Me.TableAdapterManager.coddebitoTableAdapter = Nothing
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
+        Me.TableAdapterManager.colegiadosTableAdapter = Nothing
         Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
+        Me.TableAdapterManager.cptosgastosTableAdapter = Nothing
+        Me.TableAdapterManager.ctacteproTableAdapter = Nothing
         Me.TableAdapterManager.ctasctesTableAdapter = Nothing
         Me.TableAdapterManager.debehaberTableAdapter = Nothing
         Me.TableAdapterManager.debitomatriTableAdapter = Nothing
         Me.TableAdapterManager.debitosocTableAdapter = Nothing
+        Me.TableAdapterManager.departamentoTableAdapter = Nothing
         Me.TableAdapterManager.depositosTableAdapter = Nothing
+        Me.TableAdapterManager.detallecpraTableAdapter = Nothing
+        Me.TableAdapterManager.fianzasTableAdapter = Nothing
+        Me.TableAdapterManager.impctacteTableAdapter = Nothing
         Me.TableAdapterManager.juzgadosTableAdapter = Nothing
         Me.TableAdapterManager.listaoficioTableAdapter = Nothing
         Me.TableAdapterManager.localidadesTableAdapter = Nothing
+        Me.TableAdapterManager.localidadTableAdapter = Nothing
         Me.TableAdapterManager.lotebancoTableAdapter = Nothing
         Me.TableAdapterManager.matriculadosTableAdapter = Nothing
         Me.TableAdapterManager.mesaentradaTableAdapter = Nothing
         Me.TableAdapterManager.nivelesTableAdapter = Me.NivelesTableAdapter
+        Me.TableAdapterManager.padronTableAdapter = Nothing
         Me.TableAdapterManager.proveedoresTableAdapter = Nothing
+        Me.TableAdapterManager.provinciaTableAdapter = Nothing
+        Me.TableAdapterManager.reciboTableAdapter = Nothing
         Me.TableAdapterManager.renglonesTableAdapter = Nothing
         Me.TableAdapterManager.saldomatTableAdapter = Nothing
         Me.TableAdapterManager.saldosocTableAdapter = Nothing
@@ -90,6 +104,7 @@ Partial Class frmConsNiveles
         Me.TableAdapterManager.tribunalesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = ColMart.dbcolmartDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usuariosTableAdapter = Nothing
+        Me.TableAdapterManager.ventasTableAdapter = Nothing
         '
         'dgvNiveles
         '
@@ -126,7 +141,7 @@ Partial Class frmConsNiveles
         Me.dgvNiveles.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvNiveles.EnableHeadersVisualStyles = False
         Me.dgvNiveles.GridColor = System.Drawing.Color.White
-        Me.dgvNiveles.Location = New System.Drawing.Point(12, 57)
+        Me.dgvNiveles.Location = New System.Drawing.Point(49, 57)
         Me.dgvNiveles.Name = "dgvNiveles"
         Me.dgvNiveles.ReadOnly = True
         Me.dgvNiveles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -162,7 +177,7 @@ Partial Class frmConsNiveles
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Red
-        Me.Label1.Location = New System.Drawing.Point(16, 265)
+        Me.Label1.Location = New System.Drawing.Point(53, 265)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(387, 19)
         Me.Label1.TabIndex = 2
@@ -173,7 +188,7 @@ Partial Class frmConsNiveles
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Green
-        Me.Label2.Location = New System.Drawing.Point(12, 9)
+        Me.Label2.Location = New System.Drawing.Point(49, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(296, 36)
         Me.Label2.TabIndex = 86
@@ -190,7 +205,7 @@ Partial Class frmConsNiveles
         Me.BtnSalir.ForeColor = System.Drawing.Color.White
         Me.BtnSalir.Image = CType(resources.GetObject("BtnSalir.Image"), System.Drawing.Image)
         Me.BtnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnSalir.Location = New System.Drawing.Point(338, 67)
+        Me.BtnSalir.Location = New System.Drawing.Point(375, 67)
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnSalir.Size = New System.Drawing.Size(65, 56)
@@ -202,7 +217,7 @@ Partial Class frmConsNiveles
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox2.Location = New System.Drawing.Point(324, 56)
+        Me.PictureBox2.Location = New System.Drawing.Point(361, 56)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(91, 78)
         Me.PictureBox2.TabIndex = 93
@@ -213,7 +228,7 @@ Partial Class frmConsNiveles
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(470, 343)
+        Me.ClientSize = New System.Drawing.Size(491, 336)
         Me.Controls.Add(Me.BtnSalir)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label2)

@@ -1,6 +1,7 @@
-﻿Public Class frmCodigoDebito
-    Dim importe As Double
-
+﻿'*******************************************************************************
+'* ACTUALIZAR LOS CÓDIGOS PARA DEBITAR A MARTILLEROS Y SOCIEDADES              *
+'*******************************************************************************
+Public Class frmCodigoDebito
     Private Sub frmCodigoDebito_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ConectarMySql()
@@ -63,7 +64,6 @@
             frmMsgBox.ShowDialog()
 
             If frmMsgBox.Tag = "SI" Then
-                'CoddebitoBindingSource.EndEdit()
                 comando = New MySqlCommand("INSERT INTO coddebito (NroCodDeb, DetalleCodDeb, ImporteCodDeb, KgCodDeb, CategCodDeb, TipoRecCodDeb, ObsCodDeb) " _
                                            & "VALUES('" & txtNroCodDeb.Text & "', '" & txtDetalleCodDeb.Text & "', '" & txtImporteCodDeb.Text & "', " _
                                            & " '" & txtKgCodDeb.Text & "', '" & txtCategCodDeb.Text & "', '" & cmbTipoRecCodDeb.Text & "', '" & txtObsCodDeb.Text & "')", conexion)
@@ -81,7 +81,6 @@
         End Try
 
         txtNroCodDeb.Focus()
-        'NivelesBindingSource.AddNew()
         BtnAgregar.Visible = True
         BtnGrabar.Visible = False
         BtnModificar.Visible = True
@@ -112,7 +111,6 @@
         frmMsgBox.ShowDialog()
 
         If frmMsgBox.Tag = "SI" Then
-            'CoddebitoBindingSource.EndEdit()
             comando = New MySqlCommand("UPDATE coddebito SET NroCodDeb = '" & txtNroCodDeb.Text & "', DetalleCodDeb = '" & txtDetalleCodDeb.Text & "', ImporteCodDeb = '" & txtImporteCodDeb.Text & "', " _
                                     & "KgCodDeb = '" & txtKgCodDeb.Text & "', CategCodDeb = '" & txtCategCodDeb.Text & "', TipoRecCodDeb = '" & cmbTipoRecCodDeb.Text & "', ObsCodDeb = '" & txtObsCodDeb.Text & "' " _
                                     & " WHERE id_CodDeb = " & txtId_CodDeb.Text & " AND  NroCodDeb = " & txtNroCodDeb.Text & "", conexion)

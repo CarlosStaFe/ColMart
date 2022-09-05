@@ -1,8 +1,6 @@
 ﻿Public Class frmMatriculados
-
-    'Dim fechajob, fechadb, dd, mm, yyyy, fechaaux, fechavenc As String
     Dim dd, mm, yyyy, fechaaux, fechavenc, estadoant As String
-    Dim pos1, pos2, codigoreal, codigolegal, senial, meses As Integer
+    Dim pos1, pos2, codigoreal, codigolegal, meses As Integer
     Dim fecha1, fecha2 As Date
 
     Private Sub frmMatriculados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -118,6 +116,11 @@
             frmMsgBox.ShowDialog()
 
             If frmMsgBox.Tag = "SI" Then
+                txtDocFiadorMatri.Text = ""
+                txtFiadorMatri.Text = ""
+                txtCalleFiadorMatri.Text = ""
+                txtTelFiadorMatri.Text = ""
+                txtFianzaMatri.Text = "1900/01/01"
                 InvertirFecha()
                 MatriculadosBindingSource.EndEdit()
                 MatriculadosTableAdapter.Update(DbcolmartDataSet.matriculados)
@@ -167,7 +170,8 @@
                                     & "FijoRealMatri = '" & txtFijoRealMatri.Text & "', CalleLegalMatri = '" & txtCalleLegalMatri.Text & "', CPLegalMatri = '" & txtCPLegalMatri.Text & "', " _
                                     & "CeluLegalMatri = '" & txtCeluLegalMatri.Text & "', FijoLegalMatri = '" & txtFijoLegalMatri.Text & "', FianzaMatri = '" & txtFianzaMatri.Text & "', " _
                                     & "DocFiadorMatri = '" & txtDocFiadorMatri.Text & "', FiadorMatri = '" & txtFiadorMatri.Text & "', CalleFiadorMatri = '" & txtCalleFiadorMatri.Text & "', " _
-                                    & "TelFiadorMatri = '" & txtTelFiadorMatri.Text & "', ObsMatri = '" & txtObsMatri.Text & "' WHERE id_Matri = " & txtId_Matri.Text & " AND  NroMatri = " & txtNroMatri.Text & "", conexion)
+                                    & "TelFiadorMatri = '" & txtTelFiadorMatri.Text & "', ObsMatri = '" & txtObsMatri.Text & "', TomoMatri = '" & txtTomoMatri.Text & "', FolioMatri = '" & txtFolioMatri.Text & "' " _
+                                    & "WHERE id_Matri = " & txtId_Matri.Text & " And  NroMatri = " & txtNroMatri.Text & "", conexion)
             comando.ExecuteNonQuery()
             CorregirBoletas()
             detmsg = "Registro actualizado...!!!"
@@ -203,7 +207,7 @@
         frmMsgBox.ShowDialog()
 
         If frmMsgBox.Tag = "SI" Then
-            comando = New MySqlCommand(("DELETE FROM matriculados WHERE id_Matri = " & txtId_Matri.Text & " AND  NroMatri = " & txtNroMatri.Text & ""), conexion)
+            comando = New MySqlCommand(("DELETE FROM matriculados WHERE id_Matri = " & txtId_Matri.Text & " And  NroMatri = " & txtNroMatri.Text & ""), conexion)
             comando.ExecuteNonQuery()
             detmsg = "Registro eliminado...!!!"
             tipomsg = "ok"
@@ -479,6 +483,8 @@
         txtFiadorMatri.Text = CStr(row("FiadorMatri"))
         txtCalleFiadorMatri.Text = CStr(row("CalleFiadorMatri"))
         txtObsMatri.Text = CStr(row("ObsMatri"))
+        txtTomoMatri.Text = CStr(row("TomoMatri"))
+        txtFolioMatri.Text = CStr(row("FolioMatri"))
 
         MostrarFecha()
 
@@ -594,7 +600,6 @@
         Else
             lblVenceFianza.ForeColor = Color.Lime
         End If
-        txtVenceFianza.Show()
 
     End Sub
 
@@ -821,8 +826,8 @@
 
         If estadoant <> cmbEstadoMatri.Text Then
             txtFecEstadoMatri.Text = Today.Date.ToString("dd/MM/yyyy")
-            'fechacaja = Today.Date.ToString("yyyy-MM-dd")
         End If
+
     End Sub
 
 End Class

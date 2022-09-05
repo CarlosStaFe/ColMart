@@ -29,8 +29,8 @@ Partial Class frmCodigoDebito
         Dim CategCodDebLabel As System.Windows.Forms.Label
         Dim ObsCodDebLabel As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCodigoDebito))
         Dim Label3 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCodigoDebito))
         Me.DbcolmartDataSet = New ColMart.dbcolmartDataSet()
         Me.CoddebitoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CoddebitoTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.coddebitoTableAdapter()
@@ -95,7 +95,7 @@ Partial Class frmCodigoDebito
         NroCodDebLabel.AutoSize = True
         NroCodDebLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         NroCodDebLabel.ForeColor = System.Drawing.Color.White
-        NroCodDebLabel.Location = New System.Drawing.Point(44, 62)
+        NroCodDebLabel.Location = New System.Drawing.Point(74, 62)
         NroCodDebLabel.Name = "NroCodDebLabel"
         NroCodDebLabel.Size = New System.Drawing.Size(62, 17)
         NroCodDebLabel.TabIndex = 0
@@ -106,7 +106,7 @@ Partial Class frmCodigoDebito
         DetalleCodDebLabel.AutoSize = True
         DetalleCodDebLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DetalleCodDebLabel.ForeColor = System.Drawing.Color.White
-        DetalleCodDebLabel.Location = New System.Drawing.Point(48, 91)
+        DetalleCodDebLabel.Location = New System.Drawing.Point(78, 91)
         DetalleCodDebLabel.Name = "DetalleCodDebLabel"
         DetalleCodDebLabel.Size = New System.Drawing.Size(58, 17)
         DetalleCodDebLabel.TabIndex = 3
@@ -117,7 +117,7 @@ Partial Class frmCodigoDebito
         ImporteCodDebLabel.AutoSize = True
         ImporteCodDebLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         ImporteCodDebLabel.ForeColor = System.Drawing.Color.White
-        ImporteCodDebLabel.Location = New System.Drawing.Point(43, 120)
+        ImporteCodDebLabel.Location = New System.Drawing.Point(73, 120)
         ImporteCodDebLabel.Name = "ImporteCodDebLabel"
         ImporteCodDebLabel.Size = New System.Drawing.Size(63, 17)
         ImporteCodDebLabel.TabIndex = 5
@@ -128,7 +128,7 @@ Partial Class frmCodigoDebito
         CategCodDebLabel.AutoSize = True
         CategCodDebLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         CategCodDebLabel.ForeColor = System.Drawing.Color.White
-        CategCodDebLabel.Location = New System.Drawing.Point(27, 150)
+        CategCodDebLabel.Location = New System.Drawing.Point(57, 150)
         CategCodDebLabel.Name = "CategCodDebLabel"
         CategCodDebLabel.Size = New System.Drawing.Size(79, 17)
         CategCodDebLabel.TabIndex = 7
@@ -139,7 +139,7 @@ Partial Class frmCodigoDebito
         ObsCodDebLabel.AutoSize = True
         ObsCodDebLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         ObsCodDebLabel.ForeColor = System.Drawing.Color.White
-        ObsCodDebLabel.Location = New System.Drawing.Point(12, 179)
+        ObsCodDebLabel.Location = New System.Drawing.Point(42, 179)
         ObsCodDebLabel.Name = "ObsCodDebLabel"
         ObsCodDebLabel.Size = New System.Drawing.Size(94, 17)
         ObsCodDebLabel.TabIndex = 9
@@ -150,11 +150,22 @@ Partial Class frmCodigoDebito
         Label2.AutoSize = True
         Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label2.ForeColor = System.Drawing.Color.White
-        Label2.Location = New System.Drawing.Point(231, 120)
+        Label2.Location = New System.Drawing.Point(261, 120)
         Label2.Name = "Label2"
         Label2.Size = New System.Drawing.Size(40, 17)
         Label2.TabIndex = 88
         Label2.Text = "Kilos:"
+        '
+        'Label3
+        '
+        Label3.AutoSize = True
+        Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label3.ForeColor = System.Drawing.Color.White
+        Label3.Location = New System.Drawing.Point(384, 150)
+        Label3.Name = "Label3"
+        Label3.Size = New System.Drawing.Size(87, 17)
+        Label3.TabIndex = 90
+        Label3.Text = "Tipo Recibo:"
         '
         'DbcolmartDataSet
         '
@@ -175,18 +186,27 @@ Partial Class frmCodigoDebito
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.bibliotecaTableAdapter = Nothing
         Me.TableAdapterManager.boletasTableAdapter = Nothing
+        Me.TableAdapterManager.botonesTableAdapter = Nothing
+        Me.TableAdapterManager.botonuserTableAdapter = Nothing
         Me.TableAdapterManager.cajamayorTableAdapter = Nothing
         Me.TableAdapterManager.cajaTableAdapter = Nothing
+        Me.TableAdapterManager.categivaTableAdapter = Nothing
         Me.TableAdapterManager.coddebitoTableAdapter = Me.CoddebitoTableAdapter
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
+        Me.TableAdapterManager.colegiadosTableAdapter = Nothing
         Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
+        Me.TableAdapterManager.cptosgastosTableAdapter = Nothing
+        Me.TableAdapterManager.ctacteproTableAdapter = Nothing
         Me.TableAdapterManager.ctasctesTableAdapter = Nothing
         Me.TableAdapterManager.debehaberTableAdapter = Nothing
         Me.TableAdapterManager.debitomatriTableAdapter = Nothing
         Me.TableAdapterManager.debitosocTableAdapter = Nothing
         Me.TableAdapterManager.departamentoTableAdapter = Nothing
         Me.TableAdapterManager.depositosTableAdapter = Nothing
+        Me.TableAdapterManager.detallecpraTableAdapter = Nothing
+        Me.TableAdapterManager.fianzasTableAdapter = Nothing
+        Me.TableAdapterManager.impctacteTableAdapter = Nothing
         Me.TableAdapterManager.juzgadosTableAdapter = Nothing
         Me.TableAdapterManager.listaoficioTableAdapter = Nothing
         Me.TableAdapterManager.localidadesTableAdapter = Nothing
@@ -198,6 +218,7 @@ Partial Class frmCodigoDebito
         Me.TableAdapterManager.padronTableAdapter = Nothing
         Me.TableAdapterManager.proveedoresTableAdapter = Nothing
         Me.TableAdapterManager.provinciaTableAdapter = Nothing
+        Me.TableAdapterManager.reciboTableAdapter = Nothing
         Me.TableAdapterManager.renglonesTableAdapter = Nothing
         Me.TableAdapterManager.saldomatTableAdapter = Nothing
         Me.TableAdapterManager.saldosocTableAdapter = Nothing
@@ -205,6 +226,7 @@ Partial Class frmCodigoDebito
         Me.TableAdapterManager.tribunalesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = ColMart.dbcolmartDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usuariosTableAdapter = Nothing
+        Me.TableAdapterManager.ventasTableAdapter = Nothing
         '
         'CoddebitoBindingNavigator
         '
@@ -328,7 +350,7 @@ Partial Class frmCodigoDebito
         Me.txtId_CodDeb.Enabled = False
         Me.txtId_CodDeb.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtId_CodDeb.ForeColor = System.Drawing.Color.White
-        Me.txtId_CodDeb.Location = New System.Drawing.Point(180, 63)
+        Me.txtId_CodDeb.Location = New System.Drawing.Point(210, 63)
         Me.txtId_CodDeb.Name = "txtId_CodDeb"
         Me.txtId_CodDeb.Size = New System.Drawing.Size(41, 16)
         Me.txtId_CodDeb.TabIndex = 1
@@ -340,7 +362,7 @@ Partial Class frmCodigoDebito
         Me.txtNroCodDeb.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CoddebitoBindingSource, "NroCodDeb", True))
         Me.txtNroCodDeb.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNroCodDeb.ForeColor = System.Drawing.Color.White
-        Me.txtNroCodDeb.Location = New System.Drawing.Point(113, 59)
+        Me.txtNroCodDeb.Location = New System.Drawing.Point(143, 59)
         Me.txtNroCodDeb.Name = "txtNroCodDeb"
         Me.txtNroCodDeb.Size = New System.Drawing.Size(61, 23)
         Me.txtNroCodDeb.TabIndex = 0
@@ -352,7 +374,7 @@ Partial Class frmCodigoDebito
         Me.txtDetalleCodDeb.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CoddebitoBindingSource, "DetalleCodDeb", True))
         Me.txtDetalleCodDeb.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDetalleCodDeb.ForeColor = System.Drawing.Color.White
-        Me.txtDetalleCodDeb.Location = New System.Drawing.Point(113, 88)
+        Me.txtDetalleCodDeb.Location = New System.Drawing.Point(143, 88)
         Me.txtDetalleCodDeb.MaxLength = 40
         Me.txtDetalleCodDeb.Name = "txtDetalleCodDeb"
         Me.txtDetalleCodDeb.Size = New System.Drawing.Size(511, 23)
@@ -365,7 +387,7 @@ Partial Class frmCodigoDebito
         Me.txtObsCodDeb.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CoddebitoBindingSource, "ObsCodDeb", True))
         Me.txtObsCodDeb.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtObsCodDeb.ForeColor = System.Drawing.Color.White
-        Me.txtObsCodDeb.Location = New System.Drawing.Point(113, 176)
+        Me.txtObsCodDeb.Location = New System.Drawing.Point(143, 176)
         Me.txtObsCodDeb.Name = "txtObsCodDeb"
         Me.txtObsCodDeb.Size = New System.Drawing.Size(511, 23)
         Me.txtObsCodDeb.TabIndex = 7
@@ -379,7 +401,7 @@ Partial Class frmCodigoDebito
         Me.txtCategCodDeb.ForeColor = System.Drawing.Color.White
         Me.txtCategCodDeb.FormattingEnabled = True
         Me.txtCategCodDeb.Items.AddRange(New Object() {"OS - Obra Social", "DM - Débito Mensual", "DS - Débito Sociedades", "DU - Débito Único"})
-        Me.txtCategCodDeb.Location = New System.Drawing.Point(113, 146)
+        Me.txtCategCodDeb.Location = New System.Drawing.Point(143, 146)
         Me.txtCategCodDeb.Name = "txtCategCodDeb"
         Me.txtCategCodDeb.Size = New System.Drawing.Size(176, 25)
         Me.txtCategCodDeb.TabIndex = 5
@@ -392,7 +414,7 @@ Partial Class frmCodigoDebito
         Me.BtnUltimo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnUltimo.ForeColor = System.Drawing.Color.White
         Me.BtnUltimo.Image = CType(resources.GetObject("BtnUltimo.Image"), System.Drawing.Image)
-        Me.BtnUltimo.Location = New System.Drawing.Point(582, 224)
+        Me.BtnUltimo.Location = New System.Drawing.Point(612, 224)
         Me.BtnUltimo.Name = "BtnUltimo"
         Me.BtnUltimo.Size = New System.Drawing.Size(34, 51)
         Me.BtnUltimo.TabIndex = 17
@@ -407,7 +429,7 @@ Partial Class frmCodigoDebito
         Me.BtnPrimer.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnPrimer.ForeColor = System.Drawing.Color.White
         Me.BtnPrimer.Image = CType(resources.GetObject("BtnPrimer.Image"), System.Drawing.Image)
-        Me.BtnPrimer.Location = New System.Drawing.Point(462, 224)
+        Me.BtnPrimer.Location = New System.Drawing.Point(492, 224)
         Me.BtnPrimer.Name = "BtnPrimer"
         Me.BtnPrimer.Size = New System.Drawing.Size(34, 51)
         Me.BtnPrimer.TabIndex = 14
@@ -422,7 +444,7 @@ Partial Class frmCodigoDebito
         Me.BtnSiguiente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSiguiente.ForeColor = System.Drawing.Color.White
         Me.BtnSiguiente.Image = CType(resources.GetObject("BtnSiguiente.Image"), System.Drawing.Image)
-        Me.BtnSiguiente.Location = New System.Drawing.Point(542, 224)
+        Me.BtnSiguiente.Location = New System.Drawing.Point(572, 224)
         Me.BtnSiguiente.Name = "BtnSiguiente"
         Me.BtnSiguiente.Size = New System.Drawing.Size(34, 51)
         Me.BtnSiguiente.TabIndex = 16
@@ -437,7 +459,7 @@ Partial Class frmCodigoDebito
         Me.BtnAnterior.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAnterior.ForeColor = System.Drawing.Color.White
         Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
-        Me.BtnAnterior.Location = New System.Drawing.Point(502, 224)
+        Me.BtnAnterior.Location = New System.Drawing.Point(532, 224)
         Me.BtnAnterior.Name = "BtnAnterior"
         Me.BtnAnterior.Size = New System.Drawing.Size(34, 51)
         Me.BtnAnterior.TabIndex = 15
@@ -453,7 +475,7 @@ Partial Class frmCodigoDebito
         Me.BtnActualizar.ForeColor = System.Drawing.Color.White
         Me.BtnActualizar.Image = CType(resources.GetObject("BtnActualizar.Image"), System.Drawing.Image)
         Me.BtnActualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnActualizar.Location = New System.Drawing.Point(351, 224)
+        Me.BtnActualizar.Location = New System.Drawing.Point(381, 224)
         Me.BtnActualizar.Name = "BtnActualizar"
         Me.BtnActualizar.Size = New System.Drawing.Size(85, 51)
         Me.BtnActualizar.TabIndex = 13
@@ -470,7 +492,7 @@ Partial Class frmCodigoDebito
         Me.BtnGrabar.ForeColor = System.Drawing.Color.White
         Me.BtnGrabar.Image = CType(resources.GetObject("BtnGrabar.Image"), System.Drawing.Image)
         Me.BtnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnGrabar.Location = New System.Drawing.Point(81, 224)
+        Me.BtnGrabar.Location = New System.Drawing.Point(111, 224)
         Me.BtnGrabar.Name = "BtnGrabar"
         Me.BtnGrabar.Size = New System.Drawing.Size(64, 51)
         Me.BtnGrabar.TabIndex = 9
@@ -487,7 +509,7 @@ Partial Class frmCodigoDebito
         Me.BtnSalir.ForeColor = System.Drawing.Color.White
         Me.BtnSalir.Image = CType(resources.GetObject("BtnSalir.Image"), System.Drawing.Image)
         Me.BtnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnSalir.Location = New System.Drawing.Point(660, 224)
+        Me.BtnSalir.Location = New System.Drawing.Point(690, 224)
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.Size = New System.Drawing.Size(52, 51)
         Me.BtnSalir.TabIndex = 18
@@ -504,7 +526,7 @@ Partial Class frmCodigoDebito
         Me.BtnModificar.ForeColor = System.Drawing.Color.White
         Me.BtnModificar.Image = CType(resources.GetObject("BtnModificar.Image"), System.Drawing.Image)
         Me.BtnModificar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnModificar.Location = New System.Drawing.Point(145, 224)
+        Me.BtnModificar.Location = New System.Drawing.Point(175, 224)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(78, 51)
         Me.BtnModificar.TabIndex = 10
@@ -521,7 +543,7 @@ Partial Class frmCodigoDebito
         Me.BtnEliminar.ForeColor = System.Drawing.Color.White
         Me.BtnEliminar.Image = CType(resources.GetObject("BtnEliminar.Image"), System.Drawing.Image)
         Me.BtnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnEliminar.Location = New System.Drawing.Point(223, 224)
+        Me.BtnEliminar.Location = New System.Drawing.Point(253, 224)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(71, 51)
         Me.BtnEliminar.TabIndex = 11
@@ -538,7 +560,7 @@ Partial Class frmCodigoDebito
         Me.BtnBuscar.ForeColor = System.Drawing.Color.White
         Me.BtnBuscar.Image = CType(resources.GetObject("BtnBuscar.Image"), System.Drawing.Image)
         Me.BtnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnBuscar.Location = New System.Drawing.Point(294, 224)
+        Me.BtnBuscar.Location = New System.Drawing.Point(324, 224)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.Size = New System.Drawing.Size(57, 51)
         Me.BtnBuscar.TabIndex = 12
@@ -555,7 +577,7 @@ Partial Class frmCodigoDebito
         Me.BtnAgregar.ForeColor = System.Drawing.Color.White
         Me.BtnAgregar.Image = CType(resources.GetObject("BtnAgregar.Image"), System.Drawing.Image)
         Me.BtnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnAgregar.Location = New System.Drawing.Point(16, 224)
+        Me.BtnAgregar.Location = New System.Drawing.Point(46, 224)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.Size = New System.Drawing.Size(65, 51)
         Me.BtnAgregar.TabIndex = 8
@@ -566,7 +588,7 @@ Partial Class frmCodigoDebito
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox2.Location = New System.Drawing.Point(9, 215)
+        Me.PictureBox2.Location = New System.Drawing.Point(39, 215)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(432, 69)
         Me.PictureBox2.TabIndex = 23
@@ -579,7 +601,7 @@ Partial Class frmCodigoDebito
         Me.txtImporteCodDeb.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CoddebitoBindingSource, "ImporteCodDeb", True))
         Me.txtImporteCodDeb.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtImporteCodDeb.ForeColor = System.Drawing.Color.White
-        Me.txtImporteCodDeb.Location = New System.Drawing.Point(113, 117)
+        Me.txtImporteCodDeb.Location = New System.Drawing.Point(143, 117)
         Me.txtImporteCodDeb.Name = "txtImporteCodDeb"
         Me.txtImporteCodDeb.Size = New System.Drawing.Size(100, 23)
         Me.txtImporteCodDeb.TabIndex = 3
@@ -588,7 +610,7 @@ Partial Class frmCodigoDebito
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(447, 215)
+        Me.PictureBox1.Location = New System.Drawing.Point(477, 215)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(192, 69)
         Me.PictureBox1.TabIndex = 24
@@ -597,7 +619,7 @@ Partial Class frmCodigoDebito
         'PictureBox3
         '
         Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox3.Location = New System.Drawing.Point(645, 215)
+        Me.PictureBox3.Location = New System.Drawing.Point(675, 215)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(81, 69)
         Me.PictureBox3.TabIndex = 25
@@ -608,7 +630,7 @@ Partial Class frmCodigoDebito
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Green
-        Me.Label1.Location = New System.Drawing.Point(109, 9)
+        Me.Label1.Location = New System.Drawing.Point(139, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(529, 36)
         Me.Label1.TabIndex = 85
@@ -618,7 +640,7 @@ Partial Class frmCodigoDebito
         '
         Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox4.DataBindings.Add(New System.Windows.Forms.Binding("Image", Me.CoddebitoBindingSource, "KgCodDeb", True))
-        Me.PictureBox4.Location = New System.Drawing.Point(9, 51)
+        Me.PictureBox4.Location = New System.Drawing.Point(39, 51)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(629, 157)
         Me.PictureBox4.TabIndex = 86
@@ -631,7 +653,7 @@ Partial Class frmCodigoDebito
         Me.txtKgCodDeb.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CoddebitoBindingSource, "KgCodDeb", True))
         Me.txtKgCodDeb.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtKgCodDeb.ForeColor = System.Drawing.Color.White
-        Me.txtKgCodDeb.Location = New System.Drawing.Point(277, 117)
+        Me.txtKgCodDeb.Location = New System.Drawing.Point(307, 117)
         Me.txtKgCodDeb.Name = "txtKgCodDeb"
         Me.txtKgCodDeb.Size = New System.Drawing.Size(100, 23)
         Me.txtKgCodDeb.TabIndex = 4
@@ -640,17 +662,6 @@ Partial Class frmCodigoDebito
         'ToolTipMsg
         '
         Me.ToolTipMsg.IsBalloon = True
-        '
-        'Label3
-        '
-        Label3.AutoSize = True
-        Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label3.ForeColor = System.Drawing.Color.White
-        Label3.Location = New System.Drawing.Point(354, 150)
-        Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(87, 17)
-        Label3.TabIndex = 90
-        Label3.Text = "Tipo Recibo:"
         '
         'cmbTipoRecCodDeb
         '
@@ -661,7 +672,7 @@ Partial Class frmCodigoDebito
         Me.cmbTipoRecCodDeb.ForeColor = System.Drawing.Color.White
         Me.cmbTipoRecCodDeb.FormattingEnabled = True
         Me.cmbTipoRecCodDeb.Items.AddRange(New Object() {"BOL", "REC"})
-        Me.cmbTipoRecCodDeb.Location = New System.Drawing.Point(447, 146)
+        Me.cmbTipoRecCodDeb.Location = New System.Drawing.Point(477, 146)
         Me.cmbTipoRecCodDeb.Name = "cmbTipoRecCodDeb"
         Me.cmbTipoRecCodDeb.Size = New System.Drawing.Size(71, 25)
         Me.cmbTipoRecCodDeb.TabIndex = 6

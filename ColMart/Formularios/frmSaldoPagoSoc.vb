@@ -1,4 +1,7 @@
-﻿Public Class frmSaldoPagoSoc
+﻿'*******************************************************************************
+'* LISTADO DE SALDOS Y PAGOS DE SOCIEDADES                                     *
+'*******************************************************************************
+Public Class frmSaldoPagoSoc
     Dim titulo As String
     Private da As New MySqlDataAdapter
 

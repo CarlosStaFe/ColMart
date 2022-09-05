@@ -36,12 +36,13 @@ Partial Class frmListaOficio
         Dim DomicilioLisLabel As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
         Dim FecJurMatriLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmListaOficio))
+        Dim Label3 As System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtMatricula = New System.Windows.Forms.TextBox()
         Me.txtApelNomb = New System.Windows.Forms.TextBox()
@@ -57,8 +58,6 @@ Partial Class frmListaOficio
         Me.cbxTasaciones = New System.Windows.Forms.CheckBox()
         Me.cbxConcursales = New System.Windows.Forms.CheckBox()
         Me.txtDomLocal = New System.Windows.Forms.TextBox()
-        Me.txtLocalidad = New System.Windows.Forms.TextBox()
-        Me.txtProvincia = New System.Windows.Forms.TextBox()
         Me.cmbTribunal = New System.Windows.Forms.ComboBox()
         Me.dgvListaOficio = New System.Windows.Forms.DataGridView()
         Me.IdLisDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -88,6 +87,15 @@ Partial Class frmListaOficio
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ToolTipMsg = New System.Windows.Forms.ToolTip(Me.components)
+        Me.txtLocal = New System.Windows.Forms.TextBox()
+        Me.txtDpto = New System.Windows.Forms.TextBox()
+        Me.txtProv = New System.Windows.Forms.TextBox()
+        Me.lblProvReal = New System.Windows.Forms.Label()
+        Me.lblDptoReal = New System.Windows.Forms.Label()
+        Me.lblLocalReal = New System.Windows.Forms.Label()
+        Me.lblVenceFianza = New System.Windows.Forms.Label()
+        Me.txtFianza = New System.Windows.Forms.TextBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         NroMatriLabel = New System.Windows.Forms.Label()
         ApelNombMatriLabel = New System.Windows.Forms.Label()
         CuitMatriLabel = New System.Windows.Forms.Label()
@@ -101,11 +109,13 @@ Partial Class frmListaOficio
         DomicilioLisLabel = New System.Windows.Forms.Label()
         Label2 = New System.Windows.Forms.Label()
         FecJurMatriLabel = New System.Windows.Forms.Label()
+        Label3 = New System.Windows.Forms.Label()
         CType(Me.dgvListaOficio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ListaoficioBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NroMatriLabel
@@ -242,7 +252,7 @@ Partial Class frmListaOficio
         FecJurMatriLabel.AutoSize = True
         FecJurMatriLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         FecJurMatriLabel.ForeColor = System.Drawing.Color.White
-        FecJurMatriLabel.Location = New System.Drawing.Point(574, 151)
+        FecJurMatriLabel.Location = New System.Drawing.Point(577, 151)
         FecJurMatriLabel.Name = "FecJurMatriLabel"
         FecJurMatriLabel.Size = New System.Drawing.Size(112, 17)
         FecJurMatriLabel.TabIndex = 149
@@ -327,7 +337,7 @@ Partial Class frmListaOficio
         Me.txtEmail.Location = New System.Drawing.Point(146, 177)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(416, 23)
-        Me.txtEmail.TabIndex = 11
+        Me.txtEmail.TabIndex = 12
         '
         'txtCelular
         '
@@ -338,7 +348,7 @@ Partial Class frmListaOficio
         Me.txtCelular.Location = New System.Drawing.Point(395, 148)
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.Size = New System.Drawing.Size(167, 23)
-        Me.txtCelular.TabIndex = 9
+        Me.txtCelular.TabIndex = 10
         '
         'txtTelFijo
         '
@@ -349,7 +359,7 @@ Partial Class frmListaOficio
         Me.txtTelFijo.Location = New System.Drawing.Point(146, 148)
         Me.txtTelFijo.Name = "txtTelFijo"
         Me.txtTelFijo.Size = New System.Drawing.Size(162, 23)
-        Me.txtTelFijo.TabIndex = 8
+        Me.txtTelFijo.TabIndex = 9
         '
         'txtAaaa
         '
@@ -418,30 +428,6 @@ Partial Class frmListaOficio
         Me.txtDomLocal.Size = New System.Drawing.Size(423, 23)
         Me.txtDomLocal.TabIndex = 19
         '
-        'txtLocalidad
-        '
-        Me.txtLocalidad.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.txtLocalidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtLocalidad.Enabled = False
-        Me.txtLocalidad.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLocalidad.ForeColor = System.Drawing.Color.White
-        Me.txtLocalidad.Location = New System.Drawing.Point(225, 119)
-        Me.txtLocalidad.Name = "txtLocalidad"
-        Me.txtLocalidad.Size = New System.Drawing.Size(325, 23)
-        Me.txtLocalidad.TabIndex = 6
-        '
-        'txtProvincia
-        '
-        Me.txtProvincia.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.txtProvincia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtProvincia.Enabled = False
-        Me.txtProvincia.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtProvincia.ForeColor = System.Drawing.Color.White
-        Me.txtProvincia.Location = New System.Drawing.Point(556, 119)
-        Me.txtProvincia.Name = "txtProvincia"
-        Me.txtProvincia.Size = New System.Drawing.Size(329, 23)
-        Me.txtProvincia.TabIndex = 7
-        '
         'cmbTribunal
         '
         Me.cmbTribunal.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
@@ -459,48 +445,48 @@ Partial Class frmListaOficio
         '
         Me.dgvListaOficio.AllowUserToAddRows = False
         Me.dgvListaOficio.AllowUserToDeleteRows = False
-        DataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle31.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvListaOficio.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle31
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvListaOficio.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvListaOficio.AutoGenerateColumns = False
         Me.dgvListaOficio.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.dgvListaOficio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        DataGridViewCellStyle32.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle32.ForeColor = System.Drawing.Color.DarkSalmon
-        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvListaOficio.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle32
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.DarkSalmon
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvListaOficio.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvListaOficio.ColumnHeadersHeight = 30
         Me.dgvListaOficio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvListaOficio.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdLisDataGridViewTextBoxColumn, Me.MatriLisDataGridViewTextBoxColumn, Me.ApelNombLisDataGridViewTextBoxColumn, Me.YyyyLisDataGridViewTextBoxColumn, Me.TribunalLisDataGridViewTextBoxColumn, Me.DistritoLisDataGridViewCheckBoxColumn, Me.CircuitoLisDataGridViewCheckBoxColumn, Me.TasacionesLisDataGridViewCheckBoxColumn, Me.ConcursalesLisDataGridViewCheckBoxColumn, Me.DomicilioLisDataGridViewTextBoxColumn})
         Me.dgvListaOficio.DataSource = Me.ListaoficioBindingSource
-        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle34.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle34.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvListaOficio.DefaultCellStyle = DataGridViewCellStyle34
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvListaOficio.DefaultCellStyle = DataGridViewCellStyle9
         Me.dgvListaOficio.EnableHeadersVisualStyles = False
         Me.dgvListaOficio.GridColor = System.Drawing.Color.White
         Me.dgvListaOficio.Location = New System.Drawing.Point(13, 322)
         Me.dgvListaOficio.Name = "dgvListaOficio"
         Me.dgvListaOficio.ReadOnly = True
         Me.dgvListaOficio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle35.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle35.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvListaOficio.RowHeadersDefaultCellStyle = DataGridViewCellStyle35
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvListaOficio.RowHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvListaOficio.Size = New System.Drawing.Size(1001, 321)
         Me.dgvListaOficio.TabIndex = 103
         '
@@ -547,11 +533,11 @@ Partial Class frmListaOficio
         'DistritoLisDataGridViewCheckBoxColumn
         '
         Me.DistritoLisDataGridViewCheckBoxColumn.DataPropertyName = "DistritoLis"
-        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle33.ForeColor = System.Drawing.Color.Red
-        DataGridViewCellStyle33.NullValue = False
-        Me.DistritoLisDataGridViewCheckBoxColumn.DefaultCellStyle = DataGridViewCellStyle33
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Red
+        DataGridViewCellStyle8.NullValue = False
+        Me.DistritoLisDataGridViewCheckBoxColumn.DefaultCellStyle = DataGridViewCellStyle8
         Me.DistritoLisDataGridViewCheckBoxColumn.HeaderText = "DISTRITO"
         Me.DistritoLisDataGridViewCheckBoxColumn.Name = "DistritoLisDataGridViewCheckBoxColumn"
         Me.DistritoLisDataGridViewCheckBoxColumn.ReadOnly = True
@@ -602,20 +588,41 @@ Partial Class frmListaOficio
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.bibliotecaTableAdapter = Nothing
         Me.TableAdapterManager.boletasTableAdapter = Nothing
+        Me.TableAdapterManager.botonesTableAdapter = Nothing
+        Me.TableAdapterManager.botonuserTableAdapter = Nothing
+        Me.TableAdapterManager.cajamayorTableAdapter = Nothing
         Me.TableAdapterManager.cajaTableAdapter = Nothing
+        Me.TableAdapterManager.categivaTableAdapter = Nothing
         Me.TableAdapterManager.coddebitoTableAdapter = Nothing
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
+        Me.TableAdapterManager.colegiadosTableAdapter = Nothing
+        Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
+        Me.TableAdapterManager.cptosgastosTableAdapter = Nothing
+        Me.TableAdapterManager.ctacteproTableAdapter = Nothing
         Me.TableAdapterManager.ctasctesTableAdapter = Nothing
         Me.TableAdapterManager.debehaberTableAdapter = Nothing
         Me.TableAdapterManager.debitomatriTableAdapter = Nothing
         Me.TableAdapterManager.debitosocTableAdapter = Nothing
+        Me.TableAdapterManager.departamentoTableAdapter = Nothing
+        Me.TableAdapterManager.depositosTableAdapter = Nothing
+        Me.TableAdapterManager.detallecpraTableAdapter = Nothing
+        Me.TableAdapterManager.fianzasTableAdapter = Nothing
+        Me.TableAdapterManager.impctacteTableAdapter = Nothing
+        Me.TableAdapterManager.juzgadosTableAdapter = Nothing
         Me.TableAdapterManager.listaoficioTableAdapter = Me.ListaoficioTableAdapter
         Me.TableAdapterManager.localidadesTableAdapter = Nothing
+        Me.TableAdapterManager.localidadTableAdapter = Nothing
         Me.TableAdapterManager.lotebancoTableAdapter = Nothing
         Me.TableAdapterManager.matriculadosTableAdapter = Nothing
+        Me.TableAdapterManager.mesaentradaTableAdapter = Nothing
         Me.TableAdapterManager.nivelesTableAdapter = Nothing
+        Me.TableAdapterManager.padronTableAdapter = Nothing
+        Me.TableAdapterManager.proveedoresTableAdapter = Nothing
+        Me.TableAdapterManager.provinciaTableAdapter = Nothing
+        Me.TableAdapterManager.reciboTableAdapter = Nothing
         Me.TableAdapterManager.renglonesTableAdapter = Nothing
         Me.TableAdapterManager.saldomatTableAdapter = Nothing
         Me.TableAdapterManager.saldosocTableAdapter = Nothing
@@ -623,6 +630,7 @@ Partial Class frmListaOficio
         Me.TableAdapterManager.tribunalesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = ColMart.dbcolmartDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usuariosTableAdapter = Nothing
+        Me.TableAdapterManager.ventasTableAdapter = Nothing
         '
         'MatriculadosTableAdapter
         '
@@ -645,11 +653,11 @@ Partial Class frmListaOficio
         Me.txtFechaJur.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtFechaJur.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFechaJur.ForeColor = System.Drawing.Color.White
-        Me.txtFechaJur.Location = New System.Drawing.Point(692, 148)
+        Me.txtFechaJur.Location = New System.Drawing.Point(695, 149)
         Me.txtFechaJur.MaxLength = 10
         Me.txtFechaJur.Name = "txtFechaJur"
         Me.txtFechaJur.Size = New System.Drawing.Size(100, 23)
-        Me.txtFechaJur.TabIndex = 10
+        Me.txtFechaJur.TabIndex = 11
         '
         'btnListados
         '
@@ -659,7 +667,7 @@ Partial Class frmListaOficio
         Me.btnListados.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnListados.ForeColor = System.Drawing.Color.White
         Me.btnListados.Image = CType(resources.GetObject("btnListados.Image"), System.Drawing.Image)
-        Me.btnListados.Location = New System.Drawing.Point(934, 61)
+        Me.btnListados.Location = New System.Drawing.Point(933, 62)
         Me.btnListados.Name = "btnListados"
         Me.btnListados.Size = New System.Drawing.Size(71, 55)
         Me.btnListados.TabIndex = 150
@@ -697,12 +705,13 @@ Partial Class frmListaOficio
         Me.BtnGrabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGrabar.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnGrabar.ForeColor = System.Drawing.Color.White
+        Me.BtnGrabar.Image = CType(resources.GetObject("BtnGrabar.Image"), System.Drawing.Image)
         Me.BtnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnGrabar.Location = New System.Drawing.Point(939, 147)
+        Me.BtnGrabar.Location = New System.Drawing.Point(937, 143)
         Me.BtnGrabar.Name = "BtnGrabar"
         Me.BtnGrabar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnGrabar.Size = New System.Drawing.Size(66, 56)
-        Me.BtnGrabar.TabIndex = 12
+        Me.BtnGrabar.TabIndex = 25
         Me.BtnGrabar.Text = "Grabar"
         Me.BtnGrabar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.BtnGrabar.UseVisualStyleBackColor = True
@@ -813,12 +822,132 @@ Partial Class frmListaOficio
         '
         Me.ToolTipMsg.IsBalloon = True
         '
+        'txtLocal
+        '
+        Me.txtLocal.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtLocal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtLocal.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLocal.ForeColor = System.Drawing.Color.White
+        Me.txtLocal.Location = New System.Drawing.Point(1031, 122)
+        Me.txtLocal.Name = "txtLocal"
+        Me.txtLocal.Size = New System.Drawing.Size(31, 23)
+        Me.txtLocal.TabIndex = 151
+        '
+        'txtDpto
+        '
+        Me.txtDpto.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtDpto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDpto.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDpto.ForeColor = System.Drawing.Color.White
+        Me.txtDpto.Location = New System.Drawing.Point(1031, 151)
+        Me.txtDpto.Name = "txtDpto"
+        Me.txtDpto.Size = New System.Drawing.Size(31, 23)
+        Me.txtDpto.TabIndex = 152
+        '
+        'txtProv
+        '
+        Me.txtProv.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtProv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtProv.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtProv.ForeColor = System.Drawing.Color.White
+        Me.txtProv.Location = New System.Drawing.Point(1031, 180)
+        Me.txtProv.Name = "txtProv"
+        Me.txtProv.Size = New System.Drawing.Size(31, 23)
+        Me.txtProv.TabIndex = 153
+        '
+        'lblProvReal
+        '
+        Me.lblProvReal.AutoSize = True
+        Me.lblProvReal.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.lblProvReal.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProvReal.ForeColor = System.Drawing.Color.MediumSpringGreen
+        Me.lblProvReal.Location = New System.Drawing.Point(677, 121)
+        Me.lblProvReal.Name = "lblProvReal"
+        Me.lblProvReal.Size = New System.Drawing.Size(12, 17)
+        Me.lblProvReal.TabIndex = 193
+        Me.lblProvReal.Text = "-"
+        '
+        'lblDptoReal
+        '
+        Me.lblDptoReal.AutoSize = True
+        Me.lblDptoReal.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.lblDptoReal.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDptoReal.ForeColor = System.Drawing.Color.MediumSpringGreen
+        Me.lblDptoReal.Location = New System.Drawing.Point(460, 121)
+        Me.lblDptoReal.Name = "lblDptoReal"
+        Me.lblDptoReal.Size = New System.Drawing.Size(12, 17)
+        Me.lblDptoReal.TabIndex = 192
+        Me.lblDptoReal.Text = "-"
+        '
+        'lblLocalReal
+        '
+        Me.lblLocalReal.AutoSize = True
+        Me.lblLocalReal.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.lblLocalReal.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLocalReal.ForeColor = System.Drawing.Color.MediumSpringGreen
+        Me.lblLocalReal.Location = New System.Drawing.Point(225, 122)
+        Me.lblLocalReal.Name = "lblLocalReal"
+        Me.lblLocalReal.Size = New System.Drawing.Size(12, 17)
+        Me.lblLocalReal.TabIndex = 191
+        Me.lblLocalReal.Text = "-"
+        '
+        'Label3
+        '
+        Label3.AutoSize = True
+        Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label3.ForeColor = System.Drawing.Color.White
+        Label3.Location = New System.Drawing.Point(593, 179)
+        Label3.Name = "Label3"
+        Label3.Size = New System.Drawing.Size(96, 17)
+        Label3.TabIndex = 194
+        Label3.Text = "Fecha Fianza:"
+        '
+        'lblVenceFianza
+        '
+        Me.lblVenceFianza.AutoSize = True
+        Me.lblVenceFianza.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVenceFianza.ForeColor = System.Drawing.Color.Lime
+        Me.lblVenceFianza.Location = New System.Drawing.Point(695, 176)
+        Me.lblVenceFianza.Name = "lblVenceFianza"
+        Me.lblVenceFianza.Size = New System.Drawing.Size(16, 19)
+        Me.lblVenceFianza.TabIndex = 195
+        Me.lblVenceFianza.Text = "-"
+        '
+        'txtFianza
+        '
+        Me.txtFianza.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtFianza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtFianza.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFianza.ForeColor = System.Drawing.Color.White
+        Me.txtFianza.Location = New System.Drawing.Point(1031, 209)
+        Me.txtFianza.Name = "txtFianza"
+        Me.txtFianza.Size = New System.Drawing.Size(31, 23)
+        Me.txtFianza.TabIndex = 196
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Location = New System.Drawing.Point(1021, 90)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(53, 159)
+        Me.PictureBox2.TabIndex = 197
+        Me.PictureBox2.TabStop = False
+        '
         'frmListaOficio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1082, 655)
+        Me.ClientSize = New System.Drawing.Size(1091, 655)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.txtFianza)
+        Me.Controls.Add(Me.lblVenceFianza)
+        Me.Controls.Add(Label3)
+        Me.Controls.Add(Me.lblProvReal)
+        Me.Controls.Add(Me.lblDptoReal)
+        Me.Controls.Add(Me.lblLocalReal)
+        Me.Controls.Add(Me.txtProv)
+        Me.Controls.Add(Me.txtDpto)
+        Me.Controls.Add(Me.txtLocal)
         Me.Controls.Add(Me.btnListados)
         Me.Controls.Add(Me.txtFechaJur)
         Me.Controls.Add(FecJurMatriLabel)
@@ -832,8 +961,6 @@ Partial Class frmListaOficio
         Me.Controls.Add(Me.BtnAgregar)
         Me.Controls.Add(Me.dgvListaOficio)
         Me.Controls.Add(Me.cmbTribunal)
-        Me.Controls.Add(Me.txtProvincia)
-        Me.Controls.Add(Me.txtLocalidad)
         Me.Controls.Add(DomicilioLisLabel)
         Me.Controls.Add(Me.txtDomLocal)
         Me.Controls.Add(Me.cbxConcursales)
@@ -871,6 +998,7 @@ Partial Class frmListaOficio
         CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -895,8 +1023,6 @@ Partial Class frmListaOficio
     Friend WithEvents cbxTasaciones As CheckBox
     Friend WithEvents cbxConcursales As CheckBox
     Friend WithEvents txtDomLocal As TextBox
-    Friend WithEvents txtLocalidad As TextBox
-    Friend WithEvents txtProvincia As TextBox
     Friend WithEvents cmbTribunal As ComboBox
     Friend WithEvents dgvListaOficio As DataGridView
     Friend WithEvents BtnLimpiar As Button
@@ -922,4 +1048,13 @@ Partial Class frmListaOficio
     Friend WithEvents ConcursalesLisDataGridViewCheckBoxColumn As DataGridViewCheckBoxColumn
     Friend WithEvents DomicilioLisDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ToolTipMsg As ToolTip
+    Friend WithEvents txtLocal As TextBox
+    Friend WithEvents txtDpto As TextBox
+    Friend WithEvents txtProv As TextBox
+    Friend WithEvents lblProvReal As Label
+    Friend WithEvents lblDptoReal As Label
+    Friend WithEvents lblLocalReal As Label
+    Friend WithEvents lblVenceFianza As Label
+    Friend WithEvents txtFianza As TextBox
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

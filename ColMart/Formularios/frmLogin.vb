@@ -1,3 +1,6 @@
+'*******************************************************************************
+'* PANTALLA DE LOGIN INICIAL DEL SISTEMA                                       *
+'*******************************************************************************
 Public Class frmLogin
     Dim Usuario As String
     Dim Clave As String

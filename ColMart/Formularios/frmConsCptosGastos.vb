@@ -1,4 +1,7 @@
-﻿Public Class frmConsCptosGastos
+﻿'*******************************************************************************
+'* CONSULTA DE CONCEPTOS DE GASTOS PARA LA CARGA DE COMPRAS                    *
+'*******************************************************************************
+Public Class frmConsCptosGastos
     Private Sub frmConsCptosGastos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         CptosgastosTableAdapter.Fill(DbcolmartDataSet.cptosgastos)
@@ -50,4 +53,5 @@
         ToolTipMsg.ToolTipIcon = ToolTipIcon.Info
 
     End Sub
+
 End Class

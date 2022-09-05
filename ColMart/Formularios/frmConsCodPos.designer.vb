@@ -46,7 +46,7 @@ Partial Class frmConsCodPos
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(86, 63)
+        Me.Label1.Location = New System.Drawing.Point(110, 63)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(77, 17)
         Me.Label1.TabIndex = 0
@@ -59,7 +59,7 @@ Partial Class frmConsCodPos
         Me.txtLocalidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtLocalidad.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLocalidad.ForeColor = System.Drawing.Color.White
-        Me.txtLocalidad.Location = New System.Drawing.Point(169, 60)
+        Me.txtLocalidad.Location = New System.Drawing.Point(193, 60)
         Me.txtLocalidad.Name = "txtLocalidad"
         Me.txtLocalidad.Size = New System.Drawing.Size(276, 23)
         Me.txtLocalidad.TabIndex = 1
@@ -96,7 +96,7 @@ Partial Class frmConsCodPos
         Me.dgvCodpostal.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvCodpostal.EnableHeadersVisualStyles = False
         Me.dgvCodpostal.GridColor = System.Drawing.Color.White
-        Me.dgvCodpostal.Location = New System.Drawing.Point(10, 99)
+        Me.dgvCodpostal.Location = New System.Drawing.Point(34, 99)
         Me.dgvCodpostal.Name = "dgvCodpostal"
         Me.dgvCodpostal.ReadOnly = True
         Me.dgvCodpostal.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -108,7 +108,7 @@ Partial Class frmConsCodPos
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvCodpostal.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvCodpostal.Size = New System.Drawing.Size(544, 275)
+        Me.dgvCodpostal.Size = New System.Drawing.Size(544, 404)
         Me.dgvCodpostal.TabIndex = 3
         '
         'Label2
@@ -116,7 +116,7 @@ Partial Class frmConsCodPos
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(19, 381)
+        Me.Label2.Location = New System.Drawing.Point(43, 506)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(414, 19)
         Me.Label2.TabIndex = 6
@@ -127,7 +127,7 @@ Partial Class frmConsCodPos
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Green
-        Me.Label3.Location = New System.Drawing.Point(54, 9)
+        Me.Label3.Location = New System.Drawing.Point(78, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(437, 36)
         Me.Label3.TabIndex = 86
@@ -136,7 +136,7 @@ Partial Class frmConsCodPos
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(10, 52)
+        Me.PictureBox1.Location = New System.Drawing.Point(34, 52)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(544, 39)
         Me.PictureBox1.TabIndex = 87
@@ -153,7 +153,7 @@ Partial Class frmConsCodPos
         Me.BtnSalir.ForeColor = System.Drawing.Color.White
         Me.BtnSalir.Image = CType(resources.GetObject("BtnSalir.Image"), System.Drawing.Image)
         Me.BtnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnSalir.Location = New System.Drawing.Point(575, 58)
+        Me.BtnSalir.Location = New System.Drawing.Point(599, 58)
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnSalir.Size = New System.Drawing.Size(57, 56)
@@ -165,7 +165,7 @@ Partial Class frmConsCodPos
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox2.Location = New System.Drawing.Point(560, 52)
+        Me.PictureBox2.Location = New System.Drawing.Point(584, 52)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(88, 69)
         Me.PictureBox2.TabIndex = 91
@@ -180,7 +180,7 @@ Partial Class frmConsCodPos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(806, 479)
+        Me.ClientSize = New System.Drawing.Size(806, 569)
         Me.Controls.Add(Me.BtnSalir)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label3)

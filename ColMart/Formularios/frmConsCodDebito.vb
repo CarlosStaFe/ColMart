@@ -1,8 +1,10 @@
-﻿Public Class frmConsCodDebito
+﻿'*******************************************************************************
+'* CONSULTA DE LOS CÓDOGOS PARA DEBITAR                                        *
+'*******************************************************************************
+Public Class frmConsCodDebito
     Private Sub frmConsCodDebito_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         CoddebitoTableAdapter.Fill(DbcolmartDataSet.coddebito)
-
         txtDetalleDebito.Focus()
 
     End Sub

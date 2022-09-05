@@ -55,7 +55,7 @@ Partial Class frmEnviarMail
         Me.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEnviar.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEnviar.Image = CType(resources.GetObject("btnEnviar.Image"), System.Drawing.Image)
-        Me.btnEnviar.Location = New System.Drawing.Point(146, 198)
+        Me.btnEnviar.Location = New System.Drawing.Point(158, 198)
         Me.btnEnviar.Name = "btnEnviar"
         Me.btnEnviar.Size = New System.Drawing.Size(75, 57)
         Me.btnEnviar.TabIndex = 6
@@ -70,7 +70,7 @@ Partial Class frmEnviarMail
         Me.txtDesdeMat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDesdeMat.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDesdeMat.ForeColor = System.Drawing.Color.White
-        Me.txtDesdeMat.Location = New System.Drawing.Point(181, 91)
+        Me.txtDesdeMat.Location = New System.Drawing.Point(193, 91)
         Me.txtDesdeMat.MaxLength = 5
         Me.txtDesdeMat.Name = "txtDesdeMat"
         Me.txtDesdeMat.Size = New System.Drawing.Size(55, 23)
@@ -82,7 +82,7 @@ Partial Class frmEnviarMail
         Me.txtHastaMat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtHastaMat.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtHastaMat.ForeColor = System.Drawing.Color.White
-        Me.txtHastaMat.Location = New System.Drawing.Point(424, 91)
+        Me.txtHastaMat.Location = New System.Drawing.Point(436, 91)
         Me.txtHastaMat.MaxLength = 5
         Me.txtHastaMat.Name = "txtHastaMat"
         Me.txtHastaMat.Size = New System.Drawing.Size(55, 23)
@@ -94,7 +94,7 @@ Partial Class frmEnviarMail
         Me.txtAsunto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAsunto.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAsunto.ForeColor = System.Drawing.Color.White
-        Me.txtAsunto.Location = New System.Drawing.Point(181, 120)
+        Me.txtAsunto.Location = New System.Drawing.Point(193, 120)
         Me.txtAsunto.Name = "txtAsunto"
         Me.txtAsunto.Size = New System.Drawing.Size(423, 23)
         Me.txtAsunto.TabIndex = 4
@@ -105,7 +105,7 @@ Partial Class frmEnviarMail
         Me.txtDetalle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtDetalle.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDetalle.ForeColor = System.Drawing.Color.White
-        Me.txtDetalle.Location = New System.Drawing.Point(181, 149)
+        Me.txtDetalle.Location = New System.Drawing.Point(193, 149)
         Me.txtDetalle.Name = "txtDetalle"
         Me.txtDetalle.Size = New System.Drawing.Size(423, 23)
         Me.txtDetalle.TabIndex = 5
@@ -114,7 +114,7 @@ Partial Class frmEnviarMail
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(23, 93)
+        Me.Label1.Location = New System.Drawing.Point(35, 93)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(152, 17)
         Me.Label1.TabIndex = 3
@@ -124,7 +124,7 @@ Partial Class frmEnviarMail
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(269, 93)
+        Me.Label2.Location = New System.Drawing.Point(281, 93)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(149, 17)
         Me.Label2.TabIndex = 2
@@ -134,7 +134,7 @@ Partial Class frmEnviarMail
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(119, 122)
+        Me.Label3.Location = New System.Drawing.Point(131, 122)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(56, 17)
         Me.Label3.TabIndex = 7
@@ -144,7 +144,7 @@ Partial Class frmEnviarMail
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(117, 150)
+        Me.Label4.Location = New System.Drawing.Point(129, 150)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(58, 17)
         Me.Label4.TabIndex = 9
@@ -154,7 +154,7 @@ Partial Class frmEnviarMail
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(69, 63)
+        Me.Label5.Location = New System.Drawing.Point(81, 63)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(106, 17)
         Me.Label5.TabIndex = 0
@@ -165,7 +165,7 @@ Partial Class frmEnviarMail
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Green
-        Me.Label7.Location = New System.Drawing.Point(88, 9)
+        Me.Label7.Location = New System.Drawing.Point(100, 9)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(534, 36)
         Me.Label7.TabIndex = 85
@@ -178,7 +178,7 @@ Partial Class frmEnviarMail
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSalir.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.Location = New System.Drawing.Point(474, 198)
+        Me.btnSalir.Location = New System.Drawing.Point(486, 198)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(75, 57)
         Me.btnSalir.TabIndex = 8
@@ -190,7 +190,7 @@ Partial Class frmEnviarMail
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(10, 188)
+        Me.PictureBox1.Location = New System.Drawing.Point(22, 188)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(684, 82)
         Me.PictureBox1.TabIndex = 87
@@ -199,7 +199,7 @@ Partial Class frmEnviarMail
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox2.Location = New System.Drawing.Point(10, 53)
+        Me.PictureBox2.Location = New System.Drawing.Point(22, 53)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(684, 129)
         Me.PictureBox2.TabIndex = 88
@@ -211,7 +211,7 @@ Partial Class frmEnviarMail
         Me.txtMsg.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtMsg.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMsg.ForeColor = System.Drawing.Color.Red
-        Me.txtMsg.Location = New System.Drawing.Point(113, 274)
+        Me.txtMsg.Location = New System.Drawing.Point(125, 274)
         Me.txtMsg.Name = "txtMsg"
         Me.txtMsg.Size = New System.Drawing.Size(513, 16)
         Me.txtMsg.TabIndex = 91
@@ -225,7 +225,7 @@ Partial Class frmEnviarMail
         Me.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnImprimir.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnImprimir.Image = CType(resources.GetObject("btnImprimir.Image"), System.Drawing.Image)
-        Me.btnImprimir.Location = New System.Drawing.Point(321, 198)
+        Me.btnImprimir.Location = New System.Drawing.Point(333, 198)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(75, 57)
         Me.btnImprimir.TabIndex = 7
@@ -241,7 +241,7 @@ Partial Class frmEnviarMail
         Me.cmbPeriodoDes.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbPeriodoDes.ForeColor = System.Drawing.Color.White
         Me.cmbPeriodoDes.FormattingEnabled = True
-        Me.cmbPeriodoDes.Location = New System.Drawing.Point(181, 60)
+        Me.cmbPeriodoDes.Location = New System.Drawing.Point(193, 60)
         Me.cmbPeriodoDes.Name = "cmbPeriodoDes"
         Me.cmbPeriodoDes.Size = New System.Drawing.Size(90, 25)
         Me.cmbPeriodoDes.TabIndex = 0
@@ -257,7 +257,7 @@ Partial Class frmEnviarMail
         Me.cmbPeriodoHas.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbPeriodoHas.ForeColor = System.Drawing.Color.White
         Me.cmbPeriodoHas.FormattingEnabled = True
-        Me.cmbPeriodoHas.Location = New System.Drawing.Point(389, 60)
+        Me.cmbPeriodoHas.Location = New System.Drawing.Point(401, 60)
         Me.cmbPeriodoHas.Name = "cmbPeriodoHas"
         Me.cmbPeriodoHas.Size = New System.Drawing.Size(90, 25)
         Me.cmbPeriodoHas.TabIndex = 1
@@ -266,7 +266,7 @@ Partial Class frmEnviarMail
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(280, 63)
+        Me.Label6.Location = New System.Drawing.Point(292, 63)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(103, 17)
         Me.Label6.TabIndex = 93

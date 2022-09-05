@@ -1,4 +1,7 @@
-﻿Imports Microsoft.Reporting.WinForms
+﻿'*******************************************************************************
+'* LISTADO DE LISTAS DE NOMBRAMIENTO DE OFICIO                                 *
+'*******************************************************************************
+Imports Microsoft.Reporting.WinForms
 
 Public Class frmPrintLista
     Dim senial As Integer

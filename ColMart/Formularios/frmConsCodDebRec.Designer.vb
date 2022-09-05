@@ -34,10 +34,6 @@ Partial Class frmConsCodDebRec
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmConsCodDebRec))
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dgvCodDebito = New System.Windows.Forms.DataGridView()
-        Me.CoddebitoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DbcolmartDataSet = New ColMart.dbcolmartDataSet()
-        Me.CoddebitoTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.coddebitoTableAdapter()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.IdCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NroCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DetalleCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -46,9 +42,17 @@ Partial Class frmConsCodDebRec
         Me.CategCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TipoRecCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ObsCodDebDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CoddebitoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DbcolmartDataSet = New ColMart.dbcolmartDataSet()
+        Me.CoddebitoTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.coddebitoTableAdapter()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtDetalleDebito = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.dgvCodDebito, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CoddebitoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label3
@@ -56,11 +60,11 @@ Partial Class frmConsCodDebRec
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Green
-        Me.Label3.Location = New System.Drawing.Point(201, 9)
+        Me.Label3.Location = New System.Drawing.Point(125, 9)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(459, 36)
+        Me.Label3.Size = New System.Drawing.Size(693, 36)
         Me.Label3.TabIndex = 87
-        Me.Label3.Text = "Consulta de Códigos a Debitar"
+        Me.Label3.Text = "Consulta de Códigos a Debitar Recibo General"
         '
         'dgvCodDebito
         '
@@ -97,7 +101,7 @@ Partial Class frmConsCodDebRec
         Me.dgvCodDebito.DefaultCellStyle = DataGridViewCellStyle7
         Me.dgvCodDebito.EnableHeadersVisualStyles = False
         Me.dgvCodDebito.GridColor = System.Drawing.Color.White
-        Me.dgvCodDebito.Location = New System.Drawing.Point(12, 51)
+        Me.dgvCodDebito.Location = New System.Drawing.Point(12, 96)
         Me.dgvCodDebito.Name = "dgvCodDebito"
         Me.dgvCodDebito.ReadOnly = True
         Me.dgvCodDebito.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -109,33 +113,8 @@ Partial Class frmConsCodDebRec
         DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvCodDebito.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
-        Me.dgvCodDebito.Size = New System.Drawing.Size(898, 406)
+        Me.dgvCodDebito.Size = New System.Drawing.Size(898, 429)
         Me.dgvCodDebito.TabIndex = 88
-        '
-        'CoddebitoBindingSource
-        '
-        Me.CoddebitoBindingSource.DataMember = "coddebito"
-        Me.CoddebitoBindingSource.DataSource = Me.DbcolmartDataSet
-        '
-        'DbcolmartDataSet
-        '
-        Me.DbcolmartDataSet.DataSetName = "dbcolmartDataSet"
-        Me.DbcolmartDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CoddebitoTableAdapter
-        '
-        Me.CoddebitoTableAdapter.ClearBeforeFill = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(14, 463)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(414, 19)
-        Me.Label2.TabIndex = 89
-        Me.Label2.Text = "Haga doble clic en el renglón seleccionado..."
         '
         'IdCodDebDataGridViewTextBoxColumn
         '
@@ -211,12 +190,73 @@ Partial Class frmConsCodDebRec
         Me.ObsCodDebDataGridViewTextBoxColumn.ReadOnly = True
         Me.ObsCodDebDataGridViewTextBoxColumn.Width = 150
         '
+        'CoddebitoBindingSource
+        '
+        Me.CoddebitoBindingSource.DataMember = "coddebito"
+        Me.CoddebitoBindingSource.DataSource = Me.DbcolmartDataSet
+        '
+        'DbcolmartDataSet
+        '
+        Me.DbcolmartDataSet.DataSetName = "dbcolmartDataSet"
+        Me.DbcolmartDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CoddebitoTableAdapter
+        '
+        Me.CoddebitoTableAdapter.ClearBeforeFill = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Red
+        Me.Label2.Location = New System.Drawing.Point(14, 531)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(414, 19)
+        Me.Label2.TabIndex = 89
+        Me.Label2.Text = "Haga doble clic en el renglón seleccionado..."
+        '
+        'txtDetalleDebito
+        '
+        Me.txtDetalleDebito.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.txtDetalleDebito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDetalleDebito.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtDetalleDebito.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDetalleDebito.ForeColor = System.Drawing.Color.White
+        Me.txtDetalleDebito.Location = New System.Drawing.Point(219, 59)
+        Me.txtDetalleDebito.Name = "txtDetalleDebito"
+        Me.txtDetalleDebito.Size = New System.Drawing.Size(323, 23)
+        Me.txtDetalleDebito.TabIndex = 91
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(107, 62)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(106, 17)
+        Me.Label1.TabIndex = 90
+        Me.Label1.Text = "Detalle Débito:"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox1.Location = New System.Drawing.Point(13, 51)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(898, 39)
+        Me.PictureBox1.TabIndex = 92
+        Me.PictureBox1.TabStop = False
+        '
         'frmConsCodDebRec
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(927, 504)
+        Me.ClientSize = New System.Drawing.Size(927, 567)
+        Me.Controls.Add(Me.txtDetalleDebito)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.dgvCodDebito)
         Me.Controls.Add(Me.Label3)
@@ -228,6 +268,7 @@ Partial Class frmConsCodDebRec
         CType(Me.dgvCodDebito, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CoddebitoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -247,4 +288,7 @@ Partial Class frmConsCodDebRec
     Friend WithEvents CategCodDebDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TipoRecCodDebDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ObsCodDebDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents txtDetalleDebito As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

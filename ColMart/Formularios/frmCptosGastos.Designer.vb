@@ -107,11 +107,14 @@ Partial Class frmCptosGastos
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.bibliotecaTableAdapter = Nothing
         Me.TableAdapterManager.boletasTableAdapter = Nothing
+        Me.TableAdapterManager.botonesTableAdapter = Nothing
+        Me.TableAdapterManager.botonuserTableAdapter = Nothing
         Me.TableAdapterManager.cajamayorTableAdapter = Nothing
         Me.TableAdapterManager.cajaTableAdapter = Nothing
         Me.TableAdapterManager.categivaTableAdapter = Nothing
         Me.TableAdapterManager.coddebitoTableAdapter = Nothing
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
+        Me.TableAdapterManager.colegiadosTableAdapter = Nothing
         Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
         Me.TableAdapterManager.cptosgastosTableAdapter = Me.CptosgastosTableAdapter
@@ -123,6 +126,8 @@ Partial Class frmCptosGastos
         Me.TableAdapterManager.departamentoTableAdapter = Nothing
         Me.TableAdapterManager.depositosTableAdapter = Nothing
         Me.TableAdapterManager.detallecpraTableAdapter = Nothing
+        Me.TableAdapterManager.fianzasTableAdapter = Nothing
+        Me.TableAdapterManager.impctacteTableAdapter = Nothing
         Me.TableAdapterManager.juzgadosTableAdapter = Nothing
         Me.TableAdapterManager.listaoficioTableAdapter = Nothing
         Me.TableAdapterManager.localidadesTableAdapter = Nothing
@@ -134,6 +139,7 @@ Partial Class frmCptosGastos
         Me.TableAdapterManager.padronTableAdapter = Nothing
         Me.TableAdapterManager.proveedoresTableAdapter = Nothing
         Me.TableAdapterManager.provinciaTableAdapter = Nothing
+        Me.TableAdapterManager.reciboTableAdapter = Nothing
         Me.TableAdapterManager.renglonesTableAdapter = Nothing
         Me.TableAdapterManager.saldomatTableAdapter = Nothing
         Me.TableAdapterManager.saldosocTableAdapter = Nothing
@@ -141,6 +147,7 @@ Partial Class frmCptosGastos
         Me.TableAdapterManager.tribunalesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = ColMart.dbcolmartDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usuariosTableAdapter = Nothing
+        Me.TableAdapterManager.ventasTableAdapter = Nothing
         '
         'txtId_CG
         '
@@ -223,7 +230,7 @@ Partial Class frmCptosGastos
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvObras.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvObras.Size = New System.Drawing.Size(649, 246)
+        Me.dgvObras.Size = New System.Drawing.Size(649, 367)
         Me.dgvObras.TabIndex = 105
         '
         'IdCGDataGridViewTextBoxColumn
@@ -284,7 +291,7 @@ Partial Class frmCptosGastos
         Me.CptosgastosBindingNavigator.GripMargin = New System.Windows.Forms.Padding(0)
         Me.CptosgastosBindingNavigator.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.CptosgastosBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.BindingNavigatorMovePreviusItem, Me.ToolStripSeparator1, Me.ToolStripTextBox1, Me.ToolStripLabel1, Me.ToolStripSeparator2, Me.ToolStripButton2, Me.ToolStripButton3, Me.ToolStripSeparator3, Me.CptosgastosBindingNavigatorAddNewItem, Me.ToolStripSeparator4, Me.CptosgastosBindingNavigatorDeleteItem, Me.ToolStripSeparator5, Me.CptosgastosBindingNavigatorSaveItem, Me.ToolStripSeparator6, Me.btnSalir})
-        Me.CptosgastosBindingNavigator.Location = New System.Drawing.Point(66, 388)
+        Me.CptosgastosBindingNavigator.Location = New System.Drawing.Point(66, 507)
         Me.CptosgastosBindingNavigator.MoveFirstItem = Me.ToolStripButton1
         Me.CptosgastosBindingNavigator.MoveLastItem = Me.ToolStripButton3
         Me.CptosgastosBindingNavigator.MoveNextItem = Me.ToolStripButton2
@@ -425,7 +432,7 @@ Partial Class frmCptosGastos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(770, 480)
+        Me.ClientSize = New System.Drawing.Size(770, 575)
         Me.Controls.Add(Me.CptosgastosBindingNavigator)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.dgvObras)

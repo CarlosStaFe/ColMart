@@ -33,7 +33,7 @@ Partial Class frmPasaje
         'btnProcesar
         '
         Me.btnProcesar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProcesar.Location = New System.Drawing.Point(630, 71)
+        Me.btnProcesar.Location = New System.Drawing.Point(789, 71)
         Me.btnProcesar.Name = "btnProcesar"
         Me.btnProcesar.Size = New System.Drawing.Size(113, 47)
         Me.btnProcesar.TabIndex = 0
@@ -57,6 +57,7 @@ Partial Class frmPasaje
         Me.TableAdapterManager.categivaTableAdapter = Nothing
         Me.TableAdapterManager.coddebitoTableAdapter = Nothing
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
+        Me.TableAdapterManager.colegiadosTableAdapter = Nothing
         Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
         Me.TableAdapterManager.cptosgastosTableAdapter = Nothing
@@ -75,6 +76,7 @@ Partial Class frmPasaje
         Me.TableAdapterManager.localidadesTableAdapter = Nothing
         Me.TableAdapterManager.localidadTableAdapter = Nothing
         Me.TableAdapterManager.lotebancoTableAdapter = Nothing
+        Me.TableAdapterManager.matriculadosTableAdapter = Nothing
         Me.TableAdapterManager.mesaentradaTableAdapter = Nothing
         Me.TableAdapterManager.nivelesTableAdapter = Nothing
         Me.TableAdapterManager.padronTableAdapter = Nothing
@@ -96,9 +98,9 @@ Partial Class frmPasaje
         Me.txtMsg.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtMsg.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMsg.ForeColor = System.Drawing.Color.Red
-        Me.txtMsg.Location = New System.Drawing.Point(127, 73)
+        Me.txtMsg.Location = New System.Drawing.Point(12, 73)
         Me.txtMsg.Name = "txtMsg"
-        Me.txtMsg.Size = New System.Drawing.Size(470, 31)
+        Me.txtMsg.Size = New System.Drawing.Size(769, 31)
         Me.txtMsg.TabIndex = 7
         Me.txtMsg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '

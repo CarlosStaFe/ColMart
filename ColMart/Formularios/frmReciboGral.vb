@@ -1,5 +1,6 @@
-﻿Imports Microsoft.Reporting.WinForms
-
+﻿'*******************************************************************************
+'* RECIBO GENERAL DE COBRO                                                     *
+'*******************************************************************************
 Public Class frmReciboGral
     Dim fecha, comprobante, tipo, impletras, cuit As String
     Dim flag, fechaaux, fechajur, tipoA, tipoF, detalle As String
@@ -23,7 +24,6 @@ Public Class frmReciboGral
         Else
             Limpiar()
             txtMatSoc.Focus()
-            'ReportViewer1.RefreshReport()
             txtFecha.Text = Format(Now, "dd/MM/yyyy")
         End If
 
@@ -88,7 +88,6 @@ Public Class frmReciboGral
             While dr.Read
                 txtNombre.Text = dr(2).ToString
                 cuit = dr(11).ToString
-                fechajur = dr(12).ToString
                 txtTelefono.Text = dr(22).ToString + " * " + dr(23).ToString
                 tipo = "MATRÍCULA: "
                 flag = "M"
@@ -117,7 +116,7 @@ Public Class frmReciboGral
                 End If
 
                 '*** Fecha Vence Fianza ***
-                fechaaux = dr(31).ToString
+                fechaaux = dr(29).ToString
                 meses = 24
                 fechajob = DateAdd("m", meses, fechaaux)
                 ProcesarFecha()
@@ -184,7 +183,8 @@ Public Class frmReciboGral
         'Busco códigos a debitar por consulta al presionar F1
         If e.KeyCode = Keys.F1 Then
             senial = 3
-            Dim frmRecGral As New frmConsCodDebito
+            Dim frmRecGral As New frmConsCodDebRec
+            'Dim frmRecGral As New frmConsCodDebito
             AddOwnedForm(frmRecGral)
             frmRecGral.ShowDialog()
             senial = 0

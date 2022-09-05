@@ -1,4 +1,7 @@
-﻿Public Class frmListaSaldoPago
+﻿'*******************************************************************************
+'* LISTADO DE SALDOS Y PAGOS                                                   *
+'*******************************************************************************
+Public Class frmListaSaldoPago
     Dim matricula, apelnomb, estado, detalle, fechades, fechahas, dd, mm, yyyy, titulo, ceros As String
     Dim pos1, pos2, longitud, cantidad As Integer
     Dim debe, haber, saldo As Double

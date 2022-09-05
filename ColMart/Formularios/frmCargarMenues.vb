@@ -1,4 +1,7 @@
-﻿Public Class frmCargarMenues
+﻿'*******************************************************************************
+'* ACTUALIZA LOS BOTONES DEL MENÚ PRINCIPAL PARA INGRESAR A LOS PROGRAMAS      *
+'*******************************************************************************
+Public Class frmCargarMenues
     Private Sub frmCargarMenues_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ConectarMySql()

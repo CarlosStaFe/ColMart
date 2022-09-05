@@ -1,4 +1,7 @@
-﻿Public Class frmCtasCtesMat
+﻿'*******************************************************************************
+'* VISUALIZACIÓN DE CUENTAS CORRIENTES DE MATRICULADOS                         *
+'*******************************************************************************
+Public Class frmCtasCtesMat
     Dim debe, haber, saldo, saldoant, pagado, resto As Decimal
     Dim detalle, comprobante, estado, id, obs, fecpago, fechaaux As String
     Dim pos1, pos2, longitud, cantidad As Integer
@@ -99,9 +102,9 @@
                         Fila.Cells(4).Value = DBNull.Value
                         Fila.Cells(7).Value = DBNull.Value
                     End If
-                    'If Fila.Cells(13).Value = "1900-01-01" Then
-                    '    Fila.Cells(13).Value = DBNull.Value
-                    'End If
+                    If Fila.Cells(13).Value = "1900-01-01" Then
+                        Fila.Cells(13).Value = DBNull.Value
+                    End If
                 End If
             Next
             dgvCtasctes.FirstDisplayedScrollingRowIndex = dgvCtasctes.RowCount - 1
@@ -257,4 +260,5 @@
         ToolTipMsg.ToolTipIcon = ToolTipIcon.Info
 
     End Sub
+
 End Class

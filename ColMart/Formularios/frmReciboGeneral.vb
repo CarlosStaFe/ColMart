@@ -1,4 +1,7 @@
-﻿Imports Microsoft.Reporting.WinForms
+﻿'*******************************************************************************
+'* IMPRESIÓN DE RECIBO GENERAL                                                 *
+'*******************************************************************************
+Imports Microsoft.Reporting.WinForms
 Imports System.IO
 
 Public Class frmReciboGeneral

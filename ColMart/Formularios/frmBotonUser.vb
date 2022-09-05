@@ -1,6 +1,8 @@
-﻿Public Class frmBotonUser
+﻿'*******************************************************************************
+'* CARGA LOS DIFERENTES USUARIOS PARA LOS BOTONES DEL MENÚ PARA ACCEDER        *
+'*******************************************************************************
+Public Class frmBotonUser
     Dim boton, detalle As String
-    Dim chequeo As Boolean
 
     Private Sub frmBotonUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -113,6 +115,5 @@
         dgvBotones.Refresh()
 
     End Sub
-
 
 End Class

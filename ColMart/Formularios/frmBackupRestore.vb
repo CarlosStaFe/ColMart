@@ -1,17 +1,16 @@
-﻿Imports System.Net.Mail
-Imports System.IO.Compression
-
+﻿'*******************************************************************************
+'* REALIZA EL BACKUP Y LA RESTAURACIÓN DE LA BASE DE DATOS                     *
+'*******************************************************************************
 Public Class frmBackupRestore
     Dim nomArchivo As New OpenFileDialog
-    Dim directorio As String
 
     Private Sub frmBackupRestore_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ConectarMySql()
         txtArchivoBac.Text = ""
         txtArchivoRes.Text = ""
         btnBackup.Visible = False
         btnRestore.Visible = False
+        ConectarMySql()
 
     End Sub
 
@@ -153,6 +152,5 @@ Public Class frmBackupRestore
         ToolTipMsg.ToolTipIcon = ToolTipIcon.Info
 
     End Sub
-
 
 End Class

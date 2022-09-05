@@ -31,12 +31,12 @@ Partial Class frmUsuarios
         Dim ClaveUsuarioLabel As System.Windows.Forms.Label
         Dim ActivoUsuarioLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmUsuarios))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DbcolmartDataSet = New ColMart.dbcolmartDataSet()
         Me.UsuariosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UsuariosTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.usuariosTableAdapter()
@@ -109,7 +109,7 @@ Partial Class frmUsuarios
         '
         ApelUsuarioLabel.AutoSize = True
         ApelUsuarioLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ApelUsuarioLabel.Location = New System.Drawing.Point(27, 61)
+        ApelUsuarioLabel.Location = New System.Drawing.Point(35, 61)
         ApelUsuarioLabel.Name = "ApelUsuarioLabel"
         ApelUsuarioLabel.Size = New System.Drawing.Size(65, 17)
         ApelUsuarioLabel.TabIndex = 0
@@ -119,7 +119,7 @@ Partial Class frmUsuarios
         '
         NombUsuarioLabel.AutoSize = True
         NombUsuarioLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        NombUsuarioLabel.Location = New System.Drawing.Point(320, 61)
+        NombUsuarioLabel.Location = New System.Drawing.Point(328, 61)
         NombUsuarioLabel.Name = "NombUsuarioLabel"
         NombUsuarioLabel.Size = New System.Drawing.Size(70, 17)
         NombUsuarioLabel.TabIndex = 3
@@ -129,7 +129,7 @@ Partial Class frmUsuarios
         '
         NivelUsuarioLabel.AutoSize = True
         NivelUsuarioLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        NivelUsuarioLabel.Location = New System.Drawing.Point(48, 90)
+        NivelUsuarioLabel.Location = New System.Drawing.Point(56, 90)
         NivelUsuarioLabel.Name = "NivelUsuarioLabel"
         NivelUsuarioLabel.Size = New System.Drawing.Size(44, 17)
         NivelUsuarioLabel.TabIndex = 5
@@ -139,7 +139,7 @@ Partial Class frmUsuarios
         '
         TipoUsuarioLabel.AutoSize = True
         TipoUsuarioLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        TipoUsuarioLabel.Location = New System.Drawing.Point(144, 90)
+        TipoUsuarioLabel.Location = New System.Drawing.Point(152, 90)
         TipoUsuarioLabel.Name = "TipoUsuarioLabel"
         TipoUsuarioLabel.Size = New System.Drawing.Size(38, 17)
         TipoUsuarioLabel.TabIndex = 7
@@ -149,7 +149,7 @@ Partial Class frmUsuarios
         '
         UserUsuarioLabel.AutoSize = True
         UserUsuarioLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        UserUsuarioLabel.Location = New System.Drawing.Point(34, 118)
+        UserUsuarioLabel.Location = New System.Drawing.Point(42, 118)
         UserUsuarioLabel.Name = "UserUsuarioLabel"
         UserUsuarioLabel.Size = New System.Drawing.Size(58, 17)
         UserUsuarioLabel.TabIndex = 9
@@ -159,7 +159,7 @@ Partial Class frmUsuarios
         '
         ClaveUsuarioLabel.AutoSize = True
         ClaveUsuarioLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ClaveUsuarioLabel.Location = New System.Drawing.Point(223, 118)
+        ClaveUsuarioLabel.Location = New System.Drawing.Point(231, 118)
         ClaveUsuarioLabel.Name = "ClaveUsuarioLabel"
         ClaveUsuarioLabel.Size = New System.Drawing.Size(51, 17)
         ClaveUsuarioLabel.TabIndex = 11
@@ -169,7 +169,7 @@ Partial Class frmUsuarios
         '
         ActivoUsuarioLabel.AutoSize = True
         ActivoUsuarioLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ActivoUsuarioLabel.Location = New System.Drawing.Point(466, 118)
+        ActivoUsuarioLabel.Location = New System.Drawing.Point(474, 118)
         ActivoUsuarioLabel.Name = "ActivoUsuarioLabel"
         ActivoUsuarioLabel.Size = New System.Drawing.Size(54, 17)
         ActivoUsuarioLabel.TabIndex = 13
@@ -201,6 +201,7 @@ Partial Class frmUsuarios
         Me.TableAdapterManager.categivaTableAdapter = Nothing
         Me.TableAdapterManager.coddebitoTableAdapter = Nothing
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
+        Me.TableAdapterManager.colegiadosTableAdapter = Nothing
         Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
         Me.TableAdapterManager.cptosgastosTableAdapter = Nothing
@@ -212,6 +213,8 @@ Partial Class frmUsuarios
         Me.TableAdapterManager.departamentoTableAdapter = Nothing
         Me.TableAdapterManager.depositosTableAdapter = Nothing
         Me.TableAdapterManager.detallecpraTableAdapter = Nothing
+        Me.TableAdapterManager.fianzasTableAdapter = Nothing
+        Me.TableAdapterManager.impctacteTableAdapter = Nothing
         Me.TableAdapterManager.juzgadosTableAdapter = Nothing
         Me.TableAdapterManager.listaoficioTableAdapter = Nothing
         Me.TableAdapterManager.localidadesTableAdapter = Nothing
@@ -223,6 +226,7 @@ Partial Class frmUsuarios
         Me.TableAdapterManager.padronTableAdapter = Nothing
         Me.TableAdapterManager.proveedoresTableAdapter = Nothing
         Me.TableAdapterManager.provinciaTableAdapter = Nothing
+        Me.TableAdapterManager.reciboTableAdapter = Nothing
         Me.TableAdapterManager.renglonesTableAdapter = Nothing
         Me.TableAdapterManager.saldomatTableAdapter = Nothing
         Me.TableAdapterManager.saldosocTableAdapter = Nothing
@@ -230,6 +234,7 @@ Partial Class frmUsuarios
         Me.TableAdapterManager.tribunalesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = ColMart.dbcolmartDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usuariosTableAdapter = Me.UsuariosTableAdapter
+        Me.TableAdapterManager.ventasTableAdapter = Nothing
         '
         'UsuariosBindingNavigator
         '
@@ -359,7 +364,7 @@ Partial Class frmUsuarios
         Me.Id_UsuarioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "id_Usuario", True))
         Me.Id_UsuarioTextBox.Enabled = False
         Me.Id_UsuarioTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Id_UsuarioTextBox.Location = New System.Drawing.Point(282, 61)
+        Me.Id_UsuarioTextBox.Location = New System.Drawing.Point(290, 61)
         Me.Id_UsuarioTextBox.Name = "Id_UsuarioTextBox"
         Me.Id_UsuarioTextBox.Size = New System.Drawing.Size(23, 15)
         Me.Id_UsuarioTextBox.TabIndex = 2
@@ -372,7 +377,7 @@ Partial Class frmUsuarios
         Me.txtApelUsuario.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "ApelUsuario", True))
         Me.txtApelUsuario.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtApelUsuario.ForeColor = System.Drawing.Color.White
-        Me.txtApelUsuario.Location = New System.Drawing.Point(98, 58)
+        Me.txtApelUsuario.Location = New System.Drawing.Point(106, 58)
         Me.txtApelUsuario.Name = "txtApelUsuario"
         Me.txtApelUsuario.Size = New System.Drawing.Size(171, 23)
         Me.txtApelUsuario.TabIndex = 1
@@ -385,7 +390,7 @@ Partial Class frmUsuarios
         Me.txtNombUsuario.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "NombUsuario", True))
         Me.txtNombUsuario.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombUsuario.ForeColor = System.Drawing.Color.White
-        Me.txtNombUsuario.Location = New System.Drawing.Point(396, 58)
+        Me.txtNombUsuario.Location = New System.Drawing.Point(404, 58)
         Me.txtNombUsuario.Name = "txtNombUsuario"
         Me.txtNombUsuario.Size = New System.Drawing.Size(230, 23)
         Me.txtNombUsuario.TabIndex = 4
@@ -397,7 +402,7 @@ Partial Class frmUsuarios
         Me.txtNivelUsuario.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "NivelUsuario", True))
         Me.txtNivelUsuario.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNivelUsuario.ForeColor = System.Drawing.Color.White
-        Me.txtNivelUsuario.Location = New System.Drawing.Point(98, 87)
+        Me.txtNivelUsuario.Location = New System.Drawing.Point(106, 87)
         Me.txtNivelUsuario.Name = "txtNivelUsuario"
         Me.txtNivelUsuario.Size = New System.Drawing.Size(34, 23)
         Me.txtNivelUsuario.TabIndex = 6
@@ -410,7 +415,7 @@ Partial Class frmUsuarios
         Me.txtTipoUsuario.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "TipoUsuario", True))
         Me.txtTipoUsuario.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTipoUsuario.ForeColor = System.Drawing.Color.White
-        Me.txtTipoUsuario.Location = New System.Drawing.Point(188, 86)
+        Me.txtTipoUsuario.Location = New System.Drawing.Point(196, 86)
         Me.txtTipoUsuario.Name = "txtTipoUsuario"
         Me.txtTipoUsuario.Size = New System.Drawing.Size(147, 23)
         Me.txtTipoUsuario.TabIndex = 8
@@ -423,7 +428,7 @@ Partial Class frmUsuarios
         Me.txtUserUsuario.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "UserUsuario", True))
         Me.txtUserUsuario.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUserUsuario.ForeColor = System.Drawing.Color.White
-        Me.txtUserUsuario.Location = New System.Drawing.Point(98, 115)
+        Me.txtUserUsuario.Location = New System.Drawing.Point(106, 115)
         Me.txtUserUsuario.Name = "txtUserUsuario"
         Me.txtUserUsuario.Size = New System.Drawing.Size(115, 23)
         Me.txtUserUsuario.TabIndex = 10
@@ -435,7 +440,7 @@ Partial Class frmUsuarios
         Me.txtClaveUsuario.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "ClaveUsuario", True))
         Me.txtClaveUsuario.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtClaveUsuario.ForeColor = System.Drawing.Color.White
-        Me.txtClaveUsuario.Location = New System.Drawing.Point(280, 115)
+        Me.txtClaveUsuario.Location = New System.Drawing.Point(288, 115)
         Me.txtClaveUsuario.MaxLength = 100
         Me.txtClaveUsuario.Name = "txtClaveUsuario"
         Me.txtClaveUsuario.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -450,7 +455,7 @@ Partial Class frmUsuarios
         Me.txtActivoUsuario.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosBindingSource, "ActivoUsuario", True))
         Me.txtActivoUsuario.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtActivoUsuario.ForeColor = System.Drawing.Color.White
-        Me.txtActivoUsuario.Location = New System.Drawing.Point(526, 115)
+        Me.txtActivoUsuario.Location = New System.Drawing.Point(534, 115)
         Me.txtActivoUsuario.Name = "txtActivoUsuario"
         Me.txtActivoUsuario.Size = New System.Drawing.Size(24, 23)
         Me.txtActivoUsuario.TabIndex = 14
@@ -460,48 +465,48 @@ Partial Class frmUsuarios
         Me.UsuariosDataGridView.AllowUserToAddRows = False
         Me.UsuariosDataGridView.AllowUserToDeleteRows = False
         Me.UsuariosDataGridView.AllowUserToOrderColumns = True
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White
-        Me.UsuariosDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        Me.UsuariosDataGridView.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.UsuariosDataGridView.AutoGenerateColumns = False
         Me.UsuariosDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.UsuariosDataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.DarkOrange
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.UsuariosDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkOrange
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.UsuariosDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.UsuariosDataGridView.ColumnHeadersHeight = 30
         Me.UsuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.UsuariosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn8})
         Me.UsuariosDataGridView.DataSource = Me.UsuariosBindingSource
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.UsuariosDataGridView.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.UsuariosDataGridView.DefaultCellStyle = DataGridViewCellStyle5
         Me.UsuariosDataGridView.EnableHeadersVisualStyles = False
         Me.UsuariosDataGridView.GridColor = System.Drawing.Color.White
-        Me.UsuariosDataGridView.Location = New System.Drawing.Point(15, 156)
+        Me.UsuariosDataGridView.Location = New System.Drawing.Point(23, 156)
         Me.UsuariosDataGridView.Name = "UsuariosDataGridView"
         Me.UsuariosDataGridView.ReadOnly = True
         Me.UsuariosDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.UsuariosDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.UsuariosDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.UsuariosDataGridView.Size = New System.Drawing.Size(657, 185)
         Me.UsuariosDataGridView.TabIndex = 16
         '
@@ -524,8 +529,8 @@ Partial Class frmUsuarios
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "NivelUsuario"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewTextBoxColumn4.HeaderText = "NIVEL"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.ReadOnly = True
@@ -548,8 +553,8 @@ Partial Class frmUsuarios
         'DataGridViewTextBoxColumn8
         '
         Me.DataGridViewTextBoxColumn8.DataPropertyName = "ActivoUsuario"
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridViewTextBoxColumn8.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridViewTextBoxColumn8.DefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridViewTextBoxColumn8.HeaderText = "ACTIVO"
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
         Me.DataGridViewTextBoxColumn8.ReadOnly = True
@@ -562,7 +567,7 @@ Partial Class frmUsuarios
         Me.BtnUltimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUltimo.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnUltimo.Image = CType(resources.GetObject("BtnUltimo.Image"), System.Drawing.Image)
-        Me.BtnUltimo.Location = New System.Drawing.Point(389, 442)
+        Me.BtnUltimo.Location = New System.Drawing.Point(397, 442)
         Me.BtnUltimo.Name = "BtnUltimo"
         Me.BtnUltimo.Size = New System.Drawing.Size(34, 51)
         Me.BtnUltimo.TabIndex = 28
@@ -576,7 +581,7 @@ Partial Class frmUsuarios
         Me.BtnPrimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnPrimer.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnPrimer.Image = CType(resources.GetObject("BtnPrimer.Image"), System.Drawing.Image)
-        Me.BtnPrimer.Location = New System.Drawing.Point(251, 442)
+        Me.BtnPrimer.Location = New System.Drawing.Point(259, 442)
         Me.BtnPrimer.Name = "BtnPrimer"
         Me.BtnPrimer.Size = New System.Drawing.Size(34, 51)
         Me.BtnPrimer.TabIndex = 25
@@ -590,7 +595,7 @@ Partial Class frmUsuarios
         Me.BtnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSiguiente.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSiguiente.Image = CType(resources.GetObject("BtnSiguiente.Image"), System.Drawing.Image)
-        Me.BtnSiguiente.Location = New System.Drawing.Point(343, 442)
+        Me.BtnSiguiente.Location = New System.Drawing.Point(351, 442)
         Me.BtnSiguiente.Name = "BtnSiguiente"
         Me.BtnSiguiente.Size = New System.Drawing.Size(34, 51)
         Me.BtnSiguiente.TabIndex = 27
@@ -604,7 +609,7 @@ Partial Class frmUsuarios
         Me.BtnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnAnterior.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAnterior.Image = CType(resources.GetObject("BtnAnterior.Image"), System.Drawing.Image)
-        Me.BtnAnterior.Location = New System.Drawing.Point(297, 442)
+        Me.BtnAnterior.Location = New System.Drawing.Point(305, 442)
         Me.BtnAnterior.Name = "BtnAnterior"
         Me.BtnAnterior.Size = New System.Drawing.Size(34, 51)
         Me.BtnAnterior.TabIndex = 26
@@ -619,7 +624,7 @@ Partial Class frmUsuarios
         Me.BtnActualizar.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnActualizar.Image = CType(resources.GetObject("BtnActualizar.Image"), System.Drawing.Image)
         Me.BtnActualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnActualizar.Location = New System.Drawing.Point(418, 363)
+        Me.BtnActualizar.Location = New System.Drawing.Point(426, 363)
         Me.BtnActualizar.Name = "BtnActualizar"
         Me.BtnActualizar.Size = New System.Drawing.Size(85, 51)
         Me.BtnActualizar.TabIndex = 24
@@ -635,7 +640,7 @@ Partial Class frmUsuarios
         Me.BtnGrabar.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnGrabar.Image = CType(resources.GetObject("BtnGrabar.Image"), System.Drawing.Image)
         Me.BtnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnGrabar.Location = New System.Drawing.Point(103, 363)
+        Me.BtnGrabar.Location = New System.Drawing.Point(111, 363)
         Me.BtnGrabar.Name = "BtnGrabar"
         Me.BtnGrabar.Size = New System.Drawing.Size(61, 51)
         Me.BtnGrabar.TabIndex = 23
@@ -651,7 +656,7 @@ Partial Class frmUsuarios
         Me.BtnSalir.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnSalir.Image = CType(resources.GetObject("BtnSalir.Image"), System.Drawing.Image)
         Me.BtnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnSalir.Location = New System.Drawing.Point(561, 363)
+        Me.BtnSalir.Location = New System.Drawing.Point(569, 363)
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.Size = New System.Drawing.Size(78, 51)
         Me.BtnSalir.TabIndex = 29
@@ -667,7 +672,7 @@ Partial Class frmUsuarios
         Me.BtnModificar.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnModificar.Image = CType(resources.GetObject("BtnModificar.Image"), System.Drawing.Image)
         Me.BtnModificar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnModificar.Location = New System.Drawing.Point(175, 363)
+        Me.BtnModificar.Location = New System.Drawing.Point(183, 363)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(78, 51)
         Me.BtnModificar.TabIndex = 22
@@ -683,7 +688,7 @@ Partial Class frmUsuarios
         Me.BtnEliminar.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEliminar.Image = CType(resources.GetObject("BtnEliminar.Image"), System.Drawing.Image)
         Me.BtnEliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnEliminar.Location = New System.Drawing.Point(264, 363)
+        Me.BtnEliminar.Location = New System.Drawing.Point(272, 363)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(71, 51)
         Me.BtnEliminar.TabIndex = 21
@@ -700,7 +705,7 @@ Partial Class frmUsuarios
         Me.BtnBuscar.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnBuscar.Image = CType(resources.GetObject("BtnBuscar.Image"), System.Drawing.Image)
         Me.BtnBuscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnBuscar.Location = New System.Drawing.Point(346, 363)
+        Me.BtnBuscar.Location = New System.Drawing.Point(354, 363)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.Size = New System.Drawing.Size(61, 51)
         Me.BtnBuscar.TabIndex = 20
@@ -717,7 +722,7 @@ Partial Class frmUsuarios
         Me.BtnAgregar.Font = New System.Drawing.Font("Consolas", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAgregar.Image = CType(resources.GetObject("BtnAgregar.Image"), System.Drawing.Image)
         Me.BtnAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnAgregar.Location = New System.Drawing.Point(28, 363)
+        Me.BtnAgregar.Location = New System.Drawing.Point(36, 363)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.Size = New System.Drawing.Size(64, 51)
         Me.BtnAgregar.TabIndex = 19
@@ -728,7 +733,7 @@ Partial Class frmUsuarios
         'PictureBox3
         '
         Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox3.Location = New System.Drawing.Point(15, 351)
+        Me.PictureBox3.Location = New System.Drawing.Point(23, 351)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(503, 74)
         Me.PictureBox3.TabIndex = 30
@@ -739,7 +744,7 @@ Partial Class frmUsuarios
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Green
-        Me.Label1.Location = New System.Drawing.Point(137, 9)
+        Me.Label1.Location = New System.Drawing.Point(145, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(381, 36)
         Me.Label1.TabIndex = 85
@@ -748,7 +753,7 @@ Partial Class frmUsuarios
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(524, 351)
+        Me.PictureBox1.Location = New System.Drawing.Point(532, 351)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(148, 74)
         Me.PictureBox1.TabIndex = 86
@@ -757,7 +762,7 @@ Partial Class frmUsuarios
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox2.Location = New System.Drawing.Point(242, 431)
+        Me.PictureBox2.Location = New System.Drawing.Point(250, 431)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(195, 74)
         Me.PictureBox2.TabIndex = 87
@@ -766,7 +771,7 @@ Partial Class frmUsuarios
         'PictureBox4
         '
         Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox4.Location = New System.Drawing.Point(15, 49)
+        Me.PictureBox4.Location = New System.Drawing.Point(23, 49)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(657, 100)
         Me.PictureBox4.TabIndex = 88
@@ -781,7 +786,7 @@ Partial Class frmUsuarios
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(757, 556)
+        Me.ClientSize = New System.Drawing.Size(757, 573)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnUltimo)
         Me.Controls.Add(Me.BtnPrimer)

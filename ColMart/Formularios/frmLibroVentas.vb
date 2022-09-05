@@ -1,19 +1,17 @@
-﻿Imports Microsoft.Reporting.WinForms
+﻿'*******************************************************************************
+'* PANTALLA PARA IMPRIMIR EL LIBRO VENTAS                                      *
+'*******************************************************************************
+Imports Microsoft.Reporting.WinForms
 Public Class frmLibroVentas
     Dim detalle As String
 
     Private Sub frmLibroVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        'ventasTableAdapter.Fill(dbcolmartDataSet.ventas)
 
         ConectarMySql()
         CargarCombos()
         cmbDesdePer.SelectedIndex = 0
         cmbHastaPer.SelectedIndex = 0
         cmbDesdePer.Focus()
-
-        'ReportViewer1.Visible = False
-        'ReportViewer2.Visible = False
 
     End Sub
 

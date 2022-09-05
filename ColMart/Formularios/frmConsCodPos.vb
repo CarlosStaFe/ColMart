@@ -1,4 +1,7 @@
-﻿Public Class frmConsCodPos
+﻿'*******************************************************************************
+'* CONSULTA DE CÓDIGOS POSTALES ORIGINAL                                       *
+'*******************************************************************************
+Public Class frmConsCodPos
     Private Sub frmConsCodPos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         comando.CommandText = "SELECT NroCodPos AS 'CODIGO', LocalCodPos AS 'LOCALIDAD', DptoCodPos AS 'DEPARTAMENTO' , ProvCodPos AS 'PROVINCIA' , id_CodPos AS 'ID' FROM codpostal"
@@ -47,19 +50,19 @@
             'frm.txtProvCodPos.Text = dgvCodpostal.CurrentRow.Cells(3).Value.ToString
         End If
 
-        If senial = 1 Then
-            Dim frmMat1 As frmMatriculados = CType(Owner, frmMatriculados)
-            frmMat1.txtCPRealMatri.Text = dgvCodpostal.CurrentRow.Cells(4).Value.ToString
-            frmMat1.txtLocalReal.Text = dgvCodpostal.CurrentRow.Cells(1).Value.ToString
-            frmMat1.txtProvReal.Text = dgvCodpostal.CurrentRow.Cells(3).Value.ToString
-        End If
+        'If senial = 1 Then
+        '    Dim frmMat1 As frmMatriculados = CType(Owner, frmMatriculados)
+        '    frmMat1.txtCPRealMatri.Text = dgvCodpostal.CurrentRow.Cells(4).Value.ToString
+        '    frmMat1.txtLocalReal.Text = dgvCodpostal.CurrentRow.Cells(1).Value.ToString
+        '    frmMat1.txtProvReal.Text = dgvCodpostal.CurrentRow.Cells(3).Value.ToString
+        'End If
 
-        If senial = 2 Then
-            Dim frmMat2 As frmMatriculados = CType(Owner, frmMatriculados)
-            frmMat2.txtCPLegalMatri.Text = dgvCodpostal.CurrentRow.Cells(4).Value.ToString
-            frmMat2.txtLocalLegal.Text = dgvCodpostal.CurrentRow.Cells(1).Value.ToString
-            frmMat2.txtProvLegal.Text = dgvCodpostal.CurrentRow.Cells(3).Value.ToString
-        End If
+        'If senial = 2 Then
+        '    Dim frmMat2 As frmMatriculados = CType(Owner, frmMatriculados)
+        '    frmMat2.txtCPLegalMatri.Text = dgvCodpostal.CurrentRow.Cells(4).Value.ToString
+        '    frmMat2.txtLocalLegal.Text = dgvCodpostal.CurrentRow.Cells(1).Value.ToString
+        '    frmMat2.txtProvLegal.Text = dgvCodpostal.CurrentRow.Cells(3).Value.ToString
+        'End If
 
         If senial = 3 Then
             Dim frmSoc0 As frmSociedades = CType(Owner, frmSociedades)
@@ -75,6 +78,16 @@
             frmProv4.txtLocalidad.Text = dgvCodpostal.CurrentRow.Cells(1).Value.ToString
             frmProv4.txtProvincia.Text = dgvCodpostal.CurrentRow.Cells(3).Value.ToString
             frmProv4.txtIdCodPosProv.Text = dgvCodpostal.CurrentRow.Cells(4).Value.ToString
+        End If
+
+        If senial = 5 Then
+            Dim frmCol1 As frmColegiados = CType(Owner, frmColegiados)
+            frmCol1.txtCodPosReal.Text = dgvCodpostal.CurrentRow.Cells(4).Value.ToString
+        End If
+
+        If senial = 6 Then
+            Dim frmCol2 As frmColegiados = CType(Owner, frmColegiados)
+            frmCol2.txtCodPosLegal.Text = dgvCodpostal.CurrentRow.Cells(4).Value.ToString
         End If
 
         Close()

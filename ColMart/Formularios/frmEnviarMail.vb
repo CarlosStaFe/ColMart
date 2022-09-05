@@ -1,12 +1,14 @@
-﻿Imports System.ComponentModel
+﻿'*******************************************************************************
+'* PROGRAMA PARA ENVIAR LAS BOLETAS POR MAIL                                   *
+'*******************************************************************************
+Imports System.ComponentModel
 Imports System.Net.Mail
 
 Public Class frmEnviarMail
-
     Private correos As New MailMessage
     Private envios As New SmtpClient
-    Dim archivo, ceros, matricula, mail, periodo, yyyy, mm, perdesde, perhasta As String
-    Dim longitud, cantidad, contreg, pos, i As Integer
+    Dim archivo, matricula, mail, periodo, yyyy, mm, perdesde, perhasta As String
+    Dim contreg, pos, i As Integer
     Dim quien As String
 
     Private Sub frmEnviarMail_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -21,26 +23,17 @@ Public Class frmEnviarMail
 
     Private Sub txtHastaMat_LostFocus(sender As Object, e As EventArgs) Handles txtHastaMat.LostFocus
 
-        longitud = Len(txtDesdeMat.Text)
-        If longitud < 5 Then
-            cantidad = 5 - longitud
-            ceros = ""
-            For j = 1 To cantidad
-                ceros = ceros & "0"
-            Next j
-            txtDesdeMat.Text = ceros & txtDesdeMat.Text
-        End If
+        PonerCeros(txtDesdeMat.Text, 5)
+        txtDesdeMat.Text = nroconceros
         txtDesdeMat.Show()
-        longitud = Len(txtHastaMat.Text)
-        If longitud < 5 Then
-            cantidad = 5 - longitud
-            ceros = ""
-            For j = 1 To cantidad
-                ceros = ceros & "0"
-            Next j
-            txtHastaMat.Text = ceros & txtHastaMat.Text
-        End If
+
+        PonerCeros(txtHastaMat.Text, 5)
+        txtHastaMat.Text = nroconceros
         txtHastaMat.Show()
+
+        If txtDesdeMat.Text > txtHastaMat.Text Then
+            txtDesdeMat.Focus()
+        End If
 
     End Sub
 
@@ -87,18 +80,8 @@ Public Class frmEnviarMail
                 txtMsg.Refresh()
                 txtMsg.Show()
 
-                longitud = Len(matricula)
-                If longitud < 5 Then
-                    cantidad = 5 - longitud
-                    ceros = ""
-                    For j = 1 To cantidad
-                        ceros = ceros & "0"
-                    Next j
-                    matricula = ceros & matricula
-                Else
-                    matricula = matricula
-                End If
-
+                PonerCeros(matricula, 5)
+                matricula = nroconceros
                 pos = InStr(1, mail, "@")
 
                 If pos > 0 Then
@@ -125,7 +108,7 @@ Terminar:
         For i = perdesde To perhasta
 
             comando = New MySqlCommand("SELECT * FROM boletas WHERE MatBoleta = '" & matricula & "' " _
-                                                                  & " AND PeriodoBoleta = '" & i & "' AND EstadoBoleta = 'LIQUIDADA' ORDER BY PeriodoBoleta", conexion)
+                                        & " AND PeriodoBoleta = '" & i & "' AND EstadoBoleta = 'LIQUIDADA' ORDER BY PeriodoBoleta", conexion)
             dr = comando.ExecuteReader()
 
             If dr.HasRows Then
@@ -142,16 +125,21 @@ Terminar:
                         Dim e_mail As New MailMessage
                         e_mail.To.Clear()
                         Smtp_Server.UseDefaultCredentials = False
-                        Smtp_Server.Credentials = New Net.NetworkCredential("tesoreria@martilleros.org.ar", "colegiodemartilleros")
+                        'Smtp_Server.Credentials = New Net.NetworkCredential("tesoreria@martilleros.org.ar", "colegiodemartilleros")
+                        Smtp_Server.Credentials = New Net.NetworkCredential("martillerosfe@martilleros.org.ar", "B~)NtSakz.NI")
                         'Smtp_Server.Port = 465
                         Smtp_Server.Port = 587
                         Smtp_Server.Host = "mail.martilleros.org.ar"
 
                         e_mail = New MailMessage
-                        e_mail.From = New MailAddress("tesoreria@martilleros.org.ar")
+                        'e_mail.From = New MailAddress("tesoreria@martilleros.org.ar")
+                        e_mail.From = New MailAddress("martillerosfe@martilleros.org.ar")
 
                         '********** Direcciones de mail para proceso ---------------
                         e_mail.To.Add(Trim(mail))
+
+                        '********** Con Copia a ---------------
+                        'e_mail.Bcc.Add(CStr("tesoreria@martilleros.org.ar"))
                         'e_mail.Bcc.Add(CStr("martillerosfe@martilleros.org.ar"))
 
                         '********** Direcciones de mail para prueba ----------------
@@ -203,23 +191,6 @@ Terminar:
             End If
 
         Next i
-
-    End Sub
-
-    Private Sub FiltrarBoletas()
-
-        comando = New MySqlCommand("SELECT * FROM boletas WHERE MatBoleta = '" & matricula & "' " _
-                                                                  & " AND PeriodoBoleta >= '" & cmbPeriodoDes.Text & "' AND PeriodoBoleta <= '" & cmbPeriodoHas.Text & "' " _
-                                                                  & " AND EstadoBoleta = 'LIQUIDADA' ORDER BY PeriodoBoleta", conexion)
-        dr = comando.ExecuteReader()
-
-        comando = New MySqlCommand("UPDATE boletas SET EstadoBoleta = 'PENDIENTE' WHERE MatBoleta = '" & matricula & "' AND PeriodoBoleta >= '" & cmbPeriodoDes.Text & "' " _
-                                            & " AND PeriodoBoleta <= '" & cmbPeriodoHas.Text & "' AND EstadoBoleta = 'LIQUIDADA' ", conexion)
-        comando.ExecuteNonQuery()
-
-        comando = New MySqlCommand("UPDATE ctasctes SET EstadoCC = 'PENDIENTE' WHERE NroCC = " & matricula & " AND PeriodoCC >= '" & cmbPeriodoDes.Text & "' " _
-                                           & " AND PeriodoCC <= '" & cmbPeriodoHas.Text & "' AND EstadoCC = 'LIQUIDADA' ", conexion)
-        comando.ExecuteNonQuery()
 
     End Sub
 
@@ -319,4 +290,22 @@ Terminar:
         End If
 
     End Sub
+
+    Private Sub FiltrarBoletas()
+
+        comando = New MySqlCommand("SELECT * FROM boletas WHERE MatBoleta = '" & matricula & "' " _
+                                                                  & " AND PeriodoBoleta >= '" & cmbPeriodoDes.Text & "' AND PeriodoBoleta <= '" & cmbPeriodoHas.Text & "' " _
+                                                                  & " AND EstadoBoleta = 'LIQUIDADA' ORDER BY PeriodoBoleta", conexion)
+        dr = comando.ExecuteReader()
+
+        comando = New MySqlCommand("UPDATE boletas SET EstadoBoleta = 'PENDIENTE' WHERE MatBoleta = '" & matricula & "' AND PeriodoBoleta >= '" & cmbPeriodoDes.Text & "' " _
+                                            & " AND PeriodoBoleta <= '" & cmbPeriodoHas.Text & "' AND EstadoBoleta = 'LIQUIDADA' ", conexion)
+        comando.ExecuteNonQuery()
+
+        comando = New MySqlCommand("UPDATE ctasctes SET EstadoCC = 'PENDIENTE' WHERE NroCC = " & matricula & " AND PeriodoCC >= '" & cmbPeriodoDes.Text & "' " _
+                                           & " AND PeriodoCC <= '" & cmbPeriodoHas.Text & "' AND EstadoCC = 'LIQUIDADA' ", conexion)
+        comando.ExecuteNonQuery()
+
+    End Sub
+
 End Class

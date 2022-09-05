@@ -1,4 +1,7 @@
-﻿Public Class frmCptosGastos
+﻿'*******************************************************************************
+'* ACTUALIZACIÓN DE CONCEPTOS DE GASTOS                                        *
+'*******************************************************************************
+Public Class frmCptosGastos
     Private Sub frmCptosGastos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         CptosgastosTableAdapter.Fill(DbcolmartDataSet.cptosgastos)

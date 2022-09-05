@@ -119,11 +119,14 @@ Partial Class frmTribunales
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.bibliotecaTableAdapter = Nothing
         Me.TableAdapterManager.boletasTableAdapter = Nothing
+        Me.TableAdapterManager.botonesTableAdapter = Nothing
+        Me.TableAdapterManager.botonuserTableAdapter = Nothing
         Me.TableAdapterManager.cajamayorTableAdapter = Nothing
         Me.TableAdapterManager.cajaTableAdapter = Nothing
         Me.TableAdapterManager.categivaTableAdapter = Nothing
         Me.TableAdapterManager.coddebitoTableAdapter = Nothing
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
+        Me.TableAdapterManager.colegiadosTableAdapter = Nothing
         Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
         Me.TableAdapterManager.cptosgastosTableAdapter = Nothing
@@ -135,6 +138,8 @@ Partial Class frmTribunales
         Me.TableAdapterManager.departamentoTableAdapter = Nothing
         Me.TableAdapterManager.depositosTableAdapter = Nothing
         Me.TableAdapterManager.detallecpraTableAdapter = Nothing
+        Me.TableAdapterManager.fianzasTableAdapter = Nothing
+        Me.TableAdapterManager.impctacteTableAdapter = Nothing
         Me.TableAdapterManager.juzgadosTableAdapter = Nothing
         Me.TableAdapterManager.listaoficioTableAdapter = Nothing
         Me.TableAdapterManager.localidadesTableAdapter = Nothing
@@ -146,6 +151,7 @@ Partial Class frmTribunales
         Me.TableAdapterManager.padronTableAdapter = Nothing
         Me.TableAdapterManager.proveedoresTableAdapter = Nothing
         Me.TableAdapterManager.provinciaTableAdapter = Nothing
+        Me.TableAdapterManager.reciboTableAdapter = Nothing
         Me.TableAdapterManager.renglonesTableAdapter = Nothing
         Me.TableAdapterManager.saldomatTableAdapter = Nothing
         Me.TableAdapterManager.saldosocTableAdapter = Nothing
@@ -153,6 +159,7 @@ Partial Class frmTribunales
         Me.TableAdapterManager.tribunalesTableAdapter = Me.TribunalesTableAdapter
         Me.TableAdapterManager.UpdateOrder = ColMart.dbcolmartDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usuariosTableAdapter = Nothing
+        Me.TableAdapterManager.ventasTableAdapter = Nothing
         '
         'TribunalesBindingNavigator
         '
@@ -169,7 +176,7 @@ Partial Class frmTribunales
         Me.TribunalesBindingNavigator.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.TribunalesBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.ToolStripSeparator1, Me.BindingNavigatorDeleteItem, Me.ToolStripSeparator2, Me.TribunalesBindingNavigatorSaveItem, Me.ToolStripSeparator3, Me.ToolStripButton1})
         Me.TribunalesBindingNavigator.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
-        Me.TribunalesBindingNavigator.Location = New System.Drawing.Point(128, 560)
+        Me.TribunalesBindingNavigator.Location = New System.Drawing.Point(128, 564)
         Me.TribunalesBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.TribunalesBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
         Me.TribunalesBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem

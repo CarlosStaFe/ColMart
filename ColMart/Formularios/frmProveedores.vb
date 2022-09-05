@@ -1,4 +1,7 @@
-﻿Public Class frmProveedores
+﻿'*******************************************************************************
+'* ACTUALIZACIÓN DE PROVEEDORES                                                *
+'*******************************************************************************
+Public Class frmProveedores
     Private Sub frmProveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ConectarMySql()

@@ -1,12 +1,13 @@
-﻿Imports Microsoft.Reporting.WinForms
+﻿'*******************************************************************************
+'* LISTADO DE FIANZAS POR ESTADO                                               *
+'*******************************************************************************
+Imports Microsoft.Reporting.WinForms
 
 Public Class frmListaFianzas
     Dim detalle As String
     Private Sub frmListaFianzas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         fianzasTableAdapter.Fill(dbcolmartDataSet.fianzas)
-
-        'ReportViewer1.RefreshReport()
 
     End Sub
 
@@ -43,8 +44,6 @@ Public Class frmListaFianzas
         ReportViewer1.LocalReport.SetParameters(parametros)
         ReportViewer1.LocalReport.DataSources.Add(rds)
         ReportViewer1.RefreshReport()
-
-        'fianzasTableAdapter.Fill(dbcolmartDataSet.fianzas)
 
         ReportViewer1.RefreshReport()
 

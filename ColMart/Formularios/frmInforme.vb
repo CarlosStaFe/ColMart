@@ -1,4 +1,7 @@
-﻿Imports Microsoft.Reporting.WinForms
+﻿'*******************************************************************************
+'* PANTALLA PARA IMPRESION DE PAGOS Y SALDOS                                   *
+'*******************************************************************************
+Imports Microsoft.Reporting.WinForms
 
 Public Class frmInforme
     Private Sub frmInforme_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -13,4 +16,5 @@ Public Class frmInforme
         ReportViewer1.RefreshReport()
 
     End Sub
+
 End Class

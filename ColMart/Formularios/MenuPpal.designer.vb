@@ -54,6 +54,7 @@ Partial Class MenuPpal
         Me.btnActualizarMesa = New System.Windows.Forms.Button()
         Me.btnMesaEntrada = New System.Windows.Forms.Button()
         Me.SubMenuCaja = New System.Windows.Forms.Panel()
+        Me.btnLibroVentas = New System.Windows.Forms.Button()
         Me.btnImportarBanco = New System.Windows.Forms.Button()
         Me.btnReciboGral = New System.Windows.Forms.Button()
         Me.btnReciboPago = New System.Windows.Forms.Button()
@@ -91,7 +92,6 @@ Partial Class MenuPpal
         Me.btnMinimizar = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
-        Me.btnLibroVentas = New System.Windows.Forms.Button()
         Me.PanelBotonesMenu.SuspendLayout()
         Me.PanelFormularios.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -183,7 +183,7 @@ Partial Class MenuPpal
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSalir.Location = New System.Drawing.Point(0, 1391)
+        Me.btnSalir.Location = New System.Drawing.Point(0, 1392)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Padding = New System.Windows.Forms.Padding(15, 0, 0, 0)
         Me.btnSalir.Size = New System.Drawing.Size(233, 50)
@@ -203,7 +203,7 @@ Partial Class MenuPpal
         Me.SubMenuSistema.Dock = System.Windows.Forms.DockStyle.Top
         Me.SubMenuSistema.Location = New System.Drawing.Point(0, 1259)
         Me.SubMenuSistema.Name = "SubMenuSistema"
-        Me.SubMenuSistema.Size = New System.Drawing.Size(233, 132)
+        Me.SubMenuSistema.Size = New System.Drawing.Size(233, 133)
         Me.SubMenuSistema.TabIndex = 24
         '
         'btnAccesoMenues
@@ -640,6 +640,24 @@ Partial Class MenuPpal
         Me.SubMenuCaja.Name = "SubMenuCaja"
         Me.SubMenuCaja.Size = New System.Drawing.Size(233, 134)
         Me.SubMenuCaja.TabIndex = 16
+        '
+        'btnLibroVentas
+        '
+        Me.btnLibroVentas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLibroVentas.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnLibroVentas.FlatAppearance.BorderSize = 0
+        Me.btnLibroVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLibroVentas.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLibroVentas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(196, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnLibroVentas.Location = New System.Drawing.Point(0, 100)
+        Me.btnLibroVentas.Name = "btnLibroVentas"
+        Me.btnLibroVentas.Padding = New System.Windows.Forms.Padding(50, 0, 0, 0)
+        Me.btnLibroVentas.Size = New System.Drawing.Size(233, 25)
+        Me.btnLibroVentas.TabIndex = 18
+        Me.btnLibroVentas.Text = "Libro Ventas"
+        Me.btnLibroVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLibroVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLibroVentas.UseVisualStyleBackColor = True
         '
         'btnImportarBanco
         '
@@ -1223,24 +1241,6 @@ Partial Class MenuPpal
         Me.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.btnCerrar.TabIndex = 0
         Me.btnCerrar.TabStop = False
-        '
-        'btnLibroVentas
-        '
-        Me.btnLibroVentas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnLibroVentas.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnLibroVentas.FlatAppearance.BorderSize = 0
-        Me.btnLibroVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLibroVentas.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLibroVentas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(2, Byte), Integer), CType(CType(196, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btnLibroVentas.Location = New System.Drawing.Point(0, 100)
-        Me.btnLibroVentas.Name = "btnLibroVentas"
-        Me.btnLibroVentas.Padding = New System.Windows.Forms.Padding(50, 0, 0, 0)
-        Me.btnLibroVentas.Size = New System.Drawing.Size(233, 25)
-        Me.btnLibroVentas.TabIndex = 18
-        Me.btnLibroVentas.Text = "Libro Ventas"
-        Me.btnLibroVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLibroVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnLibroVentas.UseVisualStyleBackColor = True
         '
         'MenuPpal
         '

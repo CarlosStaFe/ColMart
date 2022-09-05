@@ -1,8 +1,11 @@
-﻿Imports System.Text
+﻿'*******************************************************************************
+'* PROGRAMA CON DIFERENTES FUNCIONES PARA EL SISTEMA                           *
+'*******************************************************************************
+Imports System.Text
 Imports System.Security.Cryptography
 
 Module Variables
-    'Variables para usar en el sistema
+    '***Variables para usar en el sistema
     Public conexion As New MySqlConnection
     Public comando As New MySqlCommand
     Public CmdBuilder As MySqlCommandBuilder

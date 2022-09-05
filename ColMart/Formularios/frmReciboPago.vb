@@ -1,4 +1,7 @@
-﻿Imports Microsoft.Reporting.WinForms
+﻿'*******************************************************************************
+'* LISTADO DE COBRO DE BOLETAS VIEJO                                           *
+'*******************************************************************************
+Imports Microsoft.Reporting.WinForms
 Imports System.IO
 
 Public Class frmReciboPago

@@ -1,4 +1,7 @@
-﻿Public Class frmListaPadron
+﻿'*******************************************************************************
+'* LISTADO DE PADRÓN DE MATRICULADOS                                           *
+'*******************************************************************************
+Public Class frmListaPadron
     Dim localidad, departamento, provincia As String
     Dim meses, leer, flag As Integer
     Dim senial, idlocal, iddpto, idprov, contador As Integer
@@ -15,8 +18,6 @@
         cmbOrden.SelectedIndex = 0
         txtAFecha.Text = Format(Now, "dd/MM/yyyy")
         txtFecha.Text = txtAFecha.Text
-
-        ActualizarCodPos()
 
         CargarLocal()
         cmbLocal.SelectedIndex = 0

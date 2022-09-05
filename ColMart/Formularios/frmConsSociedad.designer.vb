@@ -66,7 +66,7 @@ Partial Class frmConsSociedad
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Green
-        Me.Label3.Location = New System.Drawing.Point(167, 9)
+        Me.Label3.Location = New System.Drawing.Point(184, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(364, 36)
         Me.Label3.TabIndex = 87
@@ -107,7 +107,7 @@ Partial Class frmConsSociedad
         Me.dgvSociedades.DefaultCellStyle = DataGridViewCellStyle5
         Me.dgvSociedades.EnableHeadersVisualStyles = False
         Me.dgvSociedades.GridColor = System.Drawing.Color.White
-        Me.dgvSociedades.Location = New System.Drawing.Point(10, 113)
+        Me.dgvSociedades.Location = New System.Drawing.Point(27, 113)
         Me.dgvSociedades.Name = "dgvSociedades"
         Me.dgvSociedades.ReadOnly = True
         Me.dgvSociedades.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -238,7 +238,7 @@ Partial Class frmConsSociedad
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(15, 524)
+        Me.Label2.Location = New System.Drawing.Point(32, 524)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(414, 19)
         Me.Label2.TabIndex = 89
@@ -255,7 +255,7 @@ Partial Class frmConsSociedad
         Me.BtnSalir.ForeColor = System.Drawing.Color.White
         Me.BtnSalir.Image = CType(resources.GetObject("BtnSalir.Image"), System.Drawing.Image)
         Me.BtnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnSalir.Location = New System.Drawing.Point(627, 31)
+        Me.BtnSalir.Location = New System.Drawing.Point(644, 31)
         Me.BtnSalir.Name = "BtnSalir"
         Me.BtnSalir.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnSalir.Size = New System.Drawing.Size(87, 56)
@@ -267,7 +267,7 @@ Partial Class frmConsSociedad
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox2.Location = New System.Drawing.Point(606, 20)
+        Me.PictureBox2.Location = New System.Drawing.Point(623, 20)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(126, 78)
         Me.PictureBox2.TabIndex = 91
@@ -279,7 +279,7 @@ Partial Class frmConsSociedad
         Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtNombre.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre.ForeColor = System.Drawing.Color.White
-        Me.txtNombre.Location = New System.Drawing.Point(184, 66)
+        Me.txtNombre.Location = New System.Drawing.Point(201, 66)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(378, 23)
         Me.txtNombre.TabIndex = 0
@@ -289,7 +289,7 @@ Partial Class frmConsSociedad
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(48, 68)
+        Me.Label1.Location = New System.Drawing.Point(65, 68)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(130, 17)
         Me.Label1.TabIndex = 92
@@ -298,7 +298,7 @@ Partial Class frmConsSociedad
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 57)
+        Me.PictureBox1.Location = New System.Drawing.Point(29, 57)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(587, 41)
         Me.PictureBox1.TabIndex = 94

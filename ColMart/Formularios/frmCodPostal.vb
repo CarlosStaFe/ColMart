@@ -1,4 +1,7 @@
-﻿Public Class frmCodPostal
+﻿'*******************************************************************************
+'* ACTUALIZA LOS CÓDIGOS POSTALES                                              *
+'*******************************************************************************
+Public Class frmCodPostal
     Dim idprov, iddpto, idlocal As Integer
 
     Private Sub frmCodPostal_Load(sender As Object, e As EventArgs) Handles MyBase.Load

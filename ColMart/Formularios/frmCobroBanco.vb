@@ -1,4 +1,7 @@
-﻿Public Class frmCobroBanco
+﻿'*******************************************************************************
+'* PROCESAR LOS ARCHIVOS DE PAGOS EN BANCO DE LAS BOLETAS                      *
+'*******************************************************************************
+Public Class frmCobroBanco
 
     Dim nomArchivo As New OpenFileDialog
     Dim contlineas, contreg, StringLength, CurrentCharNum As Integer
@@ -305,7 +308,6 @@ finalizar:
             End Try
         Else
             Try
-                'comando = New MySqlCommand(("UPDATE ctactesoc SET EstadoCCSoc = 'PAGO BANCO', PagadoCCSoc = '" & fechapago & "' WHERE NroCCSoc = '" & matricula & "' AND  id_CCMat = '" & id & "'"), conexion)
                 comando = New MySqlCommand(("UPDATE ctasctes SET EstadoCC = 'PAGO BANCO', FecPagoCC = '" & fechapago & "', RestoCC = 0, PagadoCC = DebeCC " _
                                             & " WHERE NroCC = '" & matricula & "' AND  FechaCC = '" & vencto & "' AND TipoCbteCC =  'LIQ' "), conexion)
                 comando.ExecuteNonQuery()

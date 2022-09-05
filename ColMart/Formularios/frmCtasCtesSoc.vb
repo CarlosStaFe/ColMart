@@ -1,8 +1,9 @@
-﻿Public Class frmCtasCtesSoc
+﻿'*******************************************************************************
+'* CONSULTA DE CUENTAS CORRIENTES DE SOCIEDADES DE REMATES                     *
+'*******************************************************************************
+Public Class frmCtasCtesSoc
     Dim debe, haber, saldo, saldoant, pagado, resto As Decimal
     Dim detalle, comprobante, estado, id, obs, fecpago, fechaaux As String
-    Dim pos1, pos2, longitud, cantidad As Integer
-    Dim yyyy, mm, dd, ceros As String
 
     Private Sub frmCtasCtesMat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -163,9 +164,9 @@
                 fecpago = "1900-01-01"
             Else
                 fecpago = dgvCtasCtes.Rows(i).Cells(13).Value()
-                fechaaux = fecpago
-                MoverFecha()
-                fecpago = yyyy + "-" + mm + "-" + dd
+                fechajob = fecpago
+                ProcesarFecha()
+                fecpago = fechadb
             End If
             resto = dgvCtasCtes.Rows(i).Cells(14).Value()
             obs = dgvCtasCtes.Rows(i).Cells(15).Value()
@@ -182,40 +183,6 @@
         txtSaldo.Text = ""
         dgvCtasCtes.DataSource = Nothing
         txtSociedad.Focus()
-
-    End Sub
-
-    Private Sub MoverFecha()
-
-        pos1 = InStr(1, fechaaux, "/")
-        pos2 = InStr(pos1 + 1, fechaaux, "/")
-        If pos1 > 0 Then
-            dd = Mid(fechaaux, 1, pos1 - 1)
-            mm = Mid(fechaaux, pos1 + 1, ((pos2 - 1) - pos1))
-            yyyy = Mid(fechaaux, pos2 + 1, 4)
-        End If
-
-        ceros = ""
-
-        longitud = Len(dd)
-        If longitud < 2 Then
-            cantidad = 2 - longitud
-            For j = 1 To cantidad
-                ceros = ceros & "0"
-            Next j
-            dd = ceros & dd
-        End If
-
-        ceros = ""
-
-        longitud = Len(mm)
-        If longitud < 2 Then
-            cantidad = 2 - longitud
-            For j = 1 To cantidad
-                ceros = ceros & "0"
-            Next j
-            mm = ceros & mm
-        End If
 
     End Sub
 

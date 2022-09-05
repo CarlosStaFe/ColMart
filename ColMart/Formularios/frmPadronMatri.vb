@@ -1,4 +1,7 @@
-﻿Imports Microsoft.Reporting.WinForms
+﻿'*******************************************************************************
+'* LISTADO DE PADRÓN DE MATRICULADOS                                           *
+'*******************************************************************************
+Imports Microsoft.Reporting.WinForms
 
 Public Class frmPadronMatri
     Public detalle As String

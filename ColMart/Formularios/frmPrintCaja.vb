@@ -1,4 +1,7 @@
-﻿Imports System.IO
+﻿'*******************************************************************************
+'* LISTADO DE PLANILLAS DE CAJA                                                *
+'*******************************************************************************
+Imports System.IO
 Imports System.Net.Mail
 Imports Microsoft.Reporting.WinForms
 

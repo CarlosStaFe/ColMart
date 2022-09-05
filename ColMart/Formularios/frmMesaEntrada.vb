@@ -1,4 +1,7 @@
-﻿Public Class frmMesaEntrada
+﻿'*******************************************************************************
+'* PANTALLA DE MOVIMIENTOS DE MESA DE ENTRADA                                  *
+'*******************************************************************************
+Public Class frmMesaEntrada
     Private Sub frmMesaEntrada_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         MesaentradaTableAdapter.Fill(DbcolmartDataSet.mesaentrada)

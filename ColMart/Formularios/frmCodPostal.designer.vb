@@ -73,7 +73,7 @@ Partial Class frmCodPostal
         NroCodPosLabel.AutoSize = True
         NroCodPosLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         NroCodPosLabel.ForeColor = System.Drawing.Color.White
-        NroCodPosLabel.Location = New System.Drawing.Point(163, 67)
+        NroCodPosLabel.Location = New System.Drawing.Point(184, 76)
         NroCodPosLabel.Name = "NroCodPosLabel"
         NroCodPosLabel.Size = New System.Drawing.Size(62, 17)
         NroCodPosLabel.TabIndex = 3
@@ -84,7 +84,7 @@ Partial Class frmCodPostal
         LocalCodPosLabel.AutoSize = True
         LocalCodPosLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         LocalCodPosLabel.ForeColor = System.Drawing.Color.White
-        LocalCodPosLabel.Location = New System.Drawing.Point(148, 93)
+        LocalCodPosLabel.Location = New System.Drawing.Point(169, 102)
         LocalCodPosLabel.Name = "LocalCodPosLabel"
         LocalCodPosLabel.Size = New System.Drawing.Size(77, 17)
         LocalCodPosLabel.TabIndex = 5
@@ -95,7 +95,7 @@ Partial Class frmCodPostal
         DptoCodPosLabel.AutoSize = True
         DptoCodPosLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DptoCodPosLabel.ForeColor = System.Drawing.Color.White
-        DptoCodPosLabel.Location = New System.Drawing.Point(116, 119)
+        DptoCodPosLabel.Location = New System.Drawing.Point(137, 128)
         DptoCodPosLabel.Name = "DptoCodPosLabel"
         DptoCodPosLabel.Size = New System.Drawing.Size(109, 17)
         DptoCodPosLabel.TabIndex = 7
@@ -106,7 +106,7 @@ Partial Class frmCodPostal
         ProvCodPosLabel.AutoSize = True
         ProvCodPosLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         ProvCodPosLabel.ForeColor = System.Drawing.Color.White
-        ProvCodPosLabel.Location = New System.Drawing.Point(153, 145)
+        ProvCodPosLabel.Location = New System.Drawing.Point(174, 154)
         ProvCodPosLabel.Name = "ProvCodPosLabel"
         ProvCodPosLabel.Size = New System.Drawing.Size(72, 17)
         ProvCodPosLabel.TabIndex = 9
@@ -131,11 +131,14 @@ Partial Class frmCodPostal
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.bibliotecaTableAdapter = Nothing
         Me.TableAdapterManager.boletasTableAdapter = Nothing
+        Me.TableAdapterManager.botonesTableAdapter = Nothing
+        Me.TableAdapterManager.botonuserTableAdapter = Nothing
         Me.TableAdapterManager.cajamayorTableAdapter = Nothing
         Me.TableAdapterManager.cajaTableAdapter = Nothing
         Me.TableAdapterManager.categivaTableAdapter = Nothing
         Me.TableAdapterManager.coddebitoTableAdapter = Nothing
         Me.TableAdapterManager.codpostalTableAdapter = Me.CodpostalTableAdapter
+        Me.TableAdapterManager.colegiadosTableAdapter = Nothing
         Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
         Me.TableAdapterManager.cptosgastosTableAdapter = Nothing
@@ -147,6 +150,8 @@ Partial Class frmCodPostal
         Me.TableAdapterManager.departamentoTableAdapter = Nothing
         Me.TableAdapterManager.depositosTableAdapter = Nothing
         Me.TableAdapterManager.detallecpraTableAdapter = Nothing
+        Me.TableAdapterManager.fianzasTableAdapter = Nothing
+        Me.TableAdapterManager.impctacteTableAdapter = Nothing
         Me.TableAdapterManager.juzgadosTableAdapter = Nothing
         Me.TableAdapterManager.listaoficioTableAdapter = Nothing
         Me.TableAdapterManager.localidadesTableAdapter = Nothing
@@ -158,6 +163,7 @@ Partial Class frmCodPostal
         Me.TableAdapterManager.padronTableAdapter = Nothing
         Me.TableAdapterManager.proveedoresTableAdapter = Nothing
         Me.TableAdapterManager.provinciaTableAdapter = Nothing
+        Me.TableAdapterManager.reciboTableAdapter = Nothing
         Me.TableAdapterManager.renglonesTableAdapter = Nothing
         Me.TableAdapterManager.saldomatTableAdapter = Nothing
         Me.TableAdapterManager.saldosocTableAdapter = Nothing
@@ -165,6 +171,7 @@ Partial Class frmCodPostal
         Me.TableAdapterManager.tribunalesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = ColMart.dbcolmartDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.usuariosTableAdapter = Nothing
+        Me.TableAdapterManager.ventasTableAdapter = Nothing
         '
         'Id_CodPosTextBox
         '
@@ -174,7 +181,7 @@ Partial Class frmCodPostal
         Me.Id_CodPosTextBox.Enabled = False
         Me.Id_CodPosTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Id_CodPosTextBox.ForeColor = System.Drawing.Color.White
-        Me.Id_CodPosTextBox.Location = New System.Drawing.Point(344, 68)
+        Me.Id_CodPosTextBox.Location = New System.Drawing.Point(365, 77)
         Me.Id_CodPosTextBox.Name = "Id_CodPosTextBox"
         Me.Id_CodPosTextBox.Size = New System.Drawing.Size(52, 16)
         Me.Id_CodPosTextBox.TabIndex = 2
@@ -186,7 +193,7 @@ Partial Class frmCodPostal
         Me.txtNroCodPos.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CodpostalBindingSource, "NroCodPos", True))
         Me.txtNroCodPos.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNroCodPos.ForeColor = System.Drawing.Color.White
-        Me.txtNroCodPos.Location = New System.Drawing.Point(232, 64)
+        Me.txtNroCodPos.Location = New System.Drawing.Point(253, 73)
         Me.txtNroCodPos.Name = "txtNroCodPos"
         Me.txtNroCodPos.Size = New System.Drawing.Size(100, 23)
         Me.txtNroCodPos.TabIndex = 4
@@ -199,7 +206,7 @@ Partial Class frmCodPostal
         Me.txtLocalCodPos.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CodpostalBindingSource, "LocalCodPos", True))
         Me.txtLocalCodPos.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLocalCodPos.ForeColor = System.Drawing.Color.White
-        Me.txtLocalCodPos.Location = New System.Drawing.Point(232, 90)
+        Me.txtLocalCodPos.Location = New System.Drawing.Point(253, 99)
         Me.txtLocalCodPos.Name = "txtLocalCodPos"
         Me.txtLocalCodPos.Size = New System.Drawing.Size(300, 23)
         Me.txtLocalCodPos.TabIndex = 6
@@ -212,7 +219,7 @@ Partial Class frmCodPostal
         Me.txtDptoCodPos.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CodpostalBindingSource, "DptoCodPos", True))
         Me.txtDptoCodPos.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDptoCodPos.ForeColor = System.Drawing.Color.White
-        Me.txtDptoCodPos.Location = New System.Drawing.Point(232, 116)
+        Me.txtDptoCodPos.Location = New System.Drawing.Point(253, 125)
         Me.txtDptoCodPos.Name = "txtDptoCodPos"
         Me.txtDptoCodPos.Size = New System.Drawing.Size(300, 23)
         Me.txtDptoCodPos.TabIndex = 8
@@ -225,7 +232,7 @@ Partial Class frmCodPostal
         Me.txtProvCodPos.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CodpostalBindingSource, "ProvCodPos", True))
         Me.txtProvCodPos.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtProvCodPos.ForeColor = System.Drawing.Color.White
-        Me.txtProvCodPos.Location = New System.Drawing.Point(232, 142)
+        Me.txtProvCodPos.Location = New System.Drawing.Point(253, 151)
         Me.txtProvCodPos.Name = "txtProvCodPos"
         Me.txtProvCodPos.Size = New System.Drawing.Size(300, 23)
         Me.txtProvCodPos.TabIndex = 10
@@ -235,7 +242,7 @@ Partial Class frmCodPostal
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Green
-        Me.Label2.Location = New System.Drawing.Point(75, 9)
+        Me.Label2.Location = New System.Drawing.Point(90, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(507, 36)
         Me.Label2.TabIndex = 86
@@ -244,7 +251,7 @@ Partial Class frmCodPostal
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(75, 49)
+        Me.PictureBox1.Location = New System.Drawing.Point(96, 58)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(493, 130)
         Me.PictureBox1.TabIndex = 90
@@ -268,7 +275,7 @@ Partial Class frmCodPostal
         Me.CodpostalBindingNavigator.GripMargin = New System.Windows.Forms.Padding(0)
         Me.CodpostalBindingNavigator.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.CodpostalBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.BindingNavigatorMovePreviusItem, Me.ToolStripSeparator1, Me.ToolStripTextBox1, Me.ToolStripLabel2, Me.ToolStripSeparator2, Me.ToolStripButton2, Me.ToolStripButton3, Me.ToolStripSeparator3, Me.CodpostalBindingNavigatorAddNewItem, Me.ToolStripSeparator4, Me.CodpostalBindingNavigatorDeleteItem, Me.ToolStripSeparator5, Me.CodpostalBindingNavigatorSaveItem, Me.ToolStripSeparator6, Me.ToolStripButton4})
-        Me.CodpostalBindingNavigator.Location = New System.Drawing.Point(22, 206)
+        Me.CodpostalBindingNavigator.Location = New System.Drawing.Point(43, 242)
         Me.CodpostalBindingNavigator.MoveFirstItem = Me.ToolStripButton1
         Me.CodpostalBindingNavigator.MoveLastItem = Me.ToolStripButton3
         Me.CodpostalBindingNavigator.MoveNextItem = Me.ToolStripButton2
@@ -414,7 +421,7 @@ Partial Class frmCodPostal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(734, 357)
+        Me.ClientSize = New System.Drawing.Size(802, 575)
         Me.Controls.Add(Me.CodpostalBindingNavigator)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Id_CodPosTextBox)

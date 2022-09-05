@@ -1,5 +1,4 @@
 ﻿Public Class frmCargarDebMat
-
     Private Sub frmCargarDebMat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ConectarMySql()

@@ -856,7 +856,7 @@ Partial Class frmCompras
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1173, 556)
+        Me.ClientSize = New System.Drawing.Size(1173, 575)
         Me.Controls.Add(Me.dgvDetCompras)
         Me.Controls.Add(Me.btnGrabar)
         Me.Controls.Add(Me.btnSalir)

@@ -70,7 +70,7 @@ Partial Class frmListaPadron
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Century Gothic", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Green
-        Me.Label1.Location = New System.Drawing.Point(232, 9)
+        Me.Label1.Location = New System.Drawing.Point(245, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(469, 36)
         Me.Label1.TabIndex = 86
@@ -81,7 +81,7 @@ Partial Class frmListaPadron
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label2.Location = New System.Drawing.Point(43, 61)
+        Me.Label2.Location = New System.Drawing.Point(56, 61)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(81, 19)
         Me.Label2.TabIndex = 99
@@ -92,7 +92,7 @@ Partial Class frmListaPadron
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label3.Location = New System.Drawing.Point(273, 61)
+        Me.Label3.Location = New System.Drawing.Point(286, 61)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(63, 19)
         Me.Label3.TabIndex = 100
@@ -103,7 +103,7 @@ Partial Class frmListaPadron
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label4.Location = New System.Drawing.Point(441, 63)
+        Me.Label4.Location = New System.Drawing.Point(454, 63)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(108, 19)
         Me.Label4.TabIndex = 101
@@ -120,7 +120,7 @@ Partial Class frmListaPadron
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnSalir.Location = New System.Drawing.Point(793, 257)
+        Me.btnSalir.Location = New System.Drawing.Point(806, 257)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btnSalir.Size = New System.Drawing.Size(65, 56)
@@ -140,7 +140,7 @@ Partial Class frmListaPadron
         Me.btnFiltrar.ForeColor = System.Drawing.Color.White
         Me.btnFiltrar.Image = CType(resources.GetObject("btnFiltrar.Image"), System.Drawing.Image)
         Me.btnFiltrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.btnFiltrar.Location = New System.Drawing.Point(437, 257)
+        Me.btnFiltrar.Location = New System.Drawing.Point(450, 257)
         Me.btnFiltrar.Name = "btnFiltrar"
         Me.btnFiltrar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btnFiltrar.Size = New System.Drawing.Size(66, 56)
@@ -152,7 +152,7 @@ Partial Class frmListaPadron
         'PictureBox4
         '
         Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox4.Location = New System.Drawing.Point(14, 48)
+        Me.PictureBox4.Location = New System.Drawing.Point(27, 48)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(898, 51)
         Me.PictureBox4.TabIndex = 144
@@ -166,7 +166,7 @@ Partial Class frmListaPadron
         Me.cmbEstado.ForeColor = System.Drawing.Color.White
         Me.cmbEstado.FormattingEnabled = True
         Me.cmbEstado.Items.AddRange(New Object() {"TODOS", "ACTIVO", "BAJA", "CANCELADO", "SUSP MOROSO", "SUSPENDIDO"})
-        Me.cmbEstado.Location = New System.Drawing.Point(130, 60)
+        Me.cmbEstado.Location = New System.Drawing.Point(143, 60)
         Me.cmbEstado.Name = "cmbEstado"
         Me.cmbEstado.Size = New System.Drawing.Size(135, 25)
         Me.cmbEstado.TabIndex = 0
@@ -179,7 +179,7 @@ Partial Class frmListaPadron
         Me.cmbSexo.ForeColor = System.Drawing.Color.White
         Me.cmbSexo.FormattingEnabled = True
         Me.cmbSexo.Items.AddRange(New Object() {"TODOS", "M", "F"})
-        Me.cmbSexo.Location = New System.Drawing.Point(342, 60)
+        Me.cmbSexo.Location = New System.Drawing.Point(355, 60)
         Me.cmbSexo.Name = "cmbSexo"
         Me.cmbSexo.Size = New System.Drawing.Size(91, 25)
         Me.cmbSexo.TabIndex = 1
@@ -192,7 +192,7 @@ Partial Class frmListaPadron
         Me.cmbCategoria.ForeColor = System.Drawing.Color.White
         Me.cmbCategoria.FormattingEnabled = True
         Me.cmbCategoria.Items.AddRange(New Object() {"TODOS", "A", "B"})
-        Me.cmbCategoria.Location = New System.Drawing.Point(555, 60)
+        Me.cmbCategoria.Location = New System.Drawing.Point(568, 60)
         Me.cmbCategoria.Name = "cmbCategoria"
         Me.cmbCategoria.Size = New System.Drawing.Size(90, 25)
         Me.cmbCategoria.TabIndex = 2
@@ -205,7 +205,7 @@ Partial Class frmListaPadron
         Me.cmbOrden.ForeColor = System.Drawing.Color.White
         Me.cmbOrden.FormattingEnabled = True
         Me.cmbOrden.Items.AddRange(New Object() {"MATRICULA", "APELLIDO"})
-        Me.cmbOrden.Location = New System.Drawing.Point(721, 60)
+        Me.cmbOrden.Location = New System.Drawing.Point(734, 60)
         Me.cmbOrden.Name = "cmbOrden"
         Me.cmbOrden.Size = New System.Drawing.Size(135, 25)
         Me.cmbOrden.TabIndex = 3
@@ -215,7 +215,7 @@ Partial Class frmListaPadron
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label5.Location = New System.Drawing.Point(652, 63)
+        Me.Label5.Location = New System.Drawing.Point(665, 63)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(63, 19)
         Me.Label5.TabIndex = 147
@@ -232,7 +232,7 @@ Partial Class frmListaPadron
         Me.txtFecha.Enabled = False
         Me.txtFecha.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFecha.ForeColor = System.Drawing.Color.White
-        Me.txtFecha.Location = New System.Drawing.Point(577, 176)
+        Me.txtFecha.Location = New System.Drawing.Point(590, 176)
         Me.txtFecha.Name = "txtFecha"
         Me.txtFecha.Size = New System.Drawing.Size(91, 23)
         Me.txtFecha.TabIndex = 9
@@ -242,7 +242,7 @@ Partial Class frmListaPadron
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label6.Location = New System.Drawing.Point(463, 176)
+        Me.Label6.Location = New System.Drawing.Point(476, 176)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(108, 19)
         Me.Label6.TabIndex = 150
@@ -254,7 +254,7 @@ Partial Class frmListaPadron
         Me.NUDyyyy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NUDyyyy.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NUDyyyy.ForeColor = System.Drawing.Color.White
-        Me.NUDyyyy.Location = New System.Drawing.Point(230, 176)
+        Me.NUDyyyy.Location = New System.Drawing.Point(243, 176)
         Me.NUDyyyy.Name = "NUDyyyy"
         Me.NUDyyyy.Size = New System.Drawing.Size(41, 23)
         Me.NUDyyyy.TabIndex = 7
@@ -265,7 +265,7 @@ Partial Class frmListaPadron
         Me.NUDmm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.NUDmm.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NUDmm.ForeColor = System.Drawing.Color.White
-        Me.NUDmm.Location = New System.Drawing.Point(325, 176)
+        Me.NUDmm.Location = New System.Drawing.Point(338, 176)
         Me.NUDmm.Name = "NUDmm"
         Me.NUDmm.Size = New System.Drawing.Size(41, 23)
         Me.NUDmm.TabIndex = 8
@@ -277,7 +277,7 @@ Partial Class frmListaPadron
         Me.cmbLocal.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbLocal.ForeColor = System.Drawing.Color.White
         Me.cmbLocal.FormattingEnabled = True
-        Me.cmbLocal.Location = New System.Drawing.Point(130, 205)
+        Me.cmbLocal.Location = New System.Drawing.Point(143, 205)
         Me.cmbLocal.Name = "cmbLocal"
         Me.cmbLocal.Size = New System.Drawing.Size(185, 25)
         Me.cmbLocal.TabIndex = 10
@@ -287,7 +287,7 @@ Partial Class frmListaPadron
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label8.Location = New System.Drawing.Point(25, 207)
+        Me.Label8.Location = New System.Drawing.Point(38, 207)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(99, 19)
         Me.Label8.TabIndex = 155
@@ -300,7 +300,7 @@ Partial Class frmListaPadron
         Me.cmbDpto.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbDpto.ForeColor = System.Drawing.Color.White
         Me.cmbDpto.FormattingEnabled = True
-        Me.cmbDpto.Location = New System.Drawing.Point(412, 205)
+        Me.cmbDpto.Location = New System.Drawing.Point(425, 205)
         Me.cmbDpto.Name = "cmbDpto"
         Me.cmbDpto.Size = New System.Drawing.Size(185, 25)
         Me.cmbDpto.TabIndex = 11
@@ -310,7 +310,7 @@ Partial Class frmListaPadron
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label9.Location = New System.Drawing.Point(325, 207)
+        Me.Label9.Location = New System.Drawing.Point(338, 207)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(81, 19)
         Me.Label9.TabIndex = 157
@@ -321,7 +321,7 @@ Partial Class frmListaPadron
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.GreenYellow
-        Me.Label10.Location = New System.Drawing.Point(274, 176)
+        Me.Label10.Location = New System.Drawing.Point(287, 176)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(45, 19)
         Me.Label10.TabIndex = 158
@@ -332,7 +332,7 @@ Partial Class frmListaPadron
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.GreenYellow
-        Me.Label11.Location = New System.Drawing.Point(372, 176)
+        Me.Label11.Location = New System.Drawing.Point(385, 176)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(54, 19)
         Me.Label11.TabIndex = 159
@@ -343,7 +343,7 @@ Partial Class frmListaPadron
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label7.Location = New System.Drawing.Point(43, 176)
+        Me.Label7.Location = New System.Drawing.Point(56, 176)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(81, 19)
         Me.Label7.TabIndex = 161
@@ -355,7 +355,7 @@ Partial Class frmListaPadron
         Me.txtAFecha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAFecha.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAFecha.ForeColor = System.Drawing.Color.White
-        Me.txtAFecha.Location = New System.Drawing.Point(130, 176)
+        Me.txtAFecha.Location = New System.Drawing.Point(143, 176)
         Me.txtAFecha.Name = "txtAFecha"
         Me.txtAFecha.Size = New System.Drawing.Size(91, 23)
         Me.txtAFecha.TabIndex = 6
@@ -363,7 +363,7 @@ Partial Class frmListaPadron
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox1.Location = New System.Drawing.Point(14, 248)
+        Me.PictureBox1.Location = New System.Drawing.Point(27, 248)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(899, 72)
         Me.PictureBox1.TabIndex = 162
@@ -376,7 +376,7 @@ Partial Class frmListaPadron
         Me.cmbProv.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbProv.ForeColor = System.Drawing.Color.White
         Me.cmbProv.FormattingEnabled = True
-        Me.cmbProv.Location = New System.Drawing.Point(714, 205)
+        Me.cmbProv.Location = New System.Drawing.Point(727, 205)
         Me.cmbProv.Name = "cmbProv"
         Me.cmbProv.Size = New System.Drawing.Size(185, 25)
         Me.cmbProv.TabIndex = 12
@@ -386,7 +386,7 @@ Partial Class frmListaPadron
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label12.Location = New System.Drawing.Point(609, 208)
+        Me.Label12.Location = New System.Drawing.Point(622, 208)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(99, 19)
         Me.Label12.TabIndex = 164
@@ -397,7 +397,7 @@ Partial Class frmListaPadron
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.DarkOrange
-        Me.Label13.Location = New System.Drawing.Point(449, 120)
+        Me.Label13.Location = New System.Drawing.Point(462, 120)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(99, 19)
         Me.Label13.TabIndex = 166
@@ -409,7 +409,7 @@ Partial Class frmListaPadron
         Me.txtAFechaFianza.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtAFechaFianza.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAFechaFianza.ForeColor = System.Drawing.Color.White
-        Me.txtAFechaFianza.Location = New System.Drawing.Point(554, 120)
+        Me.txtAFechaFianza.Location = New System.Drawing.Point(567, 120)
         Me.txtAFechaFianza.Name = "txtAFechaFianza"
         Me.txtAFechaFianza.Size = New System.Drawing.Size(91, 23)
         Me.txtAFechaFianza.TabIndex = 5
@@ -420,7 +420,7 @@ Partial Class frmListaPadron
         Me.chbFianza.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.chbFianza.Font = New System.Drawing.Font("Consolas", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chbFianza.ForeColor = System.Drawing.Color.DarkOrange
-        Me.chbFianza.Location = New System.Drawing.Point(245, 119)
+        Me.chbFianza.Location = New System.Drawing.Point(258, 119)
         Me.chbFianza.Name = "chbFianza"
         Me.chbFianza.Size = New System.Drawing.Size(154, 23)
         Me.chbFianza.TabIndex = 4
@@ -430,7 +430,7 @@ Partial Class frmListaPadron
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox2.Location = New System.Drawing.Point(14, 105)
+        Me.PictureBox2.Location = New System.Drawing.Point(27, 105)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(898, 51)
         Me.PictureBox2.TabIndex = 167
@@ -439,7 +439,7 @@ Partial Class frmListaPadron
         'PictureBox3
         '
         Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox3.Location = New System.Drawing.Point(14, 162)
+        Me.PictureBox3.Location = New System.Drawing.Point(27, 162)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(898, 80)
         Me.PictureBox3.TabIndex = 168
@@ -450,7 +450,7 @@ Partial Class frmListaPadron
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1130, 569)
+        Me.ClientSize = New System.Drawing.Size(1130, 606)
         Me.Controls.Add(Me.chbFianza)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.txtAFechaFianza)

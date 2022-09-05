@@ -1,4 +1,7 @@
-﻿Public Class frmConsProveedores
+﻿'*******************************************************************************
+'* CONSULTA DE PROVEEDORES                                                     *
+'*******************************************************************************
+Public Class frmConsProveedores
     Private Sub frmConsProveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ProveedoresTableAdapter.Fill(DbcolmartDataSet.proveedores)

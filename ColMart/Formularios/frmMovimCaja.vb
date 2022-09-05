@@ -1,4 +1,7 @@
-﻿Public Class frmMovimCaja
+﻿'*******************************************************************************
+'* PANTALLA DE MOVIMIENTOS DE CAJA CHICA                                       *
+'*******************************************************************************
+Public Class frmMovimCaja
     Dim fechacaja, NombreArchivo As String
     Dim linea, contador, flag As Integer
 
@@ -252,7 +255,7 @@
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
 
-        archivoBackup = "\\DESKTOP\DBColMart\Backup\dbcolmart.sql" & "_" & Today.Date.ToString("dd-MM-yyyy") & "_" & TimeOfDay.ToString("hhmm") & ".sql"
+        archivoBackup = "E:\DBColMart\Backup\dbcolmart.sql" & "_" & Today.Date.ToString("dd-MM-yyyy") & "_" & TimeOfDay.ToString("hhmm") & ".sql"
 
         ProcesoBackup()
 

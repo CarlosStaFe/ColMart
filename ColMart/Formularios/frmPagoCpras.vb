@@ -1,4 +1,7 @@
-﻿Imports Microsoft.Reporting.WinForms
+﻿'*******************************************************************************
+'* CARGA DE PAGOS A PROVEEDORES                                                *
+'*******************************************************************************
+Imports Microsoft.Reporting.WinForms
 Imports System.IO
 
 Public Class frmPagoCpras

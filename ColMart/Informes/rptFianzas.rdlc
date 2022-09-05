@@ -122,7 +122,7 @@
                   <Width>3.1808cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.61125cm</Width>
+                  <Width>3.34667cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.34125cm</Width>
@@ -1543,9 +1543,9 @@
             </TablixRowHierarchy>
             <DataSetName>dsFianzas</DataSetName>
             <Top>0.03528cm</Top>
-            <Left>0.44662cm</Left>
+            <Left>0.12912cm</Left>
             <Height>1.2cm</Height>
-            <Width>27.97687cm</Width>
+            <Width>27.71229cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1556,7 +1556,7 @@
         <Height>0.55208in</Height>
         <Style />
       </Body>
-      <Width>11.35677in</Width>
+      <Width>11.04427in</Width>
       <Page>
         <PageHeader>
           <Height>2.30188cm</Height>
@@ -1583,9 +1583,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox7</rd:DefaultName>
               <Top>1.27449cm</Top>
-              <Left>2.36996cm</Left>
+              <Left>2.05246cm</Left>
               <Height>0.6cm</Height>
-              <Width>26.05353cm</Width>
+              <Width>25.78895cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1601,7 +1601,7 @@
               <Value>escudo_nuevo</Value>
               <Sizing>FitProportional</Sizing>
               <Top>0.2951cm</Top>
-              <Left>0.44662cm</Left>
+              <Left>0.12912cm</Left>
               <Height>1.89688cm</Height>
               <Width>1.8175cm</Width>
               <ZIndex>1</ZIndex>
@@ -1634,7 +1634,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.2951cm</Top>
-              <Left>2.20323cm</Left>
+              <Left>1.88573cm</Left>
               <Height>0.83855cm</Height>
               <Width>15.20798cm</Width>
               <ZIndex>2</ZIndex>
@@ -1681,7 +1681,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox19</rd:DefaultName>
               <Top>0.17639cm</Top>
-              <Left>24.83285cm</Left>
+              <Left>24.51535cm</Left>
               <Height>0.6cm</Height>
               <Width>3.06792cm</Width>
               <Style>
@@ -1696,9 +1696,9 @@
             </Textbox>
             <Line Name="Line2">
               <Top>0.03528cm</Top>
-              <Left>0.44662cm</Left>
+              <Left>0.12912cm</Left>
               <Height>0cm</Height>
-              <Width>27.97687cm</Width>
+              <Width>27.71229cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -1727,7 +1727,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
               <Top>0.17639cm</Top>
-              <Left>0.44662cm</Left>
+              <Left>0.12912cm</Left>
               <Height>0.6cm</Height>
               <Width>3.37312cm</Width>
               <ZIndex>2</ZIndex>
@@ -1762,7 +1762,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox21</rd:DefaultName>
               <Top>0.14111cm</Top>
-              <Left>10.09663cm</Left>
+              <Left>9.77913cm</Left>
               <Height>0.6cm</Height>
               <Width>7.73874cm</Width>
               <ZIndex>3</ZIndex>

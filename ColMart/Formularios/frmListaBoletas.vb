@@ -1,4 +1,7 @@
-﻿Imports Microsoft.Reporting.WinForms
+﻿'*******************************************************************************
+'* PROGRAMA PARA LISTAR LAS BOLETAS POR PARÁMETROS                             *
+'*******************************************************************************
+Imports Microsoft.Reporting.WinForms
 
 Public Class frmListaBoletas
     Dim senial As Integer

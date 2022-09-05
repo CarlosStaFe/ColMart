@@ -1,4 +1,7 @@
-﻿Public Class frmCompras
+﻿'*******************************************************************************
+'* CARGA LAS COMPRAS REALIZADAS                                                *
+'*******************************************************************************
+Public Class frmCompras
     Dim cantidad, unitario, neto, impinterno, subtotal, total As Double
     Dim importe1, importe2, importe3, importe4, importe5 As Double
     Dim item, renglon, id As Integer
@@ -230,6 +233,7 @@
         btnGrabar.Visible = True
 
     End Sub
+
     Private Sub CargarDGV()
 
         dgvDetCompras.Rows.Add()
@@ -266,7 +270,6 @@
         txtCantDetCpra.Focus()
 
     End Sub
-
 
     Private Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
 
@@ -649,7 +652,6 @@ terminar:
             ActivarBotones1()
 
         End If
-
 
     End Sub
 

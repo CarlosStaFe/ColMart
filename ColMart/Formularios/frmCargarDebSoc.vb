@@ -1,5 +1,7 @@
-﻿Public Class frmCargarDebSoc
-
+﻿'*******************************************************************************
+'* CARGA LOS DÉBITOS DE LAS SOCIEDADES PARA LIQUIDAR                           *
+'*******************************************************************************
+Public Class frmCargarDebSoc
     Private Sub frmCargarDebSoc_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ConectarMySql()
@@ -11,7 +13,7 @@
 
     Private Sub txtSociedad_KeyDown(sender As Object, e As KeyEventArgs) Handles txtSociedad.KeyDown
 
-        'Busco sociedades por consulta al presionar F1
+        '***Busco sociedades por consulta al presionar F1
         If e.KeyCode = Keys.F1 Then
             senial = 0
             Dim frmSoc0 As New frmConsSociedad
@@ -23,7 +25,7 @@
             txtCodDebSoc.Focus()
         End If
 
-        'Busco sociedades por número de sociedad
+        '***Busco sociedades por número de sociedad
         If e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Tab Then
             LeerSociedades()
             CargarDgv()
@@ -72,7 +74,7 @@
 
     Private Sub txtCodDebSoc_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCodDebSoc.KeyDown
 
-        'Busco códigos a debitar por consulta al presionar F1
+        '***Busco códigos a debitar por consulta al presionar F1
         If e.KeyCode = Keys.F1 Then
             senial = 1
             Dim frmCod As New frmConsCodDebito
@@ -82,7 +84,7 @@
             senial = 0
             txtKgDebSoc.Focus()
             btnLimpiar.Visible = True
-        ElseIf e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Tab Then         'Busco códigos a debitar por número de código
+        ElseIf e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Tab Then         '***Busco códigos a debitar por número de código
             LeerCodigos()
             LeerDebitos()
             txtKgDebSoc.Focus()
@@ -90,8 +92,6 @@
         Else
             btnLimpiar.Visible = True
         End If
-
-        'LeerDebitos()
 
     End Sub
 

@@ -1,4 +1,7 @@
-﻿Public Class frmFianzas
+﻿'*******************************************************************************
+'* PROGRAMA CARGAR LOS DATOS DE LAS FIANZAS                                    *
+'*******************************************************************************
+Public Class frmFianzas
     Dim fecha1, fecha2, user1, user2, fecvto, fechaaux As String
     Dim id, meses, senial1, senial2 As Integer
 
@@ -309,7 +312,7 @@
         ProcesarFecha()
 
         comando.CommandText = "UPDATE matriculados SET FianzaMatri = '" & fechadb & "', EstadoMatri = 'ACTIVO', FecEstadoMatri = '" & fechadb & "', " _
-                                & " DocFiador = '" & txtDocFiador.Text & "', FiadorMatri = '" & txtNombreFiador.Text & "', CalleFiadorMatri = '" & txtCalleFiador.Text & "', " _
+                                & " DocFiadorMatri = '" & txtDocFiador.Text & "', FiadorMatri = '" & txtNombreFiador.Text & "', CalleFiadorMatri = '" & txtCalleFiador.Text & "', " _
                                 & " TelFiadorMatri = '" & txtTelFiador.Text & "' WHERE NroMatri = '" & txtMatricula.Text & "' "
         comando.ExecuteNonQuery()
 

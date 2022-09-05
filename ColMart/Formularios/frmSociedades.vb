@@ -1,17 +1,14 @@
-﻿Imports MySql.Data.MySqlClient
-
+﻿'*******************************************************************************
+'* ACTUALIZACIÓN DE SOCIEDADES                                                 *
+'*******************************************************************************
 Public Class frmSociedades
-
     Private Sub frmSociedades_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'DbcolmartDataSet.sociedades' Puede moverla o quitarla según sea necesario.
-        Me.SociedadesTableAdapter.Fill(Me.DbcolmartDataSet.sociedades)
 
         ConectarMySql()
+        SociedadesTableAdapter.Fill(DbcolmartDataSet.sociedades)
         LeerCodPos()
         BtnGrabar.Visible = False
         txtNroSociedad.Focus()
-        'TODO: esta línea de código carga datos en la tabla 'DbcolmartDataSet.sociedades' Puede moverla o quitarla según sea necesario.
-        Me.SociedadesTableAdapter.Fill(Me.DbcolmartDataSet.sociedades)
 
     End Sub
 
@@ -263,10 +260,4 @@ Public Class frmSociedades
 
     End Sub
 
-    Private Sub SociedadesBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles SociedadesBindingNavigatorSaveItem.Click
-        Me.Validate()
-        Me.SociedadesBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.DbcolmartDataSet)
-
-    End Sub
 End Class

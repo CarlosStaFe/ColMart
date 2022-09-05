@@ -1,7 +1,10 @@
-﻿Imports Microsoft.Reporting.WinForms
+﻿'*******************************************************************************
+'* PROCESO DE IMPRIMIR BOLETAS QUE NO SENVIARON POR MAIL                       *
+'*******************************************************************************
+Imports Microsoft.Reporting.WinForms
 Public Class frmEnviarBoletas
-    Dim longitud, cantidad, fila, senial As Integer
-    Dim ceros, matricula, periodo As String
+    Dim fila, senial As Integer
+    Dim matricula, periodo As String
     Dim tabla(500, 19)
 
     Private Sub frmEnviarBoletas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -37,26 +40,17 @@ Public Class frmEnviarBoletas
 
     Private Sub txtHastaMat_LostFocus(sender As Object, e As EventArgs) Handles txtHastaMat.LostFocus
 
-        longitud = Len(txtDesdeMat.Text)
-        If longitud < 5 Then
-            cantidad = 5 - longitud
-            ceros = ""
-            For j = 1 To cantidad
-                ceros = ceros & "0"
-            Next j
-            txtDesdeMat.Text = ceros & txtDesdeMat.Text
-        End If
+        PonerCeros(txtDesdeMat.Text, 5)
+        txtDesdeMat.Text = nroconceros
         txtDesdeMat.Show()
-        longitud = Len(txtHastaMat.Text)
-        If longitud < 5 Then
-            cantidad = 5 - longitud
-            ceros = ""
-            For j = 1 To cantidad
-                ceros = ceros & "0"
-            Next j
-            txtHastaMat.Text = ceros & txtHastaMat.Text
-        End If
+
+        PonerCeros(txtHastaMat.Text, 5)
+        txtHastaMat.Text = nroconceros
         txtHastaMat.Show()
+
+        If txtDesdeMat.Text > txtHastaMat.Text Then
+            txtDesdeMat.Focus()
+        End If
 
     End Sub
 
@@ -112,12 +106,7 @@ Public Class frmEnviarBoletas
                 comando = New MySqlCommand("UPDATE boletas SET EstadoBoleta = 'PENDIENTE' WHERE MatBoleta = " & matricula & " AND PeriodoBoleta = '" & periodo & "'", conexion)
                 comando.ExecuteNonQuery()
 
-                If matricula < 60000 Then
-                    comando = New MySqlCommand("UPDATE ctasctes SET EstadoCC = 'PENDIENTE' WHERE NroCC = " & matricula & " AND PeriodoCC = '" & periodo & "'", conexion)
-                    comando.ExecuteNonQuery()
-                    fila = fila + 1
-                    senial = 0
-                Else
+                If matricula < 70000 Then
                     comando = New MySqlCommand("UPDATE ctasctes SET EstadoCC = 'PENDIENTE' WHERE NroCC = " & matricula & " AND PeriodoCC = '" & periodo & "'", conexion)
                     comando.ExecuteNonQuery()
                     fila = fila + 1

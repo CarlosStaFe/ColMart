@@ -1,4 +1,7 @@
-﻿Imports System.Runtime.InteropServices
+﻿'*******************************************************************************
+'* MENÚ PRINCIPAL DEL SISTEMA                                                  *
+'*******************************************************************************
+Imports System.Runtime.InteropServices
 
 Public Class MenuPpal
 
@@ -227,7 +230,7 @@ Public Class MenuPpal
 
     Private Sub btnActualizarMat_Click(sender As Object, e As EventArgs) Handles btnActualizarMat.Click
 
-        MostrarHijo(frmMatriculados)
+        MostrarHijo(frmColegiados)
         OcultarSubmenu()
 
     End Sub
@@ -543,6 +546,8 @@ Public Class MenuPpal
 
 #End Region
 
+#Region "PERMISOS"
+
     Private Sub ControlPermisos()
 
         Dim accede As Boolean
@@ -571,5 +576,7 @@ Public Class MenuPpal
         dr.Dispose()
 
     End Sub
+
+#End Region
 
 End Class

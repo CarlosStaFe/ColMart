@@ -1,4 +1,7 @@
-﻿Imports Microsoft.Reporting.WinForms
+﻿'*******************************************************************************
+'* PROGRAMA PARA LISTAR EL I.V.A. COMPRAS                                      *
+'*******************************************************************************
+Imports Microsoft.Reporting.WinForms
 
 Public Class frmLibroCpras
     Dim senial As Integer
@@ -117,6 +120,5 @@ Public Class frmLibroCpras
         ReportViewer1.RefreshReport()
 
     End Sub
-
 
 End Class
