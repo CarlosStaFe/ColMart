@@ -1,6 +1,8 @@
 ﻿'*******************************************************************************
 '* CARGA DE LISTAS DE NOMBRAMIENTO DE OFICIO                                   *
 '*******************************************************************************
+Imports System.Drawing
+
 Public Class frmListaOficio
     Dim aaaa, dd, mm, yyyy, fechaaux, fecha1, fecha2 As String
     Dim pos1, pos2, flag, meses As Integer

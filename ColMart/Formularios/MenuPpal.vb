@@ -1,6 +1,7 @@
 ﻿'*******************************************************************************
 '* MENÚ PRINCIPAL DEL SISTEMA                                                  *
 '*******************************************************************************
+Imports System.Drawing
 Imports System.Runtime.InteropServices
 
 Public Class MenuPpal

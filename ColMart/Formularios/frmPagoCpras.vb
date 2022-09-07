@@ -2,6 +2,7 @@
 '* CARGA DE PAGOS A PROVEEDORES                                                *
 '*******************************************************************************
 Imports Microsoft.Reporting.WinForms
+Imports System.Drawing
 Imports System.IO
 
 Public Class frmPagoCpras
@@ -30,7 +31,7 @@ Public Class frmPagoCpras
             txtTarjeta.Enabled = False
             btnSalir.Focus()
         Else
-            CtacteproTableAdapter.Fill(dbcolmartDataSet.ctactepro)
+            CtacteproTableAdapter.Fill(DbcolmartDataSet.ctactepro)
             Limpiar()
             txtProveedor.Focus()
             txtFecha.Text = Format(Now, "dd/MM/yyyy")

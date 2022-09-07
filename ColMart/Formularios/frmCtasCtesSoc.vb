@@ -1,6 +1,8 @@
 ﻿'*******************************************************************************
 '* CONSULTA DE CUENTAS CORRIENTES DE SOCIEDADES DE REMATES                     *
 '*******************************************************************************
+Imports System.Drawing
+
 Public Class frmCtasCtesSoc
     Dim debe, haber, saldo, saldoant, pagado, resto As Decimal
     Dim detalle, comprobante, estado, id, obs, fecpago, fechaaux As String

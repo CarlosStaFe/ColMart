@@ -2,6 +2,7 @@
 '* RECIBO DE COBRO DE BOLETAS                                                  *
 '*******************************************************************************
 Imports Microsoft.Reporting.WinForms
+Imports System.Drawing
 Imports System.IO
 
 Public Class frmReciboB1

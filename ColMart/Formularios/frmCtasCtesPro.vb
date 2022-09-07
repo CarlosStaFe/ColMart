@@ -1,6 +1,8 @@
 ﻿'*******************************************************************************
 '* VISUALIZACIÓN DE CUENTAS CORRIENTES DE PROVEEDORES                          *
 '*******************************************************************************
+Imports System.Drawing
+
 Public Class frmCtasCtesPro
     Dim debe, haber, saldo, saldoant, pagado, resto As Decimal
     Dim detalle, comprobante, estado, id, obs, fecpago, fechaaux As String

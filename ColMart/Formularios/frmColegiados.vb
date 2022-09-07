@@ -1,6 +1,8 @@
 ﻿'*******************************************************************************
 '* ACTUALIZA LOS DATOS DE LOS MARTILLEROS                                      *
 '*******************************************************************************
+Imports System.Drawing
+
 Public Class frmColegiados
     Dim dd, mm, yyyy, fechaaux, fechavenc, estadoant As String
     Dim pos1, pos2, codigoreal, codigolegal, idcodpostal, meses As Integer

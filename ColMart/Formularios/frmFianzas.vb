@@ -1,6 +1,8 @@
 ﻿'*******************************************************************************
 '* PROGRAMA CARGAR LOS DATOS DE LAS FIANZAS                                    *
 '*******************************************************************************
+Imports System.Drawing
+
 Public Class frmFianzas
     Dim fecha1, fecha2, user1, user2, fecvto, fechaaux As String
     Dim id, meses, senial1, senial2 As Integer

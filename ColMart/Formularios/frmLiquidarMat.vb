@@ -138,7 +138,7 @@ seguir:
             matricula = CStr(row("NroMatri"))
             apelynombre = CStr(row("ApelNombMatri"))
             domicilio = CStr(row("CalleRealMatri"))
-            idcodpos = CStr(row("CPRealMatri"))
+            idcodpos = CStr(row("idLocalRMatri"))
             correo = CStr(row("EmailMatri"))
 
             txtMsg.Text = "Procesando Registro " & Str(matricula)
@@ -277,16 +277,22 @@ Finalizar:
 
     Private Sub GrabarBoleta()
 
-        comando.CommandText = "SELECT * FROM codpostal WHERE id_CodPos = '" & idcodpos & "'"
+        comando.CommandText = "SELECT matriculados.idLocalRMatri, localidad.CodPosLocal, localidad.NombreLocal, departamento.NombreDpto, provincia.NombreProv FROM matriculados " _
+                                   & "INNER JOIN localidad    ON matriculados.idLocalRMatri = localidad.id_Local " _
+                                   & "INNER JOIN departamento ON localidad.fk_DptoLocal     = departamento.id_Dpto " _
+                                   & "INNER JOIN provincia    ON departamento.fk_ProvDpto   = provincia.id_Prov " _
+                                   & "WHERE matriculados.NroMatri = '" & matricula & "' "
+
+        'comando.CommandText = "SELECT * FROM codpostal WHERE id_CodPos = '" & idcodpos & "'"
         dt = New DataTable
         da = New MySqlDataAdapter(comando)
         da.Fill(dt)
 
         If dt.Rows.Count > 0 Then
             Dim row As DataRow = dt.Rows(0)
-            codigopostal = CStr(row("NroCodPos"))
-            localidad = CStr(row("LocalCodPos"))
-            provincia = CStr(row("ProvCodPos"))
+            codigopostal = CStr(row("CodPosLocal"))
+            localidad = CStr(row("NombreLocal"))
+            provincia = CStr(row("NombreProv"))
         Else
             localidad = ""
         End If

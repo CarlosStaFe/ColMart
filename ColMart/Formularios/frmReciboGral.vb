@@ -1,6 +1,8 @@
 ﻿'*******************************************************************************
 '* RECIBO GENERAL DE COBRO                                                     *
 '*******************************************************************************
+Imports System.Drawing
+
 Public Class frmReciboGral
     Dim fecha, comprobante, tipo, impletras, cuit As String
     Dim flag, fechaaux, fechajur, tipoA, tipoF, detalle As String

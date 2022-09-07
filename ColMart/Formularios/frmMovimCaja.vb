@@ -1,6 +1,8 @@
 ﻿'*******************************************************************************
 '* PANTALLA DE MOVIMIENTOS DE CAJA CHICA                                       *
 '*******************************************************************************
+Imports System.Drawing
+
 Public Class frmMovimCaja
     Dim fechacaja, NombreArchivo As String
     Dim linea, contador, flag As Integer

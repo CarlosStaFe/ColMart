@@ -2,6 +2,7 @@
 '* LISTADO DE COBRO DE BOLETAS VIEJO                                           *
 '*******************************************************************************
 Imports Microsoft.Reporting.WinForms
+Imports System.Drawing
 Imports System.IO
 
 Public Class frmReciboPago

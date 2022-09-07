@@ -1,4 +1,6 @@
-﻿Public Class frmMatriculados
+﻿Imports System.Drawing
+
+Public Class frmMatriculados
     Dim dd, mm, yyyy, fechaaux, fechavenc, estadoant As String
     Dim pos1, pos2, codigoreal, codigolegal, meses As Integer
     Dim fecha1, fecha2 As Date

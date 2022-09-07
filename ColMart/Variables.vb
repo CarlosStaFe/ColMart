@@ -5,6 +5,7 @@ Imports System.Text
 Imports System.Security.Cryptography
 
 Module Variables
+    'Public Property Color As Object
     '***Variables para usar en el sistema
     Public conexion As New MySqlConnection
     Public comando As New MySqlCommand
