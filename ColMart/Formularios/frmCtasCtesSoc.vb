@@ -29,7 +29,7 @@ Public Class frmCtasCtesSoc
 
         dgvCtasCtes.DataSource = dt
 
-        dgvCtasCtes.Sort(dgvCtasCtes.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+        'dgvCtasCtes.Sort(dgvCtasCtes.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
 
         debe = 0
         haber = 0

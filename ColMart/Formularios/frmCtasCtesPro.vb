@@ -22,14 +22,14 @@ Public Class frmCtasCtesPro
 
     Private Sub CalcularCtaCte()
 
-        comando.CommandText = "SELECT * FROM ctactepro WHERE NroCCPro = " & txtProveedor.Text & " ORDER BY FechaCCPro"
+        comando.CommandText = "SELECT * FROM ctactepro WHERE NroCCPro = " & txtProveedor.Text & " ORDER BY NroCCPro, FechaCCPro"
         dt = New DataTable
         da = New MySqlDataAdapter(comando)
         da.Fill(dt)
 
         dgvCtasCtes.DataSource = dt
 
-        dgvCtasCtes.Sort(dgvCtasCtes.Columns(3), System.ComponentModel.ListSortDirection.Ascending)
+        'dgvCtasCtes.Sort(dgvCtasCtes.Columns(3), System.ComponentModel.ListSortDirection.Ascending)
 
         debe = 0
         haber = 0
@@ -50,12 +50,12 @@ Public Class frmCtasCtesPro
                     If Fila.Cells(11).Value = "PENDIENTE" Then
                         Fila.DefaultCellStyle.ForeColor = Color.Orange
                     End If
-                    If Fila.Cells(5).Value > 1 Then
-                        Fila.Cells(2).Value = DBNull.Value
-                        Fila.Cells(3).Value = ""
-                        Fila.Cells(4).Value = DBNull.Value
-                        Fila.Cells(7).Value = DBNull.Value
-                    End If
+                    'If Fila.Cells(5).Value > 1 Then
+                    '    Fila.Cells(2).Value = DBNull.Value
+                    '    Fila.Cells(3).Value = ""
+                    '    Fila.Cells(4).Value = DBNull.Value
+                    '    Fila.Cells(7).Value = DBNull.Value
+                    'End If
                 End If
             Next
             dgvCtasCtes.FirstDisplayedScrollingRowIndex = dgvCtasCtes.RowCount - 1

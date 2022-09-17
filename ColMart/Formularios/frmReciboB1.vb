@@ -13,7 +13,7 @@ Public Class frmReciboB1
     Dim saldobol, pagadobol, importe, imppagado As Double
     Dim obs, cuit As String
     Dim archivo As String
-    Dim fecvto As String
+    Dim fecvto, mes, anio As String
     Dim resto, pagoact, restoant, saldoact, saldopago As Double
 
     Private Sub frmReciboPago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -38,6 +38,9 @@ Public Class frmReciboB1
             txtFecha.Text = Format(Now, "dd/MM/yyyy")
         End If
 
+        If nivel < 4 Then
+            rdbNotaCredito.Enabled = True
+        End If
         'ReportViewer1.RefreshReport()
 
     End Sub
@@ -218,17 +221,26 @@ Public Class frmReciboB1
     Private Sub txtObs_LostFocus(sender As Object, e As EventArgs) Handles txtObs.LostFocus
 
         If dgvCtasCtes.Rows.Count > 0 Then
-            If txtDiferencia.Text = txtSaldo.Text Then
-                detmsg = "DEBE CARGAR ALGÚN PAGO...!!!"
-                tipomsg = "info"
-                btnmsg = 1
-                frmMsgBox.ShowDialog()
-                txtEfectivo.Focus()
-            Else
-                imppagado = Val(txtEfectivo.Text) + Val(txtTransferencia.Text) + Val(txtTarjeta.Text)
+            If rdbNotaCredito.Checked = True Then
+                txtDiferencia.Text = "0"
+                imppagado = Val(txtApagar.Text)
+                txtTransferencia.Text = txtApagar.Text
                 letratotal = Convert.ToDouble(imppagado)
                 btnImprimir.Visible = True
                 btnImprimir.Focus()
+            Else
+                If txtDiferencia.Text = txtSaldo.Text Then
+                    detmsg = "DEBE CARGAR ALGÚN PAGO...!!!"
+                    tipomsg = "info"
+                    btnmsg = 1
+                    frmMsgBox.ShowDialog()
+                    txtEfectivo.Focus()
+                Else
+                    imppagado = Val(txtEfectivo.Text) + Val(txtTransferencia.Text) + Val(txtTarjeta.Text)
+                    letratotal = Convert.ToDouble(imppagado)
+                    btnImprimir.Visible = True
+                    btnImprimir.Focus()
+                End If
             End If
         Else
             detmsg = "DEBE MARCAR ALGÚN RENGLÓN...!!!"
@@ -252,6 +264,13 @@ Public Class frmReciboB1
 
         If rdbNotaCredito.Checked Then
 
+            ImpLetras = Letras(letratotal)
+            ProcesarRecibo()
+
+            PonerCeros(txtMatSoc.Text, 5)
+            txtMatSoc.Text = nroconceros
+
+            comando.CommandText = "SELECT * FROM comprobte WHERE TipoCpbte = 'NCR'"
         Else
 
             If txtDiferencia.Text = txtApagar.Text Then
@@ -272,20 +291,21 @@ Public Class frmReciboB1
                 txtMatSoc.Text = nroconceros
 
                 comando.CommandText = "SELECT * FROM comprobte WHERE TipoCpbte = 'CIC'"
-                dt = New DataTable
-                da = New MySqlDataAdapter(comando)
-                da.Fill(dt)
-                If dt.Rows.Count > 0 Then
-                    Dim row As DataRow = dt.Rows(0)
-                    comprobante = CStr(row("NroCpbte"))
-                    comprobante = comprobante + 1
-                End If
-
-                PonerCeros(comprobante, 8)
-                comprobante = nroconceros
-
             End If
         End If
+
+        '***TOMO EL NRO A IMPRIMIR ***
+        dt = New DataTable
+        da = New MySqlDataAdapter(comando)
+        da.Fill(dt)
+        If dt.Rows.Count > 0 Then
+            Dim row As DataRow = dt.Rows(0)
+            comprobante = CStr(row("NroCpbte"))
+            comprobante = comprobante + 1
+        End If
+
+        PonerCeros(comprobante, 8)
+        comprobante = nroconceros
 
         '******* Limpiemos el DataSource del informe
         ReportViewer1.LocalReport.DataSources.Clear()
@@ -293,7 +313,11 @@ Public Class frmReciboB1
         Dim parametros As ReportParameter() = New ReportParameter(13) {}
 
         fecha = CDate(Date.Now)
-        parametros(0) = New ReportParameter("prmTipoCpbte", "COMPROBANTE INTERNO DE COBRO")
+        If rdbNotaCredito.Checked = True Then
+            parametros(0) = New ReportParameter("prmTipoCpbte", "***** NOTA DE CREDITO *****")
+        Else
+            parametros(0) = New ReportParameter("prmTipoCpbte", "COMPROBANTE INTERNO DE COBRO")
+        End If
         parametros(1) = New ReportParameter("prmComprobante", comprobante)
         parametros(2) = New ReportParameter("prmTipoNro", tiponro)
         parametros(3) = New ReportParameter("prmMatSoc", txtMatSoc.Text)
@@ -329,62 +353,62 @@ Public Class frmReciboB1
 
     Private Sub ProcesarRecibo()
 
-        If rdbNotaCredito.Checked Then
-
+        If txtDiferencia.Text = txtApagar.Text And rdbNotaCredito.Checked = False Then
+            detmsg = "DEBE INGRESAR UN IMPORTE DE PAGO...!!!"
+            tipomsg = "info"
+            btnmsg = 1
+            frmMsgBox.ShowDialog()
+            txtEfectivo.Focus()
         Else
 
-            If txtDiferencia.Text = txtApagar.Text Then
-                detmsg = "DEBE INGRESAR UN IMPORTE DE PAGO...!!!"
-                tipomsg = "info"
-                btnmsg = 1
-                frmMsgBox.ShowDialog()
-                txtEfectivo.Focus()
-            Else
+            comando = New MySqlCommand("DELETE FROM recibo ", conexion)
+            dr = comando.ExecuteReader
+            dr.Close()
 
-                comando = New MySqlCommand("DELETE FROM recibo ", conexion)
-                dr = comando.ExecuteReader
-                dr.Close()
+            imppagado = Val(txtEfectivo.Text) + Val(txtTarjeta.Text) + Val(txtTransferencia.Text)
+            saldopago = imppagado
 
-                imppagado = Val(txtEfectivo.Text) + Val(txtTarjeta.Text) + Val(txtTransferencia.Text)
-                saldopago = imppagado
+            If dgvCtasCtes.Rows.Count > 0 Then
+                For Each Fila As DataGridViewRow In dgvCtasCtes.Rows
+                    If Fila.Cells(15).Value = "X" Then
 
-                If dgvCtasCtes.Rows.Count > 0 Then
-                    For Each Fila As DataGridViewRow In dgvCtasCtes.Rows
-                        If Fila.Cells(15).Value = "X" Then
+                        id = Fila.Cells(0).Value
+                        fechajob = Fila.Cells(2).Value
+                        ProcesarFecha()
+                        fecvto = fechadb
+                        resto = Fila.Cells(13).Value
 
-                            id = Fila.Cells(0).Value
-                            fechajob = Fila.Cells(2).Value
-                            ProcesarFecha()
-                            fecvto = fechadb
-                            resto = Fila.Cells(13).Value
+                        restoant = saldopago
+                        saldopago = saldopago - resto
 
-                            restoant = saldopago
-                            saldopago = saldopago - resto
+                        If saldopago >= 0 Then
+                            pagoact = resto
+                            saldoact = 0
+                        Else
+                            pagoact = restoant
+                            saldoact = resto - restoant
+                        End If
 
-                            If saldopago >= 0 Then
-                                pagoact = resto
-                                saldoact = 0
-                            Else
-                                pagoact = restoant
-                                saldoact = resto - restoant
-                            End If
+                        comando = New MySqlCommand("INSERT INTO recibo VALUES(@id, @fecha, @detalle, @periodo, @impcbte, @pagoant, @saldoant, @pagoact, @saldoact, @obs)", conexion)
 
-                            comando = New MySqlCommand("INSERT INTO recibo VALUES(@id, @fecha, @detalle, @periodo, @impcbte, @pagoant, @saldoant, @pagoact, @saldoact, @obs)", conexion)
-
-                            comando.Parameters.AddWithValue("@id", id)
-                            comando.Parameters.AddWithValue("@fecha", fecvto)
-                            comando.Parameters.AddWithValue("@detalle", Fila.Cells(6).Value)
-                            comando.Parameters.AddWithValue("@periodo", Fila.Cells(7).Value)
-                            comando.Parameters.AddWithValue("@impcbte", Fila.Cells(8).Value)
-                            comando.Parameters.AddWithValue("@pagoant", Fila.Cells(12).Value)
-                            comando.Parameters.AddWithValue("@saldoant", Fila.Cells(13).Value)
+                        comando.Parameters.AddWithValue("@id", id)
+                        comando.Parameters.AddWithValue("@fecha", fecvto)
+                        comando.Parameters.AddWithValue("@detalle", Fila.Cells(6).Value)
+                        comando.Parameters.AddWithValue("@periodo", Fila.Cells(7).Value)
+                        comando.Parameters.AddWithValue("@impcbte", Fila.Cells(8).Value)
+                        comando.Parameters.AddWithValue("@pagoant", Fila.Cells(12).Value)
+                        comando.Parameters.AddWithValue("@saldoant", Fila.Cells(13).Value)
+                        If rdbNotaCredito.Checked = True Then
+                            comando.Parameters.AddWithValue("@pagoact", "0")
+                            comando.Parameters.AddWithValue("@saldoact", "0")
+                        Else
                             comando.Parameters.AddWithValue("@pagoact", pagoact)
                             comando.Parameters.AddWithValue("@saldoact", saldoact)
-                            comando.Parameters.AddWithValue("@obs", Fila.Cells(14).Value)
-                            comando.ExecuteNonQuery()
                         End If
-                    Next
-                End If
+                        comando.Parameters.AddWithValue("@obs", Fila.Cells(14).Value)
+                        comando.ExecuteNonQuery()
+                    End If
+                Next
             End If
         End If
 
@@ -451,6 +475,9 @@ Public Class frmReciboB1
             Else
                 estado = "PENDIENTE"
             End If
+            If rdbNotaCredito.Checked = True Then
+                estado = "CREDITO"
+            End If
 
             id = CStr(row("id_Rec"))
             pagadobol = Val(CStr(row("PagoAntRec"))) + Val(CStr(row("PagoActRec")))
@@ -469,15 +496,29 @@ Public Class frmReciboB1
         comando.Parameters.AddWithValue("@id", 0)
         comando.Parameters.AddWithValue("@nrocta", txtMatSoc.Text)
         comando.Parameters.AddWithValue("@fechacta", fecha)
-        comando.Parameters.AddWithValue("@tipo", "CIC")
+        If rdbNotaCredito.Checked = True Then
+            comando.Parameters.AddWithValue("@tipo", "NCR")
+        Else
+            comando.Parameters.AddWithValue("@tipo", "CIC")
+        End If
         comando.Parameters.AddWithValue("@comprobante", comprobante)
         comando.Parameters.AddWithValue("@item", 1)
-        comando.Parameters.AddWithValue("@detalle", "CIC Nro.: " & comprobante)
+        If rdbNotaCredito.Checked = True Then
+            comando.Parameters.AddWithValue("@detalle", "NCR Nro.: " & comprobante)
+        Else
+            comando.Parameters.AddWithValue("@detalle", "CIC Nro.: " & comprobante)
+        End If
         comando.Parameters.AddWithValue("@periodo", "")
         comando.Parameters.AddWithValue("@debe", 0)
         comando.Parameters.AddWithValue("@haber", imppagado)
+
+        If rdbNotaCredito.Checked = True Then
+            comando.Parameters.AddWithValue("@estado", "CREDITO")
+        Else
+            comando.Parameters.AddWithValue("@estado", "PAGO")
+        End If
+
         comando.Parameters.AddWithValue("@saldo", 0)
-        comando.Parameters.AddWithValue("@estado", "PAGO")
         comando.Parameters.AddWithValue("@pagado", imppagado)
         comando.Parameters.AddWithValue("@fecpago", fecha)
         comando.Parameters.AddWithValue("@resto", 0)
@@ -485,14 +526,17 @@ Public Class frmReciboB1
         comando.ExecuteNonQuery()
 
         '***GRABAR CAJA***
-        If rdbNotaCredito.Checked Then
-            rdbNotaCredito.Checked = False
-        Else
-            GrabarCaja()
-        End If
+        GrabarCaja()
+
+        '***GRABAR VENTAS***
+        GrabarVentas()
 
         '***GRABO COMPROBANTE***
-        comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIC'", conexion)
+        If rdbNotaCredito.Checked = True Then
+            comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'NCR'", conexion)
+        Else
+            comando = New MySqlCommand("UPDATE comprobte SET NroCpbte = '" & comprobante & "' WHERE TipoCpbte = 'CIC'", conexion)
+        End If
         comando.ExecuteNonQuery()
 
     End Sub
@@ -516,10 +560,18 @@ Public Class frmReciboB1
 
         comando = New MySqlCommand("INSERT INTO caja VALUES(@fecha, @detalle, @debe, @haber, @saldo, @efectivo, @tarjeta, @transfe, @obs, @estado)", conexion)
         comando.Parameters.AddWithValue("@fecha", fecha)
-        comando.Parameters.AddWithValue("@detalle", "CIC Nro.: " & comprobante & " - " & txtNombre.Text)
-        comando.Parameters.AddWithValue("@debe", 0)
-        comando.Parameters.AddWithValue("@haber", imppagado)
-        comando.Parameters.AddWithValue("@saldo", 0)
+        If rdbNotaCredito.Checked = True Then
+            comando.Parameters.AddWithValue("@detalle", "NCR Nro.: " & comprobante & " - " & txtNombre.Text)
+            comando.Parameters.AddWithValue("@debe", imppagado * -1)
+            comando.Parameters.AddWithValue("@haber", 0)
+            comando.Parameters.AddWithValue("@saldo", 0)
+            transferencia = imppagado * -1
+        Else
+            comando.Parameters.AddWithValue("@detalle", "CIC Nro.: " & comprobante & " - " & txtNombre.Text)
+            comando.Parameters.AddWithValue("@debe", 0)
+            comando.Parameters.AddWithValue("@haber", imppagado)
+            comando.Parameters.AddWithValue("@saldo", 0)
+        End If
         comando.Parameters.AddWithValue("@efectivo", efectivo)
         comando.Parameters.AddWithValue("@tarjeta", tarjeta)
         comando.Parameters.AddWithValue("@transfe", transferencia)
@@ -556,22 +608,51 @@ Public Class frmReciboB1
 
     Private Sub rdbNotaCredito_Click(sender As Object, e As EventArgs) Handles rdbNotaCredito.Click
 
-        btnImprimir.Visible = True
+        btnImprimir.Visible = False
+        txtObs.Focus()
 
     End Sub
 
     Private Sub ReciboAPDF()
 
         Dim nombrePDF As String
-        nombrePDF = "CIC" & "-" & comprobante & "-" & Today.Date.ToString("dd-MM-yyyy") & "-" & TimeOfDay.ToString("h.mm") & ""
+        Dim ruta As String
+
+        If rdbNotaCredito.Checked = True Then
+            nombrePDF = "NCR" & "-" & comprobante & "-" & Today.Date.ToString("dd-MM-yyyy") & "-" & TimeOfDay.ToString("h.mm") & ""
+            ruta = "\\DESKTOP\dbcolmart\NCR\"
+        Else
+            nombrePDF = "CIC" & "-" & comprobante & "-" & Today.Date.ToString("dd-MM-yyyy") & "-" & TimeOfDay.ToString("h.mm") & ""
+            ruta = "\\DESKTOP\dbcolmart\CIC\"
+        End If
 
         Dim byteViewer As Byte() = ReportViewer1.LocalReport.Render("PDF")
-        Dim newFile As New FileStream("\\DESKTOP\dbcolmart\CIC\" & nombrePDF & ".pdf", FileMode.Create)
+        Dim newFile As New FileStream(ruta & nombrePDF & ".pdf", FileMode.Create)
         archivo = nombrePDF & ".pdf"
         newFile.Write(byteViewer, 0, byteViewer.Length)
         newFile.Close()
 
     End Sub
 
+    Private Sub GrabarVentas()
+
+        mes = Month(Today)
+        PonerCeros(mes, 2)
+        mes = nroconceros
+        anio = Year(Today)
+
+        comando = New MySqlCommand("INSERT INTO ventas VALUES(@id, @fecha, @tipo, @cpbte, @item, @detalle, @periodo, @neto, @total)", conexion)
+        comando.Parameters.AddWithValue("@id", 0)
+        comando.Parameters.AddWithValue("@fecha", fecha)
+        comando.Parameters.AddWithValue("@tipo", "NCR")
+        comando.Parameters.AddWithValue("@cpbte", comprobante)
+        comando.Parameters.AddWithValue("@item", 1)
+        comando.Parameters.AddWithValue("@detalle", "NCR Nro.: " & comprobante & " - " & txtNombre.Text)
+        comando.Parameters.AddWithValue("@periodo", anio + mes)
+        comando.Parameters.AddWithValue("@neto", imppagado * -1)
+        comando.Parameters.AddWithValue("@total", 0)
+        comando.ExecuteNonQuery()
+
+    End Sub
 
 End Class

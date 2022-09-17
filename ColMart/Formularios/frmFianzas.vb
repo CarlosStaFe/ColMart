@@ -4,7 +4,7 @@
 Imports System.Drawing
 
 Public Class frmFianzas
-    Dim fecha1, fecha2, user1, user2, fecvto, fechaaux As String
+    Dim fecha1, fecha2, user1, user2, fecvto, fechaaux, fechamayor As String
     Dim id, meses, senial1, senial2 As Integer
 
     Private Sub frmFianzas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -12,6 +12,7 @@ Public Class frmFianzas
         ConectarMySql()
         FianzasTableAdapter.Fill(DbcolmartDataSet.fianzas)
         dgvFianzas.DataSource = Nothing
+        lblEstado.Text = ""
         txtMatricula.Focus()
 
     End Sub
@@ -252,6 +253,7 @@ Public Class frmFianzas
             fecha2 = fechadb
             If fecha1 <= fecha2 Then
                 fechaaux = fecha2
+                fechamayor = fecha2
                 meses = 24
                 fechajob = DateAdd("m", meses, fechaaux)
                 ProcesarFecha()
@@ -259,6 +261,7 @@ Public Class frmFianzas
                 comando.CommandText = comando.CommandText & "FecVtoFza = '" & fecvto & "', EstadoFza = 'COMPLETA', "
             Else
                 fechaaux = fecha1
+                fechamayor = fecha1
                 meses = 24
                 fechajob = DateAdd("m", meses, fechaaux)
                 ProcesarFecha()
@@ -313,7 +316,7 @@ Public Class frmFianzas
         fechajob = Format(Now, "dd/MM/yyyy")
         ProcesarFecha()
 
-        comando.CommandText = "UPDATE matriculados SET FianzaMatri = '" & fechadb & "', EstadoMatri = 'ACTIVO', FecEstadoMatri = '" & fechadb & "', " _
+        comando.CommandText = "UPDATE matriculados SET FianzaMatri = '" & fechamayor & "', EstadoMatri = 'ACTIVO', FecEstadoMatri = '" & fechadb & "', " _
                                 & " DocFiadorMatri = '" & txtDocFiador.Text & "', FiadorMatri = '" & txtNombreFiador.Text & "', CalleFiadorMatri = '" & txtCalleFiador.Text & "', " _
                                 & " TelFiadorMatri = '" & txtTelFiador.Text & "' WHERE NroMatri = '" & txtMatricula.Text & "' "
         comando.ExecuteNonQuery()

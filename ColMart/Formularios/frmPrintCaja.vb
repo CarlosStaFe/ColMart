@@ -44,7 +44,7 @@ Public Class frmPrintCaja
 
         'Direcciones de mail para proceso ---------------
         e_mail.To.Add(CStr("tesoreria@martilleros.org.ar"))
-        e_mail.Bcc.Add(CStr("carlos.a.mayans@gmail.com"))
+        e_mail.Bcc.Add(CStr("sistema@martilleros.org.ar"))
 
         e_mail.Subject = "PDF cierre de caja"
         e_mail.IsBodyHtml = False

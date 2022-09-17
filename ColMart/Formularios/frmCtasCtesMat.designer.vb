@@ -224,6 +224,7 @@ Partial Class frmCtasCtesMat
         Me.TableAdapterManager.categivaTableAdapter = Nothing
         Me.TableAdapterManager.coddebitoTableAdapter = Nothing
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
+        Me.TableAdapterManager.colegiadosTableAdapter = Nothing
         Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
         Me.TableAdapterManager.cptosgastosTableAdapter = Nothing
@@ -235,6 +236,8 @@ Partial Class frmCtasCtesMat
         Me.TableAdapterManager.departamentoTableAdapter = Nothing
         Me.TableAdapterManager.depositosTableAdapter = Nothing
         Me.TableAdapterManager.detallecpraTableAdapter = Nothing
+        Me.TableAdapterManager.fianzasTableAdapter = Nothing
+        Me.TableAdapterManager.impctacteTableAdapter = Nothing
         Me.TableAdapterManager.juzgadosTableAdapter = Nothing
         Me.TableAdapterManager.listaoficioTableAdapter = Nothing
         Me.TableAdapterManager.localidadesTableAdapter = Nothing
@@ -246,6 +249,7 @@ Partial Class frmCtasCtesMat
         Me.TableAdapterManager.padronTableAdapter = Nothing
         Me.TableAdapterManager.proveedoresTableAdapter = Nothing
         Me.TableAdapterManager.provinciaTableAdapter = Nothing
+        Me.TableAdapterManager.reciboTableAdapter = Nothing
         Me.TableAdapterManager.renglonesTableAdapter = Nothing
         Me.TableAdapterManager.saldomatTableAdapter = Nothing
         Me.TableAdapterManager.saldosocTableAdapter = Nothing

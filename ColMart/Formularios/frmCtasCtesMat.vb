@@ -75,7 +75,7 @@ Public Class frmCtasCtesMat
 
         dgvCtasctes.DataSource = dt
 
-        dgvCtasctes.Sort(dgvCtasctes.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+        'dgvCtasctes.Sort(dgvCtasctes.Columns(2), System.ComponentModel.ListSortDirection.Ascending)
 
         debe = 0
         haber = 0
@@ -104,9 +104,9 @@ Public Class frmCtasCtesMat
                         Fila.Cells(4).Value = DBNull.Value
                         Fila.Cells(7).Value = DBNull.Value
                     End If
-                    If Fila.Cells(13).Value = "1900-01-01" Then
-                        Fila.Cells(13).Value = DBNull.Value
-                    End If
+                    'If Fila.Cells(13).Value = "1900-01-01" Then
+                    '    Fila.Cells(13).Value = DBNull.Value
+                    'End If
                 End If
             Next
             dgvCtasctes.FirstDisplayedScrollingRowIndex = dgvCtasctes.RowCount - 1

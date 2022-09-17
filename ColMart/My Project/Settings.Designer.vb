@@ -57,8 +57,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("server=desktop;user id=martillero1;password=soporte;persistsecurityinfo=True;data"& _ 
-            "base=dbcolmart;convert zero datetime=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("server=DESKTOP;user id=martillero1;password=soporte;persistsecurityinfo=True;data"& _ 
+            "base=dbcolmart")>  _
         Public ReadOnly Property dbcolmartConnectionString() As String
             Get
                 Return CType(Me("dbcolmartConnectionString"),String)

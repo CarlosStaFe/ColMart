@@ -126,7 +126,7 @@ Terminar:
                         e_mail.To.Clear()
                         Smtp_Server.UseDefaultCredentials = False
                         'Smtp_Server.Credentials = New Net.NetworkCredential("tesoreria@martilleros.org.ar", "colegiodemartilleros")
-                        Smtp_Server.Credentials = New Net.NetworkCredential("martillerosfe@martilleros.org.ar", "[r]*_~vGB_[e")
+                        Smtp_Server.Credentials = New Net.NetworkCredential("martillerosfe@martilleros.org.ar", "8TfvzRX5.A^X")
                         'Smtp_Server.Port = 465
                         Smtp_Server.Port = 587
                         Smtp_Server.Host = "mail.martilleros.org.ar"

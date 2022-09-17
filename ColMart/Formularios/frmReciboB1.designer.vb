@@ -665,7 +665,7 @@ Partial Class frmReciboB1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1430, 595)
+        Me.ClientSize = New System.Drawing.Size(1088, 595)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Controls.Add(Me.dgvCtasCtes)
         Me.Controls.Add(Me.rdbNotaCredito)

@@ -119,7 +119,6 @@ Public Class frmColegiados
                                     & "IdLocalLMatri = '" & txtIdLocalLMatri.Text & "', IdDptoLMatri = '" & txtIdDptoLMatri.Text & "', IdProvLMatri = '" & txtIdProvLMatri.Text & "'," _
                                     & "CeluLegalMatri = '" & txtCeluLegalMatri.Text & "', FijoLegalMatri = '" & txtFijoLegalMatri.Text & "', FianzaMatri = '" & txtFianzaMatri.Text & "', " _
                                     & "DocFiadorMatri = '" & txtDocFiadorMatri.Text & "', FiadorMatri = '" & txtFiadorMatri.Text & "', CalleFiadorMatri = '" & txtCalleFiadorMatri.Text & "', " _
-                                    & "IdLocalRMatri = '" & txtIdLocalRMatri.Text & "', FiadorMatri = '" & txtFiadorMatri.Text & "', CalleFiadorMatri = '" & txtCalleFiadorMatri.Text & "', " _
                                     & "TelFiadorMatri = '" & txtTelFiadorMatri.Text & "', ObsMatri = '" & txtObsMatri.Text & "', TomoMatri = '" & txtTomoMatri.Text & "', FolioMatri = '" & txtFolioMatri.Text & "' " _
                                     & "WHERE id_Matri = " & txtId_Matri.Text & " And  NroMatri = " & txtNroMatri.Text & "", conexion)
             comando.ExecuteNonQuery()
@@ -471,14 +470,17 @@ Public Class frmColegiados
         txtDocFiadorMatri.Text = CStr(row("DocFiadorMatri"))
         txtFiadorMatri.Text = CStr(row("FiadorMatri"))
         txtCalleFiadorMatri.Text = CStr(row("CalleFiadorMatri"))
+        txtTelFiadorMatri.Text = CStr(row("TelFiadorMatri"))
         lblFianzaMatri.Text = CStr(row("FianzaMatri"))
         lblDocFiadorMatri.Text = CStr(row("DocFiadorMatri"))
         lblFiadorMatri.Text = CStr(row("FiadorMatri"))
         lblCalleFiadorMatri.Text = CStr(row("CalleFiadorMatri"))
+        lblTelFiadorMatri.Text = CStr(row("TelFiadorMatri"))
         lblFianzaMatri.Visible = True
         lblDocFiadorMatri.Visible = True
         lblFiadorMatri.Visible = True
         lblCalleFiadorMatri.Visible = True
+        lblTelFiadorMatri.Visible = True
         txtObsMatri.Text = CStr(row("ObsMatri"))
         txtTomoMatri.Text = CStr(row("TomoMatri"))
         txtFolioMatri.Text = CStr(row("FolioMatri"))
@@ -493,10 +495,12 @@ Public Class frmColegiados
         lblDocFiadorMatri.Text = txtDocFiadorMatri.Text
         lblFiadorMatri.Text = txtFiadorMatri.Text
         lblCalleFiadorMatri.Text = txtCalleFiadorMatri.Text
+        lblTelFiadorMatri.Text = txtTelFiadorMatri.Text
         lblFianzaMatri.Visible = True
         lblDocFiadorMatri.Visible = True
         lblFiadorMatri.Visible = True
         lblCalleFiadorMatri.Visible = True
+        lblTelFiadorMatri.Visible = True
 
     End Sub
 

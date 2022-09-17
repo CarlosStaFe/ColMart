@@ -7,7 +7,7 @@ Public Class frmReciboGral
     Dim fecha, comprobante, tipo, impletras, cuit As String
     Dim flag, fechaaux, fechajur, tipoA, tipoF, detalle As String
     Dim longitud, cantidad, item, meses, ctrolf, ctrolv, ctroll As Integer
-    Dim ceros, yyyy, id As String
+    Dim ceros, id, yyyy, anio, mes As String
     Dim pagado, total, resto, saldo, importe As Double
     Dim fecha1, fecha2 As Date
 
@@ -482,7 +482,7 @@ Public Class frmReciboGral
     Private Sub txtObs_LostFocus(sender As Object, e As EventArgs) Handles txtObs.LostFocus
 
         If dgvRenglones.Rows.Count > 0 Then
-            If txtTotal.Text = txtSaldo.Text Then
+            If txtTotal.Text = txtSaldo.Text And nivel > 3 Then
                 detmsg = "DEBE CARGAR ALGÚN PAGO...!!!"
                 tipomsg = "info"
                 btnmsg = 1
@@ -795,8 +795,10 @@ Public Class frmReciboGral
 
     Private Sub GrabarVentas()
 
-        fechajob = fecha
-        ProcesarFecha()
+        mes = Month(Today)
+        PonerCeros(mes, 2)
+        mes = nroconceros
+        anio = Year(Today)
 
         comando = New MySqlCommand("INSERT INTO ventas VALUES(@id, @fecha, @tipo, @cpbte, @item, @detalle, @periodo, @neto, @total)", conexion)
         comando.Parameters.AddWithValue("@id", 0)
@@ -805,12 +807,11 @@ Public Class frmReciboGral
         comando.Parameters.AddWithValue("@cpbte", comprobante)
         comando.Parameters.AddWithValue("@item", item)
         comando.Parameters.AddWithValue("@detalle", detalle)
-        comando.Parameters.AddWithValue("@periodo", yyyy + mm)
+        comando.Parameters.AddWithValue("@periodo", anio + mes)
         comando.Parameters.AddWithValue("@neto", importe)
         comando.Parameters.AddWithValue("@total", 0)
         comando.ExecuteNonQuery()
 
     End Sub
-
 
 End Class
