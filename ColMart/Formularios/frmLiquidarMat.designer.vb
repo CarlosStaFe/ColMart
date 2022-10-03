@@ -143,7 +143,6 @@ Partial Class frmLiquidarMat
         'cbxDU
         '
         Me.cbxDU.AutoSize = True
-        Me.cbxDU.Enabled = False
         Me.cbxDU.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxDU.ForeColor = System.Drawing.Color.White
         Me.cbxDU.Location = New System.Drawing.Point(153, 381)

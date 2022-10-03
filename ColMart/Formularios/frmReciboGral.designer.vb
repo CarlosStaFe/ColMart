@@ -28,15 +28,15 @@ Partial Class frmReciboGral
         Dim ImpDebMatLabel As System.Windows.Forms.Label
         Dim CategDebMatLabel As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmReciboGral))
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtFecha = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
@@ -48,15 +48,6 @@ Partial Class frmReciboGral
         Me.txtImporte = New System.Windows.Forms.TextBox()
         Me.txtCantidad = New System.Windows.Forms.TextBox()
         Me.dgvRenglones = New System.Windows.Forms.DataGridView()
-        Me.IdRenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodigoRenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DetalleRenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ImporteRenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CantidadRenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SubtotalRenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CategoriaRenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RenglonesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DbcolmartDataSet = New ColMart.dbcolmartDataSet()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
@@ -65,7 +56,6 @@ Partial Class frmReciboGral
         Me.txtSubtotal = New System.Windows.Forms.TextBox()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.txtCategoria = New System.Windows.Forms.TextBox()
-        Me.RenglonesTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.renglonesTableAdapter()
         Me.txtTotal = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtObs = New System.Windows.Forms.TextBox()
@@ -94,6 +84,17 @@ Partial Class frmReciboGral
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.IdRenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodigoRenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DetalleRenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImporteRenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CantidadRenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SubtotalRenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CategoriaRenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RenglonesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DbcolmartDataSet = New ColMart.dbcolmartDataSet()
+        Me.RenglonesTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.renglonesTableAdapter()
+        Me.lblNombre = New System.Windows.Forms.Label()
         CodDebMatLabel = New System.Windows.Forms.Label()
         DetDebMatLabel = New System.Windows.Forms.Label()
         ImpDebMatLabel = New System.Windows.Forms.Label()
@@ -101,8 +102,6 @@ Partial Class frmReciboGral
         Label2 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvRenglones, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RenglonesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -112,6 +111,8 @@ Partial Class frmReciboGral
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RenglonesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CodDebMatLabel
@@ -200,10 +201,11 @@ Partial Class frmReciboGral
         Me.txtNombre.Enabled = False
         Me.txtNombre.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre.ForeColor = System.Drawing.Color.White
-        Me.txtNombre.Location = New System.Drawing.Point(231, 66)
+        Me.txtNombre.Location = New System.Drawing.Point(834, 22)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(427, 23)
+        Me.txtNombre.Size = New System.Drawing.Size(50, 23)
         Me.txtNombre.TabIndex = 1
+        Me.txtNombre.Visible = False
         '
         'txtMatSoc
         '
@@ -288,128 +290,50 @@ Partial Class frmReciboGral
         Me.dgvRenglones.AllowUserToAddRows = False
         Me.dgvRenglones.AllowUserToDeleteRows = False
         Me.dgvRenglones.AllowUserToOrderColumns = True
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        Me.dgvRenglones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
+        Me.dgvRenglones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
         Me.dgvRenglones.AutoGenerateColumns = False
         Me.dgvRenglones.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.dgvRenglones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkOrange
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRenglones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.DarkOrange
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRenglones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.dgvRenglones.ColumnHeadersHeight = 30
         Me.dgvRenglones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgvRenglones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdRenDataGridViewTextBoxColumn, Me.CodigoRenDataGridViewTextBoxColumn, Me.DetalleRenDataGridViewTextBoxColumn, Me.ImporteRenDataGridViewTextBoxColumn, Me.CantidadRenDataGridViewTextBoxColumn, Me.SubtotalRenDataGridViewTextBoxColumn, Me.CategoriaRenDataGridViewTextBoxColumn})
         Me.dgvRenglones.DataSource = Me.RenglonesBindingSource
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvRenglones.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvRenglones.DefaultCellStyle = DataGridViewCellStyle15
         Me.dgvRenglones.EnableHeadersVisualStyles = False
         Me.dgvRenglones.GridColor = System.Drawing.Color.White
         Me.dgvRenglones.Location = New System.Drawing.Point(12, 191)
         Me.dgvRenglones.Name = "dgvRenglones"
         Me.dgvRenglones.ReadOnly = True
         Me.dgvRenglones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvRenglones.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Century Gothic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer), CType(CType(50, Byte), Integer))
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvRenglones.RowHeadersDefaultCellStyle = DataGridViewCellStyle16
         Me.dgvRenglones.Size = New System.Drawing.Size(694, 222)
         Me.dgvRenglones.TabIndex = 163
-        '
-        'IdRenDataGridViewTextBoxColumn
-        '
-        Me.IdRenDataGridViewTextBoxColumn.DataPropertyName = "id_Ren"
-        Me.IdRenDataGridViewTextBoxColumn.HeaderText = "id_Ren"
-        Me.IdRenDataGridViewTextBoxColumn.Name = "IdRenDataGridViewTextBoxColumn"
-        Me.IdRenDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IdRenDataGridViewTextBoxColumn.Visible = False
-        '
-        'CodigoRenDataGridViewTextBoxColumn
-        '
-        Me.CodigoRenDataGridViewTextBoxColumn.DataPropertyName = "CodigoRen"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        Me.CodigoRenDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
-        Me.CodigoRenDataGridViewTextBoxColumn.HeaderText = "CÓD."
-        Me.CodigoRenDataGridViewTextBoxColumn.Name = "CodigoRenDataGridViewTextBoxColumn"
-        Me.CodigoRenDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CodigoRenDataGridViewTextBoxColumn.Width = 50
-        '
-        'DetalleRenDataGridViewTextBoxColumn
-        '
-        Me.DetalleRenDataGridViewTextBoxColumn.DataPropertyName = "DetalleRen"
-        Me.DetalleRenDataGridViewTextBoxColumn.HeaderText = "DETALLE"
-        Me.DetalleRenDataGridViewTextBoxColumn.Name = "DetalleRenDataGridViewTextBoxColumn"
-        Me.DetalleRenDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DetalleRenDataGridViewTextBoxColumn.Width = 300
-        '
-        'ImporteRenDataGridViewTextBoxColumn
-        '
-        Me.ImporteRenDataGridViewTextBoxColumn.DataPropertyName = "ImporteRen"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "C2"
-        DataGridViewCellStyle4.NullValue = "-"
-        Me.ImporteRenDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle4
-        Me.ImporteRenDataGridViewTextBoxColumn.HeaderText = "IMPORTE"
-        Me.ImporteRenDataGridViewTextBoxColumn.Name = "ImporteRenDataGridViewTextBoxColumn"
-        Me.ImporteRenDataGridViewTextBoxColumn.ReadOnly = True
-        Me.ImporteRenDataGridViewTextBoxColumn.Width = 110
-        '
-        'CantidadRenDataGridViewTextBoxColumn
-        '
-        Me.CantidadRenDataGridViewTextBoxColumn.DataPropertyName = "CantidadRen"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.CantidadRenDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle5
-        Me.CantidadRenDataGridViewTextBoxColumn.HeaderText = "CANT."
-        Me.CantidadRenDataGridViewTextBoxColumn.Name = "CantidadRenDataGridViewTextBoxColumn"
-        Me.CantidadRenDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CantidadRenDataGridViewTextBoxColumn.Width = 70
-        '
-        'SubtotalRenDataGridViewTextBoxColumn
-        '
-        Me.SubtotalRenDataGridViewTextBoxColumn.DataPropertyName = "SubtotalRen"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Format = "C2"
-        DataGridViewCellStyle6.NullValue = "-"
-        Me.SubtotalRenDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle6
-        Me.SubtotalRenDataGridViewTextBoxColumn.HeaderText = "SUBTOTAL"
-        Me.SubtotalRenDataGridViewTextBoxColumn.Name = "SubtotalRenDataGridViewTextBoxColumn"
-        Me.SubtotalRenDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SubtotalRenDataGridViewTextBoxColumn.Width = 110
-        '
-        'CategoriaRenDataGridViewTextBoxColumn
-        '
-        Me.CategoriaRenDataGridViewTextBoxColumn.DataPropertyName = "CategoriaRen"
-        Me.CategoriaRenDataGridViewTextBoxColumn.HeaderText = "CategoriaRen"
-        Me.CategoriaRenDataGridViewTextBoxColumn.Name = "CategoriaRenDataGridViewTextBoxColumn"
-        Me.CategoriaRenDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CategoriaRenDataGridViewTextBoxColumn.Visible = False
-        '
-        'RenglonesBindingSource
-        '
-        Me.RenglonesBindingSource.DataMember = "renglones"
-        Me.RenglonesBindingSource.DataSource = Me.DbcolmartDataSet
-        '
-        'DbcolmartDataSet
-        '
-        Me.DbcolmartDataSet.DataSetName = "dbcolmartDataSet"
-        Me.DbcolmartDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btnImprimir
         '
@@ -527,10 +451,6 @@ Partial Class frmReciboGral
         Me.txtCategoria.Size = New System.Drawing.Size(42, 23)
         Me.txtCategoria.TabIndex = 7
         Me.txtCategoria.Visible = False
-        '
-        'RenglonesTableAdapter
-        '
-        Me.RenglonesTableAdapter.ClearBeforeFill = True
         '
         'txtTotal
         '
@@ -829,12 +749,106 @@ Partial Class frmReciboGral
         Me.txtTelefono.TabIndex = 207
         Me.txtTelefono.Visible = False
         '
+        'IdRenDataGridViewTextBoxColumn
+        '
+        Me.IdRenDataGridViewTextBoxColumn.DataPropertyName = "id_Ren"
+        Me.IdRenDataGridViewTextBoxColumn.HeaderText = "id_Ren"
+        Me.IdRenDataGridViewTextBoxColumn.Name = "IdRenDataGridViewTextBoxColumn"
+        Me.IdRenDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IdRenDataGridViewTextBoxColumn.Visible = False
+        '
+        'CodigoRenDataGridViewTextBoxColumn
+        '
+        Me.CodigoRenDataGridViewTextBoxColumn.DataPropertyName = "CodigoRen"
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        Me.CodigoRenDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle11
+        Me.CodigoRenDataGridViewTextBoxColumn.HeaderText = "CÓD."
+        Me.CodigoRenDataGridViewTextBoxColumn.Name = "CodigoRenDataGridViewTextBoxColumn"
+        Me.CodigoRenDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CodigoRenDataGridViewTextBoxColumn.Width = 50
+        '
+        'DetalleRenDataGridViewTextBoxColumn
+        '
+        Me.DetalleRenDataGridViewTextBoxColumn.DataPropertyName = "DetalleRen"
+        Me.DetalleRenDataGridViewTextBoxColumn.HeaderText = "DETALLE"
+        Me.DetalleRenDataGridViewTextBoxColumn.Name = "DetalleRenDataGridViewTextBoxColumn"
+        Me.DetalleRenDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DetalleRenDataGridViewTextBoxColumn.Width = 300
+        '
+        'ImporteRenDataGridViewTextBoxColumn
+        '
+        Me.ImporteRenDataGridViewTextBoxColumn.DataPropertyName = "ImporteRen"
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle12.Format = "C2"
+        DataGridViewCellStyle12.NullValue = "-"
+        Me.ImporteRenDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle12
+        Me.ImporteRenDataGridViewTextBoxColumn.HeaderText = "IMPORTE"
+        Me.ImporteRenDataGridViewTextBoxColumn.Name = "ImporteRenDataGridViewTextBoxColumn"
+        Me.ImporteRenDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ImporteRenDataGridViewTextBoxColumn.Width = 110
+        '
+        'CantidadRenDataGridViewTextBoxColumn
+        '
+        Me.CantidadRenDataGridViewTextBoxColumn.DataPropertyName = "CantidadRen"
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.CantidadRenDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle13
+        Me.CantidadRenDataGridViewTextBoxColumn.HeaderText = "CANT."
+        Me.CantidadRenDataGridViewTextBoxColumn.Name = "CantidadRenDataGridViewTextBoxColumn"
+        Me.CantidadRenDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CantidadRenDataGridViewTextBoxColumn.Width = 70
+        '
+        'SubtotalRenDataGridViewTextBoxColumn
+        '
+        Me.SubtotalRenDataGridViewTextBoxColumn.DataPropertyName = "SubtotalRen"
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle14.Format = "C2"
+        DataGridViewCellStyle14.NullValue = "-"
+        Me.SubtotalRenDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle14
+        Me.SubtotalRenDataGridViewTextBoxColumn.HeaderText = "SUBTOTAL"
+        Me.SubtotalRenDataGridViewTextBoxColumn.Name = "SubtotalRenDataGridViewTextBoxColumn"
+        Me.SubtotalRenDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SubtotalRenDataGridViewTextBoxColumn.Width = 110
+        '
+        'CategoriaRenDataGridViewTextBoxColumn
+        '
+        Me.CategoriaRenDataGridViewTextBoxColumn.DataPropertyName = "CategoriaRen"
+        Me.CategoriaRenDataGridViewTextBoxColumn.HeaderText = "CategoriaRen"
+        Me.CategoriaRenDataGridViewTextBoxColumn.Name = "CategoriaRenDataGridViewTextBoxColumn"
+        Me.CategoriaRenDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CategoriaRenDataGridViewTextBoxColumn.Visible = False
+        '
+        'RenglonesBindingSource
+        '
+        Me.RenglonesBindingSource.DataMember = "renglones"
+        Me.RenglonesBindingSource.DataSource = Me.DbcolmartDataSet
+        '
+        'DbcolmartDataSet
+        '
+        Me.DbcolmartDataSet.DataSetName = "dbcolmartDataSet"
+        Me.DbcolmartDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'RenglonesTableAdapter
+        '
+        Me.RenglonesTableAdapter.ClearBeforeFill = True
+        '
+        'lblNombre
+        '
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombre.ForeColor = System.Drawing.Color.White
+        Me.lblNombre.Location = New System.Drawing.Point(231, 68)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(14, 17)
+        Me.lblNombre.TabIndex = 208
+        Me.lblNombre.Text = "-"
+        '
         'frmReciboGral
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1127, 567)
+        Me.Controls.Add(Me.lblNombre)
         Me.Controls.Add(Me.txtTelefono)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label11)
@@ -892,8 +906,6 @@ Partial Class frmReciboGral
         Me.Text = "RECIBO DE PAGO GENERAL"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvRenglones, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RenglonesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -903,6 +915,8 @@ Partial Class frmReciboGral
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RenglonesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -965,4 +979,5 @@ Partial Class frmReciboGral
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents txtTelefono As TextBox
+    Friend WithEvents lblNombre As Label
 End Class

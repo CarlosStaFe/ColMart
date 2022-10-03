@@ -135,6 +135,8 @@ Public Class frmLiquidarSoc
         da.Fill(dt)
         Dim row As DataRow = dt.Rows(0)
         fila = dt.Rows.Count
+        PonerCeros(txtMMperiodo.Text, 2)
+        txtMMperiodo.Text = nroconceros
         periodo = txtYYPeriodo.Text & txtMMperiodo.Text
 
         For Each row In dt.Rows

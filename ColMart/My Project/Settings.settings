@@ -5,10 +5,10 @@
     <Setting Name="dbcolmartConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;server=DESKTOP;user id=martillero1;password=soporte;persistsecurityinfo=True;database=dbcolmart&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;server=SERVIDOR; database=dbcolmart; user id=martillero1; password=soporte; Convert Zero Datetime=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">server=DESKTOP;user id=martillero1;password=soporte;persistsecurityinfo=True;database=dbcolmart</Value>
+      <Value Profile="(Default)">server=SERVIDOR; database=dbcolmart; user id=martillero1; password=soporte; Convert Zero Datetime=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

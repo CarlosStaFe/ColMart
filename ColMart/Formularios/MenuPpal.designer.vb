@@ -176,7 +176,7 @@ Partial Class MenuPpal
         'btnSalir
         '
         Me.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSalir.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.btnSalir.FlatAppearance.BorderSize = 0
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSalir.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

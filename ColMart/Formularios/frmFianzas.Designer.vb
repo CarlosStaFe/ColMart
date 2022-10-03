@@ -77,6 +77,8 @@ Partial Class frmFianzas
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.lblNombre = New System.Windows.Forms.Label()
         CType(Me.DbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FianzasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvFianzas, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,10 +117,11 @@ Partial Class frmFianzas
         Me.txtApelNombre.Enabled = False
         Me.txtApelNombre.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtApelNombre.ForeColor = System.Drawing.Color.White
-        Me.txtApelNombre.Location = New System.Drawing.Point(355, 66)
+        Me.txtApelNombre.Location = New System.Drawing.Point(897, 67)
         Me.txtApelNombre.Name = "txtApelNombre"
-        Me.txtApelNombre.Size = New System.Drawing.Size(413, 23)
+        Me.txtApelNombre.Size = New System.Drawing.Size(55, 23)
         Me.txtApelNombre.TabIndex = 1
+        Me.txtApelNombre.Visible = False
         '
         'txtMatricula
         '
@@ -137,7 +140,7 @@ Partial Class frmFianzas
         Me.txtFecFirma1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtFecFirma1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFecFirma1.ForeColor = System.Drawing.Color.White
-        Me.txtFecFirma1.Location = New System.Drawing.Point(176, 197)
+        Me.txtFecFirma1.Location = New System.Drawing.Point(176, 209)
         Me.txtFecFirma1.Name = "txtFecFirma1"
         Me.txtFecFirma1.Size = New System.Drawing.Size(100, 23)
         Me.txtFecFirma1.TabIndex = 6
@@ -147,7 +150,7 @@ Partial Class frmFianzas
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(47, 199)
+        Me.Label3.Location = New System.Drawing.Point(47, 211)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(123, 17)
         Me.Label3.TabIndex = 91
@@ -158,7 +161,7 @@ Partial Class frmFianzas
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(360, 199)
+        Me.Label4.Location = New System.Drawing.Point(360, 211)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(134, 17)
         Me.Label4.TabIndex = 93
@@ -170,7 +173,7 @@ Partial Class frmFianzas
         Me.txtFecFirma2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtFecFirma2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFecFirma2.ForeColor = System.Drawing.Color.White
-        Me.txtFecFirma2.Location = New System.Drawing.Point(500, 197)
+        Me.txtFecFirma2.Location = New System.Drawing.Point(500, 209)
         Me.txtFecFirma2.Name = "txtFecFirma2"
         Me.txtFecFirma2.Size = New System.Drawing.Size(100, 23)
         Me.txtFecFirma2.TabIndex = 7
@@ -201,6 +204,7 @@ Partial Class frmFianzas
         Me.TableAdapterManager.categivaTableAdapter = Nothing
         Me.TableAdapterManager.coddebitoTableAdapter = Nothing
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
+        Me.TableAdapterManager.colegiadosTableAdapter = Nothing
         Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
         Me.TableAdapterManager.cptosgastosTableAdapter = Nothing
@@ -269,7 +273,7 @@ Partial Class frmFianzas
         Me.dgvFianzas.DefaultCellStyle = DataGridViewCellStyle17
         Me.dgvFianzas.EnableHeadersVisualStyles = False
         Me.dgvFianzas.GridColor = System.Drawing.Color.White
-        Me.dgvFianzas.Location = New System.Drawing.Point(25, 237)
+        Me.dgvFianzas.Location = New System.Drawing.Point(25, 260)
         Me.dgvFianzas.Name = "dgvFianzas"
         Me.dgvFianzas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -489,7 +493,7 @@ Partial Class frmFianzas
         Me.btnSalir.ForeColor = System.Drawing.Color.White
         Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
         Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSalir.Location = New System.Drawing.Point(818, 496)
+        Me.btnSalir.Location = New System.Drawing.Point(818, 518)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(99, 44)
         Me.btnSalir.TabIndex = 106
@@ -511,7 +515,7 @@ Partial Class frmFianzas
         Me.btnLimpiar.ForeColor = System.Drawing.Color.White
         Me.btnLimpiar.Image = CType(resources.GetObject("btnLimpiar.Image"), System.Drawing.Image)
         Me.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLimpiar.Location = New System.Drawing.Point(322, 496)
+        Me.btnLimpiar.Location = New System.Drawing.Point(322, 518)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(99, 44)
         Me.btnLimpiar.TabIndex = 107
@@ -530,7 +534,7 @@ Partial Class frmFianzas
         Me.BtnGrabar.ForeColor = System.Drawing.Color.White
         Me.BtnGrabar.Image = CType(resources.GetObject("BtnGrabar.Image"), System.Drawing.Image)
         Me.BtnGrabar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.BtnGrabar.Location = New System.Drawing.Point(571, 496)
+        Me.BtnGrabar.Location = New System.Drawing.Point(571, 518)
         Me.BtnGrabar.Name = "BtnGrabar"
         Me.BtnGrabar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.BtnGrabar.Size = New System.Drawing.Size(97, 44)
@@ -544,11 +548,11 @@ Partial Class frmFianzas
         Me.lblEstado.AutoSize = True
         Me.lblEstado.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEstado.ForeColor = System.Drawing.Color.Yellow
-        Me.lblEstado.Location = New System.Drawing.Point(729, 196)
+        Me.lblEstado.Location = New System.Drawing.Point(660, 208)
         Me.lblEstado.Name = "lblEstado"
-        Me.lblEstado.Size = New System.Drawing.Size(61, 19)
+        Me.lblEstado.Size = New System.Drawing.Size(16, 19)
         Me.lblEstado.TabIndex = 157
-        Me.lblEstado.Text = "Label4"
+        Me.lblEstado.Text = "-"
         '
         'PictureBox1
         '
@@ -573,14 +577,14 @@ Partial Class frmFianzas
         Me.PictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.PictureBox3.Location = New System.Drawing.Point(25, 186)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(939, 44)
+        Me.PictureBox3.Size = New System.Drawing.Size(939, 68)
         Me.PictureBox3.TabIndex = 160
         Me.PictureBox3.TabStop = False
         '
         'PictureBox4
         '
         Me.PictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox4.Location = New System.Drawing.Point(25, 483)
+        Me.PictureBox4.Location = New System.Drawing.Point(25, 505)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(939, 73)
         Me.PictureBox4.TabIndex = 161
@@ -596,7 +600,7 @@ Partial Class frmFianzas
         Me.btnImprimir.ForeColor = System.Drawing.Color.White
         Me.btnImprimir.Image = CType(resources.GetObject("btnImprimir.Image"), System.Drawing.Image)
         Me.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnImprimir.Location = New System.Drawing.Point(69, 496)
+        Me.btnImprimir.Location = New System.Drawing.Point(69, 518)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(103, 44)
         Me.btnImprimir.TabIndex = 162
@@ -604,12 +608,43 @@ Partial Class frmFianzas
         Me.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnImprimir.UseVisualStyleBackColor = True
         '
+        'btnActualizar
+        '
+        Me.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnActualizar.FlatAppearance.BorderSize = 0
+        Me.btnActualizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnActualizar.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnActualizar.ForeColor = System.Drawing.Color.White
+        Me.btnActualizar.Image = CType(resources.GetObject("btnActualizar.Image"), System.Drawing.Image)
+        Me.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnActualizar.Location = New System.Drawing.Point(833, 197)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(119, 44)
+        Me.btnActualizar.TabIndex = 163
+        Me.btnActualizar.Text = "Blanquear"
+        Me.btnActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnActualizar.UseVisualStyleBackColor = True
+        '
+        'lblNombre
+        '
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.Font = New System.Drawing.Font("Century Gothic", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombre.ForeColor = System.Drawing.Color.White
+        Me.lblNombre.Location = New System.Drawing.Point(355, 69)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(14, 17)
+        Me.lblNombre.TabIndex = 164
+        Me.lblNombre.Text = "-"
+        '
         'frmFianzas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1002, 571)
+        Me.ClientSize = New System.Drawing.Size(1002, 601)
+        Me.Controls.Add(Me.lblNombre)
+        Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.lblEstado)
         Me.Controls.Add(Me.BtnGrabar)
@@ -700,4 +735,6 @@ Partial Class frmFianzas
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents btnImprimir As Button
+    Friend WithEvents btnActualizar As Button
+    Friend WithEvents lblNombre As Label
 End Class

@@ -2,7 +2,6 @@
 '* RECIBO GENERAL DE COBRO                                                     *
 '*******************************************************************************
 Imports System.Drawing
-
 Public Class frmReciboGral
     Dim fecha, comprobante, tipo, impletras, cuit As String
     Dim flag, fechaaux, fechajur, tipoA, tipoF, detalle As String
@@ -46,7 +45,7 @@ Public Class frmReciboGral
             Dim frmSoc6 As New frmConsSociedad
             AddOwnedForm(frmSoc6)
             frmSoc6.ShowDialog()
-            txtNombre.Focus()
+            txtMatSoc.Focus()
             senial = 0
         End If
         If e.KeyCode = Keys.Enter Then
@@ -67,6 +66,7 @@ Public Class frmReciboGral
         If dr.HasRows Then
             While dr.Read
                 txtNombre.Text = dr(2).ToString
+                lblNombre.Text = txtNombre.Text
                 cuit = ""
                 tipo = "SOCIEDAD: "
                 flag = "S"
@@ -89,6 +89,7 @@ Public Class frmReciboGral
         If dr.HasRows Then
             While dr.Read
                 txtNombre.Text = dr(2).ToString
+                lblNombre.Text = txtNombre.Text
                 cuit = dr(11).ToString
                 txtTelefono.Text = dr(22).ToString + " * " + dr(23).ToString
                 tipo = "MATRÍCULA: "
@@ -233,19 +234,6 @@ Public Class frmReciboGral
                 txtImporte.Focus()
                 btnAgregar.Visible = True
 
-                'If txtTotal.Text = 0 Then
-                '    detmsg = "Debe ingresar un código...!!!"
-                '    tipomsg = "info"
-                '    btnmsg = 1
-                '    frmMsgBox.ShowDialog()
-                '    txtCodigo.Focus()
-                'Else
-                '    txtDetalle.Text = ""
-                '    txtImporte.Text = ""
-                '    txtCantidad.Text = ""
-                '    txtSubtotal.Text = ""
-                '    txtEfectivo.Focus()
-                'End If
             Else
                 detmsg = "DEBE INGRESAR UN CÓDIGO TIPO REC ...!!!"
                 tipomsg = "info"
@@ -388,6 +376,7 @@ Public Class frmReciboGral
 
         txtMatSoc.Text = ""
         txtNombre.Text = ""
+        lblNombre.Text = ""
         txtCodigo.Text = ""
         txtDetalle.Text = ""
         txtImporte.Text = ""
@@ -504,7 +493,6 @@ Public Class frmReciboGral
             tipomsg = "info"
             btnmsg = 1
             frmMsgBox.ShowDialog()
-
             btnImprimir.Visible = False
             txtEfectivo.Focus()
         End If
@@ -529,7 +517,7 @@ Public Class frmReciboGral
 
         GrabarCaja()
 
-        '***SEPUSO DENTRO DE GRABAR CTASCTES***
+        '***SE PUSO DENTRO DE GRABAR CTASCTES***
         'GrabarFianza()
 
         '***ACTUALIZO COMPROBANTE***
@@ -803,7 +791,7 @@ Public Class frmReciboGral
         comando = New MySqlCommand("INSERT INTO ventas VALUES(@id, @fecha, @tipo, @cpbte, @item, @detalle, @periodo, @neto, @total)", conexion)
         comando.Parameters.AddWithValue("@id", 0)
         comando.Parameters.AddWithValue("@fecha", fecha)
-        comando.Parameters.AddWithValue("@tipo", "LIQ")
+        comando.Parameters.AddWithValue("@tipo", "CIC")
         comando.Parameters.AddWithValue("@cpbte", comprobante)
         comando.Parameters.AddWithValue("@item", item)
         comando.Parameters.AddWithValue("@detalle", detalle)

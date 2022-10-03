@@ -459,6 +459,28 @@
   <metadata name="ToolTipMsg.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>737, 17</value>
   </metadata>
+  <data name="btnLimpiar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5QULDxE6CzWVfwAAA3xJREFU
+        WEe9V0toFEEQ7bii+P8i6EGjCCreFMSLfxQUPKhXFTU3QT140IuColE0fm7iTQS/F1GIQkATMzO7mGhA
+        iAomHnRBUBMkKIR83PJVzcvubD7sZrKbB8VOv+quV91d3TPrxgXPZXKFLxcn+JKG9cA858laesuMx5Ko
+        COQZRGWQ9Y5LEpj5NRMM5BcEN7u3MgvcLSbRyG7lwQRPjlCoxyVlI2nn6mU2+W4yZQAEVZhCVWQNCV+2
+        GB/IN1IlhifLdMlVRLeAbAhNLOc7T7aEeCMzEbyVArVahPQ4cFUwWxX4nroPMomuEgGrGqn4j1pwxocn
+        4TJ5wfNt1MFE85USutwU6XApWW5kvUzX2ZLvQ2EeNb7UwL4eokivFpmRWgvcDlhHlh8LNIguIQK2wL5A
+        uAEzvI7nsOJx9KxjpNhgrZqM8bHhyRwI32fAYQ2JvNKueI4WW60WpsWIjdeyFME+aUDM6i9+z2CP18Eq
+        E4FshcgjcP/ob7BfFQ+kJnoKYoGXxg8GbVFRuvKQ8GQPxPvZrye7FbGBCSDIKQTr06CYzRNXJ9PoHRZY
+        iRvse5dUTPiyAsFecjYZPFfrGad3ZPiymmPayYwSmGGFJxcQIKzoQL5jC7bTWxgpmcIEusgUiUZZg2W7
+        hIGdDJBB+x4ukfnsURzCYtXxaTKFgeWt46DQAvGxlOvpHhUw/rTG0FNBqjAwoIOD7uhKkHZ6vJDMfjYL
+        I7z1ujSWC2QD2cLInttADmtb9xxtD9ak33LWSRGeigNYnUVkcsCLBf2TGmdUs1dg0AkdiATe4zewZ19+
+        Qmgxu2hxVepWoS6ukskDfOc4Lq03Juki0STzIP6bATSR/kSjbDMfmmgfg/2x4L7MMD4CbNUOHWPj4r5s
+        TIQJYDZXjMRdAN4f4CG0y/gokrISfcLkcWmRjQHoQvghxTqx1DX47WY7LNDBSMlciH+m/4HGoCcmcIlA
+        eOj3Oy6jIfuKNnzN7NOCL5+p9IwR4afTTQTNMLjOrpreEGHNvKO/DUd3IT05pGTVmN6CVli+fB1IAtYM
+        bh9mvgnP7eTaUANLOCQLFOJu8wdyllRM6L2ub8PoCclZEpfNAvbMB65jrOILvkn1v2AaSe2kNwZw9JDE
+        cZgWXBsCnyzmi5biAwkX/26IhWHuh7wEyvYPCIDAQVgGy7yXlEGX3ZKA+Mhb4Nx/8/o0FoytQvsAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAA

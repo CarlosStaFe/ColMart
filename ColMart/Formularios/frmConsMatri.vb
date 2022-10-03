@@ -127,7 +127,7 @@ Public Class frmConsMatri
             Dim frmMat10 As frmReciboGral = CType(Owner, frmReciboGral)
             frmMat10.txtMatSoc.Text = dgvMatriculados.CurrentRow.Cells(1).Value.ToString
             frmMat10.txtNombre.Text = dgvMatriculados.CurrentRow.Cells(2).Value.ToString
-            frmMat10.txtTelefono.Text = dgvMatriculados.CurrentRow.Cells(22).Value.ToString + dgvMatriculados.CurrentRow.Cells(23).Value.ToString
+            frmMat10.txtTelefono.Text = dgvMatriculados.CurrentRow.Cells(19).Value.ToString + dgvMatriculados.CurrentRow.Cells(20).Value.ToString
         End If
 
         If senial = 11 Then

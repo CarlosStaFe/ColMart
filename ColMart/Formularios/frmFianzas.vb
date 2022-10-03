@@ -9,6 +9,10 @@ Public Class frmFianzas
 
     Private Sub frmFianzas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        If nivel > 4 Then
+            btnActualizar.Enabled = False
+        End If
+
         ConectarMySql()
         FianzasTableAdapter.Fill(DbcolmartDataSet.fianzas)
         dgvFianzas.DataSource = Nothing
@@ -44,6 +48,7 @@ Public Class frmFianzas
         If dt.Rows.Count > 0 Then
             Dim row As DataRow = dt.Rows(0)
             txtApelNombre.Text = CStr(row("ApelNombMatri"))
+            lblNombre.Text = CStr(row("ApelNombMatri"))
         Else
             txtApelNombre.Text = ""
         End If
@@ -289,6 +294,7 @@ Public Class frmFianzas
         txtApelNombre.Text = ""
         txtDocFiador.Text = ""
         txtNombreFiador.Text = ""
+        lblNombre.Text = ""
         txtCalleFiador.Text = ""
         txtTelFiador.Text = ""
         txtFecFirma1.Text = ""
@@ -322,4 +328,31 @@ Public Class frmFianzas
         comando.ExecuteNonQuery()
 
     End Sub
+
+    Private Sub dgvFianzas_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvFianzas.CellDoubleClick
+
+        id = dgvFianzas.CurrentRow.Cells(0).Value.ToString
+        fechajob = dgvFianzas.CurrentRow.Cells(4).Value.ToString
+        ProcesarFecha()
+        txtFecFirma1.Text = fechajob
+        fechajob = dgvFianzas.CurrentRow.Cells(6).Value.ToString
+        ProcesarFecha()
+        txtFecFirma2.Text = fechajob
+        txtDocFiador.Text = dgvFianzas.CurrentRow.Cells(9).Value.ToString
+        txtNombreFiador.Text = dgvFianzas.CurrentRow.Cells(10).Value.ToString
+        txtCalleFiador.Text = dgvFianzas.CurrentRow.Cells(11).Value.ToString
+        txtTelFiador.Text = dgvFianzas.CurrentRow.Cells(12).Value.ToString
+
+    End Sub
+
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+
+        comando.CommandText = "UPDATE fianzas SET FecFirma1Fza = Null, UserFirma1Fza = '" & user1 & "', FecFirma2Fza = Null, UserFirma2Fza = '" & user2 & "', " _
+                                & "FecVtoFza = Null, DocFiadorFza = '', NomFiadorFza = '', CalleFiadorFza = '', TelFiadorFza = '', EstadoFza = 'INCOMPLETA' WHERE id_Fza = '" & id & "' "
+        comando.ExecuteNonQuery()
+
+        Limpiar()
+
+    End Sub
+
 End Class

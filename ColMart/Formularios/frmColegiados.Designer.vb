@@ -138,6 +138,7 @@ Partial Class frmColegiados
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.btnLimpiar = New System.Windows.Forms.Button()
         Id_MatriLabel = New System.Windows.Forms.Label()
         ApelMatriLabel = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
@@ -475,7 +476,7 @@ Partial Class frmColegiados
         Label25.AutoSize = True
         Label25.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label25.ForeColor = System.Drawing.Color.White
-        Label25.Location = New System.Drawing.Point(638, 475)
+        Label25.Location = New System.Drawing.Point(626, 475)
         Label25.Name = "Label25"
         Label25.Size = New System.Drawing.Size(110, 17)
         Label25.TabIndex = 179
@@ -497,7 +498,7 @@ Partial Class frmColegiados
         Label27.AutoSize = True
         Label27.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label27.ForeColor = System.Drawing.Color.White
-        Label27.Location = New System.Drawing.Point(639, 446)
+        Label27.Location = New System.Drawing.Point(627, 446)
         Label27.Name = "Label27"
         Label27.Size = New System.Drawing.Size(109, 17)
         Label27.TabIndex = 175
@@ -1505,7 +1506,7 @@ Partial Class frmColegiados
         Me.lblFiadorMatri.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.lblFiadorMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFiadorMatri.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.lblFiadorMatri.Location = New System.Drawing.Point(754, 446)
+        Me.lblFiadorMatri.Location = New System.Drawing.Point(742, 446)
         Me.lblFiadorMatri.Name = "lblFiadorMatri"
         Me.lblFiadorMatri.Size = New System.Drawing.Size(12, 17)
         Me.lblFiadorMatri.TabIndex = 217
@@ -1531,7 +1532,7 @@ Partial Class frmColegiados
         Me.lblTelFiadorMatri.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.lblTelFiadorMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTelFiadorMatri.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.lblTelFiadorMatri.Location = New System.Drawing.Point(754, 475)
+        Me.lblTelFiadorMatri.Location = New System.Drawing.Point(742, 475)
         Me.lblTelFiadorMatri.Name = "lblTelFiadorMatri"
         Me.lblTelFiadorMatri.Size = New System.Drawing.Size(12, 17)
         Me.lblTelFiadorMatri.TabIndex = 219
@@ -1553,7 +1554,7 @@ Partial Class frmColegiados
         '
         'PictureBox4
         '
-        Me.PictureBox4.Location = New System.Drawing.Point(1073, 317)
+        Me.PictureBox4.Location = New System.Drawing.Point(1070, 321)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(115, 142)
         Me.PictureBox4.TabIndex = 221
@@ -1599,13 +1600,34 @@ Partial Class frmColegiados
         Me.PictureBox9.TabIndex = 225
         Me.PictureBox9.TabStop = False
         '
+        'btnLimpiar
+        '
+        Me.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnLimpiar.Enabled = False
+        Me.btnLimpiar.FlatAppearance.BorderSize = 0
+        Me.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLimpiar.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLimpiar.ForeColor = System.Drawing.Color.White
+        Me.btnLimpiar.Image = CType(resources.GetObject("btnLimpiar.Image"), System.Drawing.Image)
+        Me.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.btnLimpiar.Location = New System.Drawing.Point(991, 440)
+        Me.btnLimpiar.Name = "btnLimpiar"
+        Me.btnLimpiar.Size = New System.Drawing.Size(65, 55)
+        Me.btnLimpiar.TabIndex = 226
+        Me.btnLimpiar.Text = "Limpiar"
+        Me.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.btnLimpiar.UseVisualStyleBackColor = True
+        '
         'frmColegiados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1206, 663)
+        Me.ClientSize = New System.Drawing.Size(1186, 630)
+        Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.lblFianzaMatri)
         Me.Controls.Add(Me.lblTelFiadorMatri)
@@ -1819,4 +1841,5 @@ Partial Class frmColegiados
     Friend WithEvents PictureBox6 As PictureBox
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents btnLimpiar As Button
 End Class

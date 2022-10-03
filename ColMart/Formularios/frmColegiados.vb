@@ -26,6 +26,10 @@ Public Class frmColegiados
             BtnGrabar.Enabled = False
         End If
 
+        If nivel < 4 Then
+            btnLimpiar.Enabled = True
+        End If
+
     End Sub
 
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
@@ -218,6 +222,16 @@ Public Class frmColegiados
         MostrarFianza()
 
     End Sub
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+
+        comando.CommandText = "UPDATE matriculados SET FianzaMatri = '1900-01-01', DocFiadorMatri = '', FiadorMatri = '', CalleFiadorMatri = '', TelFiadorMatri = '' " _
+                                & " WHERE id_Matri = " & txtId_Matri.Text & " And  NroMatri = " & txtNroMatri.Text & " "
+        comando.ExecuteNonQuery()
+
+        Actualizar()
+
+    End Sub
+
 
     Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles BtnSalir.Click
 
@@ -455,6 +469,9 @@ Public Class frmColegiados
         txtFecEstadoMatri.Text = CStr(row("FecEstadoMatri"))
         txtCalleRealMatri.Text = CStr(row("CalleRealMatri"))
         idcodpostal = CStr(row("idLocalRMatri"))
+        txtIdLocalRMatri.Text = CStr(row("idLocalRMatri"))
+        txtIdDptoRMatri.Text = CStr(row("idDptoRMatri"))
+        txtIdProvRMatri.Text = CStr(row("idProvRMatri"))
         LeerCodPos()
 
         txtEmailMatri.Text = CStr(row("EmailMatri"))
@@ -462,6 +479,9 @@ Public Class frmColegiados
         txtFijoRealMatri.Text = CStr(row("FijoRealMatri"))
         txtCalleLegalMatri.Text = CStr(row("CalleLegalMatri"))
         idcodpostal = CStr(row("idLocalLMatri"))
+        txtIdLocalLMatri.Text = CStr(row("idLocalLMatri"))
+        txtIdDptoLMatri.Text = CStr(row("idDptoLMatri"))
+        txtIdProvLMatri.Text = CStr(row("idProvLMatri"))
         LeerCodPos()
 
         txtCeluLegalMatri.Text = CStr(row("CeluLegalMatri"))
@@ -893,6 +913,15 @@ Public Class frmColegiados
         ToolTipMsg.ToolTipIcon = ToolTipIcon.Info
 
     End Sub
+
+    Private Sub btnLimpiar_MouseHover(sender As Object, e As EventArgs) Handles btnLimpiar.MouseHover
+
+        ToolTipMsg.ToolTipTitle = "Limpiar datos de Fianza."
+        ToolTipMsg.SetToolTip(BtnSalir, "Presione para limpiar los datos de la fianza.")
+        ToolTipMsg.ToolTipIcon = ToolTipIcon.Info
+
+    End Sub
+
 
 #End Region
 

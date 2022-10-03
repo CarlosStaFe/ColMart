@@ -120,32 +120,34 @@ Terminar:
                         archivo = matricula & "-" & periodo & ".pdf"
 
                         '********** ARMO CABECERA DE MAIL *************************
+                        'Dim Smtp_Server As New SmtpClient
+                        'Dim e_mail As New MailMessage
+                        'e_mail.To.Clear()
+                        'Smtp_Server.UseDefaultCredentials = False
+                        'Smtp_Server.Credentials = New Net.NetworkCredential("martillerosfe@martilleros.org.ar", "8TfvzRX5.A^X")
+                        'Smtp_Server.Port = 587
+                        'Smtp_Server.Host = "mail.martilleros.org.ar"
+                        'e_mail = New MailMessage
+                        'e_mail.From = New MailAddress("martillerosfe@martilleros.org.ar")
+                        'e_mail.To.Add(Trim(mail))
+                        '**********************************************************
 
+                        '********** ARMO CABECERA DE MAIL PARA SENDINBLUE *********
                         Dim Smtp_Server As New SmtpClient
                         Dim e_mail As New MailMessage
                         e_mail.To.Clear()
                         Smtp_Server.UseDefaultCredentials = False
-                        'Smtp_Server.Credentials = New Net.NetworkCredential("tesoreria@martilleros.org.ar", "colegiodemartilleros")
-                        Smtp_Server.Credentials = New Net.NetworkCredential("martillerosfe@martilleros.org.ar", "8TfvzRX5.A^X")
-                        'Smtp_Server.Port = 465
+                        Smtp_Server.Credentials = New Net.NetworkCredential("martillerosfe@martilleros.org.ar", "pkPLQbEatVz6qB3f")
                         Smtp_Server.Port = 587
-                        Smtp_Server.Host = "mail.martilleros.org.ar"
-
+                        Smtp_Server.Host = "smtp-relay.sendinblue.com"
                         e_mail = New MailMessage
-                        'e_mail.From = New MailAddress("tesoreria@martilleros.org.ar")
                         e_mail.From = New MailAddress("martillerosfe@martilleros.org.ar")
-
-                        '********** Direcciones de mail para proceso ---------------
                         e_mail.To.Add(Trim(mail))
 
-                        '********** Con Copia a ---------------
-                        'e_mail.Bcc.Add(CStr("tesoreria@martilleros.org.ar"))
-                        'e_mail.Bcc.Add(CStr("martillerosfe@martilleros.org.ar"))
-
+                        '***********************************************************
                         '********** Direcciones de mail para prueba ----------------
                         'e_mail.To.Add(CStr("carlos.a.mayans@gmail.com"))
                         'e_mail.Bcc.Add(CStr("carlos.a.mayans@gmail.com"))
-
                         '***********************************************************
 
                         e_mail.Subject = txtAsunto.Text + " " + mm + "/" + yyyy + "."
