@@ -12,9 +12,18 @@ Public Class frmCobroBanco
     Dim control, id, flag, dd, mm, yyyy, vencto As String
     Dim CodigoArmado As Object
 
+
     Private Sub frmCobroBanco_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ConectarMySql()
+        ControlarCaja()
+        If flag = "NO" Then
+            btnBuscar.Enabled = False
+            btnSalir.Focus()
+        Else
+            btnBuscar.Enabled = True
+            btnBuscar.Focus()
+        End If
 
     End Sub
 
@@ -377,6 +386,25 @@ finalizar:
         ToolTipMsg.ToolTipTitle = "Botón Salir."
         ToolTipMsg.SetToolTip(btnSalir, "Presione para salir de la pantalla.")
         ToolTipMsg.ToolTipIcon = ToolTipIcon.Info
+
+    End Sub
+
+    Private Sub ControlarCaja()
+
+        'fecha = Format(Now, "yyyy-MM-dd")
+        comando = New MySqlCommand("SELECT * FROM caja WHERE EstadoCaja = 'ABIERTA' ", conexion)
+        dr = comando.ExecuteReader
+
+        If dr.HasRows = 0 Then
+            detmsg = "CAJA NO ABIERTA...!!!"
+            tipomsg = "info"
+            btnmsg = 1
+            frmMsgBox.ShowDialog()
+            flag = "NO"
+        End If
+
+        dr.Close()
+        dr.Dispose()
 
     End Sub
 

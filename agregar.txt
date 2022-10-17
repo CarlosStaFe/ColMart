@@ -1,2 +1,0 @@
-            dgvCtasctes.Rows(dgvCtasctes.RowCount - 1).Cells(0).Selected = True
-            dgvCtasctes.CurrentRow.Cells(0).Selected = True

@@ -1,1 +1,0 @@
-server=DESKTOP; database=dbcolmart; user id=martillero1; password=soporte; Convert Zero Datetime=True

@@ -585,6 +585,12 @@ terminar:
                                     & " WHERE id_Cpra = " & txtId_Cpra.Text & " AND  NroProvCpra = " & txtNroProvCpra.Text & "", conexion)
             comando.ExecuteNonQuery()
 
+            comando = New MySqlCommand("UPDATE ctactepro SET NroCCPro = '" & txtNroProvCpra.Text & "', FechaCCPro = '" & fechadb & "', " _
+                                    & "TipoCbteCCPro = '" & cbxTipoCbteCpra.Text & "', PrefijoCCPro = '" & txtPrefijoCpra.Text & "', SubfijoCCPro = '" & txtSubfijoCpra.Text & "', " _
+                                    & "HaberCCPro = '" & txtTotalCpra.Text & "', RestoCCPro = '" & txtTotalCpra.Text & "' " _
+                                    & " WHERE idCpra = " & txtId_Cpra.Text & " AND  NroCCPro = " & txtNroProvCpra.Text & "", conexion)
+            comando.ExecuteNonQuery()
+
             renglon = dgvDetCompras.Rows.Count
 
             For j = 0 To renglon - 1
@@ -641,6 +647,9 @@ terminar:
             comando.ExecuteNonQuery()
 
             comando = New MySqlCommand(("DELETE FROM detallecpra WHERE idCpraDetCpra = '" & txtId_Cpra.Text & "' "), conexion)
+            comando.ExecuteNonQuery()
+
+            comando = New MySqlCommand(("DELETE FROM ctactepro WHERE NroCCPro = '" & txtNroProvCpra.Text & "' AND  idCpra = '" & txtId_Cpra.Text & "'"), conexion)
             comando.ExecuteNonQuery()
 
             detmsg = "Registro eliminado correctamente...!!!"

@@ -8,7 +8,7 @@ Public Class frmEnviarMail
     Private correos As New MailMessage
     Private envios As New SmtpClient
     Dim archivo, matricula, mail, periodo, yyyy, mm, perdesde, perhasta As String
-    Dim contreg, pos, i As Integer
+    Dim contreg, pos, i, senial As Integer
     Dim quien As String
 
     Private Sub frmEnviarMail_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -105,6 +105,39 @@ Terminar:
 
     Private Sub ProcesarMail()
 
+        '********** ARMO CABECERA DE MAIL *************************
+        Dim Smtp_Server As New SmtpClient
+        Dim e_mail As New MailMessage
+        e_mail.To.Clear()
+        Smtp_Server.UseDefaultCredentials = False
+        Smtp_Server.Credentials = New Net.NetworkCredential("martillerosfe@martilleros.org.ar", "8TfvzRX5.A^X")
+        Smtp_Server.Port = 587
+        Smtp_Server.Host = "mail.martilleros.org.ar"
+        e_mail = New MailMessage
+        e_mail.From = New MailAddress("martillerosfe@martilleros.org.ar")
+        e_mail.To.Add(Trim(mail))
+        '**********************************************************
+
+        '********** ARMO CABECERA DE MAIL PARA SENDINBLUE *********
+        'Dim Smtp_Server As New SmtpClient
+        'Dim e_mail As New MailMessage
+        'e_mail.To.Clear()
+        'Smtp_Server.UseDefaultCredentials = False
+        'Smtp_Server.Credentials = New Net.NetworkCredential("martillerosfe@martilleros.org.ar", "pkPLQbEatVz6qB3f")
+        'Smtp_Server.Port = 587
+        'Smtp_Server.Host = "smtp-relay.sendinblue.com"
+        'e_mail = New MailMessage
+        'e_mail.From = New MailAddress("martillerosfe@martilleros.org.ar")
+        'e_mail.To.Add(Trim(mail))
+        '**********************************************************
+
+        '********** DIRECIONES DE MAIL PARA PRUEBAS ***************
+        'e_mail.To.Add(CStr("carlos.a.mayans@gmail.com"))
+        'e_mail.Bcc.Add(CStr("carlos.a.mayans@gmail.com"))
+        '***********************************************************
+
+        senial = 0
+
         For i = perdesde To perhasta
 
             comando = New MySqlCommand("SELECT * FROM boletas WHERE MatBoleta = '" & matricula & "' " _
@@ -112,43 +145,14 @@ Terminar:
             dr = comando.ExecuteReader()
 
             If dr.HasRows Then
+
+
                 While dr.Read
                     Try
                         periodo = dr(8).ToString
                         yyyy = Mid(periodo, 1, 4)
                         mm = Mid(periodo, 5, 2)
                         archivo = matricula & "-" & periodo & ".pdf"
-
-                        '********** ARMO CABECERA DE MAIL *************************
-                        'Dim Smtp_Server As New SmtpClient
-                        'Dim e_mail As New MailMessage
-                        'e_mail.To.Clear()
-                        'Smtp_Server.UseDefaultCredentials = False
-                        'Smtp_Server.Credentials = New Net.NetworkCredential("martillerosfe@martilleros.org.ar", "8TfvzRX5.A^X")
-                        'Smtp_Server.Port = 587
-                        'Smtp_Server.Host = "mail.martilleros.org.ar"
-                        'e_mail = New MailMessage
-                        'e_mail.From = New MailAddress("martillerosfe@martilleros.org.ar")
-                        'e_mail.To.Add(Trim(mail))
-                        '**********************************************************
-
-                        '********** ARMO CABECERA DE MAIL PARA SENDINBLUE *********
-                        Dim Smtp_Server As New SmtpClient
-                        Dim e_mail As New MailMessage
-                        e_mail.To.Clear()
-                        Smtp_Server.UseDefaultCredentials = False
-                        Smtp_Server.Credentials = New Net.NetworkCredential("martillerosfe@martilleros.org.ar", "pkPLQbEatVz6qB3f")
-                        Smtp_Server.Port = 587
-                        Smtp_Server.Host = "smtp-relay.sendinblue.com"
-                        e_mail = New MailMessage
-                        e_mail.From = New MailAddress("martillerosfe@martilleros.org.ar")
-                        e_mail.To.Add(Trim(mail))
-
-                        '***********************************************************
-                        '********** Direcciones de mail para prueba ----------------
-                        'e_mail.To.Add(CStr("carlos.a.mayans@gmail.com"))
-                        'e_mail.Bcc.Add(CStr("carlos.a.mayans@gmail.com"))
-                        '***********************************************************
 
                         e_mail.Subject = txtAsunto.Text + " " + mm + "/" + yyyy + "."
                         e_mail.IsBodyHtml = False
@@ -157,14 +161,12 @@ Terminar:
                         Dim adjunto As Net.Mail.Attachment = New Net.Mail.Attachment("E:/DBColMart/Boletas/" & archivo)
                         e_mail.Attachments.Add(adjunto)
 
-                        txtMsg.Text = "Enviando Matrícula: " & matricula & " - Período: " & mm & "/" & yyyy & "."
+                        txtMsg.Text = "Adjuntando Matrícula: " & matricula & " - Período: " & mm & "/" & yyyy & "."
                         txtMsg.Refresh()
                         txtMsg.Show()
 
-                        '************** Envío el mail ****************************
-                        Smtp_Server.Send(e_mail)
+                        senial = 1
 
-                        'MsgBox("El mensaje fue enviado correctamente. ", MsgBoxStyle.Information, "Mensaje")
                     Catch ex As Exception
                         MessageBox.Show(ex.Message, "ERROR EN MATRÍCULA: " & matricula & " - Período: " & mm & "/" & yyyy & ".", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         'MessageBox.Show(ex.Message, "Mensajeria 1.0 vb.net ®", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -193,6 +195,21 @@ Terminar:
             End If
 
         Next i
+
+        If senial = 1 Then
+
+            txtMsg.Text = "ENVIANDO =====>>>> Matrícula: " & matricula & " ESPERE.... "
+            txtMsg.Refresh()
+            txtMsg.Show()
+
+            '************** ENVÍO DE MAIL ****************************
+            Smtp_Server.Send(e_mail)
+
+            txtMsg.Text = "************** ENVIADO **************"
+            txtMsg.Refresh()
+            txtMsg.Show()
+
+        End If
 
     End Sub
 

@@ -702,14 +702,14 @@ Public Class frmReciboGral
         dr.Close()
         dr.Dispose()
 
-        comando = New MySqlCommand("SELECT * FROM ctasctes WHERE NroCC = '" & txtMatSoc.Text & "'", conexion)
+        comando = New MySqlCommand("SELECT RestoCC FROM ctasctes WHERE NroCC = '" & txtMatSoc.Text & "'", conexion)
         dr = comando.ExecuteReader
 
         total = 0
 
         If dr.HasRows Then
             While dr.Read
-                total = total + Val(dr(8).ToString) - Val(dr(9).ToString)
+                total = total + Val(dr(0).ToString)
                 txtSaldoMat.Text = total
                 FormatoMoneda(txtSaldoMat)
             End While

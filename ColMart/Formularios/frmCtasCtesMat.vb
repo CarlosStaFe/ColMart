@@ -56,11 +56,15 @@ Public Class frmCtasCtesMat
         If dt.Rows.Count > 0 Then
             Dim row As DataRow = dt.Rows(0)
             txtApelyNomb.Text = CStr(row("ApelNombMatri"))
+            lblApelyNomb.Text = CStr(row("ApelNombMatri"))
             lblEstado.Text = CStr(row("EstadoMatri"))
             estadomatri = CStr(row("EstadoMatri"))
         Else
             txtApelyNomb.Text = ""
+            lblApelyNomb.Text = ""
+            lblEstado.Text = ""
         End If
+        txtSaldo.Text = "0"
 
         SaldoCtaCte()
 
@@ -68,14 +72,12 @@ Public Class frmCtasCtesMat
 
     Private Sub SaldoCtaCte()
 
-        comando.CommandText = "SELECT * FROM ctasctes WHERE NroCC = " & txtMatricula.Text & " ORDER BY FechaCC, NrocbteCC, ItemCC"
+        comando.CommandText = "SELECT * FROM ctasctes WHERE NroCC = " & txtMatricula.Text & " ORDER BY FechaCC, ItemCC, NroCbteCC"
         dt = New DataTable
         da = New MySqlDataAdapter(comando)
         da.Fill(dt)
 
         dgvCtasctes.DataSource = dt
-
-        'dgvCtasctes.Sort(dgvCtasctes.Columns(2), System.ComponentModel.ListSortDirection.Ascending)
 
         debe = 0
         haber = 0
@@ -89,14 +91,29 @@ Public Class frmCtasCtesMat
                     debe = Fila.Cells(8).Value
                     haber = Fila.Cells(9).Value
                     saldo = saldoant + debe - haber
-                    Fila.Cells(10).Value = saldo
+                    Fila.Cells(14).Value = saldo
                     saldoant = saldo
                     detalle = Fila.Cells(6).Value
-                    comando.CommandText = "UPDATE ctasctes SET SaldoCC = '" & saldo & "' WHERE DetalleCC = '" & detalle & "' AND NroCC = '" & txtMatricula.Text & "' "
+                    id = Fila.Cells(0).Value
+                    comando.CommandText = "UPDATE ctasctes SET SaldoCC = '" & saldo & "' WHERE id_CC = '" & id & "' AND NroCC = '" & txtMatricula.Text & "' "
                     comando.ExecuteNonQuery()
-                    If Fila.Cells(11).Value = "PENDIENTE" Or Fila.Cells(11).Value = "LIQUIDADA" Then
+                    If Fila.Cells(3).Value = "CIP" Or Fila.Cells(3).Value = "CIC" Or Fila.Cells(3).Value = "BCO" Then
+                        Fila.DefaultCellStyle.ForeColor = Color.LimeGreen
+                        'Fila.DefaultCellStyle.ForeColor = Color.DeepSkyBlue
+                    End If
+                    If Fila.Cells(13).Value = "PENDIENTE" Or Fila.Cells(13).Value = "LIQUIDADA" Then
                         Fila.DefaultCellStyle.ForeColor = Color.Orange
-                        'Fila.Cells(11).Style.ForeColor = Color.Red
+                        Fila.Cells(13).Style.ForeColor = Color.Red
+                    End If
+                    If Fila.Cells(13).Value = "PAGADA" Then
+                        Fila.Cells(13).Style.ForeColor = Color.LimeGreen
+                    End If
+                    If Fila.Cells(13).Value = "PAGO BANCO" And Fila.Cells(3).Value = "BCO" Then
+                        Fila.Cells(13).Style.ForeColor = Color.Aqua
+                    End If
+                    If Fila.Cells(13).Value = "PAGO BANCO" And Fila.Cells(3).Value = "LIQ" Then
+                        Fila.Cells(13).Style.ForeColor = Color.LimeGreen
+                        'Fila.Cells(13).Value = ""
                     End If
                     If Fila.Cells(5).Value > 1 Then
                         Fila.Cells(2).Value = DBNull.Value
@@ -104,13 +121,20 @@ Public Class frmCtasCtesMat
                         Fila.Cells(4).Value = DBNull.Value
                         Fila.Cells(7).Value = DBNull.Value
                     End If
-                    'If Fila.Cells(13).Value = "1900-01-01" Then
-                    '    Fila.Cells(13).Value = DBNull.Value
-                    'End If
+                    If Fila.Cells(11).Value = "1900-01-01" Then
+                        Fila.Cells(11).Value = DBNull.Value
+                    End If
                 End If
             Next
             dgvCtasctes.FirstDisplayedScrollingRowIndex = dgvCtasctes.RowCount - 1
-            dgvCtasctes.Rows(dgvCtasctes.RowCount - 1).Selected = True
+            dgvCtasctes.Rows(dgvCtasctes.RowCount - 1).Cells(0).Selected = True
+            dgvCtasctes.CurrentRow.Cells(0).Selected = True
+
+            Dim query As String = "SELECT SUM(RestoCC) FROM ctasctes WHERE NroCC = " & txtMatricula.Text & " ORDER BY FechaCC, ItemCC, NroCbteCC"
+            Dim cmd As New MySqlCommand(query, conexion)
+            txtSaldo.Text = CStr(cmd.ExecuteScalar())
+            FormatoMoneda(txtSaldo)
+
         Else
             detmsg = "No posee movimientos en la Cuenta Corriente...!!!"
             tipomsg = "info"
@@ -118,8 +142,8 @@ Public Class frmCtasCtesMat
             frmMsgBox.ShowDialog()
         End If
 
-        txtSaldo.Text = saldo
-        FormatoMoneda(txtSaldo)
+        'txtSaldo.Text = saldo
+
         dgvCtasctes.Refresh()
 
     End Sub
@@ -131,21 +155,21 @@ Public Class frmCtasCtesMat
             id = dgvCtasctes.Rows(i).Cells(0).Value()
             debe = dgvCtasctes.Rows(i).Cells(8).Value()
             haber = dgvCtasctes.Rows(i).Cells(9).Value()
-            saldo = dgvCtasctes.Rows(i).Cells(10).Value()
-            estado = dgvCtasctes.Rows(i).Cells(11).Value()
-            pagado = dgvCtasctes.Rows(i).Cells(12).Value()
+            saldo = dgvCtasctes.Rows(i).Cells(14).Value()
+            estado = dgvCtasctes.Rows(i).Cells(13).Value()
+            pagado = dgvCtasctes.Rows(i).Cells(10).Value()
             If estado = "PENDIENTE" Then
                 fecpago = "1900-01-01"
             Else
-                If IsDBNull(dgvCtasctes.Rows(i).Cells(13).Value()) Then
+                If IsDBNull(dgvCtasctes.Rows(i).Cells(11).Value()) Then
                     fecpago = "1900-01-01"
                 Else
-                    fechajob = dgvCtasctes.Rows(i).Cells(13).Value()
+                    fechajob = dgvCtasctes.Rows(i).Cells(11).Value()
                     ProcesarFecha()
                     fecpago = fechadb
                 End If
             End If
-            resto = dgvCtasctes.Rows(i).Cells(14).Value()
+            resto = dgvCtasctes.Rows(i).Cells(12).Value()
             obs = dgvCtasctes.Rows(i).Cells(15).Value()
 
             comando.CommandText = "UPDATE ctasctes SET DebeCC = '" & debe & "', HaberCC = '" & haber & "', SaldoCC = '" & saldo & "', EstadoCC = '" & estado & "'," _

@@ -372,6 +372,7 @@ Finalizar:
 
             Dim byteViewer As Byte() = ReportViewer1.LocalReport.Render("PDF")
             Dim newFile As New FileStream("\\DESKTOP\dbcolmart\boletas\" & nombrePDF & ".pdf", FileMode.Create)
+            'Dim newFile As New FileStream("E:\dbcolmart\boletas\" & nombrePDF & ".pdf", FileMode.Create)
             newFile.Write(byteViewer, 0, byteViewer.Length)
             newFile.Close()
 

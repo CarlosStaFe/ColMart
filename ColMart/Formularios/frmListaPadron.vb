@@ -419,15 +419,17 @@ Public Class frmListaPadron
             comando.Parameters.AddWithValue("@local", localidad)
             comando.Parameters.AddWithValue("@dpto", departamento)
             comando.Parameters.AddWithValue("@prov", provincia)
-            comando.Parameters.AddWithValue("@jur", CStr(row("FecJurMatri")))
-            fechajob = CStr(row("FianzaMatri"))
 
+            'comando.Parameters.AddWithValue("@jur", CStr(row("FecJurMatri")))
+            fechajob = CStr(row("FecJurMatri"))
             ProcesarFecha()
+            comando.Parameters.AddWithValue("@jur", fechadb)
 
+            fechajob = CStr(row("FianzaMatri"))
+            ProcesarFecha()
             meses = 24
             fechafianza = DateAdd("m", meses, fechajob)
             fechajob = fechafianza
-
             ProcesarFecha()
 
             If chbFianza.Checked Then
