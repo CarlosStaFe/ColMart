@@ -110,9 +110,9 @@ Terminar:
         Dim e_mail As New MailMessage
         e_mail.To.Clear()
         Smtp_Server.UseDefaultCredentials = False
-        Smtp_Server.Credentials = New Net.NetworkCredential("martillerosfe@martilleros.org.ar", "8TfvzRX5.A^X")
+        Smtp_Server.Credentials = New Net.NetworkCredential("martillerosfe@martilleros.org.ar", "Martilleros_2023")
         Smtp_Server.Port = 587
-        Smtp_Server.Host = "mail.martilleros.org.ar"
+        Smtp_Server.Host = "smtp.hostinger.com"
         e_mail = New MailMessage
         e_mail.From = New MailAddress("martillerosfe@martilleros.org.ar")
         e_mail.To.Add(Trim(mail))

@@ -29,6 +29,7 @@ Partial Class frmPrintCaja
         Me.dbcolmartDataSet = New ColMart.dbcolmartDataSet()
         Me.cajaTableAdapter = New ColMart.dbcolmartDataSetTableAdapters.cajaTableAdapter()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         CType(Me.cajaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dbcolmartDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -60,6 +61,9 @@ Partial Class frmPrintCaja
         Me.ReportViewer1.Size = New System.Drawing.Size(845, 550)
         Me.ReportViewer1.TabIndex = 0
         '
+        'SaveFileDialog1
+        '
+        '
         'frmPrintCaja
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -79,4 +83,5 @@ Partial Class frmPrintCaja
     Friend WithEvents dbcolmartDataSet As dbcolmartDataSet
     Friend WithEvents cajaTableAdapter As dbcolmartDataSetTableAdapters.cajaTableAdapter
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
 End Class

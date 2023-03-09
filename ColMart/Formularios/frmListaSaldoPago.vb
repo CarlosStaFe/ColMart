@@ -60,7 +60,7 @@ Public Class frmListaSaldoPago
             If txtNroMatri.Text = "" Then
 
                 comando.CommandText = "SELECT * FROM ctasctes INNER JOIN matriculados ON ctasctes.NroCC = matriculados.NroMatri " _
-                                    & "WHERE ctasctes.EstadoCC = 'PENDIENTE' "
+                                    & "WHERE ctasctes.RestoCC <> 0"
                 titulo = titulo & "SALDOS * "
 
                 If cmbConcepto.Text <> "TODOS" Then
@@ -89,7 +89,7 @@ Public Class frmListaSaldoPago
 
             Else
                 comando.CommandText = "SELECT * FROM ctasctes INNER JOIN matriculados ON ctasctes.NroCC = matriculados.NroMatri " _
-                                    & "WHERE ctasctes.EstadoCC = 'PENDIENTE' AND matriculados.NroMatri = '" & txtNroMatri.Text & "'"
+                                    & "WHERE ctasctes.RestoCC <> 0 AND matriculados.NroMatri = '" & txtNroMatri.Text & "'"
                 titulo = titulo & "SALDOS * " & "Hasta: " & dtpHasta.Text & " * "
             End If
         End If
@@ -99,7 +99,7 @@ Public Class frmListaSaldoPago
             If txtNroMatri.Text = "" Then
 
                 comando.CommandText = "SELECT * FROM ctasctes INNER JOIN matriculados ON ctasctes.NroCC = matriculados.NroMatri " _
-                                            & "WHERE ctasctes.EstadoCC <> 'PENDIENTE' "
+                                        & "WHERE ctasctes.EstadoCC <> 'PENDIENTE' "
                 titulo = titulo & "PAGOS * "
 
                 If cmbConcepto.Text <> "TODOS" Then

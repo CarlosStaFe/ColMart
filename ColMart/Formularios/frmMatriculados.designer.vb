@@ -930,7 +930,7 @@ Partial Class frmMatriculados
         Me.cmbEstadoMatri.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbEstadoMatri.ForeColor = System.Drawing.Color.White
         Me.cmbEstadoMatri.FormattingEnabled = True
-        Me.cmbEstadoMatri.Items.AddRange(New Object() {"ACTIVO", "BAJA", "CANCELADO", "SUSPENDIDO", "SUSP. MOROSO"})
+        Me.cmbEstadoMatri.Items.AddRange(New Object() {"ACTIVO", "BAJA", "CANCELADO", "SUSPENDIDO", "SUSP MOROSO"})
         Me.cmbEstadoMatri.Location = New System.Drawing.Point(532, 145)
         Me.cmbEstadoMatri.Name = "cmbEstadoMatri"
         Me.cmbEstadoMatri.Size = New System.Drawing.Size(135, 25)
@@ -1254,6 +1254,7 @@ Partial Class frmMatriculados
         Me.TableAdapterManager.categivaTableAdapter = Nothing
         Me.TableAdapterManager.coddebitoTableAdapter = Nothing
         Me.TableAdapterManager.codpostalTableAdapter = Nothing
+        Me.TableAdapterManager.colegiadosTableAdapter = Nothing
         Me.TableAdapterManager.comprasTableAdapter = Nothing
         Me.TableAdapterManager.comprobteTableAdapter = Nothing
         Me.TableAdapterManager.cptosgastosTableAdapter = Nothing

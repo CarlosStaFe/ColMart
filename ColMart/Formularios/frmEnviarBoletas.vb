@@ -58,7 +58,7 @@ Public Class frmEnviarBoletas
 
         comando.CommandText = "SELECT * FROM Boletas WHERE MatBoleta >= '" & txtDesdeMat.Text & "' AND MatBoleta <= '" & txtHastaMat.Text & "'" _
                             & " AND PeriodoBoleta >= '" & cmbDesdePer.Text & "' AND PeriodoBoleta <= '" & cmbHastaPer.Text & "'" _
-                            & " AND MailBoleta NOT LIKE '%@%' AND EstadoBoleta = 'LIQUIDADA' " _
+                            & " AND EstadoBoleta = 'LIQUIDADA' " _
                             & " ORDER BY MatBoleta"
         dt = New DataTable
         da = New MySqlDataAdapter(comando)

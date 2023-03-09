@@ -132,10 +132,17 @@ Public Class frmLiquidarMat
             End If
 
 seguir:
+
             txtMsg.Visible = True
             contreg = contreg + 1
 
             matricula = CStr(row("NroMatri"))
+
+            BuscarLiquidado()
+            If senial = 1 Then
+                GoTo leerotro
+            End If
+
             apelynombre = CStr(row("ApelNombMatri"))
             domicilio = CStr(row("CalleRealMatri"))
             idcodpos = CStr(row("idLocalRMatri"))
@@ -645,6 +652,23 @@ Finalizar:
         comando.Parameters.AddWithValue("@neto", importe)
         comando.Parameters.AddWithValue("@total", 0)
         comando.ExecuteNonQuery()
+
+    End Sub
+
+    Private Sub BuscarLiquidado()
+
+        comando = New MySqlCommand("SELECT * FROM ctasctes WHERE NroCC = '" & matricula & "' AND TipoCbteCC = 'LIQ' AND PeriodoCC = '" & periodo & "'", conexion)
+        dr = comando.ExecuteReader
+        senial = 0
+
+        If dr.HasRows Then
+            While dr.Read
+                senial = 1
+            End While
+        End If
+
+        dr.Close()
+        dr.Dispose()
 
     End Sub
 

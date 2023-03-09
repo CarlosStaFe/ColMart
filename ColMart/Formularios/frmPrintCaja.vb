@@ -35,16 +35,17 @@ Public Class frmPrintCaja
         Dim Smtp_Server As New SmtpClient
         Dim e_mail As New MailMessage
         Smtp_Server.UseDefaultCredentials = False
-        Smtp_Server.Credentials = New Net.NetworkCredential("sistema@martilleros.org.ar", "46[jeXnyn3eS")
+        Smtp_Server.Credentials = New Net.NetworkCredential("sistemas@martilleros.org.ar", "Sistemas_2023")
         Smtp_Server.Port = 587
-        Smtp_Server.Host = "mail.martilleros.org.ar"
+        Smtp_Server.Host = "smtp.hostinger.com"
+        'Smtp_Server.Host = "mail.martilleros.org.ar"
 
         e_mail = New MailMessage
-        e_mail.From = New MailAddress("sistema@martilleros.org.ar")
+        e_mail.From = New MailAddress("sistemas@martilleros.org.ar")
 
         'Direcciones de mail para proceso ---------------
         e_mail.To.Add(CStr("tesoreria@martilleros.org.ar"))
-        e_mail.Bcc.Add(CStr("sistema@martilleros.org.ar"))
+        e_mail.Bcc.Add(CStr("sistemas@martilleros.org.ar"))
 
         e_mail.Subject = "PDF cierre de caja"
         e_mail.IsBodyHtml = False

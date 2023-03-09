@@ -257,7 +257,7 @@ Public Class frmMovimCaja
 
     Private Sub btnCerrar_Click(sender As Object, e As EventArgs) Handles btnCerrar.Click
 
-        archivoBackup = "E:\DBColMart\Backup\dbcolmart.sql" & "_" & Today.Date.ToString("dd-MM-yyyy") & "_" & TimeOfDay.ToString("hhmm") & ".sql"
+        archivoBackup = "E:\DBColMart\Backup\dbcolmart.sql" & "_" & Today.Date.ToString("dd-MM-yyyy") & "_" & TimeOfDay.ToString("hhmm") & "_(A).sql"
 
         ProcesoBackup()
 
@@ -270,6 +270,12 @@ Public Class frmMovimCaja
             comando = New MySqlCommand("DELETE FROM caja", conexion)
             dr = comando.ExecuteReader
             dr.Close()
+
+            AbrirCaja()
+
+            archivoBackup = "E:\DBColMart\Backup\dbcolmart.sql" & "_" & Today.Date.ToString("dd-MM-yyyy") & "_" & TimeOfDay.ToString("hhmm") & "_(D).sql"
+
+            ProcesoBackup()
 
             detmsg = "Cierre Exitoso...!!!"
             tipomsg = "info"
@@ -312,6 +318,25 @@ Public Class frmMovimCaja
             txtNroDeposito.Enabled = False
             txtDetalle.Focus()
         End If
+    End Sub
+
+    Private Sub AbrirCaja()
+
+        comando = New MySqlCommand("INSERT INTO caja VALUES(@fecha, @detalle, @debe, @haber, @saldo, @efectivo, @tarjeta, @transfer ,@obs, @estado)", conexion)
+
+        comando.Parameters.AddWithValue("@fecha", fechacaja)
+        comando.Parameters.AddWithValue("@detalle", "*** APERTURA DE CAJA ***")
+        comando.Parameters.AddWithValue("@debe", 0)
+        comando.Parameters.AddWithValue("@haber", txtImporte.Text)
+        comando.Parameters.AddWithValue("@saldo", txtImporte.Text)
+        comando.Parameters.AddWithValue("@efectivo", txtImporte.Text)
+        comando.Parameters.AddWithValue("@tarjeta", 0)
+        comando.Parameters.AddWithValue("@transfer", 0)
+        comando.Parameters.AddWithValue("@obs", "*** CIERRE DEL DÍA: " + txtFechaHoy.Text + " ***")
+        comando.Parameters.AddWithValue("@estado", "ABIERTA")
+
+        comando.ExecuteNonQuery()
+
     End Sub
 
 End Class
