@@ -620,10 +620,13 @@ Public Class frmReciboB1
 
         If rdbNotaCredito.Checked = True Then
             nombrePDF = "NCR" & "-" & comprobante & "-" & Today.Date.ToString("dd-MM-yyyy") & "-" & TimeOfDay.ToString("h.mm") & ""
-            ruta = "\\DESKTOP\dbcolmart\NCR\"
+            'ruta = "\\DESKTOP\dbcolmart\NCR\"
+            ruta = "\\SERVIDOR\dbcolmart\NCR\"
         Else
             nombrePDF = "CIC" & "-" & comprobante & "-" & Today.Date.ToString("dd-MM-yyyy") & "-" & TimeOfDay.ToString("h.mm") & ""
-            ruta = "\\DESKTOP\dbcolmart\CIC\"
+            'ruta = "\\DESKTOP\dbcolmart\CIC\"
+            ruta = "\\SERVIDOR\dbcolmart\NCR\"
+
         End If
 
         Dim byteViewer As Byte() = ReportViewer1.LocalReport.Render("PDF")

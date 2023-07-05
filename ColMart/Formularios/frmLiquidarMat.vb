@@ -8,10 +8,10 @@ Public Class frmLiquidarMat
 
     Dim desdemat, hastamat As Integer
     Dim matricula, apelynombre, domicilio, codigopostal, localidad, provincia, estado, detalle As String
-    Dim fila, idcodpos, contreg, comprobante, item, posicion1 As Integer
-    Dim importe1, importe2, importe3, importe4, total, importe As Double
+    Dim fila, idcodpos, contreg, comprobante, item, posicion1, nrocbte, itemcbte As Integer
+    Dim importe1, importe2, importe3, importe4, total, importe, debe, haber, saldo As Double
     Dim concepto1, concepto2, concepto3, concepto4, correo As String
-    Dim fecha, dia, mes, yy, anio, periodo, nombrePDF As String
+    Dim fecha, dia, mes, yy, anio, periodo, nombrePDF, tipocbte As String
     Dim codbarra, codigodepago As String
     Dim CodigoArmado, CodigoTotal As Object
 
@@ -121,11 +121,12 @@ Public Class frmLiquidarMat
         periodo = txtYYPeriodo.Text & txtMMPeriodo.Text
 
         For Each row In dt.Rows
-            estado = CStr(row("EstadoMatri"))
-            If estado IsNot "ACTIVO" Then
+            estado = Trim(CStr(row("EstadoMatri")))
+            If estado = "ACTIVO" Then
                 GoTo seguir
             End If
-            If estado IsNot "SUSPENDIDO" Then
+            'If estado IsNot "SUSPENDIDO" Then
+            If estado = "SUSPENDIDO" Then
                 GoTo seguir
             Else
                 GoTo leerotro
@@ -141,6 +142,8 @@ seguir:
             BuscarLiquidado()
             If senial = 1 Then
                 GoTo leerotro
+            Else
+                senial = 0
             End If
 
             apelynombre = CStr(row("ApelNombMatri"))
@@ -378,12 +381,15 @@ Finalizar:
             nombrePDF = matricula & "-" & periodo
 
             Dim byteViewer As Byte() = ReportViewer1.LocalReport.Render("PDF")
-            Dim newFile As New FileStream("\\DESKTOP\dbcolmart\boletas\" & nombrePDF & ".pdf", FileMode.Create)
-            'Dim newFile As New FileStream("E:\dbcolmart\boletas\" & nombrePDF & ".pdf", FileMode.Create)
+            'Dim newFile As New FileStream("\\DESKTOP\dbcolmart\boletas\" & nombrePDF & ".pdf", FileMode.Create)
+            Dim newFile As New FileStream("E:\dbcolmart\boletas\" & nombrePDF & ".pdf", FileMode.Create)
             newFile.Write(byteViewer, 0, byteViewer.Length)
             newFile.Close()
 
             ReportViewer1.RefreshReport()
+
+            '***CALCULAMOS EL SALDO A FAVOR SI TIENE***
+            CalcularSaldo()
 
             '***GRABAMOS LAS CTAS CTES NUEVAS***
             If concepto1 <> "" Then
@@ -400,18 +406,42 @@ Finalizar:
                     comando.Parameters.AddWithValue("@debe", importe1)
                     comando.Parameters.AddWithValue("@haber", 0)
                     comando.Parameters.AddWithValue("@saldo", 0)
-
-                    If rdbNo.Checked = True And rdbSi.Checked = False Then
-                        comando.Parameters.AddWithValue("@estado", "LIQUIDADA")
-                    ElseIf rdbNo.Checked = False And rdbSi.Checked = True Then
-                        comando.Parameters.AddWithValue("@estado", "PENDIENTE")
-                    End If
-
                     comando.Parameters.AddWithValue("@pagado", 0)
                     comando.Parameters.AddWithValue("@fecha", "1900-01-01")
-                    comando.Parameters.AddWithValue("@resto", importe1)
                     comando.Parameters.AddWithValue("@obs", "")
+
+                    If senial = 1 Then
+                        saldo = saldo + importe1
+                        If saldo = 0 Then
+                            comando.Parameters.AddWithValue("@resto", 0)
+                            comando.Parameters.AddWithValue("@estado", "PAGADA")
+                        End If
+                        If saldo > 0 Then
+                            comando.Parameters.AddWithValue("@resto", saldo)
+                            comando.Parameters.AddWithValue("@estado", "PENDIENTE")
+                        End If
+                        If saldo < 0 Then
+                            comando.Parameters.AddWithValue("@resto", 0)
+                            comando.Parameters.AddWithValue("@estado", "PAGADA")
+                        End If
+                    Else
+                        comando.Parameters.AddWithValue("@resto", importe1)
+                        If rdbNo.Checked = True And rdbSi.Checked = False Then
+                            comando.Parameters.AddWithValue("@estado", "LIQUIDADA")
+                        ElseIf rdbNo.Checked = False And rdbSi.Checked = True Then
+                            comando.Parameters.AddWithValue("@estado", "PENDIENTE")
+                        End If
+                    End If
+
                     comando.ExecuteNonQuery()
+
+                    If saldo > 0 Then
+                        comando = New MySqlCommand("UPDATE ctasctes SET RestoCC = 0 WHERE NroCpbteCC = '" & nrocbte & "' AND TipoCbteCC = '" & tipocbte & "' AND ItemCC = '" & itemcbte & "' ", conexion)
+                        comando.ExecuteNonQuery()
+                    Else
+                        comando = New MySqlCommand("UPDATE ctasctes SET RestoCC = '" & saldo & "' WHERE NroCbteCC = '" & nrocbte & "' AND TipoCbteCC = '" & tipocbte & "' AND ItemCC = '" & itemcbte & "' ", conexion)
+                        comando.ExecuteNonQuery()
+                    End If
 
                     item = 1
                     detalle = concepto1
@@ -433,21 +463,45 @@ Finalizar:
                     comando.Parameters.AddWithValue("@item", 2)
                     comando.Parameters.AddWithValue("@detalle", concepto2)
                     comando.Parameters.AddWithValue("@periodo", periodo)
-                    comando.Parameters.AddWithValue("@debe", importe2)
                     comando.Parameters.AddWithValue("@haber", 0)
                     comando.Parameters.AddWithValue("@saldo", 0)
-
-                    If rdbNo.Checked = True And rdbSi.Checked = False Then
-                        comando.Parameters.AddWithValue("@estado", "LIQUIDADA")
-                    ElseIf rdbNo.Checked = False And rdbSi.Checked = True Then
-                        comando.Parameters.AddWithValue("@estado", "PENDIENTE")
-                    End If
-
                     comando.Parameters.AddWithValue("@pagado", 0)
                     comando.Parameters.AddWithValue("@fecha", "1900-01-01")
                     comando.Parameters.AddWithValue("@resto", importe2)
                     comando.Parameters.AddWithValue("@obs", "")
+
+                    If senial = 1 Then
+                        saldo = saldo + importe2
+                        If saldo = 0 Then
+                            comando.Parameters.AddWithValue("@resto", 0)
+                            comando.Parameters.AddWithValue("@estado", "PAGADA")
+                        End If
+                        If saldo > 0 Then
+                            comando.Parameters.AddWithValue("@resto", saldo)
+                            comando.Parameters.AddWithValue("@estado", "PENDIENTE")
+                        End If
+                        If saldo < 0 Then
+                            comando.Parameters.AddWithValue("@resto", 0)
+                            comando.Parameters.AddWithValue("@estado", "PAGADA")
+                        End If
+                    Else
+                        comando.Parameters.AddWithValue("@debe", importe2)
+                        If rdbNo.Checked = True And rdbSi.Checked = False Then
+                            comando.Parameters.AddWithValue("@estado", "LIQUIDADA")
+                        ElseIf rdbNo.Checked = False And rdbSi.Checked = True Then
+                            comando.Parameters.AddWithValue("@estado", "PENDIENTE")
+                        End If
+                    End If
+
                     comando.ExecuteNonQuery()
+
+                    If saldo > 0 Then
+                        comando = New MySqlCommand("UPDATE ctasctes SET RestoCC = 0 WHERE NroCpbteCC = '" & nrocbte & "' AND TipoCbteCC = '" & tipocbte & "' AND ItemCC = '" & itemcbte & "' ", conexion)
+                        comando.ExecuteNonQuery()
+                    Else
+                        comando = New MySqlCommand("UPDATE ctasctes SET RestoCC = '" & saldo & "' WHERE NroCbteCC = '" & nrocbte & "' AND TipoCbteCC = '" & tipocbte & "' AND ItemCC = '" & itemcbte & "' ", conexion)
+                        comando.ExecuteNonQuery()
+                    End If
 
                     item = 2
                     detalle = concepto2
@@ -472,18 +526,42 @@ Finalizar:
                     comando.Parameters.AddWithValue("@debe", importe3)
                     comando.Parameters.AddWithValue("@haber", 0)
                     comando.Parameters.AddWithValue("@saldo", 0)
-
-                    If rdbNo.Checked = True And rdbSi.Checked = False Then
-                        comando.Parameters.AddWithValue("@estado", "LIQUIDADA")
-                    ElseIf rdbNo.Checked = False And rdbSi.Checked = True Then
-                        comando.Parameters.AddWithValue("@estado", "PENDIENTE")
-                    End If
-
                     comando.Parameters.AddWithValue("@pagado", 0)
                     comando.Parameters.AddWithValue("@fecha", "1900-01-01")
-                    comando.Parameters.AddWithValue("@resto", importe3)
                     comando.Parameters.AddWithValue("@obs", "")
+
+                    If senial = 1 Then
+                        saldo = saldo + importe3
+                        If saldo = 0 Then
+                            comando.Parameters.AddWithValue("@resto", 0)
+                            comando.Parameters.AddWithValue("@estado", "PAGADA")
+                        End If
+                        If saldo > 0 Then
+                            comando.Parameters.AddWithValue("@resto", saldo)
+                            comando.Parameters.AddWithValue("@estado", "PENDIENTE")
+                        End If
+                        If saldo < 0 Then
+                            comando.Parameters.AddWithValue("@resto", 0)
+                            comando.Parameters.AddWithValue("@estado", "PAGADA")
+                        End If
+                    Else
+                        comando.Parameters.AddWithValue("@resto", importe3)
+                        If rdbNo.Checked = True And rdbSi.Checked = False Then
+                            comando.Parameters.AddWithValue("@estado", "LIQUIDADA")
+                        ElseIf rdbNo.Checked = False And rdbSi.Checked = True Then
+                            comando.Parameters.AddWithValue("@estado", "PENDIENTE")
+                        End If
+                    End If
+
                     comando.ExecuteNonQuery()
+
+                    If saldo > 0 Then
+                        comando = New MySqlCommand("UPDATE ctasctes SET RestoCC = 0 WHERE NroCpbteCC = '" & nrocbte & "' AND TipoCbteCC = '" & tipocbte & "' AND ItemCC = '" & itemcbte & "' ", conexion)
+                        comando.ExecuteNonQuery()
+                    Else
+                        comando = New MySqlCommand("UPDATE ctasctes SET RestoCC = '" & saldo & "' WHERE NroCbteCC = '" & nrocbte & "' AND TipoCbteCC = '" & tipocbte & "' AND ItemCC = '" & itemcbte & "' ", conexion)
+                        comando.ExecuteNonQuery()
+                    End If
 
                     item = 3
                     detalle = concepto3
@@ -505,21 +583,45 @@ Finalizar:
                     comando.Parameters.AddWithValue("@item", 4)
                     comando.Parameters.AddWithValue("@detalle", concepto4)
                     comando.Parameters.AddWithValue("@periodo", periodo)
-                    comando.Parameters.AddWithValue("@debe", importe4)
                     comando.Parameters.AddWithValue("@haber", 0)
                     comando.Parameters.AddWithValue("@saldo", 0)
-
-                    If rdbNo.Checked = True And rdbSi.Checked = False Then
-                        comando.Parameters.AddWithValue("@estado", "LIQUIDADA")
-                    ElseIf rdbNo.Checked = False And rdbSi.Checked = True Then
-                        comando.Parameters.AddWithValue("@estado", "PENDIENTE")
-                    End If
-
                     comando.Parameters.AddWithValue("@pagado", 0)
                     comando.Parameters.AddWithValue("@fecha", "1900-01-01")
                     comando.Parameters.AddWithValue("@resto", importe4)
                     comando.Parameters.AddWithValue("@obs", "")
+
+                    If senial = 1 Then
+                        saldo = saldo + importe4
+                        If saldo = 0 Then
+                            comando.Parameters.AddWithValue("@resto", 0)
+                            comando.Parameters.AddWithValue("@estado", "PAGADA")
+                        End If
+                        If saldo > 0 Then
+                            comando.Parameters.AddWithValue("@resto", saldo)
+                            comando.Parameters.AddWithValue("@estado", "PENDIENTE")
+                        End If
+                        If saldo < 0 Then
+                            comando.Parameters.AddWithValue("@resto", 0)
+                            comando.Parameters.AddWithValue("@estado", "PAGADA")
+                        End If
+                    Else
+                        comando.Parameters.AddWithValue("@debe", importe4)
+                        If rdbNo.Checked = True And rdbSi.Checked = False Then
+                            comando.Parameters.AddWithValue("@estado", "LIQUIDADA")
+                        ElseIf rdbNo.Checked = False And rdbSi.Checked = True Then
+                            comando.Parameters.AddWithValue("@estado", "PENDIENTE")
+                        End If
+                    End If
+
                     comando.ExecuteNonQuery()
+
+                    If saldo > 0 Then
+                        comando = New MySqlCommand("UPDATE ctasctes SET RestoCC = 0 WHERE NroCpbteCC = '" & nrocbte & "' AND TipoCbteCC = '" & tipocbte & "' AND ItemCC = '" & itemcbte & "' ", conexion)
+                        comando.ExecuteNonQuery()
+                    Else
+                        comando = New MySqlCommand("UPDATE ctasctes SET RestoCC = '" & saldo & "' WHERE NroCbteCC = '" & nrocbte & "' AND TipoCbteCC = '" & tipocbte & "' AND ItemCC = '" & itemcbte & "' ", conexion)
+                        comando.ExecuteNonQuery()
+                    End If
 
                     item = 4
                     detalle = concepto4
@@ -664,6 +766,29 @@ Finalizar:
         If dr.HasRows Then
             While dr.Read
                 senial = 1
+            End While
+        End If
+
+        dr.Close()
+        dr.Dispose()
+
+    End Sub
+
+    Private Sub CalcularSaldo()
+
+        saldo = 0
+        senial = 0
+
+        comando = New MySqlCommand("SELECT * FROM ctasctes WHERE NroCC = '" & matricula & "' AND RestoCC < 0 ", conexion)
+        dr = comando.ExecuteReader
+
+        If dr.HasRows Then
+            While dr.Read
+                senial = 1
+                tipocbte = dr(3).ToString
+                nrocbte = dr(4).ToString
+                itemcbte = dr(5).ToString
+                saldo = dr(14).ToString
             End While
         End If
 

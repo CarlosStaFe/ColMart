@@ -24,6 +24,7 @@ Public Class frmColegiados
             BtnAgregar.Enabled = False
             BtnEliminar.Enabled = False
             BtnGrabar.Enabled = False
+            BtnModificar.Enabled = False
         End If
 
         If nivel < 4 Then

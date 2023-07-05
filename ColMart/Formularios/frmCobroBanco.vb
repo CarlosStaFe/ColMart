@@ -145,6 +145,10 @@ Public Class frmCobroBanco
                 End If
                 If contreg > 0 Then
                     GrabarLote()
+                    detmsg = "Cantidad de Registros " + contreg + " * Lote Nro.: " + nrolote + " "
+                    tipomsg = "info"
+                    btnmsg = 1
+                    frmMsgBox.ShowDialog()
                 Else
                     GrabarLote()
                     detmsg = "LOTE SIN REGISTROS...!!!"

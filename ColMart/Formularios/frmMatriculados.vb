@@ -20,6 +20,7 @@ Public Class frmMatriculados
             BtnAgregar.Enabled = False
             BtnEliminar.Enabled = False
             BtnGrabar.Enabled = False
+            BtnModificar.Enabled = False
         End If
 
     End Sub
@@ -723,6 +724,11 @@ Public Class frmMatriculados
         BtnModificar.Visible = True
         BtnEliminar.Visible = True
         BtnBuscar.Visible = True
+        If nivel > 5 Then
+            BtnActualizar.Visible = False
+        Else
+            BtnActualizar.Visible = True
+        End If
         BtnActualizar.Visible = True
         BtnPrimer.Visible = True
         BtnAnterior.Visible = True
@@ -820,6 +826,9 @@ Public Class frmMatriculados
         comando.ExecuteNonQuery()
 
         comando = New MySqlCommand("UPDATE ctasctes SET NroCC = '" & txtNuevaMatricula.Text & "' WHERE NroCC = " & txtNroMatri.Text & " ", conexion)
+        comando.ExecuteNonQuery()
+
+        comando = New MySqlCommand("UPDATE fianzas SET MatriFza = '" & txtNuevaMatricula.Text & "' WHERE MatriFza = " & txtNroMatri.Text & " ", conexion)
         comando.ExecuteNonQuery()
 
     End Sub

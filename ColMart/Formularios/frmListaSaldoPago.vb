@@ -98,8 +98,10 @@ Public Class frmListaSaldoPago
 
             If txtNroMatri.Text = "" Then
 
+                'comando.CommandText = "SELECT * FROM ctasctes INNER JOIN matriculados ON ctasctes.NroCC = matriculados.NroMatri " _
+                '                        & "WHERE ctasctes.EstadoCC <> 'PENDIENTE' "
                 comando.CommandText = "SELECT * FROM ctasctes INNER JOIN matriculados ON ctasctes.NroCC = matriculados.NroMatri " _
-                                        & "WHERE ctasctes.EstadoCC <> 'PENDIENTE' "
+                                        & "WHERE ctasctes.PagadoCC <> 0 AND ctasctes.TipoCbteCC = 'LIQ' "
                 titulo = titulo & "PAGOS * "
 
                 If cmbConcepto.Text <> "TODOS" Then
@@ -158,7 +160,8 @@ Public Class frmListaSaldoPago
                     comando.Parameters.AddWithValue("@haber", 0)
                 End If
                 If rbtnPagos.Checked Then
-                    comando.Parameters.AddWithValue("@debe", row("HaberCC"))
+                    'comando.Parameters.AddWithValue("@debe", row("HaberCC"))
+                    comando.Parameters.AddWithValue("@debe", row("PagadoCC"))
                 Else
                     comando.Parameters.AddWithValue("@haber", 0)
                 End If

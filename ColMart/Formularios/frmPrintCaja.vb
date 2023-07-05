@@ -35,7 +35,7 @@ Public Class frmPrintCaja
         Dim Smtp_Server As New SmtpClient
         Dim e_mail As New MailMessage
         Smtp_Server.UseDefaultCredentials = False
-        Smtp_Server.Credentials = New Net.NetworkCredential("sistemas@martilleros.org.ar", "Sistemas_2023")
+        Smtp_Server.Credentials = New Net.NetworkCredential("sistemas@martilleros.org.ar", "Labirraesbella_2023")
         Smtp_Server.Port = 587
         Smtp_Server.Host = "smtp.hostinger.com"
         'Smtp_Server.Host = "mail.martilleros.org.ar"

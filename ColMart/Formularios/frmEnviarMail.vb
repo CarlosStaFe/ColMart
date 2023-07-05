@@ -111,6 +111,7 @@ Terminar:
         e_mail.To.Clear()
         Smtp_Server.UseDefaultCredentials = False
         Smtp_Server.Credentials = New Net.NetworkCredential("martillerosfe@martilleros.org.ar", "Martilleros_2023")
+        'Smtp_Server.Port = 465
         Smtp_Server.Port = 587
         Smtp_Server.Host = "smtp.hostinger.com"
         e_mail = New MailMessage

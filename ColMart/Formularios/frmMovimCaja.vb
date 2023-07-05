@@ -261,7 +261,7 @@ Public Class frmMovimCaja
 
         ProcesoBackup()
 
-        frmPrintCaja.ShowDialog()
+        frmPrintCaja.ShowDialog() '***** SE ENVÍA EL MAIL *****
 
         comando = New MySqlCommand("UPDATE caja SET EstadoCaja = 'CERRADA'", conexion)
         comando.ExecuteNonQuery()
@@ -327,9 +327,9 @@ Public Class frmMovimCaja
         comando.Parameters.AddWithValue("@fecha", fechacaja)
         comando.Parameters.AddWithValue("@detalle", "*** APERTURA DE CAJA ***")
         comando.Parameters.AddWithValue("@debe", 0)
-        comando.Parameters.AddWithValue("@haber", txtImporte.Text)
-        comando.Parameters.AddWithValue("@saldo", txtImporte.Text)
-        comando.Parameters.AddWithValue("@efectivo", txtImporte.Text)
+        comando.Parameters.AddWithValue("@haber", txtEfectivo.Text)
+        comando.Parameters.AddWithValue("@saldo", txtEfectivo.Text)
+        comando.Parameters.AddWithValue("@efectivo", txtEfectivo.Text)
         comando.Parameters.AddWithValue("@tarjeta", 0)
         comando.Parameters.AddWithValue("@transfer", 0)
         comando.Parameters.AddWithValue("@obs", "*** CIERRE DEL DÍA: " + txtFechaHoy.Text + " ***")

@@ -74,7 +74,8 @@ Public Class frmBackupRestore
     Private Sub btnRestore_Click(sender As Object, e As EventArgs) Handles btnRestore.Click
 
         Try
-            Dim conn As MySqlConnection = New MySqlConnection("server=DESKTOP; database=dbcolmart; user id=martillero1; password=soporte; Convert Zero Datetime=True")
+            'Dim conn As MySqlConnection = New MySqlConnection("server=DESKTOP; database=dbcolmart; user id=martillero1; password=soporte; Convert Zero Datetime=True")
+            Dim conn As MySqlConnection = New MySqlConnection("server=SERVIDOR; database=dbcolmart; user id=martillero1; password=soporte; Convert Zero Datetime=True")
             Dim cmd As MySqlCommand = New MySqlCommand
             cmd.Connection = conn
             conn.Open()

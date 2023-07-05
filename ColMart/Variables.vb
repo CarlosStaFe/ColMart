@@ -518,11 +518,13 @@ Module Variables
 
         Try
             Dim conn As MySqlConnection = New MySqlConnection("server=DESKTOP; database=dbcolmart; user id=martillero1; password=soporte; Convert Zero Datetime=True")
+            'Dim conn As MySqlConnection = New MySqlConnection("server=SERVIDOR; database=dbcolmart; user id=martillero1; password=soporte; Convert Zero Datetime=True")
             Dim cmd As MySqlCommand = New MySqlCommand
             cmd.Connection = conn
             conn.Open()
             Dim mb As MySqlBackup = New MySqlBackup(cmd)
-            archivoBackup = "\\DESKTOP\" & Mid(archivoBackup, 4)
+            'archivoBackup = "\\DESKTOP\" & Mid(archivoBackup, 4)
+            archivoBackup = "E:\" & Mid(archivoBackup, 4)
             mb.ExportToFile(archivoBackup)
             conn.Close()
 

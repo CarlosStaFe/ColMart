@@ -628,22 +628,42 @@ Public Class frmReciboGral
                     Else
                         comando.Parameters.AddWithValue("@debe", Fila.Cells(5).Value)
                         comando.Parameters.AddWithValue("@estado", "PENDIENTE")
-                        comando.Parameters.AddWithValue("@pagado", Fila.Cells(5).Value - resto)
-                        comando.Parameters.AddWithValue("@resto", saldo)
+                        comando.Parameters.AddWithValue("@pagado", resto) '//comando.Parameters.AddWithValue("@pagado", Fila.Cells(5).Value - resto)
+                        comando.Parameters.AddWithValue("@resto", Fila.Cells(5).Value - resto) '//comando.Parameters.AddWithValue("@resto", saldo)
+                        resto = resto - Fila.Cells(5).Value
                     End If
                     comando.Parameters.AddWithValue("@haber", 0)
                     comando.Parameters.AddWithValue("@saldo", 0)
                     comando.Parameters.AddWithValue("@fecpago", fecha)
                     comando.Parameters.AddWithValue("@obs", "CIC Nro.: " + comprobante)
+
+                    If resto <= 0 Then
+                        resto = 0
+                    End If
+
+                    '***** 05/07/2023
+                    'If Fila.Cells(1).Value = 17 Then '//***** SE SACA LAS CUOTAS ADELANTADAS
+                    '    comando.Parameters.AddWithValue("@tipo", "CIC")
+                    'End If
+
                     comando.ExecuteNonQuery()
 
                     If Fila.Cells(1).Value = 5 Then
                         GrabarFianza()
                     End If
 
+                    GrabarVentas()
+
+                    '***** 05/07/2023  SE SACA LAS CUOTAS ADELANTADAS
+                    'If Fila.Cells(1).Value = 17 Then
+                    '    resto = pagado * -1
+                    'Else
+                    '    'resto = 0 '//***** SE SACA PORQUE NO SE USA
+                    '    GrabarVentas()
+                    'End If
+
                     detalle = Fila.Cells(2).Value
                     importe = Fila.Cells(5).Value
-                    GrabarVentas()
 
                 Next
             End If
@@ -664,7 +684,8 @@ Public Class frmReciboGral
             comando.Parameters.AddWithValue("@estado", "PAGO")
             comando.Parameters.AddWithValue("@pagado", 0)
             comando.Parameters.AddWithValue("@fecpago", fecha)
-            comando.Parameters.AddWithValue("@resto", 0)
+            'comando.Parameters.AddWithValue("@resto", 0)
+            comando.Parameters.AddWithValue("@resto", resto)
             comando.Parameters.AddWithValue("@obs", "")
             comando.ExecuteNonQuery()
 
