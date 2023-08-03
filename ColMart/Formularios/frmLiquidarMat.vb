@@ -293,7 +293,6 @@ Finalizar:
                                    & "INNER JOIN provincia    ON departamento.fk_ProvDpto   = provincia.id_Prov " _
                                    & "WHERE matriculados.NroMatri = '" & matricula & "' "
 
-        'comando.CommandText = "SELECT * FROM codpostal WHERE id_CodPos = '" & idcodpos & "'"
         dt = New DataTable
         da = New MySqlDataAdapter(comando)
         da.Fill(dt)
